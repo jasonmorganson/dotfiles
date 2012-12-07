@@ -8,6 +8,9 @@ if [ -f ~/.bashrc ]; then
 fi
 
 
+export TODO="t"
+export TODO_DIR="."
+
 ### Bash It ###
 
 # Path to the bash it configuration
