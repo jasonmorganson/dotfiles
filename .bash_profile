@@ -7,6 +7,7 @@ if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
 
+export EDITOR="/usr/bin/vi"
 
 export TODO="t"
 export TODO_DIR="."
