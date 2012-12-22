@@ -8,6 +8,7 @@ if [ -f ~/.bashrc ]; then
 fi
 
 export EDITOR="/usr/bin/vi"
+export IRC_CLIENT="/usr/bin/irssi"
 
 export TODO="t"
 export TODO_DIR="."
