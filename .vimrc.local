@@ -2,4 +2,5 @@ set nospell
 colorscheme molokai
 
 autocmd VimEnter,Colorscheme * :hi Normal       ctermfg=252 ctermbg=none
+autocmd VimEnter,Colorscheme * :hi CursorLine               ctermbg=234   cterm=bold
 
