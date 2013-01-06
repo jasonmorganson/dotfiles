@@ -1,2 +1,5 @@
 set nospell
 colorscheme molokai
+
+autocmd VimEnter,Colorscheme * :hi Normal       ctermfg=252 ctermbg=none
+
