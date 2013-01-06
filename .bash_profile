@@ -10,6 +10,9 @@ fi
 export EDITOR="/usr/bin/vi"
 export IRC_CLIENT="/usr/bin/irssi"
 
+export VMAIL_BROWSER='w3m'
+export VMAIL_HTML_PART_READER='w3m'
+
 export TODO="t"
 export TODO_DIR="."
 
@@ -96,4 +99,5 @@ prompt() {
     prompt='\[\e[0;33m\]$(working_directory)\[\e[00m\]\[\e[0;32m\] $(parse_git_branch)\[\e[00m\]'
     PS1=$prompt$exit_status
 }
+
 PROMPT_COMMAND=prompt
