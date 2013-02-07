@@ -1,8 +1,14 @@
+set encoding=utf-8
+
 set nospell
 colorscheme molokai
 
 autocmd VimEnter,Colorscheme * :hi Normal       ctermfg=252 ctermbg=none
-autocmd VimEnter,Colorscheme * :hi CursorLine               ctermbg=234   cterm=bold
+autocmd VimEnter,Colorscheme * :hi CursorLine   ctermfg=252 ctermbg=234   cterm=bold
+
+"UnBundle 'Lokaltog/vim-powerline'
+"Bundle 'Lokaltog/powerline'
+"source ~/.vim/bundle/powerline/powerline/ext/vim/source_plugin.vim
 
 let g:indent_guides_enable_on_vim_startup = 0
 let g:indent_guides_start_level = 1
