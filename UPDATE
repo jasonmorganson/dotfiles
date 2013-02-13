@@ -1,2 +1,3 @@
 fresh update
 antigen update
+vim +BundleInstall! +BundleClean +q
