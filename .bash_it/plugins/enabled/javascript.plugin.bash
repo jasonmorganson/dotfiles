@@ -1,1 +1,0 @@
-/home/jason/.bash_it/plugins/available/javascript.plugin.bash

@@ -1,1 +1,0 @@
-/home/jason/.bash_it/completion/available/defaults.completion.bash
