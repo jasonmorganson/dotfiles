@@ -11,7 +11,7 @@ export VMAIL_BROWSER='w3m'
 export VMAIL_HTML_PART_READER='w3m'
 
 alias fresh='~/.fresh/source/freshshell/fresh/bin/fresh'
-alias dotfiles='git --git-dir=$HOME/.fresh/source/jmorganson/dotfiles/.git/ --work-tree=$HOME'
+alias dotfiles='git --git-dir=$HOME/.fresh/source/jmorganson/dotfiles/.git/ --work-tree=$HOME/.fresh/build'
 
 # our own bin dir at the highest priority, followed by /usr/local/bin
 export PATH=.bin:.node_modules:/usr/local/bin:/usr/local/sbin:/opt/bin:"$PATH"
