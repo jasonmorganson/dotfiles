@@ -1,1 +1,42 @@
-/home/jason/.fresh/build/vimrc.local
+set encoding=utf-8
+
+set nospell
+colorscheme molokai
+
+autocmd VimEnter,Colorscheme * :hi Normal       ctermfg=252 ctermbg=none
+autocmd VimEnter,Colorscheme * :hi CursorLine   ctermfg=252 ctermbg=234   cterm=bold
+
+"UnBundle 'Lokaltog/vim-powerline'
+"Bundle 'Lokaltog/powerline'
+"source ~/.vim/bundle/powerline/powerline/ext/vim/source_plugin.vim
+
+let g:indent_guides_enable_on_vim_startup = 0
+let g:indent_guides_start_level = 1
+let g:indent_guides_guide_size = 0
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_color_change_percent = 10
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black   ctermbg=235
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darygray ctermbg=234
+
+set foldcolumn=1
+
+" Automatically save and load view on open and close "
+autocmd BufWinLeave *.* mkview
+autocmd BufWinEnter *.* silent loadview
+
+" Add mapping for moving between windows with ALT-<arrow keys> "
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
+let g:Browser_console = 'w3m'
+let g:Browser_x = 'chrome'
+
+let g:w3m#homepage = "http://www.google.com/"
+let g:w3m#search_engine = "'http://google.com/search?q=""
+
+nnoremap <silent> gb :exe('!'.g:Browser_console.' "'.expand('<cfile>').'"')<CR>
+nnoremap <silent> gB :exe('!'.g:Browser_x.' "'.expand('<cfile>').'" &')<CR>
+
+command! -nargs=* Plain set wrap linebreak nolist spell textwidth=0 wrapmargin=0

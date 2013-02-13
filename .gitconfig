@@ -1,1 +1,27 @@
-/home/jason/.fresh/build/gitconfig
+[user]
+    name = Jason Morganson
+    email = jason@morganson.me
+
+[credential]
+    helper = cache --timeout=3600
+
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red bold
+    new = green bold
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
