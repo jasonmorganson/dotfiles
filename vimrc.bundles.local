@@ -1,5 +1,5 @@
 Bundle 'bufexplorer.zip'
 "Bundle 'sjl/vitality.vim'
 Bundle 'digitaltoad/vim-jade'
-Bundle 'yuratomo/w4m.vim'
-Bundle 'fncll/vimstuff/powerline-segments'
+"Bundle 'yuratomo/w4m.vim'
+"Bundle 'fncll/vimstuff/powerline-segments'
