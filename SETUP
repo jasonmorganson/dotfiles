@@ -35,26 +35,14 @@ cat << 'EOF' > ~/.freshrc
 
 # freshshell.com
 #
-# Examples:
-#
-#   fresh twe4ked/dotfiles shell/functions.sh
-#   fresh jasoncodes/dotfiles aliases/rails.sh
-#   fresh jasoncodes/dotfiles config/tmux.conf --file
 #
 # See http://freshshell.com/readme for documentation.
 
-# Not sure what is going on with the * selector on directories, could be a bug
-# So for now this is more verbose than it ideally would be and uses direct
-# file linking, which probably isnt the best either.
 
-
-#FRESH_NO_BIN_CHECK=true
-
-# Install fresh into its default location (this is where the install script places it,
-# but then symlinks to it. Instead of doing this I am using an alias to the bin file).
+# Fresh binary
 fresh freshshell/fresh bin/fresh --bin=~/.fresh/bin/fresh
 
-# Bring in all of my personal dotfiles
+# Personal dotfiles
 fresh jmorganson/dotfiles '*' --file
 
 # Antigen (zsh plugin manager)
