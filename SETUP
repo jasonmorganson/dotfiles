@@ -1,0 +1,40 @@
+#!/usr/bin/env sh
+#
+#
+
+### Setup user profile
+
+# Switch to zsh shell
+echo "Switch user shell to zsh"
+#sudo usermod -s /bin/zsh jason
+
+
+# Install freshshell
+#
+#
+
+echo -n "Install freshshell... "
+
+mkdir -p ~/.fresh/source/freshshell
+
+if [ -d ~/.fresh/source/freshshell/fresh ]; then
+  cd ~/.fresh/source/freshshell/fresh
+  git pull --quiet --rebase >> /dev/null
+else
+  git clone --quiet https://github.com/freshshell/fresh ~/.fresh/source/freshshell/fresh
+fi
+
+echo "done."
+
+echo "Freshen up files:"
+
+~/.fresh/source/freshshell/fresh/bin/fresh
+
+
+# Install spf13-vim-3
+#
+#
+
+echo "Install vim bundles:"
+
+vim -u $HOME/.vimrc.bundles +BundleInstall! +BundleClean +qall
