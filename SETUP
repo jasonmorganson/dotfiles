@@ -40,7 +40,7 @@ cat << 'EOF' > ~/.freshrc
 
 
 # Fresh binary
-fresh freshshell/fresh bin/fresh --bin=~/.fresh/bin/fresh
+fresh freshshell/fresh bin/fresh --bin=~/.fresh/.bin/fresh
 
 # Personal dotfiles
 fresh jmorganson/dotfiles '*' --file
