@@ -56,12 +56,6 @@ fresh jmorganson/dotfiles '*' --file
 # Antigen (zsh plugin manager)
 fresh zsh-users/antigen antigen.zsh --file=~/.antigen/antigen.zsh
 
-# Vundle (vim plugin manager)
-fresh gmarik/vundle autoload/vundle.vim --file=~/.vim/bundle/vundle/autoload/vundle.vim
-fresh gmarik/vundle autoload/vundle/config.vim --file=~/.vim/bundle/vundle/autoload/vundle/config.vim
-fresh gmarik/vundle autoload/vundle/installer.vim --file=~/.vim/bundle/vundle/autoload/vundle/installer.vim
-fresh gmarik/vundle autoload/vundle/scripts.vim --file=~/.vim/bundle/vundle/autoload/vundle/scripts.vim
-
 # SPF13-VIM
 fresh spf13/spf13-vim .vimrc --file=~/.vimrc
 fresh spf13/spf13-vim .vimrc.bundles --file=~/.vimrc.bundles

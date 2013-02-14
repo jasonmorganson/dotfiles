@@ -1,3 +1,10 @@
+" Auto install vundle
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+endif
+
 Bundle 'bufexplorer.zip'
 "Bundle 'sjl/vitality.vim'
 Bundle 'digitaltoad/vim-jade'
