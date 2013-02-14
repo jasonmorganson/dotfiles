@@ -12,7 +12,7 @@ export VMAIL_HTML_PART_READER='w3m'
 
 alias fresh='~/.fresh/source/freshshell/fresh/bin/fresh'
 alias dotfiles='git --git-dir=$HOME/.fresh/source/jmorganson/dotfiles/.git/ --work-tree=$HOME/.fresh/build'
-alias vundle-update='vim +BundleInstall! +BundleClean +q'
+alias vundle-update='vim +BundleInstall! +BundleClean +qall'
 
 # our own bin dir at the highest priority, followed by /usr/local/bin
 export PATH=.bin:.node_modules:/usr/local/bin:/usr/local/sbin:/opt/bin:"$PATH"
