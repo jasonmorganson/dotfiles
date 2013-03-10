@@ -14,9 +14,23 @@ alias fresh='~/.fresh/source/freshshell/fresh/bin/fresh'
 alias dotfiles='git --git-dir=$HOME/.fresh/source/jmorganson/dotfiles/.git/ --work-tree=$HOME/.fresh/build'
 alias vundle-update='vim +BundleInstall! +BundleClean +qall'
 alias update='fresh update; antigen update; vundle-update'
+alias dropbox='python ~/.dropbox-dist/dropbox.py'
 
-# our own bin dir at the highest priority, followed by /usr/local/bin
-export PATH=.bin:.node_modules:/usr/local/bin:/usr/local/sbin:/opt/bin:"$PATH"
+# PATH search order
+# Current directory:
+#   ./bin
+#   ./.bin
+# User directory:
+#   ~/bin
+#   ~/.bin
+# /usr/local/bin
+# /usr/local/sbin
+# /opt/bin
+CURRENT_DIR_PATH=./bin:./.bin
+USER_DIR_PATH=./bin:./.bin
+USR_LOCAL_PATH=/usr/local/bin:/usr/local/sbin
+OPT_PATH=/opt/bin
+export PATH="$CURRENT_DIR_PATH":"$USR_DIR_PATH":"$USR_LOCAL_PATH":"$OPT_PATH":"$PATH"
 
 source ~/.antigen/antigen.zsh
 
@@ -24,29 +38,34 @@ source ~/.fresh/build/shell.sh
 
 # Load the oh-my-zsh's library.
 antigen-lib
+
+antigen-bundles <<EOBUNDLES
+
 #
 # # Bundles from the default repo (robbyrussell's oh-my-zsh).
-antigen-bundle command-not-found
-antigen-bundle coffee
-antigen-bundle extract
-antigen-bundle git
-antigen-bundle github
-antigen-bundle git-extras
-antigen-bundle git-flow
-antigen-bundle git-remote-branch
-antigen-bundle heroku
-antigen-bundle node
-antigen-bundle npm
-antigen-bundle urltools
-antigen-bundle ssh-agent
-antigen-bundle taskwarrior
-antigen-bundle vi-mode
+command-not-found
+coffee
+extract
+git
+github
+git-extras
+git-flow
+git-remote-branch
+heroku
+node
+npm
+urltools
+ssh-agent
+taskwarrior
+vi-mode
 
 #
 # # Syntax highlighting bundle.
-antigen-bundle zsh-users/zsh-syntax-highlighting
-antigen-bundle zsh-users/zsh-completions
-antigen-bundle zsh-users/zaw
+zsh-users/zsh-syntax-highlighting
+zsh-users/zsh-completions
+zsh-users/zaw
+
+EOBUNDLES
 
 # # Load the theme.
 antigen-theme arrow
