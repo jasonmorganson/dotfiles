@@ -2,6 +2,9 @@
     name = Jason Morganson
     email = jason@morganson.me
 
+[github]
+    user = jmorganson
+
 [credential]
     helper = cache --timeout=3600
 
