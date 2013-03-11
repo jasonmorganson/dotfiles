@@ -6,7 +6,6 @@ if !isdirectory(expand("~/.vim/bundle/vundle"))
 endif
 
 Bundle 'bufexplorer.zip'
-"Bundle 'sjl/vitality.vim'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'yuratomo/w3m.vim'
 "Bundle 'fncll/vimstuff/powerline-segments'
