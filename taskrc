@@ -9,11 +9,16 @@
 
 # Use the command 'task show' to see all defaults and overrides
 
+
 # Files
+
+## Folder location
 data.location=.task
 
 
 #Defaults
+
+## Priority
 default.priority=M
 
 
