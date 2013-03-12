@@ -72,8 +72,13 @@ zsh-users/zaw
 
 EOBUNDLES
 
+if [[ "$POWERLINE" = "yes" ]]; then
+    . ~/.local/powerline/powerline/bindings/zsh/powerline.zsh
+else
 # # Load the theme.
 antigen-theme arrow
+fi
+
 #
 # # Tell antigen that you're done.
 antigen-apply

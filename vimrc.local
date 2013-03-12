@@ -6,9 +6,12 @@ colorscheme molokai
 autocmd VimEnter,Colorscheme * :hi Normal       ctermfg=252 ctermbg=none
 autocmd VimEnter,Colorscheme * :hi CursorLine   ctermfg=252 ctermbg=234   cterm=bold
 
-"UnBundle 'Lokaltog/vim-powerline'
-"Bundle 'Lokaltog/powerline'
-"source ~/.vim/bundle/powerline/powerline/ext/vim/source_plugin.vim
+""if !empty($POWERLINE)
+    UnBundle 'Lokaltog/vim-powerline'
+    set rtp+=~/.local/powerline/powerline/bindings/vim
+""else
+""    Bundle 'Lokaltog/vim-powerline'
+""endif
 
 set nocursorline
 
