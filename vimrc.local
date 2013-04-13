@@ -17,10 +17,6 @@ set textwidth=80
 set colorcolumn=+1
 highlight ColorColumn ctermbg=233 guibg=#2c2d26
 
-""if !empty($POWERLINE)
-    UnBundle 'Lokaltog/vim-powerline'
-    set rtp+=~/.local/powerline/powerline/bindings/vim
-
 " Change spellcheck highlighting to an underline rather than background highlighting.
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
@@ -29,9 +25,8 @@ sign define QFS_VCS_CHANGE text=≠ texthl=DiffChange
 highlight DiffAdd    ctermfg=2   ctermbg=none cterm=bold
 highlight DiffDelete ctermfg=1   ctermbg=none cterm=bold
 highlight DiffChange ctermfg=178 ctermbg=none
-""else
-""    Bundle 'Lokaltog/vim-powerline'
-""endif
+
+
 
 " switching to buffer 1 - 9 is mapped to ,[nOfBuffer]
 for buffer_no in range(1, 9)
