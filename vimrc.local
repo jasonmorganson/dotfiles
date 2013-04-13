@@ -84,3 +84,9 @@ endfunction
 
 command! -nargs=* Zen call ZenMode()
 
+
+nmap <leader>c :VimChat <CR>
+
+
+
+
