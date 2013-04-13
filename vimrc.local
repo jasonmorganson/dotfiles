@@ -46,9 +46,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darygray ctermbg=234
 
 set foldcolumn=1
 
-" Automatically save and load view on open and close "
-autocmd BufWinLeave *.* mkview
-autocmd BufWinEnter *.* silent loadview
+let g:session_autoload = 1
 
 " Add mapping for moving between windows with ALT-<arrow keys> "
 nmap <silent> <A-Up> :wincmd k<CR>
