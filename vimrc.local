@@ -29,8 +29,6 @@ hi SpellBad cterm=underline ctermfg=red
 ""    Bundle 'Lokaltog/vim-powerline'
 ""endif
 
-UnBundle 'Shougo/neocomplcache'
-
 " switching to buffer 1 - 9 is mapped to ,[nOfBuffer]
 for buffer_no in range(1, 9)
   execute "nmap <Leader>" . buffer_no . " :b" . buffer_no . "\<CR>"
