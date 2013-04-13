@@ -11,7 +11,7 @@ export VMAIL_BROWSER='w3m'
 export VMAIL_HTML_PART_READER='w3m'
 
 alias fresh='~/.fresh/source/freshshell/fresh/bin/fresh'
-alias dotfiles='git --git-dir=$HOME/.fresh/source/jmorganson/dotfiles/.git/ --work-tree=$HOME/.fresh/build'
+alias dotfiles='git --git-dir=$HOME/.fresh/source/jasonmorganson/dotfiles/.git/ --work-tree=$HOME/.fresh/build'
 alias vundle-update='vim +BundleInstall! +BundleClean +qall'
 alias update='fresh update; antigen update; vundle-update'
 alias dropbox='python ~/.dropbox-dist/dropbox.py'
