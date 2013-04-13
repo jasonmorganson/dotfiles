@@ -67,6 +67,9 @@ let g:w3m#search_engine = "'http://google.com/search?q=""
 nnoremap <silent> gb :exe('!'.g:Browser_console.' "'.expand('<cfile>').'"')<CR>
 nnoremap <silent> gB :exe('!'.g:Browser_x.' "'.expand('<cfile>').'" &')<CR>
 
+au FileType javascript setl conceallevel=2 concelcursor=nc
+
+let g:syntax_js=['function', 'this', 'return', 'comma', 'semicolon']
 
 function! ZenMode()
     set spell wrap autoindent linebreak
