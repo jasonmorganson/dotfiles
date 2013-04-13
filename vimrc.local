@@ -6,6 +6,9 @@ highlight CursorLine ctermbg=234   cterm=bold
 
 highlight SignColumn ctermbg=none
 
+set conceallevel=2
+set concealcursor=nc
+hi Conceal ctermbg=none
 
 set foldcolumn=1
 set numberwidth=4
