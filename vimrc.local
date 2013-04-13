@@ -25,10 +25,6 @@ highlight ColorColumn ctermbg=233 guibg=#2c2d26
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
 
-
-" Don't show signs in buffers matching this |regexp|.
-g:quickfixsigns_blacklist_buffer (default: '^\(__.*__\|NERD_tree_.*\|-MiniBufExplorer-\)$')
-
 ""else
 ""    Bundle 'Lokaltog/vim-powerline'
 ""endif
