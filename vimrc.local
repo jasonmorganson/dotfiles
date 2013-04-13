@@ -25,6 +25,10 @@ highlight ColorColumn ctermbg=233 guibg=#2c2d26
 hi clear SpellBad
 hi SpellBad cterm=underline ctermfg=red
 
+sign define QFS_VCS_CHANGE text=≠ texthl=DiffChange
+highlight DiffAdd    ctermfg=2   ctermbg=none cterm=bold
+highlight DiffDelete ctermfg=1   ctermbg=none cterm=bold
+highlight DiffChange ctermfg=178 ctermbg=none
 ""else
 ""    Bundle 'Lokaltog/vim-powerline'
 ""endif
