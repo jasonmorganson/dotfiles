@@ -2,8 +2,7 @@ set encoding=utf-8
 
 colorscheme molokai
 
-autocmd VimEnter,Colorscheme * :hi Normal       ctermfg=252 ctermbg=none
-autocmd VimEnter,Colorscheme * :hi CursorLine   ctermfg=252 ctermbg=234   cterm=bold
+highlight CursorLine ctermbg=234   cterm=bold
 
 ""if !empty($POWERLINE)
     UnBundle 'Lokaltog/vim-powerline'
@@ -16,8 +15,6 @@ hi SpellBad cterm=underline ctermfg=red
 ""else
 ""    Bundle 'Lokaltog/vim-powerline'
 ""endif
-
-set nocursorline
 
 let g:neocomplcache_disable_auto_complete = 1
 let g:neocomplcache_enable_auto_select = 1
