@@ -86,6 +86,7 @@ command! -nargs=* Zen call ZenMode()
 
 
 nmap <leader>c :VimChat <CR>
+nmap <leader>t :FriendsTwitter<CR>
 
 
 
