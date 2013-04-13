@@ -5,6 +5,7 @@ if !isdirectory(expand("~/.vim/bundle/vundle"))
     let s:bootstrap=1
 endif
 
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'matchit.zip'
 Bundle 'bufexplorer.zip'
 Bundle 'airblade/vim-gitgutter'

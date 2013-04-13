@@ -29,15 +29,7 @@ hi SpellBad cterm=underline ctermfg=red
 ""    Bundle 'Lokaltog/vim-powerline'
 ""endif
 
-let g:neocomplcache_disable_auto_complete = 1
-let g:neocomplcache_enable_auto_select = 1
-
-" Popup autocomplete on TAB
-inoremap <expr><TAB> pumvisible() ? "\<C-n>" : <SID>check_back_space() ? "\<TAB>" : "\<C-x>\<C-u>"
-function! s:check_back_space()"{{{
-let col = col('.') - 1
-return !col || getline('.')[col - 1] =~ '\s'
-endfunction"}}"
+UnBundle 'Shougo/neocomplcache'
 
 " switching to buffer 1 - 9 is mapped to ,[nOfBuffer]
 for buffer_no in range(1, 9)
