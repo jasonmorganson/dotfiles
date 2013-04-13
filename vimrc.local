@@ -4,6 +4,8 @@ colorscheme molokai
 
 highlight CursorLine ctermbg=234   cterm=bold
 
+highlight SignColumn ctermbg=none
+
 ""if !empty($POWERLINE)
     UnBundle 'Lokaltog/vim-powerline'
     set rtp+=~/.local/powerline/powerline/bindings/vim
