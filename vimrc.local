@@ -1,6 +1,5 @@
 set encoding=utf-8
 
-set nospell
 colorscheme molokai
 
 autocmd VimEnter,Colorscheme * :hi Normal       ctermfg=252 ctermbg=none
@@ -9,6 +8,11 @@ autocmd VimEnter,Colorscheme * :hi CursorLine   ctermfg=252 ctermbg=234   cterm=
 ""if !empty($POWERLINE)
     UnBundle 'Lokaltog/vim-powerline'
     set rtp+=~/.local/powerline/powerline/bindings/vim
+
+" Change spellcheck highlighting to an underline rather than background highlighting.
+hi clear SpellBad
+hi SpellBad cterm=underline ctermfg=red
+
 ""else
 ""    Bundle 'Lokaltog/vim-powerline'
 ""endif
