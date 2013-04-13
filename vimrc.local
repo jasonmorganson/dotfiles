@@ -1,68 +1,51 @@
+
 set encoding=utf-8
+set textwidth=80
+set colorcolumn=+1
+set foldcolumn=1
+set numberwidth=4
+set conceallevel=2
+set concealcursor=nc
+
+let g:session_autoload=1
+let g:indent_guides_enable_on_vim_startup=0
+let g:indent_guides_start_level=1
+let g:indent_guides_guide_size=0
+let g:indent_guides_auto_colors=0
+let g:indent_guides_color_change_percent=10
+let g:syntax_js=['function', 'this', 'return', 'comma', 'semicolon']
 
 colorscheme molokai
 
-highlight CursorLine ctermbg=234   cterm=bold
-
-highlight SignColumn ctermbg=none
-
-set conceallevel=2
-set concealcursor=nc
-hi Conceal ctermbg=none
-
-set foldcolumn=1
-set numberwidth=4
-
-set textwidth=80
-set colorcolumn=+1
-highlight ColorColumn ctermbg=233 guibg=#2c2d26
-
-" Change spellcheck highlighting to an underline rather than background highlighting.
-hi clear SpellBad
-hi SpellBad cterm=underline ctermfg=red
+highlight clear SpellBad
+highlight SpellBad                      ctermfg=red  cterm=underline
+highlight Conceal                       ctermbg=none
+highlight CursorLine                    ctermbg=234  cterm=bold
+highlight SignColumn                    ctermbg=none
+highlight ColorColumn                   ctermbg=233
+highlight IndentGuidesOdd               ctermbg=235
+highlight IndentGuidesEven              ctermbg=234
+highlight DiffAdd          ctermfg=2    ctermbg=none cterm=bold
+highlight DiffDelete       ctermfg=1    ctermbg=none cterm=bold
+highlight DiffChange       ctermfg=178  ctermbg=none
 
 sign define QFS_VCS_CHANGE text=≠ texthl=DiffChange
-highlight DiffAdd    ctermfg=2   ctermbg=none cterm=bold
-highlight DiffDelete ctermfg=1   ctermbg=none cterm=bold
-highlight DiffChange ctermfg=178 ctermbg=none
 
+nmap <leader>c :VimChat <CR>
+nmap <leader>t :FriendsTwitter<CR>
 
+" Add mapping for moving between windows with ALT-<arrow keys> "
+nmap <silent> <A-Up>    :wincmd k<CR>
+nmap <silent> <A-Down>  :wincmd j<CR>
+nmap <silent> <A-Left>  :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
 
-" switching to buffer 1 - 9 is mapped to ,[nOfBuffer]
+" Switching to buffer 1 - 9 is mapped to <Leader> [Buffer number]
 for buffer_no in range(1, 9)
   execute "nmap <Leader>" . buffer_no . " :b" . buffer_no . "\<CR>"
 endfor
 
-let g:indent_guides_enable_on_vim_startup = 0
-let g:indent_guides_start_level = 1
-let g:indent_guides_guide_size = 0
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_color_change_percent = 10
-autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=black   ctermbg=235
-autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darygray ctermbg=234
-
-set foldcolumn=1
-
-let g:session_autoload = 1
-
-" Add mapping for moving between windows with ALT-<arrow keys> "
-nmap <silent> <A-Up> :wincmd k<CR>
-nmap <silent> <A-Down> :wincmd j<CR>
-nmap <silent> <A-Left> :wincmd h<CR>
-nmap <silent> <A-Right> :wincmd l<CR>
-
-let g:Browser_console = 'w3m'
-let g:Browser_x = 'chrome'
-
-let g:w3m#homepage = "http://www.google.com/"
-let g:w3m#search_engine = "'http://google.com/search?q=""
-
-nnoremap <silent> gb :exe('!'.g:Browser_console.' "'.expand('<cfile>').'"')<CR>
-nnoremap <silent> gB :exe('!'.g:Browser_x.' "'.expand('<cfile>').'" &')<CR>
-
-au FileType javascript setl conceallevel=2 concelcursor=nc
-
-let g:syntax_js=['function', 'this', 'return', 'comma', 'semicolon']
+nnoremap <silent> gb :exe('!w3m "'.expand('<cfile>').'"')<CR>
 
 function! ZenMode()
     set spell wrap autoindent linebreak
@@ -72,7 +55,6 @@ function! ZenMode()
     highlight! link FoldColumn Normal
     highlight! link ColorColumn Normal
     :UniCycleOn
-    ":GitGutterDisable
     :QuickfixsignsDisable
     silent !tmux set status off
 endfunction
@@ -80,8 +62,6 @@ endfunction
 command! -nargs=* Zen call ZenMode()
 
 
-nmap <leader>c :VimChat <CR>
-nmap <leader>t :FriendsTwitter<CR>
 
 
 
