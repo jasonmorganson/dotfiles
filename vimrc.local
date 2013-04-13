@@ -6,6 +6,8 @@ highlight CursorLine ctermbg=234   cterm=bold
 
 highlight SignColumn ctermbg=none
 
+highlight ColorColumn ctermbg=233 guibg=#2c2d26
+
 ""if !empty($POWERLINE)
     UnBundle 'Lokaltog/vim-powerline'
     set rtp+=~/.local/powerline/powerline/bindings/vim
