@@ -54,6 +54,8 @@ function! ZenMode()
     highlight NonText ctermfg=233 ctermbg=none
     highlight! link FoldColumn Normal
     highlight! link ColorColumn Normal
+    autocmd InsertEnter * :set nonumber
+    autocmd InsertLeave * :set norelativenumber
     :UniCycleOn
     :QuickfixsignsDisable
     silent !tmux set status off
