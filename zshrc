@@ -8,7 +8,7 @@ export VISUAL="/usr/bin/vi"
 export IRC_CLIENT="/usr/bin/irssi"
 
 export VMAIL_BROWSER='w3m'
-export VMAIL_HTML_PART_READER='w3m'
+export VMAIL_HTML_PART_READER='w3m -dump'
 
 alias fresh='~/.fresh/source/freshshell/fresh/bin/fresh'
 alias dotfiles='git --git-dir=$HOME/.fresh/source/jasonmorganson/dotfiles/.git/ --work-tree=$HOME/.fresh/build'
