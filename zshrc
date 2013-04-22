@@ -23,6 +23,8 @@ alias dropbox='python ~/.dropbox-dist/dropbox.py'
 # User directory:
 #   ~/bin
 #   ~/.bin
+# Ruby GEMs in user directory:
+#   ~/.gem/ruby/current/bin
 # /usr/local/bin
 # /usr/local/sbin
 # /opt/bin
@@ -31,11 +33,12 @@ alias dropbox='python ~/.dropbox-dist/dropbox.py'
 # $GCC_PATH
 CURRENT_DIR_PATH=./bin:./.bin
 USER_DIR_PATH=~/bin:~/.bin:~/.local/bin
+USER_GEM_PATH=~/.gem/ruby/current/bin
 USR_LOCAL_PATH=/usr/local/bin:/usr/local/sbin
 OPT_PATH=/opt/bin
 BIN_PATH=/usr/bin:/bin
 GCC_PATH=/usr/x86_64-pc-linux-gnu/gcc-bin/4.5.4
-export PATH="$CURRENT_DIR_PATH":"$USER_DIR_PATH":"$USR_LOCAL_PATH":"$OPT_PATH":"$BIN_PATH":"$GCC_PATH"
+export PATH="$CURRENT_DIR_PATH":"$USER_DIR_PATH":"$USER_GEM_PATH":"$USR_LOCAL_PATH":"$OPT_PATH":"$BIN_PATH":"$GCC_PATH"
 
 source ~/.antigen/antigen.zsh
 
