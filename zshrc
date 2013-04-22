@@ -40,6 +40,17 @@ BIN_PATH=/usr/bin:/bin
 GCC_PATH=/usr/x86_64-pc-linux-gnu/gcc-bin/4.5.4
 export PATH="$CURRENT_DIR_PATH":"$USER_DIR_PATH":"$USER_GEM_PATH":"$USR_LOCAL_PATH":"$OPT_PATH":"$BIN_PATH":"$GCC_PATH"
 
+# VI-mode
+bindkey -v
+
+# The time the shell waits, in hundredths of seconds, for another key
+# to be pressed when reading bound multi-character sequences.
+#
+# Set to shortest possible delay is 1/100 second.
+# This allows escape sequences like cursor/arrow keys to work,
+# while eliminating the delay exiting vi insert mode.
+KEYTIMEOUT=1  # 10ms for key sequences
+
 source ~/.antigen/antigen.zsh
 
 source ~/.fresh/build/shell.sh
