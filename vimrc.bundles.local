@@ -14,6 +14,7 @@ endif
 let g:spf13_bundle_groups_bundle_groups=['general', 'programming', 'javascript', 'html', 'snipmate', 'misc']
 
 
+Bundle 'mhinz/vim-startify'
 Bundle 'xolox/vim-session'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'UniCycle'
