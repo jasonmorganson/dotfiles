@@ -11,12 +11,14 @@ endif
 " Default
 "let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc', 'scala']
 
-let g:spf13_bundle_groups_bundle_groups=['general', 'programming', 'javascript', 'html', 'snipmate', 'misc']
+let g:spf13_bundle_groups_bundle_groups=['general', 'programming', 'javascript', 'html', 'misc']
 
 
 Bundle 'mhinz/vim-startify'
 Bundle 'xolox/vim-session'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 Bundle 'UniCycle'
 Bundle 'bufexplorer.zip'
 Bundle 'tpope/vim-unimpaired'
