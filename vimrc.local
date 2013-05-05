@@ -40,6 +40,11 @@ nmap <silent> <A-Down>  :wincmd j<CR>
 nmap <silent> <A-Left>  :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
+noremap <silent> <c-y> :call smooth_scroll#down(&scroll, 0, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#up(&scroll*2, 0, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<CR>
+
 " Switching to buffer 1 - 9 is mapped to <Leader> [Buffer number]
 for buffer_no in range(1, 9)
   execute "nmap <Leader>" . buffer_no . " :b" . buffer_no . "\<CR>"

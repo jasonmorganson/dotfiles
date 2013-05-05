@@ -16,6 +16,7 @@ let g:spf13_bundle_groups_bundle_groups=['general', 'programming', 'javascript',
 
 Bundle 'mhinz/vim-startify'
 Bundle 'xolox/vim-session'
+Bundle 'terryma/vim-smooth-scroll'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
