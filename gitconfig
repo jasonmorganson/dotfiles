@@ -8,9 +8,6 @@
 [credential]
     helper = cache --timeout=3600
 
-[push]
-    default = simple
-
 [color]
     branch = auto
     diff = auto
