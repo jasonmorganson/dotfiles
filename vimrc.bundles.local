@@ -47,7 +47,12 @@ Bundle 'carlosvillu/coffeScript-VIM-Snippets'
 Bundle 'othree/coffee-check.vim'
 Bundle 'ehamberg/vim-cute-python'
 Bundle 'digitaltoad/vim-jade'
+<<<<<<< HEAD
 Bundle 'tpope/vim-cucumber'
+=======
+"Bundle 'yuratomo/w3m.vim'
+"Bundle 'fncll/vimstuff/powerline-segments'
+>>>>>>> 17be63eb233da43c464d7ace2e131d192561c545
 Bundle 'ironcamel/vimchat'
 Bundle 'vim-scripts/TwitVim'
 Bundle 'joonty/vdebug.git'

@@ -56,7 +56,7 @@ source ~/.antigen/antigen.zsh
 source ~/.fresh/build/shell.sh
 
 # Load the oh-my-zsh's library.
-antigen-lib
+antigen-use oh-my-zsh
 
 antigen-bundles <<EOBUNDLES
 
@@ -99,3 +99,4 @@ antigen-apply
 
 source ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zaw.git/zaw.zsh
 
+[[ -s ~/.nvm/nvm.sh ]] && . ~/.nvm/nvm.sh  # This loads NVM
