@@ -3,7 +3,7 @@
     email = jason@morganson.me
 
 [github]
-    user = jmorganson
+    user = jasonmorganson
 
 [credential]
     helper = cache --timeout=3600
