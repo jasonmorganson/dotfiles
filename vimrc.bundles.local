@@ -13,6 +13,8 @@ endif
 
 let g:spf13_bundle_groups_bundle_groups=['general', 'programming', 'javascript', 'html', 'misc']
 
+" SPF13 conflicts with the default digraph mapping of <C-K>
+let g:spf13_no_neosnippet_expand = 1
 
 Bundle 'mhinz/vim-startify'
 Bundle 'xolox/vim-misc'
