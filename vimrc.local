@@ -29,6 +29,11 @@ highlight IndentGuidesEven              ctermbg=234
 highlight DiffAdd          ctermfg=2    ctermbg=none cterm=bold
 highlight DiffDelete       ctermfg=1    ctermbg=none cterm=bold
 highlight DiffChange       ctermfg=178  ctermbg=none
+let g:javascript_conceal=1
+let g:syntastic_error_symbol='⚑'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_style_error_symbol='¿'
+let g:syntastic_style_warning_symbol='⸮'
 
 sign define QFS_VCS_CHANGE text=≠ texthl=DiffChange
 
