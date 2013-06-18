@@ -16,43 +16,57 @@ let g:spf13_bundle_groups_bundle_groups=['general', 'programming', 'javascript',
 " SPF13 conflicts with the default digraph mapping of <C-K>
 let g:spf13_no_neosnippet_expand = 1
 
+" General
+Bundle 'UniCycle'
+Bundle 'bufexplorer.zip'
 Bundle 'mhinz/vim-startify'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
-Bundle 'terryma/vim-smooth-scroll'
-Bundle 'editorconfig/editorconfig-vim'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-speeddating'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'terryma/vim-smooth-scroll'
 Bundle 'bronson/vim-trailing-whitespace'
+Bundle 'editorconfig/editorconfig-vim'
+Bundle 'tomtom/quickfixsigns_vim'
 Bundle 'guns/xterm-color-table.vim'
+
+" Completion & Snippets
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
 Bundle 'stephenmckinney/ultisnips-snippets'
-Bundle 'UniCycle'
-Bundle 'bufexplorer.zip'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tomtom/quickfixsigns_vim'
+
+" Git
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
+
+" Ruby
 Bundle 'vim-ruby/vim-ruby'
+
+" Javascript, Coffeescript & Node.js
 Bundle 'drslump/vim-syntax-js'
 Bundle 'teramako/jscomplete-vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'mintplant/vim-literate-coffeescript'
 Bundle 'myhere/vim-nodejs-complete'
-"Bundle 'mmalecki/vim-node.js'
+Bundle 'mmalecki/vim-node.js'
 Bundle 'guileen/vim-node'
 Bundle 'carlosvillu/coffeScript-VIM-Snippets'
 Bundle 'othree/coffee-check.vim'
+
+" Python
 Bundle 'ehamberg/vim-cute-python'
+
+" Templating
 Bundle 'digitaltoad/vim-jade'
-<<<<<<< HEAD
+
+" Testing
 Bundle 'tpope/vim-cucumber'
-=======
-"Bundle 'yuratomo/w3m.vim'
-"Bundle 'fncll/vimstuff/powerline-segments'
->>>>>>> 17be63eb233da43c464d7ace2e131d192561c545
+
+" Debugging
+Bundle 'joonty/vdebug.git'
+
+" Other
 Bundle 'ironcamel/vimchat'
 Bundle 'vim-scripts/TwitVim'
-Bundle 'joonty/vdebug.git'
