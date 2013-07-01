@@ -6,48 +6,90 @@ if !isdirectory(expand("~/.vim/bundle/vundle"))
 endif
 
 
-" Set the plugin groups to use
-"
-" Default
-"let g:spf13_bundle_groups=['general', 'neocomplcache', 'programming', 'php', 'ruby', 'python', 'javascript', 'html', 'misc', 'scala']
+let g:spf13_bundle_groups=[]
+let g:override_spf13_bundles = 1
 
-let g:spf13_bundle_groups_bundle_groups=['general', 'programming', 'javascript', 'html', 'misc']
-
-" SPF13 conflicts with the default digraph mapping of <C-K>
-let g:spf13_no_neosnippet_expand = 1
 
 " General
-Bundle 'UniCycle'
-Bundle 'bufexplorer.zip'
-Bundle 'mhinz/vim-startify'
-Bundle 'xolox/vim-misc'
-Bundle 'xolox/vim-session'
+Bundle 'matchit.zip'
+Bundle 'ShowTrailingWhitespace'
+Bundle 'DeleteTrailingWhitespace'
+Bundle 'spf13/vim-colors'
+Bundle 'spf13/vim-preview'
 Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-abolish.git'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'terryma/vim-smooth-scroll'
-Bundle 'bronson/vim-trailing-whitespace'
+
+" Config
 Bundle 'editorconfig/editorconfig-vim'
+Bundle 'MarcWeber/vim-addon-local-vimrc'
+
+" Movement
+Bundle 'terryma/vim-smooth-scroll'
+Bundle 'Lokaltog/vim-easymotion'
+
+" Editing
+Bundle 'UniCycle'
+Bundle 'ervandew/supertab'
+Bundle 'Raimondi/delimitMate'
+
+" IDE
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-session'
+Bundle 'mhinz/vim-startify'
+Bundle 'sjl/gundo.vim'
+Bundle 'maxbrunsfeld/vim-yankstack'
+Bundle 'bufexplorer.zip'
+Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
+
+" GUI
+Bundle 'myusuf3/numbers.vim'
 Bundle 'tomtom/quickfixsigns_vim'
+Bundle 'nathanaelkane/vim-indent-guides'
+
+" Colorschemes
+Bundle 'godlygeek/csapprox'
+Bundle 'flazz/vim-colorschemes'
 Bundle 'guns/xterm-color-table.vim'
+
+" Unite
+Bundle 'Shougo/unite.vim'
+Bundle 'tsukkee/unite-tag', {'autoload':{'unite_sources':['tag','tag/file']}}
+Bundle 'Shougo/unite-outline', {'autoload':{'unite_sources':'outline'}}
+
+" Powerline
+Bundle 'Lokaltog/powerline', {'rtp':'/powerline/bindings/vim'}
+Bundle 'zhaocai/linepower.vim'
 
 " Completion & Snippets
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'SirVer/ultisnips'
-Bundle 'honza/vim-snippets'
 Bundle 'stephenmckinney/ultisnips-snippets'
+Bundle 'stephenmckinney/vim-dochub'
+
+" Programing
+Bundle 'scrooloose/syntastic'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'godlygeek/tabular'
+if executable('ctags')
+    Bundle 'majutsushi/tagbar'
+endif
 
 " Git
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
-
-" Ruby
-Bundle 'vim-ruby/vim-ruby'
+Bundle 'mattn/gist-vim'
 
 " Javascript, Coffeescript & Node.js
 Bundle 'drslump/vim-syntax-js'
 Bundle 'teramako/jscomplete-vim'
 Bundle 'pangloss/vim-javascript'
+Bundle 'elzr/vim-json'
+Bundle 'briancollins/vim-jst'
+Bundle 'kchmck/vim-coffee-script'
 Bundle 'mintplant/vim-literate-coffeescript'
 Bundle 'myhere/vim-nodejs-complete'
 Bundle 'mmalecki/vim-node.js'
@@ -55,14 +97,40 @@ Bundle 'guileen/vim-node'
 Bundle 'carlosvillu/coffeScript-VIM-Snippets'
 Bundle 'othree/coffee-check.vim'
 
+" Java
+Bundle 'derekwyatt/vim-scala'
+Bundle 'derekwyatt/vim-sbt'
+
+" Ruby
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rails'
+
 " Python
+Bundle 'klen/python-mode'
+Bundle 'python.vim'
+Bundle 'python_match.vim'
+Bundle 'pythoncomplete'
 Bundle 'ehamberg/vim-cute-python'
+
+" PHP
+Bundle 'spf13/PIV'
+Bundle 'arnaud-lb/vim-php-namespace'
+
+" Web, HTML, CSS
+Bundle 'mattn/webapi-vim'
+Bundle 'amirh/HTML-AutoCloseTag'
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'groenewege/vim-less'
+
+" Misc
+Bundle 'tpope/vim-markdown'
 
 " Templating
 Bundle 'digitaltoad/vim-jade'
 
 " Testing
 Bundle 'tpope/vim-cucumber'
+Bundle 'quentindecock/vim-cucumber-align-pipes'
 
 " Debugging
 Bundle 'joonty/vdebug.git'
