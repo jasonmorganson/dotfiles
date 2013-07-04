@@ -77,6 +77,8 @@ endfunction
 
 command! -nargs=* Zen call ZenMode()
 
+nnoremap <S-U> :GundoToggle<CR>
+
 function! g:UltiSnips_Complete()
     call UltiSnips_ExpandSnippet()
     if g:ulti_expand_res == 0
