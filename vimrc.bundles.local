@@ -28,6 +28,7 @@ Bundle 'MarcWeber/vim-addon-local-vimrc'
 
 " Movement
 Bundle 'terryma/vim-smooth-scroll'
+Bundle 'yonchu/accelerated-smooth-scroll'
 Bundle 'Lokaltog/vim-easymotion'
 
 " Editing
