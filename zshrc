@@ -3,8 +3,8 @@ export LANG=en_US.utf8
 export TERM=xterm-256color
 
 export PAGER="/usr/bin/w3m"
-export EDITOR="/usr/bin/vi"
-export VISUAL="/usr/bin/vi"
+export EDITOR="/usr/bin/vim"
+export VISUAL="/usr/bin/vim"
 export IRC_CLIENT="/usr/bin/irssi"
 
 export VMAIL_BROWSER='w3m'
