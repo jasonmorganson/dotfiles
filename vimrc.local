@@ -38,6 +38,8 @@ let g:syntastic_style_warning_symbol='⸮'
 
 sign define QFS_VCS_CHANGE text=≠ texthl=DiffChange
 
+nnoremap ; :
+
 nmap <leader>c :VimChat <CR>
 nmap <leader>t :FriendsTwitter<CR>
 
