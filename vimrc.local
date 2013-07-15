@@ -1,3 +1,4 @@
+colorscheme jason
 
 set autowrite                  " automatically write a file when leaving a modified buffer
 set encoding=utf-8
@@ -16,9 +17,6 @@ let g:indent_guides_guide_size=0
 let g:indent_guides_auto_colors=0
 let g:indent_guides_color_change_percent=10
 let g:syntax_js=['function', 'this', 'return', 'comma', 'semicolon']
-
-colorscheme jason
-
 let g:javascript_conceal=1
 let g:syntastic_error_symbol='⚑'
 let g:syntastic_warning_symbol='⚠'
