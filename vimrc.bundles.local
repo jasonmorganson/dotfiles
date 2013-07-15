@@ -20,6 +20,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-abolish.git'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-unimpaired'
+Bundle 'terryma/vim-multiple-cursors'
 
 " Config
 Bundle 'editorconfig/editorconfig-vim'
@@ -82,6 +83,7 @@ endif
 " Git
 Bundle 'tpope/vim-git'
 Bundle 'tpope/vim-fugitive'
+Bundle 'gregsexton/gitv'
 Bundle 'mattn/gist-vim'
 
 " Javascript, Coffeescript & Node.js
