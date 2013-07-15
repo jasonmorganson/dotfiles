@@ -9,9 +9,6 @@ endif
 let g:spf13_bundle_groups=[]
 let g:override_spf13_bundles = 1
 
-" Colorscheme
-Bundle 'jasonmorganson/vim-colorscheme'
-
 " General
 Bundle 'matchit.zip'
 Bundle 'ShowTrailingWhitespace'
@@ -57,6 +54,7 @@ Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'godlygeek/csapprox'
 Bundle 'flazz/vim-colorschemes'
 Bundle 'guns/xterm-color-table.vim'
+Bundle 'jasonmorganson/vim-colorscheme'
 
 " Unite
 Bundle 'Shougo/unite.vim'
