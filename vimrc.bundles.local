@@ -168,6 +168,7 @@ Bundle 'mattn/webapi-vim'
 Bundle 'amirh/HTML-AutoCloseTag'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'groenewege/vim-less'
+Bundle 'tristen/vim-sparkup'
 " }
 
 " Misc {
