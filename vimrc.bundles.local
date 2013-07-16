@@ -147,6 +147,7 @@ Bundle 'derekwyatt/vim-sbt'
 " Ruby {
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-endwise'
 " }
 
 " Python {
@@ -171,6 +172,7 @@ Bundle 'groenewege/vim-less'
 
 " Misc {
 Bundle 'tpope/vim-markdown'
+Bundle 'vim-pandoc/vim-pandoc'
 " }
 
 " Templating {
