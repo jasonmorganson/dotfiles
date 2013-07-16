@@ -29,6 +29,7 @@ let g:override_spf13_bundles = 1
 Bundle 'matchit.zip'
 Bundle 'tomtom/tlib_vim'
 Bundle 'airblade/vim-rooter'
+Bundle 'vim-scripts/ZoomWin'
 Bundle 'ShowTrailingWhitespace'
 Bundle 'DeleteTrailingWhitespace'
 Bundle 'spf13/vim-colors'
