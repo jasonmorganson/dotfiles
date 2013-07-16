@@ -11,6 +11,7 @@ let g:override_spf13_bundles = 1
 
 " General
 Bundle 'matchit.zip'
+Bundle 'airblade/vim-rooter'
 Bundle 'ShowTrailingWhitespace'
 Bundle 'DeleteTrailingWhitespace'
 Bundle 'spf13/vim-colors'
@@ -24,6 +25,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'jasonmorganson/zenzero'
 
 " Config
+Bundle 'tpope/vim-sleuth'
 Bundle 'editorconfig/editorconfig-vim'
 Bundle 'MarcWeber/vim-addon-local-vimrc'
 
@@ -98,6 +100,7 @@ Bundle 'mintplant/vim-literate-coffeescript'
 Bundle 'myhere/vim-nodejs-complete'
 Bundle 'mmalecki/vim-node.js'
 Bundle 'guileen/vim-node'
+Bundle 'afshinm/npm.vim'
 Bundle 'carlosvillu/coffeScript-VIM-Snippets'
 Bundle 'othree/coffee-check.vim'
 
