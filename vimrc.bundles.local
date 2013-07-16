@@ -67,7 +67,9 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'xolox/vim-misc'
 Bundle 'xolox/vim-session'
 Bundle 'mhinz/vim-startify'
-Bundle 'sjl/gundo.vim'
+    Bundle 'sjl/gundo.vim'
+    " OR
+    "Bundle 'mbbill/undotree'
 Bundle 'maxbrunsfeld/vim-yankstack'
 Bundle 'bufexplorer.zip'
 Bundle 'scrooloose/nerdtree'
@@ -76,9 +78,11 @@ Bundle 'jistr/vim-nerdtree-tabs'
 
 " GUI {
 Bundle 'myusuf3/numbers.vim'
-Bundle 'tomtom/quickfixsigns_vim'
 Bundle 'nathanaelkane/vim-indent-guides'
-"Bundle 'kshenoy/vim-signature'
+    Bundle 'tomtom/quickfixsigns_vim'
+    " OR
+    "Bundle 'mhinz/vim-signify'
+    "Bundle 'kshenoy/vim-signature'
 " }
 
 " Colorschemes {
