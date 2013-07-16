@@ -109,6 +109,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'godlygeek/tabular'
 if executable('ctags')
+    Bundle 'xolox/vim-easytags'
     Bundle 'majutsushi/tagbar'
 endif
 " }
@@ -121,6 +122,7 @@ Bundle 'mattn/gist-vim'
 " }
 
 " Javascript, Coffeescript & Node.js {
+Bundle 'marijnh/tern_for_vim'
 Bundle 'drslump/vim-syntax-js'
 Bundle 'teramako/jscomplete-vim'
 Bundle 'pangloss/vim-javascript'
