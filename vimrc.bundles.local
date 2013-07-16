@@ -53,6 +53,7 @@ Bundle 'MarcWeber/vim-addon-local-vimrc'
 " Movement {
 Bundle 'terryma/vim-smooth-scroll'
 Bundle 'yonchu/accelerated-smooth-scroll'
+Bundle 'joeytwiddle/sexy_scroller.vim'
 Bundle 'Lokaltog/vim-easymotion'
 " }
 
@@ -77,6 +78,7 @@ Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'myusuf3/numbers.vim'
 Bundle 'tomtom/quickfixsigns_vim'
 Bundle 'nathanaelkane/vim-indent-guides'
+"Bundle 'kshenoy/vim-signature'
 " }
 
 " Colorschemes {
@@ -165,6 +167,7 @@ Bundle 'arnaud-lb/vim-php-namespace'
 
 " Web, HTML, CSS {
 Bundle 'mattn/webapi-vim'
+Bundle 'othree/html5-syntax.vim'
 Bundle 'amirh/HTML-AutoCloseTag'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'groenewege/vim-less'
