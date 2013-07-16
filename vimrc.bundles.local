@@ -1,10 +1,24 @@
-" Auto install vundle
+" Modeline {
+" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:
+" }
+
+" Setup Bundle Support {
+
+" Auto install vundle {
 if !isdirectory(expand("~/.vim/bundle/vundle"))
     !mkdir -p ~/.vim/bundle
     !git clone git://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     let s:bootstrap=1
 endif
+" }
 
+" Ensure bundle system works {
+" The next three lines ensure that the ~/.vim/bundle/ system works
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#rc()
+" }
+" }
 
 let g:spf13_bundle_groups=[]
 let g:override_spf13_bundles = 1
