@@ -21,6 +21,7 @@ Bundle 'tpope/vim-abolish.git'
 Bundle 'tpope/vim-speeddating'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'jasonmorganson/zenzero'
 
 " Config
 Bundle 'editorconfig/editorconfig-vim'
