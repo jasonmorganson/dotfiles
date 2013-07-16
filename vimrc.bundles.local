@@ -141,3 +141,6 @@ Bundle 'joonty/vdebug.git'
 " Other
 Bundle 'ironcamel/vimchat'
 Bundle 'vim-scripts/TwitVim'
+
+" Configuration
+Bundle 'jasonmorganson/vim-pluginrc'
