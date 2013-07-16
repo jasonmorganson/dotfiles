@@ -1,3 +1,5 @@
+set lines=40                " 40 lines of text instead of 24
+
 set guifont=Source\ Code\ Pro\ Regular\ 10
 
 " Hide the menu
@@ -13,3 +15,5 @@ set guioptions-=b
 
 " Use simple dialogs rather than pop-ups
 set guioptions=c
+
+"set transparency=5      " Make the window slightly transparent
