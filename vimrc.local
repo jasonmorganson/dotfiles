@@ -26,12 +26,31 @@ filetype plugin on
 scriptencoding utf-8
 set encoding=utf-8
 " }
+" VIM Folders {
+
+" Persistent undo
+"set undofile
+"set undodir=~/.vim/.cache/undo
+
+"" Backups
+"set backup
+"set backupdir=~/.vim/.cache/backup
+
+"" Swap files
+"set swapfile
+"set directory=~/.vim/.cache/swap
+
+"call EnsureExists('~/.vim/.cache')
+"call EnsureExists(&undodir)
+"call EnsureExists(&backupdir)
+"call EnsureExists(&directory)
+
+" }
 
 syntax on                   " Syntax highlighting
 syntax enable
 
 colorscheme jason
-
 
 " Settings {
 
