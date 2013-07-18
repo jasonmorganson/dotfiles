@@ -223,7 +223,12 @@ set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
 "let mapleader=","
 "let g:mapleader = ","
 
+" Fix command typos (stolen from Adam Katz)
 nnoremap ; :
+
+" ` is more useful than ' but less accessible.
+nnoremap ' `
+nnoremap ` '
 
 " Fast saving
 nmap <leader>w :w!<cr>
@@ -231,7 +236,12 @@ nmap <leader>w :w!<cr>
 nmap <leader>c :VimChat <CR>
 nmap <leader>t :FriendsTwitter<CR>
 
+nnoremap <F3> :NumbersToggle<CR>
+nnoremap <F4> :NumbersOnOff<CR>
+
 nnoremap <silent> <leader>tt :TagbarToggle<CR>
+
+nmap <silent> <leader>s :set nolist!<CR>
 
 " Add mapping for moving between windows with ALT-<arrow keys> "
 nmap <silent> <A-Up>    :wincmd k<CR>
@@ -252,6 +262,7 @@ endfor
 nnoremap <silent> gb :exe('!w3m "'.expand('<cfile>').'"')<CR>
 
 nnoremap <S-U> :GundoToggle<CR>
+"nnoremap <S-U> :UndotreeToggle<cr>
 
 inoremap <C-U> <C-G>u<C-U>
 nnoremap & :&&<CR>
