@@ -11,10 +11,14 @@
 " VIM Mode {
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
-"set nocompatible
+"set nocompatible  " be iMproved
 " }
 " Filetype {
+" File-type highlighting and configuration.
+" Run :filetype (without args) to see what you may have
+" to turn on yourself, or just set them all to be sure.
 " Turn on filetype detection, plugins, and indent
+filetype on
 filetype indent on
 filetype plugin on
 " }
