@@ -9,6 +9,9 @@
 # Disable default fresh binary check
 FRESH_NO_BIN_CHECK=true
 
+# Disable local files check
+FRESH_NO_LOCAL_CHECK=true
+
 # Fresh binary
 fresh freshshell/fresh bin/fresh --bin=~/.fresh/.bin/fresh
 
