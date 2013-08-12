@@ -16,7 +16,7 @@ fresh freshshell/fresh bin/fresh --bin=~/.fresh/.bin/fresh
 fresh zsh-users/antigen antigen.zsh --file=~/.antigen/antigen.zsh
 
 # Personal dotfiles
-fresh jasonmorganson/dotfiles '*' --file
+fresh jasonmorganson/dotfiles config/\* --file
 
 # VIM Configuration
 fresh jasonmorganson/vimrc .vimrc --file=~/.vimrc
