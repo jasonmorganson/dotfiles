@@ -5,20 +5,32 @@ Documentation on the specifics of my $HOME "dot files" setup
 
 I grew tired of starting from scratch every time when setting up.
 
-*Getting started*
+## Setup ##
 
-1. Create `dotfiles` alias for git
+1. Clone this git repo
 
-        alias dotfiles='git --git-dir=$HOME/.dotfiles.git/ --work-tree=$HOME'
+> `git clone git@github.com:jasonmorganson/dotfiles.git`
 
-    See http://silas.sewell.org/blog/2009/03/08/profile-management-with-git-and-github/
+2. Copy dotfiles
 
-2. Have `.bash_profile` source `.bashrc`
+> `cp dotfiles/.* .`
 
-        if [ -f ~/.bashrc ]; then
-           source ~/.bashrc
-        fi
+## Usage ##
 
-    See http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html
+The alias is `dotfiles`. Use this just like `git`.
 
+> `dotfiles status`
+> `dotfiles diff`
+> `dotfiles add -p`
+> `dotfiles commit -m`
+> `dotfiles push`
+
+## How it works ##
+
+Adds `dotfiles` alias for the dotfiles repo, but uses the home directory as the
+working tree in git so that the files can be managed in place.
+
+> `alias dotfiles='git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME'`
+
+See http://silas.sewell.org/blog/2009/03/08/profile-management-with-git-and-github/
 
