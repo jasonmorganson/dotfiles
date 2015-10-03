@@ -1,0 +1,8 @@
+# Ignore all files
+*
+
+# Do not ignore dot files
+!.*
+
+# Ignore certain dot files
+
