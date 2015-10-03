@@ -1,108 +1,28 @@
-export LANG=en_US.UTF-8
-
-export TERM=xterm-256color
-
-export PAGER="/usr/bin/w3m"
-export EDITOR=vim
-export VISUAL=vim
-export IRC_CLIENT="/usr/bin/irssi"
-
-export VMAIL_BROWSER='w3m'
-export VMAIL_HTML_PART_READER='w3m -dump'
-
-alias vi='vim'
-alias vim='mvim -v'
-alias fresh='~/.fresh/source/freshshell/fresh/bin/fresh'
-alias dotfiles='git --git-dir=$HOME/.fresh/source/jasonmorganson/dotfiles/.git/ --work-tree=$HOME/.fresh/build'
-alias vundle-update='vim +BundleInstall! +BundleClean +qall'
-alias update='fresh update; antigen update; vundle-update'
-alias dropbox='python ~/.dropbox-dist/dropbox.py'
-
-# PATH search order
-# Current directory:
-#   ./bin
-#   ./.bin
-# User directory:
-#   ~/bin
-#   ~/.bin
-# NVM directory:
-#   ~/.nvm
-# Ruby GEMs in user directory:
-#   ~/.gem/ruby/current/bin
-# /usr/local/bin
-# /usr/local/sbin
-# /opt/bin
-# /usr/bin
-# /bin
-# $GCC_PATH
-CURRENT_DIR_PATH=./bin:./.bin
-USER_DIR_PATH=~/bin:~/.bin:~/.local/bin
-USER_NVM_PATH=~/.nvm/current/bin
-USER_GEM_PATH=~/.gem/ruby/current/bin
-USR_LOCAL_PATH=/usr/local/bin:/usr/local/sbin
-OPT_PATH=/opt/bin
-BIN_PATH=/usr/bin:/bin
-GCC_PATH=/usr/x86_64-pc-linux-gnu/gcc-bin/4.5.4
-export PATH="$CURRENT_DIR_PATH":"$USER_DIR_PATH":"$USER_NVM_PATH":"$USER_GEM_PATH":"$USR_LOCAL_PATH":"$OPT_PATH":"$BIN_PATH":"$GCC_PATH"
-
-# VI-mode
-bindkey -v
-
-# The time the shell waits, in hundredths of seconds, for another key
-# to be pressed when reading bound multi-character sequences.
-#
-# Set to shortest possible delay is 1/100 second.
-# This allows escape sequences like cursor/arrow keys to work,
-# while eliminating the delay exiting vi insert mode.
-KEYTIMEOUT=1  # 10ms for key sequences
-
-source ~/.antigen/antigen.zsh
-
-source ~/.fresh/build/shell.sh
-
-# Load the oh-my-zsh's library.
-antigen-use oh-my-zsh
-
-antigen-bundles <<EOBUNDLES
-
-#
-# # Bundles from the default repo (robbyrussell's oh-my-zsh).
-command-not-found
-coffee
-extract
-git
-github
-git-extras
-git-flow
-git-remote-branch
-heroku
-node
-npm
-urltools
-ssh-agent
-taskwarrior
-vi-mode
-
-#
-# # Syntax highlighting bundle.
-zsh-users/zsh-syntax-highlighting
-zsh-users/zsh-completions
-zsh-users/zaw
-
-EOBUNDLES
-
-if [[ "$POWERLINE" = "yes" ]]; then
-    . ~/.local/powerline/powerline/bindings/zsh/powerline.zsh
-else
-# # Load the theme.
-antigen-theme arrow
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-#
-# # Tell antigen that you're done.
-antigen-apply
+# Aliases
+alias vi='nvim'
+alias vim='nvim'
+alias dotfiles='git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME'
 
-source ~/.antigen/repos/https-COLON--SLASH--SLASH-github.com-SLASH-zsh-users-SLASH-zaw.git/zaw.zsh
+# Command aliases
+eval "$(thefuck --alias)"
+eval "$(hub alias -s)"
 
-[[ -s /home/jason/.nvm/nvm.sh ]] && . /home/jason/.nvm/nvm.sh  # This loads NVM
-source ~/.nvm/nvm.sh
+# VI PROMPT
+PROMPT='%(?.%F{magenta}.%F{red})${${KEYMAP/vicmd/❮%f}/(main|viins)/❯%f} '
+function zle-line-init zle-keymap-select {
+    zle reset-prompt
+}
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+# iTerm integration
+source /Users/jasonmorganson/.iterm2_shell_integration.zsh
+
+# Load nvm
+export NVM_DIR="/Users/jasonmorganson/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

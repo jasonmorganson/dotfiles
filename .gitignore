@@ -5,4 +5,5 @@
 !.*
 
 # Ignore certain dot files
-
+.zhistory
+.zprezto
