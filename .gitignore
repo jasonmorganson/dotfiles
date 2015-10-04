@@ -5,5 +5,10 @@
 !.*
 
 # Ignore certain dot files
+.nviminfo
+.nvimlog
+.nvim
+.vim
+.viminfo
 .zhistory
 .zprezto
