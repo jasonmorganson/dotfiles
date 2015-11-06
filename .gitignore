@@ -5,6 +5,7 @@
 !.*
 
 # Ignore certain dot files
+.dotfiles
 .nviminfo
 .nvimlog
 .nvim
