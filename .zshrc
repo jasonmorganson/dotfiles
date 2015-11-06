@@ -6,7 +6,7 @@ fi
 # Aliases
 #alias vi='nvim'
 #alias vim='nvim'
-alias dotfiles='git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME'
+alias dotfiles='git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME'
 
 # VI PROMPT
 PROMPT='%(?.%F{magenta}.%F{red})${${KEYMAP/vicmd/❮%f}/(main|viins)/❯%f} '
