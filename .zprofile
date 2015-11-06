@@ -40,7 +40,6 @@ path=(
   ~/.gem/ruby/current/bin
   /usr/local/bin
   /usr/local/sbin
-  /usr/local/{bin,sbin}
   /opt/bin
   /usr/bin
   /sbin
