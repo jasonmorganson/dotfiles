@@ -8,10 +8,6 @@ fi
 #alias vim='nvim'
 alias dotfiles='git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME'
 
-# Command aliases
-eval "$(thefuck --alias)"
-eval "$(hub alias -s)"
-
 # VI PROMPT
 PROMPT='%(?.%F{magenta}.%F{red})${${KEYMAP/vicmd/❮%f}/(main|viins)/❯%f} '
 function zle-line-init zle-keymap-select {
