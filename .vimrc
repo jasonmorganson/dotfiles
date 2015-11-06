@@ -102,7 +102,7 @@ set whichwrap=b,s,h,l,<,>,[,]
 set linebreak
 
 " String to put before wrapped screen lines
-set showbreak=↪\ \
+"set showbreak=↪\ \
 
 " }
 " Tabs {
