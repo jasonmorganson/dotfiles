@@ -16,9 +16,6 @@ function zle-line-init zle-keymap-select {
 zle -N zle-line-init
 zle -N zle-keymap-select
 
-# iTerm integration
-source /Users/jasonmorganson/.iterm2_shell_integration.zsh
-
 # Load nvm
 export NVM_DIR="/Users/jasonmorganson/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
