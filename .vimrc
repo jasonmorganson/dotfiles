@@ -531,7 +531,7 @@ nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-tnoremap <Esc> <C-\><C-n>
+"tnoremap <Esc> <C-\><C-n>
 
 "command TODO noautocmd vimgrep /TODO/j **/*.js<CR>:cw<CR>
 "command FIXME noautocmd vimgrep /TODO/j **/*.js<CR>:cw<CR>
