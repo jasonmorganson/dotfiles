@@ -4,8 +4,8 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Aliases
-alias vi='nvim'
-alias vim='nvim'
+#alias vi='nvim'
+#alias vim='nvim'
 alias dotfiles='git --git-dir=$HOME/dotfiles/.git --work-tree=$HOME'
 
 # Command aliases
