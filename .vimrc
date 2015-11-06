@@ -520,8 +520,6 @@ let g:syntastic_style_warning_symbol='∆'
 
 let g:airline_powerline_fonts = 1
 
-source ~/.simplenoterc
-
 "tnoremap <Esc> <C-\><C-n>
 
 "tnoremap <A-h> <C-\><C-n><C-w>h
