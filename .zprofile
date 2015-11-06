@@ -45,7 +45,6 @@ path=(
   /usr/bin
   /sbin
   /bin
-  /usr/x86_64-pc-linux-gnu/gcc-bin/4.5.4
   $path
 )
 
