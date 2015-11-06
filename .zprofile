@@ -38,8 +38,6 @@ path=(
   ~/.local/bin
   ~/.nvm/current/bin
   ~/.gem/ruby/current/bin
-  $(brew --prefix homebrew/php/php56)/bin
-  $(brew --prefix coreutils)/libexec/gnubin
   /usr/local/bin
   /usr/local/sbin
   /usr/local/{bin,sbin}
