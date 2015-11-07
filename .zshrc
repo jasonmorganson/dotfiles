@@ -17,11 +17,11 @@ else
 fi
 
 # nvm
-if [[ -s "${ZDOTDIR:-$HOME}/.nvm/nvm.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.nvm/nvm.zsh"
+if [[ -s "${ZDOTDIR:-$HOME}/.nvm/nvm.sh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.nvm/nvm.sh"
 else
   git clone https://github.com/creationix/nvm.git "${ZDOTDIR:-$HOME}/.nvm"
-  source "${ZDOTDIR:-$HOME}/.nvm/nvm.zsh"
+  source "${ZDOTDIR:-$HOME}/.nvm/nvm.sh"
 fi
 
 # Aliases
