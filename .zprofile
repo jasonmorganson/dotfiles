@@ -38,6 +38,7 @@ path=(
   ~/.local/bin
   ~/.nvm/current/bin
   ~/.gem/ruby/current/bin
+  ~/.linuxbrew/bin
   /usr/local/bin
   /usr/local/sbin
   /opt/bin
