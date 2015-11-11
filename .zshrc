@@ -29,11 +29,3 @@ fi
 # Aliases
 source "${ZDOTDIR:-$HOME}/.zaliases"
 
-# VI PROMPT
-PROMPT='%(?.%F{magenta}.%F{red})${${KEYMAP/vicmd/❮%f}/(main|viins)/❯%f} '
-function zle-line-init zle-keymap-select {
-    zle reset-prompt
-}
-zle -N zle-line-init
-zle -N zle-keymap-select
-
