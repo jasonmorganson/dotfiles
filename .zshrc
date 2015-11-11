@@ -27,9 +27,7 @@ else
 fi
 
 # Aliases
-#alias vi='nvim'
-#alias vim='nvim'
-alias dotfiles='git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME'
+source "${ZDOTDIR:-$HOME}/.zaliases"
 
 # VI PROMPT
 PROMPT='%(?.%F{magenta}.%F{red})${${KEYMAP/vicmd/❮%f}/(main|viins)/❯%f} '
