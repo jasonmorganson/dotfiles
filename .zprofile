@@ -1,5 +1,7 @@
 export TERM='screen-256color'
 
+export NVM_DIR='~/.nvm'
+
 #
 # Editors
 #
