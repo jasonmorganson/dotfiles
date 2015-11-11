@@ -16,14 +16,6 @@ else
   source "${ZDOTDIR:-$HOME}/.antibody/antibody.zsh"
 fi
 
-# nvm
-if [[ -s "${ZDOTDIR:-$HOME}/.nvm/nvm.sh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.nvm/nvm.sh"
-else
-  git clone https://github.com/creationix/nvm.git "${ZDOTDIR:-$HOME}/.nvm"
-  source "${ZDOTDIR:-$HOME}/.nvm/nvm.sh"
-fi
-
 # Aliases
 source "${ZDOTDIR:-$HOME}/.zaliases"
 
