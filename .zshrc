@@ -16,6 +16,3 @@ else
   source "${ZDOTDIR:-$HOME}/.antibody/antibody.zsh"
 fi
 
-# Aliases
-source "${ZDOTDIR:-$HOME}/.zaliases"
-
