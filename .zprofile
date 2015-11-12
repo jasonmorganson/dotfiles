@@ -4,9 +4,9 @@ export NVM_DIR='~/.nvm'
 # Editors
 #
 
-export EDITOR="/usr/local/bin/nvim"
-export VISUAL="/usr/local/bin/nvim"
-export MANPAGER="/bin/sh -c \"col -b | nvim -c 'set ft=man ts=8 nomod nolist nonu noma nonumber norelativenumber laststatus=0 colorcolumn=0' -\""
+export EDITOR="vi"
+export VISUAL="vi"
+export MANPAGER="/bin/sh -c \"col -b | vi -c 'set ft=man ts=8 nomod nolist nonu noma nonumber norelativenumber laststatus=0 colorcolumn=0' -\""
 
 export NVIM_TUI_ENABLE_TRUE_COLOR=true
 
