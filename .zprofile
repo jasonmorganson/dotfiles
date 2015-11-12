@@ -1,5 +1,3 @@
-setopt clobber
-
 #
 # Paths
 #
