@@ -1,10 +1,3 @@
-#
-# Defines environment variables.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
 # Aliases
 source "${ZDOTDIR:-$HOME}/.zaliases"
 
