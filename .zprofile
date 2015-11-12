@@ -1,23 +1,3 @@
-export NVM_DIR='~/.nvm'
-
-#
-# Editors
-#
-
-export EDITOR="vi"
-export VISUAL="vi"
-export MANPAGER="/bin/sh -c \"col -b | vi -c 'set ft=man ts=8 nomod nolist nonu noma nonumber norelativenumber laststatus=0 colorcolumn=0' -\""
-
-export NVIM_TUI_ENABLE_TRUE_COLOR=true
-
-#
-# Language
-#
-
-if [[ -z "$LANG" ]]; then
-  export LANG='en_US.UTF-8'
-fi
-
 setopt clobber
 
 #
