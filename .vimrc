@@ -484,6 +484,22 @@ cmap w!! w !sudo tee % >/dev/null
 
 " VIM Folders {
 
+" Ensure directory exists
+function! EnsureDirExists (dir)
+  if !isdirectory(a:dir)
+    if exists('*mkdir')
+      silent call mkdir(a:dir, 'p')
+    endif
+  endif
+endfunction
+
+" Make folders if they dont exist
+call EnsureDirExists($HOME.'/.vim/tags')
+call EnsureDirExists($HOME.'/.vim/undo')
+call EnsureDirExists($HOME.'/.vim/view')
+call EnsureDirExists($HOME.'/.vim/swap')
+call EnsureDirExists($HOME.'/.vim/backup')
+
 " VIM info file
 set viminfo+=n~/.vim/viminfo
 
