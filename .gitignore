@@ -5,11 +5,20 @@
 !.*
 
 # Ignore certain dot files
+.bash_history
 .dotfiles
+.fasd
+.node_repl_history
+.ssh
+.nvm
 .nviminfo
 .nvimlog
 .nvim
 .vim
 .viminfo
+.vim_local_rc_cache
 .zhistory
 .zprezto
+.zcompdump*
+.sudo_as_admin_successful
+.linuxbrew
