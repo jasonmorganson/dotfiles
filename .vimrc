@@ -511,9 +511,6 @@ call EnsureDirExists($HOME.'/.vim/view')
 call EnsureDirExists($HOME.'/.vim/swap')
 call EnsureDirExists($HOME.'/.vim/backup')
 
-" VIM info file
-set viminfo+=n~/.vim/viminfo
-
 " Tags
 set tags=./tags,tags,~/.vim/tags
 
