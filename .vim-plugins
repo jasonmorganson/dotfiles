@@ -104,8 +104,6 @@ Plug 'Shougo/unite-outline', {'autoload':{'unite_sources':'outline'}}
 
 " Powerline {
 Plug 'bling/vim-airline'
-"Plug 'Lokaltog/powerline', {'rtp':'/powerline/bindings/vim'}
-"Plug 'zhaocai/linepower.vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'edkolev/promptline.vim'
 " }
