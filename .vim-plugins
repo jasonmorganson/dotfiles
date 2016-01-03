@@ -190,6 +190,7 @@ Plug 'mustache/vim-mustache-handlebars'
 " Testing {
 "Plug 'tpope/vim-cucumber'
 "Plug 'quentindecock/vim-cucumber-align-pipes'
+Plug 'janko-m/vim-test'
 " }
 
 " Debugging {
