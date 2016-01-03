@@ -33,18 +33,13 @@ Plug 'Lokaltog/vim-easymotion'
 " }
 
 " IDE {
-"Plug 'xolox/vim-misc'
-"Plug 'xolox/vim-reload'
-Plug 'EinfachToll/DidYouMean'
-"Plug 'dietsche/vim-lastplace'
-"Plug 'xolox/vim-session'
 Plug 'mhinz/vim-startify'
     Plug 'sjl/gundo.vim'
     " OR
     "Plug 'mbbill/undotree'
 "Plug 'maxbrunsfeld/vim-yankstack'
 "Plug 'bufexplorer.zip'
-    Plug 'tpope/vim-vinegar'
+    "Plug 'tpope/vim-vinegar'
     " OR
     "Plug 'scrooloose/nerdtree'
 "Plug 'jistr/vim-nerdtree-tabs'
@@ -85,8 +80,8 @@ Plug 'jasonmorganson/vim-colorscheme'
 Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/unite.vim'
 Plug 'sgur/unite-qf'
-Plug 'tsukkee/unite-tag', {'autoload':{'unite_sources':['tag','tag/file']}}
-Plug 'Shougo/unite-outline', {'autoload':{'unite_sources':'outline'}}
+"Plug 'tsukkee/unite-tag', {'autoload':{'unite_sources':['tag','tag/file']}}
+"Plug 'Shougo/unite-outline', {'autoload':{'unite_sources':'outline'}}
 " }
 
 " Powerline {
@@ -106,9 +101,9 @@ Plug 'matthewsimo/angular-vim-snippets'
 
 " Programing {
 Plug 'scrooloose/syntastic'
-Plug 'scrooloose/nerdcommenter'
+"Plug 'scrooloose/nerdcommenter'
 Plug 'tomtom/tcomment_vim'
-Plug 'godlygeek/tabular'
+"Plug 'godlygeek/tabular'
 "if executable('ctags')
     "Plug 'xolox/vim-easytags'
     "Plug 'majutsushi/tagbar'
