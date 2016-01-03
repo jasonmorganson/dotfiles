@@ -86,7 +86,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 " Colorschemes {
 Plug 'godlygeek/csapprox'
 "Plug 'lilydjwg/colorizer'
-Plug 'flazz/vim-colorschemes'
+"Plug 'flazz/vim-colorschemes'
 Plug 'jasonmorganson/vim-colorscheme'
 "Plug 'SyntaxAttr.vim'
 "Plug 'guns/xterm-color-table.vim'
