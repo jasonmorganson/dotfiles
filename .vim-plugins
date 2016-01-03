@@ -35,11 +35,6 @@ Plug 'MarcWeber/vim-addon-local-vimrc'
 " }
 
 " Movement {
-    "Plug 'joeytwiddle/sexy_scroller.vim'
-    " OR
-    "Plug 'terryma/vim-smooth-scroll'
-    "Plug 'yonchu/accelerated-smooth-scroll'
-"Plug 'goldfeld/vim-seek'
 Plug 'Lokaltog/vim-easymotion'
 " }
 
