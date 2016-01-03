@@ -28,7 +28,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 "Plug 'jasonmorganson/zenzero'
 " }
 
-" Config {
+" Editor Configuration {
 Plug 'tpope/vim-sleuth'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'MarcWeber/vim-addon-local-vimrc'
@@ -240,7 +240,7 @@ Plug 'mrtazz/simplenote.vim'
 "Plug 'vim-scripts/TwitVim'
 " }
 
-" Configuration {
+" Plugin Configuration {
 Plug 'jasonmorganson/vim-pluginrc'
 " }
 
