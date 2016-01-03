@@ -25,8 +25,11 @@ Plug 'Lokaltog/vim-easymotion'
 " Editing {
 "Plug 'UniCycle'
 "Plug 'ervandew/supertab'
-"Plug 'jiangmiao/auto-pairs'
-Plug 'Raimondi/delimitMate'
+    Plug 'cohama/lexima.vim'
+    " OR
+    "Plug 'jiangmiao/auto-pairs'
+    " OR
+    "Plug 'Raimondi/delimitMate'
 " }
 
 " IDE {
