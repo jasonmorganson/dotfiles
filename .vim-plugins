@@ -182,16 +182,14 @@ Plug 'groenewege/vim-less'
 Plug 'tristen/vim-sparkup'
 " }
 
-" Misc {
+" Filetypes {
 Plug 'tpope/vim-markdown'
-Plug 'mustache/vim-mustache-handlebars'
-"Plug 'vim-pandoc/vim-pandoc'
 Plug 'saltstack/salt-vim'
 Plug 'ekalinin/Dockerfile.vim'
 " }
 
 " Templating {
-"Plug 'digitaltoad/vim-jade'
+Plug 'mustache/vim-mustache-handlebars'
 " }
 
 " Testing {
