@@ -3,29 +3,13 @@
 " }
 
 " General {
-"Plug 'matchit.zip'
-"Plug 'tomtom/tlib_vim'
-Plug 'airblade/vim-rooter'
-"Plug 'vim-scripts/ZoomWin'
-"Plug 'vim-scripts/IndexedSearch'
-Plug 'mutewinter/UnconditionalPaste'
-"Plug 'ShowTrailingWhitespace'
-"Plug 'DeleteTrailingWhitespace'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'spf13/vim-colors'
-Plug 'spf13/vim-preview'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-unimpaired'
-"Plug 'qstrahl/vim-matchmaker'
-Plug 'MarcWeber/vim-addon-mw-utils'
-"Plug 'terryma/vim-multiple-cursors'
-"Plug 'terryma/vim-expand-region'
-"Plug 'jceb/vim-shootingstar'
-"Plug 'nelstrom/vim-visual-star-search'
-"Plug 'jasonmorganson/zenzero'
+Plug 'vim-scripts/UnconditionalPaste'
+Plug 'ntpeters/vim-better-whitespace'
 " }
 
 " Editor Configuration {
