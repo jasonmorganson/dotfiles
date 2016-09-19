@@ -541,8 +541,9 @@ let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_error_symbol='≈'
 let g:syntastic_style_warning_symbol='∆'
 
-let g:airline_powerline_fonts = 1
+let g:gitgutter_sign_modified = '≠'
 
+let g:airline_powerline_fonts = 1
 
 nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
