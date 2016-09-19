@@ -4,6 +4,7 @@ alias d='fasd -d'        # directory
 alias f='fasd -f'        # file
 
 alias vi=nvim
+alias git=hub
 
 alias dotfiles='git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME'
 
