@@ -536,7 +536,6 @@ set directory=~/.vim/swap,.
 
 " }
 
-let g:syntastic_javascript_jshint_exec='/Users/jasonmorganson/.nvm/v0.10.21/bin/jshint'
 let g:syntastic_error_symbol='⚑'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_error_symbol='≈'
