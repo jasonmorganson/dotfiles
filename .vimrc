@@ -570,3 +570,5 @@ if has("autocmd") && exists("+omnifunc")
         \       setlocal omnifunc=syntaxcomplete#Complete |
         \   endif
 endif
+
+set noshowcmd
