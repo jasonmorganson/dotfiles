@@ -33,6 +33,9 @@ Plug 'ervandew/supertab'
 " }
 
 " IDE {
+Plug 'rbgrouleff/bclose.vim'
+Plug 'francoiscabrol/ranger.vim'
+Plug 'Shougo/vimfiler.vim'
 Plug 'mhinz/vim-startify'
     Plug 'sjl/gundo.vim'
     " OR
@@ -61,11 +64,12 @@ Plug 'nathanaelkane/vim-indent-guides'
 
     "Plug 'tomtom/quickfixsigns_vim'
     " OR
-    Plug 'mhinz/vim-signify'
-    Plug 'kshenoy/vim-signature'
+    "Plug 'mhinz/vim-signify'
+    "Plug 'kshenoy/vim-signature'
 " }
 
 " Colorschemes {
+Plug 'gerw/vim-HiLinkTrace'
 Plug 'godlygeek/csapprox'
 "Plug 'lilydjwg/colorizer'
 "Plug 'flazz/vim-colorschemes'
@@ -81,6 +85,7 @@ Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/unite.vim'
 Plug 'sgur/unite-qf'
 "Plug 'tsukkee/unite-tag', {'autoload':{'unite_sources':['tag','tag/file']}}
+Plug 'tacroe/unite-mark', {'autoload':{'unite_sources':'mark'}}
 "Plug 'Shougo/unite-outline', {'autoload':{'unite_sources':'outline'}}
 " }
 
@@ -100,7 +105,9 @@ Plug 'honza/vim-snippets'
 " }
 
 " Programing {
-Plug 'scrooloose/syntastic'
+    Plug 'scrooloose/syntastic'
+    " OR
+    "Plug 'benekastah/neomake'
 "Plug 'scrooloose/nerdcommenter'
 Plug 'tomtom/tcomment_vim'
 "Plug 'godlygeek/tabular'
@@ -113,6 +120,7 @@ Plug 'tomtom/tcomment_vim'
 " }
 
 " Git {
+Plug 'airblade/vim-gitgutter'
 "Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 Plug 'gregsexton/gitv'
@@ -124,14 +132,16 @@ Plug 'moll/vim-node'
 Plug 'afshinm/npm.vim'
 "Plug 'marijnh/tern_for_vim'
 
-    "Plug 'pangloss/vim-javascript'
+    Plug 'pangloss/vim-javascript'
     " OR
-    Plug 'othree/yajs.vim'
+    "Plug 'othree/yajs.vim'
+    " OR
+    "Plug 'isRuslan/vim-es6'
 
-Plug 'othree/javascript-libraries-syntax.vim'
+"Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'elzr/vim-json'
 Plug 'Quramy/vison'
-Plug 'kchmck/vim-coffee-script'
+"Plug 'kchmck/vim-coffee-script'
 "Plug 'mintplant/vim-literate-coffeescript'
 "Plug 'carlosvillu/coffeScript-VIM-Snippets'
 "Plug 'othree/coffee-check.vim'
@@ -139,14 +149,20 @@ Plug 'kchmck/vim-coffee-script'
 " }
 
 " C, C++, Objective-C {
-"Plug 'msanders/cocoa.vim'
+" }
+
+" Swift, Cocoa {
+Plug 'msanders/cocoa.vim'
+Plug 'keith/swift.vim'
 " }
 
 " Python {
-Plug 'klen/python-mode'
+"Plug 'klen/python-mode'
 Plug 'python.vim'
 Plug 'python_match.vim'
-Plug 'pythoncomplete'
+"Plug 'bfredl/nvim-ipy'
+"Plug 'ivanov/vim-ipython'
+"Plug 'pythoncomplete'
 "Plug 'ehamberg/vim-cute-python'
 " }
 
@@ -165,14 +181,17 @@ Plug 'groenewege/vim-less'
 " Filetypes {
 Plug 'tpope/vim-markdown'
 Plug 'ekalinin/Dockerfile.vim'
+Plug 'jparise/vim-graphql'
 " }
 
 " Templating {
+Plug 'digitaltoad/vim-pug'
 Plug 'mustache/vim-mustache-handlebars'
 " }
 
 " Testing {
 Plug 'janko-m/vim-test'
+Plug 'ahmedelgabri/vim-ava-snippets'
 " }
 
 " Debugging {
@@ -184,16 +203,9 @@ Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 " }
 
-" Other {
-Plug 'aquach/vim-http-client'
-"Plug 'rizzatti/funcoo.vim'
-Plug 'rizzatti/dash.vim'
-Plug 'mrtazz/simplenote.vim'
-"Plug 'im-scripts/TaskList.vim'
-"Plug 'freitass/todo.txt-vim'
-"Plug 'wakatime/vim-wakatime'
-"Plug 'ironcamel/vimchat'
-"Plug 'vim-scripts/TwitVim'
+" Terminal {
+"Plug 'kassio/neoterm'
+"Plug 'brettanomyces/nvim-editcommand'
 " }
 
 " Plugin Configuration {
