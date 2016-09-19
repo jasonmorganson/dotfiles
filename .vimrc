@@ -285,7 +285,7 @@ set shortmess+=filmnrxoOtTA
 
 " current directory is always matching the
 " content of the active window
-set autochdir
+" set autochdir
 
 set vb " Disable audio and visual bells
 "
