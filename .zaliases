@@ -8,3 +8,4 @@ alias git=hub
 
 alias dotfiles='git --git-dir=$HOME/.dotfiles/.git --work-tree=$HOME'
 
+alias update="brew update && brew upgrade; brew reinstall --HEAD neovim; brew reinstall --HEAD neovim-dot-app; antibody update; npm update -g; vim +PlugInstall! +qall"
