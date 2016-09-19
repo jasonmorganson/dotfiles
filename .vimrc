@@ -543,18 +543,21 @@ let g:syntastic_style_warning_symbol='∆'
 
 let g:airline_powerline_fonts = 1
 
-"tnoremap <Esc> <C-\><C-n>
 
-"tnoremap <A-h> <C-\><C-n><C-w>h
-"tnoremap <A-j> <C-\><C-n><C-w>j
-"tnoremap <A-k> <C-\><C-n><C-w>k
-"tnoremap <A-l> <C-\><C-n><C-w>l
 nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
 nnoremap <A-l> <C-w>l
 
-"tnoremap <Esc> <C-\><C-n>
+if has('nvim')
+
+    tnoremap <Esc> <C-\><C-n>
+
+    tnoremap <A-h> <C-\><C-n><C-w>h
+    tnoremap <A-j> <C-\><C-n><C-w>j
+    tnoremap <A-k> <C-\><C-n><C-w>k
+    tnoremap <A-l> <C-\><C-n><C-w>l
+endif
 
 "command TODO noautocmd vimgrep /TODO/j **/*.js<CR>:cw<CR>
 "command FIXME noautocmd vimgrep /TODO/j **/*.js<CR>:cw<CR>
