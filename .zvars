@@ -1,6 +1,9 @@
 # Language
 export LANG='en_US.UTF-8'
 
+# Terminal
+export CLICOLOR=YES
+
 # Editors
 export EDITOR="vi"
 export VISUAL="vi"
