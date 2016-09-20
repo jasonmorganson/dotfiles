@@ -10,6 +10,7 @@
 .fasd
 .node_repl_history
 .ssh
+.fzf
 .nvm
 .nviminfo
 .nvimlog
