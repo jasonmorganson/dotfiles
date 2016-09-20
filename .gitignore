@@ -11,6 +11,7 @@
 .fasd
 .node_repl_history
 .ssh
+.netrc
 .fzf
 .nvm
 .nviminfo
@@ -25,8 +26,11 @@
 .sudo_as_admin_successful
 .linuxbrew
 .wakatime.*
+.mrconfig
+.now.json
 .xo-cache
 .standard-cache
 .CFUserTextEncoding
 .DS_Store
 .Trash
+
