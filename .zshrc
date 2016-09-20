@@ -12,3 +12,8 @@ source <(antibody init)
 # Antibody bundles
 antibody bundle < ~/.zbundles
 
+nvm() {
+  source ~/.nvm/nvm.sh
+  nvm "$@"
+}
+

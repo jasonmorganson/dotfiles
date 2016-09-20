@@ -33,7 +33,6 @@ zstyle ':prezto:load' pmodule \
   'osx' \
   'fasd' \
   'tmux' \
-  'node' \
   'archive' \
   'homebrew' \
   'directory' \

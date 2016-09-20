@@ -5,7 +5,7 @@ path=(
   ~/bin
   ~/.bin
   ~/.local/bin
-  ~/.nvm/current/bin
+  ~/.nvm/versions/node/current/bin
   ~/.gem/ruby/current/bin
   ~/.linuxbrew/bin
   /usr/local/bin
