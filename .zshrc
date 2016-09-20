@@ -7,12 +7,8 @@ else
 fi
 
 # Antibody
-if [[ -s "${ZDOTDIR:-$HOME}/.antibody/antibody.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.antibody/antibody.zsh"
-else
-  wget -O antibody.tar.gz "http://antibody.elasticbeanstalk.com/latest/$(uname -s)/$(uname -m)"
-  mkdir -p "${ZDOTDIR:-$HOME}/.antibody"
-  tar xzvf antibody.tar.gz -C "${ZDOTDIR:-$HOME}/.antibody"
-  source "${ZDOTDIR:-$HOME}/.antibody/antibody.zsh"
-fi
+source <(antibody init)
+
+# Antibody bundles
+antibody bundle < ~/.zbundles
 
