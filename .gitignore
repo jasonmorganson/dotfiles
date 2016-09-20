@@ -25,3 +25,6 @@
 .wakatime.*
 .xo-cache
 .standard-cache
+.CFUserTextEncoding
+.DS_Store
+.Trash
