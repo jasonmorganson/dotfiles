@@ -23,3 +23,5 @@
 .sudo_as_admin_successful
 .linuxbrew
 .wakatime.*
+.xo-cache
+.standard-cache
