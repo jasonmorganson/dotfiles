@@ -1,3 +1,5 @@
+#zmodload zsh/zprof
+
 # Prezto
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -42,3 +44,5 @@ _gh_completion() {
 }
 
 complete -F _gh_completion -o default gh;
+
+#zprof
