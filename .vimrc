@@ -30,9 +30,11 @@ let mapleader=","
     endif
 " }
 
+let g:jsx_ext_required = 0
+
 " Use plug config {
     if filereadable(expand("~/.vim-plugins"))
-        call plug#begin()
+        call plug#begin('~/.plugged')
         source ~/.vim-plugins
         call plug#end()
     endif
