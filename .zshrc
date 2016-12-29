@@ -12,6 +12,14 @@ source <(antibody init)
 # Antibody bundles
 antibody bundle < ~/.zbundles
 
+# Generic Colouriser
+unalias gls
+unalias grc
+source ~/.grc/init.zsh
+alias ls='grc --colour=auto gls --color'
+eval $(gdircolors ~/.dircolors)
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
 nvm() {
   source ~/.nvm/nvm.sh
   nvm "$@"
