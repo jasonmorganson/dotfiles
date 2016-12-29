@@ -62,10 +62,6 @@ scriptencoding utf-8
 set encoding=utf-8
 
 " }
-
-" Theme
-colorscheme jason
-
 " Settings {
 " Cursor {
 
@@ -582,4 +578,9 @@ set splitbelow
 set splitright
 
 cabbrev git Git
+
+"
+" Theme
+colorscheme jason
+"colorscheme nova
 
