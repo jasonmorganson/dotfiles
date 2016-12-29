@@ -6,6 +6,8 @@ path=(
   ~/.bin
   ~/.local/bin
   ~/.nvm/versions/node/current/bin
+  ~/.chefdk/gem/ruby/2.3.0/bin
+  ~/.rvm/bin
   ~/.gem/ruby/current/bin
   ~/.linuxbrew/bin
   /usr/local/bin
