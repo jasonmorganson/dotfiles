@@ -410,6 +410,11 @@ map <leader>ev :vsp %%
 map <leader>et :tabe %%
 map <leader>t :e term://zsh<cr>i
 
+" GitV
+nmap <leader>gv :Gitv --all<cr>
+nmap <leader>gV :Gitv! --all<cr>
+vmap <leader>gV :Gitv! --all<cr>
+
 " Fast saving
 nmap <leader>w :w!<cr>
 
@@ -536,12 +541,20 @@ set directory=~/.vim/swap,.
 
 " }
 
+let g:jsx_ext_required = 0
+
+let g:flow#autoclose = 1
+
+let g:sql_type_default = 'pgsql'
+
 let g:syntastic_error_symbol='⚑'
 let g:syntastic_warning_symbol='⚠'
 let g:syntastic_style_error_symbol='≈'
 let g:syntastic_style_warning_symbol='∆'
+let g:syntastic_javascript_checkers = ['eslint', 'flow']
 
 let g:gitgutter_sign_modified = '≠'
+let g:gitgutter_override_sign_column_highlight = 0
 
 let g:airline_powerline_fonts = 1
 
