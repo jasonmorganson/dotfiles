@@ -10,7 +10,8 @@ export VISUAL="vi"
 export NVIM_TUI_ENABLE_TRUE_COLOR=true
 
 # Use VIM for manpages
-export MANPAGER="/bin/sh -c \"col -b | vi -c 'set ft=man ts=8 nomod nolist nonu noma nonumber norelativenumber laststatus=0 colorcolumn=0' -\""
+#export MANPAGER="/bin/sh -c \"col -b | vi -c 'set ft=man ts=8 nomod nolist nonu noma nonumber norelativenumber laststatus=0 colorcolumn=0' -\""
+export MANPAGER="nvim -c 'set ft=man' -"
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
