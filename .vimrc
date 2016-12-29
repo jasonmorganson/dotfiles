@@ -122,6 +122,7 @@ set linebreak
 set autoindent            " Indent at the same level of the previous line
 set smartindent
 set smarttab              " <TAB> in front of line inserts 'shiftwidth' blanks
+"set nosmarttab
 set shiftround            " Round to 'shiftwidth' for "<<" and ">>"
 set expandtab             " Tabs are spaces, not tabs
 set tabstop=4             " An indentation every four columns
@@ -143,14 +144,14 @@ set number                          " Line numbers on
 set numberwidth=4
 " }
 " Color column {
-set colorcolumn=+1
+set colorcolumn=0
 " }
 " Conceal {
 set conceallevel=2
 set concealcursor=nc
 " }
 " Spelling {
-set spell                           " Spell checking on
+set nospell                           " Spell checking on
 set spelllang=en_us
 " }
 " Search {
@@ -162,13 +163,13 @@ set gdefault                    " For :substitute, use the /g flag by default
 "}
 " Wild menu {
 
-set complete-=i
+"set complete-=i
 
 " Show list instead of just completing
-set wildmenu                    " Show list instead of just completing
+"set wildmenu                    " Show list instead of just completing
 
 " Command <Tab> completion, list matches, then longest common part, then all.
-set wildmode=list:longest,full
+"set wildmode=list:longest,full
 
 " }
 " List {
@@ -265,8 +266,9 @@ set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
 
 "set sessionoptions=blank,buffers,curdir,folds,tabpages,winsize
 
+"set completeopt-=preview
+set completeopt+=menu,menuone " better omni-complete menu
 
-"set completeopt+=longest 	" better omni-complete menu
 set formatoptions+=j    " delete comment char on second line when
                         " joining two commented lines
 set nrformats-=octal      " don't treat numbers with leading zeros as octal
@@ -283,7 +285,7 @@ set magic
 
 
 " abbrev. of messages (avoids 'hit enter')
-set shortmess+=filmnrxoOtTA
+set shortmess+=cfilmnrxoOtTA
 
 " current directory is always matching the
 " content of the active window
@@ -431,7 +433,7 @@ map <Leader>= <C-w>=
 nmap \b :set <C-R>=&laststatus == 0 ? 'laststatus=2' : 'laststatus=0'<CR><CR>
 nmap \c :setlocal cursorline!<CR>
 nmap \d :SignifyToggleHighlight<CR>
-nmap \e :setlocal <C-R>=&colorcolumn == '+1' ? 'colorcolumn=0 formatoptions-=t' : 'colorcolumn=+1 formatoptions+=t' <CR><CR>
+nmap \e :setlocal <C-R>=&colorcolumn == '0' ? 'colorcolumn=+1 formatoptions+=t' : 'colorcolumn=0 formatoptions-=t' <CR><CR>
 nmap \f :setlocal <C-R>=&foldcolumn == 1 ? 'foldcolumn=0' : 'foldcolumn=1'<CR><CR>
 nmap \i :IndentLinesToggle<CR>
 nmap \g :IndentGuidesToggle<CR>
@@ -562,6 +564,7 @@ if has('nvim')
     tnoremap <A-l> <C-\><C-n><C-w>l
 endif
 
+
 "command TODO noautocmd vimgrep /TODO/j **/*.js<CR>:cw<CR>
 "command FIXME noautocmd vimgrep /TODO/j **/*.js<CR>:cw<CR>
 
@@ -574,3 +577,9 @@ if has("autocmd") && exists("+omnifunc")
 endif
 
 set noshowcmd
+
+set splitbelow
+set splitright
+
+cabbrev git Git
+
