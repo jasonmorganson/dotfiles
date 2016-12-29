@@ -19,3 +19,10 @@ path=(
   $path
 )
 
+manpath=(
+  /usr/share/man
+  /usr/local/share/man
+  /usr/X11/share/man
+  $manpath
+  $path
+)
