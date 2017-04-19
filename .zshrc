@@ -8,11 +8,13 @@ else
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Antibody
-source <(antibody init)
-
-# Antibody bundles
-antibody bundle < ~/.zbundles
+# ZPlug
+if [[ -s "${ZDOTDIR:-$HOME}/.zplug/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zplug/init.zsh"
+else
+  git clone https://github.com/zplug/zplug "${ZDOTDIR:-$HOME}/.zplug"
+  source "${ZDOTDIR:-$HOME}/.zplug/init.zsh"
+fi
 
 nvm() {
   source ~/.nvm/nvm.sh
