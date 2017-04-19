@@ -7,13 +7,7 @@ I grew tired of starting from scratch every time when setting up.
 
 ## Setup ##
 
-1. Clone this git repo
-
-> `git clone git@github.com:jasonmorganson/dotfiles.git`
-
-2. Copy dotfiles
-
-> `cp dotfiles/.* .`
+> `git clone https://github.com/jasonmorganson/dotfiles.git ~/.dotfiles`
 
 ## Usage ##
 
