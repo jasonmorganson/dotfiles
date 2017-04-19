@@ -19,11 +19,4 @@ nvm() {
   nvm "$@"
 }
 
-eval "$(thefuck --alias)"
-
-source ~/.fzf.zsh
-source ~/.avn/bin/avn.sh
-source ~/.rvm/scripts/rvm
-source /usr/local/opt/autoenv/activate.sh
-
 #zprof
