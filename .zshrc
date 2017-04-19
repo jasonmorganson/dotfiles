@@ -26,15 +26,4 @@ source ~/.avn/bin/avn.sh
 source ~/.rvm/scripts/rvm
 source /usr/local/opt/autoenv/activate.sh
 
-autoload bashcompinit
-bashcompinit
-_gh_completion() {
-    COMPREPLY=( $( env COMP_WORDS="${COMP_WORDS[*]}" \
-                   COMP_CWORD=$COMP_CWORD \
-                   _GH_COMPLETE=complete $1 ) )
-    return 0
-}
-
-complete -F _gh_completion -o default gh;
-
 #zprof
