@@ -553,8 +553,8 @@ let g:syntastic_style_error_symbol='≈'
 let g:syntastic_style_warning_symbol='∆'
 let g:syntastic_javascript_checkers = ['eslint', 'flow']
 
-let g:gitgutter_sign_modified = '≠'
-let g:gitgutter_override_sign_column_highlight = 0
+"let g:gitgutter_sign_modified = '≠'
+"let g:gitgutter_override_sign_column_highlight = 0
 
 let g:airline_powerline_fonts = 1
 
