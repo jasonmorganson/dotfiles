@@ -8,7 +8,8 @@ I grew tired of starting from scratch every time when setting up.
 ## Setup ##
 
 > `git clone https://github.com/jasonmorganson/dotfiles.git ~/.dotfiles`
-> `cp ~/.dotfiles/.* .
+
+> `cp ~/.dotfiles/.* .`
 
 ## Usage ##
 
