@@ -1,0 +1,9 @@
+
+[CredSimple/chef]
+checkout = git clone 'git@github.com:CredSimple/chef' 'chef'
+
+[CredSimple/CredSimple]
+checkout = git clone 'git@github.com:CredSimple/CredSimple.git' 'CredSimple'
+
+[CredSimple/components]
+checkout = git clone 'git@github.com:CredSimple/components.git' 'components'
