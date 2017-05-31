@@ -9,6 +9,8 @@ I grew tired of starting from scratch every time when setting up.
 
 > `git clone https://github.com/jasonmorganson/dotfiles.git ~/.dotfiles`
 
+> `cp ~/.dotfiles/.* .`
+
 ## Usage ##
 
 The alias is `dotfiles`. Use this just like `git`.
