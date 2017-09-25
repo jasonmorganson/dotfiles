@@ -85,7 +85,7 @@ Plug 'trevordmiller/nova-vim'
 " }
 
 " Unite {
-Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/vimproc.vim', {'do':'make'}
 Plug 'Shougo/unite.vim'
 Plug 'sgur/unite-qf'
 "Plug 'tsukkee/unite-tag', {'autoload':{'unite_sources':['tag','tag/file']}}
