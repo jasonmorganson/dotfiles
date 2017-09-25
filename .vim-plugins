@@ -50,7 +50,7 @@ Plug 'mhinz/vim-startify'
 "Plug 'jistr/vim-nerdtree-tabs'
 Plug 'thinca/vim-ref'
 Plug 'Keithbsmiley/investigate.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 "Plug 'junegunn/vim-peekaboo'
 " }
