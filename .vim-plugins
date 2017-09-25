@@ -136,7 +136,7 @@ Plug 'airblade/vim-gitgutter'
 "Plug 'mattn/gist-vim'
 " }
 
-" Javascript, Coffeescript, Node.js & AngularJS {
+" Javascript, Typescript, Coffeescript, Node.js, JSX, & AngularJS {
 Plug 'moll/vim-node'
 Plug 'afshinm/npm.vim'
 Plug 'flowtype/vim-flow'
@@ -151,6 +151,8 @@ Plug 'othree/jspc.vim'
     "Plug 'isRuslan/vim-es6'
 
 "Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
 Plug 'elzr/vim-json'
 Plug 'Quramy/vison'
 "Plug 'kchmck/vim-coffee-script'
