@@ -7,3 +7,66 @@ checkout = git clone 'git@github.com:CredSimple/CredSimple.git' 'CredSimple'
 
 [CredSimple/components]
 checkout = git clone 'git@github.com:CredSimple/components.git' 'components'
+
+[CredSimple/wh]
+checkout = git clone 'git@github.com:CredSimple/wh.git' 'wh'
+
+[CredSimple/infra]
+checkout = git clone 'git@github.com:CredSimple/infra.git' 'infra'
+
+[CredSimple/contacts]
+checkout = git clone 'git@github.com:CredSimple/contacts.git' 'contacts'
+
+[CredSimple/OIG]
+checkout = git clone 'git@github.com:CredSimple/OIG.git' 'OIG'
+
+[CredSimple/NPDB]
+checkout = git clone 'git@github.com:CredSimple/NPDB.git' 'NPDB'
+
+[CredSimple/NPPES]
+checkout = git clone 'git@github.com:CredSimple/NPPES.git' 'NPPES'
+
+[CredSimple/DEA]
+checkout = git clone 'git@github.com:CredSimple/DEA.git' 'DEA'
+
+[CredSimple/ABMS]
+checkout = git clone 'git@github.com:CredSimple/ABMS.git' 'ABMS'
+
+[CredSimple/CAQH]
+checkout = git clone 'git@github.com:CredSimple/CAQH.git' 'CAQH'
+
+[CredSimple/MLTC]
+checkout = git clone 'git@github.com:CredSimple/MLTC.git' 'MLTC'
+
+[CredSimple/StateLicense]
+checkout = git clone 'git@github.com:CredSimple/StateLicense.git' 'StateLicense'
+
+[CredSimple/stargate]
+checkout = git clone 'git@github.com:CredSimple/stargate.git' 'stargate'
+
+[CredSimple/cvo]
+checkout = git clone 'git@github.com:CredSimple/cvo.git' 'cvo'
+
+[CredSimple/dns]
+checkout = git clone 'git@github.com:CredSimple/dns.git' 'dns'
+
+[CredSimple/challenge]
+checkout = git clone 'git@github.com:CredSimple/challenge.git' 'challenge'
+
+[CredSimple/linkasaur]
+checkout = git clone 'git@github.com:CredSimple/linkasaur.git' 'linkasaur'
+
+[CredSimple/tech-screen]
+checkout = git clone 'git@github.com:CredSimple/tech-screen.git' 'tech-screen'
+
+[CredSimple/containers]
+checkout = git clone 'git@github.com:CredSimple/containers.git' 'containers'
+
+[CredSimple/styles]
+checkout = git clone 'git@github.com:CredSimple/styles.git' 'styles'
+
+[CredSimple/druzhba]
+checkout = git clone 'git@github.com:CredSimple/druzhba.git' 'druzhba'
+
+[CredSimple/permissions]
+checkout = git clone 'git@github.com:CredSimple/permissions.git' 'permissions'
