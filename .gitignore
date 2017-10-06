@@ -27,10 +27,19 @@
 .linuxbrew
 .wakatime.*
 .mrconfig
+.npmrc
 .now.json
 .xo-cache
 .standard-cache
 .CFUserTextEncoding
 .DS_Store
 .Trash
+.Xauthority
+.zplug
 
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
