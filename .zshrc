@@ -16,8 +16,13 @@ else
   source "${ZDOTDIR:-$HOME}/.zplug/init.zsh"
 fi
 
+# NVM
+if [[ ! -s "${ZDOTDIR:-$HOME}/.nvm/nvm.zh" ]]; then
+  git clone https://github.com/creationix/nvm.git "${ZDOTDIR:-$HOME}/.nvm"
+fi
+
 nvm() {
-  source ~/.nvm/nvm.sh
+  source "${ZDOTDIR:-$HOME}/.nvm/nvm.sh"
   nvm "$@"
 }
 
