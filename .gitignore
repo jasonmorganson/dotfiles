@@ -21,7 +21,6 @@
 .viminfo
 .vim_local_rc_cache
 .zhistory
-.zprezto
 .zcompdump*
 .sudo_as_admin_successful
 .linuxbrew
