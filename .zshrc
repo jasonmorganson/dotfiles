@@ -1,29 +1,45 @@
 #zmodload zsh/zprof
 
-# Prezto
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-else
-  git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+# Check if zplug is installed
+if [[ ! -d ~/.zplug ]]; then
+  git clone https://github.com/zplug/zplug ~/.zplug
+  source ~/.zplug/init.zsh && zplug update --self
 fi
 
-# ZPlug
-if [[ -s "${ZDOTDIR:-$HOME}/.zplug/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zplug/init.zsh"
-else
-  git clone https://github.com/zplug/zplug "${ZDOTDIR:-$HOME}/.zplug"
-  source "${ZDOTDIR:-$HOME}/.zplug/init.zsh"
+source ~/.zplug/init.zsh
+
+zplug "chrissicool/zsh-256color"
+zplug "willghatch/zsh-saneopt"
+zplug "mafredri/zsh-async"
+zplug "djui/alias-tips"
+zplug "rimraf/k"
+zplug "Tarrasch/zsh-bd"
+zplug "johnhamelink/env-zsh"
+zplug "joshuarubin/zsh-fzf"
+zplug "uvaes/fzf-marks"
+zplug "atweiden/fzf-extras"
+zplug "srijanshetty/zsh-suffix-alias"
+zplug "ascii-soup/zsh-url-highlighter"
+zplug "TBSliver/zsh-plugin-tmux-simple"
+zplug "wbinglee/zsh-wakatime"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "felixr/docker-zsh-completion"
+zplug "srijanshetty/zsh-pip-completion"
+zplug "akoenig/gulp.plugin.zsh"
+zplug "DimitriSteyaert/Zsh-tugboat"
+zplug "edouard-lopez/yeoman-zsh-plugin"
+zplug "vasyharan/zsh-brew-services"
+zplug "lukechilds/zsh-better-npm-completion"
+zplug "lukechilds/zsh-nvm"
+zplug "sindresorhus/pure"
+
+# Install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+  zplug install
 fi
 
-# NVM
-if [[ ! -s "${ZDOTDIR:-$HOME}/.nvm/nvm.zh" ]]; then
-  git clone https://github.com/creationix/nvm.git "${ZDOTDIR:-$HOME}/.nvm"
-fi
-
-nvm() {
-  source "${ZDOTDIR:-$HOME}/.nvm/nvm.sh"
-  nvm "$@"
-}
+# Then, source plugins and add commands to $PATH
+zplug load
 
 #zprof
