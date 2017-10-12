@@ -45,6 +45,7 @@ zplug "DimitriSteyaert/Zsh-tugboat"
 zplug "edouard-lopez/yeoman-zsh-plugin"
 zplug "vasyharan/zsh-brew-services"
 zplug "lukechilds/zsh-better-npm-completion"
+zplug "johnhamelink/rvm-zsh"
 zplug "lukechilds/zsh-nvm"
 zplug "sindresorhus/pure"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
