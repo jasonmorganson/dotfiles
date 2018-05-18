@@ -10,6 +10,7 @@ path=(
   ~/.rvm/bin
   ~/.gem/ruby/current/bin
   ~/.linuxbrew/bin
+  ~/go/bin
   /usr/local/bin
   /usr/local/sbin
   /opt/bin
