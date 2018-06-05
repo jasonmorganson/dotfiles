@@ -8,6 +8,7 @@ fi
 
 source ~/.zplug/init.zsh
 
+zplug "plugins/history-sync", from:oh-my-zsh
 zplug "modules/environment", from:prezto
 zplug "modules/completion", from:prezto
 zplug "modules/history-substring-search", from:prezto
