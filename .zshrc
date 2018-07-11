@@ -40,9 +40,9 @@ zplug "lukechilds/zsh-nvm"
 zplug "sindresorhus/pure"
 
 # Install plugins if there are plugins that have not been installed
-# if ! zplug check --verbose; then
-  # zplug install
-# fi
+if ! zplug check --verbose; then
+  zplug install
+fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
