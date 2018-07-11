@@ -8,51 +8,36 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-unimpaired'
-"Plug 'vim-scripts/UnconditionalPaste'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Chiel92/vim-autoformat'
 " }
 
 " Editor Configuration {
 Plug 'tpope/vim-sleuth'
-Plug 'editorconfig/editorconfig-vim'
+"Plug 'editorconfig/editorconfig-vim'
 Plug 'MarcWeber/vim-addon-local-vimrc'
 " }
 
 " Movement {
-Plug 'Lokaltog/vim-easymotion'
+Plug 'justinmk/vim-sneak'
+" OR
+"Plug 'Lokaltog/vim-easymotion'
 " }
 
 " Editing {
-"Plug 'UniCycle'
-"Plug 'ervandew/supertab'
     "Plug 'cohama/lexima.vim'
     " OR
-    "Plug 'jiangmiao/auto-pairs'
+    Plug 'jiangmiao/auto-pairs'
     " OR
-    Plug 'Raimondi/delimitMate'
+    "Plug 'Raimondi/delimitMate'
 " }
 
 " IDE {
-Plug 'eugen0329/vim-esearch'
-Plug 'rbgrouleff/bclose.vim'
-Plug 'francoiscabrol/ranger.vim'
-Plug 'Shougo/vimfiler.vim'
-Plug 'mhinz/vim-startify'
     Plug 'sjl/gundo.vim'
     " OR
     "Plug 'mbbill/undotree'
-"Plug 'maxbrunsfeld/vim-yankstack'
-"Plug 'bufexplorer.zip'
-    "Plug 'tpope/vim-vinegar'
-    " OR
-    "Plug 'scrooloose/n berdtree'
-"Plug 'jistr/vim-nerdtree-tabs'
-Plug 'thinca/vim-ref'
-Plug 'Keithbsmiley/investigate.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
-"Plug 'junegunn/vim-peekaboo'
 " }
 
 " GUI {
@@ -75,13 +60,9 @@ Plug 'nathanaelkane/vim-indent-guides'
 "Plug 'gerw/vim-HiLinkTrace'
 "Plug 'godlygeek/csapprox'
 "Plug 'lilydjwg/colorizer'
-"Plug 'flazz/vim-colorschemes'
 Plug 'jasonmorganson/vim-colorscheme'
-Plug 'trevordmiller/nova-vim'
 "Plug 'SyntaxAttr.vim'
 "Plug 'guns/xterm-color-table.vim'
-"Plug 'Rykka/colorv.vim'
-"Plug 'Rykka/galaxy.vim'
 " }
 
 " Unite {
@@ -100,31 +81,22 @@ Plug 'edkolev/promptline.vim'
 " }
 
 " Completion & Snippets {
-"Plug 'vim-scripts/SyntaxComplete'
     Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
     " OR
     "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
     " OR
     "Plug 'lifepillar/vim-mucomplete'
 Plug 'othree/jspc.vim'
-"Plug 'SirVer/ultisnips'
-"Plug 'honza/vim-snippets'
-"Plug 'matthewsimo/angular-vim-snippets'
 " }
 
 " Programing {
-    Plug 'scrooloose/syntastic'
+    Plug 'w0rp/ale'
+    " OR
+    "Plug 'scrooloose/syntastic'
     " OR
     "Plug 'benekastah/neomake'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tomtom/tcomment_vim'
-"Plug 'godlygeek/tabular'
-"if executable('ctags')
-    "Plug 'xolox/vim-easytags'
-    "Plug 'majutsushi/tagbar'
-"endif
-"Plug 'mutewinter/swap-parameters'
-"Plug 'calebsmith/vim-lambdify'
 " }
 
 " Git {
@@ -161,6 +133,7 @@ Plug 'Quramy/vison'
 "Plug 'othree/coffee-check.vim'
 "Plug 'burnettk/vim-angular'
 Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
 " }
 
 " C, C++, Objective-C {
@@ -181,16 +154,19 @@ Plug 'keith/swift.vim'
 "Plug 'ehamberg/vim-cute-python'
 " }
 
-" Web, HTML, CSS {
+" Ruby/Rails {
+"Plug 'vim-ruby/vim-ruby'
+"Plug 'tpope/vim-rails'
+"}
+
+" Web, XML, HTML, CSS {
 "Plug 'mattn/webapi-vim'
 "Plug 'vim-scripts/indenthtml.vim'
 Plug 'othree/html5.vim'
 "Plug 'amirh/HTML-AutoCloseTag'
 Plug 'ap/vim-css-color'
 Plug 'hail2u/vim-css3-syntax'
-Plug 'groenewege/vim-less'
-"Plug 'wavded/vim-stylus'
-"Plug 'tristen/vim-sparkup'
+Plug 'othree/xml.vim'
 " }
 
 " Filetypes {
@@ -200,8 +176,6 @@ Plug 'jparise/vim-graphql'
 " }
 
 " Templating {
-Plug 'digitaltoad/vim-pug'
-Plug 'mustache/vim-mustache-handlebars'
 " }
 
 " Testing {
@@ -225,8 +199,6 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " Misc {
 Plug 'mrtazz/simplenote.vim'
-Plug 'vim-scripts/dbext.vim'
-Plug 'lifepillar/pgsql.vim'
 Plug 'wakatime/vim-wakatime'
 " }
 

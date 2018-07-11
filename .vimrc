@@ -596,6 +596,9 @@ set splitright
 
 cabbrev git Git
 
+iabbrev --- —
+iabbrev ... …
+
 "
 " Theme
 colorscheme jason
