@@ -1,5 +1,7 @@
 #zmodload zsh/zprof
 
+export NVM_LAZY_LOAD=true
+
 # Check if zplug is installed
 if [[ ! -d ~/.zplug ]]; then
   git clone https://github.com/zplug/zplug ~/.zplug
