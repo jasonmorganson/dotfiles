@@ -8,6 +8,11 @@ fi
 
 source ~/.zplug/init.zsh
 
+# Have zplug manage itself like other plugins
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+
+# Plugins:
+
 zplug "plugins/history-sync", from:oh-my-zsh
 zplug "modules/environment", from:prezto
 zplug "modules/completion", from:prezto
