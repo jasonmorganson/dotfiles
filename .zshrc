@@ -36,7 +36,6 @@ zplug "lukechilds/zsh-better-npm-completion"
 zplug "johnhamelink/rvm-zsh"
 zplug "lukechilds/zsh-nvm"
 zplug "sindresorhus/pure"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
 
 # Install plugins if there are plugins that have not been installed
 # if ! zplug check --verbose; then
