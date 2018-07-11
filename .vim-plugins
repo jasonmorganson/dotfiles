@@ -15,7 +15,7 @@ Plug 'Chiel92/vim-autoformat'
 
 " Editor Configuration {
 Plug 'tpope/vim-sleuth'
-Plug 'editorconfig/editorconfig-vim'
+"Plug 'editorconfig/editorconfig-vim'
 Plug 'MarcWeber/vim-addon-local-vimrc'
 " }
 
