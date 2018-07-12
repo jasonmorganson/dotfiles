@@ -25,7 +25,6 @@ Plug 'justinmk/vim-sneak'
 " }
 
 " Editing {
-"Plug 'UniCycle'
 "Plug 'ervandew/supertab'
     "Plug 'cohama/lexima.vim'
     " OR
