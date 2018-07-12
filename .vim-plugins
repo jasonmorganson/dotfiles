@@ -166,6 +166,7 @@ Plug 'othree/html5.vim'
 "Plug 'amirh/HTML-AutoCloseTag'
 Plug 'ap/vim-css-color'
 Plug 'hail2u/vim-css3-syntax'
+Plug 'othree/xml.vim'
 " }
 
 " Filetypes {
