@@ -19,7 +19,9 @@ Plug 'MarcWeber/vim-addon-local-vimrc'
 " }
 
 " Movement {
-Plug 'Lokaltog/vim-easymotion'
+Plug 'justinmk/vim-sneak'
+" OR
+"Plug 'Lokaltog/vim-easymotion'
 " }
 
 " Editing {
