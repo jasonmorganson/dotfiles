@@ -133,6 +133,7 @@ Plug 'Quramy/vison'
 "Plug 'othree/coffee-check.vim'
 "Plug 'burnettk/vim-angular'
 Plug 'mxw/vim-jsx'
+Plug 'leafgarland/typescript-vim'
 " }
 
 " C, C++, Objective-C {
