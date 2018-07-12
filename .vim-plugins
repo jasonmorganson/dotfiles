@@ -90,7 +90,9 @@ Plug 'othree/jspc.vim'
 " }
 
 " Programing {
-    Plug 'scrooloose/syntastic'
+    Plug 'w0rp/ale'
+    " OR
+    "Plug 'scrooloose/syntastic'
     " OR
     "Plug 'benekastah/neomake'
 Plug 'scrooloose/nerdcommenter'
