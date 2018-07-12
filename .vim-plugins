@@ -154,7 +154,12 @@ Plug 'keith/swift.vim'
 "Plug 'ehamberg/vim-cute-python'
 " }
 
-" Web, HTML, CSS {
+" Ruby/Rails {
+"Plug 'vim-ruby/vim-ruby'
+"Plug 'tpope/vim-rails'
+"}
+
+" Web, XML, HTML, CSS {
 "Plug 'mattn/webapi-vim'
 "Plug 'vim-scripts/indenthtml.vim'
 Plug 'othree/html5.vim'
