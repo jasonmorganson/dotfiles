@@ -28,9 +28,9 @@ Plug 'justinmk/vim-sneak'
 "Plug 'ervandew/supertab'
     "Plug 'cohama/lexima.vim'
     " OR
-    "Plug 'jiangmiao/auto-pairs'
+    Plug 'jiangmiao/auto-pairs'
     " OR
-    Plug 'Raimondi/delimitMate'
+    "Plug 'Raimondi/delimitMate'
 " }
 
 " IDE {
