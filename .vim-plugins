@@ -25,7 +25,6 @@ Plug 'justinmk/vim-sneak'
 " }
 
 " Editing {
-"Plug 'ervandew/supertab'
     "Plug 'cohama/lexima.vim'
     " OR
     Plug 'jiangmiao/auto-pairs'
@@ -34,25 +33,11 @@ Plug 'justinmk/vim-sneak'
 " }
 
 " IDE {
-Plug 'eugen0329/vim-esearch'
-Plug 'rbgrouleff/bclose.vim'
-Plug 'francoiscabrol/ranger.vim'
-Plug 'Shougo/vimfiler.vim'
-Plug 'mhinz/vim-startify'
     Plug 'sjl/gundo.vim'
     " OR
     "Plug 'mbbill/undotree'
-"Plug 'maxbrunsfeld/vim-yankstack'
-"Plug 'bufexplorer.zip'
-    "Plug 'tpope/vim-vinegar'
-    " OR
-    "Plug 'scrooloose/n berdtree'
-"Plug 'jistr/vim-nerdtree-tabs'
-Plug 'thinca/vim-ref'
-Plug 'Keithbsmiley/investigate.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
-"Plug 'junegunn/vim-peekaboo'
 " }
 
 " GUI {
