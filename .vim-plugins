@@ -53,7 +53,8 @@ Plug 'nathanaelkane/vim-indent-guides'
     "Plug 'tomtom/quickfixsigns_vim'
     " OR
     "Plug 'mhinz/vim-signify'
-    "Plug 'kshenoy/vim-signature'
+    " OR
+    Plug 'kshenoy/vim-signature'
 " }
 
 " Colorschemes {
