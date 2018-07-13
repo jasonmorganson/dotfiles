@@ -137,6 +137,7 @@ set foldcolumn=1
 " }
 " Line numbers {
 set number                          " Line numbers on
+set relativenumber                  " Relative line numbers on
 set numberwidth=4
 " }
 " Color column {
