@@ -212,8 +212,8 @@ set backspace=indent,eol,start
 " }
 " Clipboard {
 
-" Link the system clipboard with the unnamed register
-set clipboard=unnamed
+" Link the system clipboard with the unnamed (*) and unnamedplus (+) registers
+set clipboard=unnamed,unnamedplus
 
 " Visual selection automatically copied to the clipboard
 set go+=a
