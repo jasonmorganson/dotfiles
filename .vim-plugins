@@ -79,9 +79,15 @@ Plug 'edkolev/promptline.vim'
 " }
 
 " Completion & Snippets {
-    Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+    "Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
     " OR
-    "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    if has('nvim')
+        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    else
+        Plug 'Shougo/deoplete.nvim'
+        Plug 'roxma/nvim-yarp'
+        Plug 'roxma/vim-hug-neovim-rpc'
+    endif
     " OR
     "Plug 'lifepillar/vim-mucomplete'
 Plug 'othree/jspc.vim'
