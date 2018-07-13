@@ -436,8 +436,6 @@ nmap \c :setlocal cursorline!<CR>
 nmap \d :SignifyToggleHighlight<CR>
 nmap \e :setlocal <C-R>=&colorcolumn == '0' ? 'colorcolumn=+1 formatoptions+=t' : 'colorcolumn=0 formatoptions-=t' <CR><CR>
 nmap \f :setlocal <C-R>=&foldcolumn == 1 ? 'foldcolumn=0' : 'foldcolumn=1'<CR><CR>
-nmap \i :IndentLinesToggle<CR>
-nmap \g :IndentGuidesToggle<CR>
 nmap \l :setlocal number!<CR>:setlocal relativenumber!<CR>:setlocal number?<CR>:setlocal relativenumber?<CR>
 nmap \n :setlocal number!<CR>:setlocal number?<CR>
 nmap \m :MatchmakerToggle<CR>
