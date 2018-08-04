@@ -13,6 +13,7 @@
 .ssh
 .netrc
 .fzf
+.avn
 .nvm
 .nviminfo
 .nvimlog
@@ -35,6 +36,30 @@
 .Trash
 .Xauthority
 .zplug
+.VSCodeVim
+.apiconnect
+.atom
+.autoenv_authorized
+.autoenv_authorized.tmp
+.docker
+.erlang.cookie
+.fzf-marks
+.irb-history
+.nylas
+.pearrc
+.pgpass
+.pry_history
+.psql_history
+.pt
+.quokka
+.rediscli_history
+.v8flags.*
+.xonsh_history.json
+.xonsh_man_completions
+.yarn
+.yarnrc
+.gh.json
+.gitsomeconfig
 
 # package directories
 node_modules
@@ -42,3 +67,4 @@ jspm_packages
 
 # Serverless directories
 .serverless
+.serverlessrc
