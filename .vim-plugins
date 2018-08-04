@@ -88,6 +88,10 @@ Plug 'edkolev/promptline.vim'
         Plug 'roxma/nvim-yarp'
         Plug 'roxma/vim-hug-neovim-rpc'
     endif
+    Plug 'Shougo/neco-vim'
+    Plug 'carlitux/deoplete-ternjs'
+    Plug 'wokalski/autocomplete-flow'
+    Plug 'landaire/deoplete-swift'
     " OR
     "Plug 'lifepillar/vim-mucomplete'
 Plug 'othree/jspc.vim'
@@ -117,7 +121,6 @@ Plug 'moll/vim-node'
 Plug 'afshinm/npm.vim'
 Plug 'flowtype/vim-flow'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-Plug 'carlitux/deoplete-ternjs'
 Plug 'othree/jspc.vim'
 
     Plug 'pangloss/vim-javascript'
