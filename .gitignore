@@ -60,6 +60,7 @@
 .yarnrc
 .gh.json
 .gitsomeconfig
+.wget-hsts
 
 # package directories
 node_modules
