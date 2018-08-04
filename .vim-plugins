@@ -30,6 +30,7 @@ Plug 'Lokaltog/vim-easymotion'
     Plug 'jiangmiao/auto-pairs'
     " OR
     "Plug 'Raimondi/delimitMate'
+Plug 'andymass/vim-matchup'
 " }
 
 " IDE {
