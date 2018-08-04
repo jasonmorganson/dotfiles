@@ -43,9 +43,6 @@ Plug 'junegunn/fzf.vim'
 
 " GUI {
 Plug 'jszakmeister/vim-togglecursor'
-Plug 'myusuf3/numbers.vim'
-Plug 'Yggdroot/indentLine'
-Plug 'nathanaelkane/vim-indent-guides'
 
     "Plug 'Valloric/ListToggle'
     " OR
@@ -54,7 +51,8 @@ Plug 'nathanaelkane/vim-indent-guides'
     "Plug 'tomtom/quickfixsigns_vim'
     " OR
     "Plug 'mhinz/vim-signify'
-    "Plug 'kshenoy/vim-signature'
+    " OR
+    Plug 'kshenoy/vim-signature'
 " }
 
 " Colorschemes {
@@ -82,9 +80,19 @@ Plug 'edkolev/promptline.vim'
 " }
 
 " Completion & Snippets {
-    Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
+    "Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
     " OR
-    "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    if has('nvim')
+        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+    else
+        Plug 'Shougo/deoplete.nvim'
+        Plug 'roxma/nvim-yarp'
+        Plug 'roxma/vim-hug-neovim-rpc'
+    endif
+    Plug 'Shougo/neco-vim'
+    Plug 'carlitux/deoplete-ternjs'
+    Plug 'wokalski/autocomplete-flow'
+    Plug 'landaire/deoplete-swift'
     " OR
     "Plug 'lifepillar/vim-mucomplete'
 Plug 'othree/jspc.vim'
@@ -114,7 +122,6 @@ Plug 'moll/vim-node'
 Plug 'afshinm/npm.vim'
 Plug 'flowtype/vim-flow'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
-Plug 'carlitux/deoplete-ternjs'
 Plug 'othree/jspc.vim'
 
     Plug 'pangloss/vim-javascript'

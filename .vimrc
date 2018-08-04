@@ -30,8 +30,6 @@ let mapleader=","
     endif
 " }
 
-let g:jsx_ext_required = 0
-
 " Use plug config {
     if filereadable(expand("~/.vim-plugins"))
         call plug#begin('~/.plugged')
@@ -137,6 +135,7 @@ set foldcolumn=1
 " }
 " Line numbers {
 set number                          " Line numbers on
+set relativenumber                  " Relative line numbers on
 set numberwidth=4
 " }
 " Color column {
@@ -212,8 +211,8 @@ set backspace=indent,eol,start
 " }
 " Clipboard {
 
-" Link the system clipboard with the unnamed register
-set clipboard=unnamed
+" Link the system clipboard with the unnamed (*) and unnamedplus (+) registers
+set clipboard=unnamed,unnamedplus
 
 " Visual selection automatically copied to the clipboard
 set go+=a
@@ -436,8 +435,6 @@ nmap \c :setlocal cursorline!<CR>
 nmap \d :SignifyToggleHighlight<CR>
 nmap \e :setlocal <C-R>=&colorcolumn == '0' ? 'colorcolumn=+1 formatoptions+=t' : 'colorcolumn=0 formatoptions-=t' <CR><CR>
 nmap \f :setlocal <C-R>=&foldcolumn == 1 ? 'foldcolumn=0' : 'foldcolumn=1'<CR><CR>
-nmap \i :IndentLinesToggle<CR>
-nmap \g :IndentGuidesToggle<CR>
 nmap \l :setlocal number!<CR>:setlocal relativenumber!<CR>:setlocal number?<CR>:setlocal relativenumber?<CR>
 nmap \n :setlocal number!<CR>:setlocal number?<CR>
 nmap \m :MatchmakerToggle<CR>
@@ -557,6 +554,9 @@ let g:syntastic_javascript_checkers = ['eslint', 'flow']
 "let g:gitgutter_override_sign_column_highlight = 0
 
 let g:airline_powerline_fonts = 1
+
+let g:deoplete#enable_at_startup = 1
+
 
 nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
