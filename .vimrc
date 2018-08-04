@@ -557,6 +557,9 @@ let g:syntastic_javascript_checkers = ['eslint', 'flow']
 
 let g:airline_powerline_fonts = 1
 
+let g:deoplete#enable_at_startup = 1
+
+
 nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
