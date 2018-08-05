@@ -30,9 +30,7 @@ Plug 'andymass/vim-matchup'
 " }
 
 " IDE {
-    Plug 'sjl/gundo.vim'
-    " OR
-    "Plug 'mbbill/undotree'
+Plug 'sjl/gundo.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 " }
