@@ -25,11 +25,7 @@ Plug 'Lokaltog/vim-easymotion'
 " }
 
 " Editing {
-    "Plug 'cohama/lexima.vim'
-    " OR
-    Plug 'jiangmiao/auto-pairs'
-    " OR
-    "Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
 Plug 'andymass/vim-matchup'
 " }
 
