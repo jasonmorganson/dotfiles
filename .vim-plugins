@@ -109,10 +109,8 @@ Plug 'afshinm/npm.vim'
 Plug 'flowtype/vim-flow'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'othree/jspc.vim'
-"Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'Quramy/tsuquyomi'
 Plug 'Quramy/vison'
-"Plug 'burnettk/vim-angular'
 " }
 
 " Filetypes {
