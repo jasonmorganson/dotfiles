@@ -59,7 +59,7 @@ Plug 'tacroe/unite-mark', {'autoload':{'unite_sources':'mark'}}
 "Plug 'Shougo/unite-outline', {'autoload':{'unite_sources':'outline'}}
 " }
 
-" Powerline {
+" Airline {
 Plug 'bling/vim-airline'
 Plug 'edkolev/tmuxline.vim'
 Plug 'edkolev/promptline.vim'
