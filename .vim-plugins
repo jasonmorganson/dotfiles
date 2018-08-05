@@ -164,6 +164,7 @@ Plug 'othree/xml.vim'
 " }
 
 " Filetypes {
+Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-markdown'
 Plug 'ekalinin/Dockerfile.vim'
 Plug 'jparise/vim-graphql'
