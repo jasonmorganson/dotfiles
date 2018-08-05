@@ -129,13 +129,6 @@ Plug 'Quramy/vison'
 "Plug 'tpope/vim-rails'
 "}
 
-" Web, XML, HTML, CSS {
-"Plug 'mattn/webapi-vim'
-"Plug 'vim-scripts/indenthtml.vim'
-"Plug 'amirh/HTML-AutoCloseTag'
-Plug 'ap/vim-css-color'
-" }
-
 " Filetypes {
 Plug 'sheerun/vim-polyglot'
 " }
