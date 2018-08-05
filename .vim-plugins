@@ -125,10 +125,6 @@ Plug 'Quramy/vison'
 "Plug 'ehamberg/vim-cute-python'
 " }
 
-" Ruby/Rails {
-"Plug 'tpope/vim-rails'
-"}
-
 " Filetypes {
 Plug 'sheerun/vim-polyglot'
 " }
