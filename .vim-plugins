@@ -115,16 +115,6 @@ Plug 'Quramy/vison'
 "Plug 'burnettk/vim-angular'
 " }
 
-" Python {
-"Plug 'klen/python-mode'
-"Plug 'python.vim'
-"Plug 'python_matchsy.vim'
-"Plug 'bfredl/nvim-ipy'
-"Plug 'ivanov/vim-ipython'
-"Plug 'pythoncomplete'
-"Plug 'ehamberg/vim-cute-python'
-" }
-
 " Filetypes {
 Plug 'sheerun/vim-polyglot'
 " }
