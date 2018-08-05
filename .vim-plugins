@@ -109,13 +109,7 @@ Plug 'afshinm/npm.vim'
 Plug 'flowtype/vim-flow'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'othree/jspc.vim'
-
-    Plug 'pangloss/vim-javascript'
-    " OR
-    "Plug 'othree/yajs.vim'
-    " OR
-    "Plug 'isRuslan/vim-es6'
-
+Plug 'pangloss/vim-javascript'
 "Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'Quramy/tsuquyomi'
