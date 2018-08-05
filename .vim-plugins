@@ -100,7 +100,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'gregsexton/gitv'
 Plug 'airblade/vim-gitgutter'
-"Plug 'mattn/gist-vim'
+Plug 'mattn/gist-vim'
 " }
 
 " Javascript, Typescript, Coffeescript, Node.js, JSX, & AngularJS {
