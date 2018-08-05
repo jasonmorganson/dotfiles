@@ -37,10 +37,7 @@ Plug 'junegunn/fzf.vim'
 
 " GUI {
 Plug 'jszakmeister/vim-togglecursor'
-
-    "Plug 'Valloric/ListToggle'
-    " OR
-    Plug 'milkypostman/vim-togglelist'
+Plug 'milkypostman/vim-togglelist'
 
     "Plug 'tomtom/quickfixsigns_vim'
     " OR
