@@ -42,10 +42,10 @@ Plug 'kshenoy/vim-signature'
 " }
 
 " Colorschemes {
+Plug 'jasonmorganson/vim-colorscheme'
 "Plug 'gerw/vim-HiLinkTrace'
 "Plug 'godlygeek/csapprox'
 "Plug 'lilydjwg/colorizer'
-Plug 'jasonmorganson/vim-colorscheme'
 "Plug 'SyntaxAttr.vim'
 "Plug 'guns/xterm-color-table.vim'
 " }
