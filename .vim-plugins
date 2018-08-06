@@ -78,9 +78,14 @@ else
     Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'Shougo/neco-vim'
+Plug 'Shougo/neco-syntax'
+Plug 'zchee/deoplete-go'
+Plug 'zchee/deoplete-zsh'
+Plug 'zchee/deoplete-jedi'
+Plug 'landaire/deoplete-swift'
 Plug 'carlitux/deoplete-ternjs'
 Plug 'wokalski/autocomplete-flow'
-Plug 'landaire/deoplete-swift'
+Plug 'autozimu/LanguageClient-neovim'
 " }
 
 " Programing {
