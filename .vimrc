@@ -538,8 +538,6 @@ set directory=~/.vim/swap,.
 
 " }
 
-let g:deoplete#enable_at_startup = 1
-
 nnoremap <A-h> <C-w>h
 nnoremap <A-j> <C-w>j
 nnoremap <A-k> <C-w>k
