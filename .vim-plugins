@@ -2,6 +2,10 @@
 " vim: set foldmarker={,} foldlevel=0 foldmethod=marker :
 " }
 
+" Plugin Configuration {
+Plug 'jasonmorganson/vim-pluginrc'
+" }
+
 " General {
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
@@ -139,10 +143,6 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 " Misc {
 Plug 'mrtazz/simplenote.vim'
 Plug 'wakatime/vim-wakatime'
-" }
-
-" Plugin Configuration {
-Plug 'jasonmorganson/vim-pluginrc'
 " }
 
 " Bootstrap plugins {
