@@ -538,17 +538,6 @@ set directory=~/.vim/swap,.
 
 " }
 
-let g:sql_type_default = 'pgsql'
-
-let g:syntastic_error_symbol='⚑'
-let g:syntastic_warning_symbol='⚠'
-let g:syntastic_style_error_symbol='≈'
-let g:syntastic_style_warning_symbol='∆'
-let g:syntastic_javascript_checkers = ['eslint', 'flow']
-
-"let g:gitgutter_sign_modified = '≠'
-"let g:gitgutter_override_sign_column_highlight = 0
-
 let g:deoplete#enable_at_startup = 1
 
 nnoremap <A-h> <C-w>h
