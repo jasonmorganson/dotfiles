@@ -459,6 +459,18 @@ nmap <silent> <A-Down>  :wincmd j<CR>
 nmap <silent> <A-Left>  :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
 
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+
+if has('nvim')
+    tnoremap <A-h> <C-\><C-n><C-w>h
+    tnoremap <A-j> <C-\><C-n><C-w>j
+    tnoremap <A-k> <C-\><C-n><C-w>k
+    tnoremap <A-l> <C-\><C-n><C-w>l
+endif
+
 " }
 
 " CTRL Modifier {
@@ -490,6 +502,10 @@ nnoremap <silent> gb :exe('!w3m "'.expand('<cfile>').'"')<CR>
 
 " For when you forget to sudo.. Really Write the file.
 cmap w!! w !sudo tee % >/dev/null
+
+if has('nvim')
+    tnoremap <Esc> <C-\><C-n>
+endif
 
 " }
 
@@ -538,20 +554,7 @@ set directory=~/.vim/swap,.
 
 " }
 
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
 
-if has('nvim')
-
-    tnoremap <Esc> <C-\><C-n>
-
-    tnoremap <A-h> <C-\><C-n><C-w>h
-    tnoremap <A-j> <C-\><C-n><C-w>j
-    tnoremap <A-k> <C-\><C-n><C-w>k
-    tnoremap <A-l> <C-\><C-n><C-w>l
-endif
 
 
 "command TODO noautocmd vimgrep /TODO/j **/*.js<CR>:cw<CR>
