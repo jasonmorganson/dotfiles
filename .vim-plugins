@@ -70,22 +70,17 @@ Plug 'edkolev/promptline.vim'
 " }
 
 " Completion & Snippets {
-    "Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer' }
-    " OR
-    if has('nvim')
-        Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-    else
-        Plug 'Shougo/deoplete.nvim'
-        Plug 'roxma/nvim-yarp'
-        Plug 'roxma/vim-hug-neovim-rpc'
-    endif
-    Plug 'Shougo/neco-vim'
-    Plug 'carlitux/deoplete-ternjs'
-    Plug 'wokalski/autocomplete-flow'
-    Plug 'landaire/deoplete-swift'
-    " OR
-    "Plug 'lifepillar/vim-mucomplete'
-Plug 'othree/jspc.vim'
+if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'Shougo/neco-vim'
+Plug 'carlitux/deoplete-ternjs'
+Plug 'wokalski/autocomplete-flow'
+Plug 'landaire/deoplete-swift'
 " }
 
 " Programing {
