@@ -538,8 +538,6 @@ set directory=~/.vim/swap,.
 
 " }
 
-let g:jsx_ext_required = 0
-
 let g:flow#autoclose = 1
 
 let g:sql_type_default = 'pgsql'
