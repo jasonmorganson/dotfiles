@@ -554,24 +554,6 @@ set directory=~/.vim/swap,.
 
 " }
 
-
-
-
-"command TODO noautocmd vimgrep /TODO/j **/*.js<CR>:cw<CR>
-"command FIXME noautocmd vimgrep /TODO/j **/*.js<CR>:cw<CR>
-
-
-"if has("autocmd") && exists("+omnifunc")
-"    autocmd Filetype *
-"        \   if &omnifunc == "" |
-"        \       setlocal omnifunc=syntaxcomplete#Complete |
-"        \   endif
-"endif
-
-" I dont know why YouCompleteMe isnt setting these
-inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<tab>"
-inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<s-tab>"
-
 set splitbelow
 set splitright
 
