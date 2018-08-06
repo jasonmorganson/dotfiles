@@ -89,11 +89,7 @@ Plug 'autozimu/LanguageClient-neovim'
 " }
 
 " Programing {
-    Plug 'w0rp/ale'
-    " OR
-    "Plug 'scrooloose/syntastic'
-    " OR
-    "Plug 'benekastah/neomake'
+Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tomtom/tcomment_vim'
 " }
