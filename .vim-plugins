@@ -85,7 +85,6 @@ Plug 'zchee/deoplete-jedi'
 Plug 'landaire/deoplete-swift'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern'  }
 Plug 'wokalski/autocomplete-flow'
-Plug 'autozimu/LanguageClient-neovim'
 " }
 
 " Programing {
