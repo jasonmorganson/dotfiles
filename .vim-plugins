@@ -114,6 +114,9 @@ Plug 'flowtype/vim-flow'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'othree/jspc.vim'
 Plug 'Quramy/vison'
+if has('nvim')
+    Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+endif
 " }
 
 " Filetypes {
