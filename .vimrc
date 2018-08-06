@@ -597,5 +597,4 @@ iabbrev ... …
 "
 " Theme
 colorscheme jason
-"colorscheme nova
 
