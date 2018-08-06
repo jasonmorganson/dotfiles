@@ -586,8 +586,6 @@ endif
 inoremap <expr><tab> pumvisible() ? "\<C-n>" : "\<tab>"
 inoremap <expr><s-tab> pumvisible() ? "\<C-p>" : "\<s-tab>"
 
-set noshowcmd
-
 set splitbelow
 set splitright
 
