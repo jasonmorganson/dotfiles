@@ -516,6 +516,20 @@ endif
 
 " }
 
+" Abbreviations {
+" Commands {
+
+cabbrev git Git
+
+" }
+" Replacements {
+
+iabbrev --- —
+iabbrev ... …
+
+" }
+" }
+
 " VIM Folders {
 
 " Ensure directory exists
@@ -558,11 +572,6 @@ set swapfile
 set directory=~/.vim/swap,.
 
 " }
-
-cabbrev git Git
-
-iabbrev --- —
-iabbrev ... …
 
 "
 " Theme
