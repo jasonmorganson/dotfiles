@@ -188,7 +188,12 @@ set hidden
 set history=1000                    " Store a ton of history (default is 20)
 " }
 " Windows {
+
 set winminheight=0              " Windows can be 0 line high
+
+set splitbelow
+set splitright
+
 " }
 " View {
 
@@ -553,9 +558,6 @@ set swapfile
 set directory=~/.vim/swap,.
 
 " }
-
-set splitbelow
-set splitright
 
 cabbrev git Git
 
