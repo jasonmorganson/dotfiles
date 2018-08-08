@@ -298,17 +298,6 @@ set vb " Disable audio and visual bells
 
 " Mappings {
 
-" Fixes {
-
-" Fix home and end keybindings for screen, particularly on mac
-" - for some reason this fixes the arrow keys too. huh.
-map [F $
-imap [F $
-map [H g0
-imap [H g0
-
-" }
-
 " Consistency {
 
 " Yank from the cursor to the end of the line, to be consistent with C and D.

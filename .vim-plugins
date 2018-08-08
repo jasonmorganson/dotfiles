@@ -65,6 +65,7 @@ Plug 'tacroe/unite-mark', {'autoload':{'unite_sources':'mark'}}
 
 " Airline {
 Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'edkolev/tmuxline.vim'
 Plug 'edkolev/promptline.vim'
 " }
