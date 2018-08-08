@@ -201,6 +201,15 @@ set splitright
 set viewoptions=folds,options,cursor,unix,slash
 
 " }
+" Timeouts {
+
+" Mapping delay
+set timeoutlen=1000
+
+" Key code delay
+set ttimeoutlen=0
+
+" }
 " Editing {
 
 " Allow for cursor beyond last character
