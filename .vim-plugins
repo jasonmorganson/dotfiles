@@ -55,12 +55,7 @@ Plug 'jasonmorganson/vim-colorscheme'
 " }
 
 " Unite {
-Plug 'Shougo/vimproc.vim', {'do':'make'}
-Plug 'Shougo/unite.vim'
-Plug 'sgur/unite-qf'
-"Plug 'tsukkee/unite-tag', {'autoload':{'unite_sources':['tag','tag/file']}}
-Plug 'tacroe/unite-mark', {'autoload':{'unite_sources':'mark'}}
-"Plug 'Shougo/unite-outline', {'autoload':{'unite_sources':'outline'}}
+Plug 'Shougo/denite.nvim'
 " }
 
 " Airline {
