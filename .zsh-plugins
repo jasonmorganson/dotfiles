@@ -15,5 +15,6 @@ wbinglee/zsh-wakatime
 zsh-users/zsh-completions
 zsh-users/zsh-autosuggestions
 felixr/docker-zsh-completion
+twang817/zsh-ssh-agent
 lukechilds/zsh-nvm
 sindresorhus/pure
