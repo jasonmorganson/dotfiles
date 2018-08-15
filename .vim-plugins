@@ -38,6 +38,7 @@ Plug 'andymass/vim-matchup'
 Plug 'sjl/gundo.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-peekaboo'
 " }
 
 " GUI {
