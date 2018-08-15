@@ -134,8 +134,8 @@ set foldenable                  " Auto fold code
 set foldcolumn=1
 " }
 " Line numbers {
-set number                          " Line numbers on
-set relativenumber                  " Relative line numbers on
+set nonumber                          " Line numbers on
+set norelativenumber                  " Relative line numbers on
 set numberwidth=4
 " }
 " Color column {
