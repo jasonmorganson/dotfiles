@@ -4,6 +4,9 @@
 # Do not ignore dot files
 !.*
 
+# Ingnore any temporary files
+.*.tmp
+
 # Ignore certain dot files
 .bookmarks
 .bashrc
