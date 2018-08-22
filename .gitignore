@@ -6,6 +6,7 @@
 
 # Ignore certain dot files
 .bookmarks
+.bashrc
 .bash_history
 .dotfiles
 .fasd
