@@ -65,6 +65,7 @@
 .gh.json
 .gitsomeconfig
 .wget-hsts
+.tern-port
 
 # package directories
 node_modules
