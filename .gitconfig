@@ -11,6 +11,9 @@
 [help]
     autocorrect = 1
 
+[diff "sopsdiffer"]
+    textconv = sops -d
+
 [push]
     default = current
 
