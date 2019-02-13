@@ -28,6 +28,6 @@ cmds=(
 # Set alias for available commands.
 for cmd in $cmds ; do
 if (( $+commands[$cmd] )) ; then
-    alias $cmd="grc --colour=auto $cmd"
+    alias $cmd="grc $cmd"
 fi
 done
