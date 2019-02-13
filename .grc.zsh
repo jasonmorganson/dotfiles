@@ -6,6 +6,7 @@ cmds=(
     df \
     diff \
     dig \
+    dockerps \
     gcc \
     gmake \
     ifconfig \
