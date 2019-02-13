@@ -9,6 +9,11 @@ export KEYTIMEOUT=1
 # Terminal
 export CLICOLOR=YES
 
+# History
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=100000
+SAVEHIST=$HISTSIZE
+
 # Editors
 export EDITOR="vi"
 export VISUAL="vi"
