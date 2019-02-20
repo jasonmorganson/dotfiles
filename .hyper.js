@@ -4,7 +4,7 @@ module.exports = {
 
     shell: 'zsh',
 
-    fontSize: 10,
+    fontSize: 12,
 
     fontFamily: '"Input Mono", "Source Code Pro", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
   },
