@@ -14,6 +14,7 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-unimpaired'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'Chiel92/vim-autoformat'
+Plug '907th/vim-auto-save'
 " }
 
 " Editor Configuration {
