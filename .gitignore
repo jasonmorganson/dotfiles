@@ -67,6 +67,7 @@
 .gitsomeconfig
 .wget-hsts
 .tern-port
+.zsh_history
 
 # package directories
 node_modules
