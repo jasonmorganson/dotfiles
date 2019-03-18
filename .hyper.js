@@ -1,5 +1,5 @@
 const foregroundColor = '#eff0eb'
-const backgroundColor = '#282a36'
+const backgroundColor = '#151515'
 const red = '#ff5c57'
 const green = '#5af78e'
 const yellow = '#f3f99d'
