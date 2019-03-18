@@ -1,21 +1,20 @@
 module.exports = {
+    config: {
+        shell: 'zsh',
 
-  config: {
+        fontSize: 12,
 
-    shell: 'zsh',
+        fontFamily:
+            '"Input Mono", "Source Code Pro", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace'
+    },
 
-    fontSize: 12,
-
-    fontFamily: '"Input Mono", "Source Code Pro", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
-  },
-
-  plugins: [
-    'hyperlinks',
-    "hyper-snazzy",
-    'hyperfullscreen',
-    'hyperterm-paste',
-    "hyper-hide-title",
-    "hyper-hide-scroll",
-    "hyper-tab-touchbar"
-  ]
-};
+    plugins: [
+        'hyperlinks',
+        'hyper-snazzy',
+        'hyperfullscreen',
+        'hyperterm-paste',
+        'hyper-hide-title',
+        'hyper-hide-scroll',
+        'hyper-tab-touchbar'
+    ]
+}
