@@ -20,6 +20,9 @@
 [push]
     default = current
 
+[rebase]
+    autosquash = true
+
 [color]
     ui = always
     branch = auto
