@@ -300,7 +300,7 @@ set shortmess+=cfilmnrxoOtTA
 " content of the active window
 " set autochdir
 
-set vb " Disable audio and visual bells
+set belloff=all " Disable audio and visual bells
 "
 " }
 " }
