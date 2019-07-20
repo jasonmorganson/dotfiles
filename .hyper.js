@@ -73,6 +73,7 @@ module.exports = {
         'hyperminimal',
         'hyperfullscreen',
         'hyperterm-paste',
+        'hyper-materialshell',
         'hyper-custom-touchbar'
     ]
 }
