@@ -39,7 +39,33 @@ module.exports = {
             lightMagenta: magenta,
             lightCyan: cyan,
             lightWhite: foregroundColor
-        }
+        },
+        hyperCustomTouchbar: [
+            { label: 'clear', command: 'clear', backgroundColor: '#d13232' },
+            { label: 'man', command: 'man ', prompt: true },
+            {
+                label: 'git',
+                options: [
+                    { label: 'diff', command: 'git diff' },
+                    { label: 'status', command: 'git status' },
+                    { label: 'log', command: 'git log' },
+                    {
+                        label: 'add .',
+                        command: 'git add .',
+                        icon: '/tmp/icons8-add-file-44.png',
+                        iconPosition: 'right'
+                    },
+                    { label: 'clone', command: 'git clone ', prompt: true }
+                ]
+            },
+            {
+                label: 'vim',
+                options: [
+                    { label: 'quit', command: ':q!', esc: true },
+                    { label: 'save & quit', command: ':x', esc: true }
+                ]
+            }
+        ]
     },
 
     plugins: [
@@ -47,6 +73,6 @@ module.exports = {
         'hyperminimal',
         'hyperfullscreen',
         'hyperterm-paste',
-        'hyper-tab-touchbar'
+        'hyper-custom-touchbar'
     ]
 }
