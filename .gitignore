@@ -68,6 +68,32 @@
 .wget-hsts
 .tern-port
 .zsh_history
+.babel.json
+.bigqueryrc
+.boto
+.cargo
+.gist
+.graphqlconfig
+.inthe.am
+.iterm2_shell_integration.zsh
+.jitconfig
+.lesshst
+.mole.conf
+.multirust
+.popsql.json
+.pulumi
+.python_history
+.simplenoterc
+.standard-v12-cache
+.swfinfo
+.dbt
+.dockercfg
+.fzf.bash
+.fzf.zsh
+.tig_history
+.tigrc
+.warprc
+.zcalc_history
 
 # package directories
 node_modules
