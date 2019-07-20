@@ -44,10 +44,9 @@ module.exports = {
 
     plugins: [
         'hyperlinks',
+        'hyperminimal',
         'hyperfullscreen',
         'hyperterm-paste',
-        'hyper-hide-title',
-        'hyper-hide-scroll',
         'hyper-tab-touchbar'
     ]
 }
