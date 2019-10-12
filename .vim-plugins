@@ -137,7 +137,7 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 
 " Misc {
 Plug 'mrtazz/simplenote.vim'
-Plug 'wakatime/vim-wakatime'
+"Plug 'wakatime/vim-wakatime'
 " }
 
 " Bootstrap plugins {
