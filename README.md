@@ -1,15 +1,20 @@
 # .dotfiles
 
-Documentation on the specifics of my $HOME "dot files" setup
-===============================================================
-
-I grew tired of starting from scratch every time when setting up.
-
 ## Setup ##
 
-> `git clone https://github.com/jasonmorganson/dotfiles.git ~/.dotfiles`
+### One time setup ###
 
-> `cp ~/.dotfiles/.* .`
+Find a cloud drive to use. Dropbox and Google Drive both work well.
+
+Clone this repo into a cloud drive directory:
+> `git clone https://github.com/jasonmorganson/dotfiles.git $DOTFILES_DIRECTORY`
+
+### When starting fresh on a new computer ###
+
+Install the cloud drive. Chromebooks have Google Drive integrated.
+
+### Run setup script ###
+> `curl -sL https://git.io/JelA1 | bash`
 
 ## Usage ##
 
