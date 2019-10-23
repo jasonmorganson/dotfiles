@@ -6,6 +6,7 @@ path=(
   ~/.bin
   ~/.local/bin
   ~/go/bin
+  ~/.krew/bin
   ~/.cargo/bin
   ~/.nodenv/bin
   ~/.yarn/bin
