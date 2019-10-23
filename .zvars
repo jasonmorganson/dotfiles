@@ -48,3 +48,5 @@ export HOMEBREW_GITHUB_API_TOKEN=72c1e9f5cccf940ed6fe9a83ca1943a3f0dcce82
 # XCode
 export DEVELOPER_DIR='/Applications/Xcode.app/Contents/Developer'
 
+export DOCKER_BUILDKIT=1
+
