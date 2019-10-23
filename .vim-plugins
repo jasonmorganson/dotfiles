@@ -146,7 +146,7 @@ Plug 'kassio/neoterm'
 " Misc {
 Plug 'rizzatti/dash.vim'
 Plug 'mrtazz/simplenote.vim'
-Plug 'wakatime/vim-wakatime'
+"Plug 'wakatime/vim-wakatime'
 Plug 'mattn/webapi-vim'
 " }
 
