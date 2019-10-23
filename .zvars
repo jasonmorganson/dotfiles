@@ -52,3 +52,9 @@ export DOCKER_BUILDKIT=1
 
 export HELM_TLS_ENABLE=true
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    export DOTFILES_DIRECTORY=~/Google\ Drive/dotfiles
+else
+    export DOTFILES_DIRECTORY=/mnt/chromeos/GoogleDrive/MyDrive/dotfiles
+fi
+
