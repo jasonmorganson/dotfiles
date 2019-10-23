@@ -50,3 +50,5 @@ export DEVELOPER_DIR='/Applications/Xcode.app/Contents/Developer'
 
 export DOCKER_BUILDKIT=1
 
+export HELM_TLS_ENABLE=true
+
