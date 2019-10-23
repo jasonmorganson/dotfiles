@@ -11,6 +11,9 @@
 [help]
     autocorrect = 1
 
+[pager]
+    diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
+
 [push]
     default = current
 
