@@ -12,8 +12,10 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-unimpaired'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'Chiel92/vim-autoformat'
+Plug 'rbgrouleff/bclose.vim'
+"Plug 'ntpeters/vim-better-whitespace'
+"Plug 'Chiel92/vim-autoformat'
+"Plug 'sbdchd/neoformat'
 Plug '907th/vim-auto-save'
 " }
 
@@ -69,34 +71,26 @@ Plug 'edkolev/promptline.vim'
 " }
 
 " Completion & Snippets {
-if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-endif
-Plug 'Shougo/neco-vim'
-Plug 'Shougo/neco-syntax'
-Plug 'zchee/deoplete-go'
-Plug 'zchee/deoplete-zsh'
-Plug 'zchee/deoplete-jedi'
-Plug 'landaire/deoplete-swift'
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern'  }
-Plug 'wokalski/autocomplete-flow'
+Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 " }
 
 " Programing {
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tomtom/tcomment_vim'
 " }
 
 " Git {
+Plug 'sodapopcan/vim-twiggy'
 Plug 'tpope/vim-git'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
+Plug 'idanarye/vim-merginal'
+Plug 'kristijanhusak/vim-create-pr'
+Plug 'iberianpig/tig-explorer.vim'
+Plug 'int3/vim-extradite'
 Plug 'gregsexton/gitv'
+Plug 'junegunn/gv.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mattn/gist-vim'
 " }
@@ -112,8 +106,20 @@ if has('nvim')
 endif
 " }
 
+" Python {
+Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+"Plug 'ivanov/vim-ipython'
+" }
+
 " Filetypes {
 Plug 'sheerun/vim-polyglot'
+Plug 'vim-scripts/bats.vim'
+Plug 'tpope/vim-cucumber'
+Plug 'towolf/vim-helm'
+Plug 'gurpreetatwal/vim-avro'
+Plug 'jparise/vim-graphql'
+Plug 'fidian/hexmode'
+Plug 'tjvr/vim-nearley'
 " }
 
 " Testing {
@@ -128,16 +134,20 @@ Plug 'ahmedelgabri/vim-ava-snippets'
 " Tmux {
 Plug 'tmux-plugins/vim-tmux'
 Plug 'tmux-plugins/vim-tmux-focus-events'
+Plug 'roxma/vim-tmux-clipboard'
+Plug 'christoomey/vim-tmux-navigator'
 " }
 
 " Terminal {
-"Plug 'kassio/neoterm'
+Plug 'kassio/neoterm'
 "Plug 'brettanomyces/nvim-editcommand'
 " }
 
 " Misc {
+Plug 'rizzatti/dash.vim'
 Plug 'mrtazz/simplenote.vim'
-"Plug 'wakatime/vim-wakatime'
+Plug 'wakatime/vim-wakatime'
+Plug 'mattn/webapi-vim'
 " }
 
 " Bootstrap plugins {
