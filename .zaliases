@@ -5,9 +5,9 @@ alias f='fasd -f'        # file
 
 alias b='bd 1'
 
-alias ls='ls --color -C'
 alias l='ls'
-alias la='ls -A'
+alias ls='exa'
+alias la='ls -a'
 alias ll='ls -l'
 alias ll='exa --long --header --git'
 
