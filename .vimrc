@@ -113,6 +113,7 @@ set linebreak
 
 " }
 " Tabs {
+set showtabline=0         " Turn off tabline
 set autoindent            " Indent at the same level of the previous line
 set smartindent
 set smarttab              " <TAB> in front of line inserts 'shiftwidth' blanks
