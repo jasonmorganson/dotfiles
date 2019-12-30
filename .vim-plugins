@@ -17,6 +17,8 @@ Plug 'rbgrouleff/bclose.vim'
 "Plug 'Chiel92/vim-autoformat'
 "Plug 'sbdchd/neoformat'
 Plug '907th/vim-auto-save'
+Plug 'terryma/vim-expand-region'
+Plug 'farmergreg/vim-lastplace'
 " }
 
 " Editor Configuration {
@@ -32,9 +34,9 @@ Plug 'Lokaltog/vim-easymotion'
 " }
 
 " Editing {
-Plug 'itchyny/vim-cursorword'
+"Plug 'itchyny/vim-cursorword'
 Plug 'jiangmiao/auto-pairs'
-Plug 'andymass/vim-matchup'
+"Plug 'andymass/vim-matchup'
 " }
 
 " IDE {
@@ -42,12 +44,14 @@ Plug 'sjl/gundo.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
+Plug 'kkoomen/vim-doge'
+Plug 'vim-ctrlspace/vim-ctrlspace'
 " }
 
 " GUI {
 Plug 'jszakmeister/vim-togglecursor'
 Plug 'milkypostman/vim-togglelist'
-Plug 'kshenoy/vim-signature'
+"Plug 'kshenoy/vim-signature'
 " }
 
 " Colorschemes {
@@ -60,18 +64,25 @@ Plug 'jasonmorganson/vim-colorscheme'
 " }
 
 " Unite {
-Plug 'Shougo/denite.nvim'
+"Plug 'Shougo/denite.nvim'
 " }
 
 " Airline {
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'edkolev/tmuxline.vim'
-Plug 'edkolev/promptline.vim'
+"Plug 'bling/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+"Plug 'edkolev/tmuxline.vim'
+"Plug 'edkolev/promptline.vim'
 " }
 
 " Completion & Snippets {
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+Plug 'neoclide/coc-git', {'do': 'npm install'}
+Plug 'neoclide/coc-html', {'do': 'npm install'}
+Plug 'neoclide/coc-yaml', {'do': 'npm install'}
+Plug 'neoclide/coc-yank', {'do': 'npm install'}
+Plug 'neoclide/coc-lists', {'do': 'npm install'}
+Plug 'neoclide/coc-python', {'do': 'npm install'}
+"Plug 'neoclide/coc-tsserver', {'do': 'npm install'}
 " }
 
 " Programing {
@@ -91,7 +102,7 @@ Plug 'iberianpig/tig-explorer.vim'
 Plug 'int3/vim-extradite'
 Plug 'gregsexton/gitv'
 Plug 'junegunn/gv.vim'
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 Plug 'mattn/gist-vim'
 " }
 
@@ -101,14 +112,15 @@ Plug 'afshinm/npm.vim'
 Plug 'flowtype/vim-flow'
 Plug 'othree/jspc.vim'
 Plug 'Quramy/vison'
-if has('nvim')
-    Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-endif
+"if has('nvim')
+"    Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
+"endif
 " }
 
 " Python {
-Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
+"Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 "Plug 'ivanov/vim-ipython'
+"Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 " }
 
 " Filetypes {
@@ -132,10 +144,11 @@ Plug 'ahmedelgabri/vim-ava-snippets'
 " }
 
 " Tmux {
-Plug 'tmux-plugins/vim-tmux'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'roxma/vim-tmux-clipboard'
-Plug 'christoomey/vim-tmux-navigator'
+"Plug 'tmux-plugins/vim-tmux'
+"Plug 'tmux-plugins/vim-tmux-focus-events'
+"Plug 'roxma/vim-tmux-clipboard'
+"Plug 'christoomey/vim-tmux-navigator'
+"Plug 'wellle/tmux-complete.vim'
 " }
 
 " Terminal {

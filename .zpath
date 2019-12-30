@@ -14,6 +14,8 @@ path=(
   ~/.poetry/bin
   ~/.rvm/bin
   ~/.linuxbrew/bin
+  ~/.asdf/bin
+  ~/.asdf/shims
   /usr/local/opt/coreutils/libexec/gnubin
   /usr/local/bin
   /usr/local/sbin

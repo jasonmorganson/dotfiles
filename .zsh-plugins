@@ -11,7 +11,7 @@ zpm-zsh/colors
 
 # Completions
 zsh-users/zsh-completions
-dbz/kube-aliases
+# dbz/kube-aliases +1s
 felixr/docker-zsh-completion
 sinetoami/antibody-completion
 littleq0903/gcloud-zsh-completion
@@ -27,14 +27,14 @@ zsh-users/zsh-history-substring-search
 ascii-soup/zsh-url-highlighter
 zdharma/fast-syntax-highlighting
 TBSliver/zsh-plugin-tmux-simple
-wbinglee/zsh-wakatime
+#wbinglee/zsh-wakatime
 
 # Helpers
-MichaelAquilina/zsh-you-should-use
+#MichaelAquilina/zsh-you-should-use
 thetic/extract
 hcgraf/zsh-sudo
 Tarrasch/zsh-bd
-b4b4r07/enhancd
+# b4b4r07/enhancd
 
 # Vim
 #laurenkt/zsh-vimto
@@ -57,8 +57,8 @@ twang817/zsh-ssh-agent
 
 # Automatic
 #Valiev/almostontop
-dbkaplun/smart-cd
-hlissner/zsh-autopair
+#dbkaplun/smart-cd
+# hlissner/zsh-autopair
 zsh-users/zsh-autosuggestions
 Tarrasch/zsh-autoenv
 

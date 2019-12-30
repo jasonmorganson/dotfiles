@@ -94,6 +94,7 @@
 .tigrc
 .warprc
 .zcalc_history
+.pspg_history
 
 # package directories
 node_modules
@@ -102,3 +103,6 @@ jspm_packages
 # Serverless directories
 .serverless
 .serverlessrc
+
+# Node cache
+.standard-v*-cache

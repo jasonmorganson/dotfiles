@@ -249,20 +249,20 @@ set cmdheight=2
 
 " }
 " Status line {
-if has('statusline')
-    set laststatus=2
-
-    " Broken down into easily includeable segments
-    set statusline=%<%f\                     " Filename
-    set statusline+=%w%h%m%r                 " Options
-    set statusline+=%{fugitive#statusline()} " Git Hotness
-    set statusline+=\ [%{&ff}/%Y]            " Filetype
-    set statusline+=\ [%{getcwd()}]          " Current dir
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}  " Syntastic Goodness
-    set statusline+=%*
-    set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-endif
+" if has('statusline')
+"     set laststatus=2
+"
+"     " Broken down into easily includeable segments
+"     set statusline=%<%f\                     " Filename
+"     set statusline+=%w%h%m%r                 " Options
+"     set statusline+=%{fugitive#statusline()} " Git Hotness
+"     set statusline+=\ [%{&ff}/%Y]            " Filetype
+"     set statusline+=\ [%{getcwd()}]          " Current dir
+"     set statusline+=%#warningmsg#
+"     set statusline+=%{SyntasticStatuslineFlag()}  " Syntastic Goodness
+"     set statusline+=%*
+"     set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+" endif
 " }
 " Misc {
 set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
