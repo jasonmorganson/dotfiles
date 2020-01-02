@@ -1,6 +1,12 @@
 # Ignore all files
 *
 
+# Do not ignore Dockerfile
+!Dockerfile
+
+# Do not ignore Brewfile
+!Brewfile
+
 # Do not ignore dot files
 !.*
 
