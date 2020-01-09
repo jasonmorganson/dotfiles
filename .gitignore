@@ -95,6 +95,7 @@
 .warprc
 .zcalc_history
 .pspg_history
+.gnupg
 
 # package directories
 node_modules
