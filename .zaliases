@@ -19,7 +19,6 @@ alias u='git-smart-pull'
 alias r='git-smart-remote'
 
 alias gl='git log'
-alias co='fzf-git::checkout_branch'
 
 alias diff='git diff'
 alias wip='git commit -am "WIP"'

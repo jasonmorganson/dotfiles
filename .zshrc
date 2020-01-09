@@ -54,6 +54,9 @@ source <(stern --completion=zsh)
 
 eval "$(hub alias -s)"
 
+# Overrides an alias from oh-my-zsh git plugin so has to be set after that loads
+alias co='fzf-git::checkout_branch'
+
 if [[ "$OSTYPE" != "darwin"* ]]; then
   eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
