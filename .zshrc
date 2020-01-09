@@ -36,8 +36,6 @@ fi
 
 source ~/.zsh-plugins.sh
 
-unset zle_bracketed_paste
-
 zstyle ':completion:*' menu select # select completions with arrow keys
 zstyle ':completion:*' group-name '' # group results by category
 
