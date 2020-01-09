@@ -24,8 +24,6 @@ fi;
 
 zmodload -i zsh/complist
 
-source ~/.zpath
-
 # Make sure that antibody is installed
 (( $+commands[antibody] )) || curl -sL git.io/antibody | sh -s
 
