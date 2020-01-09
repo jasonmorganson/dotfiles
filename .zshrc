@@ -26,9 +26,6 @@ zmodload -i zsh/complist
 
 source ~/.zpath
 
-# TODO: Might not need
-# export ZSH="$(antibody home)/https-COLON--SLASH--SLASH-github.com-SLASH-robbyrussell-SLASH-oh-my-zsh"
-
 # Make sure that antibody is installed
 (( $+commands[antibody] )) || curl -sL git.io/antibody | sh -s
 
