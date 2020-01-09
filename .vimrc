@@ -574,5 +574,5 @@ set directory=~/.vim/swap,.
 
 "
 " Theme
-colorscheme jason
+silent! colorscheme jason
 
