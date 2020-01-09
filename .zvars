@@ -58,3 +58,4 @@ else
     export DOTFILES_DIRECTORY=/mnt/chromeos/GoogleDrive/MyDrive/dotfiles
 fi
 
+eval $(brew shellenv)

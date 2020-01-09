@@ -41,12 +41,8 @@ source <(stern --completion=zsh)
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-eval "$(hub alias -s)"
-
 # Overrides an alias from oh-my-zsh git plugin so has to be set after that loads
 alias co='fzf-git::checkout_branch'
-
-eval $(brew shellenv)
 
 # Show loading time
 now=$(($(date +%s%N)/1000000))
