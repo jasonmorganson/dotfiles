@@ -59,8 +59,6 @@ alias co='fzf-git::checkout_branch'
 
 eval $(brew shellenv)
 
-. $HOME/.asdf/asdf.sh
-
 # Show loading time
 now=$(($(date +%s%N)/1000000))
 elapsed=$(($now-$timer))

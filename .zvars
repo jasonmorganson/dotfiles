@@ -54,6 +54,7 @@ export HELM_TLS_ENABLE=true
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export DOTFILES_DIRECTORY=~/Google\ Drive/dotfiles
 else
+    export ASDF_DIR=$HOME/.linuxbrew/opt/asdf
     export DOTFILES_DIRECTORY=/mnt/chromeos/GoogleDrive/MyDrive/dotfiles
 fi
 
