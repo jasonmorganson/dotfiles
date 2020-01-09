@@ -24,6 +24,12 @@ fi;
 
 zmodload -i zsh/complist
 
+# Select completions with arrow keys
+zstyle ':completion:*' menu
+
+# Group results by category
+zstyle ':completion:*' group-name ''
+
 # Make sure that antibody is installed
 (( $+commands[antibody] )) || curl -sL git.io/antibody | sh -s
 
@@ -32,10 +38,8 @@ if [[ ! -e "~/.zsh-plugins" ]] || [[ "~/.zsh-plugins" -nt "~/.zsh-plugins.sh" ]]
   antibody bundle < ~/.zsh-plugins > ~/.zsh-plugins.sh
 fi
 
+# Load zsh plugins
 source ~/.zsh-plugins.sh
-
-zstyle ':completion:*' menu select # select completions with arrow keys
-zstyle ':completion:*' group-name '' # group results by category
 
 source <(stern --completion=zsh)
 
