@@ -51,8 +51,12 @@ SHELL [$SHELL, "-c"]
 COPY --chown=$USER Brewfile .
 RUN brew bundle install
 
-# Ensure asdf is installed
-RUN brew install asdf
+# Make sure brew bundles used below are installed
+RUN brew install \
+    # Ensure asdf is installed
+    asdf
+    # Also ensure unzip is installed for Terraform asdf install
+    unzip
 
 # Use linuxbrew asdf directory
 ENV ASDF_DIR=$HOME/.linuxbrew/opt/asdf
@@ -72,10 +76,6 @@ RUN asdf plugin add helm \
 RUN .asdf/plugins/nodejs/bin/import-release-team-keyring
 
 COPY --chown=$USER .tool-versions .
-
-# TODO: Move this up
-# Also unsure unzip is installed for Terraform asdf install
-RUN brew install unzip
 
 # Install asdf packages
 RUN asdf install
