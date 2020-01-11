@@ -41,9 +41,40 @@ WORKDIR /home/$USER
 # Install linuxbrew
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 
-# Install brew packages
+# Install brew bundles
 COPY --chown=$USER Brewfile .
 RUN brew bundle install
+
+# Ensure asdf is installed
+RUN brew install asdf
+
+# Use linuxbrew asdf directory
+ENV ASDF_DIR=/home/$USER/.linuxbrew/opt/asdf
+
+# Add asdf plugins
+RUN asdf plugin add helm \
+    && asdf plugin add helmfile \
+    && asdf plugin add k9s \
+    && asdf plugin add nodejs \
+    && asdf plugin add python \
+    && asdf plugin add shellcheck \
+    && asdf plugin add shfmt \
+    && asdf plugin add stern https://github.com/looztra/asdf-stern \
+    && asdf plugin add terraform
+
+# Import the Node.js release team's OpenPGP keys to main keyring
+RUN bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
+# TODO: Should be:
+# RUN bash /home/$USER/.asdf/plugins/nodejs/bin/import-release-team-keyring
+
+COPY --chown=$USER .tool-versions .
+
+# TODO: Move this up
+# Also unsure unzip is installed for Terraform asdf install
+RUN brew install unzip
+
+# Install asdf packages
+RUN asdf install
 
 # Pre-compile ZSH plugins
 COPY --chown=$USER .zsh-plugins .
