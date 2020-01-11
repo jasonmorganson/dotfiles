@@ -86,32 +86,17 @@ RUN asdf install
 # CUSTOM USER STUFF #
 #####################
 
-# TODO: Move up
-# Install zsh
-RUN brew install zsh getantibody/tap/antibody
-
 # Pre-compile ZSH plugins
 COPY --chown=$USER .zsh-plugins .
 RUN antibody bundle < ~/.zsh-plugins > ~/.zsh-plugins.sh
 
-# TODO: Move up
-# Install tmux
-RUN brew install tmux
-
 # Install tmux plugins
-RUN git clone https://github.com/tmux-plugins/tpm /home/$USER/.tmux/plugins/tpm \
-    && TMUX_PLUGIN_MANAGER_PATH=/home/$USER/.tmux/plugins/ /home/$USER/.tmux/plugins/tpm/bin/install_plugins
-
-# TODO: Move up
-# Install vim/neovim
-RUN brew install vim neovim
+RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm \
+    && TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins/ ~/.tmux/plugins/tpm/bin/install_plugins
 
 # # Install vim plugins
 COPY --chown=$USER .vimrc .vim-plugins .
 RUN vim +'PlugInstall --sync' +qa
-
-# Install chezmoi
-RUN brew install twpayne/taps/chezmoi
 
 COPY --chown=$USER . .
 
