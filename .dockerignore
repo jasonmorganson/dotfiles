@@ -1,0 +1,41 @@
+# Ignore everything
+*
+
+# Whitelist dotfiles
+!.config/nvim
+!.docker/config.json
+!.ssh/config
+!.default-npm-packages
+!.default-python-packages
+!.dircolors
+!.eslintrc.json
+!.gitconfig
+!.gitignore
+!.gvimrc
+!.hyper.js
+!.inputrc
+!.mackup.cfg
+!.mrconfig
+!.prettierrc
+!.profile
+!.taskrc
+!.tern-config
+!.tmux-statusline-colors.conf
+!.tmux.conf
+!.tool-versions
+!.vim-plugins
+!.vimrc
+!.xinitrc
+!.zaliases
+!.zlogin
+!.zlogout
+!.zopts
+!.zpath
+!.zprofile
+!.zsh-plugins
+!.zshenv
+!.zshrc
+!.zvars
+
+# Whitelist other files
+!Brewfile
