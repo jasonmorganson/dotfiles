@@ -7,7 +7,8 @@ ARG USER=jason
 
 ENV USER=$USER \
     HOME=/home/$USER \
-    LANG=en_US.UTF-8
+    LANG=en_US.UTF-8 \
+    SHELL=$HOME/.linuxbrew/bin/zsh
 
 RUN apt-get update \
     && apt-get install -y \
@@ -44,6 +45,8 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/mast
 # Add linuxbrew bin path to path
 ENV PATH=$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH
 
+SHELL [$SHELL, "-c"]
+
 # Install brew bundles
 COPY --chown=$USER Brewfile .
 RUN brew bundle install
@@ -66,7 +69,7 @@ RUN asdf plugin add helm \
     && asdf plugin add terraform
 
 # Import the Node.js release team's OpenPGP keys to main keyring
-RUN bash .asdf/plugins/nodejs/bin/import-release-team-keyring
+RUN .asdf/plugins/nodejs/bin/import-release-team-keyring
 
 COPY --chown=$USER .tool-versions .
 
@@ -112,6 +115,4 @@ RUN brew install twpayne/taps/chezmoi
 
 COPY --chown=$USER . .
 
-ENV SHELL=$HOME/.linuxbrew/bin/zsh
-
-CMD ["zsh"]
+CMD [$SHELL]
