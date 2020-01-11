@@ -5,9 +5,7 @@ LABEL maintainer="Jason Morganson <jmorganson@gmail.com>"
 
 ARG USER=jason
 
-ENV LANG=en_US.UTF-8 \
-    PATH=/home/$USER/.linuxbrew/bin:/home/$USER/.linuxbrew/sbin:$PATH \
-    SHELL=/home/$USER/.linuxbrew/bin/zsh
+ENV LANG=en_US.UTF-8
 
 RUN apt-get update \
     && apt-get install -y \
@@ -40,6 +38,9 @@ WORKDIR /home/$USER
 
 # Install linuxbrew
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+
+# Add linuxbrew bin path to path
+ENV PATH=/home/$USER/.linuxbrew/bin:/home/$USER/.linuxbrew/sbin:$PATH
 
 # Install brew bundles
 COPY --chown=$USER Brewfile .
@@ -110,5 +111,7 @@ RUN vim +'PlugInstall --sync' +qa
 RUN brew install twpayne/taps/chezmoi
 
 COPY --chown=$USER . .
+
+ENV SHELL=/home/$USER/.linuxbrew/bin/zsh
 
 CMD ["zsh"]
