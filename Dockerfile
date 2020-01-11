@@ -5,7 +5,9 @@ LABEL maintainer="Jason Morganson <jmorganson@gmail.com>"
 
 ARG USER=jason
 
-ENV LANG=en_US.UTF-8
+ENV USER=$USER \
+    HOME=/home/$USER \
+    LANG=en_US.UTF-8
 
 RUN apt-get update \
     && apt-get install -y \
@@ -30,17 +32,17 @@ RUN apt-get update \
     && dpkg-reconfigure --frontend=noninteractive locales \
     && update-locale LANG=en_US.UTF-8 \
     # Add user account
-    && useradd --create-home --shell $SHELL $USER
+    && useradd --create-home --home-dir $HOME --shell $SHELL $USER
 
 USER $USER
 
-WORKDIR /home/$USER
+WORKDIR $HOME
 
 # Install linuxbrew
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
 
 # Add linuxbrew bin path to path
-ENV PATH=/home/$USER/.linuxbrew/bin:/home/$USER/.linuxbrew/sbin:$PATH
+ENV PATH=$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH
 
 # Install brew bundles
 COPY --chown=$USER Brewfile .
@@ -50,7 +52,7 @@ RUN brew bundle install
 RUN brew install asdf
 
 # Use linuxbrew asdf directory
-ENV ASDF_DIR=/home/$USER/.linuxbrew/opt/asdf
+ENV ASDF_DIR=$HOME/.linuxbrew/opt/asdf
 
 # Add asdf plugins
 RUN asdf plugin add helm \
@@ -64,9 +66,7 @@ RUN asdf plugin add helm \
     && asdf plugin add terraform
 
 # Import the Node.js release team's OpenPGP keys to main keyring
-RUN bash ~/.asdf/plugins/nodejs/bin/import-release-team-keyring
-# TODO: Should be:
-# RUN bash /home/$USER/.asdf/plugins/nodejs/bin/import-release-team-keyring
+RUN bash .asdf/plugins/nodejs/bin/import-release-team-keyring
 
 COPY --chown=$USER .tool-versions .
 
@@ -112,6 +112,6 @@ RUN brew install twpayne/taps/chezmoi
 
 COPY --chown=$USER . .
 
-ENV SHELL=/home/$USER/.linuxbrew/bin/zsh
+ENV SHELL=$HOME/.linuxbrew/bin/zsh
 
 CMD ["zsh"]
