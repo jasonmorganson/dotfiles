@@ -45,7 +45,7 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/mast
 # Add linuxbrew bin path to path
 ENV PATH=$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH
 
-SHELL [$SHELL, "-c"]
+SHELL ["$SHELL", "-c"]
 
 # Install brew bundles
 COPY --chown=$USER Brewfile .
@@ -54,7 +54,7 @@ RUN brew bundle install
 # Make sure brew bundles used below are installed
 RUN brew install \
     # Ensure asdf is installed
-    asdf
+    asdf \
     # Also ensure unzip is installed for Terraform asdf install
     unzip
 
