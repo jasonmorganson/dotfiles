@@ -45,8 +45,6 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/mast
 # Add linuxbrew bin path to path
 ENV PATH=$HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH
 
-SHELL ["$SHELL", "-c"]
-
 # Install brew bundles
 COPY --chown=$USER Brewfile .
 RUN brew bundle install
