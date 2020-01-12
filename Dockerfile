@@ -94,6 +94,7 @@ RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm \
 
 # # Install vim plugins
 COPY --chown=$USER .vimrc .vim-plugins .
+ENV SHELL=$HOME/.linuxbrew/bin/zsh
 RUN vim +'PlugInstall --sync' +qa
 
 COPY --chown=$USER . .
