@@ -41,8 +41,6 @@ fi
 # Load zsh plugins
 source ~/.zsh-plugins.sh
 
-source <(stern --completion=zsh)
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Overrides an alias from oh-my-zsh git plugin so has to be set after that loads
