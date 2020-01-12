@@ -99,4 +99,4 @@ RUN vim +'PlugInstall --sync' +qa
 
 COPY --chown=$USER . .
 
-CMD [$SHELL]
+CMD ["zsh"]
