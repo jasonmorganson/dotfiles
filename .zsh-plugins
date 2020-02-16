@@ -23,9 +23,9 @@ timothyrowan/betterbrew-zsh-plugin
 joshuarubin/zsh-fzf
 atweiden/fzf-extras
 srijanshetty/zsh-suffix-alias
-zsh-users/zsh-history-substring-search
+# zsh-users/zsh-history-substring-search
 ascii-soup/zsh-url-highlighter
-zdharma/fast-syntax-highlighting
+# zdharma/fast-syntax-highlighting
 TBSliver/zsh-plugin-tmux-simple
 #wbinglee/zsh-wakatime
 
