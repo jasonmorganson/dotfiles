@@ -161,6 +161,7 @@ Plug 'rizzatti/dash.vim'
 Plug 'mrtazz/simplenote.vim'
 "Plug 'wakatime/vim-wakatime'
 Plug 'mattn/webapi-vim'
+Plug 'tweekmonster/startuptime.vim'
 " }
 
 " Bootstrap plugins {
