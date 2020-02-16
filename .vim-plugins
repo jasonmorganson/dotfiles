@@ -78,7 +78,7 @@ Plug 'jasonmorganson/vim-colorscheme'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
 Plug 'neoclide/coc-git', {'do': 'npm install'}
 Plug 'neoclide/coc-html', {'do': 'npm install'}
-Plug 'neoclide/coc-yaml', {'do': 'npm install'}
+"Plug 'neoclide/coc-yaml', {'do': 'npm install'}
 Plug 'neoclide/coc-yank', {'do': 'npm install'}
 Plug 'neoclide/coc-lists', {'do': 'npm install'}
 Plug 'neoclide/coc-python', {'do': 'npm install'}
