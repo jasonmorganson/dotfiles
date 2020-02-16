@@ -36,7 +36,7 @@ Plug 'Lokaltog/vim-easymotion'
 " Editing {
 "Plug 'itchyny/vim-cursorword'
 Plug 'jiangmiao/auto-pairs'
-"Plug 'andymass/vim-matchup'
+Plug 'andymass/vim-matchup'
 " }
 
 " IDE {
