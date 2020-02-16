@@ -24,7 +24,7 @@ Plug 'farmergreg/vim-lastplace'
 " Editor Configuration {
 Plug 'tpope/vim-sleuth'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'MarcWeber/vim-addon-local-vimrc'
+"Plug 'MarcWeber/vim-addon-local-vimrc'
 " }
 
 " Movement {
