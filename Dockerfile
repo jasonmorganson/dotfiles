@@ -7,8 +7,7 @@ ARG USER=jason
 
 ENV USER=$USER \
     HOME=/home/$USER \
-    LANG=en_US.UTF-8 \
-    SHELL=$HOME/.linuxbrew/bin/zsh
+    LANG=en_US.UTF-8
 
 RUN apt-get update \
     && apt-get install -y \
@@ -33,7 +32,7 @@ RUN apt-get update \
     && dpkg-reconfigure --frontend=noninteractive locales \
     && update-locale LANG=en_US.UTF-8 \
     # Add user account
-    && useradd --create-home --home-dir $HOME --shell $SHELL $USER
+    && useradd --create-home --home-dir $HOME $USER
 
 USER $USER
 
@@ -92,11 +91,9 @@ RUN antibody bundle < ~/.zsh-plugins > ~/.zsh-plugins.sh
 RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm \
     && TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins/ ~/.tmux/plugins/tpm/bin/install_plugins
 
-# # Install vim plugins
+# Install vim plugins
 COPY --chown=$USER .vimrc .vim-plugins .
-ENV SHELL=$HOME/.linuxbrew/bin/zsh
 RUN vim +'PlugInstall --sync' +qa
 
 COPY --chown=$USER . .
 
-CMD ["zsh"]
