@@ -1,6 +1,6 @@
 python 3.6.8
 nodejs 13.0.1
-helm 2.14.3
+helm 3.0.3
 helmfile 0.98.2
-skaffold 1.1.0
+skaffold 1.5.0
 deno 0.2.10
