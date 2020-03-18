@@ -85,18 +85,18 @@ RUN asdf install
 #####################
 
 # Pre-compile ZSH plugins
-COPY --chown=$USER .zsh-plugins .
-RUN antibody bundle < ~/.zsh-plugins > ~/.zsh-plugins.sh
+#COPY --chown=$USER .zsh-plugins .
+#RUN antibody bundle < ~/.zsh-plugins > ~/.zsh-plugins.sh
 
 # Install tmux plugins
-RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm \
-    && TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins/ ~/.tmux/plugins/tpm/bin/install_plugins
+#RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm \
+#    && TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins/ ~/.tmux/plugins/tpm/bin/install_plugins
 
 # # Install vim plugins
-COPY --chown=$USER .vimrc .vim-plugins .
-ENV SHELL=$HOME/.linuxbrew/bin/zsh
-RUN vim +'PlugInstall --sync' +qa
+#COPY --chown=$USER .vimrc .vim-plugins .
+#ENV SHELL=$HOME/.linuxbrew/bin/zsh
+#RUN vim +'PlugInstall --sync' +qa
 
 COPY --chown=$USER . .
 
-CMD ["zsh"]
+#CMD ["zsh"]
