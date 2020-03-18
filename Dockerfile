@@ -68,8 +68,7 @@ RUN asdf plugin add helm \
     && asdf plugin add python \
     && asdf plugin add shellcheck \
     && asdf plugin add shfmt \
-    && asdf plugin add stern https://github.com/looztra/asdf-stern \
-    && asdf plugin add terraform
+    && asdf plugin add stern https://github.com/looztra/asdf-stern
 
 # Import the Node.js release team's OpenPGP keys to main keyring
 RUN .asdf/plugins/nodejs/bin/import-release-team-keyring
