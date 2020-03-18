@@ -54,15 +54,11 @@ ENV INFOPATH $HOME/.linuxbrew/share/info:$INFOPATH
 COPY --chown=$USER Brewfile .
 RUN brew bundle install
 
-# Make sure brew bundles used below are installed
-RUN brew install \
-    # Ensure asdf is installed
-    asdf \
-    # Also ensure unzip is installed for Terraform asdf install
-    unzip
+# Install asdf
+# SEE: https://asdf-vm.com/#/core-manage-asdf-vm?id=install-asdf-vm
+RUN git clone https://github.com/asdf-vm/asdf.git .asdf --branch v0.7.7
 
-# Use linuxbrew asdf directory
-ENV ASDF_DIR=$HOME/.linuxbrew/opt/asdf
+ENV PATH $HOME/.asdf/bin:$HOME/.asdf/shims:$PATH
 
 # Add asdf plugins
 RUN asdf plugin add helm \
