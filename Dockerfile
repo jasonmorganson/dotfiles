@@ -46,11 +46,15 @@ RUN brew update
 COPY --chown=$USER Brewfile .
 RUN brew bundle install
 
-# Install asdf
-# SEE: https://asdf-vm.com/#/core-manage-asdf-vm?id=install-asdf-vm
-RUN git clone https://github.com/asdf-vm/asdf.git .asdf --branch v0.7.7
+# Make sure brew bundles used below are installed
+RUN brew install \
+    # Ensure asdf is installed
+    asdf
 
-ENV PATH $HOME/.asdf/bin:$HOME/.asdf/shims:$PATH
+# Use linuxbrew asdf directory
+ENV ASDF_DIR=/home/linuxbrew/.linuxbrew/opt/asdf
+ENV ASDF_DATA_DIR=$ASDF_DIR
+ENV PATH $ASDF_DIR/bin:$ASDF_DIR/shims:$PATH
 
 # Add asdf plugins
 RUN asdf plugin add helm \
