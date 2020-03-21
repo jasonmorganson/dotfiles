@@ -41,6 +41,9 @@ fi
 # Load zsh plugins
 source ~/.zsh-plugins.sh
 
+# Hook direnv into your shell.
+eval "$(asdf exec direnv hook zsh)"
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Overrides an alias from oh-my-zsh git plugin so has to be set after that loads
