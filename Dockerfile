@@ -92,4 +92,4 @@ RUN helm plugin install https://github.com/nouney/helm-gcs \
 
 COPY --chown=$USER . .
 
-CMD ["bash"]
+CMD ["zsh"]
