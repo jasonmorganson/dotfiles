@@ -58,20 +58,26 @@ ENV PATH $ASDF_DIR/bin:$ASDF_DIR/shims:$PATH
 
 # Add asdf plugins
 RUN asdf plugin add helm \
-    && asdf plugin add helmfile \
     && asdf plugin add k9s \
+    && asdf plugin add shfmt \
     && asdf plugin add nodejs \
     && asdf plugin add python \
+    && asdf plugin add helmfile \
+    && asdf plugin add postgres \
     && asdf plugin add shellcheck \
-    && asdf plugin add shfmt \
-    && asdf plugin add stern https://github.com/looztra/asdf-stern
+    && asdf plugin add stern https://github.com/looztra/asdf-stern \
+    && asdf plugin-add yq https://github.com/sudermanjr/asdf-yq.git \
+    && asdf plugin-add sops https://github.com/feniix/asdf-sops.git \
+    && asdf plugin-add kubectl https://github.com/Banno/asdf-kubectl.git \
+    && asdf plugin add gcloud https://github.com/jthegedus/asdf-gcloud.git
 
 # Import the Node.js release team's OpenPGP keys to main keyring
-RUN .asdf/plugins/nodejs/bin/import-release-team-keyring
-
-COPY --chown=$USER .tool-versions .
+RUN $ASDF_DIR/plugins/nodejs/bin/import-release-team-keyring
 
 # Install asdf packages
+COPY --chown=$USER .tool-versions .
+# FIXME: Installing python first as a workaround to gcloud requiring it 
+RUN asdf install python 3.6.8
 RUN asdf install
 
 
