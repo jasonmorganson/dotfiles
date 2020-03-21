@@ -60,6 +60,7 @@ ENV PATH $ASDF_DIR/bin:$ASDF_DIR/shims:$PATH
 RUN asdf plugin add helm \
     && asdf plugin add k9s \
     && asdf plugin add shfmt \
+    && asdf plugin add direnv \
     && asdf plugin add nodejs \
     && asdf plugin add python \
     && asdf plugin add kubectx \

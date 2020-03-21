@@ -1,3 +1,4 @@
+direnv 2.20.0
 gcloud 263.0.0
 helm 3.1.1
 helmfile 0.100.1
