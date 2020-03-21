@@ -1,4 +1,4 @@
-eval "$(hub alias -s)"
+eval "$(hub alias -s zsh)"
 
 #alias a='fasd -a'        # any
 #alias s='fasd -si'       # show / search / select
