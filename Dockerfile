@@ -62,6 +62,7 @@ RUN asdf plugin add helm \
     && asdf plugin add shfmt \
     && asdf plugin add nodejs \
     && asdf plugin add python \
+    && asdf plugin add kubectx \
     && asdf plugin add helmfile \
     && asdf plugin add postgres \
     && asdf plugin add shellcheck \
