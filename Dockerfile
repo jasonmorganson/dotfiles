@@ -38,17 +38,9 @@ USER $USER
 WORKDIR $HOME
 
 # Install linuxbrew
-# SEE: https://docs.brew.sh/Homebrew-on-Linux#alternative-installation
-RUN git clone https://github.com/Homebrew/brew .linuxbrew/Homebrew \
-  && mkdir .linuxbrew/bin \
-  && ln -s .linuxbrew/Homebrew/bin/brew .linuxbrew/bin
-
-ENV HOMEBREW_PREFIX $HOME/.linuxbrew
-ENV HOMEBREW_CELLAR $HOME/.linuxbrew/Cellar
-ENV HOMEBREW_REPOSITORY $HOME/.linuxbrew/Homebrew
-ENV PATH $HOME/.linuxbrew/bin:$HOME/.linuxbrew/sbin:$PATH
-ENV MANPATH $HOME/.linuxbrew/share/man:$MANPATH
-ENV INFOPATH $HOME/.linuxbrew/share/info:$INFOPATH
+COPY --from=linuxbrew/debian --chown=$USER /home/linuxbrew /home/linuxbrew
+ENV PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
+RUN brew update
 
 # Install brew bundles
 COPY --chown=$USER Brewfile .
