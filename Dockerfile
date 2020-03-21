@@ -39,17 +39,16 @@ WORKDIR $HOME
 
 # Install linuxbrew
 COPY --from=linuxbrew/debian --chown=$USER /home/linuxbrew /home/linuxbrew
+
+# Add linuxbrew binaries to path
 ENV PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
-RUN brew update
 
 # Install brew bundles
 COPY --chown=$USER Brewfile .
-RUN brew bundle install
+RUN brew update && brew bundle install
 
-# Make sure brew bundles used below are installed
-RUN brew install \
-    # Ensure asdf is installed
-    asdf
+# Ensure asdf is installed
+RUN brew install asdf
 
 # Use linuxbrew asdf directory
 ENV ASDF_DIR=/home/linuxbrew/.linuxbrew/opt/asdf
@@ -73,13 +72,15 @@ RUN asdf plugin add helm \
     && asdf plugin-add kubectl https://github.com/Banno/asdf-kubectl.git \
     && asdf plugin add gcloud https://github.com/jthegedus/asdf-gcloud.git
 
+# FIXME: Installing python first as a workaround to gcloud requiring it 
+# SEE: https://github.com/jthegedus/asdf-gcloud/blob/master/bin/exec-env#L6
+RUN asdf install python 3.6.8
+
 # Import the Node.js release team's OpenPGP keys to main keyring
 RUN $ASDF_DIR/plugins/nodejs/bin/import-release-team-keyring
 
 # Install asdf packages
 COPY --chown=$USER .tool-versions .
-# FIXME: Installing python first as a workaround to gcloud requiring it 
-RUN asdf install python 3.6.8
 RUN asdf install
 
 # Install helm plugins
