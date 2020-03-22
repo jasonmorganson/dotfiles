@@ -3,11 +3,10 @@
 
 # Whitelist dotfiles
 !.config/nvim
-!.docker/config.json
-!.ssh/config
 !.default-npm-packages
 !.default-python-packages
 !.dircolors
+!.docker/config.json
 !.eslintrc.json
 !.gitconfig
 !.gitignore
@@ -18,6 +17,7 @@
 !.mrconfig
 !.prettierrc
 !.profile
+!.ssh/config
 !.taskrc
 !.tern-config
 !.tmux-statusline-colors.conf
