@@ -70,7 +70,8 @@ RUN asdf plugin add helm \
     && asdf plugin-add yq https://github.com/sudermanjr/asdf-yq.git \
     && asdf plugin-add sops https://github.com/feniix/asdf-sops.git \
     && asdf plugin-add kubectl https://github.com/Banno/asdf-kubectl.git \
-    && asdf plugin add gcloud https://github.com/jthegedus/asdf-gcloud.git
+    && asdf plugin add gcloud https://github.com/jthegedus/asdf-gcloud.git \
+    && asdf plugin-add skaffold https://github.com/kristoflemmens/asdf-skaffold.git
 
 # FIXME: Installing python first as a workaround to gcloud requiring it 
 # SEE: https://github.com/jthegedus/asdf-gcloud/blob/master/bin/exec-env#L6
