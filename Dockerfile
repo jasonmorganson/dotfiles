@@ -47,17 +47,16 @@ ENV PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
 COPY --chown=$USER Brewfile .
 RUN brew update && brew bundle install
 
-# Ensure asdf is installed
-RUN brew install asdf
-
 # Use linuxbrew asdf directory
 ENV ASDF_DIR=/home/linuxbrew/.linuxbrew/opt/asdf
 ENV ASDF_DATA_DIR=$ASDF_DIR
 ENV PATH=$ASDF_DIR/bin:$ASDF_DIR/shims:$PATH
 
-# Add asdf plugins
-RUN asdf plugin add helm \
+# Ensure asdf is installed
+RUN brew install asdf \
+    # Add asdf plugins
     && asdf plugin add k9s \
+    && asdf plugin add helm \
     && asdf plugin add shfmt \
     && asdf plugin add nodejs \
     && asdf plugin add python \
