@@ -2,11 +2,13 @@
 *
 
 # Whitelist dotfiles
+!.config/direnv
 !.config/nvim
 !.default-npm-packages
 !.default-python-packages
 !.dircolors
 !.docker/config.json
+!.envrc
 !.eslintrc.json
 !.gitconfig
 !.gitignore
