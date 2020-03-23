@@ -67,12 +67,13 @@ RUN brew install asdf \
     && asdf plugin add gcloud https://github.com/jthegedus/asdf-gcloud.git \
     && asdf plugin add skaffold https://github.com/kristoflemmens/asdf-skaffold.git
 
+# Import the Node.js release team's OpenPGP keys to main keyring
+# SEE: https://github.com/asdf-vm/asdf-nodejs/issues/138
+RUN $ASDF_DIR/plugins/nodejs/bin/import-release-team-keyring
+
 # FIXME: Installing python first as a workaround to gcloud requiring it 
 # SEE: https://github.com/jthegedus/asdf-gcloud/blob/master/bin/exec-env#L6
 RUN asdf install python 3.6.8
-
-# Import the Node.js release team's OpenPGP keys to main keyring
-RUN $ASDF_DIR/plugins/nodejs/bin/import-release-team-keyring
 
 # Install asdf packages
 COPY --chown=$USER .tool-versions .
