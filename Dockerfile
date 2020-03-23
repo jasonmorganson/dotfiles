@@ -40,17 +40,13 @@ WORKDIR $HOME
 # Install linuxbrew
 COPY --from=linuxbrew/debian --chown=$USER /home/linuxbrew /home/linuxbrew
 
-# Add linuxbrew binaries to path
-ENV PATH=/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
+ENV ASDF_DIR=/home/linuxbrew/.linuxbrew/opt/asdf
+ENV ASDF_DATA_DIR=$ASDF_DIR
+ENV PATH=$ASDF_DIR/bin:$ASDF_DIR/shims:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
 
 # Install brew bundles
 COPY --chown=$USER Brewfile .
 RUN brew update && brew bundle install
-
-# Use linuxbrew asdf directory
-ENV ASDF_DIR=/home/linuxbrew/.linuxbrew/opt/asdf
-ENV ASDF_DATA_DIR=$ASDF_DIR
-ENV PATH=$ASDF_DIR/bin:$ASDF_DIR/shims:$PATH
 
 # Ensure asdf is installed
 RUN brew install asdf \
