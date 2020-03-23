@@ -53,7 +53,7 @@ RUN brew install asdf
 # Use linuxbrew asdf directory
 ENV ASDF_DIR=/home/linuxbrew/.linuxbrew/opt/asdf
 ENV ASDF_DATA_DIR=$ASDF_DIR
-ENV PATH $ASDF_DIR/bin:$PATH
+ENV PATH=$ASDF_DIR/bin:$ASDF_DIR/shims:$PATH
 
 # Add asdf plugins
 RUN asdf plugin add helm \
