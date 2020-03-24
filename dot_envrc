@@ -1,0 +1,1 @@
+use asdf # activates plugins listed by `asdf current`

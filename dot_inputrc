@@ -1,0 +1,23 @@
+# This file controls the behaviour of line input editing for
+# programs that use the GNU Readline library.  Existing
+# programs include FTP, Bash, and GDB.
+
+# Manual https://www.gnu.org/software/bash/manual/html_node/Readline-Init-File.html
+
+# Copied from "A ~/.inputrc for Humans" (https://www.topbug.net/blog/2017/07/31/inputrc-for-humans)
+
+# Include any system-wide bindings and variable assignments
+$include /etc/inputrc
+
+set editing-mode vi
+
+"\C-p":history-search-backward
+"\C-n":history-search-forward
+
+set colored-stats On
+set completion-ignore-case On
+set completion-prefix-display-length 3
+set mark-symlinked-directories On
+set show-all-if-ambiguous On
+set show-all-if-unmodified On
+set visible-stats On

@@ -1,0 +1,75 @@
+# Base
+mafredri/zsh-async
+willghatch/zsh-saneopt
+chrissicool/zsh-256color
+
+# Basic
+# zpm-zsh/ls
+
+# Colors
+zpm-zsh/colors
+
+# Completions
+zsh-users/zsh-completions
+# dbz/kube-aliases +1s
+felixr/docker-zsh-completion
+sinetoami/antibody-completion
+littleq0903/gcloud-zsh-completion
+lukechilds/zsh-better-npm-completion
+vasyharan/zsh-brew-services
+timothyrowan/betterbrew-zsh-plugin
+
+# Aliases
+joshuarubin/zsh-fzf
+atweiden/fzf-extras
+srijanshetty/zsh-suffix-alias
+# zsh-users/zsh-history-substring-search
+ascii-soup/zsh-url-highlighter
+# zdharma/fast-syntax-highlighting
+TBSliver/zsh-plugin-tmux-simple
+#wbinglee/zsh-wakatime
+
+# Helpers
+#MichaelAquilina/zsh-you-should-use
+thetic/extract
+hcgraf/zsh-sudo
+Tarrasch/zsh-bd
+# b4b4r07/enhancd
+
+# Vim
+#laurenkt/zsh-vimto
+#nviennot/zsh-vim-plugin
+
+
+# Git
+# robbyrussell/oh-my-zsh folder:plugins/git
+wfxr/forgit
+zdharma/zsh-diff-so-fancy
+caarlos0/zsh-git-sync kind:path
+seletskiy/zsh-git-smart-commands
+peterhurford/git-aliases.zsh
+hschne/fzf-git
+
+# Integrations
+zpm-zsh/clipboard
+# lukechilds/zsh-nvm
+twang817/zsh-ssh-agent
+
+# Automatic
+#Valiev/almostontop
+#dbkaplun/smart-cd
+# hlissner/zsh-autopair
+zsh-users/zsh-autosuggestions
+Tarrasch/zsh-autoenv
+
+# Utilities
+arzzen/calc.plugin.zsh
+
+# Theme
+#carloscuesta/materialshell
+
+# Prompt
+sindresorhus/pure
+
+# Personal
+jasonmorganson/dotfiles

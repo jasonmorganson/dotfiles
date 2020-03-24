@@ -1,0 +1,63 @@
+[user]
+    name = Jason Morganson
+    email = jason@morganson.me
+
+[github]
+    user = jasonmorganson
+
+[credential]
+    helper = cache --timeout=3600
+
+[help]
+    autocorrect = 1
+
+[pager]
+    diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
+
+[diff "sopsdiffer"]
+    textconv = sops -d
+
+[push]
+    default = current
+
+[rebase]
+    autosquash = true
+
+[color]
+    ui = always
+    branch = auto
+    diff = auto
+    status = auto
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[color "diff"]
+    old = red bold
+    new = green bold
+    meta = yellow bold
+    frag = magenta bold
+    commit = green bold
+    whitespace = red reverse
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[color "diff-highlight"]
+    oldNormal = red bold
+    oldHighlight = red bold 52
+    newNormal = green bold
+    newHighlight = green bold 22
+
+[includeIf "gitdir:~/cherre/"]
+    path = ~/cherre/.gitconfig
+
+[filter "lfs"]
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
