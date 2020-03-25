@@ -1,2 +1,2 @@
 # Install vim plugins
-vim +PlugInstall +qall
+nvim --headless +PlugInstall +qall
