@@ -1,2 +1,7 @@
+export TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins/
+
+# Install tpm
+git clone https://github.com/tmux-plugins/tpm $TMUX_PLUGIN_MANAGER_PATH/tpm
+
 # Install tmux plugins
-~/.tmux/plugins/tpm/bin/install_plugins
+$TMUX_PLUGIN_MANAGER_PATH/tpm/bin/install_plugins
