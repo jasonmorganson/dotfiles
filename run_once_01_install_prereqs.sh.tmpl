@@ -2,9 +2,7 @@
 {{ if eq .chezmoi.osRelease.id "debian" -}}
 #!/bin/sh
 
-sudo apt-get update
-
-sudo apt-get install --yes \
+sudo apt-get update && sudo apt-get install --yes \
     # Install all locales
     locales \
     # Install linuxbrew requirements
