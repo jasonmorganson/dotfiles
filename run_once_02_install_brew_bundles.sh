@@ -10,8 +10,5 @@ test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew
 # Make sure brew is up to date
 brew update
 
-# Install gcc
-HOMEBREW_NO_ENV_FILTERING=1 brew install --force-bottle glibc make
-
 # Install brew bundles
 brew bundle install
