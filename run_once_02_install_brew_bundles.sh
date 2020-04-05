@@ -11,5 +11,8 @@ fi
 # Make sure brew is up to date
 brew update
 
+# Install gcc
+brew install gcc
+
 # Install brew bundles
 brew bundle install
