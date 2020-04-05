@@ -10,7 +10,7 @@ ENV USER=$USER \
     LANG=en_US.UTF-8
 
 RUN apt-get update \
-    && apt-get install -y \
+    && apt-get install --yes --no-install-recommends \
     # Install sudo
     sudo \
     # Install all locales
