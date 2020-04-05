@@ -3,6 +3,10 @@
 # Ensure asdf is installed
 brew install asdf
 
+# Use brew installed asdf
+ASDF_DIR=/home/linuxbrew/.linuxbrew/opt/asdf
+ASDF_DATA_DIR=$ASDF_DIR
+
 # Add asdf plugins
 asdf plugin add k9s
 asdf plugin add helm
