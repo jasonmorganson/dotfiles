@@ -12,7 +12,11 @@ fi
 brew update
 
 # Install gcc
-brew install gcc
+export HOMEBREW_BUILD_FROM_SOURCE=1
+
+brew install glibc --with-current-kernel
+brew reinstall binutils
+brew install patchelf
 
 # Install brew bundles
 brew bundle install
