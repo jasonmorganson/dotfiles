@@ -20,10 +20,10 @@ path=(
   /usr/local/opt/coreutils/libexec/gnubin
   /usr/local/bin
   /usr/local/sbin
-  /opt/bin
   /usr/bin
-  /sbin
+  /opt/bin
   /bin
+  /sbin
   $path
 )
 
