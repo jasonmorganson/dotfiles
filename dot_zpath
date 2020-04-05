@@ -13,10 +13,10 @@ path=(
   ~/.pyenv/shims
   ~/.poetry/bin
   ~/.rvm/bin
-  ~/.asdf/bin
-  ~/.asdf/shims
-  ~/.linuxbrew/bin
-  /home/linuxbrew/.linuxbrew/bin
+  $ASDF_DIR/bin
+  $ASDF_DIR/shims
+  $HOMEBREW_PREFIX/bin
+  $HOMEBREW_PREFIX/sbin
   /usr/local/opt/coreutils/libexec/gnubin
   /usr/local/bin
   /usr/local/sbin
