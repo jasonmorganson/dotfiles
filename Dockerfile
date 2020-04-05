@@ -27,6 +27,8 @@ USER $USER
 
 WORKDIR $HOME
 
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
+
 ENV PATH=./bin:$PATH
 
 RUN curl -sfL https://git.io/chezmoi | sh
