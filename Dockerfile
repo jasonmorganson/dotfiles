@@ -27,9 +27,7 @@ USER $USER
 
 WORKDIR $HOME
 
-ENV ASDF_DIR=/home/linuxbrew/.linuxbrew/opt/asdf
-ENV ASDF_DATA_DIR=$ASDF_DIR
-ENV PATH=./bin:$ASDF_DIR/bin:$ASDF_DIR/shims:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
+ENV PATH=./bin:$PATH
 
 RUN curl -sfL https://git.io/chezmoi | sh
 COPY --chown=$USER . .
