@@ -13,18 +13,8 @@ RUN apt-get update \
     && apt-get install -y \
     # Install all locales
     locales \
-    # Install linuxbrew requirements
-    # SEE: https://docs.brew.sh/Homebrew-on-Linux#debian-or-ubuntu
-    build-essential curl file git \
-    # Install python requirements
-    # SEE: https://github.com/pyenv/pyenv/wiki#suggested-build-environment
-    make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev \
-    libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev \
-    libxmlsec1-dev libffi-dev liblzma-dev \
-    # Install asdf NodeJS requirements
-    # FIXME: This is a workaround for gpg not installing with brew
-    # SEE: https://github.com/Homebrew/linuxbrew-core/issues/18359
-    gpg \
+    # Install chezmoi requirements
+    curl git \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     # Make the "en_US.UTF-8" locale
@@ -37,55 +27,12 @@ USER $USER
 
 WORKDIR $HOME
 
-# Install linuxbrew
-COPY --from=linuxbrew/debian --chown=$USER /home/linuxbrew /home/linuxbrew
-
 ENV ASDF_DIR=/home/linuxbrew/.linuxbrew/opt/asdf
 ENV ASDF_DATA_DIR=$ASDF_DIR
-ENV PATH=$ASDF_DIR/bin:$ASDF_DIR/shims:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
+ENV PATH=./bin:$ASDF_DIR/bin:$ASDF_DIR/shims:/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH
 
-# Install brew bundles
-COPY --chown=$USER Brewfile .
-RUN brew update && brew bundle install
-
-# Ensure asdf is installed
-RUN brew install asdf \
-    # Add asdf plugins
-    && asdf plugin add k9s \
-    && asdf plugin add helm \
-    && asdf plugin add shfmt \
-    && asdf plugin add nodejs \
-    && asdf plugin add python \
-    && asdf plugin add kubectx \
-    && asdf plugin add helmfile \
-    && asdf plugin add postgres \
-    && asdf plugin add shellcheck \
-    && asdf plugin add stern https://github.com/looztra/asdf-stern \
-    && asdf plugin add yq https://github.com/sudermanjr/asdf-yq.git \
-    && asdf plugin add sops https://github.com/feniix/asdf-sops.git \
-    && asdf plugin add kubectl https://github.com/Banno/asdf-kubectl.git \
-    && asdf plugin add gcloud https://github.com/jthegedus/asdf-gcloud.git \
-    && asdf plugin add skaffold https://github.com/kristoflemmens/asdf-skaffold.git
-
-# Import the Node.js release team's OpenPGP keys to main keyring
-# SEE: https://github.com/asdf-vm/asdf-nodejs/issues/138
-RUN $ASDF_DIR/plugins/nodejs/bin/import-release-team-keyring
-
-# FIXME: Installing python first as a workaround to gcloud requiring it 
-# SEE: https://github.com/jthegedus/asdf-gcloud/blob/master/bin/exec-env#L6
-RUN asdf install python 3.6.8
-
-# Install asdf packages
-COPY --chown=$USER .tool-versions .
-RUN asdf install
-
-# Install helm plugins
-RUN helm plugin install https://github.com/nouney/helm-gcs \
-    && helm plugin install https://github.com/aslafy-z/helm-git \
-    && helm plugin install https://github.com/databus23/helm-diff \
-    && helm plugin install https://github.com/futuresimple/helm-secrets \
-    && helm repo add stable https://kubernetes-charts.storage.googleapis.com
-
+RUN curl -sfL https://git.io/chezmoi | sh
 COPY --chown=$USER . .
+RUN chezmoi init --apply --verbose .
 
 CMD ["zsh"]

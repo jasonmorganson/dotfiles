@@ -1,0 +1,32 @@
+{{ if eq .chezmoi.os "linux" -}}
+{{ if eq .chezmoi.osRelease.id "debian" -}}
+#!/bin/sh
+
+apt-get update
+
+apt-get install --yes \
+    # Install all locales
+    locales \
+    # Install linuxbrew requirements
+    # SEE: https://docs.brew.sh/Homebrew-on-Linux#debian-or-ubuntu
+    build-essential curl file git \
+    # Install python requirements
+    # SEE: https://github.com/pyenv/pyenv/wiki#suggested-build-environment
+    make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev \
+    libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev \
+    libxmlsec1-dev libffi-dev liblzma-dev \
+    # Install asdf NodeJS requirements
+    # FIXME: This is a workaround for gpg not installing with brew
+    # SEE: https://github.com/Homebrew/linuxbrew-core/issues/18359
+    gpg \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
+
+# Update locale to en_US.UTF-8
+# SEE: https://github.com/docker-library/postgres/blob/69bc540ecfffecce72d49fa7e4a46680350037f9/9.6/Dockerfile#L21-L24
+localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+
+{{ end -}}
+{{ else if eq .chezmoi.os "darwin" -}}
+#!/bin/sh
+{{ end -}}
