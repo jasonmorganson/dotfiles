@@ -52,9 +52,11 @@ export DOCKER_BUILDKIT=1
 export HELM_TLS_ENABLE=true
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
+    eval $(brew shellenv)
     export DOTFILES_DIRECTORY=~/Google\ Drive/dotfiles
 else
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    export ASDF_DIR=$HOMEBREW_PREFIX/opt/asdf
+    export ASDF_DATA_DIR=$ASDF_DIR
     export DOTFILES_DIRECTORY=/mnt/chromeos/GoogleDrive/MyDrive/dotfiles
 fi
-
-eval $(brew shellenv)
