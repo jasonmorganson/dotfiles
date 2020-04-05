@@ -12,11 +12,7 @@ fi
 brew update
 
 # Install gcc
-export HOMEBREW_BUILD_FROM_SOURCE=1
-
-brew install glibc --with-current-kernel
-brew reinstall binutils
-brew install patchelf
+HOMEBREW_NO_ENV_FILTERING=1 brew install --force-bottle glibc make
 
 # Install brew bundles
 brew bundle install
