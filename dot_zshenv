@@ -1,11 +1,11 @@
 # Options
 source "${ZDOTDIR:-$HOME}/.zopts"
 
-# Paths
-source "${ZDOTDIR:-$HOME}/.zpath"
-
 # Environmental variables
 source "${ZDOTDIR:-$HOME}/.zvars"
+
+# Paths
+source "${ZDOTDIR:-$HOME}/.zpath"
 
 # Aliases
 source "${ZDOTDIR:-$HOME}/.zaliases"
