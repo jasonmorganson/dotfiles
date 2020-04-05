@@ -4,7 +4,7 @@
 brew install asdf
 
 # Use brew installed asdf
-ASDF_DIR=/home/linuxbrew/.linuxbrew/opt/asdf
+ASDF_DIR=$(brew --prefix)/opt/asdf
 ASDF_DATA_DIR=$ASDF_DIR
 
 # Add asdf plugins
