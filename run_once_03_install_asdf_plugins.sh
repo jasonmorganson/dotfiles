@@ -1,11 +1,9 @@
 #!/bin/sh
 
+. .env
+
 # Ensure asdf is installed
 brew install asdf
-
-# Use brew installed asdf
-ASDF_DIR=$(brew --prefix)/opt/asdf
-ASDF_DATA_DIR=$ASDF_DIR
 
 # Add asdf plugins
 asdf plugin add k9s
