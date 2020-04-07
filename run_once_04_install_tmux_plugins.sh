@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. ./.env
+
 export TMUX_PLUGIN_MANAGER_PATH=~/.tmux/plugins/
 
 # Install tpm
