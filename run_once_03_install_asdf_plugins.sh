@@ -2,9 +2,6 @@
 
 . .env
 
-# Ensure asdf is installed
-brew install asdf
-
 # Add asdf plugins
 asdf plugin add k9s
 asdf plugin add helm
