@@ -10,6 +10,7 @@
 !.default-python-packages
 !.dircolors
 !.docker/config.json
+!.env
 !.envrc
 !.eslintrc.json
 !.gitconfig
