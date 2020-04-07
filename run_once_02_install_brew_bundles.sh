@@ -7,8 +7,5 @@
 test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
 test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
-# Make sure brew is up to date
-brew update
-
 # Install brew bundles
 brew bundle install
