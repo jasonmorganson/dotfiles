@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. .env
+. ./.env
 
 # Add asdf plugins
 asdf plugin add k9s
