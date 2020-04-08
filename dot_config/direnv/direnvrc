@@ -1,4 +1,3 @@
-# The following line to makes direnv silent by default.
 export DIRENV_LOG_FORMAT=""
 
 source $(asdf which direnv_use_asdf)
