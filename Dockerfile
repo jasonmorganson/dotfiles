@@ -1,8 +1,5 @@
 FROM debian:stable
 
-LABEL name="jasonmorganson/dotfiles"
-LABEL maintainer="Jason Morganson <jmorganson@gmail.com>"
-
 ARG USER=jason
 
 ENV USER=$USER \
@@ -38,4 +35,4 @@ RUN curl -sfL https://git.io/chezmoi | sh
 COPY --chown=$USER . .
 RUN chezmoi init --apply --verbose .
 
-CMD ["zsh"]
+#CMD ["zsh"]

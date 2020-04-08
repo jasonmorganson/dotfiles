@@ -5,8 +5,8 @@ test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
 test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
 # Configure brew bundle
-HOMEBREW_BUNDLE_FILE=$HOME/.Brewfile
-HOMEBREW_BUNDLE_NO_LOCK=true
+export HOMEBREW_BUNDLE_FILE=$HOME/.Brewfile
+export HOMEBREW_BUNDLE_NO_LOCK=true
 
 # Use brew installed asdf
 export ASDF_DIR=$HOMEBREW_PREFIX/opt/asdf
