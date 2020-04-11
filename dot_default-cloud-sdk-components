@@ -3,6 +3,4 @@ cloud_sql_proxy
 core
 docker-credential-gcr
 gsutil
-kpt
 kubectl
-skaffold
