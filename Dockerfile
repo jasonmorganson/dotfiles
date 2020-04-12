@@ -32,7 +32,6 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ENV PATH=./bin:$PATH
 
 RUN curl -sfL https://git.io/chezmoi | sh
-COPY --chown=$USER . .
-RUN chezmoi init --apply --verbose .
+RUN chezmoi init --apply --verbose https://github.com/jasonmorganson/dotfiles.git
 
 #CMD ["zsh"]
