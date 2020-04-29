@@ -1,8 +1,4 @@
 # zmodload zsh/zprof
-
-# Start a timer
-timer=$(($(date +%s%N)/1000000))
-
 #
 # https://gist.github.com/ctechols/ca1035271ad134841284
 #
@@ -48,10 +44,5 @@ eval "$(asdf exec direnv hook zsh)"
 
 # Overrides an alias from oh-my-zsh git plugin so has to be set after that loads
 alias co='fzf-git::checkout_branch'
-
-# Show loading time
-now=$(($(date +%s%N)/1000000))
-elapsed=$(($now-$timer))
-echo "Loaded ZSH in $elapsed seconds"
 
 # zprof
