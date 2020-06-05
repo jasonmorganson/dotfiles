@@ -53,6 +53,7 @@ export HELM_TLS_ENABLE=true
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     eval $(brew shellenv)
+    export ASDF_DIR=$(brew --prefix asdf)
     export DOTFILES_DIRECTORY=~/Google\ Drive/dotfiles
 else
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
