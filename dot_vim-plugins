@@ -68,9 +68,9 @@ Plug 'jasonmorganson/vim-colorscheme'
 " }
 
 " Airline {
-"Plug 'bling/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
-"Plug 'edkolev/tmuxline.vim'
+Plug 'bling/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'edkolev/tmuxline.vim'
 "Plug 'edkolev/promptline.vim'
 " }
 
