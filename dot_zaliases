@@ -46,7 +46,7 @@ alias kfwd='kubefwd'
 
 alias aliasall="{ alias; git aliases;  } | sort"
 
-alias dotfiles='git --git-dir=$DOTFILES_DIRECTORY/.git --work-tree=$DOTFILES_DIRECTORY'
+alias dotfiles=chezmoi
 
 alias update="brew update && brew upgrade; brew reinstall --HEAD neovim; brew reinstall --HEAD neovim-dot-app; antibody update; npm update -g; vim +PlugInstall! +qall"
 
