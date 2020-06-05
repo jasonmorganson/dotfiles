@@ -53,6 +53,9 @@ export DOCKER_BUILDKIT=1
 # Helm
 export HELM_TLS_ENABLE=true
 
+# Postgres
+export PGHOST=localhost
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
     eval $(brew shellenv)
     export ASDF_DIR=$(brew --prefix asdf)
