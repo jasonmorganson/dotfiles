@@ -5,7 +5,6 @@ helmfile 0.100.1
 kubectl 1.13.2
 kubectx 0.8.0
 nodejs 13.0.1
-postgres 11.7
 python 3.6.8
 shellcheck 0.7.0
 shfmt 2.6.3
