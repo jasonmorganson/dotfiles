@@ -3,9 +3,7 @@
 # Add Homebrew to PATH
 test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
 test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
-
-# Set brew env
-eval $(brew --env)
+eval $(brew shellenv)
 
 # Configure brew bundle
 export HOMEBREW_BUNDLE_FILE=$HOME/.Brewfile
