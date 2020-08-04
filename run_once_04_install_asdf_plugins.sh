@@ -2,6 +2,8 @@
 
 . ./.env
 
+env
+
 # Add asdf plugins
 asdf plugin add gcloud
 asdf plugin add helm
