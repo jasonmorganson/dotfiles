@@ -4,6 +4,9 @@
 test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
 test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
+# Set brew env
+eval $(brew --env)
+
 # Configure brew bundle
 export HOMEBREW_BUNDLE_FILE=$HOME/.Brewfile
 export HOMEBREW_BUNDLE_NO_LOCK=true
