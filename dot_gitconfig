@@ -17,6 +17,9 @@
 [diff "sopsdiffer"]
     textconv = sops -d
 
+[pull]
+    rebase = true
+
 [push]
     default = current
 
