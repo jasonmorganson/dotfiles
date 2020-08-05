@@ -34,4 +34,4 @@ ENV PATH=./bin:$PATH
 RUN curl -sfL https://git.io/chezmoi | sh
 RUN chezmoi init --apply --verbose https://github.com/jasonmorganson/dotfiles.git
 
-#CMD ["zsh"]
+CMD ["/home/linuxbrew/.linuxbrew/bin/zsh"]
