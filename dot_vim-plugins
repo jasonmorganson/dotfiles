@@ -19,6 +19,7 @@ Plug 'rbgrouleff/bclose.vim'
 Plug '907th/vim-auto-save'
 Plug 'terryma/vim-expand-region'
 Plug 'farmergreg/vim-lastplace'
+Plug 'vim-ctrlspace/vim-ctrlspace'
 " }
 
 " Editor Configuration {
