@@ -5,21 +5,21 @@
 env
 
 # Add asdf plugins
-asdf plugin add gcloud
-asdf plugin add helm
-asdf plugin add helmfile
-asdf plugin add k9s
-asdf plugin add kubectl
-asdf plugin add kubectx
-asdf plugin add nodejs
-asdf plugin add postgres
-asdf plugin add python
-asdf plugin add shellcheck
-asdf plugin add shfmt
-asdf plugin add skaffold
-asdf plugin add sops
-asdf plugin add stern
-asdf plugin add yq
+for tool_version in $(cat ~/.tool-versions); do
+    plugin=${tool_version%% *}
+    asdf plugin list | grep $plugin > /dev/null 2>&1
+    if [ $? -ne 0 ]; then
+        asdf plugin add $plugin
+    fi
+done
+
+# Add asdf plugins
+# for plugin in $(cat ~/.asdf-plugins); do
+#     asdf plugin list | grep $plugin > /dev/null 2>&1
+#     if [ $? -ne 0 ]; then
+#         asdf plugin add $plugin
+#     fi
+# done
 
 # Import the Node.js release team's OpenPGP keys to main keyring
 # SEE: https://github.com/asdf-vm/asdf-nodejs/issues/138
