@@ -1,7 +1,7 @@
 direnv 2.20.0
 gcloud 263.0.0
 helm 3.1.1
-helmfile 0.100.1
+helmfile 0.114.0
 kubectl 1.13.2
 kubectx 0.8.0
 nodejs 13.0.1
