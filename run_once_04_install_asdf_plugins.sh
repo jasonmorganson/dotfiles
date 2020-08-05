@@ -2,8 +2,6 @@
 
 . ./.env
 
-env
-
 # Add asdf plugins
 for tool_version in $(cat ~/.tool-versions); do
     plugin=${tool_version%% *}
