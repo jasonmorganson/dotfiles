@@ -7,10 +7,9 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        platform: [ubuntu-latest, macos-latest, windows-latest]
+        platform: [ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.platform }}
     steps:
     - uses: actions/checkout@v2
     - name: Run install script
       run: curl -sL https://git.io/JvxiQ | sh
-      
