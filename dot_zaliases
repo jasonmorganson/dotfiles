@@ -42,6 +42,7 @@ alias pip='pip3'
 
 alias psql=pgcli
 
+alias k='kubectl'
 alias kfwd='kubefwd'
 
 alias aliasall="{ alias; git aliases;  } | sort"
