@@ -1,5 +1,8 @@
 # zmodload zsh/zprof
-#
+
+# https://docs.brew.sh/Shell-Completion#configuring-completions-in-zsh
+FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
 # https://gist.github.com/ctechols/ca1035271ad134841284
 #
 # On slow systems, checking the cached .zcompdump file to see if it must be
