@@ -27,6 +27,12 @@ path=(
   $path
 )
 
+fpath=(
+  $ASDF_DIR/completions
+  $HOMEBREW_PREFIX/share/zsh/site-functions
+  $fpath
+)
+
 manpath=(
   /usr/share/man
   /usr/local/share/man
