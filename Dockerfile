@@ -1,6 +1,6 @@
 FROM debian:stable
 
-ARG USER=jason
+ARG USER=jasonmorganson
 
 ENV USER=$USER \
     HOME=/home/$USER \
@@ -32,6 +32,7 @@ SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 ENV PATH=./bin:$PATH
 
 RUN curl -sfL https://git.io/chezmoi | sh
+RUN chezmoi execute-template --init --promptString name="Jason Morganson" --promptString email=jason@cherre.com --promptString user=jasonmorganson < .chezmoi.yaml.tmpl > ~/.config/chezmoi/chezmoi.yaml
 RUN chezmoi init --apply --verbose https://github.com/jasonmorganson/dotfiles.git
 
 CMD ["/home/linuxbrew/.linuxbrew/bin/zsh"]
