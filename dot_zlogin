@@ -10,6 +10,6 @@
     zcompile "$zcompdump"
   fi
 
-  chezmoi update &> /dev/null
+  chezmoi update --remove &> /dev/null
 
 } &!
