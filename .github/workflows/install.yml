@@ -12,4 +12,8 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run install script
+      env:
+        USER: jasonmorganson
+        NAME: "Jason Morganson"
+        EMAIL: jason@cherre.com
       run: curl -L morganson.tools | sh
