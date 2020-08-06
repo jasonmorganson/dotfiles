@@ -12,4 +12,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run install script
-      run: curl -sL https://git.io/JvxiQ | sh
+      run: curl -L morganson.tools | sh
