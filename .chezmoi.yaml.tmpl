@@ -1,7 +1,16 @@
-{{- $user := default (promptString "user") (env "USER") -}}
-{{- $name := default (promptString "name") (env "NAME") -}}
-{{- $email := default (promptString "email") (env "EMAIL") -}}
 data:
-  user: {{ $user }}
-  name: {{ $name }}
-  email: {{ $email }}
+{{- if empty (env "USER") }}
+  user: {{ promptString "user" }}
+{{- else }}
+  user: {{ env "USER" }}
+{{- end }}
+{{- if empty (env "NAME") }}
+  name: {{ promptString "name" }}
+{{- else }}
+  name: {{ env "NAME" }}
+{{- end }}
+{{- if empty (env "EMAIL") }}
+  user: {{ promptString "email" }}
+{{- else }}
+  email: {{ env "EMAIL" }}
+{{- end }}
