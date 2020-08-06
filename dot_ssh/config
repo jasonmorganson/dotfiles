@@ -3,17 +3,6 @@ Host *
     UseKeychain yes
     AddKeysToAgent yes
 
-Host jason-dev.morganson.net
-    User jason
-
-Host *.morganson.net
-    User jasonmorganson
-
-Host bitbucket.org
-    User jason-cherre
-    IdentityFile ~/.ssh/cherre_rsa
-    IdentitiesOnly yes
-
 Host sftp.courts.state.ny.us
   HostkeyAlgorithms           ssh-dss
   Ciphers                     aes256-cbc,aes192-cbc,aes128-cbc,3des-cbc
