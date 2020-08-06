@@ -11,6 +11,7 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
     - uses: actions/checkout@v2
+    - run: useradd jasonmorganson
     - name: Run install script
       env:
         USER: jasonmorganson
