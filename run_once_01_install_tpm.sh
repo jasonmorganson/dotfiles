@@ -4,5 +4,8 @@
 
 TMUX_PLUGIN_MANAGER_PATH=$HOME/.tmux/plugins/
 
-# Install tpm
-git clone https://github.com/tmux-plugins/tpm $TMUX_PLUGIN_MANAGER_PATH/tpm
+if [ ! -d $TMUX_PLUGIN_MANAGER_PATH/tpm ]
+then
+    # Install tpm
+    git clone https://github.com/tmux-plugins/tpm $TMUX_PLUGIN_MANAGER_PATH/tpm
+fi
