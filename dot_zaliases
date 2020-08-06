@@ -24,6 +24,7 @@ alias gl='git log'
 
 alias diff='git diff'
 alias wip='git commit -am "WIP"'
+alias unpushed='git log --branches --not --remotes --no-walk --decorate --oneline'
 
 v() {
   local files
