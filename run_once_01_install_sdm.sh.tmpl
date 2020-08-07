@@ -2,5 +2,7 @@
     cd $(mktemp -d)
     curl -J -O -L https://app.strongdm.com/releases/cli/linux
     unzip *.zip
-    sudo ./sdm install
+    # Install fails to start services, but still creates configs
+    sudo ./sdm install || true
+    mv sdm /usr/local/bin
 {{ end -}}
