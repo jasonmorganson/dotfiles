@@ -53,7 +53,7 @@ export HELM_TLS_ENABLE=true
 export PGHOST=localhost
 
 # Homebrew
-if [[ "$OSTYPE" == "darwin"* ]]; then
+if [ "$OSTYPE" == "darwin"* ]; then
     export HOMEBREW_PREFIX="/usr/local"
     export HOMEBREW_CELLAR="/usr/local/Cellar"
     export HOMEBREW_REPOSITORY="/usr/local/Homebrew"
