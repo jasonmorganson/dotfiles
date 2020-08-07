@@ -2,7 +2,7 @@
 source "${ZDOTDIR:-$HOME}/.zopts"
 
 # Environmental variables
-source "${ZDOTDIR:-$HOME}/.zvars"
+source "${ZDOTDIR:-$HOME}/.env"
 
 # Paths
 source "${ZDOTDIR:-$HOME}/.zpath"
