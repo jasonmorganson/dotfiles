@@ -2,5 +2,44 @@
 source "${ZDOTDIR:-$HOME}/.env"
 
 # Paths
-source "${ZDOTDIR:-$HOME}/.zpath"
+path=(
+  ./bin
+  ./.bin
+  ~/bin
+  ~/.bin
+  ~/.local/bin
+  ~/go/bin
+  ~/.krew/bin
+  ~/.cargo/bin
+  ~/.nodenv/bin
+  ~/.yarn/bin
+  ~/.pyenv/shims
+  ~/.poetry/bin
+  ~/.rvm/bin
+  $ASDF_DIR/bin
+  $ASDF_DIR/shims
+  $HOMEBREW_PREFIX/bin
+  $HOMEBREW_PREFIX/sbin
+  /usr/local/opt/coreutils/libexec/gnubin
+  /usr/local/bin
+  /usr/local/sbin
+  /usr/bin
+  /opt/bin
+  /bin
+  /sbin
+  $path
+)
 
+fpath=(
+  $ASDF_DIR/completions
+  $HOMEBREW_PREFIX/share/zsh/site-functions
+  $fpath
+)
+
+manpath=(
+  /usr/share/man
+  /usr/local/share/man
+  /usr/X11/share/man
+  $manpath
+  $path
+)
