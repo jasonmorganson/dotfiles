@@ -56,17 +56,19 @@ export HELM_TLS_ENABLE=true
 # Postgres
 export PGHOST=localhost
 
+# Homebrew
 if [[ "$OSTYPE" == "darwin"* ]]; then
     export HOMEBREW_PREFIX="/usr/local"
     export HOMEBREW_CELLAR="/usr/local/Cellar"
     export HOMEBREW_REPOSITORY="/usr/local/Homebrew"
-    export ASDF_DIR=$(brew --prefix asdf)
     export DOTFILES_DIRECTORY=~/Google\ Drive/dotfiles
 else
     export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
     export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar"
     export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew"
-    export ASDF_DIR=$HOMEBREW_PREFIX/opt/asdf
-    export ASDF_DATA_DIR=$ASDF_DIR
     export DOTFILES_DIRECTORY=/mnt/chromeos/GoogleDrive/MyDrive/dotfiles
 fi
+
+# asdf
+export ASDF_DIR=$HOMEBREW_PREFIX/opt/asdf
+export ASDF_DATA_DIR=$ASDF_DIR
