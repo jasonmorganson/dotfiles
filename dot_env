@@ -70,3 +70,6 @@ export HOMEBREW_BUNDLE_NO_LOCK=true
 # asdf
 export ASDF_DIR=$HOMEBREW_PREFIX/opt/asdf
 export ASDF_DATA_DIR=$ASDF_DIR
+
+# PATH
+export PATH=$ASDF_DIR/bin:$ASDF_DIR/shims:$PATH
