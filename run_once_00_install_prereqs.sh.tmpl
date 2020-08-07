@@ -4,6 +4,11 @@
 
 sudo apt-get update
 
+# Update locale to en_US.UTF-8
+# SEE: https://github.com/docker-library/postgres/blob/69bc540ecfffecce72d49fa7e4a46680350037f9/9.6/Dockerfile#L21-L24
+sudo apt-get install locales
+sudo localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
+
 # Install linuxbrew requirements
 # SEE: https://docs.brew.sh/Homebrew-on-Linux#debian-or-ubuntu
 sudo apt-get install --yes \
@@ -23,10 +28,6 @@ sudo apt-get install --yes \
 # SEE: https://github.com/Homebrew/linuxbrew-core/issues/18359
 sudo apt-get install --yes \
     gpg
-
-# Update locale to en_US.UTF-8
-# SEE: https://github.com/docker-library/postgres/blob/69bc540ecfffecce72d49fa7e4a46680350037f9/9.6/Dockerfile#L21-L24
-sudo localedef -i en_US -c -f UTF-8 -A /usr/share/locale/locale.alias en_US.UTF-8
 
 {{ end -}}
 {{ else if eq .chezmoi.os "darwin" -}}
