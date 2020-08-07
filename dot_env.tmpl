@@ -53,15 +53,15 @@ export HELM_TLS_ENABLE=true
 export PGHOST=localhost
 
 # Homebrew
-if [ "$OSTYPE" == "darwin"* ]; then
+{{ if eq .chezmoi.os "darwin" -}}
     export HOMEBREW_PREFIX="/usr/local"
     export HOMEBREW_CELLAR="/usr/local/Cellar"
     export HOMEBREW_REPOSITORY="/usr/local/Homebrew"
-else
+{{ else -}}
     export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
     export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar"
     export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew"
-fi
+{{ end -}}
 
 # Configure brew bundle
 export HOMEBREW_BUNDLE_FILE=$HOME/.Brewfile
