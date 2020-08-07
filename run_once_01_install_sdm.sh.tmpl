@@ -1,0 +1,6 @@
+{{ if eq .chezmoi.os "linux" -}}
+    cd $(mktemp -d)
+    curl -J -O -L https://app.strongdm.com/releases/cli/linux
+    unzip *.zip
+    sudo ./sdm install
+{{ end -}}
