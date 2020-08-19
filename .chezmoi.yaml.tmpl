@@ -10,7 +10,7 @@ data:
   name: {{ env "NAME" }}
 {{- end }}
 {{- if empty (env "EMAIL") }}
-  user: {{ promptString "email" }}
+  email: {{ promptString "email" }}
 {{- else }}
   email: {{ env "EMAIL" }}
 {{- end }}
