@@ -572,6 +572,8 @@ set directory=~/.vim/swap,.
 
 " }
 
+set ttyfast
+
 "
 " Theme
 silent! colorscheme jason
