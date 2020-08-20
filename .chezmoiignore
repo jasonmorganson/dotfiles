@@ -1,5 +1,6 @@
 # Ignore repository files
 docs
+SETUP.sh
 README.md
 Dockerfile
 
