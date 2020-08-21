@@ -8,5 +8,6 @@
     curl -J -O -L https://app.strongdm.com/releases/cli/linux
     unzip *.zip
     # Install fails to start services, but still creates configs
-    sudo ./sdm install --nologin
+    mv sdm /usr/local/bin/sdm
+    rm *.zip
 {{ end -}}
