@@ -23,12 +23,6 @@ sudo apt-get install --yes \
     libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev \
     libxmlsec1-dev libffi-dev liblzma-dev
 
-# Install asdf NodeJS requirements
-# FIXME: This is a workaround for gpg not installing with brew
-# SEE: https://github.com/Homebrew/linuxbrew-core/issues/18359
-sudo apt-get install --yes \
-    gpg
-
 {{ end -}}
 {{ else if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
