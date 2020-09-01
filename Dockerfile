@@ -31,6 +31,11 @@ WORKDIR $HOME
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
+ENV ENV=$HOME/.profile
+ENV BASH_ENV=$ENV
+ENV HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
+ENV ASDF_DIR=$HOMEBREW_PREFIX/opt/asdf
+ENV PATH=$ASDF_DIR/bin:$ASDF_DIR/shims:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH
 ENV PATH=./bin:$PATH
 
 RUN curl -sfL https://git.io/chezmoi | sh
