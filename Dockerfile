@@ -1,8 +1,8 @@
 FROM debian:stable
 
-ARG USER=jasonmorganson
-ARG NAME="Jason Morganson"
-ARG EMAIL=jason@cherre.com
+ARG USER=user
+ARG NAME="Name"
+ARG EMAIL=user@co.co
 
 ENV USER=$USER \
     HOME=/home/$USER \
