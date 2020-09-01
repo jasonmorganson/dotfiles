@@ -3,6 +3,7 @@ docs
 SETUP.sh
 README.md
 Dockerfile
+install.sh
 
 # Ignore tmux plugins
 .tmux
