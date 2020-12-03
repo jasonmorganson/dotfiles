@@ -14,3 +14,7 @@ Dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
 Use [`chezmoi`](https://github.com/twpayne/chezmoi).
 
 See [reference](https://www.chezmoi.io/docs/reference/).
+
+### Docker Compose ###
+
+`docker-compose run dotfiles`

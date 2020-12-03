@@ -1,0 +1,9 @@
+version: "3.8"
+services:
+  dotfiles:
+    image: "jasonmorganson/dotfiles"
+    tty: true
+    stdin_open: true
+    network_mode: "host"
+    volumes:
+      - "~/.config/gcloud:/home/jasonmorganson/.config/gcloud"
