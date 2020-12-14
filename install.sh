@@ -1,5 +1,9 @@
 #!/bin/sh
 
+if [ "$EUID" != 0 ]; then
+    sudo true
+fi
+
 if ! command -v chezmoi > /dev/null
 then
   curl -sfL https://git.io/chezmoi | sh
