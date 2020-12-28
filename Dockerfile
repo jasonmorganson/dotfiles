@@ -14,8 +14,6 @@ ENV USER=$USER \
 
 RUN apt-get update \
     && apt-get install --yes \
-    # Install sudo
-    sudo \
     # Install chezmoi requirements
     curl git \
     && apt-get clean \
