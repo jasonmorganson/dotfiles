@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e # -e: exit on error
+
 if ! command -v chezmoi > /dev/null
 then
   curl -sfL https://git.io/chezmoi | sh
