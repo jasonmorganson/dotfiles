@@ -8,7 +8,12 @@ ENV USER=$USER \
     HOME=/home/$USER \
     LANG=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8 \
-    LANGUAGE=en_US.UTF-8
+    LANGUAGE=en_US.UTF-8 \
+    ENV=$HOME/.profile \
+    BASH_ENV=$ENV \
+    HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew \
+    ASDF_DIR=$HOMEBREW_PREFIX/opt/asdf \
+    PATH=$ASDF_DIR/bin:$ASDF_DIR/shims:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH
 
 RUN apt-get update \
     && apt-get install --yes \
@@ -30,11 +35,6 @@ WORKDIR $HOME
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-ENV ENV=$HOME/.profile
-ENV BASH_ENV=$ENV
-ENV HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
-ENV ASDF_DIR=$HOMEBREW_PREFIX/opt/asdf
-ENV PATH=$ASDF_DIR/bin:$ASDF_DIR/shims:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH
 
 COPY . .
 
