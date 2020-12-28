@@ -14,9 +14,3 @@ then
 else
   chezmoi init --apply https://github.com/jasonmorganson/dotfiles.git
 fi
-
-if [ -f ./bin/chezmoi ]
-then
-  rm ./bin/chezmoi
-  rmdir ./bin
-fi
