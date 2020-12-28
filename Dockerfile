@@ -6,9 +6,6 @@ ARG EMAIL=user@co.co
 
 ENV USER=$USER \
     HOME=/home/$USER \
-    LANG=en_US.UTF-8 \
-    LC_ALL=en_US.UTF-8 \
-    LANGUAGE=en_US.UTF-8 \
     ENV=$HOME/.profile \
     BASH_ENV=$ENV \
     HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew \
@@ -19,8 +16,6 @@ RUN apt-get update \
     && apt-get install --yes \
     # Install sudo
     sudo \
-    # Install all locales
-    locales locales-all \
     # Install chezmoi requirements
     curl git \
     && apt-get clean \
