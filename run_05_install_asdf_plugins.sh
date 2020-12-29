@@ -5,7 +5,7 @@
 # Add asdf plugins
 while read plugin version
 do
-    asdf plugin list | grep $plugin > /dev/null 2>&1
+    asdf plugin list | grep --slient $plugin
     if [ $? -ne 0 ]; then
         asdf plugin add $plugin
     fi
