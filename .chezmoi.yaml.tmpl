@@ -5,13 +5,9 @@ sourceDir: "{{ .chezmoi.sourceDir }}"
 {{- if $codespaces }}
 {{- /* Codespaces dotfiles setup is non-interactive, so set defaults */}}
 data:
-{{- if empty (env "USER") }}
-  user: "user"
-{{- else }}
-  user: {{ env "USER" }}
-{{- end }}
-  name: name
-  email: name@host.local
+  user: {{ .chezmoi.username }}
+  name: {{ .chezmoi.username }}
+  email: {{ .chezmoi.username }}@{{ .chezmoi.fullHostname }}
 {{- else }}
 {{- /* Interactive setup, so prompt for input */}}
 data:
