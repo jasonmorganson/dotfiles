@@ -24,5 +24,3 @@ COPY . .
 RUN ./install.sh
 
 ENTRYPOINT [ "/home/linuxbrew/.linuxbrew/bin/zsh" ]
-
-CMD ["-c"]
