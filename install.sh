@@ -2,15 +2,17 @@
 
 set -e # -e: exit on error
 
-if ! command -v chezmoi > /dev/null
-then
-  curl -sfL https://git.io/chezmoi | sh
-  PATH=./bin:$PATH
-fi
-
-if [ -d ~/.local/share/chezmoi/.git ]
-then
-  chezmoi update --apply
+if [ ! "$(command -v chezmoi)" ]; then
+  bin_dir="$HOME/.local/bin"
+  chezmoi="$bin_dir/chezmoi"
+  if [ "$(command -v curl)" ]; then
+    sh -c "$(curl -fsSL https://git.io/chezmoi)" -- -b "$bin_dir"
+  elif [ "$(command -v wget)" ]; then
+    sh -c "$(wget -qO- https://git.io/chezmoi)" -- -b "$bin_dir"
+  else
+    echo "To install chezmoi, you must have curl or wget installed." >&2
+    exit 1
+  fi
 else
-  chezmoi init --apply https://github.com/jasonmorganson/dotfiles.git
+  chezmoi=chezmoi
 fi
