@@ -1,6 +1,8 @@
 FROM debian:stable
 
 ARG USER=user
+ARG NAME="Name"
+ARG EMAIL=user@co.co
 
 ENV USER=$USER \
     HOME=/home/$USER \
