@@ -3,7 +3,8 @@ FROM debian:stable
 ARG USER=user
 
 ENV USER=$USER \
-    HOME=/home/$USER
+    HOME=/home/$USER \
+    SHELL=/home/linuxbrew/.linuxbrew/bin/zsh
 
 RUN apt-get update \
     && apt-get install --yes \
