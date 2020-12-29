@@ -6,4 +6,5 @@ services:
     stdin_open: true
     network_mode: "host"
     volumes:
-      - "~/.config/gcloud:/home/jasonmorganson/.config/gcloud"
+      - ~/.ssh
+      - ~/.config/gcloud
