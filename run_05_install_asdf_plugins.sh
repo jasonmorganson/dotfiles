@@ -5,8 +5,8 @@
 # Add asdf plugins
 while read plugin
 do
-    asdf plugin list | grep --slient $plugin
-    if [ $? -ne 0 ]; then
+    if ! asdf plugin list | grep --slient $plugin
+    then
         asdf plugin add $plugin
     fi
 done < ~/.tool-versions
