@@ -28,11 +28,10 @@ USER $USER
 
 WORKDIR $HOME
 
-SHELL ["/bin/bash", "-o", "pipefail", "-c"]
-
-
 COPY . .
 
 RUN ./install.sh
+
+SHELL ["/home/linuxbrew/.linuxbrew/bin/zsh"]
 
 CMD ["/home/linuxbrew/.linuxbrew/bin/zsh"]
