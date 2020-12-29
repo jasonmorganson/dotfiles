@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   dotfiles:
-    image: "jasonmorganson/dotfiles"
+    build: .
     tty: true
     stdin_open: true
     network_mode: "host"
