@@ -1,29 +1,45 @@
+{{- /* Assume interactivity */ -}}
+{{- $interactive := true -}}
+
+{{- /* Detect headless */ -}}
+{{- if env "HEADLESS" -}}
+{{- $interactive = false -}}
+{{- end -}}
+
+{{- /* Detect GitHub Codespaces and VSCode remote containers */ -}}
+{{- if or (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC") -}}
+{{- $interactive = false -}}
+{{- end -}}
+
+{{- $user := env "USER" -}}
+{{- if empty $user -}}
+{{- if $interactive -}}
+{{- $user = promptString "User" }}
+{{- else -}}
+{{- $user = .chezmoi.username -}}
+{{- end -}}
+{{- end -}}
+
+{{- $name := env "NAME" -}}
+{{- if empty $name -}}
+{{- if $interactive -}}
+{{- $name = promptString "Name" }}
+{{- else -}}
+{{- $name = .chezmoi.username -}}
+{{- end -}}
+{{- end -}}
+
+{{- $email := env "EMAIL" -}}
+{{- if empty $email -}}
+{{- if $interactive -}}
+{{- $email = promptString "Email" }}
+{{- else -}}
+{{- $email = printf "%s@%s" .chezmoi.username .chezmoi.fullHostname -}}
+{{- end -}}
+{{- end -}}
+
 sourceDir: "{{ .chezmoi.sourceDir }}"
-
-{{- $codespaces:= env "CODESPACES" | not | not -}}
-
-{{- if $codespaces }}
-{{- /* Codespaces dotfiles setup is non-interactive, so set defaults */}}
 data:
-  user: {{ .chezmoi.username }}
-  name: {{ .chezmoi.username }}
-  email: {{ .chezmoi.username }}@{{ .chezmoi.fullHostname }}
-{{- else }}
-{{- /* Interactive setup, so prompt for input */}}
-data:
-{{- if empty (env "USER") }}
-  user: {{ promptString "user" }}
-{{- else }}
-  user: {{ env "USER" }}
-{{- end }}
-{{- if empty (env "NAME") }}
-  name: {{ promptString "name" }}
-{{- else }}
-  name: {{ env "NAME" }}
-{{- end }}
-{{- if empty (env "EMAIL") }}
-  email: {{ promptString "email" }}
-{{- else }}
-  email: {{ env "EMAIL" }}
-{{- end }}
-{{- end }}
+  user: "{{ $user }}"
+  name: "{{ $name }}"
+  email: "{{ $email }}"
