@@ -1,3 +1,19 @@
+sourceDir: "{{ .chezmoi.sourceDir }}"
+
+{{- $codespaces:= env "CODESPACES" | not | not -}}
+
+{{- if $codespaces }}
+{{- /* Codespaces dotfiles setup is non-interactive, so set defaults */}}
+data:
+{{- if empty (env "USER") }}
+  user: "user"
+{{- else }}
+  user: {{ env "USER" }}
+{{- end }}
+  name: name
+  email: name@host.local
+{{- else }}
+{{- /* Interactive setup, so prompt for input */}}
 data:
 {{- if empty (env "USER") }}
   user: {{ promptString "user" }}
@@ -13,4 +29,5 @@ data:
   email: {{ promptString "email" }}
 {{- else }}
   email: {{ env "EMAIL" }}
+{{- end }}
 {{- end }}
