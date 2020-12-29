@@ -3,7 +3,7 @@
 . ./.env
 
 # Add asdf plugins
-while read plugin version
+while read plugin
 do
     asdf plugin list | grep --slient $plugin
     if [ $? -ne 0 ]; then
