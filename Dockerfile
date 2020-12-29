@@ -11,10 +11,12 @@ RUN apt-get update \
     sudo \
     # Install chezmoi requirements
     curl git \
+    # Cleanup
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     # Add user account
     && useradd --shell /bin/bash --groups sudo --create-home --home-dir $HOME $USER \
+    # Allow passwordless sudo
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 USER $USER
