@@ -7,16 +7,10 @@ ENV USER=$USER \
 
 RUN apt-get update \
     && apt-get install --yes \
-    # Install sudo
-    sudo \
-    # Install chezmoi requirements
-    curl git \
-    # Cleanup
+    sudo curl git \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
-    # Add user account
-    && useradd --shell /bin/bash --groups sudo --create-home --home-dir $HOME $USER \
-    # Allow passwordless sudo
+    && useradd --shell $SHELL --groups sudo --create-home --home-dir $HOME $USER \
     && echo "$USER ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
 USER $USER
