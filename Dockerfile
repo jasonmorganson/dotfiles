@@ -5,12 +5,7 @@ ARG NAME="Name"
 ARG EMAIL=user@co.co
 
 ENV USER=$USER \
-    HOME=/home/$USER \
-    ENV=$HOME/.profile \
-    BASH_ENV=$ENV \
-    HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew \
-    ASDF_DIR=$HOMEBREW_PREFIX/opt/asdf \
-    PATH=$ASDF_DIR/bin:$ASDF_DIR/shims:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH
+    HOME=/home/$USER
 
 RUN apt-get update \
     && apt-get install --yes \
