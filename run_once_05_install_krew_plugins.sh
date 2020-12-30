@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. ./.profile
+
 # https://krew.sh/
 # A one-line installer for Krew and any existing Krew plugin
 

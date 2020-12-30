@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. ./.profile
+
 # Essential bundles
 bundles="
 asdf

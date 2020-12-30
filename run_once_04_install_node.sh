@@ -1,5 +1,7 @@
 #!/bin/sh
 
+. ./.profile
+
 # FIXME: Installing node first as a workaround to having to import pgp keys
 asdf plugin add nodejs
 asdf install nodejs 13.0.1
