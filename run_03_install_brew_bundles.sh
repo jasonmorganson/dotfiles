@@ -1,7 +1,5 @@
 #!/bin/sh
 
-. ./.env
-
 # Essential bundles
 bundles="
 asdf

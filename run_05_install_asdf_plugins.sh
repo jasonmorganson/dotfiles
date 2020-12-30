@@ -1,7 +1,5 @@
 #!/bin/sh
 
-. ./.env
-
 # Add asdf plugins
 while read plugin
 do
