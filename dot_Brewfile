@@ -22,11 +22,11 @@ brew "tmux"
 brew "helm"
 brew "pspg"
 brew "pgcli"
-brew "kubie"
+brew "kubie", args: ["build-from-source"]
 brew "docker"
 brew "neovim"
-brew "chezmoi"
-brew "hasura-cli"
+brew "chezmoi", args: ["build-from-source"]
+brew "hasura-cli", args: ["build-from-source"]
 brew "diff-so-fancy"
 brew "the_silver_searcher"
 brew "getantibody/tap/antibody"
