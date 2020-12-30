@@ -5,7 +5,7 @@
 # Add asdf plugins
 while read plugin
 do
-    if ! asdf plugin list | grep --slient $plugin
+    if ! asdf plugin list | grep --silent $plugin
     then
         asdf plugin add $plugin
     else
