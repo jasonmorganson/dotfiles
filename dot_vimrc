@@ -574,6 +574,8 @@ set directory=~/.vim/swap,.
 
 set ttyfast
 
+set termguicolors
+
 "
 " Theme
 silent! colorscheme jason
