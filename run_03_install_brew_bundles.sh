@@ -2,6 +2,11 @@
 
 . ./.env
 
+# FIXME: MacOS is getting a conflict on 2to3 in the python install
+# This forces brew to overwrite the links
+brew install python
+brew link --overwrite python
+
 # Essential bundles
 bundles="
 asdf
