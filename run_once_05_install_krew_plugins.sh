@@ -1,7 +1,5 @@
 #!/bin/sh
 
-. ./.env
-
 # https://krew.sh/
 # A one-line installer for Krew and any existing Krew plugin
 
