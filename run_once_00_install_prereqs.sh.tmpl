@@ -2,8 +2,8 @@
 
 . ./.profile
 
-{{ if eq .chezmoi.os "linux" -}}
-{{ if eq .chezmoi.osRelease.id "debian" -}}
+{{ if eq .chezmoi.os "linux" }}
+{{ if eq .chezmoi.osRelease.id "debian" }}
 
 sudo apt-get update
 
@@ -12,4 +12,5 @@ sudo apt-get install --yes \
     locales \
     locales-all
 
-{{ end -}}
+{{ end }}
+{{ end }}
