@@ -16,9 +16,9 @@ export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=0;41:sg=0;4
 export GREP_COLOR='1;33'
 
 # History
-HISTFILE=$HOME/.zsh_history
-HISTSIZE=100000
-SAVEHIST=$HISTSIZE
+export HISTFILE=$HOME/.zsh_history
+export HISTSIZE=100000
+export SAVEHIST=$HISTSIZE
 
 # Editors
 export EDITOR="nvim"
@@ -28,7 +28,7 @@ export VISUAL="nvim"
 export MANPAGER="nvim -c 'set ft=man' -"
 
 # Auto load Cherre env files
-AUTOENV_FILE_ENTER=envs
+export AUTOENV_FILE_ENTER=envs
 
 # nvm
 export NVM_DIR="$HOME/.nvm"
