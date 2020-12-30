@@ -13,15 +13,6 @@ sudo apt-get install --yes \
     libxmlsec1-dev libffi-dev liblzma-dev
 
 {{ end }}
-
-{{ else if eq .chezmoi.os "darwin" }}
-
-# Remove any existing 2to3 link
-if [ -e /usr/local/bin/2to3 ]
-then
-    rm /usr/local/bin/2to3
-fi
-
 {{ end }}
 
 # FIXME: Installing python first as a workaround to gcloud requiring it
