@@ -1,6 +1,3 @@
-# Environmental variables
-source "${ZDOTDIR:-$HOME}/.env"
-
 # Paths
 path=(
   ./bin
