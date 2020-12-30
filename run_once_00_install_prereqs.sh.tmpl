@@ -26,4 +26,8 @@ sudo apt-get install --yes \
 {{ end -}}
 {{ else if eq .chezmoi.os "darwin" -}}
 #!/bin/sh
+
+# Remove any existing 2to3 link
+rm /usr/local/bin/2to3
+
 {{ end -}}
