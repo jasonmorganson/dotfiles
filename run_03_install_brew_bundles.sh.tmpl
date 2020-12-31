@@ -4,14 +4,24 @@
 
 {{ if eq .chezmoi.os "darwin" }}
 
-# Remove any existing 2to3 link
-rm -f /usr/local/bin/2to3
+# FIXME: MacOS 11 has trouble installing python
+# Fix from comment: https://github.com/pyenv/pyenv/issues/1643#issuecomment-744068250
+IFS='.' read -r -a ver <<< "$(sw_vers -productVersion)"
+if [[ "${ver[0]}" -ge 11 ]]; then
+    export CFLAGS="-I$(brew --prefix openssl)/include -I$(brew --prefix readline)/include -I$(xcrun --show-sdk-path)/usr/include"
+    export LDFLAGS="-L$(brew --prefix openssl)/lib -L$(brew --prefix readline)/lib -L$(xcrun --show-sdk-path)/usr/lib -L/usr/local/opt/zlib/lib"
+    export CPPFLAGS="-I/usr/local/opt/zlib/include"
+    export PKG_CONFIG_PATH="/usr/local/opt/zlib/lib/pkgconfig"
+    export PYTHON_CONFIGURE_OPTS="--enable-framework"
+fi
 
-# FIXME: MacOS is getting a conflict on 2to3 in the python install
-# This forces brew to overwrite the links
+# FIXME: The MacOS GitHub runner is getting a conflict on 2to3 in the python install
 # See https://github.com/actions/virtual-environments/issues/2322
 # Fixed in https://github.com/actions/virtual-environments/pull/2326
 # It has not been added to the latest macos runner release (20201212.1) as of 12-30-20
+# Remove any existing 2to3 link
+rm -f /usr/local/bin/2to3
+# This forces brew to overwrite the links
 brew install python@3.9 || brew link --overwrite python@3.9
 
 {{ end }}
