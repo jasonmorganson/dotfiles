@@ -1,6 +1,7 @@
 # TMUX plugins
 set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'Korrow/tmux-mouse'
+set -g @plugin 'schasse/tmux-jump'
 set -g @plugin 'tmux-plugins/tmux-open'
 set -g @plugin 'tmux-plugins/tmux-yank'
 set -g @plugin 'tmux-plugins/tmux-logging'
