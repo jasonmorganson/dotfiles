@@ -15,11 +15,6 @@ export LSCOLORS="exfxcxdxbxegedabagacad"
 export LS_COLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:'
 export GREP_COLOR='1;33'
 
-# History
-export HISTFILE=$HOME/.zsh_history
-export HISTSIZE=100000
-export SAVEHIST=$HISTSIZE
-
 # Editors
 export EDITOR="nvim"
 export VISUAL="nvim"
@@ -61,6 +56,11 @@ export XDG_PICTURES_DIR="$HOME/Pictures"
 export XDG_PUBLICSHARE_DIR="$HOME/Public"
 export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
+
+# History
+export HISTFILE=$XDG_DATA_HOME/histfile
+export HISTSIZE=100000
+export SAVEHIST=$HISTSIZE
 
 # ZSH
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
