@@ -41,9 +41,6 @@ export DEVELOPER_DIR='/Applications/Xcode.app/Contents/Developer'
 # Docker
 export DOCKER_BUILDKIT=1
 
-# Postgres
-export PGHOST=localhost
-
 # XDG
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
@@ -64,6 +61,13 @@ export SAVEHIST=$HISTSIZE
 
 # ZSH
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+
+# Postgres
+export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
+export PSQL_HISTORY="$XDG_CACHE_HOME/pg/psql_history"
+export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
+export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
+export PGHOST=localhost
 
 # Homebrew
 {{ if eq .chezmoi.os "darwin" -}}
