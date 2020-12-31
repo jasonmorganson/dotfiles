@@ -1,0 +1,62 @@
+#!/bin/sh
+
+. ./.profile
+
+nodejs() {
+
+    # FIXME: Once node plugin auto installs keys
+    # Import the Node.js release team's OpenPGP keys to main keyring
+    # SEE: https://github.com/asdf-vm/asdf-nodejs/issues/138
+    $ASDF_DIR/plugins/nodejs/bin/import-release-team-keyring
+}
+
+python() [
+
+    {{ if eq .chezmoi.os "linux" }}
+
+    {{ if eq .chezmoi.osRelease.id "debian" }}
+
+    # Install python requirements
+    # SEE: https://github.com/pyenv/pyenv/wiki#suggested-build-environment
+    sudo apt-get install --yes \
+        make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev \
+        libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev \
+        libxmlsec1-dev libffi-dev liblzma-dev
+
+    {{ end }}
+
+    {{ else if eq .chezmoi.os "darwin" }}
+
+    # FIXME: MacOS 11 has trouble installing python
+    # Fix from comment: https://github.com/pyenv/pyenv/issues/1643#issuecomment-744068250
+    IFS='.' read -r -a ver <<< "$(sw_vers -productVersion)"
+    if [[ "${ver[0]}" -ge 11 ]]; then
+        brew install zlib bzip2
+        export CFLAGS="-L$(brew --prefix zlib)/include -L$(brew --prefix bzip2)/include"
+        export LDFLAGS="-L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib"
+    fi
+
+    {{ end }}
+
+    # FIXME: Installing python first as a workaround to gcloud requiring it
+    # SEE: https://github.com/jthegedus/asdf-gcloud/blob/master/bin/exec-env#L6
+    asdf plugin add python
+    asdf install python 3.6.8
+}
+
+# Add asdf plugins
+while read plugin version
+do
+    if ! asdf plugin list | grep --silent $plugin
+    then
+        asdf plugin add $plugin
+
+        if [ $plugin = "nodejs" ]
+        then
+            nodejs
+        elif [ $plugin = "python" ]
+        then
+            python
+        fi
+    fi
+done < ~/.tool-versions
