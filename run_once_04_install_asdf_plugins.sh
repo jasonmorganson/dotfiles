@@ -14,4 +14,7 @@ done < ~/.tool-versions
 # FIXME: Once node plugin auto installs keys
 # Import the Node.js release team's OpenPGP keys to main keyring
 # SEE: https://github.com/asdf-vm/asdf-nodejs/issues/138
-$ASDF_DIR/plugins/nodejs/bin/import-release-team-keyring
+if [ -d $ASDF_DIR/plugins/nodejs ]
+then
+    $ASDF_DIR/plugins/nodejs/bin/import-release-team-keyring
+fi
