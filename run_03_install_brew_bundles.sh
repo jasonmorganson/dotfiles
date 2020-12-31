@@ -2,6 +2,9 @@
 
 . ./.profile
 
+# Remove any existing 2to3 link
+rm -f /usr/local/bin/2to3
+
 # FIXME: MacOS is getting a conflict on 2to3 in the python install
 # This forces brew to overwrite the links
 # See https://github.com/actions/virtual-environments/issues/2322
