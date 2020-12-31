@@ -3,7 +3,7 @@
 . ./.profile
 
 # Add asdf plugins
-while read plugin
+while read plugin version
 do
     if ! asdf plugin list | grep --silent $plugin
     then
