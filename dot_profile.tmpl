@@ -62,6 +62,9 @@ export XDG_PUBLICSHARE_DIR="$HOME/Public"
 export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
+# ZSH
+export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+
 # Homebrew
 {{ if eq .chezmoi.os "darwin" -}}
     export HOMEBREW_PREFIX="/usr/local"
