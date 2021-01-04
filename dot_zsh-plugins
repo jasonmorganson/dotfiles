@@ -61,7 +61,7 @@ twang817/zsh-ssh-agent
 #dbkaplun/smart-cd
 # hlissner/zsh-autopair
 zsh-users/zsh-autosuggestions
-Tarrasch/zsh-autoenv
+#Tarrasch/zsh-autoenv
 
 # Utilities
 arzzen/calc.plugin.zsh
