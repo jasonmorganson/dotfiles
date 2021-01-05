@@ -22,12 +22,6 @@ export VISUAL="nvim"
 # Use VIM for manpages
 export MANPAGER="nvim -c 'set ft=man' -"
 
-# Go
-export GOPATH="$HOME/go"
-
-# Python
-export PYTHONDONTWRITEBYTECODE=1
-
 # XCode
 export DEVELOPER_DIR='/Applications/Xcode.app/Contents/Developer'
 
@@ -46,6 +40,9 @@ export XDG_PICTURES_DIR="$HOME/Pictures"
 export XDG_PUBLICSHARE_DIR="$HOME/Public"
 export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
+
+# Go
+export GOPATH="$XDG_DATA_HOME"/go
 
 # History
 export HISTFILE=$XDG_DATA_HOME/histfile
