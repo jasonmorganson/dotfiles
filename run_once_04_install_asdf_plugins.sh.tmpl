@@ -31,9 +31,8 @@ python() {
     # Fix from comment: https://github.com/pyenv/pyenv/issues/1643#issuecomment-744068250
     IFS='.' read -r -a ver <<< "$(sw_vers -productVersion)"
     if [[ "${ver[0]}" -ge 11 ]]; then
-        brew install zlib bzip2
-        export CFLAGS="-L$(brew --prefix zlib)/include -L$(brew --prefix bzip2)/include"
-        export LDFLAGS="-L$(brew --prefix zlib)/lib -L$(brew --prefix bzip2)/lib"
+        brew install bzip2
+        export LDFLAGS="-L $(xcrun --show-sdk-path)/usr/lib -L$(brew --prefix bzip2)/lib"
     fi
 
     {{ end }}
