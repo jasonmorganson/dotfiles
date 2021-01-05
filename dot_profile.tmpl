@@ -22,12 +22,6 @@ export VISUAL="nvim"
 # Use VIM for manpages
 export MANPAGER="nvim -c 'set ft=man' -"
 
-# XCode
-export DEVELOPER_DIR='/Applications/Xcode.app/Contents/Developer'
-
-# Docker
-export DOCKER_BUILDKIT=1
-
 # XDG
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
@@ -40,17 +34,6 @@ export XDG_PICTURES_DIR="$HOME/Pictures"
 export XDG_PUBLICSHARE_DIR="$HOME/Public"
 export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
-
-# Go
-export GOPATH="$XDG_DATA_HOME"/go
-
-# History
-export HISTFILE=$XDG_DATA_HOME/histfile
-export HISTSIZE=100000
-export SAVEHIST=$HISTSIZE
-
-# ZSH
-export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 
 # Homebrew
 {{- if eq .chezmoi.os "darwin" }}
