@@ -23,4 +23,4 @@ COPY . .
 
 RUN ./install.sh
 
-ENTRYPOINT [ "/home/linuxbrew/.linuxbrew/bin/zsh" ]
+ENTRYPOINT [ "/home/linuxbrew/.linuxbrew/bin/zsh", "--login" ]
