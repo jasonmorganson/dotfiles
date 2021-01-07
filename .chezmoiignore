@@ -16,7 +16,6 @@ install.sh
 .dotfiles
 .fasd
 .node_repl_history
-.ssh
 .netrc
 .fzf
 .avn
