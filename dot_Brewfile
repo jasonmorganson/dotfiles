@@ -17,7 +17,7 @@ brew "tig"
 brew "vim"
 brew "zsh"
 brew "exa"
-brew "fzf"
+brew "fzf", args: ["--no-update-rc"]
 brew "tmux"
 brew "helm"
 brew "pspg"
