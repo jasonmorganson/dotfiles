@@ -12,7 +12,6 @@ install.sh
 # Ignore certain dot files
 .awssecret
 .bookmarks
-.bashrc
 .bash_history
 .dotfiles
 .fasd
