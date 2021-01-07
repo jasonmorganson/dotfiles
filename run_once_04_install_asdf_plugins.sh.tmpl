@@ -27,12 +27,15 @@ python() {
 
     {{ else if eq .chezmoi.os "darwin" }}
 
-    # FIXME: MacOS 11 has trouble installing python
-    # Fix from comment: https://github.com/pyenv/pyenv/issues/1643#issuecomment-744068250
+    # FIXME: Remove after upgrade above 3.6
+    # MacOS 11 has trouble installing python
+    # It was fixed in https://github.com/python/cpython/pull/21113
+    # However it will not work for versions before 3.7 because the fix has not been backported
+    # Solution for 3.6 from comment: https://github.com/danhper/asdf-python/issues/77#issuecomment-736816437
     IFS='.' read -r -a ver <<< "$(sw_vers -productVersion)"
     if [[ "${ver[0]}" -ge 11 ]]; then
-        brew install bzip2
-        export LDFLAGS="-L $(xcrun --show-sdk-path)/usr/lib -L$(brew --prefix bzip2)/lib"
+        cp $ASDF_DIR/plugins/python/bin/install $ASDF_DIR/plugins/python/bin/install.orig
+        perl -npe 's|\$\(python_build_path\)\K(.*)| --patch \1 < <(curl -sSL https://github.com/python/cpython/commit/8ea6353.patch\\?full_index\\=1)|' $ASDF_DIR/plugins/python/bin/install.orig > $ASDF_DIR/plugins/python/bin/install
     fi
 
     {{ end }}
