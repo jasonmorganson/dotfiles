@@ -6,9 +6,6 @@ Dockerfile
 docker-compose.yaml
 install.sh
 
-# Ignore tmux plugins
-.tmux
-
 # Ignore certain dot files
 .awssecret
 .bookmarks
