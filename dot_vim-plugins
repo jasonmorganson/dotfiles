@@ -80,7 +80,7 @@ Plug 'edkolev/tmuxline.vim'
 " }
 
 " Completion & Snippets {
-Plug 'neoclide/coc.nvim', {'tag': '*', 'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'neoclide/coc-git', {'do': 'npm install'}
 Plug 'neoclide/coc-html', {'do': 'npm install'}
 "Plug 'neoclide/coc-yaml', {'do': 'npm install'}
