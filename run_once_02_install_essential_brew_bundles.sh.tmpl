@@ -14,18 +14,6 @@
 brew install --build-from-source perl
 
 {{ end }}
-
-{{ else if eq .chezmoi.os "darwin" }}
-
-# FIXME: The MacOS GitHub runner is getting a conflict on 2to3 in the python install
-# See https://github.com/actions/virtual-environments/issues/2322
-# Fixed in https://github.com/actions/virtual-environments/pull/2326
-# It has not been added to the latest macos runner release (20201212.1) as of 12-30-20
-# Remove any existing 2to3 link
-rm -f /usr/local/bin/2to3
-# This forces brew to overwrite the links
-brew install python@3.9 || brew link --overwrite python@3.9
-
 {{ end }}
 
 # Essential bundles
