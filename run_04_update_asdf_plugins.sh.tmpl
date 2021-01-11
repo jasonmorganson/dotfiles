@@ -52,11 +52,12 @@ gcloud() {
     asdf install python
 }
 
-# Add asdf plugins
 while read plugin version
 do
-    if ! asdf plugin list | grep --silent $plugin
+    if asdf plugin list | grep --silent $plugin
     then
+        asdf plugin update $plugin
+    else
         asdf plugin add $plugin
 
         if [ $plugin = "nodejs" ]
