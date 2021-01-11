@@ -10,6 +10,7 @@ chrissicool/zsh-256color
 zpm-zsh/colors
 
 # Completions
+marlonrichert/zsh-autocomplete
 zsh-users/zsh-completions
 # dbz/kube-aliases +1s
 felixr/docker-zsh-completion
