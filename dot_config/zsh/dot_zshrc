@@ -1,5 +1,3 @@
-# zmodload zsh/zprof
-
 # Make sure that antibody is installed
 (( $+commands[antibody] )) || curl -sL git.io/antibody | sh -s
 
@@ -13,5 +11,3 @@ source $XDG_CACHE_HOME/zsh/plugins.sh
 
 # Hook direnv into your shell.
 #eval "$(asdf exec direnv hook zsh)"
-
-# zprof
