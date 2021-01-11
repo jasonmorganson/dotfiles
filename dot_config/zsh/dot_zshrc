@@ -1,10 +1,2 @@
-# Make sure that antibody is installed
-(( $+commands[antibody] )) || curl -sL git.io/antibody | sh -s
-
-# Automatic antibody static loading
-if [[ ! -e "~/.zsh-plugins" ]] || [[ "~/.zsh-plugins" -nt "$XDG_CACHE_HOME/zsh/plugins.sh" ]]; then
-  antibody bundle < ~/.zsh-plugins > $XDG_CACHE_HOME/zsh/plugins.sh
-fi
-
 # Load zsh plugins
 source $XDG_CACHE_HOME/zsh/plugins.sh
