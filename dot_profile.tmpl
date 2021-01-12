@@ -55,6 +55,6 @@ export ASDF_DIR=$HOMEBREW_PREFIX/opt/asdf
 export ASDF_DATA_DIR=$ASDF_DIR
 
 # Paths
-export PATH=$ASDF_DIR/bin:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH
+export PATH=$ASDF_DIR/bin:$ASDF_DIR/shims:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH
 export FPATH=$ASDF_DIR/completions:$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH
 export MANPATH=/usr/local/share/man:/usr/X11/share/man:/usr/share/man:$MANPATH:$PATH
