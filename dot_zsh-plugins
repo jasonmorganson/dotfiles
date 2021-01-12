@@ -62,6 +62,7 @@ twang817/zsh-ssh-agent
 # hlissner/zsh-autopair
 zsh-users/zsh-autosuggestions
 #Tarrasch/zsh-autoenv
+jasonmorganson/zsh-asdf-direnv
 
 # Utilities
 arzzen/calc.plugin.zsh
