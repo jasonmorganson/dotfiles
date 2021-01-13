@@ -19,7 +19,6 @@ brew "zsh"
 brew "exa"
 brew "fzf"
 brew "tmux"
-brew "helm"
 brew "pspg"
 brew "pgcli"
 brew "kubie", args: ["build-from-source"]
