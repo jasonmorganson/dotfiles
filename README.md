@@ -2,6 +2,8 @@
 
 Dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
 
+[![Gitpod ready-to-code](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/jasonmorganson/dotfiles)
+
 ## Setup ##
 
 ### Run setup script ###
