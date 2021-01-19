@@ -2,9 +2,9 @@
 
 {{- $user := env "USER" -}}
 {{- if $interactive -}}
-{{- $user = promptString "User" }}
+{{- $user = promptString "Username" }}
 {{- else -}}
-{{- $user = coalesce (env "CODER_USERNAME") (env "USER") .chezmoi.username -}}
+{{- $user = coalesce (env "CODER_USERNAME") (env "USERNAME") (env "USER") .chezmoi.username -}}
 {{- end -}}
 
 {{- $name := env "NAME" -}}
