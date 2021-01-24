@@ -1,1 +1,1 @@
-LS_COLORS="$(vivid generate snazzy)"
+export LS_COLORS="$(vivid generate snazzy)"

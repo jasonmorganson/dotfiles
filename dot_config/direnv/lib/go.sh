@@ -1,1 +1,1 @@
-GOPATH="$XDG_DATA_HOME"/go
+export GOPATH="$XDG_DATA_HOME"/go
