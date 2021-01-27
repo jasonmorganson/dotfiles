@@ -1,6 +1,6 @@
 module.exports = [{
-    name: 'zsh',
-    command: 'zsh -i -c exit'
+    name: 'sleep',
+    command: 'sleep 1'
 }, {
     name: 'bash',
     command: 'bash -i -c exit'
