@@ -1,3 +1,4 @@
+.hyperfine.js
 docker-compose.yaml
 Dockerfile
 docs
