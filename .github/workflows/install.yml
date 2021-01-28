@@ -16,4 +16,6 @@ jobs:
         NAME: ${{ github.actor }}
         EMAIL: ${{ github.action }}@${{ github.repository_owner }}.com
       run: ./install.sh
+    - uses: Homebrew/actions/setup-homebrew@master
+    - run: brew install hyperfine
     - uses: blacha/hyperfine-action@releases/v1
