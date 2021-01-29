@@ -16,5 +16,3 @@ jobs:
         NAME: ${{ github.actor }}
         EMAIL: ${{ github.action }}@${{ github.repository_owner }}.com
       run: ./install.sh
-    - if: matrix.platform == 'ubuntu-latest'
-      uses: blacha/hyperfine-action@releases/v1
