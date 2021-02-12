@@ -1,0 +1,11 @@
+.bash_profile
+.gitconfig
+.gvimrc
+.tmux-statusline-colors.conf
+.tmux.conf
+.zcompdump*
+.zlogin
+.zprofile
+.zsh-plugins.sh
+.zsh_history
+.zshrc
