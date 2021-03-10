@@ -27,7 +27,7 @@ brew "kubie", args: ["build-from-source"]
 brew "docker"
 brew "neovim"
 brew "chezmoi"
-brew "hasura-cli", args: ["build-from-source"]
+brew "hasura-cli"
 brew "diff-so-fancy"
 brew "the_silver_searcher"
 brew "getantibody/tap/antibody"
