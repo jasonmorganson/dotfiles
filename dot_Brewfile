@@ -26,7 +26,7 @@ brew "vivid"
 brew "kubie", args: ["build-from-source"]
 brew "docker"
 brew "neovim"
-brew "chezmoi", args: ["build-from-source"]
+brew "chezmoi"
 brew "hasura-cli", args: ["build-from-source"]
 brew "diff-so-fancy"
 brew "the_silver_searcher"
