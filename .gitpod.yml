@@ -1,4 +1,2 @@
 image:
   file: Dockerfile
-tasks:
-  - init: ./install.sh
