@@ -10,7 +10,7 @@ cask "strongdm"
 brew "readline"
 brew "gnu-getopt"
 brew "gnupg"
-brew "asdf"
+brew "asdf", args: ["build-from-source"]
 brew "git"
 brew "hub"
 brew "tig"
