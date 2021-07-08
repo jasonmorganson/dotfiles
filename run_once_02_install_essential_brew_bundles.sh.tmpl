@@ -28,19 +28,14 @@ brew install python@3.9 || brew link --overwrite python@3.9
 
 {{ end }}
 
-# Essential bundles
-bundles="
-asdf
-getantibody/tap/antibody
-helm
-krew
-nvim
-tmux
-vivid
-"
-
 # Ensure essential bundles are installed
-for bundle in $bundles
-do
-    brew install $bundle
-done
+brew bundle --file=/dev/stdin <<EOF
+brew "git"
+brew "asdf"
+brew "getantibody/tap/antibody"
+brew "helm"
+brew "krew"
+brew "nvim"
+brew "tmux"
+brew "vivid"
+EOF
