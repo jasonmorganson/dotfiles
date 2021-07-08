@@ -31,7 +31,11 @@ brew install python@3.9 || brew link --overwrite python@3.9
 # Ensure essential bundles are installed
 brew bundle --file=/dev/stdin <<EOF
 brew "git"
+{{ if eq .chezmoi.os "darwin" }}
 brew "asdf"
+{{ else }}
+brew "asdf", args: ["build-from-source"]
+{{ end }}
 brew "getantibody/tap/antibody"
 brew "helm"
 brew "krew"
