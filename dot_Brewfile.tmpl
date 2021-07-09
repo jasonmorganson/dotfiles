@@ -10,7 +10,11 @@ cask "strongdm"
 brew "readline"
 brew "gnu-getopt"
 brew "gnupg"
+{{ if eq .chezmoi.os "darwin" }}
+brew "asdf"
+{{ else }}
 brew "asdf", args: ["build-from-source"]
+{{ end }}
 brew "git"
 brew "hub"
 brew "tig"
