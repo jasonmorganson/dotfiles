@@ -13,8 +13,7 @@ nodejs() {
 python() {
 
     {{ if eq .chezmoi.os "linux" }}
-
-    {{ if or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu") }}
+    {{ if eq .chezmoi.osRelease.idLike "debian" }}
 
     DEBIAN_FRONTEND=noninteractive
 
