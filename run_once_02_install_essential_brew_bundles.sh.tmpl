@@ -3,7 +3,7 @@
 . ./.profile
 
 {{ if eq .chezmoi.os "linux" }}
-{{ if eq .chezmoi.osRelease.idLike "debian" }}
+{{ if eq .chezmoi.osRelease.id "ubuntu" }}
 
 # FIXME: Installing perl first as a workaround to postinstall issues on Ubuntu
 # Pre-install perl from source to avoid bundle issues

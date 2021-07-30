@@ -3,7 +3,7 @@
 . ./.profile
 
 {{ if eq .chezmoi.os "linux" -}}
-{{ if eq .chezmoi.osRelease.idLike "debian" -}}
+{{ if eq .chezmoi.osRelease.id "debian" -}}
     sudo apt-get install --yes unzip
 {{ end -}}
     cd $(mktemp -d)
