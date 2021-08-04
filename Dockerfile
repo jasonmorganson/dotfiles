@@ -6,7 +6,8 @@ ARG EMAIL=user@co.co
 
 ENV USER=$USER \
     HOME=/home/$USER \
-    SHELL=/home/linuxbrew/.linuxbrew/bin/zsh
+    SHELL=/home/linuxbrew/.linuxbrew/bin/zsh \
+    HEADLESS=true
 
 RUN apt-get update \
     && apt-get install --yes sudo curl git \
