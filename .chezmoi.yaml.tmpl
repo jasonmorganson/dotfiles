@@ -17,30 +17,24 @@
 {{- end -}}
 
 {{- $user := env "USER" -}}
-{{- if empty $user -}}
 {{- if $interactive -}}
 {{- $user = promptString "User" }}
 {{- else -}}
 {{- $user = .chezmoi.username -}}
 {{- end -}}
-{{- end -}}
 
 {{- $name := env "NAME" -}}
-{{- if empty $name -}}
 {{- if $interactive -}}
 {{- $name = promptString "Name" }}
 {{- else -}}
 {{- $name = .chezmoi.username -}}
 {{- end -}}
-{{- end -}}
 
 {{- $email := env "EMAIL" -}}
-{{- if empty $email -}}
 {{- if $interactive -}}
 {{- $email = promptString "Email" }}
 {{- else -}}
 {{- $email = printf "%s@%s" .chezmoi.username .chezmoi.fullHostname -}}
-{{- end -}}
 {{- end -}}
 
 sourceDir: "{{ .chezmoi.sourceDir }}"
