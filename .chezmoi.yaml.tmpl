@@ -1,41 +1,24 @@
-{{- /* Assume interactivity */ -}}
-{{- $interactive := true -}}
-
-{{- /* Detect headless */ -}}
-{{- if env "HEADLESS" -}}
-{{- $interactive = false -}}
-{{- end -}}
-
-{{- /* Detect GitHub Codespaces and VSCode remote containers */ -}}
-{{- if or (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC") -}}
-{{- $interactive = false -}}
-{{- end -}}
+{{- $interactive := not (any (env "CI") (env "HEADLESS") (env "CODER_RUNTIME") (env "GITHUB_ACTIONS") (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC")) -}}
 
 {{- $user := env "USER" -}}
-{{- if empty $user -}}
 {{- if $interactive -}}
 {{- $user = promptString "User" }}
 {{- else -}}
-{{- $user = .chezmoi.username -}}
-{{- end -}}
+{{- $user = coalesce (env "CODER_USERNAME") (env "USER") .chezmoi.username -}}
 {{- end -}}
 
 {{- $name := env "NAME" -}}
-{{- if empty $name -}}
 {{- if $interactive -}}
 {{- $name = promptString "Name" }}
 {{- else -}}
-{{- $name = .chezmoi.username -}}
-{{- end -}}
+{{- $name = coalesce (env "CODER_USERNAME") (env "NAME") .chezmoi.username -}}
 {{- end -}}
 
 {{- $email := env "EMAIL" -}}
-{{- if empty $email -}}
 {{- if $interactive -}}
 {{- $email = promptString "Email" }}
 {{- else -}}
-{{- $email = printf "%s@%s" .chezmoi.username .chezmoi.fullHostname -}}
-{{- end -}}
+{{- $email = coalesce (env "CODER_USER_EMAIL") (env "EMAIL") (printf "%s@%s" .chezmoi.username .chezmoi.group) -}}
 {{- end -}}
 
 sourceDir: "{{ .chezmoi.sourceDir }}"
