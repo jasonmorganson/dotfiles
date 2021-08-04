@@ -13,6 +13,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: Run install script
       env:
+        USER: ${{ github.actor }}
         NAME: ${{ github.actor }}
         EMAIL: ${{ github.action }}@${{ github.repository_owner }}.com
       run: ./install.sh
