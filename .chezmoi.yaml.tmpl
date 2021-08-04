@@ -1,4 +1,4 @@
-{{- $interactive := not (any (env "HEADLESS") (env "CODER_RUNTIME") (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC")) -}}
+{{- $interactive := not (any (env "CI") (env "HEADLESS") (env "CODER_RUNTIME") (env "GITHUB_ACTIONS") (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC")) -}}
 
 {{- $user := env "USER" -}}
 {{- if $interactive -}}
