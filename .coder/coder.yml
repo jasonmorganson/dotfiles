@@ -1,0 +1,15 @@
+version: 0.2
+workspace:
+  type: kubernetes
+  specs:
+    kubernetes:
+      image:
+        value: jasonmorganson/dotfiles
+      container-based-vm:
+        value: true
+      cpu:
+        value: 4
+      memory:
+        value: 16
+      disk:
+        value: 20
