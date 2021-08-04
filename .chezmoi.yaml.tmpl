@@ -1,20 +1,4 @@
-{{- $interactive := true -}}
-{{- /* Detect headless */ -}}
-{{- if env "HEADLESS" -}}
-{{- $interactive = false -}}
-{{- /* Detect Coder */ -}}
-{{- else if env "CODER_RUNTIME" -}}
-{{- $interactive = false -}}
-{{- /* Detect GitHub Codespaces */ -}}
-{{- else if env "CODESPACES" -}}
-{{- $interactive = false -}}
-{{- /* Detect VSCode remote containers */ -}}
-{{- else if env "REMOTE_CONTAINERS_IPC" -}}
-{{- $interactive = false -}}
-{{- else -}}
-{{- /* Assume interactivity */ -}}
-{{- $interactive = true -}}
-{{- end -}}
+{{- $interactive := not (any (env "HEADLESS") (env "CODER_RUNTIME") (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC")) -}}
 
 {{- $user := env "USER" -}}
 {{- if $interactive -}}
