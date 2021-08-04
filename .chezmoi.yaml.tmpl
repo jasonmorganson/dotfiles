@@ -34,7 +34,7 @@
 {{- if $interactive -}}
 {{- $email = promptString "Email" }}
 {{- else -}}
-{{- $email = coalesce (env "CODER_USER_EMAIL") (env "EMAIL") (printf "%s@%s" .chezmoi.username .chezmoi.fullHostname) -}}
+{{- $email = coalesce (env "CODER_USER_EMAIL") (env "EMAIL") (printf "%s@%s" .chezmoi.username .chezmoi.group) -}}
 {{- end -}}
 
 sourceDir: "{{ .chezmoi.sourceDir }}"
