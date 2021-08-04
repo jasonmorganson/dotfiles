@@ -20,21 +20,21 @@
 {{- if $interactive -}}
 {{- $user = promptString "User" }}
 {{- else -}}
-{{- $user = coalesce (env "USER") .chezmoi.username -}}
+{{- $user = coalesce (env "CODER_USERNAME") (env "USER") .chezmoi.username -}}
 {{- end -}}
 
 {{- $name := env "NAME" -}}
 {{- if $interactive -}}
 {{- $name = promptString "Name" }}
 {{- else -}}
-{{- $name = coalesce (env "NAME") .chezmoi.username -}}
+{{- $name = coalesce (env "CODER_USERNAME") (env "NAME") .chezmoi.username -}}
 {{- end -}}
 
 {{- $email := env "EMAIL" -}}
 {{- if $interactive -}}
 {{- $email = promptString "Email" }}
 {{- else -}}
-{{- $email = coalesce (env "EMAIL") (printf "%s@%s" .chezmoi.username .chezmoi.fullHostname) -}}
+{{- $email = coalesce (env "CODER_USER_EMAIL") (env "EMAIL") (printf "%s@%s" .chezmoi.username .chezmoi.fullHostname) -}}
 {{- end -}}
 
 sourceDir: "{{ .chezmoi.sourceDir }}"
