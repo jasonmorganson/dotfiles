@@ -24,4 +24,7 @@ COPY . .
 
 RUN ./install.sh
 
+COPY install.sh personalize
+COPY install.sh /coder/configure
+
 ENTRYPOINT [ "/home/linuxbrew/.linuxbrew/bin/zsh", "--login" ]
