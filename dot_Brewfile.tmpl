@@ -28,7 +28,11 @@ brew "pspg", args: ["build-from-source"]
 brew "pgcli"
 brew "vivid"
 brew "kubie", args: ["build-from-source"]
+{{ if eq .chezmoi.os "darwin" }}
 brew "docker"
+{{ else }}
+brew "docker", args: ["build-from-source"]
+{{ end }}
 brew "neovim"
 brew "chezmoi"
 brew "hasura-cli"
