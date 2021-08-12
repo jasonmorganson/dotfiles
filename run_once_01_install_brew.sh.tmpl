@@ -3,7 +3,7 @@
 . ./.profile
 
 {{ if eq .chezmoi.os "linux" }}
-{{ if eq .chezmoi.osRelease.id "debian" }}
+{{ if or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu") }}
 
 # Install linuxbrew requirements
 # SEE: https://docs.brew.sh/Homebrew-on-Linux#debian-or-ubuntu
