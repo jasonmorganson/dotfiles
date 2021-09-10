@@ -1,5 +1,6 @@
 direnv 2.27.0
 gcloud 340.0.0
+golang 1.17.1
 helm 3.5.4
 helmfile 0.139.3
 kubectl 1.18.18
