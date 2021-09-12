@@ -86,7 +86,6 @@ Plug 'neoclide/coc-html', {'do': 'npm install'}
 "Plug 'neoclide/coc-yaml', {'do': 'npm install'}
 Plug 'neoclide/coc-yank', {'do': 'npm install'}
 Plug 'neoclide/coc-lists', {'do': 'npm install'}
-Plug 'neoclide/coc-python', {'do': 'npm install'}
 "Plug 'neoclide/coc-tsserver', {'do': 'npm install'}
 " }
 
