@@ -1,2 +1,3 @@
 export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export DOCKER_BUILDKIT=1
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
