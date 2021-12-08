@@ -6,5 +6,11 @@ services:
     stdin_open: true
     network_mode: "host"
     volumes:
-      - ~/.ssh
-      - ~/.config/gcloud
+      - "$PWD:/home/$USER/work"
+      - "$HOME/.ssh:/home/user/.ssh:cached"
+      - "$HOME/.config/git/config:/home/user/.config/git/config:cached"
+      - "$HOME/.config/gcloud:/home/user/.config/gcloud:cached"
+      - /var/run/docker.sock
+      - "$SSH_AUTH_SOCK:/ssh-agent"
+    environment:
+      - "SSH_AUTH_SOCK=/ssh-agent"
