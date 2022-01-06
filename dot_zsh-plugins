@@ -26,7 +26,7 @@ atweiden/fzf-extras
 srijanshetty/zsh-suffix-alias
 # zsh-users/zsh-history-substring-search
 ascii-soup/zsh-url-highlighter
-# zdharma/fast-syntax-highlighting
+# zdharma-continuum/fast-syntax-highlighting
 TBSliver/zsh-plugin-tmux-simple
 #wbinglee/zsh-wakatime
 
@@ -45,7 +45,7 @@ Tarrasch/zsh-bd
 # Git
 # robbyrussell/oh-my-zsh folder:plugins/git
 wfxr/forgit
-zdharma/zsh-diff-so-fancy
+zdharma-continuum/zsh-diff-so-fancy
 caarlos0/zsh-git-sync kind:path
 seletskiy/zsh-git-smart-commands
 peterhurford/git-aliases.zsh
