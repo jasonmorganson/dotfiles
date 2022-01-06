@@ -43,15 +43,6 @@ python() {
     {{ end }}
 }
 
-gcloud() {
-
-    # FIXME: Installing python first as a workaround to gcloud requiring it
-    # SEE: https://github.com/jthegedus/asdf-gcloud/blob/master/bin/exec-env#L6
-    asdf plugin add python
-    python
-    asdf install python
-}
-
 while read plugin version
 do
     if asdf plugin list | grep --silent $plugin
@@ -66,9 +57,6 @@ do
         elif [ $plugin = "python" ]
         then
             python
-        elif [ $plugin = "gcloud" ]
-        then
-            gcloud
         fi
     fi
 done < ~/.tool-versions
