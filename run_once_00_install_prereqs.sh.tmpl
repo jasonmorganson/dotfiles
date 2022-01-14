@@ -4,6 +4,7 @@
 
 set --
 
+{{ if eq .chezmoi.os "linux" -}}
 {{ if or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu") }}
 
 {{ if eq .chezmoi.osRelease.id "debian" }}
@@ -35,4 +36,5 @@ DEBIAN_FRONTEND=noninteractive \
 sudo apt-get update && \
 sudo apt-get install --yes "$@"
 
+{{ end }}
 {{ end }}
