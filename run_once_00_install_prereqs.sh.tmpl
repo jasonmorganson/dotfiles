@@ -2,8 +2,6 @@
 
 . ./.profile
 
-{{ if eq .chezmoi.os "linux" }}
-
 set --
 
 {{ if or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu") }}
@@ -37,5 +35,4 @@ sudo apt-get update
 
 sudo apt-get install --yes "$@"
 
-{{ end }}
 {{ end }}
