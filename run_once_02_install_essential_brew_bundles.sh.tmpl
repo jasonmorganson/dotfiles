@@ -2,12 +2,6 @@
 
 . ./.profile
 
-{{ if eq .chezmoi.os "linux" }}
-{{ if eq .chezmoi.osRelease.id "ubuntu" }}
-
-{{ end }}
-{{ end }}
-
 # Ensure essential bundles are installed
 brew bundle --file=/dev/stdin <<EOF
 brew "asdf"
