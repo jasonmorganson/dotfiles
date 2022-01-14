@@ -3,9 +3,6 @@
 . ./.profile
 
 {{ if eq .chezmoi.os "linux" -}}
-{{ if eq .chezmoi.osRelease.id "debian" -}}
-    sudo apt-get install --yes unzip
-{{ end -}}
     cd $(mktemp -d)
     curl -J -O -L https://app.strongdm.com/releases/cli/linux
     unzip *.zip

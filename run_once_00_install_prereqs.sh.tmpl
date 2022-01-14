@@ -2,15 +2,39 @@
 
 . ./.profile
 
-{{ if eq .chezmoi.os "linux" }}
+set --
+
+{{ if eq .chezmoi.os "linux" -}}
+{{ if or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu") }}
+
 {{ if eq .chezmoi.osRelease.id "debian" }}
 
-sudo apt-get update
-
-# Install all locales
-sudo apt-get install --yes \
+# Locales
+set -- "$@" \
     locales \
     locales-all
+
+# StrongDM requirements
+set -- "$@" \
+    unzip
+
+{{ end }}
+
+# Linuxbrew requirements
+# SEE: https://docs.brew.sh/Homebrew-on-Linux#debian-or-ubuntu
+set -- "$@" \
+    build-essential procps curl file git
+
+# Install python requirements
+# SEE: https://github.com/pyenv/pyenv/wiki#suggested-build-environment
+set -- "$@" \
+    make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev \
+    libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev \
+    libxmlsec1-dev libffi-dev liblzma-dev
+
+DEBIAN_FRONTEND=noninteractive \
+sudo apt-get update && \
+sudo apt-get install --yes "$@"
 
 {{ end }}
 {{ end }}
