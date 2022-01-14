@@ -3,14 +3,19 @@
 . ./.profile
 
 {{ if eq .chezmoi.os "linux" }}
+
+set --
+
 {{ if eq .chezmoi.osRelease.id "debian" }}
+
+# Locales
+set -- "$@" \
+    locales \
+    locales-all
 
 sudo apt-get update
 
-# Install all locales
-sudo apt-get install --yes \
-    locales \
-    locales-all
+sudo apt-get install --yes "$@"
 
 {{ end }}
 {{ end }}
