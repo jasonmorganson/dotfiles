@@ -6,12 +6,21 @@
 
 set --
 
+{{ if or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu") }}
 {{ if eq .chezmoi.osRelease.id "debian" }}
 
 # Locales
 set -- "$@" \
     locales \
     locales-all
+
+{{ end }}
+{{ if or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu") }}
+
+# Linuxbrew requirements
+# SEE: https://docs.brew.sh/Homebrew-on-Linux#debian-or-ubuntu
+set -- "$@" \
+    build-essential procps curl file git
 
 sudo apt-get update
 
