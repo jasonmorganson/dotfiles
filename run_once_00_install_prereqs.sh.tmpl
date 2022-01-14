@@ -14,6 +14,10 @@ set -- "$@" \
     locales \
     locales-all
 
+# StrongDM requirements
+set -- "$@" \
+    unzip
+
 {{ end }}
 {{ if or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu") }}
 
