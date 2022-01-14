@@ -2,28 +2,6 @@
 
 . ./.profile
 
-python() {
-
-    :
-
-    {{ if eq .chezmoi.os "linux" }}
-
-    {{ if or (eq .chezmoi.osRelease.id "debian") (eq .chezmoi.osRelease.id "ubuntu") }}
-
-    DEBIAN_FRONTEND=noninteractive
-
-    # Install python requirements
-    # SEE: https://github.com/pyenv/pyenv/wiki#suggested-build-environment
-    sudo apt-get install --yes \
-        make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev \
-        libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev \
-        libxmlsec1-dev libffi-dev liblzma-dev
-
-    {{ end }}
-
-    {{ end }}
-}
-
 while read plugin version
 do
     if asdf plugin list | grep --silent $plugin
@@ -31,10 +9,5 @@ do
         asdf plugin update $plugin
     else
         asdf plugin add $plugin
-
-        if [ $plugin = "python" ]
-        then
-            python
-        fi
     fi
 done < ~/.tool-versions
