@@ -32,12 +32,12 @@ python() {
     # FIXME: Remove after upgrade above 3.6
     # MacOS 11 has trouble installing python
     # It was fixed in https://github.com/python/cpython/pull/21113
-    # However it will not work for versions before 3.7 because the fix has not been backported
+    # However it will not work for versions before 3.7 because the fix will not be backported
+    # See https://github.com/python/cpython/pull/25014#issuecomment-805851373
     # Solution for 3.6 from comment: https://github.com/danhper/asdf-python/issues/77#issuecomment-736816437
     IFS='.' read -r -a ver <<< "$(sw_vers -productVersion)"
     if [[ "${ver[0]}" -ge 11 ]]; then
-        cp $ASDF_DIR/plugins/python/bin/install $ASDF_DIR/plugins/python/bin/install.orig
-        perl -npe 's|\$\(python_build_path\)\K(.*)| --patch \1 < <(curl -sSL https://github.com/python/cpython/commit/8ea6353.patch\\?full_index\\=1)|' $ASDF_DIR/plugins/python/bin/install.orig > $ASDF_DIR/plugins/python/bin/install
+        export ASDF_PYTHON_PATCH_URL="https://github.com/python/cpython/commit/8ea6353.patch?full_index=1"
     fi
 
     {{ end }}
