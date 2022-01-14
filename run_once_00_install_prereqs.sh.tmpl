@@ -31,8 +31,8 @@ set -- "$@" \
     libsqlite3-dev wget curl llvm libncurses5-dev xz-utils tk-dev libxml2-dev \
     libxmlsec1-dev libffi-dev liblzma-dev
 
-sudo apt-get update
-
+DEBIAN_FRONTEND=noninteractive \
+sudo apt-get update && \
 sudo apt-get install --yes "$@"
 
 {{ end }}
