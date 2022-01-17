@@ -14,6 +14,7 @@ asdf_plugin_add gcloud
 asdf_plugin_add golang
 asdf_plugin_add helm
 asdf_plugin_add helmfile
+asdf_plugin_add krew
 asdf_plugin_add kubectl
 asdf_plugin_add kubectx
 asdf_plugin_add nodejs
