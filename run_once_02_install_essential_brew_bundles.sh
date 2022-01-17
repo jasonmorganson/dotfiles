@@ -7,7 +7,6 @@ brew bundle --file=/dev/stdin <<EOF
 brew "asdf"
 brew "git"
 brew "antibody"
-brew "helm"
 brew "krew"
 brew "nvim"
 brew "tmux"
