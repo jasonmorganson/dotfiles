@@ -1,5 +1,5 @@
 #!/bin/sh
-
+set -eu
 . ./.profile
 
 helm_plugin_install() {

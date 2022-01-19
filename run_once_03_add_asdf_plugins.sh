@@ -1,5 +1,5 @@
 #!/bin/sh
-
+set -eu
 . ./.profile
 
 asdf_plugin_add() {

@@ -1,5 +1,5 @@
 #!/bin/sh
-
+set -eu
 . ./.profile
 
 KREW_ROOT=~/.config/krew

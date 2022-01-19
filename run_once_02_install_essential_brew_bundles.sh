@@ -1,5 +1,5 @@
 #!/bin/sh
-
+set -eu
 . ./.profile
 
 # Ensure essential bundles are installed
