@@ -1,6 +1,6 @@
 #!/bin/sh
-set -eu
 . ./.profile
+set -eu
 
 # Install vim plugins
 nvim --headless +PlugInstall +qall

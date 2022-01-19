@@ -1,5 +1,5 @@
 #!/bin/sh
-set -eu
 . ./.profile
+set -eu
 
 asdf plugin update --all

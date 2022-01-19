@@ -1,6 +1,6 @@
 #!/bin/sh
-set -eu
 . ./.profile
+set -eu
 
 asdf_plugin_add() {
     # Exit code 2 indicates the plugin is already installed so test and exit

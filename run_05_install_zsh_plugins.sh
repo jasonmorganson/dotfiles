@@ -1,6 +1,6 @@
 #!/bin/sh
-set -eu
 . ./.profile
+set -eu
 
 # Use antibody static loading
 antibody bundle < ~/.zsh-plugins > $XDG_CACHE_HOME/zsh/plugins.sh
