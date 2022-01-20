@@ -1,6 +1,6 @@
 #!/bin/sh
-
 . ./.profile
+set -eu
 
 helm_plugin_install() {
     # Exit code 1 indicates the plugin is already installed so test and exit
