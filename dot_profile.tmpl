@@ -1,11 +1,3 @@
-# Language
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
-export LANGUAGE=en_US.UTF-8
-
-# 10ms for key sequences
-export KEYTIMEOUT=1
-
 # XDG
 export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
@@ -22,12 +14,8 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 # Homebrew
 {{- if eq .chezmoi.os "darwin" }}
 export HOMEBREW_PREFIX="/usr/local"
-export HOMEBREW_CELLAR="/usr/local/Cellar"
-export HOMEBREW_REPOSITORY="/usr/local/Homebrew"
 {{- else }}
 export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
-export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar"
-export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew"
 {{- end }}
 
 # Configure brew bundle
