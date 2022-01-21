@@ -1,12 +1,13 @@
 version: "3.8"
 services:
   dotfiles:
-    build: .
+    image: jasonmorganson/dotfiles
     tty: true
     stdin_open: true
     network_mode: "host"
+    working_dir: "/home/$USER/working_dir"
     volumes:
-      - "$PWD:/home/$USER/work"
+      - "$PWD:/home/$USER/working_dir"
       - "$HOME/.ssh:/home/user/.ssh:cached"
       - "$HOME/.config/git/config:/home/user/.config/git/config:cached"
       - "$HOME/.config/gcloud:/home/user/.config/gcloud:cached"
