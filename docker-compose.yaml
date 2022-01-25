@@ -11,7 +11,10 @@ services:
   dotfiles:
     links:
       - socat
-    image: jasonmorganson/dotfiles
+    build:
+      context: .
+      args:
+        USER: "$USER"
     tty: true
     stdin_open: true
     network_mode: "host"
@@ -19,8 +22,8 @@ services:
     volumes:
       - .:/working_dir
       - "$HOME/.ssh:/home/$USER/.ssh"
-      - "$HOME/.config/git/config:/home/user/.config/git/config:cached"
-      - "$HOME/.config/gcloud:/home/user/.config/gcloud:cached"
+      - "$HOME/.config/git/config:/home/$USER/.config/git/config"
+      - "$HOME/.config/gcloud:/home/$USER/.config/gcloud"
       - type: bind
         source: /run/host-services/ssh-auth.sock
         target: /run/host-services/ssh-auth.sock
