@@ -11,7 +11,7 @@
 {{- if $interactive -}}
 {{- $name = promptString "Name" }}
 {{- else -}}
-{{- $name = coalesce (env "CODER_USERNAME") (env "NAME") .chezmoi.username -}}
+{{- $name = coalesce (env "CODER_USERNAME") (env "GITPOD_GIT_USER_NAME") (env "NAME") .chezmoi.username -}}
 {{- end -}}
 
 {{- $email := env "EMAIL" -}}
