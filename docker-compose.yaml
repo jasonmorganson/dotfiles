@@ -1,13 +1,13 @@
 version: "3.8"
 services:
   socat:
-     image: bpack/socat
-     command: TCP4-LISTEN:2375,fork,reuseaddr UNIX-CONNECT:/var/run/docker.sock
-     network_mode: "host"
-     volumes:
-        - /var/run/docker.sock:/var/run/docker.sock
-     expose:
-        - "2375"
+    image: bpack/socat
+    command: TCP4-LISTEN:2375,fork,reuseaddr UNIX-CONNECT:/var/run/docker.sock
+    network_mode: "host"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    expose:
+      - "2375"
   dotfiles:
     links:
       - socat
