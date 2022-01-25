@@ -18,7 +18,7 @@
 {{- if $interactive -}}
 {{- $email = promptString "Email" }}
 {{- else -}}
-{{- $email = coalesce (env "CODER_USER_EMAIL") (env "EMAIL") (printf "%s@%s" .chezmoi.username .chezmoi.group) -}}
+{{- $email = coalesce (env "CODER_USER_EMAIL") (env "GITPOD_GIT_USER_EMAIL") (env "EMAIL") (printf "%s@%s" .chezmoi.username .chezmoi.group) -}}
 {{- end -}}
 
 sourceDir: "{{ .chezmoi.sourceDir }}"
