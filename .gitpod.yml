@@ -1,3 +1,5 @@
 tasks:
   - name: Install
-    init: ./install.sh
+    init: |
+      eval $(gp env -e)
+      ./install.sh
