@@ -1,24 +1,24 @@
-{{- $interactive := not (any (env "CI") (env "HEADLESS") (env "CODER_RUNTIME") (env "GITHUB_ACTIONS") (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC")) -}}
+{{- $interactive := not (any (env "CI") (env "HEADLESS") (env "GITPOD_WORKSPACE_ID") (env "CODER_RUNTIME") (env "GITHUB_ACTIONS") (env "CODESPACES") (env "REMOTE_CONTAINERS_IPC")) -}}
 
 {{- $user := env "USER" -}}
 {{- if $interactive -}}
-{{- $user = promptString "User" }}
+{{- $user = promptString "Username" }}
 {{- else -}}
-{{- $user = coalesce (env "CODER_USERNAME") (env "USER") .chezmoi.username -}}
+{{- $user = coalesce (env "CODER_USERNAME") (env "USERNAME") (env "USER") .chezmoi.username -}}
 {{- end -}}
 
 {{- $name := env "NAME" -}}
 {{- if $interactive -}}
 {{- $name = promptString "Name" }}
 {{- else -}}
-{{- $name = coalesce (env "CODER_USERNAME") (env "NAME") .chezmoi.username -}}
+{{- $name = coalesce (env "CODER_USERNAME") (env "GITPOD_GIT_USER_NAME") (env "NAME") .chezmoi.username -}}
 {{- end -}}
 
 {{- $email := env "EMAIL" -}}
 {{- if $interactive -}}
 {{- $email = promptString "Email" }}
 {{- else -}}
-{{- $email = coalesce (env "CODER_USER_EMAIL") (env "EMAIL") (printf "%s@%s" .chezmoi.username .chezmoi.group) -}}
+{{- $email = coalesce (env "CODER_USER_EMAIL") (env "GITPOD_GIT_USER_EMAIL") (env "EMAIL") (printf "%s@%s" .chezmoi.username .chezmoi.group) -}}
 {{- end -}}
 
 sourceDir: "{{ .chezmoi.sourceDir }}"
