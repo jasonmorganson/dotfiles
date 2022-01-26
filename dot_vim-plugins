@@ -46,7 +46,7 @@ Plug 'andymass/vim-matchup'
 
 " IDE {
 Plug 'sjl/gundo.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'kkoomen/vim-doge'
