@@ -1,10 +1,32 @@
 version: "3.8"
 services:
+  socat:
+    image: bpack/socat
+    command: TCP4-LISTEN:2375,fork,reuseaddr UNIX-CONNECT:/var/run/docker.sock
+    network_mode: "host"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    expose:
+      - "2375"
   dotfiles:
-    build: .
+    links:
+      - socat
+    build:
+      context: .
+      args:
+        USER: "$USER"
     tty: true
     stdin_open: true
     network_mode: "host"
+    working_dir: "/working_dir"
     volumes:
-      - ~/.ssh
-      - ~/.config/gcloud
+      - .:/working_dir
+      - "$HOME/.ssh:/home/$USER/.ssh"
+      - "$HOME/.config/git/config:/home/$USER/.config/git/config"
+      - "$HOME/.config/gcloud:/home/$USER/.config/gcloud"
+      - type: bind
+        source: /run/host-services/ssh-auth.sock
+        target: /run/host-services/ssh-auth.sock
+    environment:
+      - DOCKER_HOST=localhost:2375
+      - SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock
