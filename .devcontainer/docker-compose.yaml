@@ -11,10 +11,7 @@ services:
   dotfiles:
     depends_on:
       - socat
-    build:
-      context: ..
-      args:
-        USER: "$GITHUB_USER"
+    image: "$GITHUB_USER/dotfiles"
     tty: true
     stdin_open: true
     network_mode: "host"
