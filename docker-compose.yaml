@@ -23,12 +23,8 @@ services:
       - "$HOME/.ssh:/home/$USER/.ssh"
       - "$HOME/.config/git/config:/home/$USER/.config/git/config"
       - "$HOME/.config/gcloud:/home/$USER/.config/gcloud"
-      - type: bind
-        source: /run/host-services/ssh-auth.sock
-        target: /run/host-services/ssh-auth.sock
     environment:
       - DOCKER_HOST=localhost:2375
-      - SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock
   build:
     profiles:
       - build
