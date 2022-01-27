@@ -36,6 +36,12 @@ services:
       context: .
       args:
         USER: "$USER"
+  mac:
+    profiles:
+      - mac
+    links:
+      - socat
+    image: "$USER/dotfiles"
     tty: true
     stdin_open: true
     network_mode: "host"
