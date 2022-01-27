@@ -1,19 +1,4 @@
 version: "3.8"
 services:
-  socat:
-    image: bpack/socat
-    command: TCP4-LISTEN:2375,fork,reuseaddr UNIX-CONNECT:/var/run/docker.sock
-    network_mode: "host"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-    expose:
-      - "2375"
   dotfiles:
-    depends_on:
-      - socat
     image: "$GITHUB_USER/dotfiles"
-    tty: true
-    stdin_open: true
-    network_mode: "host"
-    environment:
-      - DOCKER_HOST=localhost:2375
