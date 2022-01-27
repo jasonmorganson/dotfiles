@@ -1,4 +1,4 @@
 version: "3.8"
 services:
   dotfiles:
-    image: "$GITHUB_USER/dotfiles"
+    image: "${GITHUB_USER:-${USER}}/dotfiles"
