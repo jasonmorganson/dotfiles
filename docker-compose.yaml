@@ -1,12 +1,13 @@
 version: "3.8"
+
 x-dotfiles: &dotfiles
   links:
     - socat
   image: "${GITHUB_USER:-${USER}}/dotfiles"
   tty: true
   stdin_open: true
-  network_mode: "host"
-  working_dir: "/working_dir"
+  network_mode: host
+  working_dir: /working_dir
   volumes:
     - .:/working_dir
     - "$HOME/.ssh:/home/$USER/.ssh"
@@ -14,19 +15,18 @@ x-dotfiles: &dotfiles
     - "$HOME/.config/gcloud:/home/$USER/.config/gcloud"
   environment:
     - DOCKER_HOST=localhost:2375
+
 services:
+
   socat:
     image: bpack/socat
     command: TCP4-LISTEN:2375,fork,reuseaddr UNIX-CONNECT:/var/run/docker.sock
-    network_mode: "host"
+    expose:
+      - 2375
+    network_mode: host
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-    expose:
-      - "2375"
-  dotfiles:
-    <<: *dotfiles
-    profiles:
-      - dotfiles
+
   build:
     profiles:
       - build
@@ -34,6 +34,12 @@ services:
       context: .
       args:
         USER: "$USER"
+
+  dotfiles:
+    <<: *dotfiles
+    profiles:
+      - dotfiles
+  
   mac:
     <<: *dotfiles
     profiles:
