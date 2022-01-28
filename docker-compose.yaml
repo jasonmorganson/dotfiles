@@ -7,14 +7,9 @@ x-dotfiles: &dotfiles
   tty: true
   stdin_open: true
   network_mode: host
-  working_dir: /working_dir
-  volumes:
-    - .:/working_dir
-    - "$HOME/.ssh:/home/$USER/.ssh"
-    - "$HOME/.config/git/config:/home/$USER/.config/git/config"
-    - "$HOME/.config/gcloud:/home/$USER/.config/gcloud"
   environment:
-    - DOCKER_HOST=localhost:2375
+    - &DOCKER_HOST
+      DOCKER_HOST=localhost:2375
 
 services:
 
@@ -44,9 +39,15 @@ services:
     <<: *dotfiles
     profiles:
       - mac
+    working_dir: /working_dir
     volumes:
+      - .:/working_dir
+      - "$HOME/.ssh:/home/$USER/.ssh"
+      - "$HOME/.config/git/config:/home/$USER/.config/git/config"
+      - "$HOME/.config/gcloud:/home/$USER/.config/gcloud"
       - type: bind
         source: /run/host-services/ssh-auth.sock
         target: /run/host-services/ssh-auth.sock
     environment:
       - SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock
+      - *DOCKER_HOST
