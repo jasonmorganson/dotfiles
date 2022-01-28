@@ -35,6 +35,19 @@ services:
     profiles:
       - dotfiles
   
+  run:
+    <<: *dotfiles
+    profiles:
+      - run
+    working_dir: /working_dir
+    volumes:
+      - .:/working_dir
+      - "$HOME/.ssh:/home/$USER/.ssh"
+      - "$HOME/.config/git/config:/home/$USER/.config/git/config"
+      - "$HOME/.config/gcloud:/home/$USER/.config/gcloud"
+    environment:
+      - *DOCKER_HOST
+
   mac:
     <<: *dotfiles
     profiles:
