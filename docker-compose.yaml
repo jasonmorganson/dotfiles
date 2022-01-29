@@ -3,7 +3,7 @@ version: "3.8"
 x-dotfiles: &dotfiles
   links:
     - socat
-  image: "${GITHUB_USER:-${USER}}/dotfiles"
+  image: "${GITHUB_USER:-$USER}/dotfiles"
   tty: true
   stdin_open: true
   network_mode: host
