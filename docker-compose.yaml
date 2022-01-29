@@ -8,11 +8,9 @@ x-dotfiles: &dotfiles
   stdin_open: true
   network_mode: host
   environment:
-    - &DOCKER_HOST
-      DOCKER_HOST=localhost:2375
+    - &DOCKER_HOST DOCKER_HOST=localhost:2375
 
 services:
-
   socat:
     image: bpack/socat
     command: TCP4-LISTEN:2375,fork,reuseaddr UNIX-CONNECT:/var/run/docker.sock
@@ -34,7 +32,7 @@ services:
     <<: *dotfiles
     profiles:
       - dotfiles
-  
+
   run:
     <<: *dotfiles
     profiles:
