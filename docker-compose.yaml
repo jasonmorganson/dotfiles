@@ -43,10 +43,8 @@ services:
     volumes:
       - .:/working_dir
       - "$HOME/.ssh:/home/$USER/.ssh"
-      - "$HOME/.config/git/config:/home/$USER/.config/git/config"
       - "$HOME/.config/gcloud:/home/$USER/.config/gcloud"
-    environment:
-      - *DOCKER_HOST
+      - "$HOME/.config/git/config:/home/$USER/.config/git/config"
 
   mac:
     <<: *dotfiles
@@ -56,11 +54,11 @@ services:
     volumes:
       - .:/working_dir
       - "$HOME/.ssh:/home/$USER/.ssh"
-      - "$HOME/.config/git/config:/home/$USER/.config/git/config"
       - "$HOME/.config/gcloud:/home/$USER/.config/gcloud"
+      - "$HOME/.config/git/config:/home/$USER/.config/git/config"
       - type: bind
         source: /run/host-services/ssh-auth.sock
         target: /run/host-services/ssh-auth.sock
     environment:
-      - SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock
       - *DOCKER_HOST
+      - SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock
