@@ -41,7 +41,7 @@ services:
       - run
     working_dir: /working_dir
     volumes:
-      - .:/working_dir
+      - "$PWD:/working_dir"
       - "$HOME/.ssh:/home/$USER/.ssh"
       - "$HOME/.config/gcloud:/home/$USER/.config/gcloud"
       - "$HOME/.config/git/config:/home/$USER/.config/git/config"
@@ -52,7 +52,7 @@ services:
       - mac
     working_dir: /working_dir
     volumes:
-      - .:/working_dir
+      - "$PWD:/working_dir"
       - "$HOME/.ssh:/home/$USER/.ssh"
       - "$HOME/.config/gcloud:/home/$USER/.config/gcloud"
       - "$HOME/.config/git/config:/home/$USER/.config/git/config"
