@@ -1,7 +1,10 @@
 {
 	"name": "dotfiles",
 
-	"dockerComposeFile": "../docker-compose.yaml",
+	"dockerComposeFile": [
+		"../docker-compose.yaml",
+		"docker-compose.yaml"
+	],
 
 	"service": "dotfiles",
 
