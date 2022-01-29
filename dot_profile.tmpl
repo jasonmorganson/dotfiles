@@ -1,7 +1,7 @@
 # XDG
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_CACHE_HOME=$HOME/.cache
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DESKTOP_DIR="$HOME/Desktop"
 export XDG_DOCUMENTS_DIR="$HOME/Documents"
 export XDG_DOWNLOAD_DIR="$HOME/Downloads"
@@ -13,20 +13,20 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 
 # Homebrew
 {{- if eq .chezmoi.os "darwin" }}
-export HOMEBREW_PREFIX="/usr/local"
+export HOMEBREW_PREFIX=/usr/local
 {{- else }}
-export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew"
+export HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
 {{- end }}
 
 # Configure brew bundle
-export HOMEBREW_BUNDLE_FILE=$HOME/.Brewfile
+export HOMEBREW_BUNDLE_FILE="$HOME/.Brewfile"
 export HOMEBREW_BUNDLE_NO_LOCK=true
 
 # asdf
-export ASDF_DIR=$HOMEBREW_PREFIX/opt/asdf/libexec
-export ASDF_DATA_DIR=$ASDF_DIR
+export ASDF_DIR="$HOMEBREW_PREFIX/opt/asdf/libexec"
+export ASDF_DATA_DIR="$ASDF_DIR"
 
 # Paths
-export PATH=$ASDF_DIR/bin:$ASDF_DIR/shims:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH
-export FPATH=$ASDF_DIR/completions:$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH
-export MANPATH=/usr/local/share/man:/usr/X11/share/man:/usr/share/man:$MANPATH:$PATH
+export PATH="$ASDF_DIR/bin:$ASDF_DIR/shims:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH"
+export FPATH="$ASDF_DIR/completions:$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH"
+export MANPATH="/usr/local/share/man:/usr/X11/share/man:/usr/share/man:$MANPATH:$PATH"
