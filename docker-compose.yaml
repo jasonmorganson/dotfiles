@@ -30,7 +30,9 @@ services:
     build:
       context: .
       args:
-        USER: "$USER"
+        - USER
+        - NAME
+        - EMAIL
 
   dotfiles:
     <<: *dotfiles
