@@ -10,7 +10,7 @@ ENV USER=$USER \
     HEADLESS=true
 
 RUN apt-get update \
-    && apt-get install --yes sudo curl git \
+    && apt-get install --yes sudo curl \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* \
     && useradd --shell $SHELL --groups sudo --create-home --home-dir $HOME $USER \
