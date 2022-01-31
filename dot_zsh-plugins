@@ -71,7 +71,8 @@ arzzen/calc.plugin.zsh
 #carloscuesta/materialshell
 
 # Prompt
-sindresorhus/pure
+# sindresorhus/pure
+romkatv/powerlevel10k
 
 # Personal
 jasonmorganson/zsh
