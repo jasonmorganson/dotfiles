@@ -1,12 +1,17 @@
 version: "3.8"
 
 x-dotfiles: &dotfiles
-  links:
-    - socat
-  image: "${GITHUB_USER:-$USER}/dotfiles"
+  build:
+    context: .
+    args:
+      - USER
+      - NAME
+      - EMAIL
   tty: true
   stdin_open: true
   network_mode: host
+  links:
+    - socat
   environment:
     - &DOCKER_HOST DOCKER_HOST=localhost:2375
 
@@ -24,20 +29,15 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
-  build:
-    profiles:
-      - build
-    build:
-      context: .
-      args:
-        - USER
-        - NAME
-        - EMAIL
-
   dotfiles:
     <<: *dotfiles
     profiles:
       - dotfiles
+
+  build:
+    <<: *dotfiles
+    profiles:
+      - build
 
   run:
     <<: *dotfiles
