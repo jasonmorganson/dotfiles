@@ -17,10 +17,6 @@ x-dotfiles: &dotfiles
 
 services:
   socat:
-    profiles:
-      - run
-      - mac
-      - dotfiles
     image: bpack/socat
     command: TCP4-LISTEN:2375,fork,reuseaddr UNIX-CONNECT:/var/run/docker.sock
     expose:
