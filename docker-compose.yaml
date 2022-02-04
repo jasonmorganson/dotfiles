@@ -20,7 +20,7 @@ services:
     image: bpack/socat
     command: TCP4-LISTEN:2375,fork,reuseaddr UNIX-CONNECT:/var/run/docker.sock
     expose:
-      - 2375
+      - "2375"
     network_mode: host
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
