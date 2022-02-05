@@ -1,6 +1,8 @@
 version: "3.8"
 
 x-dotfiles: &dotfiles
+  depends_on:
+    - socat
   build:
     context: .
     args:
@@ -10,8 +12,6 @@ x-dotfiles: &dotfiles
   tty: true
   stdin_open: true
   network_mode: host
-  links:
-    - socat
   environment:
     - &DOCKER_HOST DOCKER_HOST=localhost:2375
 
