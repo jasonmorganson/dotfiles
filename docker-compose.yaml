@@ -41,26 +41,26 @@ services:
     <<: *dotfiles
     profiles:
       - run
-    working_dir: /working_dir
     volumes:
-      - "$PWD:/working_dir"
+      - $PWD:$PWD
       - "$HOME/.ssh:/home/$USER/.ssh"
       - "$HOME/.config/gcloud:/home/$USER/.config/gcloud"
       - "$HOME/.config/git/config:/home/$USER/.config/git/config"
+    working_dir: $PWD
 
   mac:
     <<: *dotfiles
     profiles:
       - mac
-    working_dir: /working_dir
     volumes:
-      - "$PWD:/working_dir"
+      - $PWD:$PWD
       - "$HOME/.ssh:/home/$USER/.ssh"
       - "$HOME/.config/gcloud:/home/$USER/.config/gcloud"
       - "$HOME/.config/git/config:/home/$USER/.config/git/config"
       - type: bind
         source: /run/host-services/ssh-auth.sock
         target: /run/host-services/ssh-auth.sock
+    working_dir: $PWD
     environment:
       - *DOCKER_HOST
       - SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock
