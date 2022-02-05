@@ -5,6 +5,8 @@
 
 	"service": "dotfiles",
 
+    "workspaceFolder": "${localWorkspaceFolder}",
+
 	"settings": {
 
 		// Use login shells by default in the integrated terminal on linux

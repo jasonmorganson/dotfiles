@@ -29,6 +29,8 @@ services:
     <<: *dotfiles
     profiles:
       - dotfiles
+    volumes:
+      - $PWD:$PWD
 
   build:
     <<: *dotfiles
