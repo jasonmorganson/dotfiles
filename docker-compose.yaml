@@ -25,17 +25,17 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
-  dotfiles:
-    <<: *dotfiles
-    profiles:
-      - dotfiles
-    volumes:
-      - $PWD:$PWD
-
   build:
     <<: *dotfiles
     profiles:
       - build
+
+  dev:
+    <<: *dotfiles
+    profiles:
+      - dev
+    volumes:
+      - $PWD:$PWD
 
   run:
     <<: *dotfiles
