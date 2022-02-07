@@ -43,9 +43,9 @@ services:
       - run
     volumes:
       - $PWD:$PWD
-      - "$HOME/.ssh:/home/$USER/.ssh"
-      - "$HOME/.config/gcloud:/home/$USER/.config/gcloud"
-      - "$HOME/.config/git/config:/home/$USER/.config/git/config"
+      - $HOME/.ssh:/home/$USER/.ssh
+      - $HOME/.config/gcloud:/home/$USER/.config/gcloud
+      - $HOME/.config/git/config:/home/$USER/.config/git/config
     working_dir: $PWD
 
   mac:
@@ -54,9 +54,9 @@ services:
       - mac
     volumes:
       - $PWD:$PWD
-      - "$HOME/.ssh:/home/$USER/.ssh"
-      - "$HOME/.config/gcloud:/home/$USER/.config/gcloud"
-      - "$HOME/.config/git/config:/home/$USER/.config/git/config"
+      - $HOME/.ssh:/home/$USER/.ssh
+      - $HOME/.config/gcloud:/home/$USER/.config/gcloud
+      - $HOME/.config/git/config:/home/$USER/.config/git/config
       - type: bind
         source: /run/host-services/ssh-auth.sock
         target: /run/host-services/ssh-auth.sock
