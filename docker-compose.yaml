@@ -27,20 +27,14 @@ services:
 
   build:
     <<: *dotfiles
-    profiles:
-      - build
 
   dev:
     <<: *dotfiles
-    profiles:
-      - dev
     volumes:
       - $PWD:$PWD
 
   run:
     <<: *dotfiles
-    profiles:
-      - run
     volumes:
       - $PWD:$PWD
       - $HOME/.ssh:/home/$USER/.ssh
@@ -50,8 +44,6 @@ services:
 
   mac:
     <<: *dotfiles
-    profiles:
-      - mac
     volumes:
       - $PWD:$PWD
       - $HOME/.ssh:/home/$USER/.ssh
