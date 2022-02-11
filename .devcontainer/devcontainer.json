@@ -1,12 +1,8 @@
 {
   "name": "dotfiles",
-
   "dockerComposeFile": "../docker-compose.yaml",
-
   "service": "dev",
-
   "workspaceFolder": "${localWorkspaceFolder}",
-
   "settings": {
     // Use login shells by default in the integrated terminal on linux
     "terminal.integrated.shellArgs.linux": ["--login"]
