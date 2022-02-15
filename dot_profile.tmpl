@@ -16,11 +16,7 @@ export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
 # Homebrew
-{{- if eq .chezmoi.os "darwin" }}
-export HOMEBREW_PREFIX=/usr/local
-{{- else }}
-export HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
-{{- end }}
+eval "$(brew shellenv)"
 
 # Configure brew bundle
 export HOMEBREW_BUNDLE_FILE="$HOME/.Brewfile"
