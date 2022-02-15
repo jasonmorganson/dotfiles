@@ -16,11 +16,10 @@ export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
 # Homebrew
-{{- if eq .chezmoi.os "darwin" }}
-export HOMEBREW_PREFIX=/usr/local
-{{- else }}
-export HOMEBREW_PREFIX=/home/linuxbrew/.linuxbrew
-{{- end }}
+test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+test -d /opt/homebrew && eval "$(/opt/homebrew/bin/brew shellenv)"
+test -f /usr/local/bin/brew && eval "$(/usr/local/bin/brew shellenv)"
 
 # Configure brew bundle
 export HOMEBREW_BUNDLE_FILE="$HOME/.Brewfile"
@@ -31,6 +30,5 @@ export ASDF_DIR="$HOMEBREW_PREFIX/opt/asdf/libexec"
 export ASDF_DATA_DIR="$ASDF_DIR"
 
 # Paths
-export PATH="$ASDF_DIR/bin:$ASDF_DIR/shims:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH"
+export PATH="$ASDF_DIR/bin:$ASDF_DIR/shims:$PATH"
 export FPATH="$ASDF_DIR/completions:$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH"
-export MANPATH="/usr/local/share/man:/usr/X11/share/man:/usr/share/man:$MANPATH:$PATH"
