@@ -1,20 +1,5 @@
 version: "3.8"
 
-x-dotfiles: &dotfiles
-  depends_on:
-    - socat
-  build:
-    context: .
-    args:
-        USER: ${GITHUB_USER:-$USER}
-        NAME: ${GIT_COMMITTER_NAME:-$NAME}
-        EMAIL: ${GIT_COMMITTER_EMAIL:-$EMAIL}
-  tty: true
-  stdin_open: true
-  network_mode: host
-  environment:
-    - &DOCKER_HOST DOCKER_HOST=localhost:2375
-
 services:
   socat:
     image: bpack/socat
@@ -25,34 +10,23 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
-  build:
-    <<: *dotfiles
-
-  dev:
-    <<: *dotfiles
-    volumes:
-      - $PWD:$PWD
-
   run:
-    <<: *dotfiles
-    volumes:
-      - $PWD:$PWD
-      - $HOME/.ssh:/home/$USER/.ssh
-      - $HOME/.config/gcloud:/home/$USER/.config/gcloud
-      - $HOME/.config/git/config:/home/$USER/.config/git/config
-    working_dir: $PWD
-
-  mac:
-    <<: *dotfiles
-    volumes:
-      - $PWD:$PWD
-      - $HOME/.ssh:/home/$USER/.ssh
-      - $HOME/.config/gcloud:/home/$USER/.config/gcloud
-      - $HOME/.config/git/config:/home/$USER/.config/git/config
-      - type: bind
-        source: /run/host-services/ssh-auth.sock
-        target: /run/host-services/ssh-auth.sock
-    working_dir: $PWD
+    depends_on:
+      - socat
+    build:
+      context: .
+      args:
+          USER: ${GITHUB_USER:-$USER}
+          NAME: ${GIT_COMMITTER_NAME:-$NAME}
+          EMAIL: ${GIT_COMMITTER_EMAIL:-$EMAIL}
+    tty: true
+    stdin_open: true
+    network_mode: host
     environment:
-      - *DOCKER_HOST
-      - SSH_AUTH_SOCK=/run/host-services/ssh-auth.sock
+      - DOCKER_HOST=localhost:2375
+    volumes:
+      - $PWD:$PWD
+      - $HOME/.ssh:/home/$USER/.ssh
+      - $HOME/.config/gcloud:/home/$USER/.config/gcloud
+      - $HOME/.config/git/config:/home/$USER/.config/git/config
+    working_dir: $PWD
