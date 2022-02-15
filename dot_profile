@@ -16,7 +16,10 @@ export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
 # Homebrew
-eval "$(brew shellenv)"
+test -d ~/.linuxbrew && eval "$(~/.linuxbrew/bin/brew shellenv)"
+test -d /home/linuxbrew/.linuxbrew && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+test -d /opt/homebrew && eval "$(/opt/homebrew/bin/brew shellenv)"
+test -f /usr/local/bin/brew && eval "$(/usr/local/bin/brew shellenv)"
 
 # Configure brew bundle
 export HOMEBREW_BUNDLE_FILE="$HOME/.Brewfile"
