@@ -1,2 +1,8 @@
 # Load zsh plugins
-source $XDG_CACHE_HOME/zsh/plugins.sh
+# source $XDG_CACHE_HOME/zsh/plugins.sh
+
+export SHELDON_CONFIG_DIR="$XDG_CONFIG_HOME/sheldon"
+export SHELDON_CONFIG_FILE="$SHELDON_CONFIG_DIR/zsh.toml"
+
+# eval "$(sheldon --quiet source)"
+eval "$(sheldon source)"

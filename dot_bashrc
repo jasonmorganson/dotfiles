@@ -1,3 +1,9 @@
 . ~/.profile
 
 eval "$(asdf exec direnv hook bash)"
+
+export SHELDON_CONFIG_DIR="$XDG_CONFIG_HOME/sheldon"
+export SHELDON_CONFIG_FILE="$SHELDON_CONFIG_DIR/bash.toml"
+
+eval "$(sheldon --quiet source)"
+
