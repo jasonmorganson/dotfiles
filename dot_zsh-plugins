@@ -34,9 +34,6 @@ twang817/zsh-ssh-agent
 zsh-users/zsh-autosuggestions
 jasonmorganson/zsh-asdf-direnv
 
-# Utilities
-arzzen/calc.plugin.zsh
-
 # Prompt
 sindresorhus/pure
 
