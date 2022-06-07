@@ -3,9 +3,6 @@ mafredri/zsh-async
 willghatch/zsh-saneopt
 chrissicool/zsh-256color
 
-# Colors
-zpm-zsh/colors
-
 # Completions
 marlonrichert/zsh-autocomplete
 zsh-users/zsh-completions
@@ -18,7 +15,6 @@ vasyharan/zsh-brew-services
 # Aliases
 joshuarubin/zsh-fzf
 atweiden/fzf-extras
-srijanshetty/zsh-suffix-alias
 ascii-soup/zsh-url-highlighter
 TBSliver/zsh-plugin-tmux-simple
 
