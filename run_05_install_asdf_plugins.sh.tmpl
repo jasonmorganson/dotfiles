@@ -2,20 +2,6 @@
 . ./.profile
 set -eu
 
-{{ if eq .chezmoi.os "darwin" }}
-
-# FIXME: Remove after upgrade above 3.6
-# MacOS 11 has trouble installing python
-# It was fixed in https://github.com/python/cpython/pull/21113
-# However it will not work for versions before 3.7 because the fix will not be backported
-# See https://github.com/python/cpython/pull/25014#issuecomment-805851373
-# Solution for 3.6 from comment: https://github.com/danhper/asdf-python/issues/77#issuecomment-736816437
-if [ "$(sw_vers -productVersion | cut -d '.' -f1)" -ge 11 ]; then
-    ASDF_PYTHON_PATCH_URL="https://github.com/python/cpython/commit/8ea6353.patch?full_index=1" asdf install python 3.6.8
-fi
-
-{{ end }}
-
 # FIXME: Installing python first as a workaround to gcloud requiring it
 # SEE: https://github.com/jthegedus/asdf-gcloud/blob/master/bin/exec-env#L6
 asdf install python
