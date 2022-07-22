@@ -16,9 +16,9 @@ USER $USER
 
 WORKDIR $HOME
 
-COPY --from=jasonmorganson/dotfiles /home /home
+COPY --from=jasonmorganson/dotfiles --chown=$USER /home /home
 
-COPY . .
+COPY --chown=$USER . .
 
 RUN ./install.sh
 
