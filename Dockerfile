@@ -1,4 +1,4 @@
-FROM jasonmorganson/dotfiles
+FROM buildpack-deps:scm
 
 ARG USER=user
 ARG NAME="Name"
@@ -9,11 +9,17 @@ ENV USER=$USER \
     SHELL=/home/linuxbrew/.linuxbrew/bin/zsh \
     HEADLESS=true
 
+RUN apt-get update && apt-get install sudo
+RUN echo "ALL ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN useradd --non-unique --uid 1000 --user-group --shell $SHELL --create-home --home-dir $HOME $USER
+
 USER $USER
 
 WORKDIR $HOME
 
-COPY . .
+COPY --from=jasonmorganson/dotfiles --chown=$USER /home /home
+
+COPY --chown=$USER . .
 
 RUN ./install.sh
 
