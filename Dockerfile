@@ -9,6 +9,7 @@ ENV USER=$USER \
     SHELL=/home/linuxbrew/.linuxbrew/bin/zsh \
     HEADLESS=true
 
+RUN apt-get update && apt-get install sudo
 RUN echo "ALL ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 RUN useradd --non-unique --uid 1000 --user-group --shell $SHELL --create-home --home-dir $HOME $USER
 
