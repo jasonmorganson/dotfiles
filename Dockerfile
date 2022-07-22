@@ -13,6 +13,8 @@ USER $USER
 
 WORKDIR $HOME
 
+COPY --from=jasonmorganson/dotfiles /home /home
+
 COPY . .
 
 RUN ./install.sh
