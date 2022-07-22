@@ -1,4 +1,4 @@
-FROM jasonmorganson/dotfiles
+FROM buildpack-deps:scm
 
 ARG USER=user
 ARG NAME="Name"
