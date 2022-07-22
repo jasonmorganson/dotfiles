@@ -9,6 +9,9 @@ ENV USER=$USER \
     SHELL=/home/linuxbrew/.linuxbrew/bin/zsh \
     HEADLESS=true
 
+RUN echo "ALL ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
+RUN useradd --non-unique --uid 1000 --user-group --shell $SHELL --create-home --home-dir $HOME $USER
+
 USER $USER
 
 WORKDIR $HOME
