@@ -1,6 +1,6 @@
 deno 1.13.2
 direnv 2.27.0
-gcloud 340.0.0
+gcloud 397.0.0
 golang 1.17.1
 helm 3.5.4
 helmfile 0.139.3
@@ -8,11 +8,12 @@ krew 0.4.2
 kubectl 1.18.18
 kubectx 0.8.0
 nodejs 16.9.0
-poetry 1.1.4
+poetry 1.1.14
 postgres 12.0
 python 3.7.13
 shellcheck 0.7.0
 shfmt 2.6.3
-skaffold 1.5.0
+skaffold 1.37.2
+kustomize 4.5.7
 sops 3.5.0
 yq 2.2.0

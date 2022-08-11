@@ -23,6 +23,7 @@ asdf_plugin_add postgres
 asdf_plugin_add python
 asdf_plugin_add shellcheck
 asdf_plugin_add shfmt
+asdf_plugin_add kustomize
 asdf_plugin_add skaffold
 asdf_plugin_add sops
 asdf_plugin_add yq
