@@ -15,14 +15,13 @@ services:
       - socat
     build:
       context: .
-      args:
-          USER: ${GITHUB_USER:-$USER}
-          NAME: ${GIT_COMMITTER_NAME:-$NAME}
-          EMAIL: ${GIT_COMMITTER_EMAIL:-$EMAIL}
     tty: true
     stdin_open: true
     network_mode: host
     environment:
+      - USER=${GITHUB_USER:-$USER}
+      - NAME=${GIT_COMMITTER_NAME:-$NAME}
+      - EMAIL=${GIT_COMMITTER_EMAIL:-$EMAIL}
       - DOCKER_HOST=localhost:2375
     volumes:
       - $PWD:$PWD
