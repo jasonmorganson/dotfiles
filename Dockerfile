@@ -23,4 +23,4 @@ COPY --chown=$USER . .
 
 RUN ./install.sh
 
-ENTRYPOINT [ "/home/linuxbrew/.linuxbrew/bin/zsh", "--login" ]
+ENTRYPOINT [ "./entrypoint.sh" ]
