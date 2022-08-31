@@ -21,7 +21,6 @@ services:
     user: "1000"
     environment:
       - USER=${GITHUB_USER:-$USER}
-      - HOME=/home/${GITHUB_USER:-$USER}
       - NAME=${GIT_COMMITTER_NAME:-$NAME}
       - EMAIL=${GIT_COMMITTER_EMAIL:-$EMAIL}
       - SHELL=/usr/local/bin/nu
