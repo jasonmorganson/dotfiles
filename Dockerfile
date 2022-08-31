@@ -22,4 +22,4 @@ COPY --chown=$USER . .
 
 RUN ./install.sh
 
-ENTRYPOINT [ "/usr/local/bin/nu" ]
+ENTRYPOINT [ "./entrypoint.sh" ]
