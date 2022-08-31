@@ -1,4 +1,4 @@
-FROM buildpack-deps:scm
+FROM buildpack-deps:scm AS base
 
 ARG USER=user
 ARG NAME="Name"
@@ -13,11 +13,13 @@ RUN apt-get update && apt-get install sudo
 RUN echo "ALL ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 RUN useradd --non-unique --uid 1000 --user-group --shell $SHELL --create-home --home-dir $HOME $USER
 
+COPY --chown=$USER --from=jasonmorganson/dotfiles /home /home
+
+FROM base
+
 USER $USER
 
 WORKDIR $HOME
-
-COPY --from=jasonmorganson/dotfiles --chown=$USER /home /home
 
 COPY --chown=$USER . .
 
