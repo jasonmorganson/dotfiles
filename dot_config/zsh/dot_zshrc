@@ -1,2 +1,4 @@
+. ~/.profile
+
 # Load zsh plugins
 source <(antibody bundle < ~/.zsh-plugins)
