@@ -21,7 +21,7 @@
 {{- $email = coalesce (env "CODER_USER_EMAIL") (env "GITPOD_GIT_USER_EMAIL") (env "EMAIL") (printf "%s@%s" .chezmoi.username .chezmoi.group) -}}
 {{- end -}}
 
-sourceDir: "{{ .chezmoi.sourceDir }}"
+sourceDir: "~"
 data:
   user: "{{ $user }}"
   name: "{{ $name }}"
