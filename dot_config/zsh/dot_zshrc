@@ -1,4 +1,4 @@
-. ~/.profile
+emulate sh -c '. ~/.profile'
 
 # Load zsh plugins
 source <(antibody bundle < ~/.zsh-plugins)
