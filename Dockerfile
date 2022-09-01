@@ -1,8 +1,6 @@
 FROM buildpack-deps:scm AS base
 
 ARG USER=user
-ARG NAME="Name"
-ARG EMAIL=user@co.co
 
 ENV USER=$USER \
     HOME=/home/$USER \
