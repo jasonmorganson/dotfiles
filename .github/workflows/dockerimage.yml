@@ -24,7 +24,3 @@ jobs:
         with:
           push: ${{ github.ref == 'master' }}
           tags: ${{ github.actor }}/dotfiles
-          build-args: |
-            USER=${{ github.actor }}
-            NAME=${{ github.repository_owner }}
-            EMAIL=${{ github.actor }}@${{ github.repository_owner }}.com
