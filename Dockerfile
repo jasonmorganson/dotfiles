@@ -1,14 +1,12 @@
-FROM buildpack-deps:scm AS base
+FROM mcr.microsoft.com/vscode/devcontainers/base:debian AS base
 
-ARG USER=user
+ARG USER=vscode
 
 ENV USER=$USER \
     HOME=/home/$USER \
     HEADLESS=true
 
-RUN apt-get update && apt-get install sudo
 RUN echo "ALL ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-RUN useradd --non-unique --uid 1000 --user-group --create-home --home-dir $HOME $USER
 
 FROM base
 
