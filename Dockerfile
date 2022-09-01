@@ -5,12 +5,11 @@ ARG NAME="Name"
 ARG EMAIL=user@co.co
 
 ENV USER=$USER \
-    HOME=/home/$USER \
-    SHELL=/usr/local/bin/nu
+    HOME=/home/$USER
 
 RUN apt-get update && apt-get install sudo
 RUN echo "ALL ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
-RUN useradd --non-unique --uid 1000 --user-group --shell $SHELL --create-home --home-dir $HOME $USER
+RUN useradd --non-unique --uid 1000 --user-group --create-home --home-dir $HOME $USER
 
 FROM base
 
