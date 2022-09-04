@@ -2,8 +2,8 @@
 
 uid="${USER_UID:-1000}"
 gid="${USER_GID:-1000}"
-base_user="$(id --user --name $uid)"
-base_group="$(id --group --name $uid)"
+base_user="$(id --user --name "$uid")"
+base_group="$(id --group --name "$uid")"
 base_home="$(eval echo "~$base_user")"
 user="${USER:-$base_user}"
 group="$user"
