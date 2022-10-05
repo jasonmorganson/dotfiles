@@ -10,7 +10,6 @@ asdf_plugin_add() {
 
 asdf_plugin_add deno
 asdf_plugin_add direnv
-asdf_plugin_add gcloud
 asdf_plugin_add golang
 asdf_plugin_add helm
 asdf_plugin_add helmfile
@@ -27,3 +26,6 @@ asdf_plugin_add kustomize
 asdf_plugin_add skaffold
 asdf_plugin_add sops
 asdf_plugin_add yq
+
+asdf_plugin_add gcloud https://github.com/jasonmorganson/asdf-gcloud.git
+
