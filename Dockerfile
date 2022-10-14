@@ -16,7 +16,8 @@ USER $USER
 WORKDIR $HOME
 
 COPY --chown=$USER . .
+COPY entrypoint.sh /
 
 RUN ./install.sh
 
-ENTRYPOINT [ "./entrypoint.sh" ]
+ENTRYPOINT [ "/entrypoint.sh" ]
