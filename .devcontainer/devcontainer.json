@@ -2,6 +2,7 @@
   "name": "dotfiles",
   "dockerComposeFile": "../docker-compose.yaml",
   "service": "run",
+  "remoteUser": "${localEnv:USER}",
   "workspaceFolder": "${localWorkspaceFolder}",
   "settings": {
     // Use login shells by default in the integrated terminal on linux
