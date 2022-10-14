@@ -1,9 +1,16 @@
 {
   "name": "dotfiles",
-  "image": "mcr.microsoft.com/devcontainers/universal:linux",
+  "dockerComposeFile": "../docker-compose.yaml",
+  "service": "run",
+  "remoteUser": "${localEnv:USER}",
+  "workspaceFolder": "${localWorkspaceFolder}",
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {},
     "ghcr.io/devcontainers-contrib/features/mosh-apt-get:1": {},
     "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+  "settings": {
+    // Use login shells by default in the integrated terminal on linux
+    "terminal.integrated.shellArgs.linux": ["--login"]
   }
 }
