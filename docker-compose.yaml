@@ -18,6 +18,7 @@ services:
     tty: true
     stdin_open: true
     network_mode: host
+    user: "1000"
     environment:
       - USER=${GITHUB_USER:-$USER}
       - NAME=${GIT_COMMITTER_NAME:-$NAME}
