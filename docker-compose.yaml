@@ -28,7 +28,7 @@ services:
       - DOCKER_HOST=localhost:2375
     volumes:
       - $PWD:$PWD
-      - $HOME/.ssh:/home/user/.ssh
-      - $HOME/.config/gcloud:/home/user/.config/gcloud
-      - $HOME/.config/git/config:/home/user/.config/git/config
+      - $HOME/.ssh:/home/vscode/.ssh
+      - $HOME/.config/gcloud:/home/vscode/.config/gcloud
+      - $HOME/.config/git/config:/home/vscode/.config/git/config
     working_dir: $PWD
