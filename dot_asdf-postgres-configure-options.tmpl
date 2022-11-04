@@ -4,7 +4,7 @@
 {{ if eq .chezmoi.osRelease.id "ubuntu" }}
 {{ if ne .chezmoi.osRelease.ubuntuCodename "jammy" }}
 
-POSTGRES_EXTRA_CONFIGURE_OPTIONS="--without-readline"
+POSTGRES_EXTRA_CONFIGURE_OPTIONS="--without-openssl --without-readline"
 
 {{ end }}
 {{ end }}
