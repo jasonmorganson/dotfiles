@@ -21,6 +21,7 @@ asdf_plugin_add nodejs
 asdf_plugin_add poetry
 asdf_plugin_add postgres
 asdf_plugin_add python
+asdf_plugin_add rust
 asdf_plugin_add shellcheck
 asdf_plugin_add shfmt
 asdf_plugin_add skaffold
