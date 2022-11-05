@@ -16,13 +16,13 @@ asdf_plugin_add helmfile
 asdf_plugin_add krew
 asdf_plugin_add kubectl
 asdf_plugin_add kubectx
+asdf_plugin_add kustomize
 asdf_plugin_add nodejs
 asdf_plugin_add poetry
 asdf_plugin_add postgres
 asdf_plugin_add python
 asdf_plugin_add shellcheck
 asdf_plugin_add shfmt
-asdf_plugin_add kustomize
 asdf_plugin_add skaffold
 asdf_plugin_add sops
 asdf_plugin_add yq
