@@ -24,6 +24,7 @@ test -f /usr/local/bin/brew && eval "$(/usr/local/bin/brew shellenv)"
 # Configure brew bundle
 export HOMEBREW_BUNDLE_FILE="$HOME/.Brewfile"
 export HOMEBREW_BUNDLE_NO_LOCK=true
+export HOMEBREW_PATCHELF_RB_WRITE=1
 
 # asdf
 export ASDF_DIR="$HOMEBREW_PREFIX/opt/asdf/libexec"
