@@ -1,3 +1,5 @@
+PATH_add "$HOMEBREW_PREFIX/opt/libpq/bin"
+
 export PGHOST=localhost
 export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
 export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"

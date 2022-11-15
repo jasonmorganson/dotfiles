@@ -20,6 +20,7 @@ brew "tmux"
 brew "pspg", args: ["build-from-source"]
 brew "pgcli"
 brew "kubie", args: ["build-from-source"]
+brew "libpq"
 brew "docker"
 brew "neovim"
 brew "chezmoi"
