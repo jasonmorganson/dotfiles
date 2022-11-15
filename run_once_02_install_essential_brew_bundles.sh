@@ -9,5 +9,4 @@ brew "git"
 brew "antibody"
 brew "nvim"
 brew "tmux"
-brew "vivid"
 EOF
