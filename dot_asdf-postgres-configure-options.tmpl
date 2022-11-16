@@ -1,10 +1,15 @@
 # FIXME: Disable readline on older versions of Ubuntu
 # Not sure why this is broken and haven't been able to find a fix for it
 {{ if eq .chezmoi.os "linux" -}}
+{{ if eq .chezmoi.osRelease.id "debian" }}
+
+POSTGRES_EXTRA_CONFIGURE_OPTIONS="--without-openssl --without-readline"
+
+{{ end }}
 {{ if eq .chezmoi.osRelease.id "ubuntu" }}
 {{ if ne .chezmoi.osRelease.ubuntuCodename "jammy" }}
 
-POSTGRES_EXTRA_CONFIGURE_OPTIONS="--without-readline"
+POSTGRES_EXTRA_CONFIGURE_OPTIONS="--without-openssl --without-readline"
 
 {{ end }}
 {{ end }}
