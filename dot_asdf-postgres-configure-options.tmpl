@@ -3,7 +3,7 @@
 {{ if eq .chezmoi.os "linux" -}}
 {{ if eq .chezmoi.osRelease.id "debian" }}
 
-POSTGRES_EXTRA_CONFIGURE_OPTIONS="--without-readline"
+POSTGRES_EXTRA_CONFIGURE_OPTIONS="--without-openssl --without-readline"
 
 {{ end }}
 {{ if eq .chezmoi.osRelease.id "ubuntu" }}
