@@ -12,9 +12,10 @@ USER $USER
 
 WORKDIR $HOME
 
-COPY --chown=$USER . .
+COPY --chown=$USER . /home/dotfiles
 COPY entrypoint.sh /
 
-RUN ./install.sh
+# RUN /home/dotfiles/install.sh
+RUN --mount=type=cache,target=/var/cache/apt --mount=type=cache,target=/home/linuxbrew /home/dotfiles/install.sh
 
 ENTRYPOINT [ "/entrypoint.sh" ]
