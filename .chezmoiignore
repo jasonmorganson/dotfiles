@@ -6,6 +6,7 @@ install.sh
 README.md
 
 # Cache
+.cache
 .config/zsh/.zcompdump*
 
 # History
