@@ -5,11 +5,13 @@ docs
 install.sh
 README.md
 
+
 # Cache
 .cache
 .config/zsh/.zcompdump*
 
 # History
+.bash_history
 .config/zsh/.zsh_history
 
 # Ignore MacOS files
