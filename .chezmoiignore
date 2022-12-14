@@ -31,18 +31,25 @@ README.md
 .plugged
 
 # Non XDG
-.npm
-.k9s
-.kpt
-.kube
-.krew
-.terminfo
-.hasura
-.gsutil
-.gnupg
+.cargo
+.docker
 .fzf
 .fzf.bash
 .fzf.zsh
+.gnupg
+.gsutil
+.hasura
+.hyper_plugins
+.k9s
+.kpt
+.krew
+.kube
+.lima
+.minikube
+.npm
+.sdm
+.skaffold
+.terminfo
 
 # Ignore MacOS files
 .CFUserTextEncoding
