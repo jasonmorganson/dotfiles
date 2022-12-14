@@ -1,3 +1,6 @@
+.git
+.local
+.chezmoi
 .hyperfine.js
 docker-compose.yaml
 Dockerfile
