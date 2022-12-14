@@ -23,6 +23,25 @@ README.md
 .tig_history
 .config/zsh/.zsh_history
 
+# VIM
+.vim
+.viminfo
+.plugged
+
+# Non XDG
+.npm
+.k9s
+.kpt
+.kube
+.krew
+.terminfo
+.hasura
+.gsutil
+.gnupg
+.fzf
+.fzf.bash
+.fzf.zsh
+
 # Ignore MacOS files
 .CFUserTextEncoding
 .DS_Store
