@@ -8,9 +8,9 @@ docs
 install.sh
 README.md
 
-
 # Cache
 .cache
+.dccache
 .config/zsh/.zcompdump*
 
 # History
