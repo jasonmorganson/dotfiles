@@ -65,3 +65,36 @@ Music
 Pictures
 Public
 
+# Extra files
+.config/chezmoi
+.config/coc
+.config/containers
+.config/docker
+.config/gcloud
+.config/gh
+.config/helm
+.config/hub
+.config/k9s
+.config/krew
+.config/pgcli
+
+# Cache in config
+.config/tmux/plugins
+
+# Unmanaged
+.actrc
+.bigqueryrc
+.circleci
+.colima
+.earthly
+.fig
+.octavia
+.okteto
+.redhat
+.restish
+.slack
+.swiftpm
+.tmate.conf
+.todoist.config.json
+.yarnrc
+
