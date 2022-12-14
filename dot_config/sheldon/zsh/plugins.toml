@@ -1,0 +1,46 @@
+shell = "zsh"
+
+# Base
+
+[plugins.zsh-async]
+github = 'mafredri/zsh-async'
+
+[plugins.zsh-saneopt]
+github = 'willghatch/zsh-saneopt'
+
+[plugins.zsh-256color]
+github = 'chrissicool/zsh-256color'
+
+# Completions
+
+[plugins.zsh-autocomplete]
+github = 'marlonrichert/zsh-autocomplete'
+
+[plugins.zsh-completions]
+github = 'zsh-users/zsh-completions'
+
+[plugins.docker-zsh-completion]
+github = 'felixr/docker-zsh-completion'
+
+[plugins.gcloud-zsh-completion]
+github = 'littleq0903/gcloud-zsh-completion'
+dir = "src"
+apply = ["fpath"]
+
+[plugins.zsh-better-npm-completion]
+github = 'lukechilds/zsh-better-npm-completion'
+
+[plugins.zsh-brew-services]
+github = 'vasyharan/zsh-brew-services'
+
+[plugins.betterbrew-zsh-plugin]
+github = 'timothyrowan/betterbrew-zsh-plugin'
+
+
+
+
+
+# Prompt
+[plugins.pure]
+github = "sindresorhus/pure"
+use = ["async.zsh", "pure.zsh"]
