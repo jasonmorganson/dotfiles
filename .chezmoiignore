@@ -14,7 +14,13 @@ README.md
 .config/zsh/.zcompdump*
 
 # History
+.lesshst
 .bash_history
+.node_repl_history
+.nsh_history
+.pspg_history
+.python_history
+.tig_history
 .config/zsh/.zsh_history
 
 # Ignore MacOS files
