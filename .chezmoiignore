@@ -13,6 +13,9 @@ README.md
 .dccache
 .config/zsh/.zcompdump*
 
+# SSH
+.ssh/environment-
+
 # History
 .lesshst
 .wget-hsts
