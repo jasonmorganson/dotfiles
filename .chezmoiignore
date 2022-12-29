@@ -27,6 +27,7 @@ README.md
 .tig_history
 .config/zsh/.zsh_history
 .config/zsh/.zsh_sessions
+.zsh_sessions
 
 # VIM
 .vim
