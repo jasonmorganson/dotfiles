@@ -2,6 +2,7 @@
 .local
 .chezmoi
 .hyperfine.js
+bin
 docker-compose.yaml
 Dockerfile
 docs
