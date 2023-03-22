@@ -1,5 +1,9 @@
 neovim
+pyright
 prettier
 typescript
 npm-merge-driver
 @graphql-inspector/cli
+bash-language-server
+typescript-language-server
+vscode-langservers-extracted
