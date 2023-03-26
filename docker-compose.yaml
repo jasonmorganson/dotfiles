@@ -14,11 +14,7 @@ services:
     depends_on:
       - socat
     build:
-      context: .
-      args:
-          USER: ${GITHUB_USER:-$USER}
-          NAME: ${GIT_COMMITTER_NAME:-$NAME}
-          EMAIL: ${GIT_COMMITTER_EMAIL:-$EMAIL}
+      image: jasonmorganson/dotfiles
     tty: true
     stdin_open: true
     network_mode: host
