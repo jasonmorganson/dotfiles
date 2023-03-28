@@ -7,3 +7,4 @@ npm-merge-driver
 bash-language-server
 typescript-language-server
 vscode-langservers-extracted
+dockerfile-language-server-nodejs
