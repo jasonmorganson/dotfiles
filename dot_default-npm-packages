@@ -4,6 +4,7 @@ prettier
 typescript
 npm-merge-driver
 @graphql-inspector/cli
+yaml-language-server
 bash-language-server
 typescript-language-server
 vscode-langservers-extracted
