@@ -1,4 +1,8 @@
+.git
+.local
+.chezmoi
 .hyperfine.js
+bin
 docker-compose.yaml
 Dockerfile
 docs
@@ -6,14 +10,96 @@ install.sh
 README.md
 
 # Cache
-.config/zsh/.zcompdump
-.config/zsh/.zcompdump.zwc
+.cache
+.dccache
+.config/zsh/.zcompdump*
+
+# SSH
+.ssh/environment-
 
 # History
+.lesshst
+.wget-hsts
+.bash_history
+.node_repl_history
+.nsh_history
+.pspg_history
+.python_history
+.tig_history
 .config/zsh/.zsh_history
+.config/zsh/.zsh_sessions
+.zsh_sessions
+
+# VIM
+.vim
+.viminfo
+.plugged
+
+# Non XDG
+.cargo
+.docker
+.fzf
+.fzf.bash
+.fzf.zsh
+.gnupg
+.gsutil
+.hasura
+.hyper_plugins
+.k9s
+.kpt
+.krew
+.kube
+.lima
+.minikube
+.npm
+.sdm
+.skaffold
+.terminfo
 
 # Ignore MacOS files
 .CFUserTextEncoding
 .DS_Store
 .Trash
+Applications
+Desktop
+Documents
+Downloads
+Library
+Movies
+Music
+Pictures
+Public
+
+# Extra files
+.config/chezmoi
+.config/coc
+.config/containers
+.config/docker
+.config/gcloud
+.config/gh
+.config/helm
+.config/hub
+.config/k9s
+.config/krew
+.config/pgcli
+
+# Cache in config
+.config/tmux/plugins
+
+# Unmanaged
+.actrc
+.bigqueryrc
+.circleci
+.colima
+.earthly
+.fig
+.octavia
+.okteto
+.redhat
+.restish
+.slack
+.swiftpm
+.tmate.conf
+.todoist.config.json
+.yarnrc
 
