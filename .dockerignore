@@ -1,0 +1,9 @@
+.git
+.coder
+.github
+.devcontainer
+.dockerignore
+.gitpod.yml
+docker-compose.yaml
+README.md
+docs
