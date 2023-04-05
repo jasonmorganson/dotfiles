@@ -24,6 +24,9 @@
   #TERM: alacritty
 
 window:
+
+  option_as_alt: Both
+
   # Window dimensions (changes require restart)
   #
   # Number of lines/columns (not pixels) in the terminal. The number of columns
