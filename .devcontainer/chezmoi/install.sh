@@ -34,7 +34,7 @@ echo "***==================================
 
 export HEADLESS=true
 
-sudo su "$_CONTAINER_USER"
+sudo su - "$_CONTAINER_USER"
 cd "$_CONTAINER_USER_HOME"
 
 set -- init --apply jasonmorganson
