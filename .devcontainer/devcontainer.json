@@ -1,8 +1,8 @@
 {
   "name": "dotfiles",
   "service": "run",
-  "remoteUser": "vscode",
-  "containerUser": "vscode",
+  "remoteUser": "codespace",
+  "containerUser": "codespace",
   "settings": {
     // Use login shells by default in the integrated terminal on linux
     "terminal.integrated.shellArgs.linux": ["--login"]
