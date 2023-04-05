@@ -29,6 +29,9 @@ export HOMEBREW_BUNDLE_NO_LOCK=true
 export ASDF_DIR="$HOMEBREW_PREFIX/opt/asdf/libexec"
 export ASDF_DATA_DIR="$ASDF_DIR"
 
+# Local bin
+export LOCAL_BIN_PATH="$HOME/.local/bin"
+
 # Paths
-export PATH="$ASDF_DIR/bin:$ASDF_DIR/shims:$PATH"
+export PATH="$ASDF_DIR/bin:$ASDF_DIR/shims:$PATH:$LOCAL_BIN_PATH"
 export FPATH="$ASDF_DIR/completions:$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH"
