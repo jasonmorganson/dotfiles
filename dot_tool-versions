@@ -1,8 +1,9 @@
-rust 1.65.0
-deno 1.13.2
-direnv 2.27.0
-gcloud 397.0.0
-nodejs 16.9.0
-python 3.7.13
+rust     1.65.0
+deno     1.13.2
+direnv   2.27.0
+gcloud   397.0.0
+nodejs   16.9.0
+python   3.7.13
 skaffold 1.37.2
-yq 2.2.0
+yq       2.2.0
+zellij   latest
