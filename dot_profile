@@ -25,10 +25,6 @@ test -f /usr/local/bin/brew && eval "$(/usr/local/bin/brew shellenv)"
 export HOMEBREW_BUNDLE_FILE="$HOME/.Brewfile"
 export HOMEBREW_BUNDLE_NO_LOCK=true
 
-# asdf
-export ASDF_DIR="$HOMEBREW_PREFIX/opt/asdf/libexec"
-export ASDF_DATA_DIR="$ASDF_DIR"
-
 # Paths
-export PATH="$XDG_DATA_HOME/rtx/bin:$HOME/.tea/tea.xyz/v0/bin:$ASDF_DIR/bin:$ASDF_DIR/shims:$PATH"
-export FPATH="$ASDF_DIR/completions:$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH"
+export PATH="$XDG_DATA_HOME/rtx/bin:$HOME/.tea/tea.xyz/v0/bin:$PATH"
+export FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH"
