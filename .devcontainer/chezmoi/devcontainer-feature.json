@@ -1,0 +1,8 @@
+{
+  "name": "Chezmoi",
+  "id": "chezmoi",
+  "installsAfter": [
+    "ghcr.io/rio/features/chezmoi",
+    "ghcr.io/meaningful-ooo/devcontainer-features/homebrew"
+  ]
+}

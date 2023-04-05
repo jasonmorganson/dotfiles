@@ -1,10 +1,19 @@
 {
   "name": "dotfiles",
-  "dockerComposeFile": "../docker-compose.yaml",
   "service": "run",
-  "workspaceFolder": "${localWorkspaceFolder}",
+  "remoteUser": "jasonmorganson",
+  "containerUser": "vscode",
   "settings": {
     // Use login shells by default in the integrated terminal on linux
     "terminal.integrated.shellArgs.linux": ["--login"]
-  }
+  },
+  "features": {
+    "ghcr.io/rio/features/chezmoi:1": {},
+    "ghcr.io/meaningful-ooo/devcontainer-features/homebrew:2": {},
+    "./chezmoi": {}
+  },
+  "overrideFeatureInstallOrder": [
+    "ghcr.io/rio/features/chezmoi",
+    "ghcr.io/meaningful-ooo/devcontainer-features/homebrew"
+  ]
 }
