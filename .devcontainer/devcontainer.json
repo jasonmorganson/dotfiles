@@ -1,7 +1,7 @@
 {
   "name": "dotfiles",
   "service": "run",
-  "remoteUser": "jasonmorganson",
+  "remoteUser": "vscode",
   "containerUser": "vscode",
   "settings": {
     // Use login shells by default in the integrated terminal on linux
