@@ -23,13 +23,13 @@ fi
 # POSIX way to get script's dir: https://stackoverflow.com/a/29834779/12156188
 script_dir="$(cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P)"
 
-echo "***==================================
+echo "***==================================***"
 echo "$script_dir"
 echo "$_REMOTE_USER"
 echo "$_CONTAINER_USER"
 echo "$_REMOTE_USER_HOME"
 echo "$_CONTAINER_USER_HOME"
-echo "***==================================
+echo "***==================================***"
 
 
 export HEADLESS=true
@@ -41,4 +41,4 @@ set -- init --apply jasonmorganson
 
 echo "Running 'chezmoi $*'" >&2
 # exec: replace current process with chezmoi
-exec "$chezmoi" "$@"
+"$chezmoi" "$@"
