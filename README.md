@@ -1,3 +1,8 @@
+> # NOTICE:
+> ## There are major changes being made to these configs in the main branch (which is now the default branch)
+> ## **This master branch will remain preserved as is**
+
+
 # [dotfiles](https://jasonmorganson.github.io/dotfiles)
 
 Dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
