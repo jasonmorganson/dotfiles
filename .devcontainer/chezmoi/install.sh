@@ -29,13 +29,13 @@ echo "$_REMOTE_USER"
 echo "$_CONTAINER_USER"
 echo "$_REMOTE_USER_HOME"
 echo "$_CONTAINER_USER_HOME"
-cd "$_CONTAINER_USER_HOME"
-pwd
-whoami
 echo "***==================================
 
 
 export HEADLESS=true
+
+sudo su "$_CONTAINER_USER"
+cd "$_CONTAINER_USER_HOME"
 
 set -- init --apply jasonmorganson
 
