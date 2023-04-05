@@ -37,8 +37,8 @@ export HEADLESS=true
 sudo su - "$_CONTAINER_USER"
 cd "$_CONTAINER_USER_HOME"
 
-set -- init --apply jasonmorganson
+set -- init --apply --working-tree "$_CONTAINER_USER_HOME" jasonmorganson
 
 echo "Running 'chezmoi $*'" >&2
 # exec: replace current process with chezmoi
-"$chezmoi" "$@"
+exec "$chezmoi" "$@"
