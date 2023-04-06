@@ -6,3 +6,6 @@ let-env config = {
         vi_normal: block
     }
 }
+
+source ~/.cache/rtx/init.nu
+source ~/.config/nushell/aliases.nu
