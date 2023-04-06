@@ -1,0 +1,2 @@
+[plugins]
+python = 'https://github.com/jdxcode/rtx-python'
