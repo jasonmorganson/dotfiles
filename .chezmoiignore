@@ -1,4 +1,5 @@
 .git
+.tea
 .local
 .chezmoi
 .hyperfine.js
