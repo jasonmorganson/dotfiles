@@ -3,4 +3,4 @@
 set -eu
 
 # Install tea
-curl tea.xyz | sh -s -- --yes
+curl tea.xyz | SHELL=no sh -s -- --yes
