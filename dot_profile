@@ -30,5 +30,5 @@ export ASDF_DIR="$HOMEBREW_PREFIX/opt/asdf/libexec"
 export ASDF_DATA_DIR="$ASDF_DIR"
 
 # Paths
-export PATH="$ASDF_DIR/bin:$ASDF_DIR/shims:$PATH"
+export PATH="$HOME/.tea/tea.xyz/v0/bin:$ASDF_DIR/bin:$ASDF_DIR/shims:$PATH"
 export FPATH="$ASDF_DIR/completions:$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH"
