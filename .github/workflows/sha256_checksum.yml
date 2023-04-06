@@ -1,0 +1,21 @@
+name: Test install script
+
+on: push
+
+env:
+    GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  test:
+    strategy:
+      fail-fast: false
+      matrix:
+        platform: [macos-11, macos-12]
+    runs-on: ${{ matrix.platform }}
+    steps:
+    - run: which sha256_checksum
+      env:
+        NAME: ${{ github.actor }}
+        EMAIL: ${{ github.action }}@${{ github.repository_owner }}.com
+      run: ./install.sh
+
