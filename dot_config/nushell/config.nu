@@ -7,5 +7,6 @@ let-env config = {
     }
 }
 
+source ~/.cache/tea/init.nu
 source ~/.cache/rtx/init.nu
 source ~/.config/nushell/aliases.nu
