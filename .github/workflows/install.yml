@@ -3,7 +3,7 @@ name: Test install script
 on: push
 
 env:
-    GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
   test:
@@ -13,9 +13,12 @@ jobs:
         platform: [ubuntu-20.04, ubuntu-22.04, macos-11, macos-12]
     runs-on: ${{ matrix.platform }}
     steps:
-    - uses: actions/checkout@v3
-    - name: Run install script
-      env:
-        NAME: ${{ github.actor }}
-        EMAIL: ${{ github.action }}@${{ github.repository_owner }}.com
-      run: ./install.sh
+      - uses: actions/checkout@v3
+      - name: Install Dependencies for SHA Calculation (osx)
+        if: ${{ contains(matrix.os , 'macos') }}
+        run: brew install coreutils #needed for shasum util
+      - name: Run install script
+        env:
+          NAME: ${{ github.actor }}
+          EMAIL: ${{ github.action }}@${{ github.repository_owner }}.com
+        run: ./install.sh
