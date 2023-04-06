@@ -75,7 +75,6 @@ Plug 'jasonmorganson/vim-colorscheme'
 " Airline {
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'edkolev/tmuxline.vim'
 "Plug 'edkolev/promptline.vim'
 " }
 
@@ -145,14 +144,6 @@ Plug 'ahmedelgabri/vim-ava-snippets'
 
 " Debugging {
 "Plug 'joonty/vdebug.git'
-" }
-
-" Tmux {
-"Plug 'tmux-plugins/vim-tmux'
-"Plug 'tmux-plugins/vim-tmux-focus-events'
-"Plug 'roxma/vim-tmux-clipboard'
-"Plug 'christoomey/vim-tmux-navigator'
-"Plug 'wellle/tmux-complete.vim'
 " }
 
 " Terminal {

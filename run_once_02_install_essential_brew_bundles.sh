@@ -7,5 +7,4 @@ brew bundle --file=/dev/stdin <<EOF
 brew "git"
 brew "antibody"
 brew "nvim"
-brew "tmux"
 EOF
