@@ -1,0 +1,7 @@
+default_shell "/usr/local/bin/nu"
+
+keybinds {
+    normal {
+        bind "Ctrl a" { SwitchToMode "tmux"; }
+    }
+}
