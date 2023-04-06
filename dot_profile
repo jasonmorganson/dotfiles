@@ -26,5 +26,5 @@ export HOMEBREW_BUNDLE_FILE="$HOME/.Brewfile"
 export HOMEBREW_BUNDLE_NO_LOCK=true
 
 # Paths
-export PATH="$XDG_DATA_HOME/rtx/bin:$HOME/.tea/tea.xyz/v0/bin:$PATH"
+export PATH="$XDG_DATA_HOME/rtx/bin:$HOME/.tea/tea.xyz/v0/bin:/usr/local/bin:$PATH"
 export FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH"

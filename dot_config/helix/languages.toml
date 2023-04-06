@@ -1,0 +1,44 @@
+[[language]]
+name = "html"
+formatter = { command = 'prettier', args = ["--parser", "html"] }
+
+[[language]]
+name = "css"
+formatter = { command = 'prettier', args = ["--parser", "css"] }
+
+[[language]]
+name = "yaml"
+config = { yaml = { completion = true, keyOrdering = false, schemaStore = { enable = true }, editor = { formatOnType = true }}}
+formatter = { command = 'prettier', args = ["--parser", "yaml"] }
+
+[[language]]
+name = "toml"
+formatter = { command = 'dprint fmt' }
+
+[[language]]
+name = "json"
+formatter = { command = 'prettier', args = ["--parser", "json"] }
+
+[[language]]
+name = "javascript"
+formatter = { command = 'prettier', args = ["--parser", "javascript"] }
+
+[[language]]
+name = "typescript"
+formatter = { command = 'prettier', args = ["--parser", "typescript"] }
+
+[[language]]
+name = "tsx"
+formatter = { command = 'prettier', args = ["--stdin-filepath", "file.tsx"] }
+
+[[language]]
+name = "bash"
+indent = { tab-width = 4, unit = "    " }
+formatter = { command = 'shfmt', args = ["-i", "4"] }
+
+[[language]]
+name = "python"
+roots = ["pyproject.toml"]
+formatter = { command = "black", args = ["--quiet", "-"] }
+language-server = { command = "pyright-langserver", args = ["--stdio"] }
+config = {} # <- this is the important line
