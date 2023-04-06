@@ -1,2 +1,2 @@
 dependencies:
-  nushell.sh: 0.77.1
+  nushell.sh: ~0.77.1
