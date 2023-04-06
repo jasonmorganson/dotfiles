@@ -1,0 +1,49 @@
+theme = "github_dark"
+
+[editor]
+auto-save = true
+cursorline = true
+line-number = "relative"
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+left = ["mode", "version-control", "file-name", "file-modification-indicator"]
+center = ["spinner", "diagnostics"]
+right = ["file-type", "file-encoding", "position-percentage", "position", "total-line-numbers"]
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.soft-wrap]
+enable = true
+wrap-indicator = ""
+
+# [editor.whitespace]
+# render = "all"
+
+# [editor.indent-guides]
+# render = true
+# character = "┆" # Some characters that work well: "▏", "╎", "┆", "┊", "⸽"
+# skip-levels = 1
+
+[keys.normal]
+
+# Muscle memory
+0 = "goto_line_start"
+"$" = "goto_line_end"
+G = "goto_file_end"
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
+
+[keys.select]
+
+# Muscle memory
+0 = "goto_line_start"
+"$" = "goto_line_end"
+G = "goto_file_end"
+"{" = "goto_prev_paragraph"
+"}" = "goto_next_paragraph"
