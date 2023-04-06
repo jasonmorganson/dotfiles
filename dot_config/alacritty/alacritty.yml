@@ -1,0 +1,9 @@
+window:
+  option_as_alt: Both
+
+shell:
+ program: /usr/local/bin/zellij
+ args:
+   - attach
+   - --create
+   - default
