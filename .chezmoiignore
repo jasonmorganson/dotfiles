@@ -60,6 +60,9 @@ README.md
 .skaffold
 .terminfo
 .rustup
+.texts-conf.json
+.config/todoist
+.vscode*
 
 # Ignore MacOS files
 .CFUserTextEncoding
@@ -74,6 +77,7 @@ Movies
 Music
 Pictures
 Public
+Support
 
 # Extra files
 .config/chezmoi
@@ -89,6 +93,7 @@ Public
 .config/pgcli
 
 # Cache in config
+.config/todoist
 .config/tmux/plugins
 
 # Unmanaged
