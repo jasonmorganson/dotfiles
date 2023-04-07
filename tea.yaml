@@ -4,3 +4,4 @@ dependencies:
   crates.io/ripgrep: 13.0.0
   cli.github.com: 2.26.1
   git-scm.org: 2.40.0
+  crates.io/exa: 0.10.1
