@@ -11,9 +11,6 @@
 [pager]
     diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
 
-[diff "sopsdiffer"]
-    textconv = sops -d
-
 [pull]
     rebase = true
 
@@ -53,11 +50,16 @@
     newNormal = green bold
     newHighlight = green bold 22
 
-[includeIf "gitdir:~/cherre/"]
-    path = ~/cherre/.gitconfig
-
 [filter "lfs"]
     process = git-lfs filter-process
     required = true
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
+
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/local/bin/gh auth git-credential
+
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/local/bin/gh auth git-credential
