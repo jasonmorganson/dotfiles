@@ -30,4 +30,5 @@ let-env config = {
     }
 }
 
+source ~/.cache/starship/init.nu
 source ~/.config/nushell/aliases.nu
