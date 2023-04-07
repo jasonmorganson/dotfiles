@@ -1,3 +1,7 @@
+let-env XDG_CACHE_HOME = $"($env.HOME)/.cache"
+let-env XDG_CONFIG_HOME = $"($env.HOME)/.config"
+let-env XDG_DATA_HOME = $"($env.HOME)/.local/share"
+
 # Homebrew
 let-env HOMEBREW_PREFIX = "/usr/local"
 let-env HOMEBREW_BUNDLE_FILE = $"($env.HOME)/.Brewfile"
