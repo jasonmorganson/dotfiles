@@ -1,8 +1,4 @@
-rust     1.65.0
-deno     1.13.2
-gcloud   397.0.0
-nodejs   16.9.0
-python   3.7.13
-skaffold 1.37.2
-yq       2.2.0
+rust     1.68.2
+nodejs   19.8.1
+python   3.11.3
 zellij   latest

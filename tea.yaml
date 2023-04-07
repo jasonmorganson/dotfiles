@@ -3,3 +3,7 @@ dependencies:
   helix-editor.com: 23
   crates.io/ripgrep: 13.0.0
   cli.github.com: 2.26.1
+  git-scm.org: 2.40.0
+  crates.io/exa: 0.10.1
+  github.com/junegunn/fzf: 0.39.0
+  chezmoi.io: 2.33.0
