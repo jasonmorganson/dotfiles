@@ -3,6 +3,8 @@ alias ls = exa
 alias la = ls -a
 alias ll = exa --long --header --git
 
+alias ag = rg
+
 alias g = git
 alias c = git commit -m
 alias co = git checkout
