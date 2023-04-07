@@ -2,3 +2,4 @@ dependencies:
   nushell.sh: ~0.77.1
   helix-editor.com: 23
   crates.io/ripgrep: 13.0.0
+  cli.github.com: 2.26.1
