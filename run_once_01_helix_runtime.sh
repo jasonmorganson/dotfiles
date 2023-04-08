@@ -10,5 +10,3 @@ git clone https://github.com/helix-editor/helix "$TMP"
 cd "$TMP"
 cp -r runtime/* "$HELIX_RUNTIME"
 
-hx --grammar fetch
-hx --grammar build
