@@ -3,4 +3,4 @@
 set -eu
 
 # Install brew bundles
-brew bundle install
+#brew bundle install
