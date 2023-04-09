@@ -11,7 +11,6 @@ install.sh
 README.md
 
 # Cache
-.cache
 .dccache
 .cs_cache
 .pnpm-state
