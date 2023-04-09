@@ -7,3 +7,4 @@ dependencies:
   crates.io/exa: 0.10.1
   github.com/junegunn/fzf: 0.39.0
   chezmoi.io: 2.33.0
+  starship.rs: 1.13.1
