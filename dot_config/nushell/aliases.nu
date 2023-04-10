@@ -6,13 +6,19 @@ alias ll = exa --long --header --git
 alias ag = rg
 
 alias g = git
-alias c = git commit -m
-alias co = git checkout
 alias a = git add -p
+alias b = git branch
+alias c = git commit -m
 alias s = git status
+alias m = git merge
 alias p = git push
 alias u = git pull
+alias r = git reset
 
+alias cl = git clone
+alias co = git checkout
+alias cp = git cherry-pick
+alias fp = git push -force-with-lease
 alias gb = git branch
 alias gl = git log
 
