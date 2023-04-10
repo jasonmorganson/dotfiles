@@ -22,7 +22,7 @@ jobs:
         name: Build and push
         uses: docker/build-push-action@v4
         with:
-          push: ${{ github.ref == 'main' }}
+          push: ${{ github.ref_name == 'main' }}
           tags: ${{ github.actor }}/dotfiles
           build-args: |
             USER=${{ github.actor }}
