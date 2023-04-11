@@ -1,19 +1,3 @@
-def-env rtx [command?: string, --help, ...rest: string] {
-  let commands = ["shell", "deactivate"]
-  
-  if ($command == null) {
-    rtx
-  } else if ($command == "activate") {
-    let-env RTX_SHELL = "nu"
-  } else if ($command in $commands) {
-    rtx $command $rest
-    | parse vars
-    | update-env
-  } else {
-    rtx $command $rest
-  }
-}
-  
 def "parse rtx vars" [] {
   $in | lines | parse "{op},{name},{value}"
 }
