@@ -1,6 +1,6 @@
 let-env STARSHIP_SHELL = "nu"
 let-env STARSHIP_SESSION_KEY = (random chars -l 16)
-let-env PROMPT_MULTILINE_INDICATOR = (^/usr/local/bin/starship prompt --continuation)
+let-env PROMPT_MULTILINE_INDICATOR = (starship prompt --continuation)
 
 # Does not play well with default character module.
 let-env PROMPT_INDICATOR = ""
@@ -12,7 +12,7 @@ let-env PROMPT_INDICATOR_VI_NORMAL = ""
 let-env PROMPT_COMMAND = {
     # jobs are not supported
     let width = (term size).columns
-    ^/usr/local/bin/starship prompt $"--cmd-duration=($env.CMD_DURATION_MS)" $"--status=($env.LAST_EXIT_CODE)" $"--terminal-width=($width)"
+    starship prompt $"--cmd-duration=($env.CMD_DURATION_MS)" $"--status=($env.LAST_EXIT_CODE)" $"--terminal-width=($width)"
 }
 
 # Whether we have config items
@@ -26,5 +26,5 @@ let-env config = if $has_config_items {
 
 let-env PROMPT_COMMAND_RIGHT = {
     let width = (term size).columns
-    ^/usr/local/bin/starship prompt --right $"--cmd-duration=($env.CMD_DURATION_MS)" $"--status=($env.LAST_EXIT_CODE)" $"--terminal-width=($width)"
+    starship prompt --right $"--cmd-duration=($env.CMD_DURATION_MS)" $"--status=($env.LAST_EXIT_CODE)" $"--terminal-width=($width)"
 }
