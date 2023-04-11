@@ -8,3 +8,4 @@ dependencies:
   github.com/junegunn/fzf: 0.39.0
   chezmoi.io: 2.33.0
   starship.rs: 1.13.1
+  zlib.net: 1.2.13

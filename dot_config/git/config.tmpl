@@ -8,8 +8,21 @@
 [help]
     autocorrect = 1
 
-[pager]
-    diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
+[core]
+    pager = delta --diff-so-fancy
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
 
 [pull]
     rebase = true
