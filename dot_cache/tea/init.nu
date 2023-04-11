@@ -9,7 +9,7 @@ def-env "update tea env" [] {
 }
   
 def-env tea_hook [] {
-  ^"/usr/local/bin/tea" --env --silent
+  tea --env --silent
     | parse tea vars
     | update tea env
 }
