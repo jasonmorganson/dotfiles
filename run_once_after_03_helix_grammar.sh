@@ -2,5 +2,5 @@
 . ./.profile
 set -eu
 
-hx --grammar fetch
-hx --grammar build
+tea hx --grammar fetch
+tea hx --grammar build
