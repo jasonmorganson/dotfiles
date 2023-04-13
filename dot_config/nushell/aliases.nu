@@ -17,7 +17,7 @@ alias r = git reset
 
 alias cl = git clone
 alias co = git checkout
-alias fp = git push -force-with-lease
+alias pf = git push --force-with-lease
 alias gb = git branch
 alias gl = git log
 
