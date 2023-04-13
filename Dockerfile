@@ -6,7 +6,7 @@ ARG EMAIL=user@co.co
 
 ENV USER=$USER \
     HOME=/home/$USER \
-    SHELL=/home/linuxbrew/.linuxbrew/bin/zsh \
+    SHELL=/usr/local/bin/nu \
     HEADLESS=true
 
 RUN apt-get update && apt-get install sudo
@@ -23,4 +23,4 @@ COPY --chown=$USER . .
 
 RUN ./install.sh
 
-ENTRYPOINT [ "/home/linuxbrew/.linuxbrew/bin/zsh", "--login" ]
+ENTRYPOINT [ "/usr/local/bin/nu" ]
