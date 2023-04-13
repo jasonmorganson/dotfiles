@@ -1,3 +1,2 @@
 brew "zsh"
-brew "coreutils"
 cask "alacritty"
