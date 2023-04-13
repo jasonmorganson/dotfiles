@@ -1,7 +1,2 @@
-tap "homebrew/bundle"
-tap "homebrew/cask"
-tap "homebrew/core"
-tap "homebrew/services"
-tap "txn2/tap"
 brew "zsh"
 cask "alacritty"
