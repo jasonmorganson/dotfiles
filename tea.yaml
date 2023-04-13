@@ -6,6 +6,7 @@ dependencies:
   git-scm.org: 2.40.0
   crates.io/exa: 0.10.1
   crates.io/vivid: 0.9.0
+  crates.io/gitui: 0.22.1
   crates.io/git-delta: 0.15.1
   github.com/junegunn/fzf: 0.39.0
   chezmoi.io: 2.33.0
