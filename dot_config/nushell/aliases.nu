@@ -30,6 +30,8 @@ alias tig = gitui
 
 alias diff = git diff
 alias reset = git reset
+alias rebase = git rebase
+alias stash = git stash
 alias wip = git commit -am "WIP"
 alias fixup = git commit --fixup
 alias unpushed = git log --branches --not --remotes --no-walk --decorate --oneline
