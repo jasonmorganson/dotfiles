@@ -8,6 +8,7 @@ dependencies:
   crates.io/vivid: 0.9.0
   crates.io/gitui: 0.22.1
   crates.io/git-delta: 0.15.1
+  crates.io/zellij: 0.36.0
   github.com/junegunn/fzf: 0.39.0
   chezmoi.io: 2.33.0
   starship.rs: 1.13.1
