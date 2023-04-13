@@ -17,12 +17,12 @@ alias r = git reset
 
 alias cl = git clone
 alias co = git checkout
-alias cp = git cherry-pick
 alias fp = git push -force-with-lease
 alias gb = git branch
 alias gl = git log
 
 alias cob = git checkout -b
+alias gcp = git cherry-pick
 alias gbd = git branch -d
 alias gbD = git branch -D
 
