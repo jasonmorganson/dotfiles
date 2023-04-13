@@ -1,15 +1,15 @@
 dependencies:
-  nushell.sh: ~0.77.1
-  helix-editor.com: 23
-  crates.io/ripgrep: 13.0.0
-  cli.github.com: 2.26.1
-  git-scm.org: 2.40.0
-  crates.io/exa: 0.10.1
-  crates.io/vivid: 0.9.0
-  crates.io/gitui: 0.22.1
-  crates.io/git-delta: 0.15.1
-  crates.io/zellij: 0.36.0
-  github.com/junegunn/fzf: 0.39.0
   chezmoi.io: 2.33.0
+  cli.github.com: 2.26.1
+  crates.io/exa: 0.10.1
+  crates.io/git-delta: 0.15.1
+  crates.io/gitui: 0.22.1
+  crates.io/ripgrep: 13.0.0
+  crates.io/vivid: 0.9.0
+  crates.io/zellij: 0.36.0
+  git-scm.org: 2.40.0
+  github.com/junegunn/fzf: 0.39.0
+  helix-editor.com: 23
+  nushell.sh: ~0.77.1
   starship.rs: 1.13.1
   zlib.net: 1.2.13
