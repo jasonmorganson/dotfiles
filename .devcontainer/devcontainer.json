@@ -1,7 +1,5 @@
 {
   "name": "dotfiles",
-  "dockerComposeFile": "../docker-compose.yaml",
-  "service": "run",
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {},
     "ghcr.io/devcontainers-contrib/features/mosh-apt-get:1": {},
