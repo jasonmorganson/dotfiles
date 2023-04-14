@@ -13,7 +13,8 @@ services:
   run:
     depends_on:
       - socat
-    image: jasonmorganson/dotfiles
+    build:
+      context: .
     tty: true
     stdin_open: true
     network_mode: host
