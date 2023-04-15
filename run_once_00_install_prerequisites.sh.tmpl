@@ -16,10 +16,9 @@ set -- "$@" \
 
 {{ end }}
 
-# Linuxbrew requirements
-# SEE: https://docs.brew.sh/Homebrew-on-Linux#debian-or-ubuntu
+# Used in scripts
 set -- "$@" \
-    build-essential procps curl file git
+    curl git
 
 DEBIAN_FRONTEND=noninteractive \
 sudo apt-get update && \
