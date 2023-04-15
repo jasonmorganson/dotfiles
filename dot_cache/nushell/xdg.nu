@@ -1,3 +1,7 @@
+let-env XDG_CACHE_HOME = $"($env.HOME)/.cache"
+let-env XDG_CONFIG_HOME = $"($env.HOME)/.config"
+let-env XDG_DATA_HOME = $"($env.HOME)/.local/share"
+
 let-env ACKRC = $"($env.XDG_CONFIG_HOME)/ack/ackrc"
 let-env ATOM_HOME = $"($env.XDG_CONFIG_HOME)/atom"
 let-env AWS_SHARED_CREDENTIALS_FILE = $"($env.XDG_CONFIG_HOME)/aws/credentials"

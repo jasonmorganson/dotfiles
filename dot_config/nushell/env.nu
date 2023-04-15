@@ -1,7 +1,3 @@
-let-env XDG_CACHE_HOME = $"($env.HOME)/.cache"
-let-env XDG_CONFIG_HOME = $"($env.HOME)/.config"
-let-env XDG_DATA_HOME = $"($env.HOME)/.local/share"
-
 source ~/.cache/nushell/xdg.nu
 
 let-env PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/bin' | prepend $"($env.CARGO_HOME)/bin" | prepend $"($env.HOME)/.tea/tea.xyz/v*/bin" | prepend $"($env.HOME)/.tea/gnu.org/coreutils/v*/bin" | prepend $"($env.HOME)/.local/share/rtx/bin")
