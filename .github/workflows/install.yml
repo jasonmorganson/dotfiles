@@ -14,9 +14,6 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
       - uses: actions/checkout@v3
-      - name: Install Dependencies for SHA Calculation (osx)
-        if: ${{ contains(matrix.platform , 'macos') }}
-        run: brew install coreutils #needed for shasum util
       - name: Run install script
         env:
           NAME: ${{ github.actor }}
