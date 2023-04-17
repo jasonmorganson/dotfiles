@@ -1,16 +1,6 @@
 source ~/.cache/tea/init.nu
 source ~/.cache/rtx/init.nu
 
-def-env pre_prompt_hook [] {
-    tea_hook
-    rtx_hook
-}
-
-def-env env_change_hook [] {
-    tea_hook
-    rtx_hook
-}
-
 let-env config = {
     show_banner: false
     edit_mode: vi
@@ -20,11 +10,17 @@ let-env config = {
     }
     hooks: {
         pre_prompt: [{
-            code: "pre_prompt_hook"
+            code: {
+                tea_hook
+                rtx_hook
+            }
         }]
         env_change: {
             PWD: [{
-                code: "env_change_hook"
+                code: {
+                    tea_hook
+                    rtx_hook
+                }
             }]
         }
     }
