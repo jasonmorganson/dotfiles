@@ -10,7 +10,6 @@ dependencies:
   crates.io/zellij: 0.36.0
   git-scm.org: 2.40.0
   github.com/junegunn/fzf: 0.39.0
-  gnu.org/coreutils: 9.1
   helix-editor.com: 23
   nushell.sh: ~0.77.1
   starship.rs: 1.13.1
