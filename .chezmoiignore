@@ -14,6 +14,15 @@ README.md
 .dccache
 .cs_cache
 .pnpm-state
+.cache/helix
+.cache/helm
+.cache/node
+.cache/nvim
+.cache/pnpm
+.cache/todoist
+.cache/typescript
+.cache/yarn
+.cache/zsh
 .config/zsh/.zcompdump*
 
 # SSH
