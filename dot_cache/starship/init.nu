@@ -9,7 +9,7 @@ let-env PROMPT_INDICATOR = ""
 let-env PROMPT_INDICATOR_VI_INSERT = ""
 let-env PROMPT_INDICATOR_VI_NORMAL = ""
 
-let-env PROMPT_COMMAND = {
+let-env PROMPT_COMMAND = { ||
     # jobs are not supported
     let width = (term size).columns
     starship prompt $"--cmd-duration=($env.CMD_DURATION_MS)" $"--status=($env.LAST_EXIT_CODE)" $"--terminal-width=($width)"
@@ -24,7 +24,7 @@ let-env config = if $has_config_items {
     {render_right_prompt_on_last_line: true}
 }
 
-let-env PROMPT_COMMAND_RIGHT = {
+let-env PROMPT_COMMAND_RIGHT = { ||
     let width = (term size).columns
     starship prompt --right $"--cmd-duration=($env.CMD_DURATION_MS)" $"--status=($env.LAST_EXIT_CODE)" $"--terminal-width=($width)"
 }

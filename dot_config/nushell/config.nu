@@ -12,14 +12,14 @@ let-env config = {
     }
     hooks: {
         pre_prompt: [{
-            code: {
+            code: { ||
                 tea_hook
                 rtx_hook
             }
         }]
         env_change: {
             PWD: [{
-                code: {
+                code: { ||
                     tea_hook
                     rtx_hook
                 }
