@@ -14,7 +14,6 @@ README.md
 .dccache
 .cs_cache
 .pnpm-state
-.config/helix/runtime
 .config/zsh/.zcompdump*
 
 # SSH
