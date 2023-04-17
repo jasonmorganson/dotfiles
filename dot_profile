@@ -16,5 +16,4 @@ export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
 # Paths
-export PATH="$XDG_DATA_HOME/rtx/bin:$HOME/.tea/tea.xyz/v0/bin:/usr/local/bin:$HOME/.tea/gnu.org/coreutils/v*/bin:$PATH"
-export FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:$FPATH"
+export PATH="$HOME/.tea/tea.xyz/v0/bin:/usr/local/bin:$PATH"
