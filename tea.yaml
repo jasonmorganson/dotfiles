@@ -11,6 +11,6 @@ dependencies:
   git-scm.org: 2.40.0
   github.com/junegunn/fzf: 0.39.0
   helix-editor.com: 23
-  nushell.sh: ~0.77.1
+  nushell.sh: 0.78.0
   starship.rs: 1.13.1
   zlib.net: 1.2.13
