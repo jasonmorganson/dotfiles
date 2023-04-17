@@ -1,5 +1,7 @@
 source ~/.cache/tea/init.nu
 source ~/.cache/rtx/init.nu
+source ~/.cache/starship/init.nu
+source ~/.config/nushell/aliases.nu
 
 let-env config = {
     show_banner: false
@@ -25,6 +27,3 @@ let-env config = {
         }
     }
 }
-
-source ~/.cache/starship/init.nu
-source ~/.config/nushell/aliases.nu
