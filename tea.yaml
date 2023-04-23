@@ -13,4 +13,3 @@ dependencies:
   helix-editor.com: 23
   nushell.sh: 0.78.0
   starship.rs: 1.13.1
-  zlib.net: 1.2.13
