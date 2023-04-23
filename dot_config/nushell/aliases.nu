@@ -19,6 +19,7 @@ alias cl = git clone
 alias co = git checkout
 alias pf = git push --force-with-lease
 alias gb = git branch
+alias gf = git fetch
 alias gl = git log
 
 alias cob = git checkout -b
@@ -41,6 +42,7 @@ alias vim = vi
 alias nvim = vi
 
 alias py = python
+alias pip = python -m pip
 
 alias k = kubectl
 alias kfwd = kubefwd
