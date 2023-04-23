@@ -3,13 +3,13 @@ dependencies:
   cli.github.com: ^2.26
   crates.io/exa: ^0.10
   crates.io/git-delta: ^0.15
-  crates.io/gitui: 0.22.1
-  crates.io/ripgrep: 13.0.0
+  crates.io/gitui: "*"
+  crates.io/ripgrep: "*"
   crates.io/rtx-cli: ~1
   crates.io/vivid: ^0.9
   crates.io/zellij: ~0.36
   git-scm.org: ^2.40
-  github.com/junegunn/fzf: 0.39.0
+  github.com/junegunn/fzf: "*"
   helix-editor.com: ~23
   nushell.sh: ~0.78
   starship.rs: ~1.13
