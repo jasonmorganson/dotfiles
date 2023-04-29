@@ -31,6 +31,7 @@ alias tig = gitui
 
 alias diff = git diff
 alias reset = git reset
+alias revert = git revert
 alias rebase = git rebase
 alias stash = git stash
 alias wip = git commit -am "WIP"
