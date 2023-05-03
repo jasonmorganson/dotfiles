@@ -2,7 +2,7 @@
 experimental = true
 
 trusted_config_paths = [
-    '/home',
-    '/Users',
-    '/workspaces'
+    "/hom",
+    "/Users",
+    "/workspaces"
 ]
