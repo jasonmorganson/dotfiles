@@ -1,3 +1,4 @@
 . ~/.profile
 
+eval "$(direnv hook bash)"
 eval "$(rtx activate bash)"
