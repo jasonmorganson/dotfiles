@@ -6,8 +6,7 @@ ARG EMAIL=user@co.co
 
 ENV USER=$USER \
     HOME=/home/$USER \
-    SHELL=/usr/local/bin/nu \
-    HEADLESS=true
+    SHELL=/usr/local/bin/nu
 
 RUN apt-get update && apt-get install sudo
 RUN echo "ALL ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
