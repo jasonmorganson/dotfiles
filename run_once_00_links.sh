@@ -3,6 +3,6 @@
 set -eu
 
 # Link teas
-#sudo ln -sf "$HOME/.tea/nushell.sh/v*/bin/nu" /usr/local/bin/nu
-#sudo ln -sf "$HOME/.tea/crates.io/zellij/v*/bin/zellij" /usr/local/bin/zellij
+sudo ln -sf "$HOME/.tea/nushell.sh/v*/bin/nu" /usr/local/bin/nu
+sudo ln -sf "$HOME/.tea/crates.io/zellij/v*/bin/zellij" /usr/local/bin/zellij
 
