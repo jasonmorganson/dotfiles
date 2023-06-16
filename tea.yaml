@@ -1,5 +1,5 @@
 dependencies:
-  chezmoi.io: ~2.33
+  chezmoi.io: ~2.34
   cli.github.com: ^2.26
   crates.io/exa: ^0.10
   crates.io/git-delta: ^0.15
@@ -11,5 +11,5 @@ dependencies:
   git-scm.org: ^2.40
   github.com/junegunn/fzf: "*"
   helix-editor.com: ~23
-  nushell.sh: ~0.78
-  starship.rs: ~1.13
+  nushell.sh: ~0.81
+  starship.rs: ~1.15
