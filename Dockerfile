@@ -20,6 +20,6 @@ WORKDIR $HOME
 
 COPY --chown=$USER . .
 
-RUN ./install.sh
+RUN --mount=type=cache,target=$HOME ./install.sh
 
 ENTRYPOINT [ "/usr/local/bin/nu" ]
