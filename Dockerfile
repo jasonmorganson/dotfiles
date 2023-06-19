@@ -16,9 +16,9 @@ FROM base
 
 USER $USER
 
-WORKDIR $HOME
+WORKDIR /tmp/dotfiles
 
-COPY --chown=$USER . .
+COPY . .
 
 RUN ./install.sh
 

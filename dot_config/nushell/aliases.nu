@@ -50,4 +50,6 @@ alias kfwd = kubefwd
 alias kubens = kubie ns
 alias kubectx = kubie ctx
 
+alias docker = docker-buildx
+
 alias dotfiles = chezmoi
