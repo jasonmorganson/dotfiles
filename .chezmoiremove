@@ -9,3 +9,4 @@
 .zsh-plugins.sh
 .zsh_history
 .zshrc
+.config/zsh/.zprofile
