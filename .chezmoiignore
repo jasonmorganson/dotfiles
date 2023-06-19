@@ -14,10 +14,14 @@ README.md
 .dccache
 .cs_cache
 .pnpm-state
+.cache/d2
 .cache/helix
 .cache/helm
 .cache/node
 .cache/nvim
+.cache/node_repl_history
+.cache/npm
+.cache/pyright-python
 .cache/pnpm
 .cache/todoist
 .cache/typescript
@@ -26,7 +30,10 @@ README.md
 .config/zsh/.zcompdump*
 
 # SSH
+.ssh/known_hosts
 .ssh/environment-
+.ssh/codespaces.auto
+.ssh/codespaces.auto.pub
 
 # History
 .lesshst
@@ -40,6 +47,7 @@ README.md
 .config/zsh/.zsh_history
 .config/zsh/.zsh_sessions
 .zsh_sessions
+.config/nushell/history.txt
 
 # VIM
 .vim
@@ -47,6 +55,7 @@ README.md
 .plugged
 
 # Non XDG
+.asdf
 .cargo
 .docker
 .fzf
@@ -70,6 +79,9 @@ README.md
 .texts-conf.json
 .config/todoist
 .vscode*
+.ipython
+.orbstack
+.cookiecutter*
 
 # Ignore MacOS files
 .CFUserTextEncoding
@@ -120,5 +132,10 @@ Support
 .tmate.conf
 .todoist.config.json
 .yarnrc
+.config/aws
+.config/topgrade.toml
 
 **/.DS_Store
+
+GitHub
+OrbStack
