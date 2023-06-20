@@ -5,3 +5,6 @@ let-env PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/bin' | p
 let-env LS_COLORS = (tea vivid generate snazzy | str trim)
 
 let-env RTX_DATA_DIR = ~/.asdf
+
+let-env GPG_TTY = (echo (tty))
+
