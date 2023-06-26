@@ -7,7 +7,7 @@ dependencies:
   crates.io/ripgrep: "*"
   crates.io/rtx-cli: ~1
   crates.io/vivid: ^0.9
-  crates.io/zellij: ~0.36
+  crates.io/zellij: ~0.37
   git-scm.org: ^2.40
   github.com/junegunn/fzf: "*"
   helix-editor.com: ~23
