@@ -7,3 +7,6 @@ shell:
    - attach
    - --create
    - default
+
+env:
+  SHELL: /usr/local/bin/nu
