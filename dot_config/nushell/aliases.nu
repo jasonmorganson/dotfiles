@@ -46,8 +46,7 @@ alias py = python
 alias pip = python -m pip
 
 alias k = kubectl
-alias kfwd = kubefwd
-alias kubens = kubie ns
-alias kubectx = kubie ctx
+alias kns = kubens
+alias kctx = kubectx
 
 alias dotfiles = chezmoi
