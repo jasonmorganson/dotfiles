@@ -16,4 +16,4 @@ export XDG_TEMPLATES_DIR="$HOME/Templates"
 export XDG_VIDEOS_DIR="$HOME/Videos"
 
 # Paths
-export PATH="$HOME/.tea/tea.xyz/.local/bin:/usr/local/bin:$PATH"
+export PATH="$HOME/.tea/tea.xyz/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
