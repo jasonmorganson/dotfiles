@@ -1,4 +1,6 @@
 . ~/.profile
 
+source <(tea --magic=bash --silent)
+
 eval "$(direnv hook bash)"
 eval "$(rtx activate bash)"
