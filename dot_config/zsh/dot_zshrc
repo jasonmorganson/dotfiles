@@ -1,2 +1,4 @@
+source <(tea --magic=zsh --silent)
+
 eval "$(direnv hook zsh)"
 eval "$(rtx activate zsh)"
