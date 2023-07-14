@@ -11,12 +11,6 @@ let-env config = {
         vi_normal: block
     }
     hooks: {
-        pre_prompt: [{
-            code: { ||
-                tea_hook
-                rtx_hook
-            }
-        }]
         env_change: {
             PWD: [{
                 code: { ||
