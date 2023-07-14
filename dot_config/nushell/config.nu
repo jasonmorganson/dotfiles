@@ -12,12 +12,10 @@ let-env config = {
     }
     hooks: {
         env_change: {
-            PWD: [{
-                code: { ||
-                    tea_hook
-                    rtx_hook
-                }
-            }]
+            PWD: [
+                { tea_hook }
+                { rtx_hook }
+            ]
         }
     }
 }
