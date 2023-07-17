@@ -24,7 +24,7 @@ services:
       - HOME=/home/${GITHUB_USER:-$USER}
       - NAME=${GIT_COMMITTER_NAME:-$NAME}
       - EMAIL=${GIT_COMMITTER_EMAIL:-$EMAIL}
-      - SHELL=/home/linuxbrew/.linuxbrew/bin/zsh
+      - SHELL=/usr/local/bin/nu
       - DOCKER_HOST=localhost:2375
     volumes:
       - $PWD:$PWD
