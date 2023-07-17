@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/devcontainers/universal:linux
 
 RUN echo "ALL ALL=(ALL) NOPASSWD:ALL" >> /etc/sudoers
 
-ARG USER=vscode
+ARG USER=codespace
 
 ENV USER=$USER \
     HOME=/home/$USER
