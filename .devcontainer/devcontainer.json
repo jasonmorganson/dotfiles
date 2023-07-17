@@ -1,9 +1,6 @@
 {
   "name": "dotfiles",
-  "dockerComposeFile": "../docker-compose.yaml",
-  "service": "run",
-  "remoteUser": "${localEnv:USER}",
-  "workspaceFolder": "${localWorkspaceFolder}",
+  "image": "mcr.microsoft.com/devcontainers/universal:linux",
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {},
     "ghcr.io/devcontainers-contrib/features/mosh-apt-get:1": {},
