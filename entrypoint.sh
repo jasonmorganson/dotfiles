@@ -8,7 +8,7 @@ base_home="$(eval echo "~$base_user")"
 user="${USER:-$base_user}"
 group="$user"
 home="/home/$user"
-shell="${SHELL:-/home/linuxbrew/.linuxbrew/bin/zsh}"
+shell="${SHELL:-/bin/sh}"
 
 sudo groupmod --gid "$gid" --new-name "$group" "$base_group"
 sudo usermod --non-unique --gid "$gid" --uid "$uid" --home "$home" --shell "$shell" --login "$user" "$base_user"
