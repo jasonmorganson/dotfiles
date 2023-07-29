@@ -1,5 +1,4 @@
 source ~/.cache/tea/init.nu
-source ~/.cache/rtx/init.nu
 source ~/.cache/starship/init.nu
 source ~/.config/nushell/aliases.nu
 
@@ -14,7 +13,6 @@ let-env config = {
         env_change: {
             PWD: [
                 { tea_hook }
-                { rtx_hook }
             ]
         }
     }
