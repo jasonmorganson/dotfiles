@@ -1,3 +1,4 @@
+source ~/.cache/nushell/default_env.nu
 source ~/.cache/nushell/xdg.nu
 source ~/.cache/nushell/ls_colors.nu
 

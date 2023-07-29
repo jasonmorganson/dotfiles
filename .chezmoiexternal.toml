@@ -1,0 +1,7 @@
+[".cache/nushell/default_env.nu"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/nushell/nushell/main/crates/nu-utils/src/sample_config/default_env.nu"
+
+[".cache/nushell/default_config.nu"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/nushell/nushell/main/crates/nu-utils/src/sample_config/default_config.nu"
