@@ -4,10 +4,6 @@ source ~/.config/nushell/aliases.nu
 
 let-env config = {
     edit_mode: vi
-    cursor_shape: {
-        vi_insert: underscore
-        vi_normal: block
-    }
     hooks: {
         env_change: {
             PWD: [
