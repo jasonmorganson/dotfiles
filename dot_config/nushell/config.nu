@@ -3,13 +3,12 @@ source ~/.cache/tea/init.nu
 source ~/.cache/starship/init.nu
 source ~/.config/nushell/aliases.nu
 
-let-env config = {
-    edit_mode: vi
-    hooks: {
-        env_change: {
-            PWD: [
-                { tea_hook }
-            ]
-        }
+$env.config = ($env.config | upsert edit_mode vi)
+
+$env.config = ($env.config | upsert hooks {
+    env_change: {
+        PWD: [
+            { tea_hook }
+        ]
     }
-}
+})
