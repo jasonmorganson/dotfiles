@@ -1,3 +1,4 @@
+source ~/.cache/nushell/default_config.nu
 source ~/.cache/tea/init.nu
 source ~/.cache/starship/init.nu
 source ~/.config/nushell/aliases.nu
