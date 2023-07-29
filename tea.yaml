@@ -5,7 +5,6 @@ dependencies:
   crates.io/git-delta: ^0.15
   crates.io/gitui: "*"
   crates.io/ripgrep: "*"
-  crates.io/rtx-cli: ~1
   crates.io/vivid: ^0.9
   crates.io/zellij: ~0.37
   git-scm.org: ^2.40
