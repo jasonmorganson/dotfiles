@@ -1,6 +1,6 @@
-let-env XDG_CACHE_HOME = $"($env.HOME)/.cache"
-let-env XDG_CONFIG_HOME = $"($env.HOME)/.config"
-let-env XDG_DATA_HOME = $"($env.HOME)/.local/share"
+$env.XDG_CACHE_HOME = $"($env.HOME)/.cache"
+$env.XDG_CONFIG_HOME = $"($env.HOME)/.config"
+$env.XDG_DATA_HOME = $"($env.HOME)/.local/share"
 
 load-env {
   ACKRC: $"($env.XDG_CONFIG_HOME)/ack/ackrc"
