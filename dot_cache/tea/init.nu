@@ -14,4 +14,4 @@ def-env tea_hook [] {
     | update tea env
 }
 
-export-env { tea_hook }
+$env.config = ($env.config | upsert hooks.env_change.PWD {[{ tea_hook }]})
