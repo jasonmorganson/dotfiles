@@ -11,4 +11,4 @@ dependencies:
   github.com/junegunn/fzf: "*"
   helix-editor.com: ~23
   nushell.sh: ~0.82
-  starship.rs: ~1.15
+  starship.rs: ~1.16
