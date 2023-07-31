@@ -3,4 +3,4 @@
 set -eu
 
 # Install tea plugins
-tea --sync
+tea --sync --silent
