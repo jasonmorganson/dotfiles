@@ -1,7 +1,7 @@
 let PWD = $env.PWD
 
 def "parse tea vars" [] {
-  $in | lines | parse "{name}={value}" | where name != 'undefined'
+  $in | lines | parse "{name}={value}"
 }
   
 def-env tea_hook [] {
