@@ -5,9 +5,6 @@ export-env {
     XDG_STATE_HOME: ($env.HOME | path join ".local" "state")
     XDG_CACHE_HOME: ($env.HOME | path join ".cache")
   }
-}
-
-export-env {
   load-env {
     ACKRC: ($env.XDG_CONFIG_HOME | path join "ack" "ackrc")
     ATOM_HOME: ($env.XDG_CONFIG_HOME | path join "atom")
