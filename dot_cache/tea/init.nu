@@ -3,7 +3,7 @@ def "parse tea vars" [] {
 }
   
 def-env tea_hook [] {
-  ~/.tea/.local/bin/tea --env --silent
+  tea --env --silent
     | parse tea vars
     | transpose --header-row
     | into record
@@ -13,6 +13,9 @@ def-env tea_hook [] {
 # Run hook in home to capture tea home env regardless of the PWD
 export-env {
   load-env {
+
+    # Make sure that tea itself is in the PATH
+    PATH: ($env.PATH | prepend ($env.HOME | path join ".tea" "tea.xyz" "v*" "bin"))
 
     # Run hook when the PWD changes
     config: ($env.config? | default {} | upsert hooks.env_change.PWD {[{
