@@ -1,5 +1,3 @@
-let PWD = $env.PWD
-
 def "parse tea vars" [] {
   $in | lines | parse "{name}={value}"
 }
@@ -13,8 +11,10 @@ def-env tea_hook [] {
 }
 
 # Run hook in home to capture tea home env regardless of the PWD
-$env.PWD = $env.HOME
-tea_hook
-$env.PWD = $PWD
+export-env {
+
+  # Run the hook once on load to populate initial env as nu is loading other init scripts
+  tea_hook
+}
 
 $env.config = ($env.config | upsert hooks.env_change.PWD {[{ tea_hook }]})
