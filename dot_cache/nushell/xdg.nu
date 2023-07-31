@@ -1,6 +1,11 @@
-$env.XDG_CACHE_HOME = $"($env.HOME)/.cache"
-$env.XDG_CONFIG_HOME = $"($env.HOME)/.config"
-$env.XDG_DATA_HOME = $"($env.HOME)/.local/share"
+export-env {
+  load-env {
+    XDG_DATA_HOME: ($env.HOME | path join ".local" "share")
+    XDG_CONFIG_HOME: ($env.HOME | path join ".config")
+    XDG_STATE_HOME: ($env.HOME | path join ".local" "state")
+    XDG_CACHE_HOME: ($env.HOME | path join ".cache")
+  }
+}
 
 load-env {
   ACKRC: $"($env.XDG_CONFIG_HOME)/ack/ackrc"
