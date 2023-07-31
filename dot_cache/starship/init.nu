@@ -11,6 +11,10 @@ export-env { load-env {
     # TODO: Also Use starship vi mode indicators?
     PROMPT_INDICATOR: ""
 
+    # TODO: Also Use starship vi mode indicators?
+    PROMPT_INDICATOR_VI_INSERT: ""
+    PROMPT_INDICATOR_VI_NORMAL: ""
+
     PROMPT_COMMAND: {||
         # jobs are not supported
         ( starship prompt --cmd-duration $env.CMD_DURATION_MS
