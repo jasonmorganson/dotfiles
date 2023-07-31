@@ -69,3 +69,6 @@
 [credential "https://gist.github.com"]
 	helper =
 	helper = !~/.tea/cli.github.com/v2/bin/gh auth git-credential
+
+[includeIf "gitdir:/workspaces/"]
+    path = ~/.config/git/codespace
