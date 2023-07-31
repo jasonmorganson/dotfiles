@@ -9,75 +9,75 @@ export-env {
 
 export-env {
   load-env {
-    ACKRC: $"($env.XDG_CONFIG_HOME)/ack/ackrc"
-    ATOM_HOME: $"($env.XDG_CONFIG_HOME)/atom"
-    AWS_SHARED_CREDENTIALS_FILE: $"($env.XDG_CONFIG_HOME)/aws/credentials"
-    AWS_CONFIG_FILE: $"($env.XDG_CONFIG_HOME)/aws/config"
-    BASH_COMPLETION_USER_FILE: $"($env.XDG_CONFIG_HOME)/bash-completion/bash_completion"
-    HISTFILE: $"($env.XDG_CACHE_HOME)/bash/history"
-    CARGO_HOME: $"($env.XDG_DATA_HOME)/cargo"
-    CCACHE_DIR: $"($env.XDG_CACHE_HOME)/ccache"
-    CRAWL_DIR: $"($env.XDG_DATA_HOME)/crawl/"
-    CUDA_CACHE_PATH: $"($env.XDG_CACHE_HOME)/nv"
-    __GL_SHADER_DISK_CACHE_PATH: $"($env.XDG_CACHE_HOME)/nv"
-    CQL_HISTORY: $"($env.XDG_CACHE_HOME)/cassandra/cqlsh_history"
-    DOCKER_CONFIG: $"($env.XDG_CONFIG_HOME)/docker"
-    ELECTRUMDIR: $"($env.XDG_DATA_HOME)/electrum"
-    ELINKS_CONFDIR: $"($env.XDG_CONFIG_HOME)/elinks"
-    GEM_HOME: $"($env.XDG_DATA_HOME)/gem"
-    GEM_SPEC_CACHE: $"($env.XDG_CACHE_HOME)/gem"
-    GNUPGHOME: $"($env.XDG_DATA_HOME)/gnupg"
-    GTK_RC_FILES: $"($env.XDG_CONFIG_HOME)/gtk-1.0/gtkrc"
-    GTK2_RC_FILES: $"($env.XDG_CONFIG_HOME)/gtk-2.0/gtkrc"
-    GRADLE_USER_HOME: $"($env.XDG_DATA_HOME)/gradle"
-    LEDGER_FILE: $"($env.XDG_DATA_HOME)/hledger/journal"
-    IMAPFILTER_HOME: $"($env.XDG_CONFIG_HOME)/imapfilter"
-    K9SCONFIG: $"($env.XDG_CONFIG_HOME)/k9s"
-    KDEHOME: $"($env.XDG_CONFIG_HOME)/kde"
-    LEIN_HOME: $"($env.XDG_DATA_HOME)/lein"
-    LESSHISTFILE: $"($env.XDG_CACHE_HOME)/less/history"
-    LESSKEY: $"($env.XDG_CONFIG_HOME)/less/lesskey"
-    XCOMPOSEFILE: $"($env.XDG_CONFIG_HOME)/X11/xcompose"
-    XCOMPOSECACHE: $"($env.XDG_CACHE_HOME)/X11/xcompose"
-    MATHEMATICA_USERBASE: $"($env.XDG_CONFIG_HOME)/mathematica"
-    MAXIMA_USERDIR: $"($env.XDG_CONFIG_HOME)/maxima"
-    MEDNAFEN_HOME: $"($env.XDG_CONFIG_HOME)/mednafen"
-    MOST_INITFILE: $"($env.XDG_CONFIG_HOME)/most/mostrc"
-    MPLAYER_HOME: $"($env.XDG_CONFIG_HOME)/mplayer"
-    MYCLI_HISTFILE: $"($env.XDG_DATA_HOME)/mycli/history"
-    MYSQL_HISTFILE: $"($env.XDG_DATA_HOME)/mysql_history"
-    TERMINFO: $"($env.XDG_DATA_HOME)/terminfo"
-    TERMINFO_DIRS: $"($env.XDG_DATA_HOME)/terminfo:/usr/share/terminfo"
-    NODE_REPL_HISTORY: $"($env.XDG_CACHE_HOME)/node_repl_history"
-    npm_config_cache: $"($env.XDG_CACHE_HOME)/npm"
-    NPM_CONFIG_USERCONFIG: $"($env.XDG_CONFIG_HOME)/npm/npmrc"
-    NVM_DIR: $"($env.XDG_DATA_HOME)/nvm"
-    PARALLEL_HOME: $"($env.XDG_CONFIG_HOME)/parallel"
-    PASSWORD_STORE_DIR: $"($env.XDG_DATA_HOME)/pass"
-    PEX_ROOT: $"($env.XDG_CACHE_HOME)/pex"
-    PYTHON_EGG_CACHE: $"($env.XDG_CACHE_HOME)/python-eggs"
-    PYLINTHOME: $"($env.XDG_CACHE_HOME)/pylint"
-    INPUTRC: $"($env.XDG_CONFIG_HOME)/readline/inputrc"
-    REDISCLI_RCFILE: $"($env.XDG_CONFIG_HOME)/redis/redisclirc"
-    REDISCLI_HISTFILE: $"($env.XDG_DATA_HOME)/redis/rediscli_history"
-    RUSTUP_HOME: $"($env.XDG_DATA_HOME)/rustup"
-    SCREENRC: $"($env.XDG_CONFIG_HOME)/screen/screenrc"
-    STACK_ROOT: $"($env.XDG_DATA_HOME)/stack"
-    TASKDATA: $"($env.XDG_DATA_HOME)/task"
-    TASKRC: $"($env.XDG_CONFIG_HOME)/task/taskrc"
-    UNCRUSTIFY_CONFIG: $"($env.XDG_CONFIG_HOME)/uncrustify/uncrustify.cfg"
-    UNISON: $"($env.XDG_DATA_HOME)/unison"
-    WEECHAT_HOME: $"($env.XDG_CONFIG_HOME)/weechat"
-    CABAL_CONFIG: $"($env.XDG_CONFIG_HOME)/cabal/config"
-    CABAL_DIR: $"($env.XDG_CACHE_HOME)/cabal/"
-    OPAMROOT: $"($env.XDG_DATA_HOME)/opam"
-    GOPATH: $"($env.XDG_DATA_HOME)/go"
-    _Z_DATA: $"($env.XDG_CACHE_HOME)/z"
-    SOLARGRAPH_CACHE: $"($env.XDG_CACHE_HOME)/solargraph"
-    WGETRC: $"($env.XDG_CONFIG_HOME)/wgetrc"
-    PSQL_HISTORY: $"($env.XDG_CACHE_HOME)/psql_history"
-    PSQLRC: $"($env.XDG_CONFIG_HOME)/pg/psqlrc"
-    PGPASSFILE: $"($env.XDG_CONFIG_HOME)/pg/pgpass"
-    PGSERVICEFILE: $"($env.XDG_CONFIG_HOME)/pg/pg_service.conf"
+    ACKRC: ($env.XDG_CONFIG_HOME | path join "ack" "ackrc")
+    ATOM_HOME: ($env.XDG_CONFIG_HOME | path join "atom")
+    AWS_SHARED_CREDENTIALS_FILE: ($env.XDG_CONFIG_HOME | path join "aws" "credentials")
+    AWS_CONFIG_FILE: ($env.XDG_CONFIG_HOME | path join "aws" "config")
+    BASH_COMPLETION_USER_FILE: ($env.XDG_CONFIG_HOME | path join "bash" "completion" "bash_completion")
+    HISTFILE: ($env.XDG_CACHE_HOME | path join "bash" "history")
+    CARGO_HOME: ($env.XDG_DATA_HOME | path join "cargo")
+    CCACHE_DIR: ($env.XDG_CACHE_HOME | path join "cache")
+    CRAWL_DIR: ($env.XDG_DATA_HOME | path join "crawl")
+    CUDA_CACHE_PATH: ($env.XDG_CACHE_HOME | path join "nv")
+    __GL_SHADER_DISK_CACHE_PATH: ($env.XDG_CACHE_HOME | path join "nv")
+    CQL_HISTORY: ($env.XDG_CACHE_HOME | path join "cassandra" "cqlsh_history")
+    DOCKER_CONFIG: ($env.XDG_CONFIG_HOME | path join "docker")
+    ELECTRUMDIR: ($env.XDG_DATA_HOME | path join "electrum")
+    ELINKS_CONFDIR: ($env.XDG_CONFIG_HOME | path join "elinks")
+    GEM_HOME: ($env.XDG_DATA_HOME | path join "gem")
+    GEM_SPEC_CACHE: ($env.XDG_CACHE_HOME | path join "gem")
+    GNUPGHOME: ($env.XDG_DATA_HOME | path join "gnupg")
+    GTK_RC_FILES: ($env.XDG_CONFIG_HOME | path join "gtk" "1.0" "gtkrc")
+    GTK2_RC_FILES: ($env.XDG_CONFIG_HOME | path join "gtk" "2.0" "gtkrc")
+    GRADLE_USER_HOME: ($env.XDG_DATA_HOME | path join "gradle")
+    LEDGER_FILE: ($env.XDG_DATA_HOME | path join "hledger" "journal")
+    IMAPFILTER_HOME: ($env.XDG_CONFIG_HOME | path join "imapfilter")
+    K9SCONFIG: ($env.XDG_CONFIG_HOME | path join "k9s")
+    KDEHOME: ($env.XDG_CONFIG_HOME | path join "kde")
+    LEIN_HOME: ($env.XDG_DATA_HOME | path join "lein")
+    LESSHISTFILE: ($env.XDG_CACHE_HOME | path join "less" "history")
+    LESSKEY: ($env.XDG_CONFIG_HOME | path join "less" "lesskey")
+    XCOMPOSEFILE: ($env.XDG_CONFIG_HOME | path join "X11" "xcompose")
+    XCOMPOSECACHE: ($env.XDG_CACHE_HOME | path join "11" "xcompose")
+    MATHEMATICA_USERBASE: ($env.XDG_CONFIG_HOME | path join "mathematica")
+    MAXIMA_USERDIR: ($env.XDG_CONFIG_HOME | path join "maxima")
+    MEDNAFEN_HOME: ($env.XDG_CONFIG_HOME | path join "mednafen")
+    MOST_INITFILE: ($env.XDG_CONFIG_HOME | path join "most" "mostrc")
+    MPLAYER_HOME: ($env.XDG_CONFIG_HOME | path join "mplayer")
+    MYCLI_HISTFILE: ($env.XDG_DATA_HOME | path join "mycli" "history")
+    MYSQL_HISTFILE: ($env.XDG_DATA_HOME | path join "sql_history")
+    TERMINFO: ($env.XDG_DATA_HOME | path join "terminfo")
+    TERMINFO_DIRS: ($env.XDG_DATA_HOME | path join "terminfo" "usr" "share" "terminfo")
+    NODE_REPL_HISTORY: ($env.XDG_CACHE_HOME | path join "node_repl_history")
+    npm_config_cache: ($env.XDG_CACHE_HOME | path join "npm")
+    NPM_CONFIG_USERCONFIG: ($env.XDG_CONFIG_HOME | path join "npm" "npmrc")
+    NVM_DIR: ($env.XDG_DATA_HOME | path join "nvm")
+    PARALLEL_HOME: ($env.XDG_CONFIG_HOME | path join "parallel")
+    PASSWORD_STORE_DIR: ($env.XDG_DATA_HOME | path join "pass")
+    PEX_ROOT: ($env.XDG_CACHE_HOME | path join "pex")
+    PYTHON_EGG_CACHE: ($env.XDG_CACHE_HOME | path join "python-eggs")
+    PYLINTHOME: ($env.XDG_CACHE_HOME| path join "pylint")
+    INPUTRC: ($env.XDG_CONFIG_HOME | path join "readline" "inputrc")
+    REDISCLI_RCFILE: ($env.XDG_CONFIG_HOME | path join "redis" "redisclirc")
+    REDISCLI_HISTFILE: ($env.XDG_DATA_HOME | path join "redis" "rediscli_history")
+    RUSTUP_HOME: ($env.XDG_DATA_HOME | path join "rustup")
+    SCREENRC: ($env.XDG_CONFIG_HOME | path join "screen" "screenrc")
+    STACK_ROOT: ($env.XDG_DATA_HOME | path join "stack")
+    TASKDATA: ($env.XDG_DATA_HOME | path join "task")
+    TASKRC: ($env.XDG_CONFIG_HOME | path join "task" "taskrc")
+    UNCRUSTIFY_CONFIG: ($env.XDG_CONFIG_HOME | path join "uncrustify" "uncrustify.cfg")
+    UNISON: ($env.XDG_DATA_HOME | path join "unison")
+    WEECHAT_HOME: ($env.XDG_CONFIG_HOME | path join "weechat")
+    CABAL_CONFIG: ($env.XDG_CONFIG_HOME | path join "cabal" "config")
+    CABAL_DIR: ($env.XDG_CACHE_HOME | path join "cabal")
+    OPAMROOT: ($env.XDG_DATA_HOME | path join "opam")
+    GOPATH: ($env.XDG_DATA_HOME | path join "go")
+    _Z_DATA: ($env.XDG_CACHE_HOME | path join "z")
+    SOLARGRAPH_CACHE: ($env.XDG_CACHE_HOME | path join "solargraph")
+    WGETRC: ($env.XDG_CONFIG_HOME | path join "wgetrc")
+    PSQL_HISTORY: ($env.XDG_CACHE_HOME| path join "psql_history")
+    PSQLRC: ($env.XDG_CONFIG_HOME | path join "pg" "psqlrc")
+    PGPASSFILE: ($env.XDG_CONFIG_HOME | path join "pg" "pgpass")
+    PGSERVICEFILE: ($env.XDG_CONFIG_HOME | path join "pg" "pg_service.conf")
   }
 }
