@@ -15,7 +15,7 @@ export-env {
   load-env {
 
     # Make sure that tea itself is in the PATH
-    PATH: ($env.PATH | prepend ($env.HOME | path join ".tea" "tea.xyz" "v*" "bin"))
+    PATH: ($env.PATH | prepend ($env.HOME | path join ".tea" "tea.xyz" "v0" "bin"))
 
     # Run hook when the PWD changes
     config: ($env.config? | default {} | upsert hooks.env_change.PWD {[{
