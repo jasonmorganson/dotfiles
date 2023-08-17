@@ -16,3 +16,4 @@ $env.NU_LIB_DIRS = [
     ($nu.default-config-dir | path join "scripts")
 ]
 
+$env.PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/bin')
