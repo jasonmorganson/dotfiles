@@ -23,6 +23,9 @@ export-env {
     }]})
   }
 
+  # Set tea directory to home for first hook run to keep tea from traversing for its directory which is very slow
+  $env.TEA_DIR = $env.HOME
+
   # Run the hook once on load to populate initial env as nu is loading other init scripts
   tea_hook
 }
