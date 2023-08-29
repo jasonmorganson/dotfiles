@@ -1,15 +1,10 @@
 FROM mcr.microsoft.com/devcontainers/universal:linux
 
-ARG USER=codespace
-
-ENV USER=$USER \
-    HOME=/home/$USER
-
-USER $USER
+USER codespace
 
 WORKDIR /workspaces/.codespaces/.persistedshare/dotfiles
 
-COPY --chown=$USER . .
+COPY . .
 
 RUN ./install.sh
 
