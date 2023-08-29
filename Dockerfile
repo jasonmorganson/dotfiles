@@ -10,8 +10,7 @@ USER $USER
 WORKDIR /workspaces/.codespaces/.persistedshare/dotfiles
 
 COPY --chown=$USER . .
-COPY entrypoint.sh /
 
 RUN ./install.sh
 
-ENTRYPOINT [ "/entrypoint.sh" ]
+ENTRYPOINT [ "/workspaces/.codespaces/.persistedshare/dotfiles/entrypoint.sh" ]
