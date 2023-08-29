@@ -7,7 +7,7 @@ ENV USER=$USER \
 
 USER $USER
 
-WORKDIR $HOME
+WORKDIR /workspaces/.codespaces/.persistedshare/dotfiles
 
 COPY --chown=$USER . .
 COPY entrypoint.sh /
