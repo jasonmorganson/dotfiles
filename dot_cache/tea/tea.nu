@@ -3,7 +3,7 @@ def "parse tea vars" [] {
 }
   
 def-env tea_hook [] {
-  tea --env --keep-going --silent
+  tea --chaste --env --keep-going --silent
     | parse tea vars
     | transpose --header-row
     | into record
