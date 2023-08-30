@@ -2,4 +2,3 @@
 
 source <(~/.tea/tea.xyz/v0/bin/tea --magic=bash --silent)
 
-eval "$(direnv hook bash)"
