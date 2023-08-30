@@ -1,4 +1,4 @@
-def-env tea_hook [] {
+def-env tea-hook [] {
   tea --chaste --env --keep-going --silent
     | lines
     | parse "{name}={value}"
@@ -16,7 +16,7 @@ export-env {
 
     # Run hook when the PWD changes
     config: ($env.config? | default {} | upsert hooks.env_change.PWD {[{
-      tea_hook
+      tea-hook
     }]})
   }
 
@@ -24,6 +24,6 @@ export-env {
   TEA_DIR = $env.HOME
 
   # Run the hook once on load to populate initial env as nu is loading other init scripts
-  tea_hook
+  tea-hook
 }
 
