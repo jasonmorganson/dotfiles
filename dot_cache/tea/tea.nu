@@ -15,9 +15,7 @@ export-env {
     PATH: ($env.PATH | append ($env.HOME | path join ".tea" ".local" "bin") | prepend ($env.HOME | path join ".tea" "tea.xyz" "v0" "bin"))
 
     # Run hook when the PWD changes
-    config: ($env.config? | default {} | upsert hooks.env_change.PWD {[{
-      tea-hook
-    }]})
+    config: ($env.config? | default {} | upsert hooks.env_change.PWD ($env.config?.hooks?.env_change?.PWD? | default [] | append { tea-hook }))
   }
 
   # Set tea directory to home for first hook run to keep tea from traversing for its directory which is very slow
