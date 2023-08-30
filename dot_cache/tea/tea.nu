@@ -4,7 +4,8 @@ def "parse tea vars" [] {
   
 def-env tea_hook [] {
   tea --chaste --env --keep-going --silent
-    | parse tea vars
+    | lines
+    | parse "{name}={value}"
     | transpose --header-row
     | into record
     | load-env
