@@ -1,7 +1,3 @@
-def "parse tea vars" [] {
-  $in | lines | parse "{name}={value}"
-}
-  
 def-env tea_hook [] {
   tea --chaste --env --keep-going --silent
     | lines
