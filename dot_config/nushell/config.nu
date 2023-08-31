@@ -4,4 +4,6 @@ source ~/.config/nushell/aliases.nu
 $env.config = ($env.config | upsert edit_mode vi)
 
 use tea.nu
+use xdg.nu
+use ls_colors.nu
 overlay use starship.nu
