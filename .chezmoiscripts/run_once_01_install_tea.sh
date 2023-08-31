@@ -2,4 +2,4 @@
 set -eu
 
 # Install tea
-curl tea.xyz | SHELL=no sh -s -- --yes
+curl https://tea.xyz | TEA_YES=1 SHELL=bash sh
