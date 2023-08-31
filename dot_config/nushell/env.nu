@@ -1,6 +1,4 @@
 source ~/.cache/nushell/default_env.nu
-source ~/.cache/nushell/xdg.nu
-source ~/.cache/nushell/ls_colors.nu
 
 $env.GIT_AUTHOR_NAME = "Jason Morganson"
 $env.GIT_AUTHOR_EMAIL = "128727+jasonmorganson@users.noreply.github.com"
