@@ -1,5 +1,5 @@
 def-env tea-hook [] {
-  tea --chaste --env --keep-going --silent
+  ~/.tea/tea.xyz/v0/bin/tea --chaste --env --keep-going --silent
     | lines
     | parse "{name}={value}"
     | transpose --header-row
