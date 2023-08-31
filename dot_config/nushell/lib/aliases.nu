@@ -1,52 +1,52 @@
-alias l = `ls`
-alias ls = exa
-alias la = ls -a
-alias ll = exa --long --header --git
+export alias l = `ls`
+export alias ls = exa
+export alias la = ls -a
+export alias ll = exa --long --header --git
 
-alias ag = rg
+export alias ag = rg
 
-alias g = git
-alias a = git add -p
-alias b = git branch
-alias c = git commit -m
-alias s = git status
-alias m = git merge
-alias p = git push
-alias u = git pull
-alias r = git reset
+export alias g = git
+export alias a = git add -p
+export alias b = git branch
+export alias c = git commit -m
+export alias s = git status
+export alias m = git merge
+export alias p = git push
+export alias u = git pull
+export alias r = git reset
 
-alias cl = git clone
-alias co = git checkout
-alias pf = git push --force-with-lease
-alias gb = git branch
-alias gf = git fetch
-alias gl = git log
+export alias cl = git clone
+export alias co = git checkout
+export alias pf = git push --force-with-lease
+export alias gb = git branch
+export alias gf = git fetch
+export alias gl = git log
 
-alias cob = git checkout -b
-alias gcp = git cherry-pick
-alias gbd = git branch -d
-alias gbD = git branch -D
+export alias cob = git checkout -b
+export alias gcp = git cherry-pick
+export alias gbd = git branch -d
+export alias gbD = git branch -D
 
-alias tig = gitui
+export alias tig = gitui
 
-alias diff = git diff
-alias reset = git reset
-alias revert = git revert
-alias rebase = git rebase
-alias stash = git stash
-alias wip = git commit -am "WIP"
-alias fixup = git commit --fixup
-alias unpushed = git log --branches --not --remotes --no-walk --decorate --oneline
+export alias diff = git diff
+export alias reset = git reset
+export alias revert = git revert
+export alias rebase = git rebase
+export alias stash = git stash
+export alias wip = git commit -am "WIP"
+export alias fixup = git commit --fixup
+export alias unpushed = git log --branches --not --remotes --no-walk --decorate --oneline
 
-alias vi = hx
-alias vim = vi
-alias nvim = vi
+export alias vi = hx
+export alias vim = vi
+export alias nvim = vi
 
-alias py = python
-alias pip = python -m pip
+export alias py = python
+export alias pip = python -m pip
 
-alias k = kubectl
-alias kns = kubens
-alias kctx = kubectx
+export alias k = kubectl
+export alias kns = kubens
+export alias kctx = kubectx
 
-alias dotfiles = chezmoi
+export alias dotfiles = chezmoi
