@@ -1,8 +1,0 @@
-[settings]
-experimental = true
-
-trusted_config_paths = [
-    "/hom",
-    "/Users",
-    "/workspaces"
-]
