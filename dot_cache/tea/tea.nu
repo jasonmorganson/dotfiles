@@ -14,6 +14,9 @@ export-env {
               | load-env
           }
         }
+        command_not_found: {
+          |cmd_name| ~/.tea/tea.xyz/v0/bin/tea $cmd_name
+        }
       }
     )
   }
