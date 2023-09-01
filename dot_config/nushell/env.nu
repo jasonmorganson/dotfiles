@@ -1,5 +1,3 @@
 source ~/.cache/nushell/default_env.nu
 
 $env.NU_LIB_DIRS = ($env.NU_LIB_DIRS | default [] | append ($env.HOME | path join ".config" "nushell" "lib"))
-
-$env.PATH = ($env.PATH | split row (char esep) | prepend '/usr/local/bin')
