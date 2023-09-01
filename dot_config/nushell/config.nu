@@ -3,5 +3,5 @@ source ~/.config/nushell/aliases.nu
 
 $env.config = ($env.config | upsert edit_mode vi)
 
-overlay use tea.nu
+use tea.nu
 overlay use starship.nu
