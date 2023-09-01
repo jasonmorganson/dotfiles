@@ -9,6 +9,16 @@ def-env tea-hook [] {
 
 export-env {
   load-env {
-    config: ($env.config? | default {} | upsert hooks.env_change.PWD ($env.config?.hooks?.env_change?.PWD? | default [] | append { tea-hook }))
+    config: (
+      $env.config?
+      | default {}
+      | upsert hooks {
+        env_change: {
+          PWD: {
+            tea-hook
+          }
+        }
+      }
+    )
   }
 }
