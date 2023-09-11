@@ -1,7 +1,9 @@
-export alias l = `ls`
-export alias ls = exa
+export alias l = ls
+export alias ls = lsd
 export alias la = ls -a
-export alias ll = exa --long --header --git
+export alias ll = ls -l
+export alias lla = ls -la
+export alias lt = ls --tree
 
 export alias ag = rg
 
