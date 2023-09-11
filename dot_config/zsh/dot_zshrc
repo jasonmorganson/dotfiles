@@ -1,2 +1,1 @@
-source <(~/.tea/tea.xyz/v0/bin/tea --magic=zsh --silent)
-
+source <(tea --shellcode)  #docs.tea.xyz/shellcode
