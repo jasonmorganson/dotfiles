@@ -1,7 +1,6 @@
 dependencies:
   chezmoi.io: ~2.34
   cli.github.com: ^2.26
-  crates.io/exa: ^0.10
   crates.io/git-delta: ^0.15
   crates.io/gitui: "*"
   crates.io/ripgrep: "*"
@@ -9,6 +8,7 @@ dependencies:
   crates.io/zellij: ~0.38
   git-scm.org: ^2.40
   github.com/junegunn/fzf: "*"
+  github.com/peltoche/lsd: ^1
   helix-editor.com: ~23
   nushell.sh: ~0.84
   starship.rs: ~1.16
