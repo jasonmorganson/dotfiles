@@ -1,4 +1,4 @@
-if $env.CODESPACES == "true" {
+if $env.CODESPACES? == "true" {
     let $TEA_FILE = ".tea.yaml"
     let $PWD_TEA_PATH = ($env.PWD | path join $TEA_FILE)
     let $HOME_TEA_PATH = ($env.HOME | path join $TEA_FILE)
