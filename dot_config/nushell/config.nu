@@ -1,4 +1,4 @@
-source ~/.cache/nushell/default_config.nu
+source ~/.local/share/nushell/default_config.nu
 
 $env.config = ($env.config | upsert edit_mode vi)
 
