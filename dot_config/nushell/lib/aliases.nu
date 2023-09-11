@@ -1,9 +1,9 @@
-export alias l = ls
+export alias l = lsd
 export alias ls = lsd
-export alias la = ls -a
-export alias ll = ls -l
-export alias lla = ls -la
-export alias lt = ls --tree
+export alias la = lsd -a
+export alias ll = lsd -l
+export alias lla = lsd -la
+export alias lt = lsd --tree
 
 export alias ag = rg
 
