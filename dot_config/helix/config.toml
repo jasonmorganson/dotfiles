@@ -14,8 +14,8 @@ center = ["spinner", "diagnostics"]
 right = ["file-type", "file-encoding", "position-percentage", "position", "total-line-numbers"]
 
 [editor.cursor-shape]
-insert = "bar"
-normal = "block"
+insert = "block"
+normal = "underline"
 select = "underline"
 
 [editor.soft-wrap]
