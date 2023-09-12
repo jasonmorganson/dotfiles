@@ -4,7 +4,7 @@ export def-env dev [
   if $toggle == 'off' {
     # _tea_deactivate
   } else {
-    tea env
+    bash -c $"tea --internal.activate ($env.PWD) && env"
     | lines
     | parse "{name}={value}"
     | where not name in ["FILE_PWD", "CURRENT_FILE"]
