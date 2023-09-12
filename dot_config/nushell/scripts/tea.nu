@@ -7,6 +7,7 @@ export def-env dev [
     tea env
     | lines
     | parse "{name}={value}"
+    | where not name in ["FILE_PWD", "CURRENT_FILE"]
     | transpose --header-row
     | into record
     | load-env
