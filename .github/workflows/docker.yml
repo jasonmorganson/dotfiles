@@ -25,4 +25,4 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
           push: ${{ github.ref_name == 'main' }}
-          tags: ${{ github.actor }}/dotfiles
+          tags: ${{ github.repository_owner }}/dotfiles
