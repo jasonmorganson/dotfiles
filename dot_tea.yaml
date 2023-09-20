@@ -10,5 +10,5 @@ dependencies:
   github.com/junegunn/fzf: "*"
   github.com/peltoche/lsd: ^1
   helix-editor.com: ~23
-  nushell.sh: ~0.84
+  nushell.sh: ~0.85
   starship.rs: ~1.16
