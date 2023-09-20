@@ -1,6 +1,11 @@
 source ~/.local/share/nushell/default_config.nu
 
-$env.config = ($env.config | upsert edit_mode vi)
+$env.config = (
+  $env.config
+  | upsert edit_mode vi
+  | upsert history.file_format "sqlite"
+  | upsert history.isolation true
+)
 
 use tea.nu
 use xdg.nu
