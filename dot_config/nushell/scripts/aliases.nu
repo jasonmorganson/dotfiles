@@ -7,6 +7,8 @@ export alias lt = lsd --tree
 
 export alias ag = rg
 
+export alias cp = ucp
+
 export alias g = git
 export alias a = git add -p
 export alias b = git branch
