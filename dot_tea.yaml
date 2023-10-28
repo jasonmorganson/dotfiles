@@ -9,6 +9,6 @@ dependencies:
   git-scm.org: ^2.40
   github.com/junegunn/fzf: "*"
   github.com/peltoche/lsd: ^1
-  helix-editor.com: ~23
+  helix-editor.com: ~23.10
   nushell.sh: ~0.86
   starship.rs: ~1.16
