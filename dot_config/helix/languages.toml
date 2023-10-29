@@ -45,7 +45,5 @@ formatter = { command = 'shfmt', args = ["-i", "4"] }
 
 [[language]]
 name = "python"
-roots = ["pyproject.toml"]
+language-servers = [ "pyright" ]
 formatter = { command = "black", args = ["--quiet", "-"] }
-language-server = { command = "pyright-langserver", args = ["--stdio"] }
-config = {} # <- this is the important line
