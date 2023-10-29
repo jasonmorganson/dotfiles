@@ -46,7 +46,7 @@ formatter = { command = 'shfmt', args = ["-i", "4"] }
 [[language]]
 name = "python"
 language-servers = [ "pyright", "ruff" ]
-formatter = { command = "black", args = ["--quiet", "-"] }
+formatter = { command = "ruff", args = ["format", "--quiet", "-"] }
 
 [language-server.ruff]
 command = "ruff-lsp"
