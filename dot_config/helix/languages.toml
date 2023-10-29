@@ -8,8 +8,15 @@ formatter = { command = 'prettier', args = ["--parser", "css"] }
 
 [[language]]
 name = "yaml"
-config = { yaml = { completion = true, keyOrdering = false, schemaStore = { enable = true }, editor = { formatOnType = true }}}
 formatter = { command = 'prettier', args = ["--parser", "yaml"] }
+
+[language-server.yaml-language-server.config.yaml]
+format = { enable = true }
+validation = true
+completion = true
+keyOrdering = false
+schemaStore = { enable = true }
+editor = { formatOnType = true }
 
 [[language]]
 name = "toml"
