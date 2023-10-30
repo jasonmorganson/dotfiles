@@ -2,9 +2,9 @@ export def-env dev [
   toggle?: string # Toogle dev env
 ] {
   if $toggle == 'off' {
-    # _tea_deactivate
+    # _pkgx_deactivate
   } else {
-    bash -c $"source <(tea --internal.activate ($env.PWD)) && env"
+    bash -c $"source <(pkgx --internal.activate ($env.PWD)) && env"
     | lines
     | parse "{name}={value}"
     | where not name in ["FILE_PWD", "CURRENT_FILE"]

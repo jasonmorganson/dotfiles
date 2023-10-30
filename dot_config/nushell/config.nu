@@ -7,7 +7,7 @@ $env.config = (
   | upsert history.isolation true
 )
 
-overlay use tea.nu
+overlay use pkgx.nu
 use xdg.nu
 use ls_colors.nu
 overlay use git.nu
