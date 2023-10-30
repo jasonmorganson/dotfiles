@@ -4,7 +4,7 @@ export def-env dev [
   if $toggle == 'off' {
     # _pkgx_deactivate
   } else {
-    bash -c $"source <(pkgx --internal.activate ($env.PWD)) && env"
+    pkgx env
     | lines
     | parse "{name}={value}"
     | where not name in ["FILE_PWD", "CURRENT_FILE"]
