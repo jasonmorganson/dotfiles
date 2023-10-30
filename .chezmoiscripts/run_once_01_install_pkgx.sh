@@ -2,4 +2,4 @@
 set -eu
 
 # Install tea
-curl -fsS https://tea.xyz | sh
+curl -fsS https://pkgx.sh | sh
