@@ -32,6 +32,10 @@ formatter = { command = 'dprint fmt' }
 name = "json"
 formatter = { command = 'prettier', args = ["--parser", "json"] }
 
+[language-server.vscode-json-language-server.config]
+json = { validate = { enable = true }, format = { enable = true } }
+provideFormatter = true
+
 [[language]]
 name = "javascript"
 formatter = { command = 'prettier', args = ["--parser", "javascript"] }
