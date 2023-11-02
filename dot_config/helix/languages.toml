@@ -24,6 +24,9 @@ keyOrdering = false
 schemaStore = { enable = true }
 editor = { formatOnType = true }
 
+[language-server.yaml-language-server.config.yaml.schemas]
+"https://json.schemastore.org/github-workflow.json" = ".github/workflows/*.{yml,yaml}"
+
 [[language]]
 name = "toml"
 formatter = { command = 'dprint fmt' }
