@@ -6,6 +6,12 @@ formatter = { command = 'prettier', args = ["--parser", "html"] }
 name = "css"
 formatter = { command = 'prettier', args = ["--parser", "css"] }
 
+[language-server.vscode-css-language-server.config]
+css = { validate = { enable = true } }
+scss = { validate = { enable = true } }
+less = { validate = { enable = true } }
+provideFormatter = true
+
 [[language]]
 name = "yaml"
 formatter = { command = 'prettier', args = ["--parser", "yaml"] }
