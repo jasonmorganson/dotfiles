@@ -2,6 +2,7 @@
 set -eu
 
 # Install pkgx plugins
+pkgx install chezmoi.io~2.34
 pkgx install cli.github.com^2.26
 pkgx install crates.io/git-delta^0.15
 pkgx install crates.io/gitui@latest
