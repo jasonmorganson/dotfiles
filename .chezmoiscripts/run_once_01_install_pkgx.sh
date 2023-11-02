@@ -1,5 +1,5 @@
 #!/bin/sh
 set -eu
 
-# Install tea
+# Install pkgx
 curl -fsS https://pkgx.sh | sh

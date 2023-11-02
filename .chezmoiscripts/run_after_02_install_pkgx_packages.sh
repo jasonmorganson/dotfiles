@@ -1,5 +1,5 @@
 #!/bin/sh
 set -eu
 
-# Install tea plugins
+# Install pkgx plugins
 pkgx --update --sync --silent
