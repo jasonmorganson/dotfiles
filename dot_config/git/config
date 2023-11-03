@@ -48,3 +48,6 @@
 
 [includeIf "gitdir:/workspaces/"]
     path = codespace
+
+[include]
+    path = ~/.local/share/gitalias/gitalias.txt
