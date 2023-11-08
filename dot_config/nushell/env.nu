@@ -6,5 +6,6 @@ $env.PATH = (
   $env.PATH
   | split row (char esep)
   | prepend "/usr/local/bin"
+  | prepend "/opt/homebrew/bin"
   | prepend ($env.HOME | path join '.local' 'bin')
 )
