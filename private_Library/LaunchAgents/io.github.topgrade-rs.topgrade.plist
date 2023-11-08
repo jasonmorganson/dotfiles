@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>io.github.topgrade-rs.topgrade</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/opt/homebrew/bin/topgrade</string>
+    </array>
+
+    <key>StartInterval</key>
+    <integer>10800</integer> <!-- Number of seconds in 3 hours -->
+
+    <key>RunAtLoad</key>
+    <true/>
+
+    <key>StandardErrorPath</key>
+    <string>/tmp/io.github.topgrade-rs.topgrade/err</string>
+
+    <key>StandardOutPath</key>
+    <string>/tmp/io.github.topgrade-rs.topgrade/out</string>
+</dict>
+</plist>
