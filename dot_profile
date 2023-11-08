@@ -17,3 +17,7 @@ export XDG_VIDEOS_DIR="$HOME/Videos"
 
 # PATH
 export PATH="$HOME/.local/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin"
+
+# Homebrew
+export HOMEBREW_BUNDLE_FILE="~/Library/Mobile\ Documents/com~apple~CloudDocs/Homebrew/Brewfile"
+
