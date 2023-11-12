@@ -1,7 +1,7 @@
 .git
 .tea
+.pkgx
 .local
-.chezmoi
 .hyperfine.js
 bin
 docker-compose.yaml
@@ -12,6 +12,7 @@ entrypoint.sh
 README.md
 
 # Cache
+.cache
 .dccache
 .cs_cache
 .pnpm-state
@@ -31,7 +32,9 @@ README.md
 .config/zsh/.zcompdump*
 
 # SSH
-.ssh/known_hosts
+.ssh/id_rsa
+.ssh/id_rsa.pub
+.ssh/known_hosts*
 .ssh/environment-
 .ssh/codespaces.auto
 .ssh/codespaces.auto.pub
@@ -49,6 +52,7 @@ README.md
 .config/zsh/.zsh_sessions
 .zsh_sessions
 .config/nushell/history.txt
+.config/nushell/history.sqlite*
 
 # VIM
 .vim
@@ -100,7 +104,6 @@ Public
 Support
 
 # Extra files
-.config/chezmoi
 .config/coc
 .config/containers
 .config/docker
@@ -115,6 +118,7 @@ Support
 # Cache in config
 .config/todoist
 .config/tmux/plugins
+.config/chezmoi/chezmoistate.boltdb
 
 # Unmanaged
 .actrc
