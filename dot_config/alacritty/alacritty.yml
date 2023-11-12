@@ -1,3 +1,11 @@
 window:
   option_as_alt: Both
 
+import:
+  - ~/.local/share/alacritty/alacritty-theme/themes/catppuccin_latte.yaml
+
+font:
+  normal:
+    family: Hack
+
+live_config_reload: true
