@@ -34,6 +34,10 @@
     clean = git-lfs clean -- %f
     smudge = git-lfs smudge -- %f
 
+[user]
+	name = Jason Morganson
+	email = 128727+jasonmorganson@users.noreply.github.com
+
 [credential "https://github.com"]
 	helper =
 	helper = !gh auth git-credential
