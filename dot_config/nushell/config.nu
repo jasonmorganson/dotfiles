@@ -7,7 +7,9 @@ $env.config = (
   | upsert history.isolation true
 )
 
+
 use xdg.nu
+use theme.nu
 use ls_colors.nu
 overlay use git.nu
 overlay use aliases.nu
