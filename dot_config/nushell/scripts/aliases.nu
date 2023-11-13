@@ -40,6 +40,7 @@ export alias stash = git stash
 export alias wip = git commit -am "WIP"
 export alias fixup = git commit --fixup
 export alias unpushed = git log --branches --not --remotes --no-walk --decorate --oneline
+export def unclean [] { gfold -d json ~/Code | from json | where status != Clean }
 
 export alias vi = hx
 export alias vim = vi
