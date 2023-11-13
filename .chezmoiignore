@@ -60,6 +60,7 @@ README.md
 .plugged
 
 # Non XDG
+.aicommits
 .asdf
 .cargo
 .docker
