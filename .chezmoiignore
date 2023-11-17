@@ -104,6 +104,10 @@ Pictures
 Public
 Support
 
+# Exclude Library files that are managed
+!Library/LaunchAgents
+!Library/Application\ Support/nushell
+
 # Extra files
 .config/coc
 .config/containers
