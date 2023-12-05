@@ -18,7 +18,6 @@ export-env {
     CUDA_CACHE_PATH: ($env.XDG_CACHE_HOME | path join "nv")
     __GL_SHADER_DISK_CACHE_PATH: ($env.XDG_CACHE_HOME | path join "nv")
     CQL_HISTORY: ($env.XDG_CACHE_HOME | path join "cassandra" "cqlsh_history")
-    DOCKER_CONFIG: ($env.XDG_CONFIG_HOME | path join "docker")
     ELECTRUMDIR: ($env.XDG_DATA_HOME | path join "electrum")
     ELINKS_CONFDIR: ($env.XDG_CONFIG_HOME | path join "elinks")
     GEM_HOME: ($env.XDG_DATA_HOME | path join "gem")
