@@ -1,8 +1,0 @@
-window:
-  option_as_alt: Both
-
-font:
-  normal:
-    family: Hack
-
-live_config_reload: true
