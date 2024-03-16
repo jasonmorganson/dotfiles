@@ -13,6 +13,6 @@ command -v "git" >/dev/null 2>&1 || pkgx install git-scm.org^2.40
 pkgx install github.com/junegunn/fzf@latest
 pkgx install github.com/peltoche/lsd^1
 pkgx install helix-editor.com~23.10
-pkgx install nushell.sh~0.86
+pkgx install nushell.sh~0.91.0
 pkgx install starship.rs~1.16
 
