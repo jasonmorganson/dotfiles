@@ -35,8 +35,8 @@
     smudge = git-lfs smudge -- %f
 
 [user]
-	name = Jason Morganson
-	email = 128727+jasonmorganson@users.noreply.github.com
+	name = {{ get (output "gh" "api" "https://api.github.com/user" | fromJson) "name" }}
+	email = {{ get (output "gh" "api" "https://api.github.com/user/public_emails" | fromJson | first) "email" }}
 
 [credential "https://github.com"]
 	helper =
