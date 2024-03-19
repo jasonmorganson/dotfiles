@@ -1,39 +1,14 @@
 [include]
     path = color
 
+[includeIf "gitdir:/workspaces/"]
+    path = codespace
+
 [help]
-    autocorrect = 1
+    autocorrect = immediate
 
 [core]
     pager = delta --diff-so-fancy
-
-[interactive]
-    diffFilter = delta --diff-so-fancy --color-only
-
-[delta]
-    navigate = true
-
-[merge]
-    conflictstyle = diff3
-
-[diff]
-    colorMoved = default
-
-[pull]
-    rebase = true
-
-[push]
-    default = current
-
-[rebase]
-    autosquash = true
-    updateRefs = true
-
-[filter "lfs"]
-    process = git-lfs filter-process
-    required = true
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
 
 [user]
 	name = Jason Morganson
@@ -47,10 +22,51 @@
 	helper =
 	helper = !gh auth git-credential
 
-[includeIf "gitdir:/workspaces/"]
-    path = codespace
-[sequence]
-	editor = interactive-rebase-tool
-	
+[filter "lfs"]
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+
+[fetch]
+    prune = true
+
+[pull]
+    rebase = true
+
+[commit]
+    verbose = true
+    
 [absorb]
     maxStack=100
+
+[push]
+    default = current
+    autoSetupRemote = true
+
+[merge]
+    conflictstyle = zdiff3
+
+[rebase]
+    autostash = true
+    autosquash = true
+    updateRefs = true
+    missingCommitsCheck = error
+
+[rerere]
+    enabled = true
+
+[sequence]
+	editor = interactive-rebase-tool
+
+[interactive]
+    diffFilter = delta --diff-so-fancy --color-only
+
+[delta]
+    navigate = true
+
+[diff]
+    algorithm = histogram
+    colorMoved = default
+    colorMovedWS = allow-indentation-change
+   
