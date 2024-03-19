@@ -1,7 +1,3 @@
-[".local/share/alacritty/alacritty-theme"]
-type = "git-repo"
-url = "https://github.com/alacritty/alacritty-theme"
-
 [".local/share/nushell/default_env.nu"]
 type = "file"
 url = "https://raw.githubusercontent.com/nushell/nushell/0.91.0/crates/nu-utils/src/sample_config/default_env.nu"
