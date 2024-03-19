@@ -27,6 +27,7 @@
 
 [rebase]
     autosquash = true
+    updateRefs = true
 
 [filter "lfs"]
     process = git-lfs filter-process
@@ -50,3 +51,6 @@
     path = codespace
 [sequence]
 	editor = interactive-rebase-tool
+	
+[absorb]
+    maxStack=100
