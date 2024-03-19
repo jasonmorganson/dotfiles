@@ -28,9 +28,6 @@ export alias gf = git fetch
 export alias gl = git log
 
 export alias cob = git checkout -b
-export alias gcp = git cherry-pick
-export alias gbd = git branch -d
-export alias gbD = git branch -D
 
 export alias tig = gitui
 
