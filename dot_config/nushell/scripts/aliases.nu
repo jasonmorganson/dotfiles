@@ -1,5 +1,5 @@
-export alias l = ls
-export alias ls = ls
+export alias l = lsd
+export alias ls = lsd
 export alias la = ls -a
 export alias ll = ls -l
 export alias lla = ls -la
