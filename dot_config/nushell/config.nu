@@ -1,4 +1,4 @@
-source ~/.local/share/nushell/default_config.nu
+source ./default_config.nu
 
 $env.config = (
   $env.config
@@ -17,4 +17,4 @@ use theme.nu
 overlay use git.nu
 overlay use aliases.nu
 
-source ~/.config/nushell/scripts/prompt.nu
+source ./scripts/prompt.nu
