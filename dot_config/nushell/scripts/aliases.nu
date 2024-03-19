@@ -19,6 +19,7 @@ export alias p = git push
 export alias u = git pull
 export alias r = git reset
 
+export alias gg = git
 export alias cl = git clone
 export alias co = git checkout
 export alias pf = git push --force-with-lease
