@@ -2,14 +2,14 @@
 export LANG=en_US.UTF-8
 export LANGUAGE=en_US
 
+# PATH
+export PATH="$HOME/.local/bin:$HOME/.orbstack/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin"
+
 # XDG
 eval "$(antidot init)"
 
 # LS_COLORS
 export LS_COLORS="$(vivid --color-mode 8-bit generate one-dark)"
-
-# PATH
-export PATH="$HOME/.local/bin:$HOME/.orbstack/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin"
 
 # Homebrew
 export HOMEBREW_BUNDLE_FILE="~/Library/Mobile Documents/com~apple~CloudDocs/Homebrew/Brewfile"
