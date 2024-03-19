@@ -16,5 +16,7 @@ $env.config = (
 use theme.nu
 overlay use git.nu
 overlay use aliases.nu
+overlay use nu_scripts/aliases/git/git-aliases.nu
+overlay use nu_scripts/aliases/chezmoi/chezmoi-aliases.nu
 
 source ~/.config/nushell/scripts/prompt.nu
