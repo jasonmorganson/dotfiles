@@ -1,4 +1,4 @@
-source ./default_env.nu
+source ~/.config/nushell/default_env.nu
 
 bash -c $"source ($env.HOME)/.profile && env"
     | lines
