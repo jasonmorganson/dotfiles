@@ -6,6 +6,6 @@ url = "https://raw.githubusercontent.com/nushell/nushell/0.91.0/crates/nu-utils/
 type = "file"
 url = "https://raw.githubusercontent.com/nushell/nushell/0.91.0/crates/nu-utils/src/sample_config/default_config.nu"
 
-[".local/share/gitalias/gitalias.txt"]
+[".config/git/alias"]
 type = "file"
 url = "https://raw.githubusercontent.com/GitAlias/gitalias/main/gitalias.txt"
