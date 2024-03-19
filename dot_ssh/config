@@ -6,13 +6,6 @@ Host *
     AddKeysToAgent yes
     SetEnv TERM=xterm-256color
 
-Host jason-testing-prod-1
-    HostName jason-testing-prod-1
-    User ubuntu
-    IdentityFile ./LightsailDefaultKey-us-east-1.pem 
-    RequestTTY force
-    RemoteCommand tmux attach
-
 Host bucephalus-platform-dev-2
     HostName bucephalus-platform-dev-2
     User ubuntu
@@ -27,8 +20,3 @@ Host bucephalus-platform-prod
     RequestTTY force
     RemoteCommand tmux attach
 
-Host imapsync
-    HostName imapsync
-    User jasonmorganson
-    RequestTTY force
-    RemoteCommand zellij attach --create
