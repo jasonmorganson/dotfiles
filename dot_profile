@@ -5,6 +5,9 @@ export LANGUAGE=en_US
 # XDG
 eval "$(antidot init)"
 
+# LS_COLORS
+export LS_COLORS="$(vivid --color-mode 8-bit generate one-dark)"
+
 # PATH
 export PATH="$HOME/.local/bin:$HOME/.orbstack/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin"
 
