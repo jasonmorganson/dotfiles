@@ -1,6 +1,3 @@
-# https://www.nushell.sh/book/aliases.html#piping-in-aliases
-def lsg [] { ls | sort-by type name -i | grid -c | str trim }
-
 export alias l = ls
 export alias ls = ls
 export alias la = ls -a
