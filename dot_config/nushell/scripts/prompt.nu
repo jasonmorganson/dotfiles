@@ -1,4 +1,4 @@
-source ~/.local/share/nushell/default_env.nu
+source ../default_env.nu
 
 export-env { load-env {
     PROMPT_COMMAND: {|| }
