@@ -1,11 +1,11 @@
-FROM mcr.microsoft.com/devcontainers/universal:linux
+FROM mcr.microsoft.com/devcontainers/base:ubuntu
 
-USER codespace
+USER vscode
 
-WORKDIR /workspaces/.codespaces/.persistedshare/dotfiles
+WORKDIR /home/vscode
 
 COPY . .
 
 RUN ./install.sh
 
-ENTRYPOINT [ "/workspaces/.codespaces/.persistedshare/dotfiles/entrypoint.sh" ]
+ENTRYPOINT [ "/home/vscode/entrypoint.sh" ]

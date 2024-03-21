@@ -1,4 +1,4 @@
 {
   "name": "dotfiles",
-  "image": "mcr.microsoft.com/devcontainers/universal:linux"
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
 }
