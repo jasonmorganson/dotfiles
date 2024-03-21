@@ -1,6 +1,8 @@
 #!/bin/sh
 set -eu
 
+PATH=~/.local/bin:$PATH
+
 # Install pkgx plugins
 command -v "chezmoi" >/dev/null 2>&1 || pkgx install chezmoi.io~2.34
 command -v "gh" >/dev/null 2>&1 || pkgx install cli.github.com^2.26
