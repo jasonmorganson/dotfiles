@@ -18,18 +18,10 @@ services:
     tty: true
     stdin_open: true
     network_mode: host
-    user: "1000"
     environment:
-      - USER=${GITHUB_USER:-$USER}
-      - HOME=/home/${GITHUB_USER:-$USER}
-      - NAME=${GIT_COMMITTER_NAME:-$NAME}
-      - EMAIL=${GIT_COMMITTER_EMAIL:-$EMAIL}
-      - SHELL=/usr/local/bin/nu
       - DOCKER_HOST=localhost:2375
     volumes:
-      - $PWD:$PWD
       - $HOME/.ssh:/home/vscode/.ssh
       - $HOME/.config/gh:/home/vscode/.config/gh
       - $HOME/.config/gcloud:/home/vscode/.config/gcloud
       - $HOME/.config/git/config:/home/vscode/.config/git/config
-    working_dir: $PWD
