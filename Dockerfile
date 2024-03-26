@@ -8,4 +8,3 @@ COPY . .
 
 RUN ./install.sh
 
-ENTRYPOINT [ "/home/vscode/entrypoint.sh" ]
