@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ "$PKGX_UNINSTALL" != 1 ]; then
+  exec pkgx +crates.io/ripgrep -- rg "$@"
+else
+  cd "$(dirname "$0")"
+  rm rg && echo "uninstalled: crates.io/ripgrep" >&2
+fi
