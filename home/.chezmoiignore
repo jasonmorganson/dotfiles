@@ -1,7 +1,6 @@
 .git
 .tea
 .pkgx
-.local
 .hyperfine.js
 bin
 docker-compose.yaml

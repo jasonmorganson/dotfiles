@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ "$PKGX_UNINSTALL" != 1 ]; then
+  exec pkgx +chezmoi.io~2.34 -- chezmoi "$@"
+else
+  cd "$(dirname "$0")"
+  rm chezmoi && echo "uninstalled: chezmoi.io~2.34" >&2
+fi
