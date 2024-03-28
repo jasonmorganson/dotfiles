@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ "$PKGX_UNINSTALL" != 1 ]; then
+  exec pkgx +github.com/peltoche/lsd^1 -- lsd "$@"
+else
+  cd "$(dirname "$0")"
+  rm lsd && echo "uninstalled: github.com/peltoche/lsd^1" >&2
+fi
