@@ -1,22 +1,9 @@
 Include ~/.orbstack/ssh/config
+Include bucephalus
 
 Host *
     IgnoreUnknown UseKeychain,AddKeysToAgent
     UseKeychain yes
     AddKeysToAgent yes
     SetEnv TERM=xterm-256color
-
-Host bucephalus-platform-dev-2
-    HostName bucephalus-platform-dev-2
-    User ubuntu
-    IdentityFile ./LightsailDefaultKey-us-east-1.pem 
-    RequestTTY force
-    RemoteCommand tmux attach
-
-Host bucephalus-platform-prod
-    HostName bucephalus-platform-prod
-    User ubuntu
-    IdentityFile ./LightsailDefaultKey-us-east-1.pem 
-    RequestTTY force
-    RemoteCommand tmux attach
 
