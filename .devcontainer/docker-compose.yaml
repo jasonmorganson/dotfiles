@@ -14,11 +14,11 @@ services:
     depends_on:
       - socat
     build:
-      context: .
+      context: ..
     tty: true
     stdin_open: true
     network_mode: host
     environment:
       - DOCKER_HOST=localhost:2375
     volumes:
-      - .:/workspace:cached
+      - ..:/workspace:cached
