@@ -12,8 +12,6 @@
     pager = delta --diff-so-fancy
 
 [user]
-	name = Jason Morganson
-	email = 128727+jasonmorganson@users.noreply.github.com
 
 [credential "https://github.com"]
 	helper =
