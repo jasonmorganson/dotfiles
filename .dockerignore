@@ -1,6 +1,5 @@
 .git
 .github
-.vscode
 .devcontainer
 .dockerignore
 .chezmoiversion
