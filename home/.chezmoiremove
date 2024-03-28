@@ -1,12 +1,4 @@
-.bash_profile
-.gitconfig
-.gvimrc
-.tmux-statusline-colors.conf
-.tmux.conf
-.zcompdump*
-.zlogin
+.bash_logout
 .zprofile
-.zsh-plugins.sh
-.zsh_history
 .zshrc
-.config/zsh/.zprofile
+.oh-my-zsh
