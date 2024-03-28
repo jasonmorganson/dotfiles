@@ -11,7 +11,11 @@
 [core]
     pager = delta --diff-so-fancy
 
+[gpg]
+	format = ssh
+
 [user]
+    signingkey = ~/.ssh/id_rsa.pub
 
 [credential "https://github.com"]
 	helper =
@@ -35,6 +39,7 @@
 
 [commit]
     verbose = true
+    gpgsign = true
     
 [absorb]
     maxStack=100
