@@ -15,6 +15,7 @@ services:
       - socat
     build:
       context: ..
+      dockerfile: .devcontainer/Dockerfile
     tty: true
     stdin_open: true
     network_mode: host
