@@ -1,4 +1,6 @@
 {
   "name": "dotfiles",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "dockerComposeFile": "../docker-compose.yaml",
+  "service": "run",
+  "workspaceFolder": "/workspace"
 }
