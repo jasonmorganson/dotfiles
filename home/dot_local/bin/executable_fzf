@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ "$PKGX_UNINSTALL" != 1 ]; then
+  exec pkgx +github.com/junegunn/fzf -- fzf "$@"
+else
+  cd "$(dirname "$0")"
+  rm fzf && echo "uninstalled: github.com/junegunn/fzf" >&2
+fi
