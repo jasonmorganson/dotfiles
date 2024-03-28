@@ -2,7 +2,7 @@ FROM mcr.microsoft.com/devcontainers/base:ubuntu
 
 USER vscode
 
-WORKDIR /home/vscode
+WORKDIR /workspace
 
 COPY . .
 
