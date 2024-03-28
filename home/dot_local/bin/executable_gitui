@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ "$PKGX_UNINSTALL" != 1 ]; then
+  exec pkgx +crates.io/gitui -- gitui "$@"
+else
+  cd "$(dirname "$0")"
+  rm gitui && echo "uninstalled: crates.io/gitui" >&2
+fi
