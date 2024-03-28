@@ -22,7 +22,3 @@ services:
       - DOCKER_HOST=localhost:2375
     volumes:
       - .:/workspace:cached
-      - $HOME/.ssh:/home/vscode/.ssh
-      - $HOME/.config/gh:/home/vscode/.config/gh
-      - $HOME/.config/gcloud:/home/vscode/.config/gcloud
-      - $HOME/.config/git/config:/home/vscode/.config/git/config
