@@ -1,9 +1,10 @@
 .git
-.coder
 .github
+.vscode
 .devcontainer
 .dockerignore
-.gitpod.yml
+.chezmoiversion
+Dockerfile
 docker-compose.yaml
 README.md
 docs
