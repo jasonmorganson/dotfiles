@@ -8,6 +8,7 @@ export alias ag = rg
 
 export alias g = git
 export alias gg = git
+export alias gp = git push
 
 export alias tig = gitui
 
