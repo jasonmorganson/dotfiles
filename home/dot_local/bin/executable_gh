@@ -1,0 +1,7 @@
+#!/bin/sh
+if [ "$PKGX_UNINSTALL" != 1 ]; then
+  exec pkgx +cli.github.com^2.26 -- gh "$@"
+else
+  cd "$(dirname "$0")"
+  rm gh && echo "uninstalled: cli.github.com^2.26" >&2
+fi
