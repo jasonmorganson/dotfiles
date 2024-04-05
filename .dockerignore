@@ -1,9 +1,0 @@
-.git
-.github
-.devcontainer
-.dockerignore
-.chezmoiversion
-Dockerfile
-docker-compose.yaml
-README.md
-docs
