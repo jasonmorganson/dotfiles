@@ -1,0 +1,7 @@
+export HISTFILE="${XDG_CACHE_HOME}/bash/history"
+export LESSHISTFILE="${XDG_CACHE_HOME}/less/history"
+export LESSKEY="${XDG_CONFIG_HOME}/less/lesskey"
+export PGPASSFILE="${XDG_CONFIG_HOME}/pg/pgpass"
+export REDISCLI_HISTFILE="${XDG_DATA_HOME}/redis/rediscli_history"
+export TERMINFO="${XDG_DATA_HOME}/terminfo"
+export TERMINFO_DIRS="${XDG_DATA_HOME}/terminfo:/usr/share/terminfo"
