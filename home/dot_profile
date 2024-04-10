@@ -5,7 +5,7 @@ export PATH="$HOME/.local/bin:$HOME/.orbstack/bin:/opt/homebrew/bin:/usr/local/b
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
-command -v "antidot" >/dev/null 2>&1 && eval "$(antidot init)"
+source $XDG_CACHE_HOME/xdg.sh
 
 # LS_COLORS
 export LS_COLORS="$(vivid --color-mode 8-bit generate one-dark)"
