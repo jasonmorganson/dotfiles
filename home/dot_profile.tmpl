@@ -2,7 +2,7 @@
 source ~/.cache/xdg.sh
 
 # LS_COLORS
-export LS_COLORS="{{ output "pkgx" "vivid" "--color-mode" "8-bit" "generate" "one-dark" | trim }}"
+export LS_COLORS={{ output "pkgx" "vivid" "--color-mode" "8-bit" "generate" "one-dark" | trim | quote }}
 
 # PATH
 export PATH="$HOME/.local/bin:$HOME/.orbstack/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin"
