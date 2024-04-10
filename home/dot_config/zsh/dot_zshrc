@@ -1,1 +1,1 @@
-source <(pkgx --shellcode)  #docs.pkgx.sh/shellcode
+source $XDG_CACHE_HOME/pkgx/shellcode.sh

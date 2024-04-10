@@ -1,3 +1,3 @@
 . ~/.profile
 
-eval "$(pkgx --shellcode)" #docs.pkgx.sh/shellcode
+. $XDG_CACHE_HOME/pkgx/shellcode.sh
