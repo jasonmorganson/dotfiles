@@ -9,6 +9,3 @@ command -v "antidot" >/dev/null 2>&1 && eval "$(antidot init)"
 # LS_COLORS
 export LS_COLORS="$(vivid --color-mode 8-bit generate one-dark)"
 
-# Homebrew
-export HOMEBREW_BUNDLE_FILE="~/Library/Mobile Documents/com~apple~CloudDocs/Homebrew/Brewfile"
-
