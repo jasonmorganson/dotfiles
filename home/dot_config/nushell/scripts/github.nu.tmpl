@@ -1,5 +1,0 @@
-export-env {
-  load-env {
-    GITHUB_USER: {{ output "sh" "-c" "gh api https://api.github.com/user --jq '.login' || true" | trim | quote }}
-  }
-}
