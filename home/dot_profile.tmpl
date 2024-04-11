@@ -15,3 +15,19 @@ GIT_AUTHOR_NAME={{ output "sh" "-c" "pkgx gh api https://api.github.com/user --j
 GIT_AUTHOR_EMAIL={{ output "sh" "-c" "pkgx gh api https://api.github.com/user/public_emails --jq '.[0].email' || true" | trim | quote }}
 GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
 GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
+
+{{ output "pkgx"
+	"+chezmoi.io~2.34"
+	"+cli.github.com^2.26"
+	"+github.com/junegunn/fzf"
+	"+nushell.sh~0.92.1"
+	"+git-scm.org^2.40"
+	"+github.com/peltoche/lsd^1"
+	"+crates.io/vivid~0.9"
+	"+starship.rs~1.16"
+	"+crates.io/gitui"
+	"+crates.io/zellij~0.38"
+	"+crates.io/git-delta~0.15"
+	"+crates.io/ripgrep"
+	"+helix-editor.com~24.03"
+}}
