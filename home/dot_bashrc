@@ -1,3 +1,0 @@
-. ~/.profile
-
-. $XDG_CACHE_HOME/pkgx/shellcode.sh
