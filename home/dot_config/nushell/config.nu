@@ -4,10 +4,7 @@ $env.config = (
   $env.config
   | upsert edit_mode vi
   | upsert show_banner false
-  | upsert history.file_format "sqlite"
-  | upsert history.isolation true
 )
-
 
 overlay use nu_scripts/aliases/chezmoi/chezmoi-aliases.nu
 overlay use nu_scripts/aliases/git/git-aliases.nu
