@@ -31,6 +31,9 @@ wrap-indicator = ""
 # character = "┆" # Some characters that work well: "▏", "╎", "┆", "┊", "⸽"
 # skip-levels = 1
 
+[editor.file-picker]
+hidden = false
+
 [keys.normal]
 
 # Muscle memory
