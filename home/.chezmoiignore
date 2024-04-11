@@ -1,6 +1,7 @@
 xdg.env
 
 # Cache
+.pkgx
 .dccache
 .cs_cache
 .pnpm-state
@@ -18,6 +19,20 @@ xdg.env
 .cache/yarn
 .cache/zsh
 .config/zsh/.zcompdump*
+.cache/bash
+.cache/chezmoi
+.cache/deno
+.cache/gstreamer-1.0
+.cache/less
+.cache/mash
+.cache/pkgx
+.cache/prisma
+.cache/psql_history
+.cache/starship
+.cache/winetricks
+
+# Bash
+.bash_sessions
 
 # SSH
 .ssh/id_rsa
@@ -85,6 +100,7 @@ Applications
 Desktop
 Documents
 Downloads
+Library
 Movies
 Music
 Pictures
@@ -102,6 +118,7 @@ Support
 .config/k9s
 .config/krew
 .config/pgcli
+.config/pg/pgpass
 
 # Cache in config
 .config/todoist
@@ -127,9 +144,30 @@ Support
 .yarnrc
 .config/aws
 .config/topgrade.toml
+.bytebase
+.cursor
+.cursor-tutor
+.devpod
+.pgadmin
+.config/alacritty/alacritty.yml
+.config/broot
+.config/cups
+.config/gh-copilot
+.config/ghorg
+.config/ngrok
+.config/topgrade.d
+.config/yarn
+
+.bin
+.local
 
 **/.DS_Store
 
 Code
 GitHub
 OrbStack
+
+# Uknown
+.Nuance-OmniPage-CSDK-20.2
+.Nuance-licmgr
+
