@@ -1,5 +1,8 @@
 xdg.env
 
+# Generated through nu script
+.config/zellij/themes/theme.kdl
+
 # Cache
 .pkgx
 .dccache
