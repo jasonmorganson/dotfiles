@@ -1,10 +1,11 @@
 export-env {
   load-env {
-    GIT_AUTHOR_NAME: {{ output "gh" "api" "https://api.github.com/user" "--jq" ".name" | trim | quote }}
-    GIT_AUTHOR_EMAIL: {{ output "gh" "api" "https://api.github.com/user/public_emails" "--jq" ".[0].email" | trim }}
+    GIT_AUTHOR_NAME: {{ output "sh" "-c" "pkgx gh api https://api.github.com/user --jq '.name' || true" | trim | quote }}
+    GIT_AUTHOR_EMAIL: {{ output "sh" "-c" "pkgx gh api https://api.github.com/user/public_emails --jq '.[0].email' || true" | trim | quote }}
   }
   load-env {
     GIT_COMMITTER_NAME: $env.GIT_AUTHOR_NAME
     GIT_COMMITTER_EMAIL: $env.GIT_AUTHOR_EMAIL
   }
 }
+
