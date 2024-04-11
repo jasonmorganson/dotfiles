@@ -1,7 +1,0 @@
-#!/bin/sh
-if [ "$PKGX_UNINSTALL" != 1 ]; then
-  exec pkgx +helix-editor.com~24.03 -- hx "$@"
-else
-  cd "$(dirname "$0")"
-  rm hx && echo "uninstalled: helix-editor.com~24.03" >&2
-fi

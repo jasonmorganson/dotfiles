@@ -1,7 +1,0 @@
-#!/bin/sh
-if [ "$PKGX_UNINSTALL" != 1 ]; then
-  exec pkgx +crates.io/vivid~0.9 -- vivid "$@"
-else
-  cd "$(dirname "$0")"
-  rm vivid && echo "uninstalled: crates.io/vivid~0.9" >&2
-fi

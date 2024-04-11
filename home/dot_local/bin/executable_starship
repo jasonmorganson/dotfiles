@@ -1,7 +1,0 @@
-#!/bin/sh
-if [ "$PKGX_UNINSTALL" != 1 ]; then
-  exec pkgx +starship.rs~1.16 -- starship "$@"
-else
-  cd "$(dirname "$0")"
-  rm starship && echo "uninstalled: starship.rs~1.16" >&2
-fi

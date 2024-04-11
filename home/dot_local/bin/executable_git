@@ -1,7 +1,0 @@
-#!/bin/sh
-if [ "$PKGX_UNINSTALL" != 1 ]; then
-  exec pkgx +git-scm.org^2.40 -- git "$@"
-else
-  cd "$(dirname "$0")"
-  rm git git-cvsserver git-receive-pack git-shell git-upload-archive git-upload-pack scalar git-credential-osxkeychain && echo "uninstalled: git-scm.org^2.40" >&2
-fi
