@@ -5,5 +5,6 @@ bash -c $"source ($env.HOME)/.profile && env"
     | parse "{name}={value}"
     | transpose --header-row
     | into record
+    | reject --ignore-errors FILE_PWD
     | load-env
 
