@@ -1,3 +1,5 @@
+xdg.env
+
 # Cache
 .dccache
 .cs_cache

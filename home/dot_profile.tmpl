@@ -1,7 +1,7 @@
 set -a
 
 # XDG
-source ~/.cache/xdg.sh
+{{ include "xdg.env" }}
 
 # PATH
 PATH="$HOME/.local/bin:$HOME/.orbstack/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/usr/sbin:/bin:/sbin"
