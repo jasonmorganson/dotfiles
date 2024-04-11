@@ -3,6 +3,7 @@ source ~/.config/nushell/default_config.nu
 $env.config = (
   $env.config
   | upsert edit_mode vi
+  | upsert show_banner false
   | upsert history.file_format "sqlite"
   | upsert history.isolation true
 )
