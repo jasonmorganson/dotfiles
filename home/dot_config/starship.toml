@@ -10,6 +10,7 @@ $git_status\
 $cmd_duration\
 $line_break\
 $python\
+${custom.pkgx}\
 $character"""
 
 [directory]
@@ -46,3 +47,8 @@ style = "yellow"
 [python]
 format = "[$virtualenv]($style) "
 style = "bright-black"
+
+[custom.pkgx]
+shell = ['sh']
+command = 'echo +$PKGX_POWDER'
+when = '[ -n "$PKGX_POWDER" ] && echo "0"'
