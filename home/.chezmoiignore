@@ -1,15 +1,3 @@
-.git
-.tea
-.pkgx
-.hyperfine.js
-bin
-docker-compose.yaml
-Dockerfile
-docs
-install.sh
-entrypoint.sh
-README.md
-
 # Cache
 .dccache
 .cs_cache
