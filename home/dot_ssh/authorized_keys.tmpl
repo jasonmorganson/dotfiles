@@ -1,5 +1,3 @@
-{{- $GITHUB_USER := env "GITHUB_USER" | default "octocat" -}}
-{{- $Keys := gitHubKeys $GITHUB_USER -}}
-{{- range $Keys -}}
+{{ range gitHubKeys (env "GITHUB_USER" | default "octocat") }}
 {{- .Key }}
-{{- end -}}
+{{ end }}
