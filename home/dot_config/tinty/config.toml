@@ -1,0 +1,31 @@
+default-scheme = "base16-default-dark"
+
+[[items]]
+name = "base16-alacritty"
+path = "https://github.com/aarowill/base16-alacritty"
+themes-dir = "colors"
+hook = "cp -f %f ~/.config/alacritty/colors.toml"
+
+[[items]]
+name = "base16-shell"
+path = "https://github.com/tinted-theming/base16-shell"
+themes-dir = "scripts"
+hook = ". %f"
+
+[[items]]
+name = "base16-zellij"
+path = "https://github.com/jasonmorganson/base16-zellij.git"
+themes-dir = "themes"
+hook = "cp -f %f ~/.config/zellij/themes/theme.kdl"
+
+[[items]]
+name = "base16-helix"
+path = "https://github.com/tinted-theming/base16-helix"
+themes-dir = "themes"
+hook = "cp -f %f ~/.config/helix/themes/theme.toml"
+
+[[items]]
+name = "tinted-fzf"
+path = "https://github.com/tinted-theming/tinted-fzf"
+themes-dir = "sh"
+
