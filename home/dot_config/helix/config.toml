@@ -19,10 +19,6 @@ insert = "block"
 normal = "underline"
 select = "underline"
 
-[editor.soft-wrap]
-enable = true
-wrap-indicator = ""
-
 [editor.file-picker]
 hidden = false
 
