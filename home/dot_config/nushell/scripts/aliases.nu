@@ -13,11 +13,8 @@ export alias gp = git push
 export alias tig = gitui
 
 export alias unpushed = git log --branches --not --remotes --no-walk --decorate --oneline
-export def unclean [] { gfold -d json ~/Code | from json | where status != Clean }
 
 export alias vi = hx
-export alias vim = vi
-export alias nvim = vi
 
 export alias py = python
 export alias pip = python -m pip
