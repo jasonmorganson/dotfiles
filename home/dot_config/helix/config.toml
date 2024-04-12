@@ -6,9 +6,8 @@ cursorline = true
 line-number = "relative"
 
 [editor.statusline]
-left = ["mode", "version-control", "file-name", "file-modification-indicator"]
-center = ["spinner", "diagnostics"]
-right = ["file-type", "file-encoding", "position-percentage", "position", "total-line-numbers"]
+center = ["diagnostics"]
+right = ["version-control", "file-type", "file-encoding", "position-percentage", "position", "total-line-numbers"]
 
 [editor.cursor-shape]
 insert = "block"
