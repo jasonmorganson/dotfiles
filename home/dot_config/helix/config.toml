@@ -1,7 +1,6 @@
 theme = "github_dark_256"
 
 [editor]
-true-color = true
 auto-save = true
 cursorline = true
 line-number = "relative"
