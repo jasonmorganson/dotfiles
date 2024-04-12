@@ -6,9 +6,6 @@ cursorline = true
 line-number = "relative"
 
 [editor.statusline]
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"
 left = ["mode", "version-control", "file-name", "file-modification-indicator"]
 center = ["spinner", "diagnostics"]
 right = ["file-type", "file-encoding", "position-percentage", "position", "total-line-numbers"]
