@@ -5,6 +5,12 @@ $all\
 ${custom.pkgx}$character
 """
 
+[aws]
+disabled = true
+
+[gcloud]
+disabled = true
+
 [shell]
 disabled = false
 style = "bright-black"
