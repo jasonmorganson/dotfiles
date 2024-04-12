@@ -34,20 +34,3 @@ wrap-indicator = ""
 [editor.file-picker]
 hidden = false
 
-[keys.normal]
-
-# Muscle memory
-0 = "goto_line_start"
-"$" = "goto_line_end"
-G = "goto_file_end"
-"{" = "goto_prev_paragraph"
-"}" = "goto_next_paragraph"
-
-[keys.select]
-
-# Muscle memory
-0 = "goto_line_start"
-"$" = "goto_line_end"
-G = "goto_file_end"
-"{" = "goto_prev_paragraph"
-"}" = "goto_next_paragraph"
