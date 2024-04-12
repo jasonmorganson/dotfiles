@@ -23,14 +23,6 @@ select = "underline"
 enable = true
 wrap-indicator = ""
 
-# [editor.whitespace]
-# render = "all"
-
-# [editor.indent-guides]
-# render = true
-# character = "┆" # Some characters that work well: "▏", "╎", "┆", "┊", "⸽"
-# skip-levels = 1
-
 [editor.file-picker]
 hidden = false
 
