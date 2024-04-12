@@ -56,3 +56,4 @@ style = "bright-black"
 shell = ['sh']
 command = 'echo +$PKGX_POWDER'
 when = '[ -n "$PKGX_POWDER" ] && echo "0"'
+style = "bright-black"
