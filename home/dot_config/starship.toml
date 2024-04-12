@@ -5,21 +5,14 @@ $all\
 ${custom.pkgx}$character
 """
 
+[directory]
+style = "blue"
+
 [aws]
 disabled = true
 
 [gcloud]
 disabled = true
-
-[shell]
-disabled = false
-style = "bright-black"
-
-[directory]
-style = "blue"
-
-[character]
-success_symbol = "[❯](purple)"
 
 [git_branch]
 symbol = "⎇ "
@@ -27,8 +20,16 @@ symbol = "⎇ "
 [cmd_duration]
 disabled = true
 
+[shell]
+disabled = false
+style = "bright-black"
+
 [custom.pkgx]
 shell = ['sh']
 command = 'echo +$PKGX_POWDER'
 when = '[ -n "$PKGX_POWDER" ] && echo "0"'
 style = "bright-black"
+
+[character]
+success_symbol = "[❯](purple)"
+
