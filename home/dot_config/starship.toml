@@ -16,6 +16,7 @@ $character"""
 
 [shell]
 disabled = false
+style = "bright-black"
 
 [directory]
 style = "blue"
