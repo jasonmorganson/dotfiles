@@ -11,8 +11,8 @@ center = ["diagnostics"]
 right = ["selections", "register", "position", "file-type", "file-encoding"]
 
 [editor.cursor-shape]
-insert = "block"
-normal = "underline"
+insert = "bar"
+normal = "block"
 select = "underline"
 
 [editor.file-picker]
