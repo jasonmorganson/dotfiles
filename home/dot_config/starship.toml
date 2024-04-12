@@ -9,9 +9,13 @@ $git_state\
 $git_status\
 $cmd_duration\
 $line_break\
+$shell\
 $python\
 ${custom.pkgx}\
 $character"""
+
+[shell]
+disabled = false
 
 [directory]
 style = "blue"
