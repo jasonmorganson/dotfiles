@@ -7,7 +7,7 @@ line-number = "relative"
 
 [editor.statusline]
 center = ["diagnostics"]
-right = ["version-control", "file-type", "file-encoding", "position-percentage", "position", "total-line-numbers"]
+right = ["selections", "register", "position", "file-type", "file-encoding"]
 
 [editor.cursor-shape]
 insert = "block"
