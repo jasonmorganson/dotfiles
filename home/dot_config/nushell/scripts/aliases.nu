@@ -12,8 +12,6 @@ export alias gp = git push
 
 export alias tig = gitui
 
-export alias unpushed = git log --branches --not --remotes --no-walk --decorate --oneline
-
 export alias vi = hx
 
 export alias py = python
