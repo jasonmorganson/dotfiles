@@ -6,6 +6,7 @@ cursorline = true
 line-number = "relative"
 
 [editor.statusline]
+left = ["mode", "file-name", "read-only-indicator", "version-control", "spacer", "file-modification-indicator", "spacer", "spinner"]
 center = ["diagnostics"]
 right = ["selections", "register", "position", "file-type", "file-encoding"]
 
