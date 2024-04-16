@@ -10,10 +10,10 @@ export alias k = kubectl
 export alias kctx = kubectx
 export alias kns = kubens
 
-export alias l = ls
-export alias la = ls -a
-export alias ll = ls -l
-export alias lla = ls -la
+export alias l = lsd
+export alias la = lsd -a
+export alias ll = lsd -l
+export alias lla = lsd -la
 export alias ls = lsd
 
 export alias pip = python -m pip
