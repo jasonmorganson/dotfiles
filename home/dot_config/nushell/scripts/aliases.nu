@@ -21,3 +21,5 @@ export alias py = python
 
 export alias tig = gitui
 export alias vi = hx
+
+export alias ze = zellij
