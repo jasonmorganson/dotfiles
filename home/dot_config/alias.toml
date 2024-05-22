@@ -1,0 +1,75 @@
+[aliases]
+
+# Habits
+ag = "rg"
+tig = "gitui"
+vi = "hx"
+
+# chezmoi
+dotfiles = "chezmoi"
+
+# ls
+l = "lsd"
+ls = "lsd"
+la = "lsd -a"
+ll = "lsd -l"
+lla = "lsd -la"
+
+# git
+g = "git"
+ga = "git add"
+gb = "git branch"
+gc = "git commit"
+gd = "git diff"
+gf = "git fetch"
+gg = "git grep"
+gl = "git log"
+gm = "git merge"
+go = "git checkout"
+gp = "git pull"
+gs = "git status"
+gw = "git whatchanged"
+gaa = "git add --all"
+gap = "git add --patch"
+gbm = "git branch --merged"
+gbnm = "git branch --no-merged"
+gca = "git commit --amend"
+gci = "git commit --interactive"
+gcm = "git commit --message"
+gco = "git checkout"
+gcob = "git checkout -b"
+gcp = "git cherry-pick"
+gcpa = "git cherry-pick --abort"
+gcpc = "git cherry-pick --continue"
+gdc = "git diff --cached"
+gds = "git diff --staged"
+gdd = "git diff-deep"
+gfa = "git fetch --all"
+ggg = "git grep-group"
+glg = "git log --graph"
+glo = "git log --oneline"
+glp = "git log --patch"
+gll = "git log-list"
+gls = "git ls-files"
+gma = "git merge --abort"
+gmc = "git merge --continue"
+gpf = "git pull --ff-only"
+gpr = "git pull --rebase"
+grb = "git rebase"
+grba = "git rebase --abort"
+grbc = "git rebase --continue"
+grbs = "git rebase --skip"
+grbi = "git rebase --interactive"
+
+# Python
+py = "python"
+pip = "python -m pip"
+
+# Kube
+k = "kubectl"
+kns = "kubens"
+kctx = "kubectx"
+
+# Zellij
+ze = "zellij"
+
