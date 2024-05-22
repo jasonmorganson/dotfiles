@@ -1,7 +1,7 @@
 . ~/.profile
 
-{{ output "pkgx" "als" "init" "bash" }}
-
 {{ output "pkgx" "--shellcode" }}
 
 {{ output "pkgx" "starship" "init" "bash" }}
+
+eval "$(als init bash)"
