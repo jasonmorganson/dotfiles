@@ -1,3 +1,4 @@
+export alias g = git
 export alias ga = git add
 export alias gb = git branch
 export alias gc = git commit
