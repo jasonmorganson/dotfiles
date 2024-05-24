@@ -4,4 +4,4 @@
 
 {{ output "pkgx" "starship" "init" "bash" }}
 
-eval "$(als init bash)"
+{{ output "sh" "-c" "als init bash || true" }}
