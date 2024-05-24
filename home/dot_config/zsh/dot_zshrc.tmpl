@@ -2,4 +2,4 @@
 
 {{ output "pkgx" "starship" "init" "zsh" }}
 
-eval "$(als init zsh)"
+{{ output "sh" "-c" "als init zsh|| true" }}
