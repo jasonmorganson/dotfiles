@@ -3,6 +3,7 @@ name: Test install script
 on: push
 
 env:
+  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
@@ -16,5 +17,3 @@ jobs:
     - uses: actions/checkout@v4
     - name: Run install script
       run: ./install.sh
-      env:
-        GH_TOKEN: ${{ github.token }}
