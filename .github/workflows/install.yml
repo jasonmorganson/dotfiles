@@ -4,6 +4,7 @@ on: push
 
 env:
   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 jobs:
