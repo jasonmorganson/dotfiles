@@ -1,10 +1,10 @@
 [".config/nushell/default_env.nu"]
 type = "file"
-url = "https://raw.githubusercontent.com/nushell/nushell/0.95.0/crates/nu-utils/src/sample_config/default_env.nu"
+url = "https://raw.githubusercontent.com/nushell/nushell/0.98.0/crates/nu-utils/src/sample_config/default_env.nu"
 
 [".config/nushell/default_config.nu"]
 type = "file"
-url = "https://raw.githubusercontent.com/nushell/nushell/0.95.0/crates/nu-utils/src/sample_config/default_config.nu"
+url = "https://raw.githubusercontent.com/nushell/nushell/0.98.0/crates/nu-utils/src/sample_config/default_config.nu"
 
 [".config/nushell/scripts/nu_scripts"]
 type = "git-repo"
