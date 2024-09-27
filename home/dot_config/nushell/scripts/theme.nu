@@ -1,4 +1,4 @@
-const zellij_dark_theme = `
+const zellij_dark_theme = r###'
 themes {
     default {
         fg 245
@@ -14,9 +14,9 @@ themes {
         orange 202
     }
 }
-`
+'###
 
-const zellij_light_theme = `
+const zellij_light_theme = r###'
 themes {
     default {
         fg 248
@@ -32,7 +32,8 @@ themes {
         orange 9
     }
 }
-`
+'###
+
 export def --env dark [] {
   $env.config.color_config = $dark_theme
   $env.LS_COLORS = (vivid --color-mode 8-bit generate one-dark | str trim)
