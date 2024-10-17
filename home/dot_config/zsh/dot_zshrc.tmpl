@@ -1,5 +1,5 @@
+{{ output (print .chezmoi.homeDir "/.local/bin/als") "init" "zsh" }}
+
 {{ output "pkgx" "--shellcode" }}
 
 {{ output "pkgx" "starship" "init" "zsh" }}
-
-{{ output "sh" "-c" "als init zsh|| true" }}
