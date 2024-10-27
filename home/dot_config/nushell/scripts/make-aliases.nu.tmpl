@@ -1,1 +1,0 @@
-{{ output "pkgx" "+nushell.sh" "nu" "-c" "~/.local/bin/als init zsh | lines | skip 2 | parse 'alias {name}=\"{value}\"' | each {|alias| echo $\"export alias ($alias.name) = ($alias.value)\" } | save -f ~/.config/nushell/scripts/aliases.nu" }}
