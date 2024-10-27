@@ -28,7 +28,7 @@ PATH="$HOME/.rye/shims:$HOME/.local/bin:$HOME/.orbstack/bin:/opt/homebrew/bin:/u
 LS_COLORS={{ output "pkgx" "vivid" "--color-mode" "8-bit" "generate" "one-dark" | trim | quote }}
 
 # GitHub
-{{- $output := output "sh" "-c" "pkgx gh api https://api.github.com/user 2>/dev/null || true" -}}
+{{ $output := output "sh" "-c" "pkgx gh api https://api.github.com/user 2>/dev/null || true" -}}
 {{- if $output -}}
 {{- with (fromJson $output) -}}
 {{- if and (index . "id") (index . "name") (index . "login") -}}
@@ -39,7 +39,7 @@ GIT_COMMITTER_NAME=$GIT_AUTHOR_NAME
 GIT_COMMITTER_EMAIL=$GIT_AUTHOR_EMAIL
 {{- end -}}
 {{- end -}}
-{{- end -}}
+{{- end }}
 
 # Bash
 BASH_SILENCE_DEPRECATION_WARNING=1
