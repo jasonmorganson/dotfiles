@@ -1,6 +1,6 @@
 source ~/.config/nushell/default_env.nu
 
-sh -c $"source ($env.HOME)/.profile && env"
+sh -c $". ($env.HOME)/.profile && env"
     | lines
     | parse "{name}={value}"
     | transpose --header-row
