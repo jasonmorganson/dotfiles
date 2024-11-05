@@ -1,0 +1,13 @@
+# GitHub
+{{ $output := output "sh" "-c" "pkgx gh api https://api.github.com/user 2>/dev/null || true" -}}
+{{- if $output -}}
+{{- with (fromJson $output) -}}
+{{- if and (index . "id") (index . "name") (index . "login") -}}
+GITHUB_USER={{ .login | quote }}
+GIT_AUTHOR_NAME={{ .name | quote }}
+GIT_AUTHOR_EMAIL={{ printf "%v+%s@users.noreply.github.com" .id .login | quote }}
+GIT_COMMITTER_NAME="$GIT_AUTHOR_NAME"
+GIT_COMMITTER_EMAIL="$GIT_AUTHOR_EMAIL"
+{{- end -}}
+{{- end -}}
+{{- end }}
