@@ -6,6 +6,10 @@ $env.config = (
   | upsert show_banner false
 )
 
+$env.config.hooks.env_change.PWD = (
+    $env.config.hooks.env_change.PWD | append (source scripts/nu_scripts/nu-hooks/nu-hooks/direnv/config.nu)
+)
+
 overlay use aliases.nu
 
 use theme.nu

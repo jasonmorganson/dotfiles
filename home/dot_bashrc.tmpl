@@ -1,4 +1,6 @@
-. ~/.profile
+BASH_SILENCE_DEPRECATION_WARNING=1
+
+{{ output "pkgx" "direnv" "hook" "bash" }}
 
 {{ output (print .chezmoi.homeDir "/.local/bin/als") "init" "bash" }}
 
