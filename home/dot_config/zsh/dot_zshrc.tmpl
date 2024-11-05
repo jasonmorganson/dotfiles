@@ -1,7 +1,11 @@
+# Env
 {{ output "pkgx" "direnv" "hook" "zsh" }}
 
+# Aliases
 {{ output (print .chezmoi.homeDir "/.local/bin/als") "init" "zsh" }}
 
-{{ output "pkgx" "--shellcode" }}
-
+# Prompt
 {{ output "pkgx" "starship" "init" "zsh" }}
+
+# pkgx
+{{ output "pkgx" "--shellcode" }}
