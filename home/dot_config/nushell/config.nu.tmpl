@@ -1,17 +1,25 @@
 source ~/.config/nushell/default_config.nu
 
+use theme.nu
+
 $env.config = (
-  $env.config
-  | upsert edit_mode vi
-  | upsert show_banner false
+    $env.config
+    | upsert edit_mode vi
+    | upsert show_banner false
 )
 
+# Env
 $env.config.hooks.env_change.PWD = (
     $env.config.hooks.env_change.PWD | append (source scripts/nu_scripts/nu-hooks/nu-hooks/direnv/config.nu)
 )
 
-overlay use aliases.nu
+# Aliases
+{{ output "pkgx" "+nushell.sh" "nu" "-c `~/.local/bin/als init zsh | lines | skip 2 | parse 'alias {name}=\"{value}\"' | each {|alias| print $\"export alias ($alias.name) = ($alias.value)\" } | ignore`" }}
 
-use theme.nu
-use prompt.nu
-use starship.nu
+# Prompt
+export-env { load-env {
+    PROMPT_INDICATOR_VI_INSERT: ""
+    PROMPT_INDICATOR_VI_NORMAL: ""
+}}
+
+{{ output "pkgx" "starship" "init" "nu" }}
