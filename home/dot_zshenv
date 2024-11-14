@@ -1,3 +1,1 @@
-emulate sh -c '. ~/.profile'
-
 ZDOTDIR=$HOME/.config/zsh
