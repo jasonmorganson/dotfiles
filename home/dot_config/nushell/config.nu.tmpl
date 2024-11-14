@@ -1,13 +1,12 @@
 source ~/.config/nushell/default_config.nu
 
+use mise.nu
+use theme.nu
+use starship.nu
+overlay use aliases.nu
+
 $env.config = (
   $env.config
   | upsert edit_mode vi
   | upsert show_banner false
 )
-
-overlay use aliases.nu
-
-use mise.nu
-use theme.nu
-use starship.nu
