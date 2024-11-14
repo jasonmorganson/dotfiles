@@ -1,7 +1,7 @@
-{{ output (print .chezmoi.homeDir "/.local/bin/als") "init" "zsh" }}
-
 {{ output (print .chezmoi.homeDir "/.local/bin/mise") "activate" "zsh" }}
 
-{{ output "pkgx" "--shellcode" }}
+{{ output (print .chezmoi.homeDir "/.local/bin/als") "init" "zsh" }}
 
 {{ output "pkgx" "starship" "init" "zsh" }}
+
+{{ output "pkgx" "--shellcode" }}
