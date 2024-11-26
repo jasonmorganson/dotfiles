@@ -1,1 +1,1 @@
-{{ output "pkgx" "starship" "init" "nu" }}
+{{ output (print .chezmoi.homeDir "/.local/bin/mise") "exec" "starship" "--" "starship" "init" "nu" }}

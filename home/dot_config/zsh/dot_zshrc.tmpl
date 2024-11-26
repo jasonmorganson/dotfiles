@@ -2,6 +2,6 @@
 
 {{ output (print .chezmoi.homeDir "/.local/bin/als") "init" "zsh" }}
 
-{{ output "pkgx" "starship" "init" "zsh" }}
+{{ output (print .chezmoi.homeDir "/.local/bin/mise") "exec" "starship" "--" "starship" "init" "zsh" }}
 
 {{ output "pkgx" "--shellcode" }}
