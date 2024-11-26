@@ -1,7 +1,7 @@
 [include]
-    path = unpushed
     path = alias
     path = color
+    path = unpushed
 
 [includeIf "gitdir:/workspaces/"]
     path = codespace
