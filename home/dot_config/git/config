@@ -1,6 +1,7 @@
 [include]
     path = alias
     path = color
+    path = tools
     path = signing
     path = unpushed
     path = credential
@@ -11,15 +12,6 @@
 [help]
     autocorrect = immediate
 
-[core]
-    pager = delta --diff-so-fancy
-
-[filter "lfs"]
-    clean = git-lfs clean -- %f
-    smudge = git-lfs smudge -- %f
-    process = git-lfs filter-process
-    required = true
-
 [fetch]
     prune = true
 
@@ -29,9 +21,6 @@
 [commit]
     verbose = true
  
-[absorb]
-    maxStack=100
-
 [push]
     default = current
     autoSetupRemote = true
@@ -47,15 +36,6 @@
 
 [rerere]
     enabled = true
-
-[sequence]
-	editor = interactive-rebase-tool
-
-[interactive]
-    diffFilter = delta --diff-so-fancy --color-only
-
-[delta]
-    navigate = true
 
 [diff]
     algorithm = histogram
