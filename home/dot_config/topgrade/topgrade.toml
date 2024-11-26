@@ -1,8 +1,0 @@
-[misc]
-
-# Skip sending a notification at the end of a run (default: false)
-skip_notify = true
-
-# Commands to run after anything
-[post_commands]
-"Update brew bundle" = "/opt/homebrew/bin/brew bundle dump --force --file '/Users/jasonmorganson/Library/Mobile Documents/com~apple~CloudDocs/Homebrew/Brewfile'"
