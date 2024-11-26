@@ -3,6 +3,7 @@
     path = color
     path = signing
     path = unpushed
+    path = credential
 
 [includeIf "gitdir:/workspaces/"]
     path = codespace
@@ -12,14 +13,6 @@
 
 [core]
     pager = delta --diff-so-fancy
-
-[credential "https://github.com"]
-	helper =
-	helper = !gh auth git-credential
-
-[credential "https://gist.github.com"]
-	helper =
-	helper = !gh auth git-credential
 
 [filter "lfs"]
     clean = git-lfs clean -- %f
