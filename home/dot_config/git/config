@@ -1,6 +1,7 @@
 [include]
     path = alias
     path = color
+    path = signing
     path = unpushed
 
 [includeIf "gitdir:/workspaces/"]
@@ -11,15 +12,6 @@
 
 [core]
     pager = delta --diff-so-fancy
-
-[gpg]
-	format = ssh
-
-[gpg "ssh"]
-	allowedSignersFile = ~/.ssh/allowed_signers
-	
-[user]
-    signingkey = ~/.ssh/id_rsa.pub
 
 [credential "https://github.com"]
 	helper =
@@ -43,8 +35,7 @@
 
 [commit]
     verbose = true
-    gpgsign = true
-    
+ 
 [absorb]
     maxStack=100
 
@@ -77,6 +68,3 @@
     algorithm = histogram
     colorMoved = default
     colorMovedWS = allow-indentation-change
-
-[log]
-    showSignature = true
