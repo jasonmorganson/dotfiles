@@ -1,4 +1,0 @@
-  \setenv PAGER 'pspg -s 11'
-  \pset null 'ø'
-  \pset border 2
-  \pset linestyle unicode
