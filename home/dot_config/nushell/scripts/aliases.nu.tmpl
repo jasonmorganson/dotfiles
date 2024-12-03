@@ -1,1 +1,1 @@
-{{ output "pkgx" "+nushell.sh" "nu" "-c `~/.local/bin/als init zsh | lines | skip 2 | parse 'alias {name}=\"{value}\"' | each {|alias| print $\"export alias ($alias.name) = ($alias.value)\" } | ignore`" }}
+{{ output (print .chezmoi.homeDir "/.local/bin/mise") "exec" "ubi:nushell/nushell[exe=nu]" "--" "nu" "-c `~/.local/bin/als init zsh | lines | skip 2 | parse 'alias {name}=\"{value}\"' | each {|alias| print $\"export alias ($alias.name) = ($alias.value)\" } | ignore`" }}
