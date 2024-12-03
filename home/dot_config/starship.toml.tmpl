@@ -5,7 +5,7 @@ $all\
 ${custom.pkgx}$character
 """
 
-{{ output "pkgx" "starship" "preset" "no-nerd-font" }}
+{{ output (print .chezmoi.homeDir "/.local/bin/mise") "exec" "starship" "--" "starship" "preset" "no-nerd-font" }}
 
 [directory]
 style = "blue"
