@@ -1,7 +1,9 @@
-{{ output (print .chezmoi.homeDir "/.local/bin/mise") "activate" "bash" }}
+{{ $mise := joinPath .chezmoi.homeDir ".local/bin/mise" }}
+
+{{ output $mise "activate" "bash" }}
 
 {{ output (print .chezmoi.homeDir "/.local/bin/als") "init" "bash" }}
 
-{{ output (print .chezmoi.homeDir "/.local/bin/mise") "exec" "starship" "--" "starship" "init" "bash" }}
+{{ output $mise "exec" "starship" "--" "starship" "init" "bash" }}
 
 {{ output "pkgx" "--shellcode" }}
