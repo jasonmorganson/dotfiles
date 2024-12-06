@@ -1,1 +1,3 @@
-{{ output (print .chezmoi.homeDir "/.local/bin/mise") "activate" "nu" }}
+{{ $mise := joinPath .chezmoi.homeDir ".local/bin/mise" }}
+
+{{ output $mise "activate" "nu" }}
