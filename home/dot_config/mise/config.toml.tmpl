@@ -103,7 +103,7 @@ npm_config_cache = "{{ "{{ env.XDG_CACHE_HOME }}/npm" }}"
 LS_COLORS={{ output $mise "exec" "ubi:sharkdp/vivid" "--" "vivid" "--color-mode" "8-bit" "generate" "one-dark" | trim | quote }}
 
 # GitHub
-{{ $output := output "sh" "-c" "pkgx gh api https://api.github.com/user 2>/dev/null || true" -}}
+{{ $output := output "sh" "-c" (print $mise " exec aqua:cli/cli -- gh api https://api.github.com/user 2>/dev/null || true") -}}
 {{- if $output -}}
 {{- with (fromJson $output) -}}
 {{- if and (index . "id") (index . "name") (index . "login") -}}
