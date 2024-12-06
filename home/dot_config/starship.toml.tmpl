@@ -1,3 +1,5 @@
+{{ $mise := joinPath .chezmoi.homeDir ".local/bin/mise" }}
+
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
@@ -5,7 +7,7 @@ $all\
 ${custom.pkgx}$character
 """
 
-{{ output (print .chezmoi.homeDir "/.local/bin/mise") "exec" "starship" "--" "starship" "preset" "no-nerd-font" }}
+{{ output $mise "exec" "starship" "--" "starship" "preset" "no-nerd-font" }}
 
 [directory]
 style = "blue"

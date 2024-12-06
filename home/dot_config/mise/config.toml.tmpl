@@ -1,3 +1,5 @@
+{{ $mise := joinPath .chezmoi.homeDir ".local/bin/mise" }}
+
 [tools]
 gh = "latest"
 fzf = "latest"
@@ -98,7 +100,7 @@ __GL_SHADER_DISK_CACHE_PATH = "{{ "{{ env.XDG_CACHE_HOME }}/nv" }}"
 npm_config_cache = "{{ "{{ env.XDG_CACHE_HOME }}/npm" }}"
 
 # LS_COLORS
-LS_COLORS={{ output (print .chezmoi.homeDir "/.local/bin/mise") "exec" "ubi:sharkdp/vivid" "--" "vivid" "--color-mode" "8-bit" "generate" "one-dark" | trim | quote }}
+LS_COLORS={{ output $mise "exec" "ubi:sharkdp/vivid" "--" "vivid" "--color-mode" "8-bit" "generate" "one-dark" | trim | quote }}
 
 # GitHub
 {{ $output := output "sh" "-c" "pkgx gh api https://api.github.com/user 2>/dev/null || true" -}}
