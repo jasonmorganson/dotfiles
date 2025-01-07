@@ -1,3 +1,10 @@
 {{- $mise := joinPath .chezmoi.homeDir ".local/bin/mise" -}}
-
-{{ output $mise "exec" "ubi:nushell/nushell[exe=nu]" "--" "nu" "-c" (print $mise " use rust out+err> /dev/null;" $mise " exec cargo:https://github.com/nomyfan/alias-rs@branch:main -- als init zsh | lines | skip 2 | parse 'alias {name}=\"{value}\"' | each {|alias| print $\"export alias ($alias.name) = ($alias.value)\" } | ignore; exit") }}
+{{- $aliases := output $mise "exec" "rust" "--" $mise "exec" "cargo:https://github.com/nomyfan/alias-rs@branch:main" "--" "als" "init" "bash" -}}
+{{- range $index, $line := splitList "\n" $aliases -}}
+   {{- if hasPrefix "alias" $line -}}
+        {{- $parts := splitn "=" 2 $line -}}
+        {{- $name := $parts._0 -}}
+        {{- $value := $parts._1 -}}
+        {{- nindent 0 (printf "export %s = %s" $name ($value | replace "\"" "")) -}}
+    {{- end -}}
+{{- end -}}
