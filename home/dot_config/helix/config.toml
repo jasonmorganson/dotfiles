@@ -17,12 +17,3 @@ select = "underline"
 left = ["mode", "file-name", "read-only-indicator", "version-control", "spacer", "file-modification-indicator", "spacer", "spinner"]
 center = ["diagnostics"]
 right = ["selections", "register", "position", "file-type", "file-encoding"]
-
-[keys.normal]
-"esc" = ["collapse_selection", ":w"]
-
-[keys.select]
-"esc" = ["collapse_selection", "normal_mode", ":w"]
-
-[keys.insert]
-"esc" = ["normal_mode", ":w"]
