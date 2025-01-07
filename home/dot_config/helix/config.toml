@@ -1,9 +1,12 @@
 theme = "github_dark_256"
 
 [editor]
-auto-save = true
 cursorline = true
 line-number = "relative"
+
+[editor.auto-save]
+focus-lost = true
+after-delay.enable = true
 
 [editor.cursor-shape]
 insert = "bar"
