@@ -1,3 +1,3 @@
 {{ $mise := joinPath .chezmoi.homeDir ".local/bin/mise" }}
 
-{{ output $mise "exec" "ubi:nushell/nushell[exe=nu]" "--" "nu" "-c" (print $mise " use rust;" $mise " exec cargo:https://github.com/nomyfan/alias-rs@branch:main -- als init zsh | lines | skip 2 | parse 'alias {name}=\"{value}\"' | each {|alias| print $\"export alias ($alias.name) = ($alias.value)\" } | ignore; exit") }}
+{{ output $mise "exec" "ubi:nushell/nushell[exe=nu]" "--" "nu" "-c" (print $mise " use rust out+err> /dev/null;" $mise " exec cargo:https://github.com/nomyfan/alias-rs@branch:main -- als init zsh | lines | skip 2 | parse 'alias {name}=\"{value}\"' | each {|alias| print $\"export alias ($alias.name) = ($alias.value)\" } | ignore; exit") }}
