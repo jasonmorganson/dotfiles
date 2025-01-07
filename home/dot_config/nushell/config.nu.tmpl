@@ -8,9 +8,9 @@
         {{- $parts := splitn "=" 2 $line -}}
         {{- $name := $parts._0 -}}
         {{- $value := $parts._1 -}}
-        {{- nindent 0 (printf "export %s = %s" $name ($value | replace "\"" "")) -}}
+        {{- nindent 0 (printf "%s = %s" $name ($value | replace "\"" "")) -}}
     {{- end -}}
-{{- end -}}
+{{- end }}
 
 use theme.nu
 use prompt.nu
