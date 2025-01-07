@@ -2,11 +2,6 @@
 
 "$schema" = 'https://starship.rs/config-schema.json'
 
-format = """
-$all\
-${custom.pkgx}$character
-"""
-
 {{ output $mise "exec" "starship" "--" "starship" "preset" "no-nerd-font" }}
 
 [directory]
@@ -26,12 +21,6 @@ disabled = true
 
 [shell]
 disabled = false
-style = "bright-black"
-
-[custom.pkgx]
-shell = ['sh']
-command = 'echo +$PKGX_POWDER'
-when = '[ -n "$PKGX_POWDER" ] && echo "0"'
 style = "bright-black"
 
 [character]
