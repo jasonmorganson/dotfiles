@@ -1,4 +1,7 @@
-use mise.nu
+{{- $mise := joinPath .chezmoi.homeDir ".local/bin/mise" -}}
+
+{{ output $mise "activate" "nu" }}
+
 use theme.nu
 use prompt.nu
 use starship.nu
