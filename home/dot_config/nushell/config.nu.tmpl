@@ -12,12 +12,9 @@
     {{- end -}}
 {{- end }}
 
-export-env { load-env {
-    PROMPT_INDICATOR_VI_INSERT: ""
-    PROMPT_INDICATOR_VI_NORMAL: ""
-}}
-
 {{ output $mise "exec" "starship" "--" "starship" "init" "nu" }}
 
 $env.config.edit_mode = "vi"
 $env.config.show_banner = false
+$env.PROMPT_INDICATOR_VI_INSERT = ""
+$env.PROMPT_INDICATOR_VI_NORMAL = ""
