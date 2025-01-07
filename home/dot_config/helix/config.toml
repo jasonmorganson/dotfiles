@@ -5,9 +5,6 @@ auto-save = true
 cursorline = true
 line-number = "relative"
 
-[editor.file-picker]
-hidden = false
-
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
