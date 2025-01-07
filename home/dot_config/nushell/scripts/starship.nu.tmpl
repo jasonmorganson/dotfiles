@@ -1,3 +1,0 @@
-{{ $mise := joinPath .chezmoi.homeDir ".local/bin/mise" }}
-
-{{ output $mise "exec" "starship" "--" "starship" "init" "nu" }}
