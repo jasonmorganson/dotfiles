@@ -1,11 +1,7 @@
-{{ $mise := joinPath .chezmoi.homeDir ".local/bin/mise" }}
-
 "$schema" = 'https://starship.rs/config-schema.json'
 
+{{ $mise := joinPath .chezmoi.homeDir ".local/bin/mise" }}
 {{ output $mise "exec" "starship" "--" "starship" "preset" "no-nerd-font" }}
-
-[directory]
-style = "blue"
 
 [aws]
 disabled = true
@@ -13,8 +9,11 @@ disabled = true
 [gcloud]
 disabled = true
 
-[git_branch]
-symbol = "⎇ "
-
 [cmd_duration]
 disabled = true
+
+[directory]
+style = "bold blue"
+
+[git_branch]
+symbol = "⎇ "
