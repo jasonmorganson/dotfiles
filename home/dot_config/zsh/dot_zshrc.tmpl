@@ -1,4 +1,4 @@
-{{ $mise := joinPath .chezmoi.homeDir ".local/bin/mise" }}
+{{- $mise := joinPath .chezmoi.homeDir ".local/bin/mise" -}}
 
 {{ output $mise "activate" "zsh" }}
 
