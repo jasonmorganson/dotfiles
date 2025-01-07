@@ -4,8 +4,5 @@ use prompt.nu
 use starship.nu
 overlay use aliases.nu
 
-$env.config = (
-  $env.config
-  | upsert edit_mode vi
-  | upsert show_banner false
-)
+$env.config.edit_mode = vi
+$env.config.show_banner = false
