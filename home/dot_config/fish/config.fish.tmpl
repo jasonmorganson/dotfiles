@@ -2,7 +2,7 @@
 
 {{ output $mise "activate" "fish" }}
 
-{{ output (print .chezmoi.homeDir "/.local/bin/als") "init" "fish" }}
+{{ output $mise "exec" "rust" "--" $mise "exec" "cargo:https://github.com/nomyfan/alias-rs@branch:main" "--" "als" "init" "fish" }}
 
 {{ output $mise "exec" "starship" "--" "starship" "init" "fish" }}
 
