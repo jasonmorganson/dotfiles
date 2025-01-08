@@ -4,7 +4,7 @@ default-scheme = "base16-default-dark"
 name = "base16-alacritty"
 path = "https://github.com/aarowill/base16-alacritty"
 themes-dir = "colors"
-hook = "cp -f %f ~/.config/alacritty/colors.toml"
+hook = "cp -f %f ~/.config/alacritty/theme.toml"
 
 [[items]]
 name = "base16-shell"
