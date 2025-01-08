@@ -1,10 +1,4 @@
-{{- $mise := joinPath .chezmoi.homeDir ".local/bin/mise" -}}
-
-{{ output $mise "activate" "fish" }}
-
-{{ output $mise "exec" "rust" "--" $mise "exec" "cargo:https://github.com/nomyfan/alias-rs@branch:main" "--" "als" "init" "fish" }}
-
-{{ output $mise "exec" "starship" "--" "starship" "init" "fish" }}
+{{- template "rc" (dict "chezmoi" .chezmoi "SHELL" "fish") -}}
 
 set --universal fish_greeting
 set --global fish_key_bindings fish_vi_key_bindings
