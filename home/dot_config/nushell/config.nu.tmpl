@@ -1,18 +1,4 @@
-{{- $mise := joinPath .chezmoi.homeDir ".local/bin/mise" -}}
-
-{{ output $mise "activate" "nu" }}
-
-{{- $aliases := output $mise "exec" "rust" "--" $mise "exec" "cargo:https://github.com/nomyfan/alias-rs@branch:main" "--" "als" "init" "bash" -}}
-{{- range $index, $line := splitList "\n" $aliases -}}
-   {{- if hasPrefix "alias" $line -}}
-        {{- $parts := splitn "=" 2 $line -}}
-        {{- $name := $parts._0 -}}
-        {{- $value := $parts._1 -}}
-        {{- nindent 0 (printf "%s = %s" $name ($value | replace "\"" "")) -}}
-    {{- end -}}
-{{- end }}
-
-{{ output $mise "exec" "starship" "--" "starship" "init" "nu" }}
+{{- template "rc" (dict "SHELL" "nu") -}}
 
 $env.config.edit_mode = "vi"
 $env.config.show_banner = false
