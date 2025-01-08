@@ -1,5 +1,5 @@
 import = [
-  "~/.config/alacritty/colors.toml"
+  "~/.config/alacritty/theme.toml"
 ]
 
 live_config_reload = true
