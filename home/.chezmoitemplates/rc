@@ -2,6 +2,6 @@
 
 {{ output $mise "activate" .SHELL }}
 
-{{ output $mise "exec" "starship" "--" "starship" "init" "--print-full-init" .SHELL }}
+{{ output $mise "exec" "starship" "--" "starship" "init" .SHELL }}
 
 {{ output $mise "exec" "rust" "--" $mise "exec" "cargo:https://github.com/nomyfan/alias-rs@branch:main" "--" "als" "init" .SHELL }}
