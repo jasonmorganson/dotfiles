@@ -1,0 +1,3 @@
+[brew]
+fetch_head = true
+greedy_cask = true
