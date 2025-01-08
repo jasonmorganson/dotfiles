@@ -29,3 +29,8 @@ name = "tinted-fzf"
 path = "https://github.com/tinted-theming/tinted-fzf"
 themes-dir = "sh"
 
+[[items]]
+path = "https://github.com/tinted-theming/tinted-delta"
+name = "tinted-delta"
+themes-dir = "configs"
+hook = "cp -f %f ~/.config/git/tinted-delta"

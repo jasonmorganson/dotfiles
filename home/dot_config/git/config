@@ -5,6 +5,7 @@
     path = signing
     path = unpushed
     path = credential
+    path = tinted-delta
 
 [includeIf "gitdir:/workspaces/"]
     path = codespace
