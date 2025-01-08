@@ -1,7 +1,1 @@
-{{- $mise := joinPath .chezmoi.homeDir ".local/bin/mise" -}}
-
-{{ output $mise "activate" "bash" }}
-
-{{ output $mise "exec" "rust" "--" $mise "exec" "cargo:https://github.com/nomyfan/alias-rs@branch:main" "--" "als" "init" "bash" }}
-
-{{ output $mise "exec" "starship" "--" "starship" "init" "bash" }}
+{{- template "rc" (dict "chezmoi" .chezmoi "SHELL" "bash") -}}
