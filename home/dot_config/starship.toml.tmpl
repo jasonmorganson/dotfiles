@@ -3,12 +3,6 @@
 {{ $mise := joinPath .chezmoi.homeDir ".local/bin/mise" }}
 {{ output $mise "exec" "starship" "--" "starship" "preset" "no-nerd-font" }}
 
-[aws]
-disabled = true
-
-[gcloud]
-disabled = true
-
 [cmd_duration]
 disabled = true
 
