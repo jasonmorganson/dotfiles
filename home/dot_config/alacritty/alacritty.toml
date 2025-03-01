@@ -5,8 +5,5 @@ import = [
 
 live_config_reload = true
 
-[font.normal]
-family = "Hack"
-
 [window]
 option_as_alt = "Both"
