@@ -6,6 +6,9 @@
     path = unpushed
     path = credential
 
+[includeIf "!gitdir:/workspaces/"]
+    path = gpgsign
+
 [includeIf "gitdir:/workspaces/"]
     path = codespace
 
