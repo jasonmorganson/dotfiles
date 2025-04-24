@@ -7,5 +7,8 @@
 [user]
     signingkey = ~/.ssh/id_rsa.pub
 
+[tag]
+	gpgSign = true
+
 [commit]
     gpgsign = true
