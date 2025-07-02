@@ -4,6 +4,8 @@
 
 {{ output $mise "exec" "starship" "--" "starship" "init" .SHELL }}
 
+{{ if ne .SHELL "nu" }}
 {{ output $mise "exec" "ubi:doron-cohen/antidot" "--" "antidot" "init" "--shell" .SHELL }}
+{{ end }}
 
 {{ output $mise "exec" "rust" "--" $mise "exec" "cargo:https://github.com/jasonmorganson/alias-rs@branch:main" "--" "als" "init" .SHELL | splitList "\n" | sortAlpha | join "\n" }}
