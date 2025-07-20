@@ -1,12 +1,12 @@
 [aliases]
 
+# chezmoi
+dotfiles = "chezmoi"
+
 # Habits
 ag = "rg"
 tig = "gitui"
 vi = "hx"
-
-# chezmoi
-dotfiles = "chezmoi"
 
 # ls
 l = "lsd"
