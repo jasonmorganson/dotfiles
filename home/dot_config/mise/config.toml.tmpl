@@ -24,6 +24,12 @@ _.path = [
     "/sbin"
 ]
 
+# XDG
+XDG_CACHE_HOME = "{{ "{{ env.HOME }}/.cache" }}"
+XDG_CONFIG_HOME = "{{ "{{ env.HOME }}/.config" }}"
+XDG_DATA_HOME = "{{ "{{ env.HOME }}/.local/share" }}"
+XDG_STATE_HOME = "{{ "{{ env.HOME }}/.local/state" }}"
+
 # LS_COLORS
 LS_COLORS={{ output $mise "exec" "ubi:sharkdp/vivid" "--" "vivid" "--color-mode" "8-bit" "generate" "one-dark" | trim | quote }}
 
