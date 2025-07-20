@@ -72,6 +72,3 @@ pip = "python -m pip"
 k = "kubectl"
 kns = "kubens"
 kctx = "kubectx"
-
-# Zellij
-ze = "zellij"
