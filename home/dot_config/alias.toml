@@ -13,7 +13,7 @@ l = "lsd"
 ls = "lsd"
 la = "lsd -a"
 ll = "lsd -l"
-lla = "lsd -la"
+lt = "ls --tree"
 
 # git
 g = "git"
