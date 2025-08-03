@@ -1,11 +1,5 @@
 [gpg]
 	program=/.codespaces/bin/gh-gpgsign
 	
-[user]
-    signingkey =
-
-[commit]
-    gpgsign = true
-
 [credential]
 	helper=/.codespaces/bin/gitcredential_github.sh
