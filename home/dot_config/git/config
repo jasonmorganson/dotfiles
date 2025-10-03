@@ -4,13 +4,11 @@
     path = tools
     path = signing
     path = unpushed
+    path = gpgsign
+    path = credential
 
 [includeIf "gitdir:/workspaces/"]
     path = codespace
-
-[includeIf "!gitdir:/workspaces/"]
-    path = gpgsign
-    path = credential
 
 [help]
     autocorrect = immediate
