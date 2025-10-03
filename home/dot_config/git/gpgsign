@@ -1,5 +1,6 @@
 [gpg]
 	format = ssh
+	program = ssh-keygen
 
 [gpg "ssh"]
 	allowedSignersFile = ~/.ssh/allowed_signers
