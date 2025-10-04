@@ -4,6 +4,8 @@
     path = tools
     path = signing
     path = unpushed
+
+[includeIf "gitdir:~/"]
     path = gpgsign
     path = credential
 
@@ -21,7 +23,7 @@
 
 [commit]
     verbose = true
- 
+
 [push]
     default = current
     autoSetupRemote = true
