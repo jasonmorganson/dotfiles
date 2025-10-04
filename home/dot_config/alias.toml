@@ -18,6 +18,9 @@ lt = "lsd --tree"
 # git
 g = "git"
 
+# Pulumi
+p = "pulumi"
+
 # Python
 py = "python"
 pip = "python -m pip"
@@ -26,3 +29,6 @@ pip = "python -m pip"
 k = "kubectl"
 kns = "kubens"
 kctx = "kubectx"
+
+# Node
+node = "node --experimental-transform-types"
