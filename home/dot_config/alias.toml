@@ -11,9 +11,9 @@ vi = "hx"
 # ls
 l = "lsd"
 ls = "lsd"
-la = "lsd -a"
-ll = "lsd -l"
-lt = "ls --tree"
+la = "lsd --all"
+ll = "lsd --long"
+lt = "lsd --tree"
 
 # git
 g = "git"
