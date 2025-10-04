@@ -3,6 +3,7 @@
 	program = ssh-keygen
 
 [gpg "ssh"]
+	program = ssh-keygen
 	allowedSignersFile = ~/.ssh/allowed_signers
 	
 [user]
