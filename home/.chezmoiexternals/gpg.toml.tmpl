@@ -1,0 +1,12 @@
+{{- $user := (env "GITHUB_USER" | default "octocat") -}}
+{{- $gpgKeysUrl := printf "https://github.com/%s.gpg" $user -}}
+
+[".config/git/github-user.asc"]
+    type = "file"
+    url = {{ $gpgKeysUrl | quote }}
+    refreshPeriod = "168h"
+
+[".config/git/github-web-flow.asc"]
+    type = "file"
+    url = "https://github.com/web-flow.gpg"
+    refreshPeriod = "720h"
