@@ -8,6 +8,7 @@
     path = diff
     path = fetch
     path = filter
+    path = gitalias
     path = help
     path = interactive
     path = log
