@@ -21,6 +21,17 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
+      - name: Docker meta
+        id: meta
+        uses: docker/metadata-action@v5
+        with:
+          images: ${{ github.repository_owner }}/dotfiles
+          tags: |
+            type=ref,event=branch
+            type=ref,event=pr
+            type=sha,prefix={{branch}}-
+            type=raw,value=latest,enable={{is_default_branch}}
+
       - name: Build and push
         uses: docker/build-push-action@v6
         with:
@@ -29,4 +40,5 @@ jobs:
           cache-to: type=gha,mode=max
           platforms: ${{ matrix.platform }}
           push: ${{ github.ref_name == 'main' }}
-          tags: ${{ github.repository_owner }}/dotfiles
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
