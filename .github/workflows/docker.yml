@@ -5,9 +5,7 @@ on: push
 jobs:
   docker:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        platform: [linux/amd64, linux/arm64]
+
     steps:
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
@@ -38,7 +36,7 @@ jobs:
           file: .devcontainer/Dockerfile
           cache-from: type=gha
           cache-to: type=gha,mode=max
-          platforms: ${{ matrix.platform }}
+          platforms: linux/amd64,linux/arm64
           push: ${{ github.ref_name == 'main' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
