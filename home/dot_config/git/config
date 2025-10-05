@@ -25,6 +25,6 @@
     path = user
     path = credential
 
-[includeIf "gitdir:/workspaces/"]
+[includeIf "gitdir:/workspace/"]
     path = gpg-codespace
     path = credential-codespace
