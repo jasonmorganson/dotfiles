@@ -1,46 +1,29 @@
 [include]
+    path = absorb
     path = alias
     path = color
-    path = tools
-    path = signing
-    path = unpushed
+    path = commit
+    path = core
+    path = delta
+    path = diff
+    path = fetch
+    path = filter
+    path = help
+    path = interactive
+    path = log
+    path = merge
+    path = pull
+    path = push
+    path = rebase
+    path = rerere
+    path = sequence
+    path = tag
 
 [includeIf "gitdir:~/"]
-    path = gpgsign
+    path = gpg
+    path = user
     path = credential
 
 [includeIf "gitdir:/workspaces/"]
-    path = codespace
-
-[help]
-    autocorrect = immediate
-
-[fetch]
-    prune = true
-
-[pull]
-    rebase = true
-
-[commit]
-    verbose = true
-
-[push]
-    default = current
-    autoSetupRemote = true
-
-[merge]
-    conflictstyle = zdiff3
-
-[rebase]
-    autostash = true
-    autosquash = true
-    updateRefs = true
-    missingCommitsCheck = error
-
-[rerere]
-    enabled = true
-
-[diff]
-    algorithm = histogram
-    colorMoved = default
-    colorMovedWS = allow-indentation-change
+    path = gpg-codespace
+    path = credential-codespace

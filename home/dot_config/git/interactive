@@ -1,0 +1,2 @@
+[interactive]
+    diffFilter = delta --diff-so-fancy --color-only

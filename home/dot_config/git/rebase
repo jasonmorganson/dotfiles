@@ -1,0 +1,5 @@
+[rebase]
+    autostash = true
+    autosquash = true
+    updateRefs = true
+    missingCommitsCheck = error

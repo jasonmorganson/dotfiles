@@ -1,0 +1,2 @@
+[gpg]
+    program=/.codespaces/bin/gh-gpgsign
