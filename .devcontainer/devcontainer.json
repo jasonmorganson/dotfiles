@@ -2,8 +2,5 @@
   "name": "dotfiles",
   "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
-  "features": {
-    "ghcr.io/devcontainers/features/chezmoi:1": {},
-  },
   "postCreateCommand": "./install.sh"
 }
