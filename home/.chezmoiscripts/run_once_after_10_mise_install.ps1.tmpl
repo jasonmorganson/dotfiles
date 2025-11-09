@@ -1,0 +1,11 @@
+{{- if eq .chezmoi.os "windows" -}}
+#!/usr/bin/env pwsh
+$ErrorActionPreference = 'Stop'
+
+$misePath = Join-Path $HOME ".local/bin/mise.exe"
+if (Test-Path $misePath) {
+    & $misePath install
+} else {
+    Write-Warning "Skipping 'mise install' because $misePath was not found."
+}
+{{- end -}}

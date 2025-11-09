@@ -1,0 +1,7 @@
+{{- if ne .chezmoi.os "windows" -}}
+#!/bin/sh
+set -eu
+
+# Ensure all mise tools are installed on Unix-like systems
+~/.local/bin/mise install
+{{- end -}}

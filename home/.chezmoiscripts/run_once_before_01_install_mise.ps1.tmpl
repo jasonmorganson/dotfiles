@@ -1,0 +1,14 @@
+{{- if eq .chezmoi.os "windows" -}}
+#!/usr/bin/env pwsh
+$ErrorActionPreference = 'Stop'
+
+# Ensure ~/.local/bin exists so mise follows the same path on every OS
+$binDir = Join-Path $HOME ".local/bin"
+if (-not (Test-Path $binDir)) {
+    New-Item -ItemType Directory -Force -Path $binDir | Out-Null
+}
+
+Write-Host "Installing mise for Windows into $binDir"
+$installScript = Invoke-RestMethod -Uri "https://mise.run"
+Invoke-Expression $installScript
+{{- end -}}

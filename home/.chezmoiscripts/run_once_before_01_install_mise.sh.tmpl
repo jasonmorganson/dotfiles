@@ -1,0 +1,7 @@
+{{- if ne .chezmoi.os "windows" -}}
+#!/bin/sh
+set -eu
+
+# Install mise on Unix-like systems
+curl https://mise.run | sh
+{{- end -}}

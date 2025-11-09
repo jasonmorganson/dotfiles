@@ -1,11 +1,15 @@
-{{- $mise := joinPath (env "HOME") ".local/bin/mise" -}}
+{{- $home := env "HOME" -}}
+{{- $miseBase := joinPath $home ".local/bin/mise" -}}
+{{- $mise := printf "%s%s" $miseBase (ternary ".exe" "" (eq .chezmoi.os "windows")) -}}
 
+{{- if (stat $mise) -}}
 {{ output $mise "activate" .SHELL }}
 
 {{ output $mise "exec" "starship" "--" "starship" "init" .SHELL }}
 
-{{ if ne .SHELL "nu" }}
+{{ if and (ne .SHELL "nu") (ne .chezmoi.os "windows") }}
 {{ output $mise "exec" "ubi:jasonmorganson/antidot@v0.6.3-arm-5" "--" "antidot" "init" "--shell" .SHELL }}
 {{ end }}
 
 {{ output $mise "exec" "rust" "--" $mise "exec" "cargo:https://github.com/jasonmorganson/alias-rs@branch:main" "--" "als" "init" .SHELL | splitList "\n" | sortAlpha | join "\n" }}
+{{- end -}}
