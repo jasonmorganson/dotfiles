@@ -13,6 +13,6 @@ jobs:
         platform: [ubuntu-22.04, ubuntu-24.04, macos-14, macos-15, macos-26]
     runs-on: ${{ matrix.platform }}
     steps:
-    - uses: actions/checkout@v5
+    - uses: actions/checkout@v6
     - name: Run install script
       run: ./install.sh
