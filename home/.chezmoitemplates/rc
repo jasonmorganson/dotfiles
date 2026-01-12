@@ -8,4 +8,3 @@
 {{ output $mise "exec" "ubi:jasonmorganson/antidot@v0.6.3-arm-5" "--" "antidot" "init" "--shell" .SHELL }}
 {{ end }}
 
-{{ output $mise "exec" "rust" "--" $mise "exec" "cargo:https://github.com/jasonmorganson/alias-rs@branch:main" "--" "als" "init" .SHELL | splitList "\n" | sortAlpha | join "\n" }}
