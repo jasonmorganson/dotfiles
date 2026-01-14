@@ -1,5 +1,5 @@
-{{- $github := index . "github" | default (dict) -}}
-{{- $login := index $github "login" | default "" -}}
+{{- $github := index . "github" | default (dict "id" "" "name" "" "login" "") -}}
+{{- $login := index $github "login" -}}
 {{- if $login }}
 {{- range gitHubKeys $login }}
 {{ $login }} {{ .Key }}

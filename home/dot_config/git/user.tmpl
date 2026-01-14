@@ -1,8 +1,8 @@
 [user]
-{{- $github := index . "github" | default (dict) -}}
-{{- $id := index $github "id" | default "" -}}
-{{- $name := index $github "name" | default "" -}}
-{{- $login := index $github "login" | default "" -}}
+{{- $github := index . "github" | default (dict "id" "" "name" "" "login" "") -}}
+{{- $id := index $github "id" -}}
+{{- $name := index $github "name" -}}
+{{- $login := index $github "login" -}}
 {{- if and $id $name $login }}
     name = {{ $name | quote }}
     email = {{ printf "%v+%s@users.noreply.github.com" $id $login | quote }}
