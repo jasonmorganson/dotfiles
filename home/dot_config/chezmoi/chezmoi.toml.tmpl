@@ -1,15 +1,26 @@
 {{ $mise := joinPath .chezmoi.homeDir ".local/bin/mise" -}}
 {{ $output := output "sh" "-c" (print $mise " exec aqua:cli/cli -- gh api user 2>/dev/null || true") -}}
+{{- $login := "" -}}
+{{- $name := "" -}}
+{{- $id := "" -}}
 {{- if $output }}
 {{- with (fromJson $output) }}
-{{- if and (index . "id") (index . "name") (index . "login") }}
+{{- if .login }}
+{{- $login = .login -}}
+{{- end }}
+{{- if .name }}
+{{- $name = .name -}}
+{{- end }}
+{{- if .id }}
+{{- $id = printf "%v" .id -}}
+{{- end }}
+{{- end }}
+{{- end }}
+
 [data.github]
-    id = {{ printf "%v" .id | quote }}
-    name = {{ .name | quote }}
-    login = {{ .login | quote }}
-{{ end }}
-{{ end }}
-{{ end }}
+    id = {{ $id | quote }}
+    name = {{ $name | quote }}
+    login = {{ $login | quote }}
 
 [git]
     autoCommit = true
