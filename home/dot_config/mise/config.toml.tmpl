@@ -13,23 +13,6 @@ cargo-binstall = "latest"
 "aqua:BurntSushi/ripgrep" = "latest"
 
 [env]
-_.path = [
-    "~/bin",
-    "~/go/bin",
-    ".cargo/bin",
-    "~/.local/bin",
-    "~/.orbstack/bin",
-    "/Applications/Postgres.app/Contents/Versions/18/bin",
-    "/opt/homebrew/opt/uutils-coreutils/libexec/uubin",
-    "/opt/homebrew/bin",
-    "/opt/homebrew/sbin",
-    "/usr/local/bin",
-    "/usr/bin",
-    "/usr/sbin",
-    "/bin",
-    "/sbin"
-]
-
 # XDG
 XDG_CACHE_HOME = "{{ "{{ env.HOME }}/.cache" }}"
 XDG_CONFIG_HOME = "{{ "{{ env.HOME }}/.config" }}"
@@ -110,6 +93,22 @@ ZDOTDIR = "{{ "{{ env.HOME }}/.config/zsh" }}"
 __GL_SHADER_DISK_CACHE_PATH = "{{ "{{ env.XDG_CACHE_HOME }}/nv" }}"
 _Z_DATA = "{{ "{{ env.XDG_CACHE_HOME }}/z" }}"
 npm_config_cache = "{{ "{{ env.XDG_CACHE_HOME }}/npm" }}"
+_.path = [
+    "~/bin",
+    "{{ "{{ env.GOPATH }}/bin" }}",
+    "{{ "{{ env.CARGO_HOME }}/bin" }}",
+    "~/.local/bin",
+    "~/.orbstack/bin",
+    "/Applications/Postgres.app/Contents/Versions/18/bin",
+    "/opt/homebrew/opt/uutils-coreutils/libexec/uubin",
+    "/opt/homebrew/bin",
+    "/opt/homebrew/sbin",
+    "/usr/local/bin",
+    "/usr/bin",
+    "/usr/sbin",
+    "/bin",
+    "/sbin"
+]
 
 # LS_COLORS
 LS_COLORS={{ output $mise "exec" "ubi:sharkdp/vivid" "--" "vivid" "--color-mode" "8-bit" "generate" "one-dark" | trim | quote }}
@@ -158,4 +157,3 @@ kctx = "kubectx"
 
 # Node
 node = "node --experimental-transform-types"
-
