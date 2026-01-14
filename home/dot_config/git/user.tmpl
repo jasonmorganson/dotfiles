@@ -1,6 +1,5 @@
 [user]
-{{- $github := (index . "github" | default (dict "id" "" "name" "" "login" "")) -}}
-{{- with $github -}}
+{{- with (index . "github" | default (dict "id" "" "name" "" "login" "")) -}}
 {{- if and .id .name .login }}
     name = {{ .name | quote }}
     email = {{ printf "%v+%s@users.noreply.github.com" .id .login | quote }}
