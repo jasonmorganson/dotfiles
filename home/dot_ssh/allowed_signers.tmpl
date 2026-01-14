@@ -1,4 +1,5 @@
-{{- $user := default "octocat" (default (env "GITHUB_USER") .github.login) -}}
-{{- range gitHubKeys $user -}}
-{{ $user }} {{ .Key }}
-{{ end }}
+{{- if .github.login -}}
+{{- range gitHubKeys .github.login -}}
+{{ $.github.login }} {{ .Key }}
+{{- end -}}
+{{- end -}}
