@@ -1,6 +1,6 @@
 {{- $mise := joinPath .chezmoi.homeDir ".local/bin/mise" -}}
 {{- $output := output "sh" "-c" (print $mise " exec aqua:cli/cli -- gh api user 2>/dev/null || true") -}}
-{{- with ((and $output (fromJson $output)) | default (dict "id" "" "name" "" "login" "")) -}}
+{{- with (merge (dict "id" "" "name" "" "login" "") ((and $output (fromJson $output)) | default (dict))) -}}
 [data.github]
     id = {{ printf "%v" .id | quote }}
     name = {{ .name | quote }}
