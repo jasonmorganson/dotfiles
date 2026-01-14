@@ -40,8 +40,6 @@ XDG_STATE_HOME = "{{ "{{ env.HOME }}/.local/state" }}"
 LS_COLORS={{ output $mise "exec" "ubi:sharkdp/vivid" "--" "vivid" "--color-mode" "8-bit" "generate" "one-dark" | trim | quote }}
 
 # GitHub
-{{- $github := index . "github" | default (dict) -}}
-{{- $login := index $github "login" | default "" -}}
-{{- if $login }}
-GITHUB_USER = {{ $login | quote }}
+{{- if .github.login }}
+GITHUB_USER = {{ .github.login | quote }}
 {{- end }}
