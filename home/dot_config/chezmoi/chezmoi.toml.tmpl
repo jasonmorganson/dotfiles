@@ -1,21 +1,9 @@
-{{ $mise := joinPath .chezmoi.homeDir ".local/bin/mise" -}}
-{{ $output := output "sh" "-c" (print $mise " exec aqua:cli/cli -- gh api user 2>/dev/null || true") -}}
-{{- $login := "" -}}
-{{- $name := "" -}}
-{{- $id := "" -}}
-{{- if $output }}
-{{- with (fromJson $output) }}
-{{- if .login }}
-{{- $login = .login -}}
-{{- end }}
-{{- if .name }}
-{{- $name = .name -}}
-{{- end }}
-{{- if .id }}
-{{- $id = printf "%v" .id -}}
-{{- end }}
-{{- end }}
-{{- end }}
+{{- $mise := joinPath .chezmoi.homeDir ".local/bin/mise" -}}
+{{- $output := output "sh" "-c" (print $mise " exec aqua:cli/cli -- gh api user 2>/dev/null || true") -}}
+{{- $user := (and $output (fromJson $output)) | default (dict) -}}
+{{- $id := (printf "%v" (index $user "id")) | default "" -}}
+{{- $name := index $user "name" | default "" -}}
+{{- $login := index $user "login" | default "" -}}
 
 [data.github]
     id = {{ $id | quote }}
