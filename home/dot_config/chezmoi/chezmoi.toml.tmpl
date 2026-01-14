@@ -1,14 +1,11 @@
 {{- $mise := joinPath .chezmoi.homeDir ".local/bin/mise" -}}
 {{- $output := output "sh" "-c" (print $mise " exec aqua:cli/cli -- gh api user 2>/dev/null || true") -}}
-{{- $user := (and $output (fromJson $output)) | default (dict "id" "" "name" "" "login" "") -}}
-{{- $id := (printf "%v" (index $user "id")) -}}
-{{- $name := index $user "name" -}}
-{{- $login := index $user "login" -}}
-
+{{- with ((and $output (fromJson $output)) | default (dict "id" "" "name" "" "login" "")) -}}
 [data.github]
-    id = {{ $id | quote }}
-    name = {{ $name | quote }}
-    login = {{ $login | quote }}
+    id = {{ printf "%v" .id | quote }}
+    name = {{ .name | quote }}
+    login = {{ .login | quote }}
+{{- end }}
 
 [git]
     autoCommit = true
