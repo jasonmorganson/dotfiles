@@ -1,4 +1,6 @@
-{{- $user := (env "GITHUB_USER" | default "octocat") -}}
+{{- $github := index . "github" | default (dict) -}}
+{{- $login := index $github "login" | default "" -}}
+{{- $user := default "octocat" (default (env "GITHUB_USER") $login) -}}
 {{- range gitHubKeys $user -}}
 {{ $user }} {{ .Key }}
 {{ end }}

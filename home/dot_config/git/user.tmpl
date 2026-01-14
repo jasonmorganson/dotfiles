@@ -1,0 +1,11 @@
+{{- $github := index . "github" | default (dict) -}}
+{{- $id := index $github "id" | default "" -}}
+{{- $name := index $github "name" | default "" -}}
+{{- $login := index $github "login" | default "" -}}
+
+[user]
+{{- if and $id $name $login }}
+    name = {{ $name | quote }}
+    email = {{ printf "%v+%s@users.noreply.github.com" $id $login | quote }}
+{{- end }}
+    signingkey = ~/.ssh/id_ed25519.pub
