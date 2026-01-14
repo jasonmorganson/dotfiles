@@ -1,7 +1,7 @@
-{{- $github := index . "github" | default (dict "id" "" "name" "" "login" "") -}}
-{{- $login := index $github "login" -}}
-{{- if $login }}
-{{- range gitHubKeys $login }}
+{{- with (index . "github" | default (dict "id" "" "name" "" "login" "")) -}}
+{{- if .login }}
+{{- range gitHubKeys .login }}
 {{ .Key }}
+{{- end }}
 {{- end }}
 {{- end }}
