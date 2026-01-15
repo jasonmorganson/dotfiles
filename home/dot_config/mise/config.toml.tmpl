@@ -12,7 +12,9 @@ starship = "latest"
 cargo-binstall = "latest"
 "ubi:lsd-rs/lsd" = "latest"
 "aqua:BurntSushi/ripgrep" = "latest"
+{{- if eq .chezmoi.os "darwin" }}
 "ubi:MitMaro/git-interactive-rebase-tool" = "latest"
+{{- end }}
 
 [env]
 # XDG

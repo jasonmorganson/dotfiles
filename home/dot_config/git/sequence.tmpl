@@ -1,2 +1,4 @@
+{{- if eq .chezmoi.os "darwin" }}
 [sequence]
     editor = interactive-rebase-tool
+{{- end }}
