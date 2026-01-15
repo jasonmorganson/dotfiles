@@ -10,10 +10,15 @@ git-lfs = "latest"
 chezmoi = "latest"
 starship = "latest"
 cargo-binstall = "latest"
-"ubi:lsd-rs/lsd" = "latest"
+"github:lsd-rs/lsd" = "latest"
 "aqua:BurntSushi/ripgrep" = "latest"
 {{- if eq .chezmoi.os "darwin" }}
-"ubi:MitMaro/git-interactive-rebase-tool" = "latest"
+# CI/devcontainer use linux/amd64 + linux/arm64; tool install remains macOS-only.
+[tools."github:MitMaro/git-interactive-rebase-tool"]
+version = "latest"
+[tools."github:MitMaro/git-interactive-rebase-tool".platforms]
+macos-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-macos-*_arm" }
+macos-x64 = { asset_pattern = "git-interactive-rebase-tool-*-macos-*_intel" }
 {{- end }}
 
 [env]
@@ -115,7 +120,7 @@ _.path = [
 ]
 
 # LS_COLORS
-LS_COLORS={{ output $mise "exec" "ubi:sharkdp/vivid" "--" "vivid" "--color-mode" "8-bit" "generate" "one-dark" | trim | quote }}
+LS_COLORS={{ output $mise "exec" "github:sharkdp/vivid" "--" "vivid" "--color-mode" "8-bit" "generate" "one-dark" | trim | quote }}
 
 # GitHub
 {{- with (index . "github" | default (dict "id" "" "name" "" "login" "")) -}}
