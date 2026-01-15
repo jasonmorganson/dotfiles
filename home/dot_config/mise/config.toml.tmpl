@@ -12,14 +12,14 @@ starship = "latest"
 cargo-binstall = "latest"
 "github:lsd-rs/lsd" = "latest"
 "aqua:BurntSushi/ripgrep" = "latest"
-{{- if eq .chezmoi.os "darwin" }}
-# CI/devcontainer use linux/amd64 + linux/arm64; tool install remains macOS-only.
+
 [tools."github:MitMaro/git-interactive-rebase-tool"]
 version = "latest"
 [tools."github:MitMaro/git-interactive-rebase-tool".platforms]
 macos-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-macos-*_arm" }
 macos-x64 = { asset_pattern = "git-interactive-rebase-tool-*-macos-*_intel" }
-{{- end }}
+linux-x64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_amd64.deb" }
+linux-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.deb" }
 
 [env]
 # XDG
