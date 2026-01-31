@@ -4,7 +4,6 @@
 
 {{ output $mise "exec" "starship" "--" "starship" "init" .SHELL }}
 
-{{- $supported := list "bash" "fish" "zsh" "powershell" -}}
-{{- if in $supported .SHELL -}}
+{{- if regexMatch "^(bash|fish|zsh|powershell)$" .SHELL -}}
 {{ output $mise "exec" "cargo:worktree" "--" "wt" "config" "shell" "init" .SHELL }}
 {{- end -}}
