@@ -4,6 +4,7 @@
 
 {{ output $mise "exec" "starship" "--" "starship" "init" .SHELL }}
 
-{{- if or (eq .SHELL "bash") (eq .SHELL "fish") (eq .SHELL "zsh") (eq .SHELL "powershell") -}}
+{{- $supported := list "bash" "fish" "zsh" "powershell" -}}
+{{- if in $supported .SHELL -}}
 {{ output $mise "exec" "cargo:worktree" "--" "wt" "config" "shell" "init" .SHELL }}
 {{- end -}}
