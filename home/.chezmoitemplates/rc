@@ -3,3 +3,7 @@
 {{ output $mise "activate" .SHELL }}
 
 {{ output $mise "exec" "starship" "--" "starship" "init" .SHELL }}
+
+{{- if or (eq .SHELL "bash") (eq .SHELL "fish") (eq .SHELL "zsh") (eq .SHELL "powershell") -}}
+{{ output $mise "exec" "cargo:worktree" "--" "wt" "config" "shell" "init" .SHELL }}
+{{- end -}}
