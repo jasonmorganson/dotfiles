@@ -120,7 +120,7 @@ _.path = [
 ]
 
 # LS_COLORS
-LS_COLORS={{ output $mise "exec" "github:sharkdp/vivid" "--" "vivid" "--color-mode" "8-bit" "generate" "one-dark" | trim | quote }}
+LS_COLORS={{ output $mise "exec" "vivid" "--" "vivid" "--color-mode" "8-bit" "generate" "one-dark" | trim | quote }}
 
 # GitHub
 {{- with (index . "github" | default (dict "id" "" "name" "" "login" "")) -}}
