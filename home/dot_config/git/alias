@@ -1,2 +1,3 @@
 [alias]
     unpushed = log --branches --not --remotes --no-walk --decorate --oneline
+    update-main-ref = "!git fetch origin --prune && git update-ref refs/heads/main origin/main"
