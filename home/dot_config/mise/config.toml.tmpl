@@ -3,6 +3,7 @@
 [tools]
 gh = "latest"
 fzf = "latest"
+fnox = "latest"
 delta = "latest"
 helix = "latest"
 gitui = "latest"
@@ -20,6 +21,9 @@ macos-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-macos-*_arm" }
 macos-x64 = { asset_pattern = "git-interactive-rebase-tool-*-macos-*_intel" }
 linux-x64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_amd64.deb" }
 linux-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.deb" }
+
+[plugins]
+fnox-env = "https://github.com/jdx/mise-env-fnox"
 
 [env]
 # XDG
@@ -116,6 +120,7 @@ ZDOTDIR = "{{ "{{ env.HOME }}/.config/zsh" }}"
 __GL_SHADER_DISK_CACHE_PATH = "{{ "{{ env.XDG_CACHE_HOME }}/nv" }}"
 _Z_DATA = "{{ "{{ env.XDG_CACHE_HOME }}/z" }}"
 npm_config_cache = "{{ "{{ env.XDG_CACHE_HOME }}/npm" }}"
+_.fnox-env = { tools = true }
 _.path = [
     "~/bin",
     "{{ "{{ env.GOPATH }}/bin" }}",
@@ -144,7 +149,15 @@ GITHUB_USER = {{ .login | quote }}
 {{- end }}
 
 # HK
+HK = "true"
 HK_STASH = "none"
+
+# fnox
+# FNOX_SHELL_OUTPUT = "none"
+FNOX_AGE_KEY_FILE = "~/.ssh/id_ed25519"
+
+# mise
+MISE_TRUSTED_CONFIG_PATHS = "~"
 
 [shell_alias]
 
