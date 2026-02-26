@@ -1,5 +1,10 @@
 {{- $mise := joinPath (env "HOME") ".local/bin/mise" -}}
+{{- $os := .chezmoi.os -}}
+{{- $arch := .chezmoi.arch -}}
+{{- $gitnrSupported := or (eq $os "darwin") (eq $os "windows") (eq $arch "amd64") -}}
 
+{{- if $gitnrSupported }}
 {{ output $mise "exec" "aqua:reemus-dev/gitnr" "--" "gitnr" "create" "ghg:mise" "ghg:Linux" "ghg:macOS" "Node" "Nextjs" "Python" }}
+{{- end }}
 
 .zed
