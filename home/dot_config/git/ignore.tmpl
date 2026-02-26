@@ -1,3 +1,5 @@
 {{- $mise := joinPath (env "HOME") ".local/bin/mise" -}}
 
-{{ output $mise "exec" "rust" "--" $mise "exec" "cargo:gitnr" "--" "gitnr" "create" "ghg:mise" "ghg:Linux" "ghg:macOS" "Node" "Nextjs" "Python" }}
+{{ output $mise "exec" "aqua:reemus-dev/gitnr" "--" "gitnr" "create" "ghg:mise" "ghg:Linux" "ghg:macOS" "Node" "Nextjs" "Python" }}
+
+.zed
