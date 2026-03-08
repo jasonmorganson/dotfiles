@@ -4,6 +4,4 @@
 
 {{ output $mise "exec" "starship" "--" "starship" "init" .SHELL }}
 
-{{ if regexMatch "^(bash|fish|zsh|powershell)$" .SHELL -}}
 {{ output $mise "exec" "fnox" "--" "fnox" "activate" .SHELL }}
-{{- end }}
