@@ -1,1 +1,8 @@
-{{- template "rc" (dict "SHELL" "bash") -}}
+{{- template "mise-env" (dict "SHELL" "bash") -}}
+
+case $- in
+  *i*) ;;
+  *) return ;;
+esac
+
+{{ template "rc" (dict "SHELL" "bash") -}}
