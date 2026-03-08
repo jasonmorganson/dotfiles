@@ -1,7 +1,5 @@
-{{- $mise := joinPath (env "HOME") ".local/bin/mise" -}}
-
 {{- if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "windows") (eq .chezmoi.arch "amd64") }}
-{{ output $mise "exec" "aqua:reemus-dev/gitnr" "--" "gitnr" "create" "ghg:mise" "ghg:Linux" "ghg:macOS" "Node" "Nextjs" "Python" }}
+{{ output "mise" "exec" "aqua:reemus-dev/gitnr" "--" "gitnr" "create" "ghg:mise" "ghg:Linux" "ghg:macOS" "Node" "Nextjs" "Python" }}
 {{- end }}
 
 .zed

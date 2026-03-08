@@ -1,5 +1,4 @@
-{{ $mise := joinPath .chezmoi.homeDir ".local/bin/mise" }}
-{{ output $mise "exec" "starship" "--" "starship" "preset" "no-nerd-font" }}
+{{ output "mise" "exec" "starship" "--" "starship" "preset" "no-nerd-font" }}
 
 [cmd_duration]
 disabled = true
