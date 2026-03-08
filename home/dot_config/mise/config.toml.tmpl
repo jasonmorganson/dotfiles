@@ -1,5 +1,3 @@
-{{ $mise := joinPath .chezmoi.homeDir ".local/bin/mise" }}
-
 [tools]
 gh = "latest"
 fzf = "latest"
@@ -140,7 +138,7 @@ _.path = [
 ]
 
 # LS_COLORS
-LS_COLORS={{ output $mise "exec" "vivid" "--" "vivid" "--color-mode" "8-bit" "generate" "one-dark" | trim | quote }}
+LS_COLORS={{ output "mise" "exec" "vivid" "--" "vivid" "--color-mode" "8-bit" "generate" "one-dark" | trim | quote }}
 
 # GitHub
 {{- with (index . "github" | default (dict "id" "" "name" "" "login" "")) -}}
