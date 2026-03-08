@@ -1,4 +1,4 @@
-{{ output "mise" "activate" "bash" }}
+{{ template "env" (dict "SHELL" "bash") -}}
 
 case $- in
   *i*)
