@@ -1,9 +1,5 @@
 {{ template "env" (dict "SHELL" "bash") -}}
 
-case $- in
-  *i*)
-    if [ -r "$HOME/.bashrc" ]; then
-      . "$HOME/.bashrc"
-    fi
-    ;;
-esac
+if [[ $- == *i* ]] && [ -r "$HOME/.bashrc" ]; then
+  . "$HOME/.bashrc"
+fi
