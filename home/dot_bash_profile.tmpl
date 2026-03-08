@@ -1,3 +1,9 @@
-if [ -r "$HOME/.bashrc" ]; then
-  . "$HOME/.bashrc"
-fi
+{{ output "mise" "activate" "bash" }}
+
+case $- in
+  *i*)
+    if [ -r "$HOME/.bashrc" ]; then
+      . "$HOME/.bashrc"
+    fi
+    ;;
+esac
