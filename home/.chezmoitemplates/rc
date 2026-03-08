@@ -3,4 +3,6 @@
 {{ output $mise "activate" .SHELL }}
 {{ output $mise "exec" "starship" "--" "starship" "init" .SHELL }}
 {{ output $mise "exec" "fnox" "--" "fnox" "activate" .SHELL }}
-{{ output $mise "exec" "cargo:worktrunk" "--" "wt" "config" "shell" "init" .SHELL }}
+{{- if regexMatch "^(bash|fish|zsh)$" .SHELL }}
+{{ output $mise "exec" "rust" "--" $mise "exec" "cargo:worktrunk" "--" "wt" "config" "shell" "init" .SHELL }}
+{{- end }}
