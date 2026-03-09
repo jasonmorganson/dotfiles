@@ -1,5 +1,5 @@
 {{ template "env" (dict "SHELL" "bash") }}
 
-if [[ $- == *i* ]] && [ -r "$HOME/.bashrc" ]; then
+if [[ $- == *i* ]]; then
   . "$HOME/.bashrc"
 fi
