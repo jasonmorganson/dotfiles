@@ -3,14 +3,36 @@
 set -eu
 
 cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/pkl"
+pkl_bin=""
+
+for candidate in "$HOME"/.local/share/mise/installs/pkl/*/pkl; do
+  if [ -x "$candidate" ]; then
+    pkl_bin="$candidate"
+  fi
+done
+
+if [ -z "$pkl_bin" ]; then
+  echo "pkl wrapper: no installed pkl binary found under mise" >&2
+  exit 127
+fi
 
 for arg in "$@"; do
   case "$arg" in
     --cache-dir|--cache-dir=*)
-      exec "$HOME/.local/share/mise/shims/pkl" "$@"
+      exec "$pkl_bin" "$@"
       ;;
   esac
 done
 
-mkdir -p "$cache_dir"
-exec "$HOME/.local/share/mise/shims/pkl" --cache-dir "$cache_dir" "$@"
+subcommand="${1:-}"
+
+case "$subcommand" in
+  eval|repl|test|download-package|run)
+    mkdir -p "$cache_dir"
+    shift
+    exec "$pkl_bin" "$subcommand" --cache-dir "$cache_dir" "$@"
+    ;;
+  *)
+    exec "$pkl_bin" "$@"
+    ;;
+esac
