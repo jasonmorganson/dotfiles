@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -eu
+
+cache_dir="${XDG_CACHE_HOME:-$HOME/.cache}/pkl"
+
+for arg in "$@"; do
+  case "$arg" in
+    --cache-dir|--cache-dir=*)
+      exec "$HOME/.local/share/mise/shims/pkl" "$@"
+      ;;
+  esac
+done
+
+mkdir -p "$cache_dir"
+exec "$HOME/.local/share/mise/shims/pkl" --cache-dir "$cache_dir" "$@"
