@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 
-cd "${HOME}/.local/share/symphony/elixir"
+cd "${XDG_DATA_HOME:-$HOME/.local/share}/symphony/elixir"
 
 mise install
 mise exec -- mix setup
