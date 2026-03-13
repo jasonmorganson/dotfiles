@@ -4,7 +4,7 @@ mise = true
 [daemons.symphony-server]
 run = "./bin/symphony \"$SYMPHONY_WORKFLOW_FILE\" --port 4410"
 dir = "~/.local/share/symphony/elixir"
-env = { SYMPHONY_WORKFLOW_FILE = {{ env "SYMPHONY_WORKFLOW_FILE" | quote }} }
+env = { SYMPHONY_WORKFLOW_FILE = {{ index (index . "symphony" | default (dict "workflow_file" "")) "workflow_file" | quote }} }
 retry = true
 boot_start = true
 ready_port = 4410

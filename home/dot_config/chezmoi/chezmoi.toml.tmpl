@@ -9,6 +9,10 @@
     login = {{ .login | quote }}
 {{- end }}
 
+{{- $symphony := index . "symphony" | default (dict "workflow_file" "") }}
+[data.symphony]
+    workflow_file = {{ index $symphony "workflow_file" | quote }}
+
 [git]
     autoCommit = true
     autoPush = true
