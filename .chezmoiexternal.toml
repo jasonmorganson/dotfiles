@@ -1,7 +1,0 @@
-[".local/share/symphony"]
-    type = "git-repo"
-    url = "https://github.com/openai/symphony.git"
-    refreshPeriod = "168h"
-
-    [".local/share/symphony".pull]
-        args = ["--ff-only"]
