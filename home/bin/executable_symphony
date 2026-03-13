@@ -1,3 +1,3 @@
 #!/usr/bin/env -S mise x -- sh -eu
 
-exec "${XDG_DATA_HOME:-$HOME/.local/share}/symphony/elixir/bin/symphony" "$@"
+exec "$XDG_DATA_HOME/symphony/elixir/bin/symphony" "$@"
