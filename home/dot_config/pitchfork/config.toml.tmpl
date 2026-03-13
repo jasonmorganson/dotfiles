@@ -2,8 +2,8 @@
 mise = true
 
 [daemons.symphony-server]
-run = "mise run symphony:serve"
+run = "./bin/symphony ~/.config/symphony/WORKFLOW.md --port 4410"
 dir = "~/.local/share/symphony/elixir"
 retry = true
 boot_start = true
-ready_port = {{ env "SYMPHONY_PORT" | default "4410" }}
+ready_port = 4410

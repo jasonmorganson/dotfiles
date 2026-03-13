@@ -8,7 +8,7 @@ tracker:
 polling:
   interval_ms: 5000
 workspace:
-  root: $SYMPHONY_WORKSPACE_ROOT
+  root: ~/.codex/symphony-workspaces
 hooks:
   after_create: |
     git clone --depth 1 {{ env "SYMPHONY_SOURCE_REPO_URL" | default "REPLACE_ME_SOURCE_REPO_URL" | quote }} .
@@ -20,7 +20,7 @@ agent:
   max_concurrent_agents: 10
   max_turns: 20
 codex:
-  command: {{ printf "$CODEX_BIN app-server --model %s" (env "SYMPHONY_CODEX_MODEL" | default "gpt-5.3-codex") | quote }}
+  command: "$CODEX_BIN app-server --model gpt-5.3-codex"
   approval_policy: never
   thread_sandbox: workspace-write
   turn_sandbox_policy:
