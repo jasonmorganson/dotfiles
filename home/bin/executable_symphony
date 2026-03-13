@@ -2,4 +2,4 @@
 
 set -eu
 
-exec "$HOME/.local/share/symphony/elixir/bin/symphony" "$@"
+exec mise exec -- "$HOME/.local/share/symphony/elixir/bin/symphony" "$@"
