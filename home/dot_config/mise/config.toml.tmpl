@@ -239,6 +239,18 @@ run = "pitchfork status symphony-server"
 description = "Tail Symphony daemon logs"
 run = "pitchfork logs symphony-server"
 
+[tasks."symphony:boot-enable"]
+description = "Enable Pitchfork supervisor at login"
+run = "pitchfork boot enable"
+
+[tasks."symphony:boot-disable"]
+description = "Disable Pitchfork supervisor at login"
+run = "pitchfork boot disable"
+
+[tasks."symphony:boot-status"]
+description = "Show Pitchfork boot-start status"
+run = "pitchfork boot status"
+
 [shell_alias]
 
 # chezmoi
