@@ -7,6 +7,7 @@ helix = "latest"
 gitui = "latest"
 git-lfs = "latest"
 chezmoi = "latest"
+pitchfork = "latest"
 starship = "latest"
 cargo-binstall = "latest"
 "github:max-sixty/worktrunk" = "latest"
@@ -158,6 +159,85 @@ FNOX_AGE_KEY_FILE = "~/.ssh/id_ed25519"
 
 # mise
 MISE_TRUSTED_CONFIG_PATHS = "~"
+
+# Symphony
+SYMPHONY_ROOT = "{{ "{{ env.XDG_DATA_HOME }}/symphony" }}"
+SYMPHONY_ELIXIR_ROOT = "{{ "{{ env.SYMPHONY_ROOT }}/elixir" }}"
+SYMPHONY_CONFIG_ROOT = "{{ "{{ env.XDG_CONFIG_HOME }}/symphony" }}"
+SYMPHONY_WORKFLOW_FILE = "{{ "{{ env.SYMPHONY_CONFIG_ROOT }}/WORKFLOW.md" }}"
+SYMPHONY_PORT = "4410"
+SYMPHONY_CODEX_MODEL = "gpt-5.3-codex"
+SYMPHONY_WORKSPACE_ROOT = "~/.codex/symphony-workspaces"
+
+[tasks."symphony:check"]
+description = "Validate Symphony runtime prerequisites"
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+
+: "${LINEAR_API_KEY:?LINEAR_API_KEY must be set}"
+
+if [ ! -f "$SYMPHONY_WORKFLOW_FILE" ]; then
+  echo "Missing workflow file: $SYMPHONY_WORKFLOW_FILE" >&2
+  exit 1
+fi
+
+if grep -q 'REPLACE_ME' "$SYMPHONY_WORKFLOW_FILE"; then
+  echo "Update placeholder values in $SYMPHONY_WORKFLOW_FILE before starting Symphony." >&2
+  exit 1
+fi
+'''
+
+[tasks."symphony:setup"]
+description = "Fetch, trust, and build the Symphony Elixir server"
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+
+chezmoi apply --refresh-externals=always
+cd "$SYMPHONY_ELIXIR_ROOT"
+mise trust
+mise install
+mise exec -- mix setup
+mise exec -- mix build
+'''
+
+[tasks."symphony:serve"]
+description = "Run the Symphony server in the foreground"
+depends = ["symphony:check"]
+run = '''
+#!/usr/bin/env bash
+set -euo pipefail
+
+cd "$SYMPHONY_ELIXIR_ROOT"
+[ -x ./bin/symphony ] || {
+  echo "Missing ./bin/symphony. Run: mise run symphony:setup" >&2
+  exit 1
+}
+mise exec -- ./bin/symphony "$SYMPHONY_WORKFLOW_FILE" --port "$SYMPHONY_PORT"
+'''
+
+[tasks."symphony:start"]
+description = "Start the Symphony daemon with Pitchfork"
+depends = ["symphony:setup", "symphony:check"]
+run = "pitchfork start symphony-server"
+
+[tasks."symphony:stop"]
+description = "Stop the Symphony daemon"
+run = "pitchfork stop symphony-server"
+
+[tasks."symphony:restart"]
+description = "Restart the Symphony daemon"
+depends = ["symphony:setup", "symphony:check"]
+run = "pitchfork restart symphony-server"
+
+[tasks."symphony:status"]
+description = "Show Symphony daemon status"
+run = "pitchfork status symphony-server"
+
+[tasks."symphony:logs"]
+description = "Tail Symphony daemon logs"
+run = "pitchfork logs symphony-server"
 
 [shell_alias]
 

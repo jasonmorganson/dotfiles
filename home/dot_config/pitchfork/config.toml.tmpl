@@ -1,0 +1,8 @@
+[settings.general]
+mise = true
+
+[daemons.symphony-server]
+run = "mise run symphony:serve"
+dir = "~/.local/share/symphony/elixir"
+retry = true
+ready_port = {{ env "SYMPHONY_PORT" | default "4410" }}
