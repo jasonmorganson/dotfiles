@@ -1,5 +1,5 @@
-#!/bin/sh
+#!/usr/bin/env -S mise x -- sh
 
 set -eu
 
-exec mise exec -- "$HOME/.local/share/symphony/elixir/bin/symphony" "$@"
+exec "$HOME/.local/share/symphony/elixir/bin/symphony" "$@"
