@@ -1,4 +1,7 @@
 {{ output "mise" "activate" .SHELL }}
 {{ output "mise" "exec" "starship" "--" "starship" "init" .SHELL }}
 {{ output "mise" "exec" "fnox" "--" "fnox" "activate" .SHELL }}
+{{- if or (eq .SHELL "bash") (eq .SHELL "zsh") (eq .SHELL "fish") }}
+{{ output "mise" "exec" "pitchfork" "--" "pitchfork" "activate" .SHELL }}
+{{- end }}
 {{ output "mise" "exec" "github:max-sixty/worktrunk" "--" "wt" "config" "shell" "init" .SHELL }}
