@@ -1,53 +1,7 @@
 {{ output "mise" "activate" .SHELL }}
 {{ output "mise" "exec" "starship" "--" "starship" "init" .SHELL }}
-{{- if eq .SHELL "fish" }}
-if type -q fnox
-    set -gx FNOX_SHELL fish
-    set -gx __fnox_bin (command -v fnox)
-
-    function fnox
-        if not test -x "$__fnox_bin"
-            return 127
-        end
-
-        set command $argv[1]
-
-        switch "$command"
-            case deactivate shell
-                eval (command "$__fnox_bin" "$command" $argv[2..-1])
-            case '*'
-                command "$__fnox_bin" "$command" $argv[2..-1]
-        end
-    end
-
-    function __fnox_env_eval --on-event fish_prompt
-        if test "$FNOX_SHELL" = "fish"; and test -x "$__fnox_bin"
-            eval ("$__fnox_bin" hook-env -s fish | string collect)
-        end
-    end
-
-    function __fnox_cd_hook --on-variable PWD
-        if test "$FNOX_SHELL" = "fish"
-            __fnox_env_eval
-        end
-    end
-    __fnox_env_eval
-end
-
-if type -q pitchfork
-    set -gx __pitchfork_bin (command -v pitchfork)
-
-    function __pitchfork --on-variable PWD
-        if test -x "$__pitchfork_bin"
-            "$__pitchfork_bin" cd --shell-pid "$fish_pid"
-        end
-    end
-    __pitchfork
-end
-{{- else }}
 {{ output "mise" "exec" "fnox" "--" "fnox" "activate" .SHELL }}
-{{- if or (eq .SHELL "bash") (eq .SHELL "zsh") }}
+{{- if or (eq .SHELL "bash") (eq .SHELL "zsh") (eq .SHELL "fish") }}
 {{ output "mise" "exec" "pitchfork" "--" "pitchfork" "activate" .SHELL }}
-{{- end }}
 {{- end }}
 {{ output "mise" "exec" "github:max-sixty/worktrunk" "--" "wt" "config" "shell" "init" .SHELL }}
