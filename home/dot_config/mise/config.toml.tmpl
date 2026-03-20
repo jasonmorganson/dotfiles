@@ -2,9 +2,7 @@
 gh = "latest"
 fzf = "latest"
 fnox = "latest"
-{{- if not (and (eq .chezmoi.os "linux") (eq .chezmoi.arch "arm64")) }}
-delta = "latest"
-{{- end }}
+"cargo:git-delta" = "latest"
 helix = "latest"
 gitui = "latest"
 git-lfs = "latest"
