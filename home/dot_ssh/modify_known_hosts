@@ -3,4 +3,5 @@ tempfile="$(mktemp)"
 trap 'rm -rf "${tempfile}"' EXIT
 cat > "${tempfile}"
 if [ ! -n "$(grep "^github.com " "${tempfile}")" ]; then ssh-keyscan github.com >> "${tempfile}" 2>/dev/null; fi
+if [ ! -n "$(grep "^\[ssh.github.com\]:443 " "${tempfile}")" ]; then ssh-keyscan -p 443 ssh.github.com >> "${tempfile}" 2>/dev/null; fi
 cat "${tempfile}"
