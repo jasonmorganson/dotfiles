@@ -1,4 +1,5 @@
+{{- $fnox := joinPath (env "HOME") ".local/share/mise/installs/fnox/latest/fnox" -}}
 {{ output "mise" "activate" .SHELL }}
 {{ output "mise" "exec" "starship" "--" "starship" "init" .SHELL }}
-{{ output "mise" "exec" "fnox" "--" "fnox" "activate" .SHELL }}
+{{ output $fnox "activate" .SHELL }}
 {{ output "mise" "exec" "github:max-sixty/worktrunk" "--" "wt" "config" "shell" "init" .SHELL }}
