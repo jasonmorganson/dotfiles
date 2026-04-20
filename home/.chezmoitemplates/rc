@@ -1,4 +1,4 @@
 {{ output "mise" "activate" .SHELL }}
 {{ output "mise" "exec" "starship" "--" "starship" "init" .SHELL }}
-{{ regexReplaceAll (printf "%s/.local/share/mise/installs/fnox/[^/]+/fnox" (env "HOME")) (output "mise" "exec" "fnox" "--" "fnox" "activate" .SHELL) (joinPath (env "HOME") ".local/share/mise/installs/fnox/latest/fnox") }}
+{{ output "mise" "exec" "fnox" "--" "fnox" "activate" .SHELL }}
 {{ output "mise" "exec" "github:max-sixty/worktrunk" "--" "wt" "config" "shell" "init" .SHELL }}
