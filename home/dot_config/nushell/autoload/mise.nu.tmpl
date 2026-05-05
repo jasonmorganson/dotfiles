@@ -1,12 +1,15 @@
 {{ output "mise" "activate" "nu" }}
 
-for var in [
-  __MISE_SESSION
-  __MISE_DIFF
-  __MISE_ORIG_PATH
-  __MISE_ZSH_CHPWD_RAN
-  __MISE_ZSH_PRECMD_RUN
-] {
-  hide-env -i $var
+def --env _mise_refresh_env [] {
+  [
+    __MISE_SESSION
+    __MISE_DIFF
+    __MISE_ORIG_PATH
+    __MISE_ZSH_CHPWD_RAN
+    __MISE_ZSH_PRECMD_RUN
+  ] | each { |var| hide-env --ignore-errors $var } | ignore
+
+  mise_hook
 }
-mise_hook
+
+_mise_refresh_env
