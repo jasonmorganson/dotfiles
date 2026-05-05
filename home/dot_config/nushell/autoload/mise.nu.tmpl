@@ -1,18 +1,12 @@
 {{ output "mise" "activate" "nu" }}
 
-if "__MISE_SESSION" in $env {
-  hide-env __MISE_SESSION
-}
-if "__MISE_DIFF" in $env {
-  hide-env __MISE_DIFF
-}
-if "__MISE_ORIG_PATH" in $env {
-  hide-env __MISE_ORIG_PATH
-}
-if "__MISE_ZSH_CHPWD_RAN" in $env {
-  hide-env __MISE_ZSH_CHPWD_RAN
-}
-if "__MISE_ZSH_PRECMD_RUN" in $env {
-  hide-env __MISE_ZSH_PRECMD_RUN
+for var in [
+  __MISE_SESSION
+  __MISE_DIFF
+  __MISE_ORIG_PATH
+  __MISE_ZSH_CHPWD_RAN
+  __MISE_ZSH_PRECMD_RUN
+] {
+  hide-env -i $var
 }
 mise_hook
