@@ -1,24 +1,6 @@
-source ($nu.default-config-dir | path join "autoload/mise.nu")
 {{ output "mise" "exec" "starship" "--" "starship" "init" "nu" }}
 {{ output "mise" "exec" "fnox" "--" "fnox" "activate" "nu" }}
 {{ output "mise" "exec" "github:max-sixty/worktrunk" "--" "wt" "config" "shell" "init" "nu" }}
-
-if "__MISE_SESSION" in $env {
-  hide-env __MISE_SESSION
-}
-if "__MISE_DIFF" in $env {
-  hide-env __MISE_DIFF
-}
-if "__MISE_ORIG_PATH" in $env {
-  hide-env __MISE_ORIG_PATH
-}
-if "__MISE_ZSH_CHPWD_RAN" in $env {
-  hide-env __MISE_ZSH_CHPWD_RAN
-}
-if "__MISE_ZSH_PRECMD_RUN" in $env {
-  hide-env __MISE_ZSH_PRECMD_RUN
-}
-mise_hook
 
 $env.config.edit_mode = "vi"
 $env.config.show_banner = false
