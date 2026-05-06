@@ -126,6 +126,7 @@ npm_config_cache = "{{ "{{ env.XDG_CACHE_HOME }}/npm" }}"
 _.fnox-env = { tools = true }
 _.path = [
     "~/bin",
+    "{{ "{{ env.NPM_CONFIG_PREFIX }}/bin" }}",
     "{{ "{{ env.GOPATH }}/bin" }}",
     "{{ "{{ env.CARGO_HOME }}/bin" }}",
     "~/.local/bin",
