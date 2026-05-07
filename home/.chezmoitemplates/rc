@@ -1,3 +1,6 @@
+{{- if ne .SHELL "nu" -}}
+{{ output "mise" "activate" .SHELL }}
+{{- end -}}
 {{ output "mise" "exec" "starship" "--" "starship" "init" .SHELL }}
 {{ output "mise" "exec" "fnox" "--" "fnox" "activate" .SHELL }}
 {{ output "mise" "exec" "github:max-sixty/worktrunk" "--" "wt" "config" "shell" "init" .SHELL }}
