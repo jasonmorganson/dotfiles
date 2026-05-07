@@ -1,4 +1,6 @@
-{{ template "init" (dict "SHELL" "nu") }}
+{{ output "mise" "exec" "starship" "--" "starship" "init" "nu" }}
+{{ output "mise" "exec" "fnox" "--" "fnox" "activate" "nu" }}
+{{ output "mise" "exec" "github:max-sixty/worktrunk" "--" "wt" "config" "shell" "init" "nu" }}
 
 $env.config.edit_mode = "vi"
 $env.config.show_banner = false
