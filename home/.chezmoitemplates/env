@@ -1,5 +1,1 @@
-{{- if eq .SHELL "nu" -}}
-{{ output "mise" "activate" .SHELL }}
-{{- else -}}
 {{ output "mise" "env" "--shell" .SHELL }}
-{{- end -}}
