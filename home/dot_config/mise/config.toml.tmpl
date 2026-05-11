@@ -126,21 +126,12 @@ __GL_SHADER_DISK_CACHE_PATH = "{{ "{{ env.XDG_CACHE_HOME }}/nv" }}"
 _Z_DATA = "{{ "{{ env.XDG_CACHE_HOME }}/z" }}"
 npm_config_cache = "{{ "{{ env.XDG_CACHE_HOME }}/npm" }}"
 _.path = [
-    "{{ "{{ env.NPM_CONFIG_PREFIX }}/bin" }}",
     "{{ "{{ env.GOPATH }}/bin" }}",
     "{{ "{{ env.CARGO_HOME }}/bin" }}",
     "~/bin",
     "~/.local/bin",
     "~/.orbstack/bin",
-    "/Applications/Postgres.app/Contents/Versions/18/bin",
-    "/opt/homebrew/opt/uutils-coreutils/libexec/uubin",
-    "/opt/homebrew/bin",
-    "/opt/homebrew/sbin",
-    "/usr/local/bin",
-    "/usr/bin",
-    "/usr/sbin",
-    "/bin",
-    "/sbin"
+    "/Applications/Postgres.app/Contents/Versions/18/bin"
 ]
 
 # LS_COLORS
