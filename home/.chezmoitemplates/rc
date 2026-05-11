@@ -3,7 +3,7 @@
 {{ output "/opt/homebrew/bin/brew" "shellenv" .SHELL }}
 {{- end }}
 {{ output "mise" "activate" .SHELL "--shims" }}
-{{ output "mise" "exec" "starship" "--" "starship" "init" .SHELL }}
 {{ output "mise" "exec" "fnox" "--" "fnox" "activate" .SHELL }}
 {{ output "mise" "exec" "pitchfork" "--" "pitchfork" "activate" .SHELL }}
 {{ output "mise" "exec" "github:max-sixty/worktrunk" "--" "wt" "config" "shell" "init" .SHELL }}
+{{ output "mise" "exec" "starship" "--" "starship" "init" .SHELL }}
