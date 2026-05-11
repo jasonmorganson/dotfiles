@@ -1,14 +1,8 @@
+{{ output "mise" "activate" .SHELL }}
 {{- if stat "/opt/homebrew/bin/brew" }}
 {{ output "/opt/homebrew/bin/brew" "shellenv" .SHELL }}
 {{- end }}
-{{ output "mise" "activate" .SHELL }}
-{{- if stat "/opt/homebrew/bin/brew" }}
-{{- if eq .SHELL "fish" }}
-fish_add_path --append --path "/opt/homebrew/bin" "/opt/homebrew/sbin";
-{{- else }}
-export PATH="$PATH:/opt/homebrew/bin:/opt/homebrew/sbin";
-{{- end }}
-{{- end }}
+{{ output "mise" "activate" .SHELL "--shims" }}
 {{ output "mise" "exec" "starship" "--" "starship" "init" .SHELL }}
 {{ output "mise" "exec" "fnox" "--" "fnox" "activate" .SHELL }}
 {{ output "mise" "exec" "pitchfork" "--" "pitchfork" "activate" .SHELL }}
