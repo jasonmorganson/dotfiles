@@ -130,7 +130,7 @@ _Z_DATA = "{{ "{{ env.XDG_CACHE_HOME }}/z" }}"
 npm_config_cache = "{{ "{{ env.XDG_CACHE_HOME }}/npm" }}"
 _.fnox-env = { tools = true }
 _.path = [
-    { path = "{{ "{{ tools.node.path }}/bin" }}", tools = true },
+    "{{ "{{ env.HOME }}/.local/share/mise/installs/node/26/bin" }}",
     "{{ "{{ env.NPM_CONFIG_PREFIX }}/bin" }}",
     "{{ "{{ env.GOPATH }}/bin" }}",
     "{{ "{{ env.CARGO_HOME }}/bin" }}",
