@@ -30,6 +30,7 @@ linux-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.de
 # XDG
 XDG_CACHE_HOME = "{{ "{{ env.HOME }}/.cache" }}"
 XDG_CONFIG_HOME = "{{ "{{ env.HOME }}/.config" }}"
+XDG_BIN_HOME = "{{ "{{ env.HOME }}/.local/bin" }}"
 XDG_DATA_HOME = "{{ "{{ env.HOME }}/.local/share" }}"
 XDG_STATE_HOME = "{{ "{{ env.HOME }}/.local/state" }}"
 XDG_RUNTIME_DIR = "/run/user/{{ .chezmoi.uid }}"
@@ -130,7 +131,7 @@ _.path = [
     "{{ "{{ env.GOPATH }}/bin" }}",
     "{{ "{{ env.CARGO_HOME }}/bin" }}",
     "~/bin",
-    "~/.local/bin",
+    "{{ "{{ env.XDG_BIN_HOME }}" }}",
     "~/.orbstack/bin",
     "~/.linuxbrew/bin",
     "~/.linuxbrew/sbin",
