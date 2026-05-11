@@ -131,6 +131,10 @@ _.path = [
     "~/bin",
     "~/.local/bin",
     "~/.orbstack/bin",
+{{- if stat "/opt/homebrew/bin/brew" }}
+    "/opt/homebrew/bin",
+    "/opt/homebrew/sbin",
+{{- end }}
     "/Applications/Postgres.app/Contents/Versions/18/bin",
     "/usr/local/bin",
     "/usr/bin",

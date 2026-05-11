@@ -1,7 +1,4 @@
 {{ output "mise" "activate" .SHELL }}
-{{- if stat "/opt/homebrew/bin/brew" }}
-{{ output "/opt/homebrew/bin/brew" "shellenv" .SHELL }}
-{{- end }}
 {{ output "mise" "activate" .SHELL "--shims" }}
 {{ output "mise" "exec" "fnox" "--" "fnox" "activate" .SHELL }}
 {{ output "mise" "exec" "pitchfork" "--" "pitchfork" "activate" .SHELL }}
