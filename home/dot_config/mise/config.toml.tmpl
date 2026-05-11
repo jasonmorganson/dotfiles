@@ -126,6 +126,7 @@ __GL_SHADER_DISK_CACHE_PATH = "{{ "{{ env.XDG_CACHE_HOME }}/nv" }}"
 _Z_DATA = "{{ "{{ env.XDG_CACHE_HOME }}/z" }}"
 npm_config_cache = "{{ "{{ env.XDG_CACHE_HOME }}/npm" }}"
 _.path = [
+    "{{ "{{ env.HOME }}/.local/share/mise/shims" }}",
     "{{ "{{ env.GOPATH }}/bin" }}",
     "{{ "{{ env.CARGO_HOME }}/bin" }}",
     "~/bin",
