@@ -130,10 +130,10 @@ npm_config_cache = "{{ "{{ env.XDG_CACHE_HOME }}/npm" }}"
 _.fnox-env = { tools = true }
 _.path = [
     { path = "{{ "{{ tools.node.path }}/bin" }}", tools = true },
-    "~/bin",
     "{{ "{{ env.NPM_CONFIG_PREFIX }}/bin" }}",
     "{{ "{{ env.GOPATH }}/bin" }}",
     "{{ "{{ env.CARGO_HOME }}/bin" }}",
+    "~/bin",
     "~/.local/bin",
     "~/.orbstack/bin",
     "/Applications/Postgres.app/Contents/Versions/18/bin",
