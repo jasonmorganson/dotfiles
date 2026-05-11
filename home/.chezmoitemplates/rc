@@ -1,29 +1,7 @@
+{{- if stat "/opt/homebrew/bin/brew" }}
+{{ output "/opt/homebrew/bin/brew" "shellenv" .SHELL }}
+{{- end }}
 {{ output "mise" "activate" .SHELL }}
-{{- if eq .OS "darwin" }}
-{{- if eq .SHELL "fish" }}
-set --global --export HOMEBREW_PREFIX "/opt/homebrew";
-set --global --export HOMEBREW_CELLAR "/opt/homebrew/Cellar";
-set --global --export HOMEBREW_REPOSITORY "/opt/homebrew";
-set --global --export PATH $PATH "/opt/homebrew/bin" "/opt/homebrew/sbin" "/opt/homebrew/opt/uutils-coreutils/libexec/uubin";
-if not contains "/opt/homebrew/share/info" $INFOPATH; set --global --export INFOPATH "/opt/homebrew/share/info" $INFOPATH; end;
-{{- else if eq .SHELL "zsh" }}
-export HOMEBREW_PREFIX="/opt/homebrew";
-export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
-export HOMEBREW_REPOSITORY="/opt/homebrew";
-fpath[1,0]="/opt/homebrew/share/zsh/site-functions";
-export FPATH;
-export PATH="$PATH:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/opt/uutils-coreutils/libexec/uubin";
-export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
-{{- else }}
-export HOMEBREW_PREFIX="/opt/homebrew";
-export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
-export HOMEBREW_REPOSITORY="/opt/homebrew";
-export PATH="$PATH:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/homebrew/opt/uutils-coreutils/libexec/uubin";
-export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
-{{- end }}
-
-{{- end }}
-
 {{ output "mise" "exec" "starship" "--" "starship" "init" .SHELL }}
 {{ output "mise" "exec" "fnox" "--" "fnox" "activate" .SHELL }}
 {{ output "mise" "exec" "pitchfork" "--" "pitchfork" "activate" .SHELL }}
