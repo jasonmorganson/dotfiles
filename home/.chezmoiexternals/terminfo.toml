@@ -2,14 +2,3 @@
 type = "file"
 url = "https://raw.githubusercontent.com/alacritty/alacritty/master/extra/alacritty.info"
 refreshPeriod = "168h"
-
-[".cache/terminfo/xterm-ghostty.terminfo"]
-type = "file"
-url = "https://invisible-island.net/datafiles/current/terminfo.src.gz"
-decompress = "gzip"
-refreshPeriod = "168h"
-filter.command = "sh"
-filter.args = [
-    "-c",
-    "tic_cmd=/opt/homebrew/opt/ncurses/bin/tic; infocmp_cmd=/opt/homebrew/opt/ncurses/bin/infocmp; [ -x \"$tic_cmd\" ] || tic_cmd=tic; [ -x \"$infocmp_cmd\" ] || infocmp_cmd=infocmp; tmp=$(mktemp -d); trap 'rm -rf \"$tmp\"' EXIT; mkdir -p \"$tmp/db\"; cat > \"$tmp/terminfo.src\"; \"$tic_cmd\" -x -e ghostty -o \"$tmp/db\" \"$tmp/terminfo.src\" >/dev/null; TERMINFO=\"$tmp/db\" TERMINFO_DIRS=\"$tmp/db\" \"$infocmp_cmd\" -x ghostty | sed '1{/^#/d;}; s/^ghostty[|][^,]*/xterm-ghostty/'",
-]
