@@ -1,5 +1,4 @@
-#	Reconstructed via infocmp from file: /Volumes/Home/jasonmorganson/.local/share/terminfo/78/xterm-ghostty
-xterm-ghostty|ghostty|Ghostty,
+xterm-ghostty,
 	am, bce, ccc, hs, km, mc5i, mir, msgr, npc, xenl, AX, Su, Tc, XT, fullkbd,
 	colors#256, cols#80, it#8, lines#24, pairs#32767,
 	acsc=++, bel=^G, blink=\E[5m, bold=\E[1m, cbt=\E[Z,

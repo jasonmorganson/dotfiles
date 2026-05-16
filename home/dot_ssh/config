@@ -1,1 +1,4 @@
+# Added by `devbox configure-ssh`
+Include ~/.namespace/ssh/*.ssh
+
 Include ~/.config/ssh/*
