@@ -1,11 +1,7 @@
 #!/bin/sh
 set -eu
 
-# sources sha256:
-{{ output "sh" "-c" (printf "cd %s && find dot_config/terminfo -name '*.terminfo' -type f -print | sort | xargs shasum -a 256 | sed 's/^/# /'" .chezmoi.sourceDir) | trim }}
+# sources sha256: {{ output "sh" "-c" (printf "cd %s && cat dot_config/terminfo/*.terminfo | shasum -a 256" .chezmoi.sourceDir) | trim }}
 
 mkdir -p "$HOME/.local/share/terminfo"
-for source in "$HOME"/.config/terminfo/*.terminfo; do
-    [ -e "$source" ] || continue
-    tic -x -o "$HOME/.local/share/terminfo" "$source"
-done
+find "$HOME/.config/terminfo" -name '*.terminfo' -type f -exec tic -x -o "$HOME/.local/share/terminfo" {} \;
