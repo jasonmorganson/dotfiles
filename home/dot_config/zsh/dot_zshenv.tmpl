@@ -1,3 +1,1 @@
-if [ -x "$HOME/.local/bin/mise" ]; then
-  eval "$("$HOME/.local/bin/mise" env --shell zsh)"
-fi
+{{ template "env" (dict "SHELL" "zsh") }}

@@ -1,7 +1,1 @@
-if [ -x "$HOME/.local/bin/mise" ]; then
-  eval "$("$HOME/.local/bin/mise" activate zsh)"
-  eval "$("$HOME/.local/bin/mise" exec fnox -- fnox activate zsh)"
-  eval "$("$HOME/.local/bin/mise" exec pitchfork -- pitchfork activate zsh)"
-  eval "$("$HOME/.local/bin/mise" exec github:max-sixty/worktrunk -- wt config shell init zsh)"
-  eval "$("$HOME/.local/bin/mise" exec starship -- starship init zsh)"
-fi
+{{ template "rc" (dict "SHELL" "zsh") }}
