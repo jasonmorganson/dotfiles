@@ -1,5 +1,1 @@
-if [ "${TERM:-}" = xterm-ghostty ] && ! infocmp xterm-ghostty >/dev/null 2>&1; then
-  export TERM=xterm-256color
-fi
-
 {{ output "mise" "env" "--shell" .SHELL }}
