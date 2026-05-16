@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+
+mkdir -p "$HOME/.local/share/terminfo"
+find "$HOME/.cache/terminfo" -name '*.terminfo' -type f -exec tic -x -o "$HOME/.local/share/terminfo" {} \;

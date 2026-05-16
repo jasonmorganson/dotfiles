@@ -1,7 +1,0 @@
-#!/bin/sh
-set -eu
-
-# sources sha256: {{ output "sh" "-c" (printf "cd %s && cat terminfo/*.terminfo | shasum -a 256" .chezmoi.sourceDir) | trim }}
-
-mkdir -p "$HOME/.local/share/terminfo"
-find "{{ .chezmoi.sourceDir }}/terminfo" -name '*.terminfo' -type f -exec tic -x -o "$HOME/.local/share/terminfo" {} \;
