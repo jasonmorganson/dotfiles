@@ -1,0 +1,12 @@
+#!/bin/sh
+set -eu
+
+# xterm-ghostty.terminfo sha256: {{ include "dot_config/terminfo/xterm-ghostty.terminfo" | sha256sum }}
+
+terminfo_source="$HOME/.config/terminfo/xterm-ghostty.terminfo"
+terminfo_dir="$HOME/.local/share/terminfo"
+
+if command -v tic >/dev/null 2>&1 && [ -f "$terminfo_source" ]; then
+    mkdir -p "$terminfo_dir"
+    tic -x -o "$terminfo_dir" "$terminfo_source"
+fi

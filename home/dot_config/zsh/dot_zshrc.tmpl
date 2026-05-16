@@ -1,1 +1,5 @@
-{{ template "rc" (dict "SHELL" "zsh") }}
+{{ output "sh" "-c" "mise activate zsh | sed '/^export TERMINFO=/d;/^export TERMINFO_DIRS=/d;/^unset TERMINFO$/d;/^unset TERMINFO_DIRS$/d'" }}
+{{ output "mise" "exec" "fnox" "--" "fnox" "activate" "zsh" }}
+{{ output "mise" "exec" "pitchfork" "--" "pitchfork" "activate" "zsh" }}
+{{ output "mise" "exec" "github:max-sixty/worktrunk" "--" "wt" "config" "shell" "init" "zsh" }}
+{{ output "mise" "exec" "starship" "--" "starship" "init" "zsh" }}
