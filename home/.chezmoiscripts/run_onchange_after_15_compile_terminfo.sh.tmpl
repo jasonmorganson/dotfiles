@@ -1,7 +1,11 @@
 #!/bin/sh
 set -eu
 
-# source sha256: {{ include "dot_config/terminfo/xterm-ghostty.terminfo" | sha256sum }}
+# sources sha256:
+{{ output "sh" "-c" (printf "cd %s && find dot_config/terminfo -name '*.terminfo' -type f -print | sort | xargs shasum -a 256 | sed 's/^/# /'" .chezmoi.sourceDir) | trim }}
 
 mkdir -p "$HOME/.local/share/terminfo"
-tic -x -o "$HOME/.local/share/terminfo" "$HOME/.config/terminfo/xterm-ghostty.terminfo"
+for source in "$HOME"/.config/terminfo/*.terminfo; do
+    [ -e "$source" ] || continue
+    tic -x -o "$HOME/.local/share/terminfo" "$source"
+done
