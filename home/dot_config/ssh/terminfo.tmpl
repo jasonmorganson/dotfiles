@@ -1,3 +1,2 @@
 Host *
-    SetEnv TERMINFO_DIRS={{ .chezmoi.homeDir }}/.local/share/terminfo:
-
+    SetEnv TERMINFO={{ .chezmoi.homeDir }}/.local/share/terminfo TERMINFO_DIRS={{ .chezmoi.homeDir }}/.local/share/terminfo:
