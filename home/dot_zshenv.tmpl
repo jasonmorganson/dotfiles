@@ -1,3 +1,7 @@
 export ZDOTDIR="${ZDOTDIR:-$HOME/.config/zsh}"
 
+if [ -n "${SSH_CONNECTION:-}" ] && [ "${TERM:-}" = xterm-ghostty ] && [ ! -r /usr/share/terminfo/78/xterm-ghostty ] && [ ! -r /usr/share/terminfo/x/xterm-ghostty ]; then
+    export TERM=xterm-256color
+fi
+
 source "$ZDOTDIR/.zshenv"
