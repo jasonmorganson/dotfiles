@@ -1,6 +1,6 @@
 #!/bin/sh
 set -eu
 
-mkdir -p "$HOME/.cache/terminfo" "$HOME/.terminfo"
+mkdir -p "$HOME/.cache/terminfo" "$HOME/.local/share/terminfo"
 infocmp -x xterm-ghostty 2>/dev/null | sed '2s/^xterm-ghostty|ghostty|Ghostty,/xterm-ghostty|Ghostty terminal,/' > "$HOME/.cache/terminfo/xterm-ghostty.terminfo" || true
-find "$HOME/.cache/terminfo" -name '*.terminfo' -type f -exec tic -x -o "$HOME/.terminfo" {} \;
+find "$HOME/.cache/terminfo" -name '*.terminfo' -type f -exec tic -x -o "$HOME/.local/share/terminfo" {} \;
