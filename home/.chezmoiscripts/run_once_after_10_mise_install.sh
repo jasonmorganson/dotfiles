@@ -2,4 +2,4 @@
 set -eu
 
 # Mise install
-~/.local/bin/mise install
+mise install
