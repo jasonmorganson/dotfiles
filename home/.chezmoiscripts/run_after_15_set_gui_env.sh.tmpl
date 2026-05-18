@@ -2,9 +2,16 @@
 #!/bin/sh
 set -eu
 
-mise env --dotenv |
-while IFS='=' read -r name value; do
-    [ -n "$name" ] || continue
-    launchctl setenv "$name" "$value"
+eval "$(mise env --shell bash)"
+
+mise env --shell bash |
+while IFS= read -r line; do
+    case "$line" in
+        export\ *=*)
+            name=${line#export }
+            name=${name%%=*}
+            launchctl setenv "$name" "$(printenv "$name")"
+            ;;
+    esac
 done
 {{- end }}
