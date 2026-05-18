@@ -1,0 +1,10 @@
+{{- if eq .chezmoi.os "darwin" }}
+#!/bin/sh
+set -eu
+
+mise env --dotenv |
+while IFS='=' read -r name value; do
+    [ -n "$name" ] || continue
+    launchctl setenv "$name" "$value"
+done
+{{- end }}
