@@ -1,0 +1,7 @@
+#!/usr/bin/env -S mise exec erlang@28 -- /bin/sh -e -u
+# symphony HEAD: {{ output "git" "-C" (print .chezmoi.homeDir "/.local/share/symphony") "rev-parse" "HEAD" }}
+
+cd "$XDG_DATA_HOME/symphony/elixir"
+
+mise exec elixir@1.19.5-otp-28 -- mix setup
+mise exec elixir@1.19.5-otp-28 -- mix build
