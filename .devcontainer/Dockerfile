@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1
+
 FROM mcr.microsoft.com/devcontainers/base:ubuntu
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -12,4 +14,4 @@ WORKDIR /home/vscode
 
 COPY . .
 
-RUN ./install.sh
+RUN --mount=type=secret,id=GITHUB_TOKEN,env=GITHUB_TOKEN ./install.sh
