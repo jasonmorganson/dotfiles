@@ -1,6 +1,6 @@
 #!/bin/sh
 set -eu
 
-exec mise exec erlang@28 -- sh -eu -c '
-exec "$XDG_DATA_HOME/symphony/elixir/bin/symphony" "$@"
-' sh "$@"
+symphony_bin="${XDG_DATA_HOME:-$HOME/.local/share}/symphony/elixir/bin/symphony"
+
+exec mise exec erlang@28 -- "$symphony_bin" "$@"

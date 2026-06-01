@@ -3,12 +3,16 @@ set -eu
 
 # symphony HEAD: {{ output "git" "-C" (print .chezmoi.homeDir "/.local/share/symphony") "rev-parse" "HEAD" }}
 
-mise install erlang@28
-erlang_bin="$(mise where erlang@28)/bin"
+symphony_dir="${XDG_DATA_HOME:-$HOME/.local/share}/symphony/elixir"
 
-PATH="$erlang_bin:$PATH" mise install elixir@1.19.5-otp-28
-PATH="$erlang_bin:$PATH" mise exec erlang@28 elixir@1.19.5-otp-28 -- sh -eu -c '
-cd "$XDG_DATA_HOME/symphony/elixir"
+mise install erlang@28
+PATH="$(mise where erlang@28)/bin:$PATH"
+export PATH
+
+mise install elixir@1.19.5-otp-28
+PATH="$(mise where elixir@1.19.5-otp-28)/bin:$PATH"
+export PATH
+
+cd "$symphony_dir"
 mix setup
 mix build
-'
