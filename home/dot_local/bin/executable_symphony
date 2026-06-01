@@ -1,3 +1,6 @@
-#!/usr/bin/env -S mise exec erlang@28 -- /bin/sh -e -u
+#!/bin/sh
+set -eu
 
+exec env MISE_ERLANG_COMPILE=false mise exec erlang@28 -- sh -eu -c '
 exec "$XDG_DATA_HOME/symphony/elixir/bin/symphony" "$@"
+' sh "$@"
