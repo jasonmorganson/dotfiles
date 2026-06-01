@@ -260,33 +260,13 @@ url = "https://github.com/git-lfs/git-lfs/releases/download/v3.7.1/git-lfs-windo
 version = "2.4.1"
 backend = "github:MitMaro/git-interactive-rebase-tool"
 
-[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-arm64"]
-url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_arm64.deb"
-url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278671"
-
-[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-arm64-musl"]
-url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_arm64.deb"
-url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278671"
-
-[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-x64"]
-url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_amd64.deb"
-url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278646"
-
-[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-x64-musl"]
-url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_amd64.deb"
-url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278646"
+[tools."github:MitMaro/git-interactive-rebase-tool".options]
+asset_pattern = "git-interactive-rebase-tool-*-macos-*_arm"
 
 [tools."github:MitMaro/git-interactive-rebase-tool"."platforms.macos-arm64"]
+checksum = "blake3:9fc91be41a6e3ae4b32dfa4a1788e3b87d0bacd73fe836aa6384164efa1cd948"
 url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-macos-12_arm"
 url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278547"
-
-[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.macos-x64"]
-url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-macos-12_intel"
-url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278550"
-
-[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.windows-x64"]
-url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-windows-_x86_64.exe"
-url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176279168"
 
 [[tools."github:lsd-rs/lsd"]]
 version = "1.2.0"
@@ -328,43 +308,43 @@ url = "https://github.com/lsd-rs/lsd/releases/download/v1.2.0/lsd-v1.2.0-x86_64-
 url_api = "https://api.github.com/repos/lsd-rs/lsd/releases/assets/303320206"
 
 [[tools."github:max-sixty/worktrunk"]]
-version = "0.54.0"
+version = "0.55.0"
 backend = "github:max-sixty/worktrunk"
 
 [tools."github:max-sixty/worktrunk"."platforms.linux-arm64"]
-checksum = "sha256:4661270c60d3efad87ecfb38fa47fd868ec939a7ec252646321e8db8e8ba792c"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.54.0/worktrunk-aarch64-unknown-linux-musl.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/430438510"
+checksum = "sha256:d1fbf904609226efe3b7b3b30f9792d8b347282f5e5b3cd6c075c94d4bcf04d3"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.55.0/worktrunk-aarch64-unknown-linux-musl.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/433612808"
 
 [tools."github:max-sixty/worktrunk"."platforms.linux-arm64-musl"]
-checksum = "sha256:4661270c60d3efad87ecfb38fa47fd868ec939a7ec252646321e8db8e8ba792c"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.54.0/worktrunk-aarch64-unknown-linux-musl.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/430438510"
+checksum = "sha256:d1fbf904609226efe3b7b3b30f9792d8b347282f5e5b3cd6c075c94d4bcf04d3"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.55.0/worktrunk-aarch64-unknown-linux-musl.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/433612808"
 
 [tools."github:max-sixty/worktrunk"."platforms.linux-x64"]
-checksum = "sha256:572a9261651c3b43e713b3b722ec676a149f07e06c13565cb32f0c9cdfc5a199"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.54.0/worktrunk-x86_64-unknown-linux-musl.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/430438523"
+checksum = "sha256:1000e93b980cf7e89b57e3c6c9ac2422d42d632a0b46e99756a16d417f34b616"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.55.0/worktrunk-x86_64-unknown-linux-musl.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/433612827"
 
 [tools."github:max-sixty/worktrunk"."platforms.linux-x64-musl"]
-checksum = "sha256:572a9261651c3b43e713b3b722ec676a149f07e06c13565cb32f0c9cdfc5a199"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.54.0/worktrunk-x86_64-unknown-linux-musl.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/430438523"
+checksum = "sha256:1000e93b980cf7e89b57e3c6c9ac2422d42d632a0b46e99756a16d417f34b616"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.55.0/worktrunk-x86_64-unknown-linux-musl.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/433612827"
 
 [tools."github:max-sixty/worktrunk"."platforms.macos-arm64"]
-checksum = "sha256:ea631e9b3791724d4a7c2490f66d9e50a96f49985bca4624dfca69194fd9c1e3"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.54.0/worktrunk-aarch64-apple-darwin.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/430438506"
+checksum = "sha256:a62d2e9d2c2967fbb85a7e32c4f33dc3a2c212d2ea84c535df1905cb52e31cde"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.55.0/worktrunk-aarch64-apple-darwin.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/433612793"
 
 [tools."github:max-sixty/worktrunk"."platforms.macos-x64"]
-checksum = "sha256:00b971d99dea2635c985f4f8fb360a8233936e1afc17f4e8d2cb6dddf874452c"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.54.0/worktrunk-x86_64-apple-darwin.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/430438516"
+checksum = "sha256:a6949dd7386f7c4f453d680723bcdf600cd440b997c66030809d0c611f70b56b"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.55.0/worktrunk-x86_64-apple-darwin.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/433612813"
 
 [tools."github:max-sixty/worktrunk"."platforms.windows-x64"]
-checksum = "sha256:d71bf401232abbdc81b2635231a7df71249de08bdb10de7f2a50c7ff748b22bf"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.54.0/worktrunk-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/430438519"
+checksum = "sha256:3d2d9bf5726448004e8b64982e5b8edc77eee555bfe10b7a1e3b14bfeac64be9"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.55.0/worktrunk-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/433612820"
 
 [[tools.gitui]]
 version = "0.28.1"
