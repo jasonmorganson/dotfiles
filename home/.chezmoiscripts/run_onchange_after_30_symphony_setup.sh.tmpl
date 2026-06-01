@@ -6,12 +6,10 @@ set -eu
 symphony_dir="${XDG_DATA_HOME:-$HOME/.local/share}/symphony/elixir"
 
 mise install erlang@28
-PATH="$(mise where erlang@28)/bin:$PATH"
-export PATH
+export PATH="$(mise where erlang@28)/bin:$PATH"
 
 mise install elixir@1.19.5-otp-28
-PATH="$(mise where elixir@1.19.5-otp-28)/bin:$PATH"
-export PATH
+export PATH="$(mise where elixir@1.19.5-otp-28)/bin:$PATH"
 
 cd "$symphony_dir"
 mix setup
