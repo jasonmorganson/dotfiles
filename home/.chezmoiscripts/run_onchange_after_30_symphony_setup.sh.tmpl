@@ -3,7 +3,7 @@ set -eu
 
 # symphony HEAD: {{ output "git" "-C" (print .chezmoi.homeDir "/.local/share/symphony") "rev-parse" "HEAD" }}
 
-symphony_dir="${XDG_DATA_HOME:-$HOME/.local/share}/symphony/elixir"
+symphony_dir="$XDG_DATA_HOME/symphony/elixir"
 
 mise install erlang@28
 export PATH="$(mise where erlang@28)/bin:$PATH"
