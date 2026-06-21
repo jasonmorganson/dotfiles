@@ -11,8 +11,12 @@ git-lfs = "latest"
 chezmoi = "latest"
 pitchfork = "latest"
 starship = "latest"
+vivid = "latest"
 cargo-binstall = "latest"
 "cargo:git-delta" = "latest"
+{{- if or (ne .chezmoi.os "linux") (eq .chezmoi.arch "amd64") }}
+"aqua:reemus-dev/gitnr" = "latest"
+{{- end }}
 "github:lsd-rs/lsd" = "latest"
 "aqua:BurntSushi/ripgrep" = "latest"
 "github:max-sixty/worktrunk" = "latest"

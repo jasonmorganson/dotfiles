@@ -32,6 +32,30 @@ url = "https://github.com/BurntSushi/ripgrep/releases/download/15.1.0/ripgrep-15
 checksum = "sha256:124510b94b6baa3380d051fdf4650eaa80a302c876d611e9dba0b2e18d87493a"
 url = "https://github.com/BurntSushi/ripgrep/releases/download/15.1.0/ripgrep-15.1.0-x86_64-pc-windows-msvc.zip"
 
+[[tools."aqua:reemus-dev/gitnr"]]
+version = "0.3.0"
+backend = "aqua:reemus-dev/gitnr"
+
+[tools."aqua:reemus-dev/gitnr"."platforms.linux-x64"]
+checksum = "sha256:1b7a532e725dc15ee44c53aaca1f07b490a7cd76a110c2e89afe4a71bf9f2e23"
+url = "https://github.com/reemus-dev/gitnr/releases/download/v0.3.0/gitnr-linux-amd64"
+
+[tools."aqua:reemus-dev/gitnr"."platforms.linux-x64-musl"]
+checksum = "sha256:1b7a532e725dc15ee44c53aaca1f07b490a7cd76a110c2e89afe4a71bf9f2e23"
+url = "https://github.com/reemus-dev/gitnr/releases/download/v0.3.0/gitnr-linux-amd64"
+
+[tools."aqua:reemus-dev/gitnr"."platforms.macos-arm64"]
+checksum = "sha256:f5dfa66592131a3e1e73dd94b1d9d741d222c54fa9acbb6cf116a08c7a06e3e5"
+url = "https://github.com/reemus-dev/gitnr/releases/download/v0.3.0/gitnr-macos-arm64"
+
+[tools."aqua:reemus-dev/gitnr"."platforms.macos-x64"]
+checksum = "sha256:945ef6f1e5065dc9bc73c58faad5e04f4c52dfbd4ee49bd82cb806e9774693ba"
+url = "https://github.com/reemus-dev/gitnr/releases/download/v0.3.0/gitnr-macos-amd64"
+
+[tools."aqua:reemus-dev/gitnr"."platforms.windows-x64"]
+checksum = "sha256:619787156fd0f89b473e4f5c774627349d336677a8c7a8d3324f5528f1a28da0"
+url = "https://github.com/reemus-dev/gitnr/releases/download/v0.3.0/gitnr-win-amd64.exe"
+
 [[tools.cargo-binstall]]
 version = "1.20.0"
 backend = "aqua:cargo-bins/cargo-binstall"
@@ -189,6 +213,41 @@ url = "https://github.com/junegunn/fzf/releases/download/v0.73.1/fzf-0.73.1-wind
 version = "2.95.0"
 backend = "aqua:cli/cli"
 
+[tools.gh."platforms.linux-arm64"]
+checksum = "sha256:d41e0b3b6218e5741c8bb4db39b16e53a59e0e06299a8489bd38f623ef7ebaae"
+url = "https://github.com/cli/cli/releases/download/v2.95.0/gh_2.95.0_linux_arm64.tar.gz"
+provenance = "github-attestations"
+
+[tools.gh."platforms.linux-arm64-musl"]
+checksum = "sha256:d41e0b3b6218e5741c8bb4db39b16e53a59e0e06299a8489bd38f623ef7ebaae"
+url = "https://github.com/cli/cli/releases/download/v2.95.0/gh_2.95.0_linux_arm64.tar.gz"
+provenance = "github-attestations"
+
+[tools.gh."platforms.linux-x64"]
+checksum = "sha256:25d1e4729e8808c9ed3d613e96ebd3f3e44446f2d368c89d878a71a36ddb3d8c"
+url = "https://github.com/cli/cli/releases/download/v2.95.0/gh_2.95.0_linux_amd64.tar.gz"
+provenance = "github-attestations"
+
+[tools.gh."platforms.linux-x64-musl"]
+checksum = "sha256:25d1e4729e8808c9ed3d613e96ebd3f3e44446f2d368c89d878a71a36ddb3d8c"
+url = "https://github.com/cli/cli/releases/download/v2.95.0/gh_2.95.0_linux_amd64.tar.gz"
+provenance = "github-attestations"
+
+[tools.gh."platforms.macos-arm64"]
+checksum = "sha256:3677f9c27965825f9c7d50395473c134edaea4b484373ef6b25de653570a0489"
+url = "https://github.com/cli/cli/releases/download/v2.95.0/gh_2.95.0_macOS_arm64.zip"
+provenance = "github-attestations"
+
+[tools.gh."platforms.macos-x64"]
+checksum = "sha256:985707e9ac60c95ed51cddd808c338b481abe69fffa77e9d6547c3750045f77e"
+url = "https://github.com/cli/cli/releases/download/v2.95.0/gh_2.95.0_macOS_amd64.zip"
+provenance = "github-attestations"
+
+[tools.gh."platforms.windows-x64"]
+checksum = "sha256:19a7154161ada9cfaa9e57edb752ecc679b75c391a62e4f7b586eea1df30b5bb"
+url = "https://github.com/cli/cli/releases/download/v2.95.0/gh_2.95.0_windows_amd64.zip"
+provenance = "github-attestations"
+
 [[tools.git-lfs]]
 version = "3.7.1"
 backend = "aqua:git-lfs/git-lfs"
@@ -233,6 +292,55 @@ checksum = "blake3:9fc91be41a6e3ae4b32dfa4a1788e3b87d0bacd73fe836aa6384164efa1cd
 url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-macos-12_arm"
 url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278547"
 
+[[tools."github:MitMaro/git-interactive-rebase-tool"]]
+version = "2.4.1"
+backend = "github:MitMaro/git-interactive-rebase-tool"
+
+[tools."github:MitMaro/git-interactive-rebase-tool".options]
+asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.deb"
+
+[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-arm64"]
+url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_arm64.deb"
+url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278671"
+
+[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-arm64-musl"]
+url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_arm64.deb"
+url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278671"
+
+[[tools."github:MitMaro/git-interactive-rebase-tool"]]
+version = "2.4.1"
+backend = "github:MitMaro/git-interactive-rebase-tool"
+
+[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.windows-x64"]
+url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-windows-_x86_64.exe"
+url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176279168"
+
+[[tools."github:MitMaro/git-interactive-rebase-tool"]]
+version = "2.4.1"
+backend = "github:MitMaro/git-interactive-rebase-tool"
+
+[tools."github:MitMaro/git-interactive-rebase-tool".options]
+asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_amd64.deb"
+
+[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-x64"]
+url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_amd64.deb"
+url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278646"
+
+[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-x64-musl"]
+url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_amd64.deb"
+url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278646"
+
+[[tools."github:MitMaro/git-interactive-rebase-tool"]]
+version = "2.4.1"
+backend = "github:MitMaro/git-interactive-rebase-tool"
+
+[tools."github:MitMaro/git-interactive-rebase-tool".options]
+asset_pattern = "git-interactive-rebase-tool-*-macos-*_intel"
+
+[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.macos-x64"]
+url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-macos-12_intel"
+url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278550"
+
 [[tools."github:lsd-rs/lsd"]]
 version = "1.2.0"
 backend = "github:lsd-rs/lsd"
@@ -275,6 +383,41 @@ url_api = "https://api.github.com/repos/lsd-rs/lsd/releases/assets/303320206"
 [[tools."github:max-sixty/worktrunk"]]
 version = "0.60.0"
 backend = "github:max-sixty/worktrunk"
+
+[tools."github:max-sixty/worktrunk"."platforms.linux-arm64"]
+checksum = "sha256:148e428ace9f30f26cee7e44ff5c05940ae4c92dd0af1373aad257e38dba9669"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.60.0/worktrunk-aarch64-unknown-linux-musl.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/451517189"
+
+[tools."github:max-sixty/worktrunk"."platforms.linux-arm64-musl"]
+checksum = "sha256:148e428ace9f30f26cee7e44ff5c05940ae4c92dd0af1373aad257e38dba9669"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.60.0/worktrunk-aarch64-unknown-linux-musl.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/451517189"
+
+[tools."github:max-sixty/worktrunk"."platforms.linux-x64"]
+checksum = "sha256:e8a6adff8c3cadd4d16c67be858eafd935a52c88f24f00b0c15a9d2e0496bc80"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.60.0/worktrunk-x86_64-unknown-linux-musl.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/451517211"
+
+[tools."github:max-sixty/worktrunk"."platforms.linux-x64-musl"]
+checksum = "sha256:e8a6adff8c3cadd4d16c67be858eafd935a52c88f24f00b0c15a9d2e0496bc80"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.60.0/worktrunk-x86_64-unknown-linux-musl.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/451517211"
+
+[tools."github:max-sixty/worktrunk"."platforms.macos-arm64"]
+checksum = "sha256:1980e7358f37785909a3240393aa65cafcb7771b72275efd726f4fd7d32d4e06"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.60.0/worktrunk-aarch64-apple-darwin.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/451517184"
+
+[tools."github:max-sixty/worktrunk"."platforms.macos-x64"]
+checksum = "sha256:836ebd2663b75cc7aa4d03c3d8f77367a59ed2a6303e790c847b19494c2c0239"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.60.0/worktrunk-x86_64-apple-darwin.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/451517200"
+
+[tools."github:max-sixty/worktrunk"."platforms.windows-x64"]
+checksum = "sha256:7f0f07bdd2bcfe9c5fae68002024e77bdabc162b69913d501bf1e30a76e26318"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.60.0/worktrunk-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/451517203"
 
 [[tools.gitui]]
 version = "0.28.1"
@@ -363,3 +506,31 @@ url = "https://github.com/starship/starship/releases/download/v1.25.1/starship-x
 [tools.starship."platforms.windows-x64"]
 checksum = "sha256:a07cf3e428afab09324e510fb786041ebcc491a68b1ca6fba044c5a461f9b017"
 url = "https://github.com/starship/starship/releases/download/v1.25.1/starship-x86_64-pc-windows-msvc.zip"
+
+[[tools.vivid]]
+version = "0.11.1"
+backend = "aqua:sharkdp/vivid"
+
+[tools.vivid."platforms.linux-arm64"]
+checksum = "sha256:99bf6438b3403bc9255a83363fe5ed49a0f8bd86377a561420836af14dc8e9ee"
+url = "https://github.com/sharkdp/vivid/releases/download/v0.11.1/vivid-v0.11.1-aarch64-unknown-linux-gnu.tar.gz"
+
+[tools.vivid."platforms.linux-x64"]
+checksum = "sha256:f1a80a39c75ceae43c4187f302e66c0a45d941ed1479456a0d5ddef665663181"
+url = "https://github.com/sharkdp/vivid/releases/download/v0.11.1/vivid-v0.11.1-x86_64-unknown-linux-musl.tar.gz"
+
+[tools.vivid."platforms.linux-x64-musl"]
+checksum = "sha256:f1a80a39c75ceae43c4187f302e66c0a45d941ed1479456a0d5ddef665663181"
+url = "https://github.com/sharkdp/vivid/releases/download/v0.11.1/vivid-v0.11.1-x86_64-unknown-linux-musl.tar.gz"
+
+[tools.vivid."platforms.macos-arm64"]
+checksum = "sha256:b10548ea09e54d3015fb348466d0c33356106e52e8848545dc5b40fbe57b5547"
+url = "https://github.com/sharkdp/vivid/releases/download/v0.11.1/vivid-v0.11.1-x86_64-apple-darwin.tar.gz"
+
+[tools.vivid."platforms.macos-x64"]
+checksum = "sha256:b10548ea09e54d3015fb348466d0c33356106e52e8848545dc5b40fbe57b5547"
+url = "https://github.com/sharkdp/vivid/releases/download/v0.11.1/vivid-v0.11.1-x86_64-apple-darwin.tar.gz"
+
+[tools.vivid."platforms.windows-x64"]
+checksum = "sha256:2bc2700c9cae57c43c6abbb1063e755977972b81e8eb34f266750aabd02a9cf1"
+url = "https://github.com/sharkdp/vivid/releases/download/v0.11.1/vivid-v0.11.1-x86_64-pc-windows-msvc.zip"
