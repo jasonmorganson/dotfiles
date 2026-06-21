@@ -1,4 +1,4 @@
 #!/bin/sh
 set -eu
 
-mise install
+MISE_EXPERIMENTAL=1 mise bootstrap --yes
