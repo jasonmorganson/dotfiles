@@ -32,6 +32,7 @@ linux-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.de
 
 [dotfiles]
 # Keep migrated mise dotfile sources outside home/ so chezmoi does not manage the same target.
+"~/.config/lsd/config.yaml" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/lsd/config.yaml" | quote }}, mode = "copy" }
 "~/.config/readline/inputrc" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/readline/inputrc" | quote }}, mode = "copy" }
 
 [env]
