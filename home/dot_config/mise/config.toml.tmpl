@@ -40,6 +40,30 @@ linux-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.de
 
 [dotfiles]
 # Keep migrated mise dotfile sources outside home/ so chezmoi does not manage the same target.
+"~/.config/git/absorb" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/absorb" | quote }}, mode = "copy" }
+"~/.config/git/alias" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/alias" | quote }}, mode = "copy" }
+"~/.config/git/color" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/color" | quote }}, mode = "copy" }
+"~/.config/git/commit" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/commit" | quote }}, mode = "copy" }
+"~/.config/git/config" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/config" | quote }}, mode = "copy" }
+"~/.config/git/core" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/core" | quote }}, mode = "copy" }
+"~/.config/git/credential" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/credential" | quote }}, mode = "copy" }
+"~/.config/git/credential-codespace" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/credential-codespace" | quote }}, mode = "copy" }
+"~/.config/git/delta" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/delta" | quote }}, mode = "copy" }
+"~/.config/git/diff" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/diff" | quote }}, mode = "copy" }
+"~/.config/git/fetch" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/fetch" | quote }}, mode = "copy" }
+"~/.config/git/filter" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/filter" | quote }}, mode = "copy" }
+"~/.config/git/gpg" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/gpg" | quote }}, mode = "copy" }
+"~/.config/git/gpg-codespace" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/gpg-codespace" | quote }}, mode = "copy" }
+"~/.config/git/help" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/help" | quote }}, mode = "copy" }
+"~/.config/git/interactive" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/interactive" | quote }}, mode = "copy" }
+"~/.config/git/log" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/log" | quote }}, mode = "copy" }
+"~/.config/git/merge" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/merge" | quote }}, mode = "copy" }
+"~/.config/git/pull" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/pull" | quote }}, mode = "copy" }
+"~/.config/git/push" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/push" | quote }}, mode = "copy" }
+"~/.config/git/rebase" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/rebase" | quote }}, mode = "copy" }
+"~/.config/git/rerere" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/rerere" | quote }}, mode = "copy" }
+"~/.config/git/sequence" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/sequence" | quote }}, mode = "copy" }
+"~/.config/git/tag" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/tag" | quote }}, mode = "copy" }
 "~/.config/lsd/config.yaml" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/lsd/config.yaml" | quote }}, mode = "copy" }
 "~/.config/npm/npmrc" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/npm/npmrc" | quote }}, mode = "copy" }
 "~/.config/pitchfork/config.toml" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/pitchfork/config.toml" | quote }}, mode = "copy" }
