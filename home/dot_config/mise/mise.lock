@@ -56,10 +56,6 @@ url = "https://github.com/reemus-dev/gitnr/releases/download/v0.3.0/gitnr-macos-
 checksum = "sha256:619787156fd0f89b473e4f5c774627349d336677a8c7a8d3324f5528f1a28da0"
 url = "https://github.com/reemus-dev/gitnr/releases/download/v0.3.0/gitnr-win-amd64.exe"
 
-[[tools."asdf:canha/asdf-pulumi"]]
-version = "3.247.0"
-backend = "asdf:canha/asdf-pulumi"
-
 [[tools.cargo-binstall]]
 version = "1.20.0"
 backend = "aqua:cargo-bins/cargo-binstall"
@@ -134,42 +130,6 @@ url = "https://github.com/twpayne/chezmoi/releases/download/v2.70.5/chezmoi_2.70
 [tools.chezmoi."platforms.windows-x64"]
 checksum = "sha256:ebc29455dc9106e8d2d980708b45bd3120e44c7d5e6a06787ff307faaa0681a8"
 url = "https://github.com/twpayne/chezmoi/releases/download/v2.70.5/chezmoi_2.70.5_windows_amd64.zip"
-
-[[tools.erlang]]
-version = "28.5"
-backend = "core:erlang"
-
-[tools.erlang.options]
-precompiled = "if_available"
-precompiled_os = "ubuntu-24.04"
-
-[tools.erlang."platforms.linux-arm64"]
-url = "https://builds.hex.pm/builds/otp/arm64/ubuntu-24.04/OTP-28.5.tar.gz"
-
-[tools.erlang."platforms.linux-x64"]
-url = "https://builds.hex.pm/builds/otp/amd64/ubuntu-24.04/OTP-28.5.tar.gz"
-
-[[tools.erlang]]
-version = "28.5"
-backend = "core:erlang"
-
-[tools.erlang.options]
-precompiled = "if_available"
-
-[tools.erlang."platforms.macos-arm64"]
-checksum = "sha256:f365335cf6c705b52557f4d3a4c4058e2e689a0e58d822160688d0cc8a736b92"
-url = "https://github.com/erlef/otp_builds/releases/download/OTP-28.5/otp-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/erlef/otp_builds/releases/assets/403427927"
-
-[tools.erlang."platforms.macos-x64"]
-checksum = "sha256:ded695f1d49c9e251b2afa0205dfdcb8ee16b4432aa1d5ffb38c6ee155bf7f6f"
-url = "https://github.com/erlef/otp_builds/releases/download/OTP-28.5/otp-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/erlef/otp_builds/releases/assets/403435001"
-
-[tools.erlang."platforms.windows-x64"]
-checksum = "sha256:d3227232221e68aa8790666e915604269d5471b61792a5d78a043ac653351140"
-url = "https://github.com/erlang/otp/releases/download/OTP-28.5/otp_win64_28.5.zip"
-url_api = "https://api.github.com/repos/erlang/otp/releases/assets/403511532"
 
 [[tools.fnox]]
 version = "1.27.1"
@@ -495,162 +455,6 @@ url = "https://github.com/helix-editor/helix/releases/download/25.07.1/helix-25.
 checksum = "sha256:5c8325ced8bacd8418d62706f669e96d9c3578a9237526e34d546900cbc049b6"
 url = "https://github.com/helix-editor/helix/releases/download/25.07.1/helix-25.07.1-x86_64-windows.zip"
 
-[[tools.hk]]
-version = "1.47.0"
-backend = "aqua:jdx/hk"
-
-[tools.hk."platforms.linux-arm64"]
-checksum = "sha256:61250d1d3505ca6814aadb7edcde69054a757cb04bd7d20ffd3a0103494e700a"
-url = "https://github.com/jdx/hk/releases/download/v1.47.0/hk-aarch64-unknown-linux-gnu.tar.gz"
-
-[tools.hk."platforms.linux-arm64-musl"]
-checksum = "sha256:47801ba27483c7724d5d07873a1d69aa99ca1ece69b6e0542ac288fbab32c430"
-url = "https://github.com/jdx/hk/releases/download/v1.47.0/hk-aarch64-unknown-linux-musl.tar.gz"
-
-[tools.hk."platforms.linux-x64"]
-checksum = "sha256:4b10b3f9ecf5b95035f96ce45fd58cab81b255b894c52c4651e444e2f7a261f6"
-url = "https://github.com/jdx/hk/releases/download/v1.47.0/hk-x86_64-unknown-linux-gnu.tar.gz"
-
-[tools.hk."platforms.linux-x64-musl"]
-checksum = "sha256:50df294e8413d39256ca71b3198899fc018b0f6f98a886c0b20bbdec867e272d"
-url = "https://github.com/jdx/hk/releases/download/v1.47.0/hk-x86_64-unknown-linux-musl.tar.gz"
-
-[tools.hk."platforms.macos-arm64"]
-checksum = "sha256:3c2a5c8af797bfe7c6f91930966135d62d06222fafbfd3ecaba3eb2d48943ac3"
-url = "https://github.com/jdx/hk/releases/download/v1.47.0/hk-aarch64-apple-darwin.tar.gz"
-
-[tools.hk."platforms.windows-x64"]
-checksum = "sha256:808544917b7bf3d14e049a3c672152d8d38ea116ebb04b8fd0ec1636dcf84360"
-url = "https://github.com/jdx/hk/releases/download/v1.47.0/hk-x86_64-pc-windows-msvc.zip"
-
-[[tools.kubectl]]
-version = "1.36.2"
-backend = "aqua:kubernetes/kubernetes/kubectl"
-
-[tools.kubectl."platforms.linux-arm64"]
-checksum = "sha256:c957eb8c4bea27a3bb35b269edd9082e27f027f7b76b20b5bf4afebc726c6d3e"
-url = "https://dl.k8s.io/v1.36.2/bin/linux/arm64/kubectl"
-
-[tools.kubectl."platforms.linux-arm64-musl"]
-checksum = "sha256:c957eb8c4bea27a3bb35b269edd9082e27f027f7b76b20b5bf4afebc726c6d3e"
-url = "https://dl.k8s.io/v1.36.2/bin/linux/arm64/kubectl"
-
-[tools.kubectl."platforms.linux-x64"]
-checksum = "sha256:1e9045ec32bea85da43de85f0065358529ea7c7a152eca78154fba5b58c27d82"
-url = "https://dl.k8s.io/v1.36.2/bin/linux/amd64/kubectl"
-
-[tools.kubectl."platforms.linux-x64-musl"]
-checksum = "sha256:1e9045ec32bea85da43de85f0065358529ea7c7a152eca78154fba5b58c27d82"
-url = "https://dl.k8s.io/v1.36.2/bin/linux/amd64/kubectl"
-
-[tools.kubectl."platforms.macos-arm64"]
-checksum = "sha256:4408c85c83fd3a31adaa555bdf3c7a6c81f74b19449a9060ba31ab91926f023d"
-url = "https://dl.k8s.io/v1.36.2/bin/darwin/arm64/kubectl"
-
-[tools.kubectl."platforms.macos-x64"]
-checksum = "sha256:ce6c5e55cd17559e87e4fb5e73ebbbc2511bcf2b695d7a40c1b1461a9817d4b3"
-url = "https://dl.k8s.io/v1.36.2/bin/darwin/amd64/kubectl"
-
-[tools.kubectl."platforms.windows-x64"]
-checksum = "sha256:df04d82234b28ffbdcd36e79d596b85da6e9c736e1a7a55ff6910c648ff47af2"
-url = "https://dl.k8s.io/v1.36.2/bin/windows/amd64/kubectl.exe"
-
-[[tools.kubectx]]
-version = "0.11.0"
-backend = "aqua:ahmetb/kubectx"
-
-[tools.kubectx."platforms.linux-arm64"]
-checksum = "sha256:1dac2072216689e773325cb7587b858ea7415706ebcf04e23bf80e7e70555340"
-url = "https://github.com/ahmetb/kubectx/releases/download/v0.11.0/kubectx_v0.11.0_linux_arm64.tar.gz"
-
-[tools.kubectx."platforms.linux-arm64-musl"]
-checksum = "sha256:1dac2072216689e773325cb7587b858ea7415706ebcf04e23bf80e7e70555340"
-url = "https://github.com/ahmetb/kubectx/releases/download/v0.11.0/kubectx_v0.11.0_linux_arm64.tar.gz"
-
-[tools.kubectx."platforms.linux-x64"]
-checksum = "sha256:08e031c54fbffb3f100e904e4eae94bba2730fedf4869921fda79e4d7a8f5d4c"
-url = "https://github.com/ahmetb/kubectx/releases/download/v0.11.0/kubectx_v0.11.0_linux_x86_64.tar.gz"
-
-[tools.kubectx."platforms.linux-x64-musl"]
-checksum = "sha256:08e031c54fbffb3f100e904e4eae94bba2730fedf4869921fda79e4d7a8f5d4c"
-url = "https://github.com/ahmetb/kubectx/releases/download/v0.11.0/kubectx_v0.11.0_linux_x86_64.tar.gz"
-
-[tools.kubectx."platforms.macos-arm64"]
-checksum = "sha256:b8c9b5150ca6d902474a115cf7e535831081b9ae10cbe561ea36c82bb3823d02"
-url = "https://github.com/ahmetb/kubectx/releases/download/v0.11.0/kubectx_v0.11.0_darwin_arm64.tar.gz"
-
-[tools.kubectx."platforms.macos-x64"]
-checksum = "sha256:80097893b478c55be51ffe826c172f0fd5095d23cca02adbcbcabc412700a689"
-url = "https://github.com/ahmetb/kubectx/releases/download/v0.11.0/kubectx_v0.11.0_darwin_x86_64.tar.gz"
-
-[tools.kubectx."platforms.windows-x64"]
-checksum = "sha256:a28fc2f0c69e715c34ea6d7520b9a17aa00cea642ff6fab0c64614d436d47a5d"
-url = "https://github.com/ahmetb/kubectx/releases/download/v0.11.0/kubectx_v0.11.0_windows_x86_64.zip"
-
-[[tools.kubens]]
-version = "0.11.0"
-backend = "aqua:ahmetb/kubectx/kubens"
-
-[tools.kubens."platforms.linux-arm64"]
-checksum = "sha256:37058abe82ef20c93b44f3dc8ca2382dbb95d416cec958fbf7b8f79f011be86c"
-url = "https://github.com/ahmetb/kubectx/releases/download/v0.11.0/kubens_v0.11.0_linux_arm64.tar.gz"
-
-[tools.kubens."platforms.linux-arm64-musl"]
-checksum = "sha256:37058abe82ef20c93b44f3dc8ca2382dbb95d416cec958fbf7b8f79f011be86c"
-url = "https://github.com/ahmetb/kubectx/releases/download/v0.11.0/kubens_v0.11.0_linux_arm64.tar.gz"
-
-[tools.kubens."platforms.linux-x64"]
-checksum = "sha256:326c021c7b35468ed9a187b361198d0f22ae32828139c65eb6670c0d8301cc09"
-url = "https://github.com/ahmetb/kubectx/releases/download/v0.11.0/kubens_v0.11.0_linux_x86_64.tar.gz"
-
-[tools.kubens."platforms.linux-x64-musl"]
-checksum = "sha256:326c021c7b35468ed9a187b361198d0f22ae32828139c65eb6670c0d8301cc09"
-url = "https://github.com/ahmetb/kubectx/releases/download/v0.11.0/kubens_v0.11.0_linux_x86_64.tar.gz"
-
-[tools.kubens."platforms.macos-arm64"]
-checksum = "sha256:b1c87ddca22f1afc3e980ac807a715cd1183750022798d28a0a4e0cf66bec4e3"
-url = "https://github.com/ahmetb/kubectx/releases/download/v0.11.0/kubens_v0.11.0_darwin_arm64.tar.gz"
-
-[tools.kubens."platforms.macos-x64"]
-checksum = "sha256:9dbe1bf26fd911f2f56661a2f34bf2fe32dfd3af5f11287d0a864da92a746509"
-url = "https://github.com/ahmetb/kubectx/releases/download/v0.11.0/kubens_v0.11.0_darwin_x86_64.tar.gz"
-
-[tools.kubens."platforms.windows-x64"]
-checksum = "sha256:aa10daca6ce321377d61a7e9534911df9eee42a0b6e198000757f8d1e8d0a480"
-url = "https://github.com/ahmetb/kubectx/releases/download/v0.11.0/kubens_v0.11.0_windows_x86_64.zip"
-
-[[tools.node]]
-version = "24.10.0"
-backend = "core:node"
-
-[tools.node."platforms.linux-arm64"]
-checksum = "sha256:42776dfc722991b1ac9f302f3d7b5cf989cf7aca519b479c50e59f0663803b73"
-url = "https://nodejs.org/dist/v24.10.0/node-v24.10.0-linux-arm64.tar.gz"
-
-[tools.node."platforms.linux-arm64-musl"]
-checksum = "sha256:057d95aa80ddbfc45695c945642d2a6512d8e0f7340fe7cdbefe770c77e6587d"
-url = "https://unofficial-builds.nodejs.org/download/release/v24.10.0/node-v24.10.0-linux-arm64-musl.tar.gz"
-
-[tools.node."platforms.linux-x64"]
-checksum = "sha256:2b03c5417ce0b1076780df00e01da373bead3b4b80d1c78c1ad10ee7b918d90c"
-url = "https://nodejs.org/dist/v24.10.0/node-v24.10.0-linux-x64.tar.gz"
-
-[tools.node."platforms.linux-x64-musl"]
-checksum = "sha256:58bc6f01764d86afe3c57cff1da97775187fcbdf3416953534b4e1def6158b19"
-url = "https://unofficial-builds.nodejs.org/download/release/v24.10.0/node-v24.10.0-linux-x64-musl.tar.gz"
-
-[tools.node."platforms.macos-arm64"]
-checksum = "sha256:fbc3d6e1e1d962450d058e918214373872cc4c46e08673f31c35932afac4a8c5"
-url = "https://nodejs.org/dist/v24.10.0/node-v24.10.0-darwin-arm64.tar.gz"
-
-[tools.node."platforms.macos-x64"]
-checksum = "sha256:627b884f66db0dd35f4b46fb9e994774ce560a7fb60798ba1ab81e867a73687d"
-url = "https://nodejs.org/dist/v24.10.0/node-v24.10.0-darwin-x64.tar.gz"
-
-[tools.node."platforms.windows-x64"]
-checksum = "sha256:adc1a2d5ca79c92e94f3a58c3ec0efa76bdb488769ba4d4b50990e4c84896060"
-url = "https://nodejs.org/dist/v24.10.0/node-v24.10.0-win-x64.zip"
-
 [[tools.pitchfork]]
 version = "2.13.1"
 backend = "aqua:jdx/pitchfork"
@@ -670,45 +474,6 @@ url = "https://github.com/jdx/pitchfork/releases/download/v2.13.1/pitchfork-aarc
 [tools.pitchfork."platforms.windows-x64"]
 checksum = "sha256:905dea42443c9045bdc282118f696f26c1fd047a46b830a6ee66e6721823340e"
 url = "https://github.com/jdx/pitchfork/releases/download/v2.13.1/pitchfork-x86_64-pc-windows-msvc.zip"
-
-[[tools.python]]
-version = "3.14.6"
-backend = "core:python"
-
-[tools.python."platforms.linux-arm64"]
-checksum = "sha256:9124d5c41739d78a446f1f29c1953bf41071abcbf18e6daec201a27608648195"
-url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260610/cpython-3.14.6+20260610-aarch64-unknown-linux-gnu-install_only_stripped.tar.gz"
-provenance = "github-attestations"
-
-[tools.python."platforms.linux-arm64-musl"]
-checksum = "sha256:5c75bea22f425ebc94912c618518a5aa4753eedeea6b5da5939f027d3a9c0fec"
-url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260610/cpython-3.14.6+20260610-aarch64-unknown-linux-musl-install_only_stripped.tar.gz"
-provenance = "github-attestations"
-
-[tools.python."platforms.linux-x64"]
-checksum = "sha256:0881fbde2c78605720fb2e240d1a6df38652a896e40a5fce2e10908dbee5f5b7"
-url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260610/cpython-3.14.6+20260610-x86_64-unknown-linux-gnu-install_only_stripped.tar.gz"
-provenance = "github-attestations"
-
-[tools.python."platforms.linux-x64-musl"]
-checksum = "sha256:54eca143d09ed3c596ecad5e3bfcb7724387818f8f984f44f3d8c0e9f36681d3"
-url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260610/cpython-3.14.6+20260610-x86_64-unknown-linux-musl-install_only_stripped.tar.gz"
-provenance = "github-attestations"
-
-[tools.python."platforms.macos-arm64"]
-checksum = "sha256:875516e13be36296f8f7dd0972b22ba3bed069ed08d27d5f0069caf227522921"
-url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260610/cpython-3.14.6+20260610-aarch64-apple-darwin-install_only_stripped.tar.gz"
-provenance = "github-attestations"
-
-[tools.python."platforms.macos-x64"]
-checksum = "sha256:6f85cbb2a0fef4b90fc63aadcfe383c22db5eb7933066ca6ea384828a6b3f2d2"
-url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260610/cpython-3.14.6+20260610-x86_64-apple-darwin-install_only_stripped.tar.gz"
-provenance = "github-attestations"
-
-[tools.python."platforms.windows-x64"]
-checksum = "sha256:49f0c7e8d1c2eaba70c5516ca6c01b6b766f6ff473f1209a76fd01783e7c75ae"
-url = "https://github.com/astral-sh/python-build-standalone/releases/download/20260610/cpython-3.14.6+20260610-x86_64-pc-windows-msvc-install_only_stripped.tar.gz"
-provenance = "github-attestations"
 
 [[tools.starship]]
 version = "1.25.1"
