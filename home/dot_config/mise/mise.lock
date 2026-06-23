@@ -56,6 +56,10 @@ url = "https://github.com/reemus-dev/gitnr/releases/download/v0.3.0/gitnr-macos-
 checksum = "sha256:619787156fd0f89b473e4f5c774627349d336677a8c7a8d3324f5528f1a28da0"
 url = "https://github.com/reemus-dev/gitnr/releases/download/v0.3.0/gitnr-win-amd64.exe"
 
+[[tools."asdf:canha/asdf-pulumi"]]
+version = "3.247.0"
+backend = "asdf:canha/asdf-pulumi"
+
 [[tools.cargo-binstall]]
 version = "1.20.0"
 backend = "aqua:cargo-bins/cargo-binstall"
@@ -666,44 +670,6 @@ url = "https://github.com/jdx/pitchfork/releases/download/v2.13.1/pitchfork-aarc
 [tools.pitchfork."platforms.windows-x64"]
 checksum = "sha256:905dea42443c9045bdc282118f696f26c1fd047a46b830a6ee66e6721823340e"
 url = "https://github.com/jdx/pitchfork/releases/download/v2.13.1/pitchfork-x86_64-pc-windows-msvc.zip"
-
-[[tools.pulumi]]
-version = "3.247.0"
-backend = "aqua:pulumi/pulumi"
-
-[tools.pulumi."platforms.linux-arm64"]
-checksum = "sha256:e2152308b36cd1eef6f5ad4dcd0530001e9a486fa2439ac841ca4ba6193c22ef"
-url = "https://github.com/pulumi/pulumi/releases/download/v3.247.0/pulumi-v3.247.0-linux-arm64.tar.gz"
-provenance = "cosign"
-
-[tools.pulumi."platforms.linux-arm64-musl"]
-checksum = "sha256:e2152308b36cd1eef6f5ad4dcd0530001e9a486fa2439ac841ca4ba6193c22ef"
-url = "https://github.com/pulumi/pulumi/releases/download/v3.247.0/pulumi-v3.247.0-linux-arm64.tar.gz"
-provenance = "cosign"
-
-[tools.pulumi."platforms.linux-x64"]
-checksum = "sha256:1924bbd1653aeb26c730d130a6143cc637ed20f575803682bef454aea601e231"
-url = "https://github.com/pulumi/pulumi/releases/download/v3.247.0/pulumi-v3.247.0-linux-x64.tar.gz"
-provenance = "cosign"
-
-[tools.pulumi."platforms.linux-x64-musl"]
-checksum = "sha256:1924bbd1653aeb26c730d130a6143cc637ed20f575803682bef454aea601e231"
-url = "https://github.com/pulumi/pulumi/releases/download/v3.247.0/pulumi-v3.247.0-linux-x64.tar.gz"
-provenance = "cosign"
-
-[tools.pulumi."platforms.macos-arm64"]
-checksum = "sha256:3b37d840550c6250ccfa9996d7d4b0372864ecf2a47b1a184f3d903874cd1d34"
-url = "https://github.com/pulumi/pulumi/releases/download/v3.247.0/pulumi-v3.247.0-darwin-arm64.tar.gz"
-
-[tools.pulumi."platforms.macos-x64"]
-checksum = "sha256:34cab8c22137a3c7040f4c6045e73a693d00faadf9aa9aa8f6a193ea4a58ec3c"
-url = "https://github.com/pulumi/pulumi/releases/download/v3.247.0/pulumi-v3.247.0-darwin-x64.tar.gz"
-provenance = "cosign"
-
-[tools.pulumi."platforms.windows-x64"]
-checksum = "sha256:257bba76ec03b6def937ecb1effd28069e9c009562aac6032437ba6f79e40081"
-url = "https://github.com/pulumi/pulumi/releases/download/v3.247.0/pulumi-v3.247.0-windows-x64.zip"
-provenance = "cosign"
 
 [[tools.python]]
 version = "3.14.6"
