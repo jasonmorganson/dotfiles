@@ -64,10 +64,6 @@ linux-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.de
 "~/.config/ssh/github" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/ssh/config.d/github" | quote }}, mode = "copy" }
 "~/.config/ssh/mac" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/ssh/config.d/mac" | quote }}, mode = "copy" }
 "~/.config/ssh/term" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/ssh/config.d/term" | quote }}, mode = "copy" }
-"~/.bash_sessions" = { source = "~/.local/state/bash/sessions", mode = "symlink" }
-"~/.claude" = { source = "~/.config/claude", mode = "symlink" }
-"~/.codex" = { source = "~/.config/codex", mode = "symlink" }
-"~/.docker" = { source = "~/.config/docker", mode = "symlink" }
 "~/.hushlogin" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/hushlogin" | quote }}, mode = "copy" }
 "~/.ssh/config" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/ssh/config" | quote }}, mode = "copy" }
 "~/Library/Application Support/nushell" = { source = "~/.config/nushell", mode = "symlink" }
