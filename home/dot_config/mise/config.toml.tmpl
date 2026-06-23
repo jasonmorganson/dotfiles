@@ -41,7 +41,15 @@ linux-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.de
 [dotfiles]
 # Keep migrated mise dotfile sources outside home/ so chezmoi does not manage the same target.
 "~/.config/lsd/config.yaml" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/lsd/config.yaml" | quote }}, mode = "copy" }
+"~/.config/npm/npmrc" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/npm/npmrc" | quote }}, mode = "copy" }
+"~/.config/pitchfork/config.toml" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/pitchfork/config.toml" | quote }}, mode = "copy" }
+"~/.config/python/pythonrc" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/python/pythonrc" | quote }}, mode = "copy" }
 "~/.config/readline/inputrc" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/readline/inputrc" | quote }}, mode = "copy" }
+"~/.config/ssh/github" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/ssh/config.d/github" | quote }}, mode = "copy" }
+"~/.config/ssh/mac" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/ssh/config.d/mac" | quote }}, mode = "copy" }
+"~/.config/ssh/term" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/ssh/config.d/term" | quote }}, mode = "copy" }
+"~/.hushlogin" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/hushlogin" | quote }}, mode = "copy" }
+"~/.ssh/config" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/ssh/config" | quote }}, mode = "copy" }
 
 [env]
 # XDG
