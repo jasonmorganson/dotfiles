@@ -1,7 +1,9 @@
 [include]
     path = absorb
     path = alias
+    path = branch
     path = color
+    path = column
     path = commit
     path = core
     path = delta
@@ -10,6 +12,7 @@
     path = filter
     path = gitalias
     path = help
+    path = init
     path = interactive
     path = log
     path = merge

@@ -1,2 +1,3 @@
 [rerere]
+    autoUpdate = true
     enabled = true

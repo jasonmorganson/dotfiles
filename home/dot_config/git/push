@@ -1,3 +1,4 @@
 [push]
     default = current
     autoSetupRemote = true
+    followTags = true

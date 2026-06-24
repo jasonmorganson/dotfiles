@@ -1,2 +1,3 @@
 [tag]
     gpgSign = true
+    sort = version:refname
