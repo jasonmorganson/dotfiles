@@ -1,3 +1,2 @@
 [core]
-    excludesFile = ~/.config/git/ignore
     pager = delta --diff-so-fancy
