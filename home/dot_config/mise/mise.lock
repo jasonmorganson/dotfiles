@@ -57,42 +57,42 @@ checksum = "sha256:619787156fd0f89b473e4f5c774627349d336677a8c7a8d3324f5528f1a28
 url = "https://github.com/reemus-dev/gitnr/releases/download/v0.3.0/gitnr-win-amd64.exe"
 
 [[tools.cargo-binstall]]
-version = "1.20.0"
+version = "1.20.1"
 backend = "aqua:cargo-bins/cargo-binstall"
 
 [tools.cargo-binstall."platforms.linux-arm64"]
-checksum = "sha256:3e85b6bbdf971806562ea4070bb4bdae8591fb7bcc2e0f4ea693f40c4ab92159"
-url = "https://github.com/cargo-bins/cargo-binstall/releases/download/v1.20.0/cargo-binstall-aarch64-unknown-linux-musl.tgz"
+checksum = "sha256:23679581c4cfa1782953264a6e36965198aed995b3a5287550dd78a113ce2288"
+url = "https://github.com/cargo-bins/cargo-binstall/releases/download/v1.20.1/cargo-binstall-aarch64-unknown-linux-musl.tgz"
 provenance = "github-attestations"
 
 [tools.cargo-binstall."platforms.linux-arm64-musl"]
-checksum = "sha256:3e85b6bbdf971806562ea4070bb4bdae8591fb7bcc2e0f4ea693f40c4ab92159"
-url = "https://github.com/cargo-bins/cargo-binstall/releases/download/v1.20.0/cargo-binstall-aarch64-unknown-linux-musl.tgz"
+checksum = "sha256:23679581c4cfa1782953264a6e36965198aed995b3a5287550dd78a113ce2288"
+url = "https://github.com/cargo-bins/cargo-binstall/releases/download/v1.20.1/cargo-binstall-aarch64-unknown-linux-musl.tgz"
 provenance = "github-attestations"
 
 [tools.cargo-binstall."platforms.linux-x64"]
-checksum = "sha256:4d7875788d0505547c220d2b02d3619aac0dd19b7033eba7005a8d09ff1dc433"
-url = "https://github.com/cargo-bins/cargo-binstall/releases/download/v1.20.0/cargo-binstall-x86_64-unknown-linux-musl.tgz"
+checksum = "sha256:f12954bc382e1d0b2df3fbfb217a05d92c25570e4517841e0613499a24f4594e"
+url = "https://github.com/cargo-bins/cargo-binstall/releases/download/v1.20.1/cargo-binstall-x86_64-unknown-linux-musl.tgz"
 provenance = "github-attestations"
 
 [tools.cargo-binstall."platforms.linux-x64-musl"]
-checksum = "sha256:4d7875788d0505547c220d2b02d3619aac0dd19b7033eba7005a8d09ff1dc433"
-url = "https://github.com/cargo-bins/cargo-binstall/releases/download/v1.20.0/cargo-binstall-x86_64-unknown-linux-musl.tgz"
+checksum = "sha256:f12954bc382e1d0b2df3fbfb217a05d92c25570e4517841e0613499a24f4594e"
+url = "https://github.com/cargo-bins/cargo-binstall/releases/download/v1.20.1/cargo-binstall-x86_64-unknown-linux-musl.tgz"
 provenance = "github-attestations"
 
 [tools.cargo-binstall."platforms.macos-arm64"]
-checksum = "sha256:24a9cbf1e4c238881f408d7cca11f4aafba1fdeb0e518887638af5dd40e6ac3d"
-url = "https://github.com/cargo-bins/cargo-binstall/releases/download/v1.20.0/cargo-binstall-aarch64-apple-darwin.zip"
+checksum = "sha256:691c4fda20d2e58920dc056e4eb7dacec6de448bb547aca17b0ae819716ebef6"
+url = "https://github.com/cargo-bins/cargo-binstall/releases/download/v1.20.1/cargo-binstall-aarch64-apple-darwin.zip"
 provenance = "github-attestations"
 
 [tools.cargo-binstall."platforms.macos-x64"]
-checksum = "sha256:2ef14fc607859ba238bce73512eba68941e3addc61cb40282171287fbdee5ff4"
-url = "https://github.com/cargo-bins/cargo-binstall/releases/download/v1.20.0/cargo-binstall-x86_64-apple-darwin.zip"
+checksum = "sha256:349f5ec5f8b996e990993c90c504211321d8bf839e11e409e8fa3b628eefc56f"
+url = "https://github.com/cargo-bins/cargo-binstall/releases/download/v1.20.1/cargo-binstall-x86_64-apple-darwin.zip"
 provenance = "github-attestations"
 
 [tools.cargo-binstall."platforms.windows-x64"]
-checksum = "sha256:185c115ef1977e044e009336c77bf41cc61f144944fdb43e2d84f291b96648dc"
-url = "https://github.com/cargo-bins/cargo-binstall/releases/download/v1.20.0/cargo-binstall-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:89123c22482e2503a5fa861fa30cd61c59c708a97e8550143c1a11de98ae2658"
+url = "https://github.com/cargo-bins/cargo-binstall/releases/download/v1.20.1/cargo-binstall-x86_64-pc-windows-msvc.zip"
 provenance = "github-attestations"
 
 [[tools."cargo:git-delta"]]
@@ -132,49 +132,49 @@ checksum = "sha256:ebc29455dc9106e8d2d980708b45bd3120e44c7d5e6a06787ff307faaa068
 url = "https://github.com/twpayne/chezmoi/releases/download/v2.70.5/chezmoi_2.70.5_windows_amd64.zip"
 
 [[tools.fnox]]
-version = "1.27.1"
+version = "1.28.0"
 backend = "github:jdx/fnox"
 
 [tools.fnox."platforms.linux-arm64"]
-checksum = "sha256:5f18410dd9a777386d9dbdd4029e13436195dcfaa55f594a99ff6a4bc1b3ca03"
-url = "https://github.com/jdx/fnox/releases/download/v1.27.1/fnox-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/jdx/fnox/releases/assets/450745507"
+checksum = "sha256:8e465b3ec53cc244ec70e9d7f2a0de5495ed0410cef59c68ed9952e565b8f1ec"
+url = "https://github.com/jdx/fnox/releases/download/v1.28.0/fnox-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/jdx/fnox/releases/assets/457021295"
 provenance = "github-attestations"
 
 [tools.fnox."platforms.linux-arm64-musl"]
-checksum = "sha256:b9307bc65ae2c4b2178175876034b3ad04a7fded5aea89818141a7b05e6c43aa"
-url = "https://github.com/jdx/fnox/releases/download/v1.27.1/fnox-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/jdx/fnox/releases/assets/450745503"
+checksum = "sha256:f9eb4d3d7a5579bebe190d0bd885319f63b750af9b6e897607110045caa5b1a9"
+url = "https://github.com/jdx/fnox/releases/download/v1.28.0/fnox-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/jdx/fnox/releases/assets/457021286"
 provenance = "github-attestations"
 
 [tools.fnox."platforms.linux-x64"]
-checksum = "sha256:fe272bebbb0825ba1df0c7502054979815fae8251b4a90c61c28cd13d64887bf"
-url = "https://github.com/jdx/fnox/releases/download/v1.27.1/fnox-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/jdx/fnox/releases/assets/450745538"
+checksum = "sha256:64c0c7dcdf3194137f8f621fb33c65de59c37d8ad473c970dc18273ca039e2b0"
+url = "https://github.com/jdx/fnox/releases/download/v1.28.0/fnox-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/jdx/fnox/releases/assets/457021387"
 provenance = "github-attestations"
 
 [tools.fnox."platforms.linux-x64-musl"]
-checksum = "sha256:5d5ba5f6779c398b4fb23b06fc82c303fcc281f56bc0ed849f23403acaa0e413"
-url = "https://github.com/jdx/fnox/releases/download/v1.27.1/fnox-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/jdx/fnox/releases/assets/450745537"
+checksum = "sha256:9ace07de6703507a606d9bf7fffa5841cd3cf86933b15852e6e009a34ab7d5a0"
+url = "https://github.com/jdx/fnox/releases/download/v1.28.0/fnox-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/jdx/fnox/releases/assets/457021392"
 provenance = "github-attestations"
 
 [tools.fnox."platforms.macos-arm64"]
-checksum = "sha256:0f82d0346872bc98843c8428bfd05e72ca9f8ac9eb699be4549e7a21d2cf0a7f"
-url = "https://github.com/jdx/fnox/releases/download/v1.27.1/fnox-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/jdx/fnox/releases/assets/450745511"
+checksum = "sha256:b6cd517147c6b89797dad9965776e203fc07f7fc279f5c7486f7a79b78feff61"
+url = "https://github.com/jdx/fnox/releases/download/v1.28.0/fnox-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/jdx/fnox/releases/assets/457021285"
 provenance = "github-attestations"
 
 [tools.fnox."platforms.macos-x64"]
-checksum = "sha256:7aafc5e8fea5dea4471f2a92abc6d8211f5b1f8fcbdbfac611ea6a52101483e1"
-url = "https://github.com/jdx/fnox/releases/download/v1.27.1/fnox-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/jdx/fnox/releases/assets/450745508"
+checksum = "sha256:efdf8b285e52f2834568189cdcfd3b4a0d94357d61b2d4e5caf8450a2bc46a67"
+url = "https://github.com/jdx/fnox/releases/download/v1.28.0/fnox-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/jdx/fnox/releases/assets/457021287"
 provenance = "github-attestations"
 
 [tools.fnox."platforms.windows-x64"]
-checksum = "sha256:6373ee5457e8c36941f688aeff9ac630923c588fd78faff14e0548a1d1dbd89a"
-url = "https://github.com/jdx/fnox/releases/download/v1.27.1/fnox-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/jdx/fnox/releases/assets/450745535"
+checksum = "sha256:2eb1b02e6b7d32991bef5884cd1adacf6b52c4d5aeaa979f5c377df9391d4aae"
+url = "https://github.com/jdx/fnox/releases/download/v1.28.0/fnox-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/jdx/fnox/releases/assets/457021382"
 provenance = "github-attestations"
 
 [[tools.fzf]]
@@ -292,55 +292,6 @@ checksum = "blake3:9fc91be41a6e3ae4b32dfa4a1788e3b87d0bacd73fe836aa6384164efa1cd
 url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-macos-12_arm"
 url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278547"
 
-[[tools."github:MitMaro/git-interactive-rebase-tool"]]
-version = "2.4.1"
-backend = "github:MitMaro/git-interactive-rebase-tool"
-
-[tools."github:MitMaro/git-interactive-rebase-tool".options]
-asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.deb"
-
-[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-arm64"]
-url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_arm64.deb"
-url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278671"
-
-[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-arm64-musl"]
-url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_arm64.deb"
-url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278671"
-
-[[tools."github:MitMaro/git-interactive-rebase-tool"]]
-version = "2.4.1"
-backend = "github:MitMaro/git-interactive-rebase-tool"
-
-[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.windows-x64"]
-url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-windows-_x86_64.exe"
-url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176279168"
-
-[[tools."github:MitMaro/git-interactive-rebase-tool"]]
-version = "2.4.1"
-backend = "github:MitMaro/git-interactive-rebase-tool"
-
-[tools."github:MitMaro/git-interactive-rebase-tool".options]
-asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_amd64.deb"
-
-[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-x64"]
-url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_amd64.deb"
-url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278646"
-
-[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-x64-musl"]
-url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_amd64.deb"
-url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278646"
-
-[[tools."github:MitMaro/git-interactive-rebase-tool"]]
-version = "2.4.1"
-backend = "github:MitMaro/git-interactive-rebase-tool"
-
-[tools."github:MitMaro/git-interactive-rebase-tool".options]
-asset_pattern = "git-interactive-rebase-tool-*-macos-*_intel"
-
-[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.macos-x64"]
-url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-macos-12_intel"
-url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278550"
-
 [[tools."github:lsd-rs/lsd"]]
 version = "1.2.0"
 backend = "github:lsd-rs/lsd"
@@ -381,43 +332,43 @@ url = "https://github.com/lsd-rs/lsd/releases/download/v1.2.0/lsd-v1.2.0-x86_64-
 url_api = "https://api.github.com/repos/lsd-rs/lsd/releases/assets/303320206"
 
 [[tools."github:max-sixty/worktrunk"]]
-version = "0.60.0"
+version = "0.61.0"
 backend = "github:max-sixty/worktrunk"
 
 [tools."github:max-sixty/worktrunk"."platforms.linux-arm64"]
-checksum = "sha256:148e428ace9f30f26cee7e44ff5c05940ae4c92dd0af1373aad257e38dba9669"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.60.0/worktrunk-aarch64-unknown-linux-musl.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/451517189"
+checksum = "sha256:851c3d6767580b46428e3f6f3447a689ff3bb1dea0fa3c43f5df4b6e0168b04d"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.61.0/worktrunk-aarch64-unknown-linux-musl.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/453988228"
 
 [tools."github:max-sixty/worktrunk"."platforms.linux-arm64-musl"]
-checksum = "sha256:148e428ace9f30f26cee7e44ff5c05940ae4c92dd0af1373aad257e38dba9669"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.60.0/worktrunk-aarch64-unknown-linux-musl.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/451517189"
+checksum = "sha256:851c3d6767580b46428e3f6f3447a689ff3bb1dea0fa3c43f5df4b6e0168b04d"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.61.0/worktrunk-aarch64-unknown-linux-musl.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/453988228"
 
 [tools."github:max-sixty/worktrunk"."platforms.linux-x64"]
-checksum = "sha256:e8a6adff8c3cadd4d16c67be858eafd935a52c88f24f00b0c15a9d2e0496bc80"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.60.0/worktrunk-x86_64-unknown-linux-musl.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/451517211"
+checksum = "sha256:95843c2c8cc5c46c1d06e73db7499d77e8224b2a784348b80bb0eb2edd50ec00"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.61.0/worktrunk-x86_64-unknown-linux-musl.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/453988239"
 
 [tools."github:max-sixty/worktrunk"."platforms.linux-x64-musl"]
-checksum = "sha256:e8a6adff8c3cadd4d16c67be858eafd935a52c88f24f00b0c15a9d2e0496bc80"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.60.0/worktrunk-x86_64-unknown-linux-musl.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/451517211"
+checksum = "sha256:95843c2c8cc5c46c1d06e73db7499d77e8224b2a784348b80bb0eb2edd50ec00"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.61.0/worktrunk-x86_64-unknown-linux-musl.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/453988239"
 
 [tools."github:max-sixty/worktrunk"."platforms.macos-arm64"]
-checksum = "sha256:1980e7358f37785909a3240393aa65cafcb7771b72275efd726f4fd7d32d4e06"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.60.0/worktrunk-aarch64-apple-darwin.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/451517184"
+checksum = "sha256:adc53a7ebdf89220f7988c0871382cb948115cd89cd6ea2f98d7710069cadde9"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.61.0/worktrunk-aarch64-apple-darwin.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/453988227"
 
 [tools."github:max-sixty/worktrunk"."platforms.macos-x64"]
-checksum = "sha256:836ebd2663b75cc7aa4d03c3d8f77367a59ed2a6303e790c847b19494c2c0239"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.60.0/worktrunk-x86_64-apple-darwin.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/451517200"
+checksum = "sha256:8773e0938e61d5de254605134526f01dd593498acb8602f042eeb65679d8b40a"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.61.0/worktrunk-x86_64-apple-darwin.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/453988233"
 
 [tools."github:max-sixty/worktrunk"."platforms.windows-x64"]
-checksum = "sha256:7f0f07bdd2bcfe9c5fae68002024e77bdabc162b69913d501bf1e30a76e26318"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.60.0/worktrunk-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/451517203"
+checksum = "sha256:dfd658266e4b6a804546c42b0df87aa18a2f6cfafa7ae7297c3ba6c264c1adb8"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.61.0/worktrunk-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/453988235"
 
 [[tools.gitui]]
 version = "0.28.1"
@@ -456,24 +407,24 @@ checksum = "sha256:5c8325ced8bacd8418d62706f669e96d9c3578a9237526e34d546900cbc04
 url = "https://github.com/helix-editor/helix/releases/download/25.07.1/helix-25.07.1-x86_64-windows.zip"
 
 [[tools.pitchfork]]
-version = "2.13.1"
+version = "2.14.0"
 backend = "aqua:jdx/pitchfork"
 
 [tools.pitchfork."platforms.linux-arm64"]
-checksum = "sha256:cf57cea6aad2a462224070874a81f8a756758dea403b146636fc3a9fb591b1cc"
-url = "https://github.com/jdx/pitchfork/releases/download/v2.13.1/pitchfork-aarch64-unknown-linux-gnu.tar.gz"
+checksum = "sha256:2ca2ff562d6c4d3659abce0c9b354f644f613f488736bfdbfcd95e81a77c7cf5"
+url = "https://github.com/jdx/pitchfork/releases/download/v2.14.0/pitchfork-aarch64-unknown-linux-gnu.tar.gz"
 
 [tools.pitchfork."platforms.linux-x64"]
-checksum = "sha256:c7860dc90c0211391c1479e837359649ceb5c2512c064b0d3304f94b351768be"
-url = "https://github.com/jdx/pitchfork/releases/download/v2.13.1/pitchfork-x86_64-unknown-linux-gnu.tar.gz"
+checksum = "sha256:eb43337f5710876a84b14d41225f443da30a50a9b54b14ed63668da9bb02e6d3"
+url = "https://github.com/jdx/pitchfork/releases/download/v2.14.0/pitchfork-x86_64-unknown-linux-gnu.tar.gz"
 
 [tools.pitchfork."platforms.macos-arm64"]
-checksum = "sha256:1357c6ffe9b04dee040d1d2bce642ca5d4dd416ebaadfc3813d672e5b3f0298e"
-url = "https://github.com/jdx/pitchfork/releases/download/v2.13.1/pitchfork-aarch64-apple-darwin.tar.gz"
+checksum = "sha256:c67cafb723f64a095bd10cbc08c392d6f48e1869ad8e747e5b0fd8a9b04f512e"
+url = "https://github.com/jdx/pitchfork/releases/download/v2.14.0/pitchfork-aarch64-apple-darwin.tar.gz"
 
 [tools.pitchfork."platforms.windows-x64"]
-checksum = "sha256:905dea42443c9045bdc282118f696f26c1fd047a46b830a6ee66e6721823340e"
-url = "https://github.com/jdx/pitchfork/releases/download/v2.13.1/pitchfork-x86_64-pc-windows-msvc.zip"
+checksum = "sha256:c756977a922500e8e7865e12309057adb19c7a4442ad1da7a21e26a0615582e3"
+url = "https://github.com/jdx/pitchfork/releases/download/v2.14.0/pitchfork-x86_64-pc-windows-msvc.zip"
 
 [[tools.starship]]
 version = "1.25.1"
