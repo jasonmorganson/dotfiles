@@ -332,43 +332,43 @@ url = "https://github.com/lsd-rs/lsd/releases/download/v1.2.0/lsd-v1.2.0-x86_64-
 url_api = "https://api.github.com/repos/lsd-rs/lsd/releases/assets/303320206"
 
 [[tools."github:max-sixty/worktrunk"]]
-version = "0.63.0"
+version = "0.64.0"
 backend = "github:max-sixty/worktrunk"
 
 [tools."github:max-sixty/worktrunk"."platforms.linux-arm64"]
-checksum = "sha256:1b6bfc692c28786e7355fad65ce14d4203719639c41dfd57edda72e385f36bea"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.63.0/worktrunk-aarch64-unknown-linux-musl.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/460771756"
+checksum = "sha256:41d8c5dba82feee0c877ad58b1e33719289d5dd125026d5b389ca14cd6b30377"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.64.0/worktrunk-aarch64-unknown-linux-musl.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/461896128"
 
 [tools."github:max-sixty/worktrunk"."platforms.linux-arm64-musl"]
-checksum = "sha256:1b6bfc692c28786e7355fad65ce14d4203719639c41dfd57edda72e385f36bea"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.63.0/worktrunk-aarch64-unknown-linux-musl.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/460771756"
+checksum = "sha256:41d8c5dba82feee0c877ad58b1e33719289d5dd125026d5b389ca14cd6b30377"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.64.0/worktrunk-aarch64-unknown-linux-musl.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/461896128"
 
 [tools."github:max-sixty/worktrunk"."platforms.linux-x64"]
-checksum = "sha256:8d8b4bf79bd764943b3cb85c1e548b233c4f51548bb5974e3770459e16093239"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.63.0/worktrunk-x86_64-unknown-linux-musl.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/460771767"
+checksum = "sha256:f5dda9b8139289eeb159e710e08ccf58495d385016fd94a0b4fe3212e13936af"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.64.0/worktrunk-x86_64-unknown-linux-musl.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/461896152"
 
 [tools."github:max-sixty/worktrunk"."platforms.linux-x64-musl"]
-checksum = "sha256:8d8b4bf79bd764943b3cb85c1e548b233c4f51548bb5974e3770459e16093239"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.63.0/worktrunk-x86_64-unknown-linux-musl.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/460771767"
+checksum = "sha256:f5dda9b8139289eeb159e710e08ccf58495d385016fd94a0b4fe3212e13936af"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.64.0/worktrunk-x86_64-unknown-linux-musl.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/461896152"
 
 [tools."github:max-sixty/worktrunk"."platforms.macos-arm64"]
-checksum = "sha256:32dc3321758dacc9588e27aa1a36f9543c5d22f3fded8f4519a9636271ccbbd6"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.63.0/worktrunk-aarch64-apple-darwin.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/460771741"
+checksum = "sha256:b14052be9feb6547b3cb78a0352bef5cd8bd9cc790cb6d0642be3372d3ab2588"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.64.0/worktrunk-aarch64-apple-darwin.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/461896112"
 
 [tools."github:max-sixty/worktrunk"."platforms.macos-x64"]
-checksum = "sha256:3ef9f78f8bcb9c00e9012a99b6bc30bac11ae857529063f69d107bb0a8ff0516"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.63.0/worktrunk-x86_64-apple-darwin.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/460771761"
+checksum = "sha256:10cbbd413cc44435715c1363eeddc54df67bb4677a9f1cd4821182fe27dc447f"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.64.0/worktrunk-x86_64-apple-darwin.tar.xz"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/461896137"
 
 [tools."github:max-sixty/worktrunk"."platforms.windows-x64"]
-checksum = "sha256:cdb639184db2fa606cb3be65f6b84d399dc717cb637d104f2d151b79a78da73d"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.63.0/worktrunk-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/460771764"
+checksum = "sha256:d56887e7b9933b9983ea4de35195b9d2ae092d3efba028d4b6bc400d93169d2a"
+url = "https://github.com/max-sixty/worktrunk/releases/download/v0.64.0/worktrunk-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/461896144"
 
 [[tools.gitui]]
 version = "0.28.1"
