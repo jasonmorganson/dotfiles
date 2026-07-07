@@ -332,43 +332,8 @@ url = "https://github.com/lsd-rs/lsd/releases/download/v1.2.0/lsd-v1.2.0-x86_64-
 url_api = "https://api.github.com/repos/lsd-rs/lsd/releases/assets/303320206"
 
 [[tools."github:max-sixty/worktrunk"]]
-version = "0.64.0"
+version = "0.65.0"
 backend = "github:max-sixty/worktrunk"
-
-[tools."github:max-sixty/worktrunk"."platforms.linux-arm64"]
-checksum = "sha256:41d8c5dba82feee0c877ad58b1e33719289d5dd125026d5b389ca14cd6b30377"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.64.0/worktrunk-aarch64-unknown-linux-musl.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/461896128"
-
-[tools."github:max-sixty/worktrunk"."platforms.linux-arm64-musl"]
-checksum = "sha256:41d8c5dba82feee0c877ad58b1e33719289d5dd125026d5b389ca14cd6b30377"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.64.0/worktrunk-aarch64-unknown-linux-musl.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/461896128"
-
-[tools."github:max-sixty/worktrunk"."platforms.linux-x64"]
-checksum = "sha256:f5dda9b8139289eeb159e710e08ccf58495d385016fd94a0b4fe3212e13936af"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.64.0/worktrunk-x86_64-unknown-linux-musl.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/461896152"
-
-[tools."github:max-sixty/worktrunk"."platforms.linux-x64-musl"]
-checksum = "sha256:f5dda9b8139289eeb159e710e08ccf58495d385016fd94a0b4fe3212e13936af"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.64.0/worktrunk-x86_64-unknown-linux-musl.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/461896152"
-
-[tools."github:max-sixty/worktrunk"."platforms.macos-arm64"]
-checksum = "sha256:b14052be9feb6547b3cb78a0352bef5cd8bd9cc790cb6d0642be3372d3ab2588"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.64.0/worktrunk-aarch64-apple-darwin.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/461896112"
-
-[tools."github:max-sixty/worktrunk"."platforms.macos-x64"]
-checksum = "sha256:10cbbd413cc44435715c1363eeddc54df67bb4677a9f1cd4821182fe27dc447f"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.64.0/worktrunk-x86_64-apple-darwin.tar.xz"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/461896137"
-
-[tools."github:max-sixty/worktrunk"."platforms.windows-x64"]
-checksum = "sha256:d56887e7b9933b9983ea4de35195b9d2ae092d3efba028d4b6bc400d93169d2a"
-url = "https://github.com/max-sixty/worktrunk/releases/download/v0.64.0/worktrunk-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/461896144"
 
 [[tools.gitui]]
 version = "0.28.1"
@@ -407,24 +372,8 @@ checksum = "sha256:5c8325ced8bacd8418d62706f669e96d9c3578a9237526e34d546900cbc04
 url = "https://github.com/helix-editor/helix/releases/download/25.07.1/helix-25.07.1-x86_64-windows.zip"
 
 [[tools.pitchfork]]
-version = "2.14.0"
+version = "2.15.0"
 backend = "aqua:jdx/pitchfork"
-
-[tools.pitchfork."platforms.linux-arm64"]
-checksum = "sha256:2ca2ff562d6c4d3659abce0c9b354f644f613f488736bfdbfcd95e81a77c7cf5"
-url = "https://github.com/jdx/pitchfork/releases/download/v2.14.0/pitchfork-aarch64-unknown-linux-gnu.tar.gz"
-
-[tools.pitchfork."platforms.linux-x64"]
-checksum = "sha256:eb43337f5710876a84b14d41225f443da30a50a9b54b14ed63668da9bb02e6d3"
-url = "https://github.com/jdx/pitchfork/releases/download/v2.14.0/pitchfork-x86_64-unknown-linux-gnu.tar.gz"
-
-[tools.pitchfork."platforms.macos-arm64"]
-checksum = "sha256:c67cafb723f64a095bd10cbc08c392d6f48e1869ad8e747e5b0fd8a9b04f512e"
-url = "https://github.com/jdx/pitchfork/releases/download/v2.14.0/pitchfork-aarch64-apple-darwin.tar.gz"
-
-[tools.pitchfork."platforms.windows-x64"]
-checksum = "sha256:c756977a922500e8e7865e12309057adb19c7a4442ad1da7a21e26a0615582e3"
-url = "https://github.com/jdx/pitchfork/releases/download/v2.14.0/pitchfork-x86_64-pc-windows-msvc.zip"
 
 [[tools.starship]]
 version = "1.26.0"
