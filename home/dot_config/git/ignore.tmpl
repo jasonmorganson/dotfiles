@@ -1,5 +1,0 @@
-{{- if or (eq .chezmoi.os "darwin") (eq .chezmoi.os "windows") }}
-{{ output "mise" "exec" "aqua:reemus-dev/gitnr" "--" "gitnr" "create" "ghg:mise" "ghg:Linux" "ghg:macOS" "Node" "Nextjs" "Python" }}
-{{- end }}
-
-.zed

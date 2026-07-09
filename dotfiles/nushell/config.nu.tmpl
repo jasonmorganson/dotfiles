@@ -1,0 +1,6 @@
+{{ exec(command=mise_bin ~ ' exec starship -- starship init nu') }}
+{{ exec(command=mise_bin ~ ' exec fnox -- fnox activate nu') }}
+{{ exec(command=mise_bin ~ ' exec github:max-sixty/worktrunk -- wt config shell init nu') }}
+
+$env.config.edit_mode = "vi"
+$env.config.show_banner = false

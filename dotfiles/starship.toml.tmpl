@@ -1,4 +1,4 @@
-{{ output "mise" "exec" "starship" "--" "starship" "preset" "no-nerd-font" }}
+{{ exec(command=mise_bin ~ ' exec starship -- starship preset no-nerd-font') }}
 
 [cmd_duration]
 disabled = true
