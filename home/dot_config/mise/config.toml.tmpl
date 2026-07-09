@@ -210,13 +210,6 @@ _.path = [
 # LS_COLORS
 LS_COLORS={{ output "mise" "exec" "vivid" "--" "vivid" "--color-mode" "8-bit" "generate" "one-dark" | trim | quote }}
 
-# GitHub
-{{- with (index . "github" | default (dict "id" "" "name" "" "login" "")) -}}
-{{- if .login }}
-GITHUB_USER = {{ .login | quote }}
-{{- end }}
-{{- end }}
-
 # HK
 HK = "true"
 HK_PKL_BACKEND = "pklr"
