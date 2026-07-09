@@ -1,6 +1,0 @@
-{{- $login := index (index . "github" | default (dict "login" "")) "login" -}}
-{{- if $login }}
-{{- range gitHubKeys $login }}
-{{ $login }} {{ .Key }}
-{{- end }}
-{{- end }}
