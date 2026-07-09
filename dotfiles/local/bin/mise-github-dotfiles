@@ -1,0 +1,62 @@
+#!/bin/sh
+set -eu
+
+github_user="${GITHUB_USER:-}"
+if [ -z "${github_user}" ] && command -v gh >/dev/null 2>&1; then
+	github_user="$(gh api user --jq .login 2>/dev/null || true)"
+fi
+
+case "${github_user}" in
+	"" | *[!A-Za-z0-9-]* | -* | *-)
+		github_user=""
+		;;
+esac
+
+github_id=""
+github_name=""
+if command -v gh >/dev/null 2>&1; then
+	github_id="$(gh api user --jq .id 2>/dev/null || true)"
+	github_name="$(gh api user --jq .name 2>/dev/null || true)"
+fi
+
+write_if_changed() {
+	target="$1"
+	mode="$2"
+	tmp="${target}.tmp.$$"
+
+	mkdir -p "$(dirname "${target}")"
+	cat >"${tmp}"
+	chmod "${mode}" "${tmp}"
+
+	if [ -f "${target}" ] && cmp -s "${tmp}" "${target}"; then
+		rm -f "${tmp}"
+	else
+		mv "${tmp}" "${target}"
+	fi
+}
+
+toml_string() {
+	printf '%s' "$1" | sed 's/\\/\\\\/g; s/"/\\"/g'
+}
+
+{
+	printf '[user]\n'
+	if [ -n "${github_id}" ] && [ -n "${github_name}" ] && [ -n "${github_user}" ]; then
+		printf '    name = "%s"\n' "$(toml_string "${github_name}")"
+		printf '    email = "%s+%s@users.noreply.github.com"\n' "$(toml_string "${github_id}")" "$(toml_string "${github_user}")"
+	fi
+	printf '    signingkey = ~/.ssh/id_ed25519.pub\n'
+} | write_if_changed "${HOME}/.config/git/user" 0644
+
+if [ -n "${github_user}" ]; then
+	keys="$(
+		gh api "users/${github_user}/keys" --jq '.[].key' 2>/dev/null ||
+			curl -fsSL "https://github.com/${github_user}.keys" 2>/dev/null ||
+			true
+	)"
+
+	if [ -n "${keys}" ]; then
+		printf '%s\n' "${keys}" | write_if_changed "${HOME}/.ssh/authorized_keys" 0600
+		printf '%s\n' "${keys}" | sed "s/^/${github_user} /" | write_if_changed "${HOME}/.ssh/allowed_signers" 0644
+	fi
+fi

@@ -79,9 +79,14 @@ linux-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.de
 "~/.config/starship.toml" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/starship.toml.tmpl" | quote }}, mode = "template" }
 "~/.docker" = { source = "~/.config/docker", mode = "symlink" }
 "~/.hushlogin" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/hushlogin" | quote }}, mode = "copy" }
+"~/.local/bin/mise-github-dotfiles" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/local/bin/mise-github-dotfiles" | quote }}, mode = "copy" }
 "~/.local/bin/symphony" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/local/bin/symphony" | quote }}, mode = "copy" }
 "~/.ssh/config" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/ssh/config" | quote }}, mode = "copy" }
 "~/Library/Application Support/nushell" = { source = "~/.config/nushell", mode = "symlink" }
+
+[tasks.bootstrap]
+description = "Generate dynamic dotfiles after mise tools are installed."
+run = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/local/bin/mise-github-dotfiles" | quote }}
 
 [env]
 # XDG
