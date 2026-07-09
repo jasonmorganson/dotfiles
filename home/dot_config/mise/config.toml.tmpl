@@ -31,6 +31,7 @@ linux-x64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_amd64.deb"
 linux-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.deb" }
 
 [bootstrap.repos]
+"~/.local/share/mise/repos/gitalias" = { url = "https://github.com/GitAlias/gitalias.git", ref = "main" }
 "~/.config/nushell/scripts/nu_scripts" = { url = "https://github.com/nushell/nu_scripts.git" }
 "~/.local/share/symphony" = { url = "https://github.com/openai/symphony.git" }
 
@@ -53,6 +54,7 @@ linux-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.de
 "~/.config/git/filter" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/filter" | quote }}, mode = "copy" }
 "~/.config/git/gpg" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/gpg" | quote }}, mode = "copy" }
 "~/.config/git/gpg-codespace" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/gpg-codespace" | quote }}, mode = "copy" }
+"~/.config/git/gitalias" = { source = "~/.local/share/mise/repos/gitalias/gitalias.txt", mode = "copy" }
 "~/.config/git/help" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/help" | quote }}, mode = "copy" }
 "~/.config/git/interactive" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/interactive" | quote }}, mode = "copy" }
 "~/.config/git/log" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/log" | quote }}, mode = "copy" }
