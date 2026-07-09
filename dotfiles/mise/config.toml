@@ -1,0 +1,271 @@
+[settings]
+lockfile = true
+
+[tools]
+gh = "latest"
+fzf = "latest"
+fnox = "latest"
+helix = "latest"
+gitui = "latest"
+git-lfs = "latest"
+chezmoi = "latest"
+pitchfork = "latest"
+starship = "latest"
+vivid = "latest"
+cargo-binstall = "latest"
+"cargo:git-delta" = "latest"
+"aqua:reemus-dev/gitnr" = { version = "latest", os = ["macos"] }
+"github:lsd-rs/lsd" = "latest"
+"aqua:BurntSushi/ripgrep" = "latest"
+"github:max-sixty/worktrunk" = "latest"
+
+[tools."github:MitMaro/git-interactive-rebase-tool"]
+version = "latest"
+[tools."github:MitMaro/git-interactive-rebase-tool".platforms]
+macos-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-macos-*_arm" }
+macos-x64 = { asset_pattern = "git-interactive-rebase-tool-*-macos-*_intel" }
+linux-x64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_amd64.deb" }
+linux-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.deb" }
+
+[bootstrap.repos]
+"~/.local/share/mise/repos/gitalias" = { url = "https://github.com/GitAlias/gitalias.git", ref = "main" }
+"~/.config/nushell/scripts/nu_scripts" = { url = "https://github.com/nushell/nu_scripts.git" }
+"~/.local/share/symphony" = { url = "https://github.com/openai/symphony.git" }
+
+[bootstrap.mise_shell_activate]
+zsh = true
+bash = true
+fish = true
+
+[dotfiles]
+# Keep migrated mise dotfile sources outside home/ so chezmoi does not manage the same target.
+"~/.bash_sessions" = { source = "~/.local/state/bash/sessions", mode = "symlink" }
+"~/.claude" = { source = "~/.config/claude", mode = "symlink" }
+"~/.codex" = { source = "~/.config/codex", mode = "symlink" }
+"~/.config/mise/config.toml" = { source = "~/.local/share/chezmoi/dotfiles/mise/config.toml", mode = "symlink" }
+"~/.config/mise/mise.lock" = { source = "~/.local/share/chezmoi/dotfiles/mise/mise.lock", mode = "symlink" }
+"~/.bashrc/local" = { block = '[[ -f "$HOME/.config/bash/rc" ]] && . "$HOME/.config/bash/rc"' }
+"~/.config/bash/rc" = { source = "~/.local/share/chezmoi/dotfiles/bash/rc", mode = "copy" }
+"~/.config/fish/conf.d/local.fish" = { source = "~/.local/share/chezmoi/dotfiles/fish/local.fish", mode = "copy" }
+"~/.config/fish/conf.d/preferences.fish" = { source = "~/.local/share/chezmoi/dotfiles/fish/preferences.fish", mode = "copy" }
+"~/.config/git/absorb" = { source = "~/.local/share/chezmoi/dotfiles/git/absorb", mode = "copy" }
+"~/.config/git/alias" = { source = "~/.local/share/chezmoi/dotfiles/git/alias", mode = "copy" }
+"~/.config/git/color" = { source = "~/.local/share/chezmoi/dotfiles/git/color", mode = "copy" }
+"~/.config/git/commit" = { source = "~/.local/share/chezmoi/dotfiles/git/commit", mode = "copy" }
+"~/.config/git/config" = { source = "~/.local/share/chezmoi/dotfiles/git/config", mode = "copy" }
+"~/.config/git/core" = { source = "~/.local/share/chezmoi/dotfiles/git/core", mode = "copy" }
+"~/.config/git/credential" = { source = "~/.local/share/chezmoi/dotfiles/git/credential", mode = "copy" }
+"~/.config/git/credential-codespace" = { source = "~/.local/share/chezmoi/dotfiles/git/credential-codespace", mode = "copy" }
+"~/.config/git/delta" = { source = "~/.local/share/chezmoi/dotfiles/git/delta", mode = "copy" }
+"~/.config/git/diff" = { source = "~/.local/share/chezmoi/dotfiles/git/diff", mode = "copy" }
+"~/.config/git/fetch" = { source = "~/.local/share/chezmoi/dotfiles/git/fetch", mode = "copy" }
+"~/.config/git/filter" = { source = "~/.local/share/chezmoi/dotfiles/git/filter", mode = "copy" }
+"~/.config/git/gpg" = { source = "~/.local/share/chezmoi/dotfiles/git/gpg", mode = "copy" }
+"~/.config/git/gpg-codespace" = { source = "~/.local/share/chezmoi/dotfiles/git/gpg-codespace", mode = "copy" }
+"~/.config/git/gitalias" = { source = "~/.local/share/mise/repos/gitalias/gitalias.txt", mode = "copy" }
+"~/.config/git/help" = { source = "~/.local/share/chezmoi/dotfiles/git/help", mode = "copy" }
+"~/.config/git/ignore" = { source = "~/.local/share/chezmoi/dotfiles/git/ignore.tmpl", mode = "template" }
+"~/.config/git/interactive" = { source = "~/.local/share/chezmoi/dotfiles/git/interactive", mode = "copy" }
+"~/.config/git/log" = { source = "~/.local/share/chezmoi/dotfiles/git/log", mode = "copy" }
+"~/.config/git/merge" = { source = "~/.local/share/chezmoi/dotfiles/git/merge", mode = "copy" }
+"~/.config/git/pull" = { source = "~/.local/share/chezmoi/dotfiles/git/pull", mode = "copy" }
+"~/.config/git/push" = { source = "~/.local/share/chezmoi/dotfiles/git/push", mode = "copy" }
+"~/.config/git/rebase" = { source = "~/.local/share/chezmoi/dotfiles/git/rebase", mode = "copy" }
+"~/.config/git/rerere" = { source = "~/.local/share/chezmoi/dotfiles/git/rerere", mode = "copy" }
+"~/.config/git/sequence" = { source = "~/.local/share/chezmoi/dotfiles/git/sequence", mode = "copy" }
+"~/.config/git/tag" = { source = "~/.local/share/chezmoi/dotfiles/git/tag", mode = "copy" }
+"~/.config/lsd/config.yaml" = { source = "~/.local/share/chezmoi/dotfiles/lsd/config.yaml", mode = "copy" }
+"~/.config/npm/npmrc" = { source = "~/.local/share/chezmoi/dotfiles/npm/npmrc", mode = "copy" }
+"~/.config/nushell/config.nu" = { source = "~/.local/share/chezmoi/dotfiles/nushell/config.nu.tmpl", mode = "template" }
+"~/.config/nushell/env.nu" = { source = "~/.local/share/chezmoi/dotfiles/nushell/env.nu.tmpl", mode = "template" }
+"~/.config/pitchfork/config.toml" = { source = "~/.local/share/chezmoi/dotfiles/pitchfork/config.toml", mode = "copy" }
+"~/.config/python/pythonrc" = { source = "~/.local/share/chezmoi/dotfiles/python/pythonrc", mode = "copy" }
+"~/.config/readline/inputrc" = { source = "~/.local/share/chezmoi/dotfiles/readline/inputrc", mode = "copy" }
+"~/.config/ssh/github" = { source = "~/.local/share/chezmoi/dotfiles/ssh/config.d/github", mode = "copy" }
+"~/.config/ssh/mac" = { source = "~/.local/share/chezmoi/dotfiles/ssh/config.d/mac", mode = "copy" }
+"~/.config/ssh/term" = { source = "~/.local/share/chezmoi/dotfiles/ssh/config.d/term", mode = "copy" }
+"~/.config/starship.toml" = { source = "~/.local/share/chezmoi/dotfiles/starship.toml.tmpl", mode = "template" }
+"~/.config/zsh/rc" = { source = "~/.local/share/chezmoi/dotfiles/zsh/rc", mode = "copy" }
+"~/.docker" = { source = "~/.config/docker", mode = "symlink" }
+"~/.hushlogin" = { source = "~/.local/share/chezmoi/dotfiles/hushlogin", mode = "copy" }
+"~/.local/bin/symphony" = { source = "~/.local/share/chezmoi/dotfiles/local/bin/symphony", mode = "copy" }
+"~/.ssh/config" = { source = "~/.local/share/chezmoi/dotfiles/ssh/config", mode = "copy" }
+"~/.zshrc/local" = { block = '[[ -f "$HOME/.config/zsh/rc" ]] && . "$HOME/.config/zsh/rc"' }
+"~/Library/Application Support/nushell" = { source = "~/.config/nushell", mode = "symlink" }
+
+[tasks.bootstrap]
+description = "Generate dynamic dotfiles after mise tools are installed."
+run = '''
+GITHUB_USER="${GITHUB_USER:-$(gh api user --jq .login)}"
+gh api user --template '{% raw %}{{printf "[user]\n    name = %q\n    email = %q\n    signingkey = ~/.ssh/id_ed25519.pub\n" .name (printf "%v+%s@users.noreply.github.com" .id .login)}}{% endraw %}' > ~/.config/git/user
+gh api "users/${GITHUB_USER}/keys" --jq '.[].key' | tee ~/.ssh/authorized_keys | sed "s/^/${GITHUB_USER} /" > ~/.ssh/allowed_signers
+grep -q '^github.com ' ~/.ssh/known_hosts 2>/dev/null || ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
+grep -q '^\[ssh.github.com\]:443 ' ~/.ssh/known_hosts 2>/dev/null || ssh-keyscan -p 443 ssh.github.com >> ~/.ssh/known_hosts 2>/dev/null
+'''
+
+[env]
+# XDG
+XDG_CACHE_HOME = "{{ env.HOME }}/.cache"
+XDG_CONFIG_HOME = "{{ env.HOME }}/.config"
+XDG_BIN_HOME = "{{ env.HOME }}/.local/bin"
+XDG_DATA_HOME = "{{ env.HOME }}/.local/share"
+XDG_STATE_HOME = "{{ env.HOME }}/.local/state"
+XDG_RUNTIME_DIR = "${XDG_RUNTIME_DIR:-/run/user/501}"
+
+ACKRC = "{{ env.XDG_CONFIG_HOME }}/ack/ackrc"
+ATOM_HOME = "{{ env.XDG_CONFIG_HOME }}/atom"
+AWS_CONFIG_FILE = "{{ env.XDG_CONFIG_HOME }}/aws/config"
+AWS_SHARED_CREDENTIALS_FILE = "{{ env.XDG_CONFIG_HOME }}/aws/credentials"
+BASH_COMPLETION_USER_FILE = "{{ env.XDG_CONFIG_HOME }}/bash/completion/bash_completion"
+BUNDLE_USER_CACHE = "{{ env.XDG_CACHE_HOME }}/bundle"
+BUNDLE_USER_CONFIG = "{{ env.XDG_CONFIG_HOME }}/bundle"
+BUNDLE_USER_PLUGIN = "{{ env.XDG_DATA_HOME }}/bundle"
+CABAL_CONFIG = "{{ env.XDG_CONFIG_HOME }}/cabal/config"
+CABAL_DIR = "{{ env.XDG_CACHE_HOME }}/cabal"
+CARGO_HOME = "{{ env.XDG_DATA_HOME }}/cargo"
+CCACHE_DIR = "{{ env.XDG_CACHE_HOME }}/cache"
+CQL_HISTORY = "{{ env.XDG_CACHE_HOME }}/cassandra/cqlsh_history"
+CRAWL_DIR = "{{ env.XDG_DATA_HOME }}/crawl"
+CODEX_HOME = "{{ env.XDG_CONFIG_HOME }}/codex"
+CLAUDE_CONFIG_DIR = "{{ env.XDG_CONFIG_HOME }}/claude"
+CURSOR_CONFIG_DIR = "{{ env.XDG_CONFIG_HOME }}/cursor"
+CUDA_CACHE_PATH = "{{ env.XDG_CACHE_HOME }}/nv"
+DENO_DIR = "{{ env.XDG_CACHE_HOME }}/deno"
+DOCKER_CONFIG = "{{ env.XDG_CONFIG_HOME }}/docker"
+ELECTRUMDIR = "{{ env.XDG_DATA_HOME }}/electrum"
+ELINKS_CONFDIR = "{{ env.XDG_CONFIG_HOME }}/elinks"
+DOTNET_CLI_HOME = "{{ env.XDG_DATA_HOME }}/dotnet"
+GEM_HOME = "{{ env.XDG_DATA_HOME }}/gem"
+GEM_SPEC_CACHE = "{{ env.XDG_CACHE_HOME }}/gem"
+GNUPGHOME = "{{ env.XDG_DATA_HOME }}/gnupg"
+GOPATH = "{{ env.XDG_DATA_HOME }}/go"
+GRADLE_USER_HOME = "{{ env.XDG_DATA_HOME }}/gradle"
+GTK2_RC_FILES = "{{ env.XDG_CONFIG_HOME }}/gtk/2.0/gtkrc"
+GTK_RC_FILES = "{{ env.XDG_CONFIG_HOME }}/gtk/1.0/gtkrc"
+HISTFILE = "{{ env.XDG_CACHE_HOME }}/bash/history"
+IMAPFILTER_HOME = "{{ env.XDG_CONFIG_HOME }}/imapfilter"
+INPUTRC = "{{ env.XDG_CONFIG_HOME }}/readline/inputrc"
+K9SCONFIG = "{{ env.XDG_CONFIG_HOME }}/k9s"
+KDEHOME = "{{ env.XDG_CONFIG_HOME }}/kde"
+KUBECONFIG = "{{ env.XDG_CONFIG_HOME }}/kube/config"
+LEDGER_FILE = "{{ env.XDG_DATA_HOME }}/hledger/journal"
+LEIN_HOME = "{{ env.XDG_DATA_HOME }}/lein"
+LESSHISTFILE = "{{ env.XDG_CACHE_HOME }}/less/history"
+LESSKEY = "{{ env.XDG_CONFIG_HOME }}/less/lesskey"
+MATHEMATICA_USERBASE = "{{ env.XDG_CONFIG_HOME }}/mathematica"
+MAXIMA_USERDIR = "{{ env.XDG_CONFIG_HOME }}/maxima"
+MEDNAFEN_HOME = "{{ env.XDG_CONFIG_HOME }}/mednafen"
+MINIKUBE_HOME = "{{ env.XDG_DATA_HOME }}/minikube"
+MOST_INITFILE = "{{ env.XDG_CONFIG_HOME }}/most/mostrc"
+MPLAYER_HOME = "{{ env.XDG_CONFIG_HOME }}/mplayer"
+MPLCONFIGDIR = "{{ env.XDG_CONFIG_HOME }}/matplotlib"
+MYCLI_HISTFILE = "{{ env.XDG_DATA_HOME }}/mycli/history"
+MYSQL_HISTFILE = "{{ env.XDG_DATA_HOME }}/sql_history"
+NODE_REPL_HISTORY = "{{ env.XDG_CACHE_HOME }}/node_repl_history"
+NPM_CONFIG_USERCONFIG = "{{ env.XDG_CONFIG_HOME }}/npm/npmrc"
+NPM_CONFIG_PREFIX = "{{ env.XDG_DATA_HOME }}/npm"
+NPM_CONFIG_INIT_MODULE = "{{ env.XDG_CONFIG_HOME }}/npm/config/npm-init.js"
+NPM_CONFIG_CACHE = "{{ env.XDG_CACHE_HOME }}/npm"
+NVM_DIR = "{{ env.XDG_DATA_HOME }}/nvm"
+OPAMROOT = "{{ env.XDG_DATA_HOME }}/opam"
+PARALLEL_HOME = "{{ env.XDG_CONFIG_HOME }}/parallel"
+PASSWORD_STORE_DIR = "{{ env.XDG_DATA_HOME }}/pass"
+PEX_ROOT = "{{ env.XDG_CACHE_HOME }}/pex"
+PGPASSFILE = "{{ env.XDG_CONFIG_HOME }}/pg/pgpass"
+PGSERVICEFILE = "{{ env.XDG_CONFIG_HOME }}/pg/pg_service.conf"
+PSQLRC = "{{ env.XDG_CONFIG_HOME }}/pg/psqlrc"
+PSQL_HISTORY = "{{ env.XDG_CACHE_HOME }}/psql_history"
+PULUMI_HOME = "{{ env.XDG_DATA_HOME }}/pulumi"
+PYLINTHOME = "{{ env.XDG_CACHE_HOME }}/pylint"
+PYTHON_EGG_CACHE = "{{ env.XDG_CACHE_HOME }}/python-eggs"
+PYTHONSTARTUP = "{{ env.XDG_CONFIG_HOME }}/python/pythonrc"
+REDISCLI_HISTFILE = "{{ env.XDG_DATA_HOME }}/redis/rediscli_history"
+REDISCLI_RCFILE = "{{ env.XDG_CONFIG_HOME }}/redis/redisclirc"
+RENDER_CLI_CONFIG_PATH = "{{ env.XDG_CONFIG_HOME }}/render/cli.yaml"
+RYE_HOME = "{{ env.XDG_DATA_HOME }}/rye"
+RUSTUP_HOME = "{{ env.XDG_DATA_HOME }}/rustup"
+SCREENRC = "{{ env.XDG_CONFIG_HOME }}/screen/screenrc"
+SOLARGRAPH_CACHE = "{{ env.XDG_CACHE_HOME }}/solargraph"
+STACK_ROOT = "{{ env.XDG_DATA_HOME }}/stack"
+TASKDATA = "{{ env.XDG_DATA_HOME }}/task"
+TASKRC = "{{ env.XDG_CONFIG_HOME }}/task/taskrc"
+TS_NODE_HISTORY = "{{ env.XDG_STATE_HOME }}/ts_node_repl_history"
+UNCRUSTIFY_CONFIG = "{{ env.XDG_CONFIG_HOME }}/uncrustify/uncrustify.cfg"
+UNISON = "{{ env.XDG_DATA_HOME }}/unison"
+WAKATIME_HOME = "{{ env.XDG_CONFIG_HOME }}/wakatime"
+WEECHAT_HOME = "{{ env.XDG_CONFIG_HOME }}/weechat"
+WGETRC = "{{ env.XDG_CONFIG_HOME }}/wgetrc"
+XCOMPOSECACHE = "{{ env.XDG_CACHE_HOME }}/11/xcompose"
+XCOMPOSEFILE = "{{ env.XDG_CONFIG_HOME }}/X11/xcompose"
+__GL_SHADER_DISK_CACHE_PATH = "{{ env.XDG_CACHE_HOME }}/nv"
+_Z_DATA = "{{ env.XDG_CACHE_HOME }}/z"
+npm_config_cache = "{{ env.XDG_CACHE_HOME }}/npm"
+_.path = [
+    "~/.orbstack/bin",
+    "/Applications/Postgres.app/Contents/Versions/18/bin",
+    "{{ env.XDG_BIN_HOME }}",
+    "{{ env.GOPATH }}/bin",
+    "{{ env.CARGO_HOME }}/bin",
+    "~/.linuxbrew/bin",
+    "~/.linuxbrew/sbin",
+    "/opt/homebrew/bin",
+    "/opt/homebrew/sbin",
+    "/usr/local/bin",
+    "/usr/bin",
+    "/usr/sbin",
+    "/bin",
+    "/sbin"
+]
+
+# LS_COLORS
+LS_COLORS="*~=0;38;5;241:bd=0;38;5;73;48;5;236:ca=0:cd=0;38;5;205;48;5;236:di=0;38;5;75:do=0;38;5;16;48;5;205:ex=1;38;5;168:fi=0:ln=0;38;5;205:mh=0:mi=0;38;5;16;48;5;168:no=0:or=0;38;5;16;48;5;168:ow=0:pi=0;38;5;16;48;5;75:rs=0:sg=0:so=0;38;5;16;48;5;205:st=0:su=0:tw=0:*.1=0;38;5;180:*.a=1;38;5;168:*.c=0;38;5;114:*.d=0;38;5;114:*.f=0;38;5;114:*.h=0;38;5;114:*.m=0;38;5;114:*.o=0;38;5;241:*.p=0;38;5;114:*.r=0;38;5;114:*.t=0;38;5;114:*.v=0;38;5;114:*.z=4;38;5;73:*.7z=4;38;5;73:*.ai=0;38;5;205:*.as=0;38;5;114:*.au=0;38;5;205:*.bc=0;38;5;241:*.br=4;38;5;73:*.bz=4;38;5;73:*.cc=0;38;5;114:*.cp=0;38;5;114:*.cr=0;38;5;114:*.cs=0;38;5;114:*.db=4;38;5;73:*.di=0;38;5;114:*.el=0;38;5;114:*.ex=0;38;5;114:*.fs=0;38;5;114:*.go=0;38;5;114:*.gv=0;38;5;114:*.gz=4;38;5;73:*.ha=0;38;5;114:*.hh=0;38;5;114:*.hi=0;38;5;241:*.hs=0;38;5;114:*.jl=0;38;5;114:*.js=0;38;5;114:*.ko=1;38;5;168:*.kt=0;38;5;114:*.la=0;38;5;241:*.ll=0;38;5;114:*.lo=0;38;5;241:*.lz=4;38;5;73:*.ma=0;38;5;205:*.mb=0;38;5;205:*.md=0;38;5;180:*.mk=0;38;5;114:*.ml=0;38;5;114:*.mn=0;38;5;114:*.nb=0;38;5;114:*.nu=0;38;5;114:*.pl=0;38;5;114:*.pm=0;38;5;114:*.pp=0;38;5;114:*.ps=0;38;5;168:*.py=0;38;5;114:*.rb=0;38;5;114:*.rc=0;38;5;180:*.rm=0;38;5;205:*.rs=0;38;5;114:*.sh=0;38;5;114:*.so=1;38;5;168:*.sz=4;38;5;73:*.td=0;38;5;114:*.tf=0;38;5;114:*.ts=0;38;5;114:*.ui=0;38;5;180:*.vb=0;38;5;114:*.wv=0;38;5;205:*.xz=4;38;5;73:*.zz=4;38;5;73:*FAQ=0;38;5;236;48;5;180:*.3ds=0;38;5;205:*.3fr=0;38;5;205:*.3g2=0;38;5;205:*.3ga=0;38;5;205:*.3gp=0;38;5;205:*.3mf=0;38;5;205:*.aac=0;38;5;205:*.adb=0;38;5;114:*.ads=0;38;5;114:*.afm=0;38;5;205:*.aif=0;38;5;205:*.amf=0;38;5;205:*.amr=0;38;5;205:*.ape=0;38;5;205:*.apk=4;38;5;73:*.ari=0;38;5;205:*.arj=4;38;5;73:*.arw=0;38;5;205:*.asa=0;38;5;114:*.ase=0;38;5;205:*.asf=0;38;5;205:*.asm=0;38;5;114:*.aux=0;38;5;241:*.avi=0;38;5;205:*.awk=0;38;5;114:*.azw=0;38;5;168:*.bag=4;38;5;73:*.bak=0;38;5;241:*.bat=1;38;5;168:*.bay=0;38;5;205:*.bbl=0;38;5;241:*.bcf=0;38;5;241:*.bib=0;38;5;180:*.bin=4;38;5;73:*.blg=0;38;5;241:*.bmp=0;38;5;205:*.bsh=0;38;5;114:*.bsp=4;38;5;73:*.bst=0;38;5;180:*.bz2=4;38;5;73:*.bzl=0;38;5;114:*.c++=0;38;5;114:*.cab=4;38;5;73:*.caf=0;38;5;205:*.cap=0;38;5;205:*.cbr=0;38;5;168:*.cbz=0;38;5;168:*.cda=0;38;5;205:*.cfg=0;38;5;180:*.cgi=0;38;5;114:*.cjs=0;38;5;114:*.clj=0;38;5;114:*.com=1;38;5;168:*.cpp=0;38;5;114:*.cr2=0;38;5;205:*.cr3=0;38;5;205:*.crw=0;38;5;205:*.crx=4;38;5;73:*.css=0;38;5;114:*.csv=0;38;5;168:*.csx=0;38;5;114:*.cxx=0;38;5;114:*.dae=0;38;5;205:*.dat=0;38;5;205:*.dcr=0;38;5;205:*.dcs=0;38;5;205:*.deb=4;38;5;73:*.def=0;38;5;114:*.dll=1;38;5;168:*.dmg=4;38;5;73:*.dmp=0;38;5;241:*.dng=0;38;5;205:*.doc=0;38;5;168:*.dot=0;38;5;114:*.dox=0;38;5;114:*.dpr=0;38;5;114:*.drf=0;38;5;205:*.dts=0;38;5;205:*.dwg=0;38;5;205:*.dxf=0;38;5;205:*.ear=4;38;5;73:*.eip=0;38;5;205:*.elc=0;38;5;114:*.elm=0;38;5;114:*.eln=0;38;5;114:*.eml=0;38;5;168:*.epp=0;38;5;114:*.eps=0;38;5;205:*.erf=0;38;5;205:*.erl=0;38;5;114:*.etx=0;38;5;180:*.exe=1;38;5;168:*.exr=0;38;5;205:*.exs=0;38;5;114:*.f4v=0;38;5;205:*.fb2=0;38;5;168:*.fbx=0;38;5;205:*.fcm=0;38;5;205:*.fff=0;38;5;205:*.fls=0;38;5;241:*.flv=0;38;5;205:*.fnt=0;38;5;205:*.fon=0;38;5;205:*.for=0;38;5;114:*.fsi=0;38;5;114:*.fsx=0;38;5;114:*.fvd=4;38;5;73:*.gif=0;38;5;205:*.git=0;38;5;241:*.gp3=0;38;5;205:*.gp4=0;38;5;205:*.gpr=0;38;5;205:*.gvy=0;38;5;114:*.h++=0;38;5;114:*.hda=0;38;5;205:*.hip=0;38;5;205:*.hpp=0;38;5;114:*.htc=0;38;5;114:*.htm=0;38;5;180:*.hxx=0;38;5;114:*.ico=0;38;5;205:*.ics=0;38;5;168:*.idx=0;38;5;241:*.igs=0;38;5;205:*.iiq=0;38;5;205:*.ilg=0;38;5;241:*.img=4;38;5;73:*.inc=0;38;5;114:*.ind=0;38;5;241:*.ini=0;38;5;180:*.inl=0;38;5;114:*.ino=0;38;5;114:*.ipa=4;38;5;73:*.ipp=0;38;5;114:*.iso=4;38;5;73:*.jad=4;38;5;73:*.jar=4;38;5;73:*.jpg=0;38;5;205:*.jsx=0;38;5;114:*.jxl=0;38;5;205:*.k25=0;38;5;205:*.kdc=0;38;5;205:*.key=0;38;5;168:*.kra=0;38;5;205:*.kts=0;38;5;114:*.lhs=0;38;5;114:*.log=0;38;5;241:*.lrz=4;38;5;73:*.ltx=0;38;5;114:*.lua=0;38;5;114:*.lzo=4;38;5;73:*.m2v=0;38;5;205:*.m3u=0;38;5;205:*.m4a=0;38;5;205:*.m4v=0;38;5;205:*.mdc=0;38;5;205:*.mdx=0;38;5;180:*.mef=0;38;5;205:*.mht=4;38;5;73:*.mid=0;38;5;205:*.mir=0;38;5;114:*.mjs=0;38;5;114:*.mkd=0;38;5;180:*.mkv=0;38;5;205:*.mli=0;38;5;114:*.mly=0;38;5;114:*.mod=0;38;5;205:*.mos=0;38;5;205:*.mov=0;38;5;205:*.mp3=0;38;5;205:*.mp4=0;38;5;205:*.mpg=0;38;5;205:*.mrw=0;38;5;205:*.msg=0;38;5;168:*.msi=4;38;5;73:*.mtl=0;38;5;205:*.nef=0;38;5;205:*.nfo=0;38;5;180:*.nim=0;38;5;114:*.nix=0;38;5;180:*.nrg=4;38;5;73:*.nrw=0;38;5;205:*.obj=0;38;5;205:*.obm=0;38;5;205:*.odp=0;38;5;168:*.ods=0;38;5;168:*.odt=0;38;5;168:*.oga=0;38;5;205:*.ogg=0;38;5;205:*.ogm=0;38;5;205:*.ogv=0;38;5;205:*.orf=0;38;5;205:*.org=0;38;5;180:*.otf=0;38;5;205:*.otl=0;38;5;205:*.out=0;38;5;241:*.pak=4;38;5;73:*.pas=0;38;5;114:*.pbm=0;38;5;205:*.pcm=0;38;5;205:*.pcx=0;38;5;205:*.pdf=0;38;5;168:*.pef=0;38;5;205:*.pfa=0;38;5;205:*.pfb=0;38;5;205:*.pfm=0;38;5;205:*.pgm=0;38;5;205:*.php=0;38;5;114:*.pid=0;38;5;241:*.pk3=4;38;5;73:*.pkg=4;38;5;73:*.ply=0;38;5;205:*.png=0;38;5;205:*.pod=0;38;5;114:*.ppm=0;38;5;205:*.pps=0;38;5;168:*.ppt=0;38;5;168:*.pro=0;38;5;114:*.ps1=0;38;5;114:*.psd=0;38;5;205:*.ptx=0;38;5;205:*.pxd=0;38;5;205:*.pxm=0;38;5;205:*.pxn=0;38;5;205:*.pyc=0;38;5;241:*.pyd=0;38;5;241:*.pyo=0;38;5;241:*.qoi=0;38;5;205:*.r3d=0;38;5;205:*.raf=0;38;5;205:*.rar=4;38;5;73:*.raw=0;38;5;205:*.rpm=4;38;5;73:*.rss=0;38;5;180:*.rst=0;38;5;180:*.rtf=0;38;5;168:*.rw2=0;38;5;205:*.rwl=0;38;5;205:*.rwz=0;38;5;205:*.s3m=0;38;5;205:*.s7z=4;38;5;73:*.sbt=0;38;5;114:*.sed=0;38;5;114:*.sid=0;38;5;205:*.sql=0;38;5;114:*.sr2=0;38;5;205:*.srf=0;38;5;205:*.srw=0;38;5;205:*.stl=0;38;5;205:*.stp=0;38;5;205:*.sty=0;38;5;241:*.svg=0;38;5;205:*.swf=0;38;5;205:*.swn=0;38;5;241:*.swo=0;38;5;241:*.swp=0;38;5;241:*.sxi=0;38;5;168:*.sxw=0;38;5;168:*.tar=4;38;5;73:*.tbz=4;38;5;73:*.tcl=0;38;5;114:*.tex=0;38;5;114:*.tga=0;38;5;205:*.tgz=4;38;5;73:*.tif=0;38;5;205:*.tml=0;38;5;180:*.tmp=0;38;5;241:*.toc=0;38;5;241:*.tsv=0;38;5;168:*.tsx=0;38;5;114:*.ttf=0;38;5;205:*.txt=0;38;5;180:*.typ=0;38;5;180:*.usd=0;38;5;205:*.vba=0;38;5;114:*.vbs=0;38;5;114:*.vcd=4;38;5;73:*.vcf=0;38;5;168:*.vdf=4;38;5;73:*.vdi=4;38;5;73:*.vfd=4;38;5;73:*.vhd=4;38;5;73:*.vim=0;38;5;114:*.vob=0;38;5;205:*.vpk=4;38;5;73:*.vsh=0;38;5;114:*.war=4;38;5;73:*.wav=0;38;5;205:*.wma=0;38;5;205:*.wmv=0;38;5;205:*.wrl=0;38;5;205:*.wvc=0;38;5;205:*.x3d=0;38;5;205:*.x3f=0;38;5;205:*.xcf=0;38;5;205:*.xla=0;38;5;168:*.xlr=0;38;5;168:*.xls=0;38;5;168:*.xlt=0;38;5;168:*.xml=0;38;5;180:*.xmp=0;38;5;180:*.xpi=4;38;5;73:*.xpm=0;38;5;205:*.xsd=0;38;5;180:*.xsh=0;38;5;114:*.yml=0;38;5;180:*.zig=0;38;5;114:*.zip=4;38;5;73:*.zoo=4;38;5;73:*.zsh=0;38;5;114:*.zst=4;38;5;73:*TODO=1:*cljc=0;38;5;114:*hgrc=0;38;5;114:*mtab=0;38;5;180:*.adoc=0;38;5;180:*.agda=0;38;5;114:*.aiff=0;38;5;205:*.alac=0;38;5;205:*.avif=0;38;5;205:*.azw3=0;38;5;168:*.bash=0;38;5;114:*.braw=0;38;5;205:*.cljs=0;38;5;114:*.cljw=0;38;5;114:*.conf=0;38;5;180:*.cpio=4;38;5;73:*.dart=0;38;5;114:*.data=0;38;5;205:*.diff=0;38;5;114:*.divx=0;38;5;205:*.djvu=0;38;5;168:*.docm=0;38;5;168:*.docx=0;38;5;168:*.dump=0;38;5;241:*.epsf=0;38;5;205:*.epub=0;38;5;168:*.fish=0;38;5;114:*.flac=0;38;5;205:*.fxml=0;38;5;180:*.h264=0;38;5;205:*.hack=0;38;5;114:*.heif=0;38;5;205:*.hgrc=0;38;5;114:*.html=0;38;5;180:*.icns=0;38;5;205:*.iges=0;38;5;205:*.info=0;38;5;180:*.java=0;38;5;114:*.jhtm=0;38;5;180:*.jpeg=0;38;5;205:*.json=0;38;5;180:*.less=0;38;5;114:*.lisp=0;38;5;114:*.lock=0;38;5;241:*.lzma=4;38;5;73:*.make=0;38;5;114:*.midi=0;38;5;205:*.mobi=0;38;5;168:*.mojo=0;38;5;114:*.mp4a=0;38;5;205:*.mpeg=0;38;5;205:*.nims=0;38;5;114:*.norg=0;38;5;180:*.odin=0;38;5;114:*.opus=0;38;5;205:*.orig=0;38;5;241:*.part=0;38;5;241:*.path=0;38;5;180:*.pcap=0;38;5;241:*.ppts=0;38;5;168:*.pptx=0;38;5;168:*.prql=0;38;5;114:*.psd1=0;38;5;114:*.psm1=0;38;5;114:*.purs=0;38;5;114:*.qcow=4;38;5;73:*.rake=0;38;5;114:*.raku=0;38;5;114:*.rlib=0;38;5;241:*.rmvb=0;38;5;205:*.sass=0;38;5;114:*.scad=0;38;5;114:*.scss=0;38;5;114:*.step=0;38;5;205:*.swap=0;38;5;180:*.tbz2=4;38;5;73:*.tiff=0;38;5;205:*.toml=0;38;5;180:*.usda=0;38;5;205:*.usdc=0;38;5;205:*.usdz=0;38;5;205:*.vala=0;38;5;114:*.vapi=0;38;5;114:*.vhdx=4;38;5;73:*.vmdk=4;38;5;73:*.warc=4;38;5;73:*.webm=0;38;5;205:*.webp=0;38;5;205:*.woff=0;38;5;205:*.xbps=4;38;5;73:*.xlsm=0;38;5;168:*.xlsx=0;38;5;168:*.xltm=0;38;5;168:*.yaml=0;38;5;180:*.zipx=4;38;5;73:*.zpaq=4;38;5;73:*.zstd=4;38;5;73:*fstab=0;38;5;180:*group=0;38;5;180:*hosts=0;38;5;180:*stdin=0;38;5;241:*v.mod=0;38;5;114:*.aria2=0;38;5;241:*.bazel=0;38;5;114:*.blend=0;38;5;205:*.cabal=0;38;5;114:*.cache=0;38;5;241:*.class=0;38;5;241:*.cmake=0;38;5;114:*.ctags=0;38;5;241:*.dylib=1;38;5;168:*.dyn_o=0;38;5;241:*.gcode=0;38;5;114:*.ipynb=0;38;5;114:*.jhtml=0;38;5;180:*.lagda=0;38;5;114:*.mdown=0;38;5;180:*.mhtml=4;38;5;73:*.mount=0;38;5;180:*.pages=0;38;5;168:*.paq8n=4;38;5;73:*.paq8o=4;38;5;73:*.patch=0;38;5;114:*.plist=0;38;5;241:*.pptsm=0;38;5;168:*.pptxm=0;38;5;168:*.rmeta=0;38;5;241:*.scala=0;38;5;114:*.shtml=0;38;5;180:*.state=0;38;5;241:*.swift=0;38;5;114:*.timer=0;38;5;180:*.toast=4;38;5;73:*.vcard=0;38;5;168:*.woff2=0;38;5;205:*.xhtml=0;38;5;180:*Icon\\r=0;38;5;241:*LEGACY=0;38;5;236;48;5;180:*NOTICE=0;38;5;236;48;5;180:*README=0;38;5;236;48;5;180:*go.mod=0;38;5;114:*go.sum=0;38;5;241:*mounts=0;38;5;180:*passwd=0;38;5;180:*shadow=0;38;5;180:*stderr=0;38;5;241:*stdout=0;38;5;241:*.bashrc=0;38;5;114:*.config=0;38;5;180:*.device=0;38;5;180:*.dyn_hi=0;38;5;241:*.flake8=0;38;5;114:*.github=0;38;5;241:*.gradle=0;38;5;114:*.groovy=0;38;5;114:*.ignore=0;38;5;114:*.matlab=0;38;5;114:*.nimble=0;38;5;114:*.sample=0;38;5;205:*.socket=0;38;5;180:*.target=0;38;5;180:*.tfvars=0;38;5;114:*AUTHORS=0;38;5;236;48;5;180:*CHANGES=0;38;5;236;48;5;180:*COPYING=0;38;5;247:*HISTORY=0;38;5;236;48;5;180:*INSTALL=0;38;5;236;48;5;180:*LICENCE=0;38;5;247:*LICENSE=0;38;5;247:*PATENTS=0;38;5;247:*TODO.md=1:*VERSION=0;38;5;236;48;5;180:*crontab=0;38;5;180:*uv.lock=0;38;5;241:*.alembic=0;38;5;205:*.desktop=0;38;5;180:*.gemspec=0;38;5;114:*.mailmap=0;38;5;114:*.numbers=0;38;5;168:*.profile=0;38;5;114:*.service=0;38;5;180:*.textile=0;38;5;180:*.tfstate=0;38;5;241:*Doxyfile=0;38;5;114:*Makefile=0;38;5;114:*TODO.txt=1:*crypttab=0;38;5;180:*grub.cfg=0;38;5;180:*hostname=0;38;5;180:*networks=0;38;5;180:*setup.py=0;38;5;114:*.DS_Store=0;38;5;241:*.asciidoc=0;38;5;180:*.aseprite=0;38;5;205:*.cmake.in=0;38;5;114:*.fdignore=0;38;5;114:*.kdevelop=0;38;5;114:*.lockfile=0;38;5;241:*.markdown=0;38;5;180:*.rgignore=0;38;5;114:*.snapshot=0;38;5;180:*.tfignore=0;38;5;114:*CHANGELOG=0;38;5;236;48;5;180:*COPYRIGHT=0;38;5;247:*README.md=0;38;5;236;48;5;180:*bun.lockb=0;38;5;241:*configure=0;38;5;114:*securetty=0;38;5;180:*.automount=0;38;5;180:*.gitconfig=0;38;5;114:*.gitignore=0;38;5;114:*.localized=0;38;5;241:*.scons_opt=0;38;5;241:*.terraform=0;38;5;114:*.timestamp=0;38;5;241:*CHANGES.md=0;38;5;236;48;5;180:*CODEOWNERS=0;38;5;114:*Dockerfile=0;38;5;180:*INSTALL.md=0;38;5;236;48;5;180:*README.txt=0;38;5;236;48;5;180:*SConscript=0;38;5;114:*SConstruct=0;38;5;114:*.cirrus.yml=0;38;5;114:*.gitmodules=0;38;5;114:*.synctex.gz=0;38;5;241:*.travis.yml=0;38;5;114:*CHANGES.txt=0;38;5;236;48;5;180:*INSTALL.txt=0;38;5;236;48;5;180:*LICENSE-MIT=0;38;5;247:*MANIFEST.in=0;38;5;114:*Makefile.am=0;38;5;114:*Makefile.in=0;38;5;241:*known_hosts=0;38;5;180:*poetry.lock=0;38;5;241:*.applescript=0;38;5;114:*.fdb_latexmk=0;38;5;241:*.sparseimage=4;38;5;73:*.webmanifest=0;38;5;180:*CHANGELOG.md=0;38;5;236;48;5;180:*CONTRIBUTING=0;38;5;236;48;5;180:*CONTRIBUTORS=0;38;5;236;48;5;180:*appveyor.yml=0;38;5;114:*configure.ac=0;38;5;114:*.bash_profile=0;38;5;114:*.clang-format=0;38;5;114:*.dockerignore=0;38;5;114:*.editorconfig=0;38;5;114:*CHANGELOG.txt=0;38;5;236;48;5;180:*Containerfile=0;38;5;180:*.aseprite-keys=0;38;5;180:*.gitattributes=0;38;5;114:*.gitlab-ci.yml=0;38;5;114:*CMakeCache.txt=0;38;5;241:*CMakeLists.txt=0;38;5;114:*LICENSE-APACHE=0;38;5;247:*pyproject.toml=0;38;5;114:*CODE_OF_CONDUCT=0;38;5;236;48;5;180:*CONTRIBUTING.md=0;38;5;236;48;5;180:*CONTRIBUTORS.md=0;38;5;236;48;5;180:*authorized_keys=0;38;5;180:*.containerignore=0;38;5;114:*.sconsign.dblite=0;38;5;241:*CONTRIBUTING.txt=0;38;5;236;48;5;180:*CONTRIBUTORS.txt=0;38;5;236;48;5;180:*requirements.txt=0;38;5;114:*.aseprite-brushes=0;38;5;180:*package-lock.json=0;38;5;241:*CODE_OF_CONDUCT.md=0;38;5;236;48;5;180:*.CFUserTextEncoding=0;38;5;241:*.aseprite-extension=4;38;5;73:*CODE_OF_CONDUCT.txt=0;38;5;236;48;5;180:*azure-pipelines.yml=0;38;5;114"
+
+# HK
+HK = "true"
+HK_PKL_BACKEND = "pklr"
+HK_STASH = "none"
+
+# fnox
+FNOX_SHELL_OUTPUT = "none"
+FNOX_AGE_KEY_FILE = "~/.ssh/id_ed25519"
+
+# mise
+MISE_TRUSTED_CONFIG_PATHS = "~"
+TERM = "xterm-256color"
+TERMINFO = "{{ env.XDG_DATA_HOME }}/terminfo"
+TERMINFO_DIRS = "{{ env.XDG_DATA_HOME }}/terminfo:/usr/share/terminfo"
+
+[shell_alias]
+
+# chezmoi
+dotfiles = "chezmoi"
+
+# Habits
+ag = "rg"
+tig = "gitui"
+vi = "hx"
+
+# ls
+l = "lsd"
+ls = "lsd"
+la = "lsd --all"
+ll = "lsd --long"
+lt = "lsd --tree"
+
+# git
+g = "git"
+
+# Pulumi
+p = "pulumi"
+
+# Python
+py = "python"
+pip = "python -m pip"
+
+# Kube
+k = "kubectl"
+kns = "kubens"
+kctx = "kubectx"
+
+# Node
+node = "node --experimental-transform-types"
