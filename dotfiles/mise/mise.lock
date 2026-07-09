@@ -292,54 +292,9 @@ checksum = "blake3:9fc91be41a6e3ae4b32dfa4a1788e3b87d0bacd73fe836aa6384164efa1cd
 url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-macos-12_arm"
 url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278547"
 
-[[tools."github:MitMaro/git-interactive-rebase-tool"]]
-version = "2.4.1"
-backend = "github:MitMaro/git-interactive-rebase-tool"
-
-[tools."github:MitMaro/git-interactive-rebase-tool".options]
-asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.deb"
-
-[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-arm64"]
-url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_arm64.deb"
-url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278671"
-
-[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-arm64-musl"]
-url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_arm64.deb"
-url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278671"
-
-[[tools."github:MitMaro/git-interactive-rebase-tool"]]
-version = "2.4.1"
-backend = "github:MitMaro/git-interactive-rebase-tool"
-
 [tools."github:MitMaro/git-interactive-rebase-tool"."platforms.windows-x64"]
 url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-windows-_x86_64.exe"
 url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176279168"
-
-[[tools."github:MitMaro/git-interactive-rebase-tool"]]
-version = "2.4.1"
-backend = "github:MitMaro/git-interactive-rebase-tool"
-
-[tools."github:MitMaro/git-interactive-rebase-tool".options]
-asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_amd64.deb"
-
-[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-x64"]
-url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_amd64.deb"
-url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278646"
-
-[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-x64-musl"]
-url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_amd64.deb"
-url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278646"
-
-[[tools."github:MitMaro/git-interactive-rebase-tool"]]
-version = "2.4.1"
-backend = "github:MitMaro/git-interactive-rebase-tool"
-
-[tools."github:MitMaro/git-interactive-rebase-tool".options]
-asset_pattern = "git-interactive-rebase-tool-*-macos-*_intel"
-
-[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.macos-x64"]
-url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-macos-12_intel"
-url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278550"
 
 [[tools."github:lsd-rs/lsd"]]
 version = "1.2.0"
