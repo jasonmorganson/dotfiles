@@ -56,6 +56,7 @@ linux-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.de
 "~/.config/git/gpg-codespace" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/gpg-codespace" | quote }}, mode = "copy" }
 "~/.config/git/gitalias" = { source = "~/.local/share/mise/repos/gitalias/gitalias.txt", mode = "copy" }
 "~/.config/git/help" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/help" | quote }}, mode = "copy" }
+"~/.config/git/ignore" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/ignore.tmpl" | quote }}, mode = "template" }
 "~/.config/git/interactive" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/interactive" | quote }}, mode = "copy" }
 "~/.config/git/log" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/log" | quote }}, mode = "copy" }
 "~/.config/git/merge" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/merge" | quote }}, mode = "copy" }
@@ -67,12 +68,15 @@ linux-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.de
 "~/.config/git/tag" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/tag" | quote }}, mode = "copy" }
 "~/.config/lsd/config.yaml" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/lsd/config.yaml" | quote }}, mode = "copy" }
 "~/.config/npm/npmrc" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/npm/npmrc" | quote }}, mode = "copy" }
+"~/.config/nushell/config.nu" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/nushell/config.nu.tmpl" | quote }}, mode = "template" }
+"~/.config/nushell/env.nu" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/nushell/env.nu.tmpl" | quote }}, mode = "template" }
 "~/.config/pitchfork/config.toml" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/pitchfork/config.toml" | quote }}, mode = "copy" }
 "~/.config/python/pythonrc" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/python/pythonrc" | quote }}, mode = "copy" }
 "~/.config/readline/inputrc" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/readline/inputrc" | quote }}, mode = "copy" }
 "~/.config/ssh/github" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/ssh/config.d/github" | quote }}, mode = "copy" }
 "~/.config/ssh/mac" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/ssh/config.d/mac" | quote }}, mode = "copy" }
 "~/.config/ssh/term" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/ssh/config.d/term" | quote }}, mode = "copy" }
+"~/.config/starship.toml" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/starship.toml.tmpl" | quote }}, mode = "template" }
 "~/.docker" = { source = "~/.config/docker", mode = "symlink" }
 "~/.hushlogin" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/hushlogin" | quote }}, mode = "copy" }
 "~/.local/bin/symphony" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/local/bin/symphony" | quote }}, mode = "copy" }

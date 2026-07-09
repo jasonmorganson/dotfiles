@@ -1,0 +1,5 @@
+{% if os() == "macos" or os() == "windows" %}
+{{ exec(command=mise_bin ~ ' exec aqua:reemus-dev/gitnr -- gitnr create ghg:mise ghg:Linux ghg:macOS Node Nextjs Python') }}
+{% endif %}
+
+.zed
