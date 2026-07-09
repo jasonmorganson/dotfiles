@@ -1,1 +1,0 @@
-{{ output "mise" "env" "--shell" .SHELL }}
