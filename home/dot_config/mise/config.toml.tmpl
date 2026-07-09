@@ -86,13 +86,9 @@ linux-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.de
 [tasks.bootstrap]
 description = "Generate dynamic dotfiles after mise tools are installed."
 run = '''
-mkdir -p ~/.config/git ~/.ssh
-gh api user --jq '"[user]\n    name = " + (.name | @json) + "\n    email = " + (((.id | tostring) + "+" + .login + "@users.noreply.github.com") | @json) + "\n    signingkey = ~/.ssh/id_ed25519.pub\n"' > ~/.config/git/user
 GITHUB_USER="${GITHUB_USER:-$(gh api user --jq .login)}"
-gh api "users/${GITHUB_USER}/keys" --jq '.[].key' > ~/.ssh/authorized_keys
-sed "s/^/${GITHUB_USER} /" ~/.ssh/authorized_keys > ~/.ssh/allowed_signers
-chmod 600 ~/.ssh/authorized_keys
-chmod 644 ~/.config/git/user ~/.ssh/allowed_signers
+gh api user --template '{% raw %}{{ "{{" }}printf "[user]\n    name = %q\n    email = %q\n    signingkey = ~/.ssh/id_ed25519.pub\n" .name (printf "%v+%s@users.noreply.github.com" .id .login){{ "}}" }}{% endraw %}' > ~/.config/git/user
+gh api "users/${GITHUB_USER}/keys" --jq '.[].key' | tee ~/.ssh/authorized_keys | sed "s/^/${GITHUB_USER} /" > ~/.ssh/allowed_signers
 '''
 
 [env]
