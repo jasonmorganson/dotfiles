@@ -44,6 +44,7 @@ fish = true
 "~/.bash_sessions" = { source = "~/.local/state/bash/sessions", mode = "symlink" }
 "~/.claude" = { source = "~/.config/claude", mode = "symlink" }
 "~/.codex" = { source = "~/.config/codex", mode = "symlink" }
+"~/.config/fish/conf.d/preferences.fish" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/fish/preferences.fish" | quote }}, mode = "copy" }
 "~/.config/git/absorb" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/absorb" | quote }}, mode = "copy" }
 "~/.config/git/alias" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/alias" | quote }}, mode = "copy" }
 "~/.config/git/color" = { source = {{ joinPath .chezmoi.sourceDir ".." "dotfiles/git/color" | quote }}, mode = "copy" }
