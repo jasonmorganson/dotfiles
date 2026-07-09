@@ -1,3 +1,7 @@
+# >>> mise:activate >>> managed by mise — do not edit between markers
+eval "$(mise activate bash --shims)"
+# <<< mise:activate <<<
+
 {{ template "env" (dict "SHELL" "bash") }}
 
 if [[ $- == *i* ]]; then

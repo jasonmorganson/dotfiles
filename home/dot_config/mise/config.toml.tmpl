@@ -1,5 +1,4 @@
 [settings]
-experimental = true
 lockfile = true
 
 [tools]
@@ -34,6 +33,11 @@ linux-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.de
 "~/.local/share/mise/repos/gitalias" = { url = "https://github.com/GitAlias/gitalias.git", ref = "main" }
 "~/.config/nushell/scripts/nu_scripts" = { url = "https://github.com/nushell/nu_scripts.git" }
 "~/.local/share/symphony" = { url = "https://github.com/openai/symphony.git" }
+
+[bootstrap.mise_shell_activate]
+zsh = true
+bash = true
+fish = true
 
 [dotfiles]
 # Keep migrated mise dotfile sources outside home/ so chezmoi does not manage the same target.
@@ -188,7 +192,6 @@ WEECHAT_HOME = "{{ "{{ env.XDG_CONFIG_HOME }}/weechat" }}"
 WGETRC = "{{ "{{ env.XDG_CONFIG_HOME }}/wgetrc" }}"
 XCOMPOSECACHE = "{{ "{{ env.XDG_CACHE_HOME }}/11/xcompose" }}"
 XCOMPOSEFILE = "{{ "{{ env.XDG_CONFIG_HOME }}/X11/xcompose" }}"
-ZDOTDIR = "{{ "{{ env.HOME }}/.config/zsh" }}"
 __GL_SHADER_DISK_CACHE_PATH = "{{ "{{ env.XDG_CACHE_HOME }}/nv" }}"
 _Z_DATA = "{{ "{{ env.XDG_CACHE_HOME }}/z" }}"
 npm_config_cache = "{{ "{{ env.XDG_CACHE_HOME }}/npm" }}"
