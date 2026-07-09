@@ -39,21 +39,6 @@ zsh = true
 bash = true
 fish = true
 
-[bootstrap.hooks.final]
-run = '''
-for target in "$HOME/.bashrc" "$HOME/.zshrc"; do
-  [ -f "$target" ] || continue
-  tmp="$(mktemp)"
-  awk '
-    /^# >>> mise:local >>>/ { in_block = 1; next }
-    /^# <<< mise:local <<</ { in_block = 0; next }
-    !in_block { print }
-  ' "$target" > "$tmp"
-  mv "$tmp" "$target"
-done
-mise bootstrap dotfiles apply --yes ~/.bashrc ~/.zshrc
-'''
-
 [dotfiles]
 # Keep migrated mise dotfile sources outside home/ so chezmoi does not manage the same target.
 "~/.bash_sessions" = { source = "~/.local/state/bash/sessions", mode = "symlink" }
