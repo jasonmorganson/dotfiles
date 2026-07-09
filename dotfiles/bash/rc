@@ -1,3 +1,7 @@
+if command -v vivid >/dev/null 2>&1; then
+    export LS_COLORS="$(vivid --color-mode 8-bit generate one-dark)"
+fi
+
 eval "$(mise exec fnox -- fnox activate bash)"
 eval "$(mise exec pitchfork -- pitchfork activate bash)"
 eval "$(mise exec github:max-sixty/worktrunk -- wt config shell init bash)"
