@@ -1,10 +1,20 @@
-{{ exec(command=mise_bin ~ ' exec starship -- starship preset no-nerd-font') }}
+"$schema" = 'https://starship.rs/config-schema.json'
 
-[cmd_duration]
-disabled = true
+[azure]
+symbol = "☁️ "
 
-[directory]
-style = "bold blue"
+[battery]
+full_symbol = "• "
+charging_symbol = "⇡ "
+discharging_symbol = "⇣ "
+unknown_symbol = "❓ "
+empty_symbol = "❗ "
 
-[git_branch]
-symbol = "⎇ "
+[erlang]
+symbol = "ⓔ "
+
+[nodejs]
+symbol = "[⬢](bold green) "
+
+[pulumi]
+symbol = "🧊 "
