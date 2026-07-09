@@ -1,4 +1,0 @@
-[".config/nushell/scripts/nu_scripts"]
-type = "git-repo"
-url = "https://github.com/nushell/nu_scripts.git"
-
