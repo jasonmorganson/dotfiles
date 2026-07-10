@@ -36,6 +36,9 @@ zsh = true
 bash = true
 fish = true
 
+[bootstrap.hooks.post-tools]
+run = "mise exec -- ~/.local/share/chezmoi/dotfiles/mise/render-shell-rc"
+
 [bootstrap.hooks.final]
 run = '''
 if [ "$(uname -s)" = "Darwin" ]; then
@@ -55,8 +58,6 @@ fi
 "~/.config/mise/config.toml" = { source = "~/.local/share/chezmoi/dotfiles/mise/config.toml", mode = "symlink" }
 "~/.config/mise/mise.lock" = { source = "~/.local/share/chezmoi/dotfiles/mise/mise.lock", mode = "symlink" }
 "~/.bashrc/local" = { block = '[[ -f "$HOME/.config/bash/rc" ]] && . "$HOME/.config/bash/rc"' }
-"~/.config/bash/rc" = { source = "~/.local/share/chezmoi/dotfiles/bash/rc", mode = "copy" }
-"~/.config/fish/conf.d/local.fish" = { source = "~/.local/share/chezmoi/dotfiles/fish/local.fish", mode = "copy" }
 "~/.config/fish/conf.d/preferences.fish" = { source = "~/.local/share/chezmoi/dotfiles/fish/preferences.fish", mode = "copy" }
 "~/.config/git/absorb" = { source = "~/.local/share/chezmoi/dotfiles/git/absorb", mode = "copy" }
 "~/.config/git/alias" = { source = "~/.local/share/chezmoi/dotfiles/git/alias", mode = "copy" }
@@ -95,7 +96,6 @@ fi
 "~/.config/ssh/mac" = { source = "~/.local/share/chezmoi/dotfiles/ssh/config.d/mac", mode = "copy" }
 "~/.config/ssh/term" = { source = "~/.local/share/chezmoi/dotfiles/ssh/config.d/term", mode = "copy" }
 "~/.config/starship.toml" = { source = "~/.local/share/chezmoi/dotfiles/starship.toml.tmpl", mode = "template" }
-"~/.config/zsh/rc" = { source = "~/.local/share/chezmoi/dotfiles/zsh/rc", mode = "copy" }
 "~/.docker" = { source = "~/.config/docker", mode = "symlink" }
 "~/.hushlogin" = { source = "~/.local/share/chezmoi/dotfiles/hushlogin", mode = "copy" }
 "~/.local/bin/symphony" = { source = "~/.local/share/chezmoi/dotfiles/local/bin/symphony", mode = "copy" }
