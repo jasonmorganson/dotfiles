@@ -1,6 +1,0 @@
-export LS_COLORS="$(vivid --color-mode 8-bit generate one-dark)"
-
-eval "$(mise exec fnox -- fnox activate zsh)"
-eval "$(mise exec pitchfork -- pitchfork activate zsh)"
-eval "$(mise exec github:max-sixty/worktrunk -- wt config shell init zsh)"
-eval "$(mise exec starship -- starship init zsh)"
