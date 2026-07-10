@@ -56,6 +56,7 @@ done
 "~/.codex" = { source = "~/.config/codex", mode = "symlink" }
 "~/.config/mise/config.toml" = { source = "~/.local/share/dotfiles/dotfiles/mise/config.toml", mode = "symlink" }
 "~/.config/mise/mise.lock" = { source = "~/.local/share/dotfiles/dotfiles/mise/mise.lock", mode = "symlink" }
+"~/.bash_profile/local" = { block = '[[ -f "$HOME/.bashrc" ]] && . "$HOME/.bashrc"' }
 "~/.bashrc/local" = { block = '[[ -f "$HOME/.config/bash/rc" ]] && . "$HOME/.config/bash/rc"' }
 "~/.config/fish/conf.d/preferences.fish" = { source = "~/.local/share/dotfiles/dotfiles/fish/preferences.fish", mode = "copy" }
 "~/.config/git/absorb" = { source = "~/.local/share/dotfiles/dotfiles/git/absorb", mode = "copy" }
