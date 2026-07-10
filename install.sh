@@ -5,8 +5,7 @@
 set -eu
 
 if ! mise="$(command -v mise)"; then
-	bin_dir="${HOME}/.local/bin"
-	mise="${bin_dir}/mise"
+	mise="${HOME}/.local/bin/mise"
 	echo "Installing mise to '${mise}'" >&2
 	if command -v curl >/dev/null; then
 		mise_install_script="$(curl -fsSL https://mise.run)"
@@ -17,11 +16,14 @@ if ! mise="$(command -v mise)"; then
 		exit 1
 	fi
 	sh -c "${mise_install_script}"
-	unset mise_install_script bin_dir
 fi
 
-# POSIX way to get script's dir: https://stackoverflow.com/a/29834779/12156188
-script_dir="$(cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P)"
+case $0 in
+	*/*) self=$0 ;;
+	*) self=$(command -v "$0") ;;
+esac
+
+script_dir="$(CDPATH= cd -P "$(dirname "$self")" && pwd -P)"
 config_dir="${HOME}/.config/mise"
 mise_config="${script_dir}/dotfiles/mise/config.toml"
 mise_lock="${script_dir}/dotfiles/mise/mise.lock"
@@ -32,8 +34,6 @@ ln -sfn "${mise_lock}" "${config_dir}/mise.lock"
 
 "$mise" trust "${mise_config}"
 
-set -- bootstrap --yes --force-dotfiles
-
-echo "Running 'mise $*'" >&2
+echo "Running 'mise bootstrap --yes --force-dotfiles'" >&2
 # exec: replace current process with mise
-exec "$mise" "$@"
+exec "$mise" bootstrap --yes --force-dotfiles
