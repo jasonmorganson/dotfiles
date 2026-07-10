@@ -4,27 +4,36 @@
 # -u: exit on unset variables
 set -eu
 
-if ! chezmoi="$(command -v chezmoi)"; then
+if ! mise="$(command -v mise)"; then
 	bin_dir="${HOME}/.local/bin"
-	chezmoi="${bin_dir}/chezmoi"
-	echo "Installing chezmoi to '${chezmoi}'" >&2
+	mise="${bin_dir}/mise"
+	echo "Installing mise to '${mise}'" >&2
 	if command -v curl >/dev/null; then
-		chezmoi_install_script="$(curl -fsSL get.chezmoi.io)"
+		mise_install_script="$(curl -fsSL https://mise.run)"
 	elif command -v wget >/dev/null; then
-		chezmoi_install_script="$(wget -qO- get.chezmoi.io)"
+		mise_install_script="$(wget -qO- https://mise.run)"
 	else
-		echo "To install chezmoi, you must have curl or wget installed." >&2
+		echo "To install mise, you must have curl or wget installed." >&2
 		exit 1
 	fi
-	sh -c "${chezmoi_install_script}" -- -b "${bin_dir}"
-	unset chezmoi_install_script bin_dir
+	sh -c "${mise_install_script}"
+	unset mise_install_script bin_dir
 fi
 
 # POSIX way to get script's dir: https://stackoverflow.com/a/29834779/12156188
 script_dir="$(cd -P -- "$(dirname -- "$(command -v -- "$0")")" && pwd -P)"
+config_dir="${HOME}/.config/mise"
+mise_config="${script_dir}/dotfiles/mise/config.toml"
+mise_lock="${script_dir}/dotfiles/mise/mise.lock"
 
-set -- init --apply --source="${script_dir}" --no-tty --force
+mkdir -p "${config_dir}"
+ln -sfn "${mise_config}" "${config_dir}/config.toml"
+ln -sfn "${mise_lock}" "${config_dir}/mise.lock"
 
-echo "Running 'chezmoi $*'" >&2
-# exec: replace current process with chezmoi
-exec "$chezmoi" "$@"
+"$mise" trust "${mise_config}"
+
+set -- bootstrap --yes --force-dotfiles
+
+echo "Running 'mise $*'" >&2
+# exec: replace current process with mise
+exec "$mise" "$@"
