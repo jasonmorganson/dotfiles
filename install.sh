@@ -24,10 +24,15 @@ case $0 in
 esac
 
 script_dir="$(CDPATH= cd -P "$(dirname "$self")" && pwd -P)"
+source_dir="${HOME}/.local/share/dotfiles"
 config_dir="${HOME}/.config/mise"
-mise_config="${script_dir}/dotfiles/mise/config.toml"
-mise_lock="${script_dir}/dotfiles/mise/mise.lock"
+mise_config="${source_dir}/dotfiles/mise/config.toml"
+mise_lock="${source_dir}/dotfiles/mise/mise.lock"
 
+if [ "${script_dir}" != "${source_dir}" ] && [ ! -e "${source_dir}" ]; then
+	mkdir -p "$(dirname "${source_dir}")"
+	ln -sfn "${script_dir}" "${source_dir}"
+fi
 mkdir -p "${config_dir}"
 ln -sfn "${mise_config}" "${config_dir}/config.toml"
 ln -sfn "${mise_lock}" "${config_dir}/mise.lock"

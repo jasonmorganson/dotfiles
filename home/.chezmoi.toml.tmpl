@@ -1,3 +1,0 @@
-[env]
-    # Make tools installed into ~/.local/bin visible during the first init/apply run.
-    PATH = {{ list (joinPath (env "HOME") ".local/bin") "/usr/local/bin" "/usr/bin" "/usr/sbin" "/bin" "/sbin" | join ":" | quote }}

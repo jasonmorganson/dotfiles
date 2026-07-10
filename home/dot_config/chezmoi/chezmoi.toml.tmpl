@@ -1,6 +1,0 @@
-[env]
-    PATH = {{ list (joinPath .chezmoi.homeDir ".local/bin") "/usr/local/bin" "/usr/bin" "/usr/sbin" "/bin" "/sbin" | join ":" | quote }}
-
-[git]
-    autoCommit = true
-    autoPush = true
