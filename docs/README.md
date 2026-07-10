@@ -1,6 +1,6 @@
 # dotfiles
 
-Dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
+Dotfiles, bootstrapped with [`mise`](https://mise.jdx.dev/).
 
 ## Setup ##
 
@@ -11,6 +11,6 @@ Dotfiles, managed with [`chezmoi`](https://github.com/twpayne/chezmoi).
 
 ## Usage ##
 
-Use [`chezmoi`](https://github.com/twpayne/chezmoi).
+Use [`mise bootstrap`](https://mise.jdx.dev/cli/bootstrap.html).
 
-See [reference](https://www.chezmoi.io/docs/reference/).
+See [reference](https://mise.jdx.dev/).

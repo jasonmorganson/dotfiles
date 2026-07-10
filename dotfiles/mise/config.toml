@@ -8,7 +8,6 @@ fnox = "latest"
 helix = "latest"
 gitui = "latest"
 git-lfs = "latest"
-chezmoi = "latest"
 pitchfork = "latest"
 starship = "latest"
 vivid = "latest"
@@ -234,8 +233,8 @@ TERMINFO_DIRS = "{{ env.XDG_DATA_HOME }}/terminfo:/usr/share/terminfo"
 
 [shell_alias]
 
-# chezmoi
-dotfiles = "chezmoi"
+# dotfiles
+dotfiles = "mise bootstrap"
 
 # Habits
 ag = "rg"
