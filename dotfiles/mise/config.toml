@@ -37,7 +37,7 @@ bash = true
 fish = true
 
 [bootstrap.hooks.post-tools]
-run = "mise exec -- ~/.local/share/chezmoi/dotfiles/mise/render-shell-rc"
+run = "mise exec -- ~/.local/share/dotfiles/dotfiles/mise/render-shell-rc"
 
 [bootstrap.hooks.final]
 run = '''
@@ -50,55 +50,55 @@ done
 '''
 
 [dotfiles]
-# Keep migrated mise dotfile sources outside home/ so chezmoi does not manage the same target.
+# Keep mise-managed dotfile sources outside home/ so bootstrap owns each target.
 "~/.bash_sessions" = { source = "~/.local/state/bash/sessions", mode = "symlink" }
 "~/.claude" = { source = "~/.config/claude", mode = "symlink" }
 "~/.codex" = { source = "~/.config/codex", mode = "symlink" }
-"~/.config/mise/config.toml" = { source = "~/.local/share/chezmoi/dotfiles/mise/config.toml", mode = "symlink" }
-"~/.config/mise/mise.lock" = { source = "~/.local/share/chezmoi/dotfiles/mise/mise.lock", mode = "symlink" }
+"~/.config/mise/config.toml" = { source = "~/.local/share/dotfiles/dotfiles/mise/config.toml", mode = "symlink" }
+"~/.config/mise/mise.lock" = { source = "~/.local/share/dotfiles/dotfiles/mise/mise.lock", mode = "symlink" }
 "~/.bashrc/local" = { block = '[[ -f "$HOME/.config/bash/rc" ]] && . "$HOME/.config/bash/rc"' }
-"~/.config/fish/conf.d/preferences.fish" = { source = "~/.local/share/chezmoi/dotfiles/fish/preferences.fish", mode = "copy" }
-"~/.config/git/absorb" = { source = "~/.local/share/chezmoi/dotfiles/git/absorb", mode = "copy" }
-"~/.config/git/alias" = { source = "~/.local/share/chezmoi/dotfiles/git/alias", mode = "copy" }
-"~/.config/git/color" = { source = "~/.local/share/chezmoi/dotfiles/git/color", mode = "copy" }
-"~/.config/git/commit" = { source = "~/.local/share/chezmoi/dotfiles/git/commit", mode = "copy" }
-"~/.config/git/config" = { source = "~/.local/share/chezmoi/dotfiles/git/config", mode = "copy" }
-"~/.config/git/core" = { source = "~/.local/share/chezmoi/dotfiles/git/core", mode = "copy" }
-"~/.config/git/credential" = { source = "~/.local/share/chezmoi/dotfiles/git/credential", mode = "copy" }
-"~/.config/git/credential-codespace" = { source = "~/.local/share/chezmoi/dotfiles/git/credential-codespace", mode = "copy" }
-"~/.config/git/delta" = { source = "~/.local/share/chezmoi/dotfiles/git/delta", mode = "copy" }
-"~/.config/git/diff" = { source = "~/.local/share/chezmoi/dotfiles/git/diff", mode = "copy" }
-"~/.config/git/fetch" = { source = "~/.local/share/chezmoi/dotfiles/git/fetch", mode = "copy" }
-"~/.config/git/filter" = { source = "~/.local/share/chezmoi/dotfiles/git/filter", mode = "copy" }
-"~/.config/git/gpg" = { source = "~/.local/share/chezmoi/dotfiles/git/gpg", mode = "copy" }
-"~/.config/git/gpg-codespace" = { source = "~/.local/share/chezmoi/dotfiles/git/gpg-codespace", mode = "copy" }
+"~/.config/fish/conf.d/preferences.fish" = { source = "~/.local/share/dotfiles/dotfiles/fish/preferences.fish", mode = "copy" }
+"~/.config/git/absorb" = { source = "~/.local/share/dotfiles/dotfiles/git/absorb", mode = "copy" }
+"~/.config/git/alias" = { source = "~/.local/share/dotfiles/dotfiles/git/alias", mode = "copy" }
+"~/.config/git/color" = { source = "~/.local/share/dotfiles/dotfiles/git/color", mode = "copy" }
+"~/.config/git/commit" = { source = "~/.local/share/dotfiles/dotfiles/git/commit", mode = "copy" }
+"~/.config/git/config" = { source = "~/.local/share/dotfiles/dotfiles/git/config", mode = "copy" }
+"~/.config/git/core" = { source = "~/.local/share/dotfiles/dotfiles/git/core", mode = "copy" }
+"~/.config/git/credential" = { source = "~/.local/share/dotfiles/dotfiles/git/credential", mode = "copy" }
+"~/.config/git/credential-codespace" = { source = "~/.local/share/dotfiles/dotfiles/git/credential-codespace", mode = "copy" }
+"~/.config/git/delta" = { source = "~/.local/share/dotfiles/dotfiles/git/delta", mode = "copy" }
+"~/.config/git/diff" = { source = "~/.local/share/dotfiles/dotfiles/git/diff", mode = "copy" }
+"~/.config/git/fetch" = { source = "~/.local/share/dotfiles/dotfiles/git/fetch", mode = "copy" }
+"~/.config/git/filter" = { source = "~/.local/share/dotfiles/dotfiles/git/filter", mode = "copy" }
+"~/.config/git/gpg" = { source = "~/.local/share/dotfiles/dotfiles/git/gpg", mode = "copy" }
+"~/.config/git/gpg-codespace" = { source = "~/.local/share/dotfiles/dotfiles/git/gpg-codespace", mode = "copy" }
 "~/.config/git/gitalias" = { source = "~/.local/share/mise/repos/gitalias/gitalias.txt", mode = "copy" }
-"~/.config/git/help" = { source = "~/.local/share/chezmoi/dotfiles/git/help", mode = "copy" }
-"~/.config/git/ignore" = { source = "~/.local/share/chezmoi/dotfiles/git/ignore.tmpl", mode = "template" }
-"~/.config/git/interactive" = { source = "~/.local/share/chezmoi/dotfiles/git/interactive", mode = "copy" }
-"~/.config/git/log" = { source = "~/.local/share/chezmoi/dotfiles/git/log", mode = "copy" }
-"~/.config/git/merge" = { source = "~/.local/share/chezmoi/dotfiles/git/merge", mode = "copy" }
-"~/.config/git/pull" = { source = "~/.local/share/chezmoi/dotfiles/git/pull", mode = "copy" }
-"~/.config/git/push" = { source = "~/.local/share/chezmoi/dotfiles/git/push", mode = "copy" }
-"~/.config/git/rebase" = { source = "~/.local/share/chezmoi/dotfiles/git/rebase", mode = "copy" }
-"~/.config/git/rerere" = { source = "~/.local/share/chezmoi/dotfiles/git/rerere", mode = "copy" }
-"~/.config/git/sequence" = { source = "~/.local/share/chezmoi/dotfiles/git/sequence", mode = "copy" }
-"~/.config/git/tag" = { source = "~/.local/share/chezmoi/dotfiles/git/tag", mode = "copy" }
-"~/.config/lsd/config.yaml" = { source = "~/.local/share/chezmoi/dotfiles/lsd/config.yaml", mode = "copy" }
-"~/.config/npm/npmrc" = { source = "~/.local/share/chezmoi/dotfiles/npm/npmrc", mode = "copy" }
-"~/.config/nushell/config.nu" = { source = "~/.local/share/chezmoi/dotfiles/nushell/config.nu.tmpl", mode = "template" }
-"~/.config/nushell/env.nu" = { source = "~/.local/share/chezmoi/dotfiles/nushell/env.nu.tmpl", mode = "template" }
-"~/.config/pitchfork/config.toml" = { source = "~/.local/share/chezmoi/dotfiles/pitchfork/config.toml", mode = "copy" }
-"~/.config/python/pythonrc" = { source = "~/.local/share/chezmoi/dotfiles/python/pythonrc", mode = "copy" }
-"~/.config/readline/inputrc" = { source = "~/.local/share/chezmoi/dotfiles/readline/inputrc", mode = "copy" }
-"~/.config/ssh/github" = { source = "~/.local/share/chezmoi/dotfiles/ssh/config.d/github", mode = "copy" }
-"~/.config/ssh/mac" = { source = "~/.local/share/chezmoi/dotfiles/ssh/config.d/mac", mode = "copy" }
-"~/.config/ssh/term" = { source = "~/.local/share/chezmoi/dotfiles/ssh/config.d/term", mode = "copy" }
-"~/.config/starship.toml" = { source = "~/.local/share/chezmoi/dotfiles/starship.toml.tmpl", mode = "template" }
+"~/.config/git/help" = { source = "~/.local/share/dotfiles/dotfiles/git/help", mode = "copy" }
+"~/.config/git/ignore" = { source = "~/.local/share/dotfiles/dotfiles/git/ignore.tmpl", mode = "template" }
+"~/.config/git/interactive" = { source = "~/.local/share/dotfiles/dotfiles/git/interactive", mode = "copy" }
+"~/.config/git/log" = { source = "~/.local/share/dotfiles/dotfiles/git/log", mode = "copy" }
+"~/.config/git/merge" = { source = "~/.local/share/dotfiles/dotfiles/git/merge", mode = "copy" }
+"~/.config/git/pull" = { source = "~/.local/share/dotfiles/dotfiles/git/pull", mode = "copy" }
+"~/.config/git/push" = { source = "~/.local/share/dotfiles/dotfiles/git/push", mode = "copy" }
+"~/.config/git/rebase" = { source = "~/.local/share/dotfiles/dotfiles/git/rebase", mode = "copy" }
+"~/.config/git/rerere" = { source = "~/.local/share/dotfiles/dotfiles/git/rerere", mode = "copy" }
+"~/.config/git/sequence" = { source = "~/.local/share/dotfiles/dotfiles/git/sequence", mode = "copy" }
+"~/.config/git/tag" = { source = "~/.local/share/dotfiles/dotfiles/git/tag", mode = "copy" }
+"~/.config/lsd/config.yaml" = { source = "~/.local/share/dotfiles/dotfiles/lsd/config.yaml", mode = "copy" }
+"~/.config/npm/npmrc" = { source = "~/.local/share/dotfiles/dotfiles/npm/npmrc", mode = "copy" }
+"~/.config/nushell/config.nu" = { source = "~/.local/share/dotfiles/dotfiles/nushell/config.nu.tmpl", mode = "template" }
+"~/.config/nushell/env.nu" = { source = "~/.local/share/dotfiles/dotfiles/nushell/env.nu.tmpl", mode = "template" }
+"~/.config/pitchfork/config.toml" = { source = "~/.local/share/dotfiles/dotfiles/pitchfork/config.toml", mode = "copy" }
+"~/.config/python/pythonrc" = { source = "~/.local/share/dotfiles/dotfiles/python/pythonrc", mode = "copy" }
+"~/.config/readline/inputrc" = { source = "~/.local/share/dotfiles/dotfiles/readline/inputrc", mode = "copy" }
+"~/.config/ssh/github" = { source = "~/.local/share/dotfiles/dotfiles/ssh/config.d/github", mode = "copy" }
+"~/.config/ssh/mac" = { source = "~/.local/share/dotfiles/dotfiles/ssh/config.d/mac", mode = "copy" }
+"~/.config/ssh/term" = { source = "~/.local/share/dotfiles/dotfiles/ssh/config.d/term", mode = "copy" }
+"~/.config/starship.toml" = { source = "~/.local/share/dotfiles/dotfiles/starship.toml.tmpl", mode = "template" }
 "~/.docker" = { source = "~/.config/docker", mode = "symlink" }
-"~/.hushlogin" = { source = "~/.local/share/chezmoi/dotfiles/hushlogin", mode = "copy" }
-"~/.local/bin/symphony" = { source = "~/.local/share/chezmoi/dotfiles/local/bin/symphony", mode = "copy" }
-"~/.ssh/config" = { source = "~/.local/share/chezmoi/dotfiles/ssh/config", mode = "copy" }
+"~/.hushlogin" = { source = "~/.local/share/dotfiles/dotfiles/hushlogin", mode = "copy" }
+"~/.local/bin/symphony" = { source = "~/.local/share/dotfiles/dotfiles/local/bin/symphony", mode = "copy" }
+"~/.ssh/config" = { source = "~/.local/share/dotfiles/dotfiles/ssh/config", mode = "copy" }
 "~/.zshrc/local" = { block = '[[ -f "$HOME/.config/zsh/rc" ]] && . "$HOME/.config/zsh/rc"' }
 "~/Library/Application Support/nushell" = { source = "~/.config/nushell", mode = "symlink" }
 
