@@ -41,13 +41,12 @@ run = "mise exec -- ~/.local/share/chezmoi/dotfiles/mise/render-shell-rc"
 
 [bootstrap.hooks.final]
 run = '''
-if [ "$(uname -s)" = "Darwin" ]; then
-    mise env --dotenv |
-    while IFS='=' read -r name value; do
-        [ -n "$name" ] || continue
-        launchctl setenv "$name" "$value"
-    done
-fi
+[ "$(uname -s)" = Darwin ] || exit 0
+
+mise env --dotenv |
+while IFS='=' read -r name value; do
+    [ -n "$name" ] && launchctl setenv "$name" "$value"
+done
 '''
 
 [dotfiles]
@@ -112,25 +111,21 @@ gh api "users/${GITHUB_USER}/keys" --jq '.[].key' | tee ~/.ssh/authorized_keys |
 grep -q '^github.com ' ~/.ssh/known_hosts 2>/dev/null || ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
 grep -q '^\[ssh.github.com\]:443 ' ~/.ssh/known_hosts 2>/dev/null || ssh-keyscan -p 443 ssh.github.com >> ~/.ssh/known_hosts 2>/dev/null
 
-symphony_dir="$HOME/.local/share/symphony"
-symphony_elixir_dir="${symphony_dir}/elixir"
-symphony_stamp_dir="$HOME/.local/state/mise/bootstrap"
-symphony_stamp="${symphony_stamp_dir}/symphony-head"
+symphony="$HOME/.local/share/symphony"
+stamp="$HOME/.local/state/mise/bootstrap/symphony-head"
 
-if [ -d "${symphony_elixir_dir}" ]; then
-    symphony_head="$(git -C "${symphony_dir}" rev-parse HEAD)"
-    previous_symphony_head="$(cat "${symphony_stamp}" 2>/dev/null || true)"
+[ -d "$symphony/elixir" ] || exit 0
 
-    if [ "${symphony_head}" != "${previous_symphony_head}" ]; then
-        cd "${symphony_elixir_dir}"
-        mise trust
-        mise install
-        mise exec -- mix setup
-        mise exec -- mix build
-        mkdir -p "${symphony_stamp_dir}"
-        printf '%s\n' "${symphony_head}" > "${symphony_stamp}"
-    fi
-fi
+head="$(cd "$symphony" && git rev-parse HEAD)"
+[ "$(cat "$stamp" 2>/dev/null || :)" != "$head" ] || exit 0
+
+cd "$symphony/elixir"
+mise trust
+mise install
+mise exec -- mix setup
+mise exec -- mix build
+mkdir -p "$(dirname "$stamp")"
+printf '%s\n' "$head" > "$stamp"
 '''
 
 [env]
