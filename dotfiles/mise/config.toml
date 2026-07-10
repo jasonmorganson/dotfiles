@@ -36,6 +36,17 @@ zsh = true
 bash = true
 fish = true
 
+[bootstrap.hooks.final]
+run = '''
+if [ "$(uname -s)" = "Darwin" ]; then
+    mise env --dotenv |
+    while IFS='=' read -r name value; do
+        [ -n "$name" ] || continue
+        launchctl setenv "$name" "$value"
+    done
+fi
+'''
+
 [dotfiles]
 # Keep migrated mise dotfile sources outside home/ so chezmoi does not manage the same target.
 "~/.bash_sessions" = { source = "~/.local/state/bash/sessions", mode = "symlink" }
@@ -93,13 +104,33 @@ fish = true
 "~/Library/Application Support/nushell" = { source = "~/.config/nushell", mode = "symlink" }
 
 [tasks.bootstrap]
-description = "Generate dynamic dotfiles after mise tools are installed."
+description = "Generate dynamic dotfiles and prepare local checkouts after mise tools are installed."
 run = '''
 GITHUB_USER="${GITHUB_USER:-$(gh api user --jq .login)}"
 gh api user --template '{% raw %}{{printf "[user]\n    name = %q\n    email = %q\n    signingkey = ~/.ssh/id_ed25519.pub\n" .name (printf "%v+%s@users.noreply.github.com" .id .login)}}{% endraw %}' > ~/.config/git/user
 gh api "users/${GITHUB_USER}/keys" --jq '.[].key' | tee ~/.ssh/authorized_keys | sed "s/^/${GITHUB_USER} /" > ~/.ssh/allowed_signers
 grep -q '^github.com ' ~/.ssh/known_hosts 2>/dev/null || ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
 grep -q '^\[ssh.github.com\]:443 ' ~/.ssh/known_hosts 2>/dev/null || ssh-keyscan -p 443 ssh.github.com >> ~/.ssh/known_hosts 2>/dev/null
+
+symphony_dir="$HOME/.local/share/symphony"
+symphony_elixir_dir="${symphony_dir}/elixir"
+symphony_stamp_dir="$HOME/.local/state/mise/bootstrap"
+symphony_stamp="${symphony_stamp_dir}/symphony-head"
+
+if [ -d "${symphony_elixir_dir}" ]; then
+    symphony_head="$(git -C "${symphony_dir}" rev-parse HEAD)"
+    previous_symphony_head="$(cat "${symphony_stamp}" 2>/dev/null || true)"
+
+    if [ "${symphony_head}" != "${previous_symphony_head}" ]; then
+        cd "${symphony_elixir_dir}"
+        mise trust
+        mise install
+        mise exec -- mix setup
+        mise exec -- mix build
+        mkdir -p "${symphony_stamp_dir}"
+        printf '%s\n' "${symphony_head}" > "${symphony_stamp}"
+    fi
+fi
 '''
 
 [env]
