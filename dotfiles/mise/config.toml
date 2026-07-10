@@ -37,7 +37,7 @@ bash = true
 fish = true
 
 [bootstrap.hooks.post-tools]
-run = "mise exec -- ~/.local/share/dotfiles/dotfiles/mise/render-shell-rc"
+run = "mise exec -- ~/.local/share/dotfiles/dotfiles/mise/rc"
 
 [bootstrap.hooks.final]
 run = '''
