@@ -14,11 +14,11 @@ Dotfiles, bootstrapped with [`mise`](https://mise.jdx.dev/).
 `install.sh` is the no-argument setup entrypoint used by Codespaces and similar
 environments. Use the generated `mise` wrapper for explicit commands:
 
-> `./mise bootstrap --yes --force-dotfiles`
+> `./home/.local/bin/mise bootstrap --yes --force-dotfiles`
 
 Regenerate the pinned wrapper with:
 
-> `mise generate bootstrap --version 2026.7.5 --write mise`
+> `mise generate bootstrap --version 2026.7.5 --write home/.local/bin/mise`
 
 See [reference](https://mise.jdx.dev/).
 
