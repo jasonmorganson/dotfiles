@@ -15,5 +15,21 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
     - uses: actions/checkout@v7
-    - name: Run install script
+    - name: Verify generated mise wrapper
+      run: |
+        generated_dir="$(mktemp -d)"
+        ./mise generate bootstrap --version 2026.7.5 --write "$generated_dir/mise"
+        cmp "$generated_dir/mise" mise
+    - name: Run install script outside the checkout
+      run: |
+        repo_dir="$PWD"
+        cd "$(mktemp -d)"
+        "$repo_dir/install.sh"
+    - name: Verify mise-managed bootstrap state
+      run: |
+        test "$(readlink "$HOME/.config/mise/config.toml")" = "$PWD/mise.toml"
+        test "$(readlink "$HOME/.config/mise/mise.lock")" = "$PWD/mise.lock"
+        test "$(readlink "$HOME/.local/bin/mise")" = "$PWD/mise"
+        "$HOME/.local/bin/mise" -C "$PWD" bootstrap status --missing
+    - name: Verify idempotent rerun
       run: ./install.sh
