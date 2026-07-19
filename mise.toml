@@ -1,5 +1,6 @@
 [settings]
 lockfile = true
+dotfiles.root = "~/.local/share/dotfiles/home"
 
 [tools]
 gh = "latest"
@@ -40,7 +41,7 @@ fish = true
 run = "mkdir -p ~/.local/state/bash/sessions ~/.config/claude ~/.config/codex ~/.config/docker"
 
 [bootstrap.hooks.post-tools]
-run = "./mise exec -- ~/.local/libexec/mise/rc"
+run = "~/.local/bin/mise exec -- ~/.local/libexec/mise/rc"
 
 [bootstrap.hooks.final]
 run = '''
@@ -53,58 +54,58 @@ done
 '''
 
 [dotfiles]
-# Keep mise-managed dotfile sources outside home/ so bootstrap owns each target.
+# Sources under home/ mirror their targets and are resolved through dotfiles.root.
 "~/.bash_sessions" = { source = "~/.local/state/bash/sessions", mode = "symlink" }
 "~/.claude" = { source = "~/.config/claude", mode = "symlink" }
 "~/.codex" = { source = "~/.config/codex", mode = "symlink" }
-"~/.config/mise/config.toml" = { source = "mise.toml", mode = "symlink" }
-"~/.config/mise/mise.lock" = { source = "mise.lock", mode = "symlink" }
+"~/.config/mise/config.toml" = { source = "~/.local/share/dotfiles/mise.toml", mode = "symlink" }
+"~/.config/mise/mise.lock" = { source = "~/.local/share/dotfiles/mise.lock", mode = "symlink" }
 "~/.bash_profile/local" = { block = '[[ -f "$HOME/.bashrc" ]] && . "$HOME/.bashrc"' }
 "~/.bashrc/local" = { block = '[[ -f "$HOME/.config/bash/rc" ]] && . "$HOME/.config/bash/rc"' }
-"~/.config/fish/conf.d/preferences.fish" = { source = "home/.config/fish/conf.d/preferences.fish", mode = "copy" }
-"~/.config/git/absorb" = { source = "home/.config/git/absorb", mode = "copy" }
-"~/.config/git/alias" = { source = "home/.config/git/alias", mode = "copy" }
-"~/.config/git/color" = { source = "home/.config/git/color", mode = "copy" }
-"~/.config/git/commit" = { source = "home/.config/git/commit", mode = "copy" }
-"~/.config/git/config" = { source = "home/.config/git/config", mode = "copy" }
-"~/.config/git/core" = { source = "home/.config/git/core", mode = "copy" }
-"~/.config/git/credential" = { source = "home/.config/git/credential", mode = "copy" }
-"~/.config/git/credential-codespace" = { source = "home/.config/git/credential-codespace", mode = "copy" }
-"~/.config/git/delta" = { source = "home/.config/git/delta", mode = "copy" }
-"~/.config/git/diff" = { source = "home/.config/git/diff", mode = "copy" }
-"~/.config/git/fetch" = { source = "home/.config/git/fetch", mode = "copy" }
-"~/.config/git/filter" = { source = "home/.config/git/filter", mode = "copy" }
-"~/.config/git/gpg" = { source = "home/.config/git/gpg", mode = "copy" }
-"~/.config/git/gpg-codespace" = { source = "home/.config/git/gpg-codespace", mode = "copy" }
+"~/.config/fish/conf.d/preferences.fish" = { mode = "copy" }
+"~/.config/git/absorb" = { mode = "copy" }
+"~/.config/git/alias" = { mode = "copy" }
+"~/.config/git/color" = { mode = "copy" }
+"~/.config/git/commit" = { mode = "copy" }
+"~/.config/git/config" = { mode = "copy" }
+"~/.config/git/core" = { mode = "copy" }
+"~/.config/git/credential" = { mode = "copy" }
+"~/.config/git/credential-codespace" = { mode = "copy" }
+"~/.config/git/delta" = { mode = "copy" }
+"~/.config/git/diff" = { mode = "copy" }
+"~/.config/git/fetch" = { mode = "copy" }
+"~/.config/git/filter" = { mode = "copy" }
+"~/.config/git/gpg" = { mode = "copy" }
+"~/.config/git/gpg-codespace" = { mode = "copy" }
 "~/.config/git/gitalias" = { source = "~/.local/share/mise/repos/gitalias/gitalias.txt", mode = "copy" }
-"~/.config/git/help" = { source = "home/.config/git/help", mode = "copy" }
-"~/.config/git/ignore" = { source = "home/.config/git/ignore", mode = "template" }
-"~/.config/git/interactive" = { source = "home/.config/git/interactive", mode = "copy" }
-"~/.config/git/log" = { source = "home/.config/git/log", mode = "copy" }
-"~/.config/git/merge" = { source = "home/.config/git/merge", mode = "copy" }
-"~/.config/git/pull" = { source = "home/.config/git/pull", mode = "copy" }
-"~/.config/git/push" = { source = "home/.config/git/push", mode = "copy" }
-"~/.config/git/rebase" = { source = "home/.config/git/rebase", mode = "copy" }
-"~/.config/git/rerere" = { source = "home/.config/git/rerere", mode = "copy" }
-"~/.config/git/sequence" = { source = "home/.config/git/sequence", mode = "copy" }
-"~/.config/git/tag" = { source = "home/.config/git/tag", mode = "copy" }
-"~/.config/lsd/config.yaml" = { source = "home/.config/lsd/config.yaml", mode = "copy" }
-"~/.config/npm/npmrc" = { source = "home/.config/npm/npmrc", mode = "copy" }
-"~/.config/nushell/config.nu" = { source = "home/.config/nushell/config.nu", mode = "template" }
-"~/.config/nushell/env.nu" = { source = "home/.config/nushell/env.nu", mode = "template" }
-"~/.config/pitchfork/config.toml" = { source = "home/.config/pitchfork/config.toml", mode = "copy" }
-"~/.config/python/pythonrc" = { source = "home/.config/python/pythonrc", mode = "copy" }
-"~/.config/readline/inputrc" = { source = "home/.config/readline/inputrc", mode = "copy" }
-"~/.config/ssh/github" = { source = "home/.config/ssh/github", mode = "copy" }
-"~/.config/ssh/mac" = { source = "home/.config/ssh/mac", mode = "copy" }
-"~/.config/ssh/term" = { source = "home/.config/ssh/term", mode = "copy" }
-"~/.config/starship.toml" = { source = "home/.config/starship.toml", mode = "template" }
+"~/.config/git/help" = { mode = "copy" }
+"~/.config/git/ignore" = { mode = "template" }
+"~/.config/git/interactive" = { mode = "copy" }
+"~/.config/git/log" = { mode = "copy" }
+"~/.config/git/merge" = { mode = "copy" }
+"~/.config/git/pull" = { mode = "copy" }
+"~/.config/git/push" = { mode = "copy" }
+"~/.config/git/rebase" = { mode = "copy" }
+"~/.config/git/rerere" = { mode = "copy" }
+"~/.config/git/sequence" = { mode = "copy" }
+"~/.config/git/tag" = { mode = "copy" }
+"~/.config/lsd/config.yaml" = { mode = "copy" }
+"~/.config/npm/npmrc" = { mode = "copy" }
+"~/.config/nushell/config.nu" = { mode = "template" }
+"~/.config/nushell/env.nu" = { mode = "template" }
+"~/.config/pitchfork/config.toml" = { mode = "copy" }
+"~/.config/python/pythonrc" = { mode = "copy" }
+"~/.config/readline/inputrc" = { mode = "copy" }
+"~/.config/ssh/github" = { mode = "copy" }
+"~/.config/ssh/mac" = { mode = "copy" }
+"~/.config/ssh/term" = { mode = "copy" }
+"~/.config/starship.toml" = { mode = "template" }
 "~/.docker" = { source = "~/.config/docker", mode = "symlink" }
-"~/.hushlogin" = { source = "home/.hushlogin", mode = "copy" }
-"~/.local/libexec/mise/rc" = { source = "home/.local/libexec/mise/rc", mode = "copy" }
-"~/.local/bin/mise" = { source = "mise", mode = "symlink" }
-"~/.local/bin/symphony" = { source = "home/.local/bin/symphony", mode = "copy" }
-"~/.ssh/config" = { source = "home/.ssh/config", mode = "copy" }
+"~/.hushlogin" = { mode = "copy" }
+"~/.local/libexec/mise/rc" = { mode = "copy" }
+"~/.local/bin/mise" = { source = "~/.local/share/dotfiles/mise", mode = "symlink" }
+"~/.local/bin/symphony" = { mode = "copy" }
+"~/.ssh/config" = { mode = "copy" }
 "~/.zshrc/local" = { block = '[[ -f "$HOME/.config/zsh/rc" ]] && . "$HOME/.config/zsh/rc"' }
 "~/Library/Application Support/nushell" = { source = "~/.config/nushell", mode = "symlink" }
 
