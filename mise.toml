@@ -40,7 +40,7 @@ fish = true
 run = "mkdir -p ~/.local/state/bash/sessions ~/.config/claude ~/.config/codex ~/.config/docker"
 
 [bootstrap.hooks.post-tools]
-run = "mise exec -- ./dotfiles/mise/rc"
+run = "./mise exec -- ./dotfiles/mise/rc"
 
 [bootstrap.hooks.final]
 run = '''
