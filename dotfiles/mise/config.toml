@@ -36,6 +36,9 @@ zsh = true
 bash = true
 fish = true
 
+[bootstrap.hooks.pre-dotfiles]
+run = "mkdir -p ~/.local/state/bash/sessions ~/.config/claude ~/.config/codex ~/.config/docker"
+
 [bootstrap.hooks.post-tools]
 run = "mise exec -- ~/.local/share/dotfiles/dotfiles/mise/rc"
 
@@ -98,6 +101,7 @@ done
 "~/.config/starship.toml" = { source = "~/.local/share/dotfiles/dotfiles/starship.toml.tmpl", mode = "template" }
 "~/.docker" = { source = "~/.config/docker", mode = "symlink" }
 "~/.hushlogin" = { source = "~/.local/share/dotfiles/dotfiles/hushlogin", mode = "copy" }
+"~/.local/bin/mise" = { source = "~/.local/share/dotfiles/install.sh", mode = "symlink" }
 "~/.local/bin/symphony" = { source = "~/.local/share/dotfiles/dotfiles/local/bin/symphony", mode = "copy" }
 "~/.ssh/config" = { source = "~/.local/share/dotfiles/dotfiles/ssh/config", mode = "copy" }
 "~/.zshrc/local" = { block = '[[ -f "$HOME/.config/zsh/rc" ]] && . "$HOME/.config/zsh/rc"' }
