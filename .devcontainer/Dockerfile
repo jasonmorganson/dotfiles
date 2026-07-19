@@ -14,4 +14,6 @@ WORKDIR /home/vscode
 
 COPY . .
 
-RUN --mount=type=secret,id=GITHUB_TOKEN,env=GITHUB_TOKEN ./install.sh
+RUN --mount=type=secret,id=GITHUB_TOKEN,env=GITHUB_TOKEN \
+    --mount=type=secret,id=GITHUB_USER,env=GITHUB_USER \
+    ./install.sh
