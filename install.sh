@@ -393,31 +393,19 @@ __mise_bootstrap
 # Repository-specific handoff. The bootstrap generated above only installs and
 # executes mise; this prepares the dotfiles checkout before handing it control.
 __dotfiles_handoff() {
-    local self script_dir source_dir mise_config
+    local repo_dir source_dir="$HOME/.local/share/dotfiles"
+    repo_dir="$(cd -P "$(dirname "${BASH_SOURCE[0]}")" && pwd -P)"
 
-    case "$0" in
-        */*) self="$0" ;;
-        *) self="$(command -v "$0")" ;;
-    esac
-
-    script_dir="$(CDPATH= cd -P "$(dirname "$self")" && pwd -P)"
-    source_dir="$HOME/.local/share/dotfiles"
-    mise_config="$source_dir/dotfiles/mise/config.toml"
-
-    if [ "$script_dir" != "$source_dir" ] && [ ! -e "$source_dir" ]; then
-        mkdir -p "$(dirname "$source_dir")"
-        ln -s "$script_dir" "$source_dir"
+    if [[ "$repo_dir" != "$source_dir" && ! -e "$source_dir" ]]; then
+        mkdir -p "${source_dir%/*}"
+        ln -s "$repo_dir" "$source_dir"
     fi
 
-    export MISE_GLOBAL_CONFIG_FILE="$mise_config"
-    "$MISE_INSTALL_PATH" trust "$mise_config"
+    export MISE_GLOBAL_CONFIG_FILE="$source_dir/dotfiles/mise/config.toml"
+    "$MISE_INSTALL_PATH" trust "$MISE_GLOBAL_CONFIG_FILE"
 
-    if [ "$#" -eq 0 ]; then
-        set -- bootstrap --yes --force-dotfiles
-    fi
+    (($#)) || set -- bootstrap --yes --force-dotfiles
 
-    # Do not preserve install.sh as argv[0]: mise interprets any other basename
-    # as a tool shim instead of running its own CLI.
     exec "$MISE_INSTALL_PATH" "$@"
 }
 
