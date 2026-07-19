@@ -8,4 +8,7 @@ case $0 in
 esac
 
 repo_dir="$(CDPATH= cd -P "$(dirname "$self")" && pwd -P)"
-exec "$repo_dir/mise" -C "$repo_dir" bootstrap --yes --force-dotfiles
+export MISE_GLOBAL_CONFIG_FILE="$repo_dir/home/.config/mise/config.toml"
+export MISE_GLOBAL_CONFIG_ROOT="$repo_dir"
+
+exec "$repo_dir/home/.local/bin/mise" -C "$repo_dir" bootstrap --yes --force-dotfiles
