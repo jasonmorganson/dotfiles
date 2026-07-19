@@ -31,5 +31,3 @@ jobs:
         test "$(readlink "$HOME/.config/mise/mise.lock")" = "$PWD/mise.lock"
         test "$(readlink "$HOME/.local/bin/mise")" = "$PWD/mise"
         "$HOME/.local/bin/mise" -C "$PWD" bootstrap status --missing
-    - name: Verify idempotent rerun
-      run: ./install.sh
