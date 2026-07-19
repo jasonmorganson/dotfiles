@@ -393,7 +393,7 @@ __mise_bootstrap
 # Repository-specific handoff. The bootstrap generated above only installs and
 # executes mise; this prepares the dotfiles checkout before handing it control.
 __dotfiles_handoff() {
-    local self script_dir source_dir config_dir mise_config mise_lock
+    local self script_dir source_dir mise_config
 
     case "$0" in
         */*) self="$0" ;;
@@ -402,18 +402,14 @@ __dotfiles_handoff() {
 
     script_dir="$(CDPATH= cd -P "$(dirname "$self")" && pwd -P)"
     source_dir="$HOME/.local/share/dotfiles"
-    config_dir="$HOME/.config/mise"
     mise_config="$source_dir/dotfiles/mise/config.toml"
-    mise_lock="$source_dir/dotfiles/mise/mise.lock"
 
     if [ "$script_dir" != "$source_dir" ] && [ ! -e "$source_dir" ]; then
         mkdir -p "$(dirname "$source_dir")"
         ln -s "$script_dir" "$source_dir"
     fi
 
-    mkdir -p "$config_dir"
-    ln -sfn "$mise_config" "$config_dir/config.toml"
-    ln -sfn "$mise_lock" "$config_dir/mise.lock"
+    export MISE_GLOBAL_CONFIG_FILE="$mise_config"
     "$MISE_INSTALL_PATH" trust "$mise_config"
 
     if [ "$#" -eq 0 ]; then
