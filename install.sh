@@ -411,20 +411,6 @@ __dotfiles_handoff() {
         ln -s "$script_dir" "$source_dir"
     fi
 
-    # These are directory sources for compatibility symlinks. A fresh account
-    # does not have them yet, and mise validates every source before applying
-    # any dotfiles.
-    mkdir -p \
-        "$HOME/.local/state/bash/sessions" \
-        "$HOME/.config/claude" \
-        "$HOME/.config/codex" \
-        "$HOME/.config/docker"
-
-    # Generated bootstrap binaries live in the cache. Expose the pinned binary
-    # at the conventional user-bin path so bootstrap hooks can invoke `mise`.
-    mkdir -p "$HOME/.local/bin"
-    ln -sfn "$MISE_INSTALL_PATH" "$HOME/.local/bin/mise"
-
     mkdir -p "$config_dir"
     ln -sfn "$mise_config" "$config_dir/config.toml"
     ln -sfn "$mise_lock" "$config_dir/mise.lock"
