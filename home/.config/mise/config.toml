@@ -28,7 +28,7 @@ linux-x64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_amd64.deb"
 linux-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.deb" }
 
 [bootstrap.repos]
-"~/.local/share/dotfiles" = { url = "https://github.com/jasonmorganson/dotfiles.git", ref = "main" }
+"~/.local/share/dotfiles" = { url = "https://github.com/jasonmorganson/dotfiles.git", ref = "codex/mise-bootstrap-handoff" }
 "~/.local/share/mise/repos/gitalias" = { url = "https://github.com/GitAlias/gitalias.git", ref = "main" }
 "~/.config/nushell/scripts/nu_scripts" = { url = "https://github.com/nushell/nu_scripts.git" }
 "~/.local/share/symphony" = { url = "https://github.com/openai/symphony.git" }
