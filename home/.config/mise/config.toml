@@ -1,5 +1,5 @@
 [settings]
-lockfile = false
+lockfile = true
 dotfiles.root = "~/.local/share/dotfiles/home"
 
 [tools]
