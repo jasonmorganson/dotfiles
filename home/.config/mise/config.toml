@@ -66,7 +66,9 @@ done
 "~/.config/fish/conf.d/preferences.fish" = { mode = "copy" }
 "~/.config/git/absorb" = { mode = "copy" }
 "~/.config/git/alias" = { mode = "copy" }
+"~/.config/git/branch" = { mode = "copy" }
 "~/.config/git/color" = { mode = "copy" }
+"~/.config/git/column" = { mode = "copy" }
 "~/.config/git/commit" = { mode = "copy" }
 "~/.config/git/config" = { mode = "copy" }
 "~/.config/git/core" = { mode = "copy" }
@@ -81,6 +83,7 @@ done
 "~/.config/git/gitalias" = { source = "~/.local/share/mise/repos/gitalias/gitalias.txt", mode = "copy" }
 "~/.config/git/help" = { mode = "copy" }
 "~/.config/git/ignore" = { mode = "template" }
+"~/.config/git/init" = { mode = "copy" }
 "~/.config/git/interactive" = { mode = "copy" }
 "~/.config/git/log" = { mode = "copy" }
 "~/.config/git/merge" = { mode = "copy" }
