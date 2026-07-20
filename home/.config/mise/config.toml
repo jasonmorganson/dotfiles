@@ -33,6 +33,11 @@ linux-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.de
 "~/.config/nushell/scripts/nu_scripts" = { url = "https://github.com/nushell/nu_scripts.git" }
 "~/.local/share/symphony" = { url = "https://github.com/openai/symphony.git" }
 
+[bootstrap.mise_shell_activate]
+zsh = true
+bash = true
+fish = true
+
 [bootstrap.hooks.pre-dotfiles]
 run = "mkdir -p ~/.local/state/bash/sessions ~/.config/claude ~/.config/codex ~/.config/docker"
 
@@ -57,10 +62,7 @@ done
 "~/.config/mise/config.toml" = { mode = "symlink" }
 "~/.config/mise/mise.lock" = { mode = "symlink" }
 "~/.bash_profile/local" = { block = '[[ -f "$HOME/.bashrc" ]] && . "$HOME/.bashrc"' }
-"~/.bash_profile/activate" = { block = 'eval "$("$HOME/.local/bin/mise" activate bash)"' }
 "~/.bashrc/local" = { block = '[[ -f "$HOME/.config/bash/rc" ]] && . "$HOME/.config/bash/rc"' }
-"~/.bashrc/activate" = { block = 'eval "$("$HOME/.local/bin/mise" activate bash)"' }
-"~/.config/fish/config.fish/activate" = { block = '"$HOME/.local/bin/mise" activate fish | source' }
 "~/.config/fish/conf.d/preferences.fish" = { mode = "copy" }
 "~/.config/git/absorb" = { mode = "copy" }
 "~/.config/git/alias" = { mode = "copy" }
@@ -108,9 +110,7 @@ done
 "~/.local/bin/mise" = { mode = "symlink" }
 "~/.local/bin/symphony" = { mode = "copy" }
 "~/.ssh/config" = { mode = "copy" }
-"~/.zprofile/activate" = { block = 'eval "$("$HOME/.local/bin/mise" activate zsh)"' }
 "~/.zshrc/local" = { block = '[[ -f "$HOME/.config/zsh/rc" ]] && . "$HOME/.config/zsh/rc"' }
-"~/.zshrc/activate" = { block = 'eval "$("$HOME/.local/bin/mise" activate zsh)"' }
 "~/Library/Application Support/nushell" = { source = "~/.config/nushell", mode = "symlink" }
 
 [tasks.bootstrap]
