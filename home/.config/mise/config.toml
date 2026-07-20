@@ -13,7 +13,7 @@ pitchfork = "latest"
 starship = "latest"
 vivid = "latest"
 cargo-binstall = "latest"
-"cargo:git-delta" = "latest"
+delta = "latest"
 "aqua:reemus-dev/gitnr" = { version = "latest", os = ["macos"] }
 "github:lsd-rs/lsd" = "latest"
 "aqua:BurntSushi/ripgrep" = "latest"
@@ -42,7 +42,7 @@ fish = true
 run = "mkdir -p ~/.local/state/bash/sessions ~/.config/claude ~/.config/codex ~/.config/docker"
 
 [bootstrap.hooks.post-tools]
-run = "~/.local/bin/mise exec -- ~/.local/libexec/mise/rc"
+run = "mise exec -- ~/.local/libexec/mise/rc"
 
 [bootstrap.hooks.final]
 run = '''
