@@ -107,7 +107,6 @@ done
 "~/.docker" = { source = "~/.config/docker", mode = "symlink" }
 "~/.hushlogin" = { mode = "copy" }
 "~/.local/libexec/mise/rc" = { mode = "copy" }
-"~/.local/bin/mise" = { mode = "symlink" }
 "~/.local/bin/symphony" = { mode = "copy" }
 "~/.ssh/config" = { mode = "copy" }
 "~/.zshrc/local" = { block = '[[ -f "$HOME/.config/zsh/rc" ]] && . "$HOME/.config/zsh/rc"' }
