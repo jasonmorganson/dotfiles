@@ -57,7 +57,7 @@ done
 "~/.config/mise/config.toml" = { mode = "symlink" }
 "~/.config/mise/mise.lock" = { mode = "symlink" }
 "~/.bash_profile/local" = { block = '[[ -f "$HOME/.bashrc" ]] && . "$HOME/.bashrc"' }
-"~/.bash_profile/activate" = { block = 'eval "$("$HOME/.local/bin/mise" activate bash --shims)"' }
+"~/.bash_profile/activate" = { block = 'eval "$("$HOME/.local/bin/mise" activate bash)"' }
 "~/.bashrc/local" = { block = '[[ -f "$HOME/.config/bash/rc" ]] && . "$HOME/.config/bash/rc"' }
 "~/.bashrc/activate" = { block = 'eval "$("$HOME/.local/bin/mise" activate bash)"' }
 "~/.config/fish/config.fish/activate" = { block = '"$HOME/.local/bin/mise" activate fish | source' }
@@ -108,7 +108,7 @@ done
 "~/.local/bin/mise" = { mode = "symlink" }
 "~/.local/bin/symphony" = { mode = "copy" }
 "~/.ssh/config" = { mode = "copy" }
-"~/.zprofile/activate" = { block = 'eval "$("$HOME/.local/bin/mise" activate zsh --shims)"' }
+"~/.zprofile/activate" = { block = 'eval "$("$HOME/.local/bin/mise" activate zsh)"' }
 "~/.zshrc/local" = { block = '[[ -f "$HOME/.config/zsh/rc" ]] && . "$HOME/.config/zsh/rc"' }
 "~/.zshrc/activate" = { block = 'eval "$("$HOME/.local/bin/mise" activate zsh)"' }
 "~/Library/Application Support/nushell" = { source = "~/.config/nushell", mode = "symlink" }
