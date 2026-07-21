@@ -3,4 +3,4 @@ locked = true
 dotfiles.root = "~/.local/share/dotfiles/home"
 
 [task_config]
-includes = ["{{ env.MISE_CONFIG_DIR }}/tasks"]
+includes = ["{{ env.MISE_CONFIG_DIR | default(value=env.XDG_CONFIG_HOME ~ '/mise') }}/tasks"]
