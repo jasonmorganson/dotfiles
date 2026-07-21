@@ -276,7 +276,7 @@ TERMINFO_DIRS = "{{ env.XDG_DATA_HOME }}/terminfo:/usr/share/terminfo"
 
 # dotfiles
 dotfiles = "mise dotfiles"
-bootstrap = "mise bootstrap --yes --force-dotfiles"
+bootstrap = "mise bootstrap repos apply --yes && mise bootstrap --yes --force-dotfiles"
 
 # Habits
 ag = "rg"
