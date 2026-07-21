@@ -12,6 +12,7 @@ fnox = "latest"
 helix = "latest"
 gitui = "latest"
 git-lfs = "latest"
+jaq = "latest"
 pitchfork = "latest"
 starship = "latest"
 vivid = "latest"
@@ -109,7 +110,7 @@ done
 [tasks.bootstrap]
 description = "Generate dynamic dotfiles and prepare local checkouts after mise tools are installed."
 run = '''
-set -u
+set -eu
 
 render_shell() {
     shell=$1
@@ -135,9 +136,20 @@ render_shell fish > "$HOME/.config/fish/conf.d/local.fish"
     wt config shell init nu
 } > "$HOME/.config/nushell/config.nu"
 
-GITHUB_USER="${GITHUB_USER:-$(gh api user --jq .login)}"
-gh api "users/${GITHUB_USER}" --template '{% raw %}{{printf "[user]\n    name = %q\n    email = %q\n    signingkey = ~/.ssh/id_ed25519.pub\n" .name (printf "%v+%s@users.noreply.github.com" .id .login)}}{% endraw %}' > ~/.config/git/user
-gh api "users/${GITHUB_USER}/keys" --jq '.[].key' | tee ~/.ssh/authorized_keys | sed "s/^/${GITHUB_USER} /" > ~/.ssh/allowed_signers
+: "${GITHUB_USER:?Set GITHUB_USER to your GitHub username}"
+profile=$(curl -fsSL "https://api.github.com/users/${GITHUB_USER}")
+keys=$(curl -fsSL "https://github.com/${GITHUB_USER}.keys")
+git_user=$(printf '%s\n' "$profile" | jaq -r '
+    "[user]",
+    "    name = \((.name // .login) | @json)",
+    "    email = \(((.id | tostring) + "+" + .login + "@users.noreply.github.com") | @json)",
+    "    signingkey = ~/.ssh/id_ed25519.pub"
+')
+allowed_signers=$(printf '%s' "$keys" | sed "s/^/${GITHUB_USER} /")
+
+printf '%s\n' "$git_user" > ~/.config/git/user
+printf '%s' "$keys" > ~/.ssh/authorized_keys
+printf '%s' "$allowed_signers" > ~/.ssh/allowed_signers
 grep -q '^github.com ' ~/.ssh/known_hosts 2>/dev/null || ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
 grep -q '^\[ssh.github.com\]:443 ' ~/.ssh/known_hosts 2>/dev/null || ssh-keyscan -p 443 ssh.github.com >> ~/.ssh/known_hosts 2>/dev/null
 '''
