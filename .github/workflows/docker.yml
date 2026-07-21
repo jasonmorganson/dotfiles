@@ -44,4 +44,5 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           secrets: |
+            GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}
             GITHUB_USER=${{ github.repository_owner }}
