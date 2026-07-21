@@ -101,6 +101,7 @@ done
 "~/.config/ssh/github" = { mode = "copy" }
 "~/.config/ssh/mac" = { mode = "copy" }
 "~/.config/ssh/term" = { mode = "copy" }
+"~/.config/zsh/rc" = { mode = "copy" }
 "~/.docker" = { source = "~/.config/docker", mode = "symlink" }
 "~/.hushlogin" = { mode = "copy" }
 "~/.ssh/config" = { mode = "copy" }
