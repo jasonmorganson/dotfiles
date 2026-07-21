@@ -54,3 +54,10 @@ if [ -n "$GITHUB_USER" ]; then
 fi
 grep -q '^github.com ' ~/.ssh/known_hosts 2>/dev/null || ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
 grep -q '^\[ssh.github.com\]:443 ' ~/.ssh/known_hosts 2>/dev/null || ssh-keyscan -p 443 ssh.github.com >> ~/.ssh/known_hosts 2>/dev/null
+
+if [ "$(uname -s)" = Darwin ]; then
+    mise env --dotenv |
+    while IFS='=' read -r name value; do
+        [ -n "$name" ] && launchctl setenv "$name" "$value"
+    done
+fi
