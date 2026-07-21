@@ -19,6 +19,7 @@ delta = "latest"
 "github:lsd-rs/lsd" = "latest"
 "aqua:BurntSushi/ripgrep" = "latest"
 "github:max-sixty/worktrunk" = "latest"
+"github:openai/symphony" = { version = "latest", bin = "symphony" }
 
 [tools."github:MitMaro/git-interactive-rebase-tool"]
 version = "latest"
@@ -32,7 +33,6 @@ linux-arm64 = { asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.de
 "~/.local/share/dotfiles" = { url = "https://github.com/jasonmorganson/dotfiles.git", ref = "main" }
 "~/.local/share/mise/repos/gitalias" = { url = "https://github.com/GitAlias/gitalias.git", ref = "main" }
 "~/.config/nushell/scripts/nu_scripts" = { url = "https://github.com/nushell/nu_scripts.git" }
-"~/.local/share/symphony" = { url = "https://github.com/openai/symphony.git" }
 
 [bootstrap.mise_shell_activate]
 zsh = true
@@ -43,7 +43,14 @@ fish = true
 run = "mkdir -p ~/.local/state/bash/sessions ~/.config/claude ~/.config/codex ~/.config/docker"
 
 [bootstrap.hooks.post-tools]
-run = "mise exec -- ~/.local/libexec/mise/rc"
+run = '''
+legacy_symphony="$HOME/.local/bin/symphony"
+if [ -f "$legacy_symphony" ] && grep -Fqx 'exec "$XDG_DATA_HOME/symphony/elixir/bin/symphony" "$@"' "$legacy_symphony"; then
+    rm "$legacy_symphony"
+fi
+
+mise exec -- ~/.local/libexec/mise/rc
+'''
 
 [bootstrap.hooks.final]
 run = '''
@@ -108,7 +115,6 @@ done
 "~/.docker" = { source = "~/.config/docker", mode = "symlink" }
 "~/.hushlogin" = { mode = "copy" }
 "~/.local/libexec/mise/rc" = { mode = "copy" }
-"~/.local/bin/symphony" = { mode = "copy" }
 "~/.ssh/config" = { mode = "copy" }
 "~/.zshrc/local" = { block = '[[ -f "$HOME/.config/zsh/rc" ]] && . "$HOME/.config/zsh/rc"' }
 "~/Library/Application Support/nushell" = { source = "~/.config/nushell", mode = "symlink" }
@@ -121,23 +127,6 @@ gh api "users/${GITHUB_USER}" --template '{% raw %}{{printf "[user]\n    name = 
 gh api "users/${GITHUB_USER}/keys" --jq '.[].key' | tee ~/.ssh/authorized_keys | sed "s/^/${GITHUB_USER} /" > ~/.ssh/allowed_signers
 grep -q '^github.com ' ~/.ssh/known_hosts 2>/dev/null || ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
 grep -q '^\[ssh.github.com\]:443 ' ~/.ssh/known_hosts 2>/dev/null || ssh-keyscan -p 443 ssh.github.com >> ~/.ssh/known_hosts 2>/dev/null
-
-symphony="$HOME/.local/share/symphony"
-stamp="$HOME/.local/state/mise/bootstrap/symphony-head"
-
-[ -d "$symphony/elixir" ] || exit 0
-
-head="$(cd "$symphony" && git rev-parse HEAD)"
-[ "$(cat "$stamp" 2>/dev/null || :)" != "$head" ] || exit 0
-
-cd "$symphony/elixir"
-export MISE_LOCKED=0
-mise trust
-mise install
-mise exec -- mix setup
-mise exec -- mix build
-mkdir -p "$(dirname "$stamp")"
-printf '%s\n' "$head" > "$stamp"
 '''
 
 [env]
