@@ -91,7 +91,6 @@ done
 "~/.config/git/rerere" = { mode = "copy" }
 "~/.config/git/sequence" = { mode = "copy" }
 "~/.config/git/tag" = { mode = "copy" }
-"~/.config/npm/npmrc" = { mode = "copy" }
 "~/.config/nushell/autoload/preferences.nu" = { mode = "copy" }
 "~/.config/pitchfork/config.toml" = { mode = "copy" }
 "~/.config/python/pythonrc" = { mode = "copy" }
@@ -223,10 +222,10 @@ MPLCONFIGDIR = "{{ env.XDG_CONFIG_HOME }}/matplotlib"
 MYCLI_HISTFILE = "{{ env.XDG_DATA_HOME }}/mycli/history"
 MYSQL_HISTFILE = "{{ env.XDG_DATA_HOME }}/sql_history"
 NODE_REPL_HISTORY = "{{ env.XDG_CACHE_HOME }}/node_repl_history"
-NPM_CONFIG_USERCONFIG = "{{ env.XDG_CONFIG_HOME }}/npm/npmrc"
 NPM_CONFIG_PREFIX = "{{ env.XDG_DATA_HOME }}/npm"
 NPM_CONFIG_INIT_MODULE = "{{ env.XDG_CONFIG_HOME }}/npm/config/npm-init.js"
 NPM_CONFIG_CACHE = "{{ env.XDG_CACHE_HOME }}/npm"
+NPM_CONFIG_LOGS_DIR = "{{ env.XDG_STATE_HOME }}/npm/logs"
 NVM_DIR = "{{ env.XDG_DATA_HOME }}/nvm"
 OPAMROOT = "{{ env.XDG_DATA_HOME }}/opam"
 PARALLEL_HOME = "{{ env.XDG_CONFIG_HOME }}/parallel"
