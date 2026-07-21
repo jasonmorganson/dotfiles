@@ -39,6 +39,20 @@ checksum = "sha256:71b2fef860abe467217a538ff31de02f5258807c0129f771846f87bd029aa
 url = "https://github.com/BurntSushi/ripgrep/releases/download/15.2.0/ripgrep-15.2.0-x86_64-pc-windows-msvc.zip"
 url_api = "https://api.github.com/repos/BurntSushi/ripgrep/releases/assets/478119643"
 
+[[tools."aqua:eza-community/eza"]]
+version = "0.23.5"
+backend = "aqua:eza-community/eza"
+
+[tools."aqua:eza-community/eza"."platforms.linux-arm64"]
+checksum = "sha256:40b87ae8628aa2ff0f0d2dc24ab52f689631366385c3da630bae745671fd71ec"
+url = "https://github.com/eza-community/eza/releases/download/v0.23.5/eza_aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/eza-community/eza/releases/assets/471228867"
+
+[tools."aqua:eza-community/eza"."platforms.linux-x64"]
+checksum = "sha256:e06eebab74b73d6b7d51a796a353824b001bea82df077706382e100815d28904"
+url = "https://github.com/eza-community/eza/releases/download/v0.23.5/eza_x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/eza-community/eza/releases/assets/471228890"
+
 [[tools."aqua:reemus-dev/gitnr"]]
 version = "0.3.0"
 backend = "aqua:reemus-dev/gitnr"
@@ -114,6 +128,23 @@ url = "https://github.com/cargo-bins/cargo-binstall/releases/download/v1.21.0/ca
 url_api = "https://api.github.com/repos/cargo-bins/cargo-binstall/releases/assets/476612813"
 provenance = "github-attestations"
 
+[[tools."conda:eza"]]
+version = "0.23.5"
+backend = "conda:eza"
+
+[tools."conda:eza".options]
+channel = "conda-forge"
+
+[tools."conda:eza"."platforms.macos-arm64"]
+checksum = "sha256:cc1616505198ea7ddf137a887dfd92f68023a62e3a8462192ac1177582b1f444"
+url = "https://conda.anaconda.org/conda-forge/osx-arm64/eza-0.23.5-h6fdd925_0.conda"
+conda_deps = []
+
+[tools."conda:eza"."platforms.macos-x64"]
+checksum = "sha256:f62722ddab95130c803e104d226669446db510eeb7f268b95481366fd5696d34"
+url = "https://conda.anaconda.org/conda-forge/osx-64/eza-0.23.5-h19f9e61_0.conda"
+conda_deps = []
+
 [[tools.delta]]
 version = "0.19.2"
 backend = "aqua:dandavison/delta"
@@ -142,10 +173,6 @@ url_api = "https://api.github.com/repos/dandavison/delta/releases/assets/3836623
 checksum = "sha256:ac8ebb4a9f1cbee8b9ea897ba119808a244181adae6f3bed1f3b6b923c50b557"
 url = "https://github.com/dandavison/delta/releases/download/0.19.2/delta-0.19.2-x86_64-pc-windows-msvc.zip"
 url_api = "https://api.github.com/repos/dandavison/delta/releases/assets/383663165"
-
-[[tools.eza]]
-version = "0.23.5"
-backend = "asdf:eza"
 
 [[tools.fnox]]
 version = "1.31.0"
@@ -332,44 +359,38 @@ url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/rele
 url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-windows-_x86_64.exe"
 url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176279168"
 
-[[tools."github:lsd-rs/lsd"]]
-version = "1.2.0"
-backend = "github:lsd-rs/lsd"
+[[tools."github:MitMaro/git-interactive-rebase-tool"]]
+version = "2.4.1"
+backend = "github:MitMaro/git-interactive-rebase-tool"
 
-[tools."github:lsd-rs/lsd"."platforms.linux-arm64"]
-checksum = "sha256:48c069cf73a8ed0851f366afeac86e3a9b7db416133f45d033d31d123f819f26"
-url = "https://github.com/lsd-rs/lsd/releases/download/v1.2.0/lsd-v1.2.0-aarch64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/lsd-rs/lsd/releases/assets/303319672"
+[tools."github:MitMaro/git-interactive-rebase-tool".options]
+asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.deb"
 
-[tools."github:lsd-rs/lsd"."platforms.linux-arm64-musl"]
-checksum = "sha256:642ecb1a763b9f790a99c83a1445c117a6813ed4edb5d498d4420423c6353eb8"
-url = "https://github.com/lsd-rs/lsd/releases/download/v1.2.0/lsd-v1.2.0-aarch64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/lsd-rs/lsd/releases/assets/303319949"
+[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-arm64"]
+url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_arm64.deb"
+url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278671"
 
-[tools."github:lsd-rs/lsd"."platforms.linux-x64"]
-checksum = "sha256:57d3b5859254adcfb8374ce98159cca97a14959997d2ae1176d2cff59556d829"
-url = "https://github.com/lsd-rs/lsd/releases/download/v1.2.0/lsd-v1.2.0-x86_64-unknown-linux-gnu.tar.gz"
-url_api = "https://api.github.com/repos/lsd-rs/lsd/releases/assets/303319829"
+[[tools."github:MitMaro/git-interactive-rebase-tool"]]
+version = "2.4.1"
+backend = "github:MitMaro/git-interactive-rebase-tool"
 
-[tools."github:lsd-rs/lsd"."platforms.linux-x64-musl"]
-checksum = "sha256:77849da1210336534258551a581401ba19ae6b8d7b66a2a1feff148ad41e3814"
-url = "https://github.com/lsd-rs/lsd/releases/download/v1.2.0/lsd-v1.2.0-x86_64-unknown-linux-musl.tar.gz"
-url_api = "https://api.github.com/repos/lsd-rs/lsd/releases/assets/303319745"
+[tools."github:MitMaro/git-interactive-rebase-tool".options]
+asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_amd64.deb"
 
-[tools."github:lsd-rs/lsd"."platforms.macos-arm64"]
-checksum = "sha256:9e34a5d392ff913302098aad0543dafa1883c531eaf229b82f086c3fca675e3e"
-url = "https://github.com/lsd-rs/lsd/releases/download/v1.2.0/lsd-v1.2.0-aarch64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/lsd-rs/lsd/releases/assets/303319340"
+[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-x64"]
+url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_amd64.deb"
+url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278646"
 
-[tools."github:lsd-rs/lsd"."platforms.macos-x64"]
-checksum = "sha256:00d3c50551b270bbdf7da97816e5ba7f5fd10294cd310165f7f8b5523e738b9c"
-url = "https://github.com/lsd-rs/lsd/releases/download/v1.2.0/lsd-v1.2.0-x86_64-apple-darwin.tar.gz"
-url_api = "https://api.github.com/repos/lsd-rs/lsd/releases/assets/303319774"
+[[tools."github:MitMaro/git-interactive-rebase-tool"]]
+version = "2.4.1"
+backend = "github:MitMaro/git-interactive-rebase-tool"
 
-[tools."github:lsd-rs/lsd"."platforms.windows-x64"]
-checksum = "sha256:a65b9f457153934a7ce1f7e0fe1c4922a95bb2822222126e4fbaa6ee9c0d78e5"
-url = "https://github.com/lsd-rs/lsd/releases/download/v1.2.0/lsd-v1.2.0-x86_64-pc-windows-msvc.zip"
-url_api = "https://api.github.com/repos/lsd-rs/lsd/releases/assets/303320206"
+[tools."github:MitMaro/git-interactive-rebase-tool".options]
+asset_pattern = "git-interactive-rebase-tool-*-macos-*_intel"
+
+[tools."github:MitMaro/git-interactive-rebase-tool"."platforms.macos-x64"]
+url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-macos-12_intel"
+url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278550"
 
 [[tools."github:max-sixty/worktrunk"]]
 version = "0.68.0"
