@@ -1,0 +1,35 @@
+[shell_alias]
+
+# dotfiles
+dotfiles = "mise dotfiles"
+bootstrap = "mise bootstrap repos apply --yes && mise bootstrap --yes --force-dotfiles"
+
+# Habits
+ag = "rg"
+tig = "gitui"
+vi = "hx"
+
+# ls
+l = "eza"
+ls = "eza"
+la = "eza --all"
+ll = "eza --long"
+lt = "eza --tree"
+
+# git
+g = "git"
+
+# Pulumi
+p = "pulumi"
+
+# Python
+py = "python"
+pip = "python -m pip"
+
+# Kube
+k = "kubectl"
+kns = "kubens"
+kctx = "kubectx"
+
+# Node
+node = "node --experimental-transform-types"

@@ -1,0 +1,22 @@
+[bootstrap.repos]
+"~/.local/share/dotfiles" = { url = "https://github.com/jasonmorganson/dotfiles.git", ref = "main" }
+"~/.local/share/mise/repos/gitalias" = { url = "https://github.com/GitAlias/gitalias.git", ref = "main" }
+"~/.config/nushell/scripts/nu_scripts" = { url = "https://github.com/nushell/nu_scripts.git" }
+
+[bootstrap.mise_shell_activate]
+zsh = true
+bash = true
+fish = true
+
+[bootstrap.hooks.pre-dotfiles]
+run = "mkdir -p ~/.local/state/bash/sessions ~/.local/state/python ~/.config/bash ~/.config/zsh ~/.config/fish/conf.d ~/.config/nushell ~/.config/claude ~/.config/codex ~/.config/docker"
+
+[bootstrap.hooks.final]
+run = '''
+[ "$(uname -s)" = Darwin ] || exit 0
+
+mise env --dotenv |
+while IFS='=' read -r name value; do
+    [ -n "$name" ] && launchctl setenv "$name" "$value"
+done
+'''

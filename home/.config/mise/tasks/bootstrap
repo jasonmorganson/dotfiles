@@ -1,0 +1,56 @@
+#!/bin/sh
+#MISE description="Generate dynamic dotfiles and prepare local checkouts after mise tools are installed."
+set -eu
+
+render_shell() {
+    shell=$1
+    fnox activate "$shell"
+    pitchfork activate "$shell"
+    wt config shell init "$shell"
+    starship init "$shell" --print-full-init
+}
+
+render_shell bash > "$HOME/.config/bash/rc"
+render_shell zsh > "$HOME/.config/zsh/rc"
+render_shell fish > "$HOME/.config/fish/conf.d/local.fish"
+
+(
+    unset MISE_SHELL __MISE_DIFF
+    mise activate nu --no-hook-env
+    echo mise_hook
+) > "$HOME/.config/nushell/env.nu"
+
+{
+    starship init nu
+    fnox activate nu
+    wt config shell init nu
+} > "$HOME/.config/nushell/config.nu"
+
+if [ -z "${GITHUB_USER:-}" ]; then
+    GITHUB_USER=$(gh api user --jq 'select(.type == "User") | .login' 2>/dev/null) || GITHUB_USER=
+fi
+if [ -n "$GITHUB_USER" ]; then
+    github_api() {
+        if [ -n "${GITHUB_TOKEN:-}" ]; then
+            curl -fsSL -H "Authorization: Bearer ${GITHUB_TOKEN}" "$1"
+        else
+            curl -fsSL "$1"
+        fi
+    }
+
+    profile=$(github_api "https://api.github.com/users/${GITHUB_USER}")
+    keys=$(curl -fsSL "https://github.com/${GITHUB_USER}.keys")
+    git_user=$(printf '%s\n' "$profile" | jaq -r '
+        "[user]",
+        "    name = \((.name // .login) | @json)",
+        "    email = \(((.id | tostring) + "+" + .login + "@users.noreply.github.com") | @json)",
+        "    signingkey = ~/.ssh/id_ed25519.pub"
+    ')
+    allowed_signers=$(printf '%s' "$keys" | sed "s/^/${GITHUB_USER} /")
+
+    printf '%s\n' "$git_user" > ~/.config/git/user
+    printf '%s' "$keys" > ~/.ssh/authorized_keys
+    printf '%s' "$allowed_signers" > ~/.ssh/allowed_signers
+fi
+grep -q '^github.com ' ~/.ssh/known_hosts 2>/dev/null || ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
+grep -q '^\[ssh.github.com\]:443 ' ~/.ssh/known_hosts 2>/dev/null || ssh-keyscan -p 443 ssh.github.com >> ~/.ssh/known_hosts 2>/dev/null
