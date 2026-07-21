@@ -5,6 +5,7 @@ dotfiles.root = "~/.local/share/dotfiles/home"
 
 [tools]
 gh = "latest"
+eza = "latest"
 fzf = "latest"
 fnox = "latest"
 helix = "latest"
@@ -16,7 +17,6 @@ vivid = "latest"
 cargo-binstall = "latest"
 delta = "latest"
 "aqua:reemus-dev/gitnr" = { version = "latest", os = ["macos"] }
-"github:lsd-rs/lsd" = "latest"
 "aqua:BurntSushi/ripgrep" = "latest"
 "github:max-sixty/worktrunk" = "latest"
 "github:openai/symphony" = { version = "latest", bin = "symphony" }
@@ -94,7 +94,6 @@ done
 "~/.config/git/rerere" = { mode = "copy" }
 "~/.config/git/sequence" = { mode = "copy" }
 "~/.config/git/tag" = { mode = "copy" }
-"~/.config/lsd/config.yaml" = { mode = "copy" }
 "~/.config/npm/npmrc" = { mode = "copy" }
 "~/.config/nushell/config.nu" = { mode = "template" }
 "~/.config/nushell/env.nu" = { mode = "template" }
@@ -262,11 +261,11 @@ tig = "gitui"
 vi = "hx"
 
 # ls
-l = "lsd"
-ls = "lsd"
-la = "lsd --all"
-ll = "lsd --long"
-lt = "lsd --tree"
+l = "eza"
+ls = "eza"
+la = "eza --all"
+ll = "eza --long"
+lt = "eza --tree"
 
 # git
 g = "git"
