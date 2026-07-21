@@ -137,7 +137,8 @@ render_shell fish > "$HOME/.config/fish/conf.d/local.fish"
     wt config shell init nu
 } > "$HOME/.config/nushell/config.nu"
 
-if [ -n "${GITHUB_USER:-}" ]; then
+GITHUB_USER=${GITHUB_USER:-$(gh api user --jq .login 2>/dev/null || true)}
+if [ -n "$GITHUB_USER" ]; then
     github_api() {
         if [ -n "${GITHUB_TOKEN:-}" ]; then
             curl -fsSL -H "Authorization: Bearer ${GITHUB_TOKEN}" "$1"
