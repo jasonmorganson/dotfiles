@@ -2,5 +2,4 @@
     program=/.codespaces/bin/gh-gpgsign
 
 [gpg "ssh"]
-    program = ssh-keygen
     allowedSignersFile = ~/.ssh/allowed_signers
