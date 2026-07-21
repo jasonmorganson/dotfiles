@@ -1,0 +1,60 @@
+[dotfiles]
+# Sources under home/ mirror their targets and are resolved through dotfiles.root.
+"~/.bash_sessions" = { source = "~/.local/state/bash/sessions", mode = "symlink" }
+"~/.claude" = { source = "~/.config/claude", mode = "symlink" }
+"~/.codex" = { source = "~/.config/codex", mode = "symlink" }
+"~/.config/mise/config.toml" = { mode = "symlink" }
+"~/.config/mise/conf.d/10-tools.toml" = { mode = "symlink" }
+"~/.config/mise/conf.d/20-bootstrap.toml" = { mode = "symlink" }
+"~/.config/mise/conf.d/30-dotfiles.toml" = { mode = "symlink" }
+"~/.config/mise/conf.d/40-env.toml" = { mode = "symlink" }
+"~/.config/mise/conf.d/50-aliases.toml" = { mode = "symlink" }
+"~/.config/mise/mise.lock" = { mode = "symlink" }
+"~/.config/mise/tasks/bootstrap" = { mode = "symlink" }
+"~/.bash_profile/local" = { block = '[[ -f "$HOME/.bashrc" ]] && . "$HOME/.bashrc"' }
+"~/.bashrc/local" = { block = '[[ -f "$HOME/.config/bash/rc" ]] && . "$HOME/.config/bash/rc"' }
+"~/.config/fish/conf.d/preferences.fish" = { mode = "copy" }
+"~/.config/git/absorb" = { mode = "copy" }
+"~/.config/git/alias" = { mode = "copy" }
+"~/.config/git/branch" = { mode = "copy" }
+"~/.config/git/color" = { mode = "copy" }
+"~/.config/git/column" = { mode = "copy" }
+"~/.config/git/commit" = { mode = "copy" }
+"~/.config/git/config" = { mode = "copy" }
+"~/.config/git/core" = { mode = "copy" }
+"~/.config/git/credential" = { mode = "copy" }
+"~/.config/git/credential-codespace" = { mode = "copy" }
+"~/.config/git/delta" = { mode = "copy" }
+"~/.config/git/diff" = { mode = "copy" }
+"~/.config/git/fetch" = { mode = "copy" }
+"~/.config/git/filter" = { mode = "copy" }
+"~/.config/git/gpg" = { mode = "copy" }
+"~/.config/git/gpg-codespace" = { mode = "copy" }
+"~/.config/git/gitalias" = { source = "~/.local/share/mise/repos/gitalias/gitalias.txt", mode = "copy" }
+"~/.config/git/help" = { mode = "copy" }
+"~/.config/git/ignore" = { mode = "template" }
+"~/.config/git/init" = { mode = "copy" }
+"~/.config/git/interactive" = { mode = "copy" }
+"~/.config/git/log" = { mode = "copy" }
+"~/.config/git/merge" = { mode = "copy" }
+"~/.config/git/pull" = { mode = "copy" }
+"~/.config/git/push" = { mode = "copy" }
+"~/.config/git/rebase" = { mode = "copy" }
+"~/.config/git/rerere" = { mode = "copy" }
+"~/.config/git/sequence" = { mode = "copy" }
+"~/.config/git/tag" = { mode = "copy" }
+"~/.config/nushell/autoload/preferences.nu" = { mode = "copy" }
+"~/.config/pitchfork/config.toml" = { mode = "copy" }
+"~/.config/readline/inputrc" = { mode = "copy" }
+"~/.config/ssh/github" = { mode = "copy" }
+"~/.config/ssh/mac" = { mode = "copy" }
+"~/.config/ssh/term" = { mode = "copy" }
+"~/.config/zsh/preferences.zsh" = { mode = "copy" }
+"~/.docker" = { source = "~/.config/docker", mode = "symlink" }
+"~/.hushlogin" = { mode = "copy" }
+"~/.ssh/config" = { mode = "copy" }
+"~/.zshrc/local" = { block = '''
+[[ -f "$HOME/.config/zsh/rc" ]] && . "$HOME/.config/zsh/rc"
+[[ -f "$HOME/.config/zsh/preferences.zsh" ]] && . "$HOME/.config/zsh/preferences.zsh"
+''' }
+"~/Library/Application Support/nushell" = { source = "~/.config/nushell", mode = "symlink" }
