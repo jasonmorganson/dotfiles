@@ -4,11 +4,8 @@ set -eu
 render_shell() {
     shell=$1
     fnox activate "$shell"
-    printf '\n'
     pitchfork activate "$shell"
-    printf '\n'
     wt config shell init "$shell"
-    printf '\n'
     starship init "$shell" --print-full-init
 }
 
@@ -19,13 +16,11 @@ render_shell fish > "$HOME/.config/fish/conf.d/local.fish"
 (
     unset MISE_SHELL __MISE_DIFF
     mise activate nu --no-hook-env
-    printf '\nmise_hook\n'
+    echo mise_hook
 ) > "$HOME/.config/nushell/env.nu"
 
 {
     starship init nu
-    printf '\n'
     fnox activate nu
-    printf '\n'
     wt config shell init nu
 } > "$HOME/.config/nushell/config.nu"
