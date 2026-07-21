@@ -17,3 +17,5 @@ jobs:
     - uses: actions/checkout@v7
     - name: Run install script
       run: ./install.sh
+    - name: Re-run bootstrap without GitHub user
+      run: env -u GITHUB_USER /usr/local/bin/mise run bootstrap
