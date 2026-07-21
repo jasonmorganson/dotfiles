@@ -169,6 +169,7 @@ LEDGER_FILE = "{{ env.XDG_DATA_HOME }}/hledger/journal"
 LEIN_HOME = "{{ env.XDG_DATA_HOME }}/lein"
 LESSHISTFILE = "{{ env.XDG_CACHE_HOME }}/less/history"
 LESSKEY = "{{ env.XDG_CONFIG_HOME }}/less/lesskey"
+LS_COLORS = { value = "{{ exec(command='vivid --color-mode 8-bit generate one-dark', cache_key='ls-colors-' ~ tools.vivid.version ~ '-one-dark-8bit', cache_duration='52w') }}", tools = true }
 MATHEMATICA_USERBASE = "{{ env.XDG_CONFIG_HOME }}/mathematica"
 MAXIMA_USERDIR = "{{ env.XDG_CONFIG_HOME }}/maxima"
 MEDNAFEN_HOME = "{{ env.XDG_CONFIG_HOME }}/mednafen"
