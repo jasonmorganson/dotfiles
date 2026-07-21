@@ -13,6 +13,22 @@ curl -fsSL https://gist.github.com/jasonmorganson/8a6fae35533bba8594a3e05e0bbe2f
 
 [Source](https://gist.github.com/jasonmorganson/8a6fae35533bba8594a3e05e0bbe2f4d)
 
+### Setup script
+
+```sh
+#!/bin/sh
+set -eu
+
+repo="$HOME/.local/share/dotfiles"
+export GITHUB_USER="${1:-${GITHUB_USER:?usage: setup.sh GITHUB_USERNAME}}"
+
+rm -rf "$repo"
+mkdir -p "${repo%/*}"
+git clone https://github.com/jasonmorganson/dotfiles.git "$repo"
+"$repo/install.sh"
+/usr/local/bin/mise set --file "$HOME/.config/mise/config.local.toml" "GITHUB_USER=$GITHUB_USER"
+```
+
 ## Usage
 
 Pull the latest dotfiles and reapply the machine configuration:
