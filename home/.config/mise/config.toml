@@ -104,7 +104,6 @@ done
 "~/.config/ssh/github" = { mode = "copy" }
 "~/.config/ssh/mac" = { mode = "copy" }
 "~/.config/ssh/term" = { mode = "copy" }
-"~/.config/starship.toml" = { mode = "template" }
 "~/.docker" = { source = "~/.config/docker", mode = "symlink" }
 "~/.hushlogin" = { mode = "copy" }
 "~/.local/libexec/mise/rc" = { mode = "copy" }
