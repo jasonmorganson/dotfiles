@@ -96,8 +96,7 @@ done
 "~/.config/git/sequence" = { mode = "copy" }
 "~/.config/git/tag" = { mode = "copy" }
 "~/.config/npm/npmrc" = { mode = "copy" }
-"~/.config/nushell/config.nu" = { mode = "template" }
-"~/.config/nushell/env.nu" = { mode = "template" }
+"~/.config/nushell/autoload/preferences.nu" = { mode = "copy" }
 "~/.config/pitchfork/config.toml" = { mode = "copy" }
 "~/.config/python/pythonrc" = { mode = "copy" }
 "~/.config/readline/inputrc" = { mode = "copy" }
