@@ -10,13 +10,3 @@ fish = true
 
 [bootstrap.hooks.pre-dotfiles]
 run = "mkdir -p ~/.local/state/bash/sessions ~/.local/state/python ~/.config/bash ~/.config/zsh ~/.config/fish/conf.d ~/.config/nushell ~/.config/claude ~/.config/codex ~/.config/docker"
-
-[bootstrap.hooks.final]
-run = '''
-[ "$(uname -s)" = Darwin ] || exit 0
-
-mise env --dotenv |
-while IFS='=' read -r name value; do
-    [ -n "$name" ] && launchctl setenv "$name" "$value"
-done
-'''
