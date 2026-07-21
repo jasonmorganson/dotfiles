@@ -8,7 +8,7 @@ Bootstrap a new machine without GitHub authentication, providing the GitHub
 username whose public profile and SSH keys should be used:
 
 ```sh
-curl -fsSL https://git.io/JJif9 | GITHUB_USER=your-github-user sh
+curl -fsSL https://gist.github.com/jasonmorganson/8a6fae35533bba8594a3e05e0bbe2f4d/raw/setup.sh | GITHUB_USER=your-github-user sh
 ```
 
 [Source](https://gist.github.com/jasonmorganson/8a6fae35533bba8594a3e05e0bbe2f4d)
