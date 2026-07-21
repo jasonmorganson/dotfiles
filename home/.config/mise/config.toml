@@ -40,7 +40,7 @@ bash = true
 fish = true
 
 [bootstrap.hooks.pre-dotfiles]
-run = "mkdir -p ~/.local/state/bash/sessions ~/.config/bash ~/.config/zsh ~/.config/fish/conf.d ~/.config/nushell ~/.config/claude ~/.config/codex ~/.config/docker"
+run = "mkdir -p ~/.local/state/bash/sessions ~/.local/state/python ~/.config/bash ~/.config/zsh ~/.config/fish/conf.d ~/.config/nushell ~/.config/claude ~/.config/codex ~/.config/docker"
 
 [bootstrap.hooks.final]
 run = '''
@@ -93,7 +93,6 @@ done
 "~/.config/git/tag" = { mode = "copy" }
 "~/.config/nushell/autoload/preferences.nu" = { mode = "copy" }
 "~/.config/pitchfork/config.toml" = { mode = "copy" }
-"~/.config/python/pythonrc" = { mode = "copy" }
 "~/.config/readline/inputrc" = { mode = "copy" }
 "~/.config/ssh/github" = { mode = "copy" }
 "~/.config/ssh/mac" = { mode = "copy" }
@@ -229,12 +228,15 @@ PASSWORD_STORE_DIR = "{{ env.XDG_DATA_HOME }}/pass"
 PEX_ROOT = "{{ env.XDG_CACHE_HOME }}/pex"
 PGPASSFILE = "{{ env.XDG_CONFIG_HOME }}/pg/pgpass"
 PGSERVICEFILE = "{{ env.XDG_CONFIG_HOME }}/pg/pg_service.conf"
+PIP_CACHE_DIR = "{{ env.XDG_CACHE_HOME }}/pip"
 PSQLRC = "{{ env.XDG_CONFIG_HOME }}/pg/psqlrc"
 PSQL_HISTORY = "{{ env.XDG_CACHE_HOME }}/psql_history"
 PULUMI_HOME = "{{ env.XDG_DATA_HOME }}/pulumi"
 PYLINTHOME = "{{ env.XDG_CACHE_HOME }}/pylint"
 PYTHON_EGG_CACHE = "{{ env.XDG_CACHE_HOME }}/python-eggs"
-PYTHONSTARTUP = "{{ env.XDG_CONFIG_HOME }}/python/pythonrc"
+PYTHON_HISTORY = "{{ env.XDG_STATE_HOME }}/python/history"
+PYTHONPYCACHEPREFIX = "{{ env.XDG_CACHE_HOME }}/python/pycache"
+PYTHONUSERBASE = "{{ env.XDG_DATA_HOME }}/python"
 REDISCLI_HISTFILE = "{{ env.XDG_DATA_HOME }}/redis/rediscli_history"
 REDISCLI_RCFILE = "{{ env.XDG_CONFIG_HOME }}/redis/redisclirc"
 RENDER_CLI_CONFIG_PATH = "{{ env.XDG_CONFIG_HOME }}/render/cli.yaml"
