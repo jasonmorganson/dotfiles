@@ -1,12 +1,6 @@
 #!/bin/sh
 set -eu
 
-mkdir -p \
-    "$HOME/.config/bash" \
-    "$HOME/.config/zsh" \
-    "$HOME/.config/fish/conf.d" \
-    "$HOME/.config/nushell"
-
 render_shell() {
     shell=$1
     fnox activate "$shell"
