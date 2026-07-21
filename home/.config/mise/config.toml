@@ -101,11 +101,14 @@ done
 "~/.config/ssh/github" = { mode = "copy" }
 "~/.config/ssh/mac" = { mode = "copy" }
 "~/.config/ssh/term" = { mode = "copy" }
-"~/.config/zsh/rc" = { mode = "copy" }
+"~/.config/zsh/preferences.zsh" = { mode = "copy" }
 "~/.docker" = { source = "~/.config/docker", mode = "symlink" }
 "~/.hushlogin" = { mode = "copy" }
 "~/.ssh/config" = { mode = "copy" }
-"~/.zshrc/local" = { block = '[[ -f "$HOME/.config/zsh/rc" ]] && . "$HOME/.config/zsh/rc"' }
+"~/.zshrc/local" = { block = '''
+[[ -f "$HOME/.config/zsh/rc" ]] && . "$HOME/.config/zsh/rc"
+[[ -f "$HOME/.config/zsh/preferences.zsh" ]] && . "$HOME/.config/zsh/preferences.zsh"
+''' }
 "~/Library/Application Support/nushell" = { source = "~/.config/nushell", mode = "symlink" }
 
 [tasks.bootstrap]
