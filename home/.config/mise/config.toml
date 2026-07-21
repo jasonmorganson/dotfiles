@@ -43,9 +43,6 @@ fish = true
 [bootstrap.hooks.pre-dotfiles]
 run = "mkdir -p ~/.local/state/bash/sessions ~/.config/bash ~/.config/zsh ~/.config/fish/conf.d ~/.config/nushell ~/.config/claude ~/.config/codex ~/.config/docker"
 
-[bootstrap.hooks.post-tools]
-run = "mise exec -- ~/.local/libexec/mise/rc"
-
 [bootstrap.hooks.final]
 run = '''
 [ "$(uname -s)" = Darwin ] || exit 0
@@ -105,7 +102,6 @@ done
 "~/.config/ssh/term" = { mode = "copy" }
 "~/.docker" = { source = "~/.config/docker", mode = "symlink" }
 "~/.hushlogin" = { mode = "copy" }
-"~/.local/libexec/mise/rc" = { mode = "copy" }
 "~/.ssh/config" = { mode = "copy" }
 "~/.zshrc/local" = { block = '[[ -f "$HOME/.config/zsh/rc" ]] && . "$HOME/.config/zsh/rc"' }
 "~/Library/Application Support/nushell" = { source = "~/.config/nushell", mode = "symlink" }
@@ -113,6 +109,32 @@ done
 [tasks.bootstrap]
 description = "Generate dynamic dotfiles and prepare local checkouts after mise tools are installed."
 run = '''
+set -u
+
+render_shell() {
+    shell=$1
+    fnox activate "$shell"
+    pitchfork activate "$shell"
+    wt config shell init "$shell"
+    starship init "$shell" --print-full-init
+}
+
+render_shell bash > "$HOME/.config/bash/rc"
+render_shell zsh > "$HOME/.config/zsh/rc"
+render_shell fish > "$HOME/.config/fish/conf.d/local.fish"
+
+(
+    unset MISE_SHELL __MISE_DIFF
+    mise activate nu --no-hook-env
+    echo mise_hook
+) > "$HOME/.config/nushell/env.nu"
+
+{
+    starship init nu
+    fnox activate nu
+    wt config shell init nu
+} > "$HOME/.config/nushell/config.nu"
+
 GITHUB_USER="${GITHUB_USER:-$(gh api user --jq .login)}"
 gh api "users/${GITHUB_USER}" --template '{% raw %}{{printf "[user]\n    name = %q\n    email = %q\n    signingkey = ~/.ssh/id_ed25519.pub\n" .name (printf "%v+%s@users.noreply.github.com" .id .login)}}{% endraw %}' > ~/.config/git/user
 gh api "users/${GITHUB_USER}/keys" --jq '.[].key' | tee ~/.ssh/authorized_keys | sed "s/^/${GITHUB_USER} /" > ~/.ssh/allowed_signers
