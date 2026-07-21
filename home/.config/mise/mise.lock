@@ -452,6 +452,30 @@ checksum = "sha256:5201aae6aacae94f8e81d5d73a7b46150a0d46577a10eef784c500e772416
 url = "https://github.com/max-sixty/worktrunk/releases/download/v0.68.0/worktrunk-x86_64-pc-windows-msvc.zip"
 url_api = "https://api.github.com/repos/max-sixty/worktrunk/releases/assets/478537409"
 
+[[tools."github:openai/symphony"]]
+version = "0.0.1"
+backend = "github:openai/symphony"
+
+[tools."github:openai/symphony"."platforms.linux-arm64"]
+checksum = "sha256:ce293ae26a90eb58c03b495f09ce2bee5f80a8546e597fa758b6294dd3e61249"
+url = "https://github.com/openai/symphony/releases/download/v0.0.1/symphony-v0.0.1-linux_arm64"
+url_api = "https://api.github.com/repos/openai/symphony/releases/assets/480957585"
+
+[tools."github:openai/symphony"."platforms.linux-x64"]
+checksum = "sha256:3ee54d44948f1c8a283d0bf377d8d729c01a9ce1da61e002cf593946daba688c"
+url = "https://github.com/openai/symphony/releases/download/v0.0.1/symphony-v0.0.1-linux_x86_64"
+url_api = "https://api.github.com/repos/openai/symphony/releases/assets/480957582"
+
+[tools."github:openai/symphony"."platforms.macos-arm64"]
+checksum = "sha256:e75cb8badada6dd8ed1f65fba808773ddbd8461d357b2fd2943f96df35d92eb9"
+url = "https://github.com/openai/symphony/releases/download/v0.0.1/symphony-v0.0.1-macos_arm64"
+url_api = "https://api.github.com/repos/openai/symphony/releases/assets/480957575"
+
+[tools."github:openai/symphony"."platforms.macos-x64"]
+checksum = "sha256:e854b806582ae3059f97a9bae7ae91c8f63f3e9e4f44e9623ef449f565b70ac5"
+url = "https://github.com/openai/symphony/releases/download/v0.0.1/symphony-v0.0.1-macos_x86_64"
+url_api = "https://api.github.com/repos/openai/symphony/releases/assets/480957608"
+
 [[tools.gitui]]
 version = "0.28.1"
 backend = "asdf:gitui"
