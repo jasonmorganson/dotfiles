@@ -3,4 +3,3 @@
     colorMoved = default
     colorMovedWS = allow-indentation-change
     mnemonicPrefix = true
-    renames = true

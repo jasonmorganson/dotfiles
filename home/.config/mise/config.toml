@@ -1,7 +1,5 @@
 [settings]
-lockfile = true
 locked = true
-dotfiles.root = "~/.local/share/dotfiles/home"
 
 [tools]
 gh = "latest"
@@ -258,7 +256,6 @@ XCOMPOSECACHE = "{{ env.XDG_CACHE_HOME }}/11/xcompose"
 XCOMPOSEFILE = "{{ env.XDG_CONFIG_HOME }}/X11/xcompose"
 __GL_SHADER_DISK_CACHE_PATH = "{{ env.XDG_CACHE_HOME }}/nv"
 _Z_DATA = "{{ env.XDG_CACHE_HOME }}/z"
-npm_config_cache = "{{ env.XDG_CACHE_HOME }}/npm"
 _.path = [
     "~/.orbstack/bin",
     "/Applications/Postgres.app/Contents/Versions/18/bin",
