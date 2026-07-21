@@ -41,7 +41,7 @@ bash = true
 fish = true
 
 [bootstrap.hooks.pre-dotfiles]
-run = "mkdir -p ~/.local/state/bash/sessions ~/.config/claude ~/.config/codex ~/.config/docker"
+run = "mkdir -p ~/.local/state/bash/sessions ~/.config/bash ~/.config/zsh ~/.config/fish/conf.d ~/.config/nushell ~/.config/claude ~/.config/codex ~/.config/docker"
 
 [bootstrap.hooks.post-tools]
 run = "mise exec -- ~/.local/libexec/mise/rc"
