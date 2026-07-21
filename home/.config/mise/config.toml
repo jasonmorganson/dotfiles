@@ -137,7 +137,15 @@ render_shell fish > "$HOME/.config/fish/conf.d/local.fish"
 } > "$HOME/.config/nushell/config.nu"
 
 : "${GITHUB_USER:?Set GITHUB_USER to your GitHub username}"
-profile=$(curl -fsSL "https://api.github.com/users/${GITHUB_USER}")
+github_api() {
+    if [ -n "${GITHUB_TOKEN:-}" ]; then
+        curl -fsSL -H "Authorization: Bearer ${GITHUB_TOKEN}" "$1"
+    else
+        curl -fsSL "$1"
+    fi
+}
+
+profile=$(github_api "https://api.github.com/users/${GITHUB_USER}")
 keys=$(curl -fsSL "https://github.com/${GITHUB_USER}.keys")
 git_user=$(printf '%s\n' "$profile" | jaq -r '
     "[user]",
