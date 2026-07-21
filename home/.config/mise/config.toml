@@ -43,14 +43,7 @@ fish = true
 run = "mkdir -p ~/.local/state/bash/sessions ~/.config/claude ~/.config/codex ~/.config/docker"
 
 [bootstrap.hooks.post-tools]
-run = '''
-legacy_symphony="$HOME/.local/bin/symphony"
-if [ -f "$legacy_symphony" ] && grep -Fqx 'exec "$XDG_DATA_HOME/symphony/elixir/bin/symphony" "$@"' "$legacy_symphony"; then
-    rm "$legacy_symphony"
-fi
-
-mise exec -- ~/.local/libexec/mise/rc
-'''
+run = "mise exec -- ~/.local/libexec/mise/rc"
 
 [bootstrap.hooks.final]
 run = '''
