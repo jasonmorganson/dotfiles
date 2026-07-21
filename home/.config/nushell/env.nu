@@ -56,9 +56,7 @@ def --env mise_hook [] {
     | update-env
 }
 
-
-const local_env = if ("{{ env.HOME }}/.config/nushell/local.env.nu" | path exists) { "{{ env.HOME }}/.config/nushell/local.env.nu" } else { null }
-source $local_env
+mise_hook
 
 $env.PROMPT_INDICATOR_VI_INSERT = ""
 $env.PROMPT_INDICATOR_VI_NORMAL = ""
