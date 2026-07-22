@@ -1,0 +1,4 @@
+# Adopt Git 3's safer bare-repository discovery behavior ahead of the default.
+# https://git-scm.com/docs/BreakingChanges
+[safe]
+    bareRepository = explicit
