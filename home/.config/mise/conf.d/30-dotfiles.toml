@@ -41,8 +41,10 @@
 "~/.config/git/push" = { mode = "copy" }
 "~/.config/git/rebase" = { mode = "copy" }
 "~/.config/git/rerere" = { mode = "copy" }
+"~/.config/git/safe" = { mode = "copy" }
 "~/.config/git/sequence" = { mode = "copy" }
 "~/.config/git/tag" = { mode = "copy" }
+"~/.config/git/transfer" = { mode = "copy" }
 "~/.config/nushell/autoload/preferences.nu" = { mode = "copy" }
 "~/.config/pitchfork/config.toml" = { mode = "copy" }
 "~/.config/readline/inputrc" = { mode = "copy" }

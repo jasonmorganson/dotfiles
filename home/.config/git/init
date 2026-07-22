@@ -1,2 +1,5 @@
+# Git 3 compatibility pins: https://git-scm.com/docs/BreakingChanges
 [init]
     defaultBranch = main
+    defaultObjectFormat = sha1
+    defaultRefFormat = files

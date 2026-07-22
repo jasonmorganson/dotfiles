@@ -20,8 +20,10 @@
     path = push
     path = rebase
     path = rerere
+    path = safe
     path = sequence
     path = tag
+    path = transfer
 
 [includeIf "gitdir:~/"]
     path = gpg
