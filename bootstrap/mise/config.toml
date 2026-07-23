@@ -1,4 +1,4 @@
 min_version = "2026.7.7"
 
 [bootstrap.repos]
-"~/.local/share/etc" = { url = "https://github.com/jasonmorganson/etc.git", ref = "6a23c895df0a824d1217603e34bb25769037f591" }
+"~/.local/share/etc" = { url = "https://github.com/jasonmorganson/etc.git", ref = "5759223ae54351a2ba61adce1df28ca49caa7661" }
