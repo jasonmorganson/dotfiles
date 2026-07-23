@@ -9,7 +9,7 @@
 "~/.config/mise/conf.d/30-dotfiles.toml" = { mode = "symlink" }
 "~/.config/mise/conf.d/40-env.toml" = { mode = "symlink" }
 "~/.config/mise/conf.d/50-aliases.toml" = { mode = "symlink" }
-"~/.config/mise/mise.lock" = { source = "~/.local/share/dotfiles/home/.config/mise/mise.lock", mode = "symlink" }
+"~/.config/mise/mise.lock" = { mode = "symlink" }
 "~/.config/mise/tasks/bootstrap" = { mode = "symlink" }
 "~/.bash_profile/local" = { block = '[[ -f "$HOME/.bashrc" ]] && . "$HOME/.bashrc"' }
 "~/.bashrc/local" = { block = '[[ -f "$HOME/.config/bash/rc" ]] && . "$HOME/.config/bash/rc"' }

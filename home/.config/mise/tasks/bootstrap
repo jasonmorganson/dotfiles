@@ -14,8 +14,11 @@ render_shell bash > "$HOME/.config/bash/rc"
 render_shell zsh > "$HOME/.config/zsh/rc"
 render_shell fish > "$HOME/.config/fish/conf.d/local.fish"
 
-printf '%s\n' '# mise activation is managed by ~/.config/nushell/autoload/00-mise.nu' \
-    > "$HOME/.config/nushell/env.nu"
+(
+    unset MISE_SHELL __MISE_DIFF
+    mise activate nu --no-hook-env
+    echo mise_hook
+) > "$HOME/.config/nushell/env.nu"
 
 {
     starship init nu
