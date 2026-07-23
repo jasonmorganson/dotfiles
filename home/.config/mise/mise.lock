@@ -53,6 +53,54 @@ checksum = "sha256:e06eebab74b73d6b7d51a796a353824b001bea82df077706382e100815d28
 url = "https://github.com/eza-community/eza/releases/download/v0.23.5/eza_x86_64-unknown-linux-musl.tar.gz"
 url_api = "https://api.github.com/repos/eza-community/eza/releases/assets/471228890"
 
+[[tools."aqua:fish-shell/fish-shell"]]
+version = "4.8.1"
+backend = "aqua:fish-shell/fish-shell"
+
+[tools."aqua:fish-shell/fish-shell"."platforms.linux-arm64"]
+checksum = "sha256:a03c8a445570a2a37e114cb13cebe41842cf17c4dd67a6530a57f742db04eee4"
+url = "https://github.com/fish-shell/fish-shell/releases/download/4.8.1/fish-4.8.1-linux-aarch64.tar.xz"
+url_api = "https://api.github.com/repos/fish-shell/fish-shell/releases/assets/476030387"
+
+[tools."aqua:fish-shell/fish-shell"."platforms.linux-x64"]
+checksum = "sha256:39cab35242ab77bfdbce73b473000c3b045aaf2fe0951b042199bb7fdba3df78"
+url = "https://github.com/fish-shell/fish-shell/releases/download/4.8.1/fish-4.8.1-linux-x86_64.tar.xz"
+url_api = "https://api.github.com/repos/fish-shell/fish-shell/releases/assets/476030385"
+
+[tools."aqua:fish-shell/fish-shell"."platforms.macos-arm64"]
+checksum = "sha256:b196c2f9635486320ff9179c5c5aae9b0109234513c96b0ab0683e7349a404ac"
+url = "https://github.com/fish-shell/fish-shell/releases/download/4.8.1/fish-4.8.1.pkg"
+url_api = "https://api.github.com/repos/fish-shell/fish-shell/releases/assets/476044372"
+
+[tools."aqua:fish-shell/fish-shell"."platforms.macos-x64"]
+checksum = "sha256:b196c2f9635486320ff9179c5c5aae9b0109234513c96b0ab0683e7349a404ac"
+url = "https://github.com/fish-shell/fish-shell/releases/download/4.8.1/fish-4.8.1.pkg"
+url_api = "https://api.github.com/repos/fish-shell/fish-shell/releases/assets/476044372"
+
+[[tools."aqua:nushell/nushell"]]
+version = "0.114.1"
+backend = "aqua:nushell/nushell"
+
+[tools."aqua:nushell/nushell"."platforms.linux-arm64"]
+checksum = "sha256:39944812ee619736fd50828e66c96b91747c1e189ccddac89c3ac1a02e0614f2"
+url = "https://github.com/nushell/nushell/releases/download/0.114.1/nu-0.114.1-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/nushell/nushell/releases/assets/473626043"
+
+[tools."aqua:nushell/nushell"."platforms.linux-x64"]
+checksum = "sha256:ce3a1c5a07c784098b5675224a165e73a45f0f720a8392791d7c3a5b4720255e"
+url = "https://github.com/nushell/nushell/releases/download/0.114.1/nu-0.114.1-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/nushell/nushell/releases/assets/473625296"
+
+[tools."aqua:nushell/nushell"."platforms.macos-arm64"]
+checksum = "sha256:cb0ac9b97b985cd217a952f44438a14d2df2a95504d9bd8bc01ec73e1351b179"
+url = "https://github.com/nushell/nushell/releases/download/0.114.1/nu-0.114.1-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/nushell/nushell/releases/assets/473629724"
+
+[tools."aqua:nushell/nushell"."platforms.macos-x64"]
+checksum = "sha256:4659a78545b7f6a303e661fe3bd276a765c64ccde67112d32045be5fe075f206"
+url = "https://github.com/nushell/nushell/releases/download/0.114.1/nu-0.114.1-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/nushell/nushell/releases/assets/473624186"
+
 [[tools."aqua:reemus-dev/gitnr"]]
 version = "0.3.0"
 backend = "aqua:reemus-dev/gitnr"
@@ -464,6 +512,26 @@ url_api = "https://api.github.com/repos/openai/symphony/releases/assets/48095757
 checksum = "sha256:e854b806582ae3059f97a9bae7ae91c8f63f3e9e4f44e9623ef449f565b70ac5"
 url = "https://github.com/openai/symphony/releases/download/v0.0.1/symphony-v0.0.1-macos_x86_64"
 url_api = "https://api.github.com/repos/openai/symphony/releases/assets/480957608"
+
+[[tools."github:romkatv/zsh-bin"]]
+version = "6.1.1"
+backend = "github:romkatv/zsh-bin"
+
+[tools."github:romkatv/zsh-bin"."platforms.linux-arm64"]
+url = "https://github.com/romkatv/zsh-bin/releases/download/v6.1.1/zsh-5.8-linux-aarch64.tar.gz"
+url_api = "https://api.github.com/repos/romkatv/zsh-bin/releases/assets/67969748"
+
+[tools."github:romkatv/zsh-bin"."platforms.linux-x64"]
+url = "https://github.com/romkatv/zsh-bin/releases/download/v6.1.1/zsh-5.8-linux-x86_64.tar.gz"
+url_api = "https://api.github.com/repos/romkatv/zsh-bin/releases/assets/67969730"
+
+[tools."github:romkatv/zsh-bin"."platforms.macos-arm64"]
+url = "https://github.com/romkatv/zsh-bin/releases/download/v6.1.1/zsh-5.8-darwin-arm64.tar.gz"
+url_api = "https://api.github.com/repos/romkatv/zsh-bin/releases/assets/67969741"
+
+[tools."github:romkatv/zsh-bin"."platforms.macos-x64"]
+url = "https://github.com/romkatv/zsh-bin/releases/download/v6.1.1/zsh-5.8-darwin-x86_64.tar.gz"
+url_api = "https://api.github.com/repos/romkatv/zsh-bin/releases/assets/67969743"
 
 [[tools.gitui]]
 version = "0.28.1"

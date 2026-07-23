@@ -15,7 +15,11 @@ jobs:
     runs-on: ${{ matrix.platform }}
     steps:
     - uses: actions/checkout@v7
+    - name: Create canonical checkout
+      run: |
+        mkdir -p "$HOME/.local/share"
+        cp -R "$GITHUB_WORKSPACE" "$HOME/.local/share/dotfiles"
     - name: Run install script
-      run: ./install.sh
+      run: "$HOME/.local/share/dotfiles/install.sh"
     - name: Re-run bootstrap without GitHub user
-      run: env -u GITHUB_USER /usr/local/bin/mise run bootstrap
+      run: env -u GITHUB_USER "$HOME/.local/bin/mise" run bootstrap

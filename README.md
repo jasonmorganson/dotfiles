@@ -4,6 +4,17 @@ Dotfiles, bootstrapped with [`mise`](https://mise.jdx.dev/).
 
 ## Setup
 
+From the canonical checkout, the no-argument installer fetches the pinned
+[`jasonmorganson/etc`](https://github.com/jasonmorganson/etc) core into
+`~/.local/share/etc`, applies its rootless shell and XDG configuration, then
+applies the personal layer:
+
+```sh
+repo="$HOME/.local/share/dotfiles"
+git clone https://github.com/jasonmorganson/dotfiles.git "$repo"
+"$repo/install.sh"
+```
+
 Bootstrap a new machine without GitHub authentication, providing the GitHub
 username whose public profile and SSH keys should be used:
 
@@ -26,7 +37,7 @@ rm -rf "$repo"
 mkdir -p "${repo%/*}"
 git clone https://github.com/jasonmorganson/dotfiles.git "$repo"
 "$repo/install.sh"
-/usr/local/bin/mise set --file "$HOME/.config/mise/config.local.toml" "GITHUB_USER=$GITHUB_USER"
+"$HOME/.local/bin/mise" set --file "$HOME/.config/mise/config.local.toml" "GITHUB_USER=$GITHUB_USER"
 ```
 
 ## Usage
@@ -38,7 +49,8 @@ bootstrap
 ```
 
 `install.sh` is the no-argument setup entrypoint used by Codespaces and similar
-environments. It installs `mise` to `/usr/local/bin` before bootstrapping:
+environments. It installs `mise` to `~/.local/bin`, fetches the core config,
+and then bootstraps the personal config without `sudo`:
 
 > `mise bootstrap --yes --force-dotfiles`
 
