@@ -4,7 +4,10 @@
 "~/.config/nushell/scripts/nu_scripts" = { url = "https://github.com/nushell/nu_scripts.git" }
 
 [bootstrap.mise_shell_activate]
-zsh = true
+# ZDOTDIR points at ~/.config/zsh. Keep that entrypoint dotfiles-owned so tool
+# upgrades cannot leave a generated, version-pinned Pitchfork integration
+# behind; the entrypoint still evaluates mise's generated activation.
+zsh = false
 bash = true
 fish = true
 

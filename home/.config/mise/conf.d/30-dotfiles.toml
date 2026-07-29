@@ -52,11 +52,8 @@
 "~/.config/ssh/mac" = { mode = "copy" }
 "~/.config/ssh/term" = { mode = "copy" }
 "~/.config/zsh/preferences.zsh" = { mode = "copy" }
+"~/.config/zsh/.zshrc" = { source = "~/.config/zsh/zshrc", mode = "copy" }
 "~/.docker" = { source = "~/.config/docker", mode = "symlink" }
 "~/.hushlogin" = { mode = "copy" }
 "~/.ssh/config" = { mode = "copy" }
-"~/.zshrc/local" = { block = '''
-[[ -f "$HOME/.config/zsh/rc" ]] && . "$HOME/.config/zsh/rc"
-[[ -f "$HOME/.config/zsh/preferences.zsh" ]] && . "$HOME/.config/zsh/preferences.zsh"
-''' }
 "~/Library/Application Support/nushell" = { source = "~/.config/nushell", mode = "symlink" }

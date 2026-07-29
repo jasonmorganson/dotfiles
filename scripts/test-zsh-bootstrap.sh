@@ -1,0 +1,35 @@
+#!/bin/sh
+set -eu
+
+repo_root="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+zshrc="$repo_root/home/.config/zsh/zshrc"
+dotfiles="$repo_root/home/.config/mise/conf.d/30-dotfiles.toml"
+bootstrap="$repo_root/home/.config/mise/tasks/bootstrap"
+bootstrap_config="$repo_root/home/.config/mise/conf.d/20-bootstrap.toml"
+
+grep -Fq 'eval "$(/usr/local/bin/mise activate zsh)"' "$zshrc" ||
+    { echo "zsh must activate through /usr/local/bin/mise" >&2; exit 1; }
+
+activation_line="$(grep -nF '/usr/local/bin/mise activate zsh' "$zshrc" | cut -d: -f1)"
+integration_line="$(grep -nF '$HOME/.config/zsh/rc' "$zshrc" | cut -d: -f1)"
+[ "$activation_line" -lt "$integration_line" ] ||
+    { echo "mise must activate before generated tool integrations" >&2; exit 1; }
+
+[ "$(grep -Fc '$HOME/.config/zsh/rc' "$zshrc")" -eq 1 ] ||
+    { echo "generated zsh integrations must be sourced exactly once" >&2; exit 1; }
+
+grep -Fq '"~/.config/zsh/.zshrc" = { source = "~/.config/zsh/zshrc", mode = "copy" }' "$dotfiles" ||
+    { echo "ZDOTDIR zshrc is not owned by the dotfiles manifest" >&2; exit 1; }
+
+if grep -Fq '"~/.zshrc/local"' "$dotfiles"; then
+    echo "inactive HOME zshrc integration must not be generated alongside ZDOTDIR" >&2
+    exit 1
+fi
+
+grep -Fq 'pitchfork activate "$shell"' "$bootstrap" ||
+    { echo "bootstrap must retain mise-generated Pitchfork integration" >&2; exit 1; }
+
+grep -Fq 'zsh = false' "$bootstrap_config" ||
+    { echo "mise bootstrap must not also rewrite the dotfiles-owned ZDOTDIR entrypoint" >&2; exit 1; }
+
+echo "zsh bootstrap ordering fixtures passed"
