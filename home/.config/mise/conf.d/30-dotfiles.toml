@@ -52,7 +52,7 @@
 "~/.config/ssh/mac" = { mode = "copy" }
 "~/.config/ssh/term" = { mode = "copy" }
 "~/.config/zsh/preferences.zsh" = { mode = "copy" }
-"~/.config/zsh/.zshrc" = { source = "~/.config/zsh/zshrc", mode = "copy" }
+"~/.config/zsh/.zshrc" = { mode = "copy" }
 "~/.docker" = { source = "~/.config/docker", mode = "symlink" }
 "~/.hushlogin" = { mode = "copy" }
 "~/.ssh/config" = { mode = "copy" }

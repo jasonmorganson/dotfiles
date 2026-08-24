@@ -2,7 +2,7 @@
 set -eu
 
 repo_root="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
-zshrc="$repo_root/home/.config/zsh/zshrc"
+zshrc="$repo_root/home/.config/zsh/.zshrc"
 dotfiles="$repo_root/home/.config/mise/conf.d/30-dotfiles.toml"
 bootstrap="$repo_root/home/.config/mise/tasks/bootstrap"
 bootstrap_config="$repo_root/home/.config/mise/conf.d/20-bootstrap.toml"
@@ -19,7 +19,7 @@ integration_line="$(grep -nF '$HOME/.config/zsh/rc' "$zshrc" | cut -d: -f1)"
 [ "$(grep -Fc '$HOME/.config/zsh/rc' "$zshrc")" -eq 1 ] ||
     { echo "generated zsh integrations must be sourced exactly once" >&2; exit 1; }
 
-grep -Fq '"~/.config/zsh/.zshrc" = { source = "~/.config/zsh/zshrc", mode = "copy" }' "$dotfiles" ||
+grep -Fq '"~/.config/zsh/.zshrc" = { mode = "copy" }' "$dotfiles" ||
     { echo "ZDOTDIR zshrc is not owned by the dotfiles manifest" >&2; exit 1; }
 
 if grep -Fq '"~/.zshrc/local"' "$dotfiles"; then
