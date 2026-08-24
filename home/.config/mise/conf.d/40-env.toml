@@ -101,6 +101,8 @@ _.path = [
     "~/.orbstack/bin",
     "/Applications/Postgres.app/Contents/Versions/18/bin",
     "{{ env.XDG_BIN_HOME }}",
+    "{{ env.NPM_CONFIG_PREFIX }}/bin",
+    "{{ env.XDG_DATA_HOME }}/pnpm/bin",
     "{{ env.GOPATH }}/bin",
     "{{ env.CARGO_HOME }}/bin",
     "~/.linuxbrew/bin",

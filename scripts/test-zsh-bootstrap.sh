@@ -6,6 +6,7 @@ zshrc="$repo_root/home/.config/zsh/zshrc"
 dotfiles="$repo_root/home/.config/mise/conf.d/30-dotfiles.toml"
 bootstrap="$repo_root/home/.config/mise/tasks/bootstrap"
 bootstrap_config="$repo_root/home/.config/mise/conf.d/20-bootstrap.toml"
+environment_config="$repo_root/home/.config/mise/conf.d/40-env.toml"
 
 grep -Fq 'eval "$(/usr/local/bin/mise activate zsh)"' "$zshrc" ||
     { echo "zsh must activate through /usr/local/bin/mise" >&2; exit 1; }
@@ -31,5 +32,11 @@ grep -Fq 'pitchfork activate "$shell"' "$bootstrap" ||
 
 grep -Fq 'zsh = false' "$bootstrap_config" ||
     { echo "mise bootstrap must not also rewrite the dotfiles-owned ZDOTDIR entrypoint" >&2; exit 1; }
+
+grep -Fq '"{{ env.NPM_CONFIG_PREFIX }}/bin"' "$environment_config" ||
+    { echo "mise PATH must include npm's configured global bin directory" >&2; exit 1; }
+
+grep -Fq '"{{ env.XDG_DATA_HOME }}/pnpm/bin"' "$environment_config" ||
+    { echo "mise PATH must include pnpm's global bin directory" >&2; exit 1; }
 
 echo "zsh bootstrap ordering fixtures passed"
