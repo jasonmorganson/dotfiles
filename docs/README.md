@@ -7,14 +7,14 @@ Dotfiles, bootstrapped with [`mise`](https://mise.jdx.dev/).
 Bootstrap a new machine with the following script:
 
 ```sh
-curl -fsSL https://dotfiles.morganson.me |
+curl -fsSL https://install.morganson.me |
   sh
 ```
 
 Optionally use a different GitHub username and dotfiles repository:
 
 ```sh
-curl -fsSL https://dotfiles.morganson.me |
+curl -fsSL https://install.morganson.me |
   GITHUB_USER="your_github_user" sh
 ```
 

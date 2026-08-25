@@ -5,7 +5,7 @@ Dotfiles, bootstrapped and managed with [`mise`](https://mise.jdx.dev/).
 ## Install
 
 ```sh
-curl -fsSL https://dotfiles.morganson.me | sh
+curl -fsSL https://install.morganson.me | sh
 ```
 
 ## Update
@@ -14,4 +14,4 @@ curl -fsSL https://dotfiles.morganson.me | sh
 dotfiles
 ```
 
-[Read the full documentation](https://jasonmorganson.github.io/dotfiles/)
+[Read the full documentation](https://dotfiles.morganson.me/)
