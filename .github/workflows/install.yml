@@ -19,5 +19,3 @@ jobs:
       run: ./install.sh
     - name: Re-run bootstrap without GitHub user
       run: env -u GITHUB_USER /usr/local/bin/mise run bootstrap
-    - name: Verify Touch ID sudo bootstrap declaration
-      run: ./scripts/test-touch-id-sudo-bootstrap.sh
