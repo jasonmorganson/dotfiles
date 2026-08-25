@@ -29,6 +29,12 @@ fi
 
 grep -Fq 'pitchfork activate "$shell"' "$bootstrap" ||
     { echo "bootstrap must retain mise-generated Pitchfork integration" >&2; exit 1; }
+grep -Fq 'brew install git' "$bootstrap" ||
+    { echo "bootstrap must provision modern Git through Homebrew on macOS" >&2; exit 1; }
+grep -Fq 'hk install --global --mise' "$bootstrap" ||
+    { echo "bootstrap must install mise-backed global hk hooks" >&2; exit 1; }
+grep -Fq 'hk = "latest"' "$repo_root/home/.config/mise/conf.d/10-tools.toml" ||
+    { echo "mise must manage hk" >&2; exit 1; }
 
 grep -Fq 'zsh = false' "$bootstrap_config" ||
     { echo "mise bootstrap must not also rewrite the dotfiles-owned ZDOTDIR entrypoint" >&2; exit 1; }

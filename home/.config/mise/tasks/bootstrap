@@ -2,6 +2,27 @@
 #MISE description="Generate dynamic dotfiles and prepare local checkouts after mise tools are installed."
 set -eu
 
+git_is_modern() {
+    git_version=$(git version | awk '{ print $3 }')
+    git_major=${git_version%%.*}
+    git_rest=${git_version#*.}
+    git_minor=${git_rest%%.*}
+    [ "$git_major" -gt 2 ] || { [ "$git_major" -eq 2 ] && [ "$git_minor" -ge 54 ]; }
+}
+
+if ! git_is_modern; then
+    if [ "$(uname -s)" = Darwin && command -v brew >/dev/null 2>&1; then
+        brew install git
+        hash -r
+    fi
+fi
+if ! git_is_modern; then
+    echo "Git 2.54 or newer is required for hk config-based hooks" >&2
+    exit 1
+fi
+
+hk install --global --mise
+
 render_shell() {
     shell=$1
     fnox activate "$shell"

@@ -42,4 +42,9 @@ environments. It installs `mise` to `/usr/local/bin` before bootstrapping:
 
 > `mise bootstrap --yes --force-dotfiles`
 
+Bootstrap requires Git 2.54 or newer and installs mise-managed hk globally
+with config-based Git hooks. On macOS it installs a current Git through
+Homebrew when the active version is too old; repositories without `hk.pkl`
+remain unaffected.
+
 See [reference](https://mise.jdx.dev/).
