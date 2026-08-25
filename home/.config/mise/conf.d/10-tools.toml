@@ -1,5 +1,6 @@
 [tools]
 gh = "latest"
+"go:github.com/bradschwartz/docker-credential-ghcr-login" = "latest"
 "aqua:eza-community/eza" = { version = "latest", os = ["linux"] }
 "conda:eza" = { version = "latest", os = ["macos"] }
 fzf = "latest"
