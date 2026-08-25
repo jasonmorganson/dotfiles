@@ -7,6 +7,10 @@ installer="$repo_root/install.sh"
 
 grep -Fq 'cd "$(dirname "$0")"' "$installer" ||
     { echo "installer must resolve paths from its own directory" >&2; exit 1; }
+grep -Fq 'git clone "https://github.com/${GITHUB_USER:-jasonmorganson}/dotfiles.git"' "$installer" ||
+    { echo "streamed installer must support a GitHub user with a safe default" >&2; exit 1; }
+grep -Fq 'exec "$HOME/.local/share/dotfiles/install.sh"' "$installer" ||
+    { echo "streamed installer must continue from the checkout" >&2; exit 1; }
 grep -Fq 'curl -fsSL https://mise.run | sh' "$installer" ||
     { echo "installer must use the standard mise installer" >&2; exit 1; }
 grep -Fq '"$HOME/.local/bin/mise" bootstrap --yes --force-dotfiles' "$installer" ||
