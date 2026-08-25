@@ -1,8 +1,6 @@
 name: Test install script
 
-on:
-  push:
-    branches: [main]
+on: push
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
