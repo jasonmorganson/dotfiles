@@ -14,6 +14,7 @@
 "~/.bash_profile/local" = { block = '[[ -f "$HOME/.bashrc" ]] && . "$HOME/.bashrc"' }
 "~/.bashrc/local" = { block = '[[ -f "$HOME/.config/bash/rc" ]] && . "$HOME/.config/bash/rc"' }
 "~/.config/fish/conf.d/preferences.fish" = { mode = "copy" }
+"~/.config/docker/config.json" = { mode = "copy" }
 "~/.config/git/absorb" = { mode = "copy" }
 "~/.config/git/alias" = { mode = "copy" }
 "~/.config/git/branch" = { mode = "copy" }

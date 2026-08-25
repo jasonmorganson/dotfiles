@@ -1,0 +1,5 @@
+{
+  "credHelpers": {
+    "ghcr.io": "ghcr-login"
+  }
+}

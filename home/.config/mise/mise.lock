@@ -522,6 +522,10 @@ url_api = "https://api.github.com/repos/openai/symphony/releases/assets/48852347
 version = "0.28.1"
 backend = "asdf:gitui"
 
+[[tools."go:github.com/bradschwartz/docker-credential-ghcr-login"]]
+version = "0.2.0"
+backend = "go:github.com/bradschwartz/docker-credential-ghcr-login"
+
 [[tools.helix]]
 version = "25.07.1"
 backend = "aqua:helix-editor/helix"
