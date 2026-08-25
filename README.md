@@ -24,7 +24,6 @@ export GITHUB_USER="${1:-${GITHUB_USER:?usage: setup.sh GITHUB_USERNAME}}"
 mkdir -p "$HOME/.local/share"
 git clone https://github.com/jasonmorganson/dotfiles.git "$HOME/.local/share/dotfiles"
 "$HOME/.local/share/dotfiles/install.sh"
-"$HOME/.local/bin/mise" set --file "$HOME/.config/mise/config.local.toml" "GITHUB_USER=$GITHUB_USER"
 ```
 
 ## Usage
