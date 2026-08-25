@@ -15,7 +15,7 @@ Optionally use a different GitHub username and dotfiles repository:
 
 ```sh
 curl -fsSL https://dotfiles.morganson.me |
-  GITHUB_USER="your-github-user" sh
+  GITHUB_USER="your_github_user" sh
 ```
 
 The value is not stored in the mise config. Otherwise, bootstrap detects the
@@ -55,3 +55,7 @@ mise bootstrap files status
 mise bootstrap files apply --dry-run
 bootstrap
 ```
+
+### Docker Compose
+
+`docker-compose run dotfiles`
