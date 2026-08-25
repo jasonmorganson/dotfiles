@@ -4,6 +4,8 @@ on: pull_request
 
 env:
   MISE_CONFIG_DIR: ${{ github.workspace }}/home/.config/mise
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  GITHUB_USER: ${{ github.repository_owner }}
 
 jobs:
   test:

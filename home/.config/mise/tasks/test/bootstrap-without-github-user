@@ -1,0 +1,7 @@
+#!/bin/sh
+#MISE description="Verify bootstrap can re-run without a GitHub user."
+set -eu
+
+repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../../../../.." && pwd)"
+"$repo_root/install.sh"
+env -u GITHUB_USER "$HOME/.local/bin/mise" run bootstrap
