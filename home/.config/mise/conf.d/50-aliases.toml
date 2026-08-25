@@ -1,8 +1,7 @@
 [shell_alias]
 
 # dotfiles
-dotfiles = "mise bootstrap dotfiles"
-bootstrap = "mise bootstrap repos apply --yes && mise bootstrap --yes --force-dotfiles"
+dotfiles = "mise bootstrap --update --yes --force-dotfiles"
 
 # Habits
 ag = "rg"
