@@ -13,6 +13,7 @@
 "~/.config/mise/mise.lock" = { mode = "symlink" }
 "~/.config/mise/miserc.toml" = { mode = "symlink" }
 "~/.config/mise/tasks/bootstrap" = { mode = "symlink" }
+"~/.config/mise/tasks/test" = { mode = "symlink" }
 "~/.bash_profile/local" = { block = '[[ -f "$HOME/.bashrc" ]] && . "$HOME/.bashrc"' }
 "~/.bashrc/local" = { block = '[[ -f "$HOME/.config/bash/rc" ]] && . "$HOME/.config/bash/rc"' }
 "~/.config/fish/conf.d/preferences.fish" = { mode = "copy" }

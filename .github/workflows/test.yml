@@ -1,0 +1,19 @@
+name: Test pull request
+
+on: pull_request
+
+env:
+  MISE_CONFIG_DIR: ${{ github.workspace }}/home/.config/mise
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: jdx/mise-action@v4
+        with:
+          version: 2026.8.12
+          install: false
+          cache: false
+      - name: Run tests
+        run: mise run test

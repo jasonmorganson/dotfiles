@@ -1,0 +1,6 @@
+#!/bin/sh
+#MISE description="Run all dotfiles tests."
+#MISE depends=["test:*"]
+set -eu
+
+echo "all dotfiles tests passed"

@@ -1,7 +1,8 @@
 #!/bin/sh
+#MISE description="Verify zsh bootstrap ownership and ordering."
 set -eu
 
-repo_root="$(CDPATH= cd -- "$(dirname -- "$0")/.." && pwd)"
+repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../../../../.." && pwd)"
 zshrc="$repo_root/home/.config/zsh/.zshrc"
 dotfiles="$repo_root/home/.config/mise/conf.d/30-dotfiles.toml"
 bootstrap="$repo_root/home/.config/mise/tasks/bootstrap"
