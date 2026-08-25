@@ -1,0 +1,3 @@
+# Load platform-specific configuration fragments so privileged macOS resources
+# are never declared by Linux bootstrap runs.
+auto_env = true

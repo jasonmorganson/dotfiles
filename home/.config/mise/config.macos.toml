@@ -1,0 +1,5 @@
+[bootstrap.files."/etc/pam.d/sudo_local"]
+source = "files/etc/pam.d/sudo_local"
+owner = "root"
+group = "wheel"
+mode = "0444"

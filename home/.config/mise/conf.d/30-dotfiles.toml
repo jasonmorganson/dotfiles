@@ -4,12 +4,14 @@
 "~/.claude" = { source = "~/.config/claude", mode = "symlink" }
 "~/.codex" = { source = "~/.config/codex", mode = "symlink" }
 "~/.config/mise/config.toml" = { mode = "symlink" }
+"~/.config/mise/config.macos.toml" = { mode = "symlink" }
 "~/.config/mise/conf.d/10-tools.toml" = { mode = "symlink" }
 "~/.config/mise/conf.d/20-bootstrap.toml" = { mode = "symlink" }
 "~/.config/mise/conf.d/30-dotfiles.toml" = { mode = "symlink" }
 "~/.config/mise/conf.d/40-env.toml" = { mode = "symlink" }
 "~/.config/mise/conf.d/50-aliases.toml" = { mode = "symlink" }
 "~/.config/mise/mise.lock" = { mode = "symlink" }
+"~/.config/mise/miserc.toml" = { mode = "symlink" }
 "~/.config/mise/tasks/bootstrap" = { mode = "symlink" }
 "~/.bash_profile/local" = { block = '[[ -f "$HOME/.bashrc" ]] && . "$HOME/.bashrc"' }
 "~/.bashrc/local" = { block = '[[ -f "$HOME/.config/bash/rc" ]] && . "$HOME/.config/bash/rc"' }
