@@ -4,23 +4,7 @@ Dotfiles, bootstrapped with [`mise`](https://mise.jdx.dev/).
 
 ## Setup
 
-Bootstrap a new machine without GitHub authentication. You can optionally export
-the GitHub username whose public profile and SSH keys should be used:
-
-```sh
-# Optional
-export GITHUB_USER="your-github-user"
-
-curl -fsSL https://gist.github.com/jasonmorganson/8a6fae35533bba8594a3e05e0bbe2f4d/raw/setup.sh | sh
-```
-
-When available, `GITHUB_USER` is used for the current bootstrap and is not stored
-in the mise config. Otherwise, bootstrap detects the authenticated GitHub CLI
-user when possible.
-
-[Source](https://gist.github.com/jasonmorganson/8a6fae35533bba8594a3e05e0bbe2f4d)
-
-### Setup script
+Bootstrap a new machine with the following script:
 
 ```sh
 #!/bin/sh
@@ -30,6 +14,10 @@ mkdir -p "$HOME/.local/share"
 git clone https://github.com/jasonmorganson/dotfiles.git "$HOME/.local/share/dotfiles"
 "$HOME/.local/share/dotfiles/install.sh"
 ```
+
+You can optionally run `export GITHUB_USER="your-github-user"` first to use that
+GitHub profile and its SSH keys. The value is not stored in the mise config.
+Otherwise, bootstrap detects the authenticated GitHub CLI user when possible.
 
 ## Usage
 
