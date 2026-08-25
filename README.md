@@ -7,17 +7,19 @@ Dotfiles, bootstrapped with [`mise`](https://mise.jdx.dev/).
 Bootstrap a new machine with the following script:
 
 ```sh
-#!/bin/sh
-set -eu
-
-mkdir -p "$HOME/.local/share"
-git clone https://github.com/jasonmorganson/dotfiles.git "$HOME/.local/share/dotfiles"
-"$HOME/.local/share/dotfiles/install.sh"
+curl -fsSL https://raw.githubusercontent.com/jasonmorganson/dotfiles/main/install.sh |
+  sh
 ```
 
-You can optionally run `export GITHUB_USER="your-github-user"` first to use that
-GitHub profile and its SSH keys. The value is not stored in the mise config.
-Otherwise, bootstrap detects the authenticated GitHub CLI user when possible.
+Optionally use a different GitHub username and dotfiles repository:
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/jasonmorganson/dotfiles/main/install.sh |
+  GITHUB_USER="your-github-user" sh
+```
+
+The value is not stored in the mise config. Otherwise, bootstrap detects the
+authenticated GitHub CLI user when possible.
 
 ## Usage
 
@@ -27,8 +29,9 @@ Pull the latest dotfiles and reapply the machine configuration:
 bootstrap
 ```
 
-`install.sh` is the no-argument setup entrypoint used by Codespaces and similar
-environments. It installs `mise` to its standard user-local path before
+`install.sh` downloads the complete repository when streamed, or acts as the
+no-argument setup entrypoint used by Codespaces and similar environments when
+run from a checkout. It installs `mise` to its standard user-local path before
 bootstrapping:
 
 > `mise bootstrap --yes --force-dotfiles`
