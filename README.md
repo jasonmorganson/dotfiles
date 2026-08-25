@@ -49,6 +49,19 @@ remain unaffected.
 
 See [reference](https://mise.jdx.dev/).
 
+### macOS Touch ID for `sudo`
+
+The bootstrap requires mise `v2026.8.12` or newer to manage privileged system
+files. On macOS, it declaratively maintains `/etc/pam.d/sudo_local` with Touch
+ID enabled, using Apple’s update-persistent sudo override. Inspect the planned
+change before applying it:
+
+```sh
+mise bootstrap files status
+mise bootstrap files apply --dry-run
+bootstrap
+```
+
 ### Docker Compose
 
 `docker-compose run dotfiles`
