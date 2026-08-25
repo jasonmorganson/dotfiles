@@ -1,4 +1,7 @@
+min_version = "2026.8.12"
+
 [settings]
+auto_update = true
 locked = true
 dotfiles.root = "~/.local/share/dotfiles/home"
 

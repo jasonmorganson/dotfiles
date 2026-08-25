@@ -8,6 +8,8 @@ dotfiles="$repo_root/home/.config/mise/conf.d/30-dotfiles.toml"
 bootstrap="$repo_root/home/.config/mise/tasks/bootstrap"
 bootstrap_config="$repo_root/home/.config/mise/conf.d/20-bootstrap.toml"
 environment_config="$repo_root/home/.config/mise/conf.d/40-env.toml"
+aliases_config="$repo_root/home/.config/mise/conf.d/50-aliases.toml"
+mise_config="$repo_root/home/.config/mise/config.toml"
 
 grep -Fq 'eval "$(/usr/local/bin/mise activate zsh)"' "$zshrc" ||
     { echo "zsh must activate through /usr/local/bin/mise" >&2; exit 1; }
@@ -40,6 +42,12 @@ grep -Fq 'use per-repository hk install --mise' "$bootstrap" ||
     { echo "bootstrap must retain hk's supported fallback for older Git" >&2; exit 1; }
 grep -Fq 'hk = "latest"' "$repo_root/home/.config/mise/conf.d/10-tools.toml" ||
     { echo "mise must manage hk" >&2; exit 1; }
+grep -Fq 'min_version = "2026.8.12"' "$mise_config" ||
+    { echo "mise config must require the bootstrap-capable mise release" >&2; exit 1; }
+grep -Fq 'auto_update = true' "$mise_config" ||
+    { echo "mise must keep its standalone installation current" >&2; exit 1; }
+grep -Fq 'dotfiles = "mise bootstrap dotfiles"' "$aliases_config" ||
+    { echo "dotfiles alias must use the supported bootstrap command" >&2; exit 1; }
 
 grep -Fq 'zsh = false' "$bootstrap_config" ||
     { echo "mise bootstrap must not also rewrite the dotfiles-owned ZDOTDIR entrypoint" >&2; exit 1; }
