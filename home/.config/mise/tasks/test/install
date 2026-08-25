@@ -1,0 +1,20 @@
+#!/bin/sh
+#MISE description="Verify the no-argument user-local installation entrypoint."
+set -eu
+
+repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../../../../.." && pwd)"
+installer="$repo_root/install.sh"
+
+grep -Fq 'cd "$(dirname "$0")"' "$installer" ||
+    { echo "installer must resolve paths from its own directory" >&2; exit 1; }
+grep -Fq 'curl -fsSL https://mise.run | sh' "$installer" ||
+    { echo "installer must use the standard mise installer" >&2; exit 1; }
+grep -Fq '"$HOME/.local/bin/mise" bootstrap --yes --force-dotfiles' "$installer" ||
+    { echo "installer must bootstrap through the user-local mise binary" >&2; exit 1; }
+
+if grep -Eq 'sudo|MISE_INSTALL_PATH|/usr/local/bin/mise' "$installer"; then
+    echo "installer must not require a privileged or custom mise installation" >&2
+    exit 1
+fi
+
+echo "mise install entrypoint fixtures passed"

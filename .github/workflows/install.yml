@@ -18,4 +18,4 @@ jobs:
     - name: Run install script
       run: ./install.sh
     - name: Re-run bootstrap without GitHub user
-      run: env -u GITHUB_USER /usr/local/bin/mise run bootstrap
+      run: env -u GITHUB_USER "$HOME/.local/bin/mise" run bootstrap
