@@ -26,7 +26,7 @@ authenticated GitHub CLI user when possible.
 Pull the latest dotfiles and reapply the machine configuration:
 
 ```sh
-bootstrap
+dotfiles
 ```
 
 `install.sh` downloads the complete repository when streamed, or acts as the
@@ -53,7 +53,7 @@ change before applying it:
 ```sh
 mise bootstrap files status
 mise bootstrap files apply --dry-run
-bootstrap
+dotfiles
 ```
 
 ### Docker Compose

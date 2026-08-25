@@ -46,8 +46,12 @@ grep -Fq 'min_version = "2026.8.12"' "$mise_config" ||
     { echo "mise config must require the bootstrap-capable mise release" >&2; exit 1; }
 grep -Fq 'auto_update = true' "$mise_config" ||
     { echo "mise must keep its standalone installation current" >&2; exit 1; }
-grep -Fq 'dotfiles = "mise bootstrap dotfiles"' "$aliases_config" ||
-    { echo "dotfiles alias must use the supported bootstrap command" >&2; exit 1; }
+grep -Fq 'dotfiles = "mise bootstrap --update --yes --force-dotfiles"' "$aliases_config" ||
+    { echo "dotfiles alias must update repositories and reapply the machine configuration" >&2; exit 1; }
+if grep -Eq '^bootstrap[[:space:]]*=' "$aliases_config"; then
+    echo "bootstrap compatibility alias must be removed" >&2
+    exit 1
+fi
 
 grep -Fq 'zsh = false' "$bootstrap_config" ||
     { echo "mise bootstrap must not also rewrite the dotfiles-owned ZDOTDIR entrypoint" >&2; exit 1; }

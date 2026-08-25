@@ -11,7 +11,7 @@ curl -fsSL https://dotfiles.morganson.me | sh
 ## Update
 
 ```sh
-bootstrap
+dotfiles
 ```
 
 [Read the full documentation](https://jasonmorganson.github.io/dotfiles/)
