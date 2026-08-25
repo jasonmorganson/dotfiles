@@ -11,10 +11,10 @@ environment_config="$repo_root/home/.config/mise/conf.d/40-env.toml"
 aliases_config="$repo_root/home/.config/mise/conf.d/50-aliases.toml"
 mise_config="$repo_root/home/.config/mise/config.toml"
 
-grep -Fq 'eval "$(/usr/local/bin/mise activate zsh)"' "$zshrc" ||
-    { echo "zsh must activate through /usr/local/bin/mise" >&2; exit 1; }
+grep -Fq 'eval "$("$HOME/.local/bin/mise" activate zsh)"' "$zshrc" ||
+    { echo "zsh must activate through the standard user-local mise path" >&2; exit 1; }
 
-activation_line="$(grep -nF '/usr/local/bin/mise activate zsh' "$zshrc" | cut -d: -f1)"
+activation_line="$(grep -nF '$HOME/.local/bin/mise" activate zsh' "$zshrc" | cut -d: -f1)"
 integration_line="$(grep -nF '$HOME/.config/zsh/rc' "$zshrc" | cut -d: -f1)"
 [ "$activation_line" -lt "$integration_line" ] ||
     { echo "mise must activate before generated tool integrations" >&2; exit 1; }
