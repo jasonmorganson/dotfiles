@@ -11,17 +11,16 @@ git_is_modern() {
 }
 
 if ! git_is_modern; then
-    if [ "$(uname -s)" = Darwin && command -v brew >/dev/null 2>&1; then
+    if [ "$(uname -s)" = Darwin ] && command -v brew >/dev/null 2>&1; then
         brew install git
         hash -r
     fi
 fi
-if ! git_is_modern; then
-    echo "Git 2.54 or newer is required for hk config-based hooks" >&2
-    exit 1
+if git_is_modern; then
+    hk install --global --mise
+else
+    echo "Git 2.54 or newer is required for global hk hooks; use per-repository hk install --mise" >&2
 fi
-
-hk install --global --mise
 
 render_shell() {
     shell=$1
