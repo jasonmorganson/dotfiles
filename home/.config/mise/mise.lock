@@ -445,6 +445,45 @@ asset_pattern = "git-interactive-rebase-tool-*-macos-*_intel"
 url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-macos-12_intel"
 url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278550"
 
+[[tools."github:bradschwartz/docker-credential-ghcr-login"]]
+version = "0.2.0"
+backend = "github:bradschwartz/docker-credential-ghcr-login"
+
+[tools."github:bradschwartz/docker-credential-ghcr-login"."platforms.linux-arm64"]
+checksum = "sha256:e866d63d3335cdc67b7e0ed16e2dfe84500826b13677bbd9fc42009a2c23a1d9"
+url = "https://github.com/bradschwartz/docker-credential-ghcr-login/releases/download/v0.2.0/docker-credential-ghcr-login_0.2.0_linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/bradschwartz/docker-credential-ghcr-login/releases/assets/526408376"
+
+[tools."github:bradschwartz/docker-credential-ghcr-login"."platforms.linux-arm64-musl"]
+checksum = "sha256:e866d63d3335cdc67b7e0ed16e2dfe84500826b13677bbd9fc42009a2c23a1d9"
+url = "https://github.com/bradschwartz/docker-credential-ghcr-login/releases/download/v0.2.0/docker-credential-ghcr-login_0.2.0_linux_arm64.tar.gz"
+url_api = "https://api.github.com/repos/bradschwartz/docker-credential-ghcr-login/releases/assets/526408376"
+
+[tools."github:bradschwartz/docker-credential-ghcr-login"."platforms.linux-x64"]
+checksum = "sha256:01e7657acced71105fe22ce4394f323d2dca3a915c881d8711b67e555c57e070"
+url = "https://github.com/bradschwartz/docker-credential-ghcr-login/releases/download/v0.2.0/docker-credential-ghcr-login_0.2.0_linux_amd64.tar.gz"
+url_api = "https://api.github.com/repos/bradschwartz/docker-credential-ghcr-login/releases/assets/526408374"
+
+[tools."github:bradschwartz/docker-credential-ghcr-login"."platforms.linux-x64-musl"]
+checksum = "sha256:01e7657acced71105fe22ce4394f323d2dca3a915c881d8711b67e555c57e070"
+url = "https://github.com/bradschwartz/docker-credential-ghcr-login/releases/download/v0.2.0/docker-credential-ghcr-login_0.2.0_linux_amd64.tar.gz"
+url_api = "https://api.github.com/repos/bradschwartz/docker-credential-ghcr-login/releases/assets/526408374"
+
+[tools."github:bradschwartz/docker-credential-ghcr-login"."platforms.macos-arm64"]
+checksum = "sha256:85cc8dcbda7a78901bf112504e87da3bc6959e6fd3db6d35328b8a6ce66e6444"
+url = "https://github.com/bradschwartz/docker-credential-ghcr-login/releases/download/v0.2.0/docker-credential-ghcr-login_0.2.0_darwin_arm64.tar.gz"
+url_api = "https://api.github.com/repos/bradschwartz/docker-credential-ghcr-login/releases/assets/526408373"
+
+[tools."github:bradschwartz/docker-credential-ghcr-login"."platforms.macos-x64"]
+checksum = "sha256:ef7249db7f28c17d1f81234ff23f3345a491f2790caa682053b1b8ab45cdf6af"
+url = "https://github.com/bradschwartz/docker-credential-ghcr-login/releases/download/v0.2.0/docker-credential-ghcr-login_0.2.0_darwin_amd64.tar.gz"
+url_api = "https://api.github.com/repos/bradschwartz/docker-credential-ghcr-login/releases/assets/526408372"
+
+[tools."github:bradschwartz/docker-credential-ghcr-login"."platforms.windows-x64"]
+checksum = "sha256:3aaec3129874557cfbd3f4097338c29ea86f64980564400ad9a8c31d4dea2285"
+url = "https://github.com/bradschwartz/docker-credential-ghcr-login/releases/download/v0.2.0/docker-credential-ghcr-login_0.2.0_windows_amd64.zip"
+url_api = "https://api.github.com/repos/bradschwartz/docker-credential-ghcr-login/releases/assets/526408380"
+
 [[tools."github:max-sixty/worktrunk"]]
 version = "0.71.0"
 backend = "github:max-sixty/worktrunk"
@@ -521,10 +560,6 @@ url_api = "https://api.github.com/repos/openai/symphony/releases/assets/48852347
 [[tools.gitui]]
 version = "0.28.1"
 backend = "asdf:gitui"
-
-[[tools."go:github.com/bradschwartz/docker-credential-ghcr-login"]]
-version = "0.2.0"
-backend = "go:github.com/bradschwartz/docker-credential-ghcr-login"
 
 [[tools.helix]]
 version = "25.07.1"
