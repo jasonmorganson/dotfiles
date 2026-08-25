@@ -19,13 +19,11 @@ curl -fsSL https://gist.github.com/jasonmorganson/8a6fae35533bba8594a3e05e0bbe2f
 #!/bin/sh
 set -eu
 
-repo="$HOME/.local/share/dotfiles"
 export GITHUB_USER="${1:-${GITHUB_USER:?usage: setup.sh GITHUB_USERNAME}}"
 
-rm -rf "$repo"
-mkdir -p "${repo%/*}"
-git clone https://github.com/jasonmorganson/dotfiles.git "$repo"
-"$repo/install.sh"
+mkdir -p "$HOME/.local/share"
+git clone https://github.com/jasonmorganson/dotfiles.git "$HOME/.local/share/dotfiles"
+"$HOME/.local/share/dotfiles/install.sh"
 "$HOME/.local/bin/mise" set --file "$HOME/.config/mise/config.local.toml" "GITHUB_USER=$GITHUB_USER"
 ```
 
