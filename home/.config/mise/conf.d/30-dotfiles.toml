@@ -16,6 +16,10 @@
 "~/.config/mise/tasks/test" = { mode = "symlink" }
 "~/.bash_profile/local" = { block = '[[ -f "$HOME/.bashrc" ]] && . "$HOME/.bashrc"' }
 "~/.bashrc/local" = { block = '[[ -f "$HOME/.config/bash/rc" ]] && . "$HOME/.config/bash/rc"' }
+"~/.zshrc/local" = { block = '''
+[[ -f "$HOME/.config/zsh/rc" ]] && . "$HOME/.config/zsh/rc"
+[[ -f "$HOME/.config/zsh/preferences.zsh" ]] && . "$HOME/.config/zsh/preferences.zsh"
+''' }
 "~/.config/fish/conf.d/preferences.fish" = { mode = "copy" }
 "~/.config/docker/config.json" = { mode = "copy" }
 "~/.config/git/absorb" = { mode = "copy" }
@@ -56,7 +60,6 @@
 "~/.config/ssh/mac" = { mode = "copy" }
 "~/.config/ssh/term" = { mode = "copy" }
 "~/.config/zsh/preferences.zsh" = { mode = "copy" }
-"~/.config/zsh/.zshrc" = { mode = "copy" }
 "~/.docker" = { source = "~/.config/docker", mode = "symlink" }
 "~/.hushlogin" = { mode = "copy" }
 "~/.ssh/config" = { mode = "copy" }
