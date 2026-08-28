@@ -3,7 +3,6 @@
 set -eu
 
 repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../../../../.." && pwd)"
-zshrc="$repo_root/home/.config/zsh/.zshrc"
 dotfiles="$repo_root/home/.config/mise/conf.d/30-dotfiles.toml"
 bootstrap="$repo_root/home/.config/mise/tasks/bootstrap"
 bootstrap_config="$repo_root/home/.config/mise/conf.d/20-bootstrap.toml"
@@ -11,22 +10,11 @@ environment_config="$repo_root/home/.config/mise/conf.d/40-env.toml"
 aliases_config="$repo_root/home/.config/mise/conf.d/50-aliases.toml"
 mise_config="$repo_root/home/.config/mise/config.toml"
 
-grep -Fq 'eval "$("$HOME/.local/bin/mise" activate zsh)"' "$zshrc" ||
-    { echo "zsh must activate through the standard user-local mise path" >&2; exit 1; }
+grep -Fq '"~/.zshrc/local"' "$dotfiles" ||
+    { echo "generated zsh integrations must be sourced from the standard zshrc" >&2; exit 1; }
 
-activation_line="$(grep -nF '$HOME/.local/bin/mise" activate zsh' "$zshrc" | cut -d: -f1)"
-integration_line="$(grep -nF '$HOME/.config/zsh/rc' "$zshrc" | cut -d: -f1)"
-[ "$activation_line" -lt "$integration_line" ] ||
-    { echo "mise must activate before generated tool integrations" >&2; exit 1; }
-
-[ "$(grep -Fc '$HOME/.config/zsh/rc' "$zshrc")" -eq 1 ] ||
-    { echo "generated zsh integrations must be sourced exactly once" >&2; exit 1; }
-
-grep -Fq '"~/.config/zsh/.zshrc" = { mode = "copy" }' "$dotfiles" ||
-    { echo "ZDOTDIR zshrc is not owned by the dotfiles manifest" >&2; exit 1; }
-
-if grep -Fq '"~/.zshrc/local"' "$dotfiles"; then
-    echo "inactive HOME zshrc integration must not be generated alongside ZDOTDIR" >&2
+if grep -Fq '"~/.config/zsh/.zshrc"' "$dotfiles"; then
+    echo "the legacy ZDOTDIR zshrc must not be managed" >&2
     exit 1
 fi
 
@@ -53,8 +41,13 @@ if grep -Eq '^bootstrap[[:space:]]*=' "$aliases_config"; then
     exit 1
 fi
 
-grep -Fq 'zsh = false' "$bootstrap_config" ||
-    { echo "mise bootstrap must not also rewrite the dotfiles-owned ZDOTDIR entrypoint" >&2; exit 1; }
+grep -Fq 'zsh = true' "$bootstrap_config" ||
+    { echo "mise bootstrap must own standard zsh activation" >&2; exit 1; }
+
+if grep -Fq 'node = "node --experimental-transform-types"' "$aliases_config"; then
+    echo "node must not be wrapped by a shell alias" >&2
+    exit 1
+fi
 
 grep -Fq '"{{ env.NPM_CONFIG_PREFIX }}/bin"' "$environment_config" ||
     { echo "mise PATH must include npm's configured global bin directory" >&2; exit 1; }
