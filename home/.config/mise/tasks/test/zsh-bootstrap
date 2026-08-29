@@ -44,6 +44,11 @@ fi
 grep -Fq 'zsh = true' "$bootstrap_config" ||
     { echo "mise bootstrap must own standard zsh activation" >&2; exit 1; }
 
+grep -Fq "mise env --json | jaq -r '.PATH'" "$bootstrap" ||
+    { echo "macOS GUI PATH must be derived from mise's JSON environment" >&2; exit 1; }
+grep -Fq 'launchctl setenv PATH "$mise_path"' "$bootstrap" ||
+    { echo "macOS GUI PATH must be published through launchctl" >&2; exit 1; }
+
 if grep -Fq 'node = "node --experimental-transform-types"' "$aliases_config"; then
     echo "node must not be wrapped by a shell alias" >&2
     exit 1
