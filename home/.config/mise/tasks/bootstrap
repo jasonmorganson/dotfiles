@@ -76,6 +76,24 @@ grep -q '^github.com ' ~/.ssh/known_hosts 2>/dev/null || ssh-keyscan github.com 
 grep -q '^\[ssh.github.com\]:443 ' ~/.ssh/known_hosts 2>/dev/null || ssh-keyscan -p 443 ssh.github.com >> ~/.ssh/known_hosts 2>/dev/null
 
 if [ "$(uname -s)" = Darwin ]; then
+    mise_binary="$HOME/.local/bin/mise"
+    codex_mise_bridge=/usr/local/bin/mise
+    if [ -x "$mise_binary" ]; then
+        if [ -L "$codex_mise_bridge" ]; then
+            [ "$(readlink "$codex_mise_bridge")" = "$mise_binary" ] || {
+                echo "$codex_mise_bridge must point to $mise_binary" >&2
+                exit 1
+            }
+        elif [ -e "$codex_mise_bridge" ]; then
+            echo "$codex_mise_bridge exists and is not a mise bridge" >&2
+            exit 1
+        elif [ -w /usr/local/bin ]; then
+            ln -s "$mise_binary" "$codex_mise_bridge"
+        else
+            echo "Cannot create $codex_mise_bridge; create it with elevated permissions." >&2
+        fi
+    fi
+
     mise_path=$(mise env --json | jaq -r '.PATH')
     [ -n "$mise_path" ] && [ "$mise_path" != "null" ] &&
         launchctl setenv PATH "$mise_path"
