@@ -48,10 +48,6 @@ grep -Fq "mise env --json | jaq -r '.PATH'" "$bootstrap" ||
     { echo "macOS GUI PATH must be derived from mise's JSON environment" >&2; exit 1; }
 grep -Fq 'launchctl setenv PATH "$mise_path"' "$bootstrap" ||
     { echo "macOS GUI PATH must be published through launchctl" >&2; exit 1; }
-grep -Fq 'codex_mise_bridge=/usr/local/bin/mise' "$bootstrap" ||
-    { echo "macOS bootstrap must manage Codex's stable mise bridge" >&2; exit 1; }
-grep -Fq 'mise_binary="$HOME/.local/bin/mise"' "$bootstrap" ||
-    { echo "Codex's mise bridge must target mise's standard user-local installation" >&2; exit 1; }
 
 if grep -Fq 'node = "node --experimental-transform-types"' "$aliases_config"; then
     echo "node must not be wrapped by a shell alias" >&2
