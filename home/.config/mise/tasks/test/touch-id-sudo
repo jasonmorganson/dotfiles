@@ -12,6 +12,12 @@ grep -Fxq 'auto_env = true' "$miserc" ||
 
 grep -Fq '[bootstrap.files."/etc/pam.d/sudo_local"]' "$platform_config" ||
     { echo "Touch ID sudo override must be managed by bootstrap.files" >&2; exit 1; }
+grep -Fq '[bootstrap.files."/usr/local/bin/mise"]' "$platform_config" ||
+    { echo "Codex mise bridge must be managed by bootstrap.files" >&2; exit 1; }
+grep -Fq 'exec "{{ env.HOME }}/.local/bin/mise" "$@"' "$platform_config" ||
+    { echo "Codex mise bridge must forward to mise's standard user-local installation" >&2; exit 1; }
+grep -Fq 'replace = true' "$platform_config" ||
+    { echo "Codex mise bridge must replace the legacy symlink" >&2; exit 1; }
 grep -Fxq 'auth       sufficient     pam_tid.so' "$platform_config" ||
     { echo "Touch ID sudo override must enable pam_tid" >&2; exit 1; }
 grep -Fxq 'owner = "root"' "$platform_config" ||
