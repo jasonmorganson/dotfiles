@@ -9,10 +9,10 @@
 [bootstrap.hooks.post-tools]
 run = '''
 case "$(uname -s)" in
-    Darwin) git_prefix=/opt/homebrew ;;
-    Linux) git_prefix=/home/linuxbrew/.linuxbrew ;;
+    Darwin) brew_prefix=/opt/homebrew ;;
+    Linux) brew_prefix=/home/linuxbrew/.linuxbrew ;;
 esac
-PATH="$git_prefix/bin:$PATH" mise exec -- hk install --global --mise
+PATH="$brew_prefix/bin:$PATH" mise exec -- hk install --global --mise
 '''
 
 [bootstrap.macos.dock]
