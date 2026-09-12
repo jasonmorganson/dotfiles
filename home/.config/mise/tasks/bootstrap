@@ -1,5 +1,5 @@
 #!/bin/sh
-#MISE description="Generate dynamic dotfiles and prepare local checkouts after mise tools are installed."
+#MISE description="Refresh dynamic identity, Nushell, and macOS session state after mise tools are installed."
 set -eu
 
 git_is_modern() {
@@ -21,18 +21,6 @@ if git_is_modern; then
 else
     echo "Git 2.54 or newer is required for global hk hooks; use per-repository hk install --mise" >&2
 fi
-
-render_shell() {
-    shell=$1
-    fnox activate "$shell"
-    pitchfork activate "$shell"
-    wt config shell init "$shell"
-    starship init "$shell" --print-full-init
-}
-
-render_shell bash > "$HOME/.config/bash/rc"
-render_shell zsh > "$HOME/.config/zsh/rc"
-render_shell fish > "$HOME/.config/fish/conf.d/local.fish"
 
 (
     unset MISE_SHELL __MISE_DIFF

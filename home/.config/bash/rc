@@ -1,0 +1,4 @@
+eval "$(fnox activate bash)"
+eval "$(pitchfork activate bash)"
+eval "$(wt config shell init bash)"
+eval "$(starship init bash)"

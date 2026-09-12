@@ -3,16 +3,21 @@
 "~/.local/share/mise/repos/gitalias" = { url = "https://github.com/GitAlias/gitalias.git", ref = "main" }
 "~/.config/nushell/scripts/nu_scripts" = { url = "https://github.com/nushell/nu_scripts.git" }
 
-[bootstrap.mise_shell_activate]
-zsh = true
-bash = true
-fish = true
-
 [bootstrap.macos.dock]
 autohide = true
 
 [bootstrap.macos.defaults]
 "com.apple.dock" = { autohide-delay = 1000.0 }
 
-[bootstrap.hooks.pre-dotfiles]
-run = "mkdir -p ~/.local/state/bash/sessions ~/.local/state/python ~/.config/bash ~/.config/zsh ~/.config/fish/conf.d ~/.config/nushell ~/.config/claude ~/.config/codex ~/.config/docker"
+[bootstrap.directories]
+"~/.local/state/bash/sessions" = { mode = "0755" }
+"~/.local/state/python" = { mode = "0755" }
+"~/.config/bash" = { mode = "0755" }
+"~/.config/zsh" = { mode = "0755" }
+"~/.config/fish/conf.d" = { mode = "0755" }
+"~/.config/nushell" = { mode = "0755" }
+"~/.config/claude" = { mode = "0755" }
+"~/.config/codex" = { mode = "0755" }
+"~/.config/docker" = { mode = "0755" }
+"~/.config/git" = { mode = "0755" }
+"~/.ssh" = { mode = "0700" }

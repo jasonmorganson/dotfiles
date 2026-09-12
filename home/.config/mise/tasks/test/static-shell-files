@@ -1,0 +1,84 @@
+#!/bin/sh
+#MISE description="Verify POSIX shell integrations are tracked static sources."
+set -eu
+
+repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../../../../.." && pwd)"
+dotfiles="$repo_root/home/.config/mise/conf.d/30-dotfiles.toml"
+bootstrap="$repo_root/home/.config/mise/tasks/bootstrap"
+
+for shell_file in \
+    "$repo_root/home/.config/bash/rc" \
+    "$repo_root/home/.config/zsh/rc" \
+    "$repo_root/home/.config/fish/conf.d/00-mise.fish" \
+    "$repo_root/home/.config/fish/conf.d/local.fish"; do
+    [ -s "$shell_file" ] || { echo "missing static shell source: $shell_file" >&2; exit 1; }
+done
+
+grep -Fq '"~/.config/bash/rc" = { mode = "copy" }' "$dotfiles" ||
+    { echo "bash rc must be dotfiles-managed" >&2; exit 1; }
+grep -Fq '"~/.config/zsh/rc" = { mode = "copy" }' "$dotfiles" ||
+    { echo "zsh rc must be dotfiles-managed" >&2; exit 1; }
+grep -Fq '"~/.config/fish/conf.d/00-mise.fish" = { mode = "copy" }' "$dotfiles" ||
+    { echo "fish activation must be dotfiles-managed" >&2; exit 1; }
+grep -Fq '"~/.config/fish/conf.d/local.fish" = { mode = "copy" }' "$dotfiles" ||
+    { echo "fish rc must be dotfiles-managed" >&2; exit 1; }
+
+for shell_kind in bash zsh; do
+    shell_file="$repo_root/home/.config/$shell_kind/rc"
+    [ "$(wc -l < "$shell_file" | tr -d ' ')" = 4 ] ||
+        { echo "$shell_kind rc must contain exactly four commands" >&2; exit 1; }
+    if grep -Eq '(^#|^[[:space:]]*(if|fi))' "$shell_file"; then
+        echo "$shell_kind rc must not contain comments or availability guards" >&2
+        exit 1
+    fi
+    grep -Fq "fnox activate $shell_kind" "$shell_file" || exit 1
+    grep -Fq "pitchfork activate $shell_kind" "$shell_file" || exit 1
+    grep -Fq "wt config shell init $shell_kind" "$shell_file" || exit 1
+    grep -Fq "starship init $shell_kind" "$shell_file" || exit 1
+    if grep -Fq 'mise exec --' "$shell_file"; then
+        echo "$shell_kind rc must use the activated mise tool path" >&2
+        exit 1
+    fi
+    if grep -Fq -- '--print-full-init' "$shell_file"; then
+        echo "$shell_kind rc must use Starship's normal shell initializer" >&2
+        exit 1
+    fi
+done
+
+fish_file="$repo_root/home/.config/fish/conf.d/local.fish"
+fish_activation="$repo_root/home/.config/fish/conf.d/00-mise.fish"
+[ "$(cat "$fish_activation")" = 'mise activate fish | source' ] ||
+    { echo "fish must activate mise before local integrations" >&2; exit 1; }
+[ "$(wc -l < "$fish_file" | tr -d ' ')" = 4 ] ||
+    { echo "fish rc must contain exactly four commands" >&2; exit 1; }
+if grep -Eq '(^#|^[[:space:]]*(if|end))' "$fish_file"; then
+    echo "fish rc must not contain comments or availability guards" >&2
+    exit 1
+fi
+grep -Fq 'fnox activate fish | source' "$fish_file" || exit 1
+grep -Fq 'pitchfork activate fish | source' "$fish_file" || exit 1
+grep -Fq 'wt config shell init fish | source' "$fish_file" || exit 1
+grep -Fq 'starship init fish | source' "$fish_file" || exit 1
+if grep -Fq 'mise exec --' "$fish_file"; then
+    echo "fish rc must use the activated mise tool path" >&2
+    exit 1
+fi
+
+grep -Fq '"~/.config/git" = { mode = "copy", manifest = "git", exclude = ["ignore"] }' "$dotfiles" ||
+    { echo "Git configuration must use a manifest-backed copy" >&2; exit 1; }
+grep -Fq '[bootstrap.directories]' "$repo_root/home/.config/mise/conf.d/20-bootstrap.toml" ||
+    { echo "bootstrap directories must be declarative" >&2; exit 1; }
+if grep -Fq '[bootstrap.hooks.pre-dotfiles]' "$repo_root/home/.config/mise/conf.d/20-bootstrap.toml"; then
+    echo "pre-dotfiles mkdir hook must be removed" >&2
+    exit 1
+fi
+if grep -Fq '[bootstrap.mise_shell_activate]' "$repo_root/home/.config/mise/conf.d/20-bootstrap.toml"; then
+    echo "shell activation must be explicitly ordered through dotfiles" >&2
+    exit 1
+fi
+grep -Fq '"~/.bash_profile/activate" = { line = '\''eval "$(mise activate bash --shims)"'\'', position = "prepend" }' "$dotfiles" || exit 1
+grep -Fq '"~/.bashrc/activate" = { line = '\''eval "$(mise activate bash)"'\'', position = "prepend" }' "$dotfiles" || exit 1
+grep -Fq '"~/.zprofile/activate" = { line = '\''eval "$(mise activate zsh --shims)"'\'', position = "prepend" }' "$dotfiles" || exit 1
+grep -Fq '"~/.zshrc/activate" = { line = '\''eval "$(mise activate zsh)"'\'', position = "prepend" }' "$dotfiles" || exit 1
+
+echo "static shell source fixtures passed"

@@ -1,0 +1,4 @@
+eval "$(fnox activate zsh)"
+eval "$(pitchfork activate zsh)"
+eval "$(wt config shell init zsh)"
+eval "$(starship init zsh)"
