@@ -7,7 +7,13 @@
 "brew:git" = "latest"
 
 [bootstrap.hooks.post-tools]
-run = 'mise exec -- hk install --global --mise'
+run = '''
+case "$(uname -s)" in
+    Darwin) git_prefix=/opt/homebrew ;;
+    Linux) git_prefix=/home/linuxbrew/.linuxbrew ;;
+esac
+PATH="$git_prefix/bin:$PATH" mise exec -- hk install --global --mise
+'''
 
 [bootstrap.macos.dock]
 autohide = true
