@@ -13,7 +13,7 @@ if [ -n "$GITHUB_USER" ]; then
     mise exec -- gh api "users/${GITHUB_USER}" --jq '
         "[user]",
         "    name = \((.name // .login) | @json)",
-        "    email = \(((.id | tostring) + \"+\" + .login + \"@users.noreply.github.com\") | @json)"
+        "    email = \(((.id | tostring) + "+" + .login + "@users.noreply.github.com") | @json)"
     ' > ~/.config/git/user
 
     signing_keys=$(mise exec -- gh api --paginate "users/${GITHUB_USER}/ssh_signing_keys" --jq '.[].key')
