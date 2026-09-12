@@ -667,6 +667,45 @@ checksum = "sha256:7b2f5153d11118c3ccff01859743e09842cabc42ba08f8876489c1be30d1d
 url = "https://github.com/01mf02/jaq/releases/download/v3.1.1/jaq-x86_64-pc-windows-msvc.exe"
 url_api = "https://api.github.com/repos/01mf02/jaq/releases/assets/502328777"
 
+[[tools.nu]]
+version = "0.115.1"
+backend = "aqua:nushell/nushell"
+
+[tools.nu."platforms.linux-arm64"]
+checksum = "sha256:5c4a5bca0af5b070e903a68fa014cc24e6419d0ac9cec03a2948494b2d310e08"
+url = "https://github.com/nushell/nushell/releases/download/0.115.1/nu-0.115.1-aarch64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/nushell/nushell/releases/assets/526013775"
+
+[tools.nu."platforms.linux-arm64-musl"]
+checksum = "sha256:86a869f44c2abd37f4a4c215af78c8da058812b76fa131476d28e62fc0262a91"
+url = "https://github.com/nushell/nushell/releases/download/0.115.1/nu-0.115.1-aarch64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/nushell/nushell/releases/assets/526013290"
+
+[tools.nu."platforms.linux-x64"]
+checksum = "sha256:d11d825241f6504a3617c535fa725a9dd6d009c86d7b19fb3168b47635b9d8b0"
+url = "https://github.com/nushell/nushell/releases/download/0.115.1/nu-0.115.1-x86_64-unknown-linux-gnu.tar.gz"
+url_api = "https://api.github.com/repos/nushell/nushell/releases/assets/526012815"
+
+[tools.nu."platforms.linux-x64-musl"]
+checksum = "sha256:8a9722177ddd421eba927b4baae4ae341a4d1c3434504be7b1b17d998bafdd87"
+url = "https://github.com/nushell/nushell/releases/download/0.115.1/nu-0.115.1-x86_64-unknown-linux-musl.tar.gz"
+url_api = "https://api.github.com/repos/nushell/nushell/releases/assets/526013643"
+
+[tools.nu."platforms.macos-arm64"]
+checksum = "sha256:2e6ed1eb043869ff05b5f2448a8c443e4d3a93557ba4303b21008a0523c96734"
+url = "https://github.com/nushell/nushell/releases/download/0.115.1/nu-0.115.1-aarch64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/nushell/nushell/releases/assets/526010403"
+
+[tools.nu."platforms.macos-x64"]
+checksum = "sha256:0292f4b92af29cfe5d9c4b2ec06eeb325b705d1d6c19536a8bec2b75859b3485"
+url = "https://github.com/nushell/nushell/releases/download/0.115.1/nu-0.115.1-x86_64-apple-darwin.tar.gz"
+url_api = "https://api.github.com/repos/nushell/nushell/releases/assets/526015418"
+
+[tools.nu."platforms.windows-x64"]
+checksum = "sha256:b83009cbc88021f4dc293c49320118886b78363f9a4bb14933d33c8803241f46"
+url = "https://github.com/nushell/nushell/releases/download/0.115.1/nu-0.115.1-x86_64-pc-windows-msvc.zip"
+url_api = "https://api.github.com/repos/nushell/nushell/releases/assets/526030176"
+
 [[tools.pitchfork]]
 version = "2.20.0"
 backend = "aqua:jdx/pitchfork"
