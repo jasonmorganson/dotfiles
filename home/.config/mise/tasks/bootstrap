@@ -1,5 +1,5 @@
 #!/bin/sh
-#MISE description="Refresh dynamic identity and macOS session state after mise tools are installed."
+#MISE description="Refresh dynamic GitHub identity and SSH state after mise tools are installed."
 set -eu
 
 git_is_modern() {
@@ -50,14 +50,3 @@ if [ -n "$GITHUB_USER" ]; then
 fi
 grep -q '^github.com ' ~/.ssh/known_hosts 2>/dev/null || ssh-keyscan github.com >> ~/.ssh/known_hosts 2>/dev/null
 grep -q '^\[ssh.github.com\]:443 ' ~/.ssh/known_hosts 2>/dev/null || ssh-keyscan -p 443 ssh.github.com >> ~/.ssh/known_hosts 2>/dev/null
-
-if [ "$(uname -s)" = Darwin ]; then
-    mise_path=$(mise env --json | jaq -r '.PATH')
-    [ -n "$mise_path" ] && [ "$mise_path" != "null" ] &&
-        launchctl setenv PATH "$mise_path"
-
-    mise env --dotenv |
-    while IFS='=' read -r name value; do
-        [ -n "$name" ] && launchctl setenv "$name" "$value"
-    done
-fi

@@ -15,15 +15,7 @@ git() {
     fi
 }
 hk() { :; }
-launchctl() { :; }
 gh() { :; }
-mise() {
-    case "${1:-} ${2:-}" in
-        'env --json') printf '%s\n' '{"PATH":"/fixture/bin"}' ;;
-        'env --dotenv') printf '%s\n' 'FIXTURE_ENV=value' ;;
-        *) return 1 ;;
-    esac
-}
 curl() {
     url=''
     for arg in "$@"; do url=$arg; done

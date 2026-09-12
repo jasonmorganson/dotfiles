@@ -50,10 +50,10 @@ fi
 grep -Fq '"~/.zprofile/activate" = { line = '\''eval "$(mise activate zsh --shims)"'\'', position = "prepend" }' "$dotfiles" || exit 1
 grep -Fq '"~/.zshrc/activate" = { line = '\''eval "$(mise activate zsh)"'\'', position = "prepend" }' "$dotfiles" || exit 1
 
-grep -Fq "mise env --json | jaq -r '.PATH'" "$bootstrap" ||
-    { echo "macOS GUI PATH must be derived from mise's JSON environment" >&2; exit 1; }
-grep -Fq 'launchctl setenv PATH "$mise_path"' "$bootstrap" ||
-    { echo "macOS GUI PATH must be published through launchctl" >&2; exit 1; }
+if grep -Eq 'launchctl|mise env' "$bootstrap"; then
+    echo "dynamic bootstrap must not publish mise environment to the macOS GUI session" >&2
+    exit 1
+fi
 
 if grep -Fq 'node = "node --experimental-transform-types"' "$aliases_config"; then
     echo "node must not be wrapped by a shell alias" >&2
