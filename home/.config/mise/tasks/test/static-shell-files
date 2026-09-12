@@ -109,7 +109,7 @@ if grep -Eq 'activate nu|starship init nu|fnox activate nu|wt config shell init 
     echo "bootstrap must not generate Nushell integration" >&2
     exit 1
 fi
-if grep -Eq '\b(curl|jaq|ssh-keyscan)\b' "$bootstrap"; then
+if grep -Eq '\b(curl|jaq|ssh-keyscan|authorized_keys)\b' "$bootstrap"; then
     echo "bootstrap must use gh and tracked SSH host keys" >&2
     exit 1
 fi

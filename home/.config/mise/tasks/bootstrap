@@ -1,5 +1,5 @@
 #!/bin/sh
-#MISE description="Refresh dynamic GitHub identity and public keys after mise tools are installed."
+#MISE description="Refresh dynamic GitHub identity and signing keys after mise tools are installed."
 set -eu
 
 if [ -z "${GITHUB_USER:-}" ]; then
@@ -12,7 +12,6 @@ if [ -n "$GITHUB_USER" ]; then
         "    email = \(((.id | tostring) + "+" + .login + "@users.noreply.github.com") | @json)"
     ' > ~/.config/git/user
 
-    keys=$(gh api --paginate "users/${GITHUB_USER}/keys" --jq '.[].key')
-    printf '%s' "$keys" > ~/.ssh/authorized_keys
-    printf '%s' "$keys" | sed "s/^/${GITHUB_USER} /" > ~/.ssh/allowed_signers
+    signing_keys=$(gh api --paginate "users/${GITHUB_USER}/ssh_signing_keys" --jq '.[].key')
+    printf '%s' "$signing_keys" | sed "s/^/${GITHUB_USER} /" > ~/.ssh/allowed_signers
 fi
