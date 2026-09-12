@@ -18,8 +18,10 @@ if grep -Fq '"~/.config/zsh/.zshrc"' "$dotfiles"; then
     exit 1
 fi
 
-grep -Fq 'pitchfork activate "$shell"' "$bootstrap" ||
-    { echo "bootstrap must retain mise-generated Pitchfork integration" >&2; exit 1; }
+if grep -Fq 'render_shell()' "$bootstrap" || grep -Fq '> "$HOME/.config/zsh/rc"' "$bootstrap"; then
+    echo "bootstrap must not generate POSIX shell integration files" >&2
+    exit 1
+fi
 grep -Fq 'brew install git' "$bootstrap" ||
     { echo "bootstrap must provision modern Git through Homebrew on macOS" >&2; exit 1; }
 grep -Fq 'if git_is_modern; then' "$bootstrap" ||
@@ -30,8 +32,8 @@ grep -Fq 'use per-repository hk install --mise' "$bootstrap" ||
     { echo "bootstrap must retain hk's supported fallback for older Git" >&2; exit 1; }
 grep -Fq 'hk = "latest"' "$repo_root/home/.config/mise/conf.d/10-tools.toml" ||
     { echo "mise must manage hk" >&2; exit 1; }
-grep -Fq 'min_version = "2026.8.12"' "$mise_config" ||
-    { echo "mise config must require the bootstrap-capable mise release" >&2; exit 1; }
+grep -Fq 'min_version = "2026.9.5"' "$mise_config" ||
+    { echo "mise config must require the declarative bootstrap release" >&2; exit 1; }
 grep -Fq 'auto_update = true' "$mise_config" ||
     { echo "mise must keep its standalone installation current" >&2; exit 1; }
 grep -Fq 'dotfiles = "mise bootstrap --update --yes --force-dotfiles"' "$aliases_config" ||
@@ -41,8 +43,12 @@ if grep -Eq '^bootstrap[[:space:]]*=' "$aliases_config"; then
     exit 1
 fi
 
-grep -Fq 'zsh = true' "$bootstrap_config" ||
-    { echo "mise bootstrap must own standard zsh activation" >&2; exit 1; }
+if grep -Fq '[bootstrap.mise_shell_activate]' "$bootstrap_config"; then
+    echo "zsh activation must be explicitly ordered through dotfiles" >&2
+    exit 1
+fi
+grep -Fq '"~/.zprofile/activate" = { line = '\''eval "$(mise activate zsh --shims)"'\'', position = "prepend" }' "$dotfiles" || exit 1
+grep -Fq '"~/.zshrc/activate" = { line = '\''eval "$(mise activate zsh)"'\'', position = "prepend" }' "$dotfiles" || exit 1
 
 grep -Fq "mise env --json | jaq -r '.PATH'" "$bootstrap" ||
     { echo "macOS GUI PATH must be derived from mise's JSON environment" >&2; exit 1; }
