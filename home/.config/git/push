@@ -1,5 +1,5 @@
 [push]
-    default = current
+    default = simple
     autoSetupRemote = true
     followTags = true
     useForceIfIncludes = true

@@ -81,6 +81,12 @@ if grep -Fq 'signingkey = ~/.ssh/id_ed25519.pub' "$github"; then
     echo "GitHub refresh must not generate the static SSH signing key" >&2
     exit 1
 fi
+grep -Fq 'ui = auto' "$repo_root/home/.config/git/color" ||
+    { echo "Git color must be terminal-only by default" >&2; exit 1; }
+grep -Fq 'autocorrect = prompt' "$repo_root/home/.config/git/help" ||
+    { echo "Git typo correction must require confirmation" >&2; exit 1; }
+grep -Fq 'default = simple' "$repo_root/home/.config/git/push" ||
+    { echo "Git push must use the safer simple default" >&2; exit 1; }
 grep -Fq '"~/.config/ssh/known_hosts" = { mode = "copy" }' "$dotfiles" ||
     { echo "GitHub SSH host keys must be dotfiles-managed" >&2; exit 1; }
 github_ssh="$repo_root/home/.config/ssh/github.conf"
