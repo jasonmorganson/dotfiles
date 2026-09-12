@@ -64,8 +64,8 @@ if grep -Fq 'mise exec --' "$fish_file"; then
     exit 1
 fi
 
-grep -Fq '"~/.config/git" = { mode = "copy", manifest = "git", exclude = ["ignore"] }' "$dotfiles" ||
-    { echo "Git configuration must use a manifest-backed copy" >&2; exit 1; }
+grep -Fq '"~/.config/git" = { mode = "copy", exclude = ["ignore"] }' "$dotfiles" ||
+    { echo "Git configuration must use a directory copy" >&2; exit 1; }
 grep -Fq '[bootstrap.directories]' "$repo_root/home/.config/mise/conf.d/20-bootstrap.toml" ||
     { echo "bootstrap directories must be declarative" >&2; exit 1; }
 if grep -Fq '[bootstrap.hooks.pre-dotfiles]' "$repo_root/home/.config/mise/conf.d/20-bootstrap.toml"; then

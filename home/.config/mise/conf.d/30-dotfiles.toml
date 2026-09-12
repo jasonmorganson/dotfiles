@@ -30,7 +30,7 @@
 "~/.config/fish/conf.d/local.fish" = { mode = "copy" }
 "~/.config/fish/conf.d/preferences.fish" = { mode = "copy" }
 "~/.config/docker/config.json" = { mode = "copy" }
-"~/.config/git" = { mode = "copy", manifest = "git", exclude = ["ignore"] }
+"~/.config/git" = { mode = "copy", exclude = ["ignore"] }
 "~/.config/git/gitalias" = { source = "~/.local/share/mise/repos/gitalias/gitalias.txt", mode = "copy" }
 "~/.config/git/ignore" = { mode = "template" }
 "~/.config/nushell/autoload/preferences.nu" = { mode = "copy" }

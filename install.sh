@@ -8,11 +8,6 @@ if [ ! -d home/.config/mise ]; then
     exec "$HOME/.local/share/dotfiles/install.sh"
 fi
 
-if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
-    git init -q
-    git add -A
-fi
-
 curl -fsSL https://mise.run | sh
 MISE_CONFIG_DIR="$PWD/home/.config/mise" \
 MISE_DOTFILES_ROOT="$PWD/home" \
