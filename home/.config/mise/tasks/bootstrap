@@ -1,5 +1,5 @@
 #!/bin/sh
-#MISE description="Refresh dynamic identity, Nushell, and macOS session state after mise tools are installed."
+#MISE description="Refresh dynamic identity and macOS session state after mise tools are installed."
 set -eu
 
 git_is_modern() {
@@ -21,18 +21,6 @@ if git_is_modern; then
 else
     echo "Git 2.54 or newer is required for global hk hooks; use per-repository hk install --mise" >&2
 fi
-
-(
-    unset MISE_SHELL __MISE_DIFF
-    mise activate nu --no-hook-env
-    echo mise_hook
-) > "$HOME/.config/nushell/env.nu"
-
-{
-    starship init nu
-    fnox activate nu
-    wt config shell init nu
-} > "$HOME/.config/nushell/config.nu"
 
 if [ -z "${GITHUB_USER:-}" ]; then
     GITHUB_USER=$(gh api user --jq 'select(.type == "User") | .login' 2>/dev/null) || GITHUB_USER=
