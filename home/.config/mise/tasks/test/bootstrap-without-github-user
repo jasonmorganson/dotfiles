@@ -32,10 +32,6 @@ gh() {
 }
 
 mise() {
-    if [ "$1" = where ] && [ "$2" = gh ]; then
-        [ "${MISE_GH_AVAILABLE:-}" = 1 ]
-        return
-    fi
     if [ "$1" = exec ] && [ "$2" = -- ]; then
         shift 2
         "$@"
@@ -54,14 +50,14 @@ export PATH
 
 GITHUB_USER=
 export GITHUB_USER
-MISE_GH_AVAILABLE=1 . "$github"
+. "$github"
 
 [ ! -e "$HOME/.config/git/user" ] ||
     { echo "bootstrap must not write Git identity without a GitHub user" >&2; exit 1; }
 
 GITHUB_USER=fixture-user
 export GITHUB_USER
-MISE_GH_AVAILABLE=1 . "$github"
+. "$github"
 
 grep -Fq 'name = "Fixture User"' "$HOME/.config/git/user" ||
     { echo "bootstrap must derive the Git user name" >&2; exit 1; }
@@ -75,8 +71,4 @@ grep -Fq 'fixture-user ssh-ed25519' "$HOME/.ssh/allowed_signers" ||
     { echo "bootstrap must derive allowed signers from GitHub signing keys" >&2; exit 1; }
 grep -Fq 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIExisting' "$HOME/.ssh/authorized_keys" ||
     { echo "GitHub refresh must not manage authorized keys" >&2; exit 1; }
-rm -f "$HOME/.config/git/user" "$HOME/.ssh/allowed_signers"
-( GITHUB_USER=fixture-user MISE_GH_AVAILABLE=0 . "$github" )
-[ ! -e "$HOME/.config/git/user" ] && [ ! -e "$HOME/.ssh/allowed_signers" ] ||
-    { echo "GitHub refresh must not write without installed gh" >&2; exit 1; }
 echo "GitHub refresh fixtures passed"

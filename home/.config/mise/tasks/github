@@ -2,10 +2,6 @@
 #MISE description="Refresh GitHub-derived Git identity and signing keys."
 set -eu
 
-if ! mise where gh >/dev/null 2>&1; then
-    exit 0
-fi
-
 if [ -z "${GITHUB_USER:-}" ]; then
     GITHUB_USER=$(mise exec -- gh api user --jq 'select(.type == "User") | .login' 2>/dev/null) || GITHUB_USER=
 fi
