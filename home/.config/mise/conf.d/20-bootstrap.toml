@@ -7,10 +7,7 @@
 "brew:git" = "latest"
 
 [bootstrap.hooks.post-tools]
-run = '''
-git_root="$(mise bootstrap packages where brew:git)"
-PATH="$git_root/bin:$PATH" mise exec -- hk install --global --mise
-'''
+run = 'mise exec -- hk install --global --mise'
 
 [bootstrap.macos.dock]
 autohide = true
