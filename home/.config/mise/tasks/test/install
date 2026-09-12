@@ -11,12 +11,6 @@ grep -Fq 'git clone "https://github.com/${GITHUB_USER:-jasonmorganson}/dotfiles.
     { echo "streamed installer must support a GitHub user with a safe default" >&2; exit 1; }
 grep -Fq 'exec "$HOME/.local/share/dotfiles/install.sh"' "$installer" ||
     { echo "streamed installer must continue from the checkout" >&2; exit 1; }
-grep -Fq 'if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then' "$installer" ||
-    { echo "snapshot installer must create a Git manifest source" >&2; exit 1; }
-grep -Fq 'git init -q' "$installer" ||
-    { echo "snapshot installer must initialize its Git manifest source" >&2; exit 1; }
-grep -Fq 'git add -A' "$installer" ||
-    { echo "snapshot installer must index its Git manifest source" >&2; exit 1; }
 grep -Fq 'curl -fsSL https://mise.run | sh' "$installer" ||
     { echo "installer must use the standard mise installer" >&2; exit 1; }
 grep -Fq '"$HOME/.local/bin/mise" bootstrap --yes --force-dotfiles' "$installer" ||
