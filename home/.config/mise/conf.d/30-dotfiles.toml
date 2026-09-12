@@ -38,10 +38,10 @@
 "~/.config/nushell/autoload/preferences.nu" = { mode = "copy" }
 "~/.config/pitchfork/config.toml" = { mode = "copy" }
 "~/.config/readline/inputrc" = { mode = "copy" }
-"~/.config/ssh/config/github.conf" = { mode = "copy" }
+"~/.config/ssh/config/github" = { mode = "copy" }
 "~/.config/ssh/known_hosts" = { mode = "copy" }
-"~/.config/ssh/config/mac.conf" = { mode = "copy" }
-"~/.config/ssh/config/term.conf" = { mode = "copy" }
+"~/.config/ssh/config/mac" = { mode = "copy" }
+"~/.config/ssh/config/term" = { mode = "copy" }
 "~/.config/zsh/preferences.zsh" = { mode = "copy" }
 "~/.docker" = { source = "~/.config/docker", mode = "symlink" }
 "~/.hushlogin" = { mode = "copy" }

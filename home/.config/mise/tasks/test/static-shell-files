@@ -81,9 +81,9 @@ if grep -Fq 'signingkey = ~/.ssh/id_ed25519.pub' "$bootstrap"; then
 fi
 grep -Fq '"~/.config/ssh/known_hosts" = { mode = "copy" }' "$dotfiles" ||
     { echo "GitHub SSH host keys must be dotfiles-managed" >&2; exit 1; }
-github_ssh="$repo_root/home/.config/ssh/config/github.conf"
+github_ssh="$repo_root/home/.config/ssh/config/github"
 github_known_hosts="$repo_root/home/.config/ssh/known_hosts"
-grep -Fq 'Include ~/.config/ssh/config/*.conf' "$repo_root/home/.ssh/config" ||
+grep -Fq 'Include ~/.config/ssh/config/*' "$repo_root/home/.ssh/config" ||
     { echo "SSH config must include only SSH configuration snippets" >&2; exit 1; }
 grep -Fq 'UserKnownHostsFile ~/.config/ssh/known_hosts ~/.ssh/known_hosts' "$github_ssh" ||
     { echo "GitHub SSH config must preserve user known hosts" >&2; exit 1; }
