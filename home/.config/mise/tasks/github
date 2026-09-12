@@ -1,0 +1,21 @@
+#!/bin/sh
+#MISE description="Refresh GitHub-derived Git identity and signing keys."
+set -eu
+
+if ! mise where gh >/dev/null 2>&1; then
+    exit 0
+fi
+
+if [ -z "${GITHUB_USER:-}" ]; then
+    GITHUB_USER=$(mise exec -- gh api user --jq 'select(.type == "User") | .login' 2>/dev/null) || GITHUB_USER=
+fi
+if [ -n "$GITHUB_USER" ]; then
+    mise exec -- gh api "users/${GITHUB_USER}" --jq '
+        "[user]",
+        "    name = \((.name // .login) | @json)",
+        "    email = \(((.id | tostring) + \"+\" + .login + \"@users.noreply.github.com\") | @json)"
+    ' > ~/.config/git/user
+
+    signing_keys=$(mise exec -- gh api --paginate "users/${GITHUB_USER}/ssh_signing_keys" --jq '.[].key')
+    printf '%s' "$signing_keys" | sed "s/^/${GITHUB_USER} /" > ~/.ssh/allowed_signers
+fi

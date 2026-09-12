@@ -3,7 +3,7 @@
 set -eu
 
 repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../../../../.." && pwd)"
-bootstrap="$repo_root/home/.config/mise/tasks/bootstrap"
+github="$repo_root/home/.config/mise/tasks/github"
 fixture_home="$(mktemp -d)"
 trap 'rm -rf "$fixture_home"' EXIT
 
@@ -27,6 +27,19 @@ gh() {
     esac
 }
 
+mise() {
+    if [ "$1" = where ] && [ "$2" = gh ]; then
+        [ "${MISE_GH_AVAILABLE:-}" = 1 ]
+        return
+    fi
+    if [ "$1" = exec ] && [ "$2" = -- ]; then
+        shift 2
+        "$@"
+        return
+    fi
+    return 1
+}
+
 HOME="$fixture_home"
 export HOME
 fixture_bin="$fixture_home/bin"
@@ -37,14 +50,14 @@ export PATH
 
 GITHUB_USER=
 export GITHUB_USER
-. "$bootstrap"
+MISE_GH_AVAILABLE=1 . "$github"
 
 [ ! -e "$HOME/.config/git/user" ] ||
     { echo "bootstrap must not write Git identity without a GitHub user" >&2; exit 1; }
 
 GITHUB_USER=fixture-user
 export GITHUB_USER
-. "$bootstrap"
+MISE_GH_AVAILABLE=1 . "$github"
 
 grep -Fq 'name = "Fixture User"' "$HOME/.config/git/user" ||
     { echo "bootstrap must derive the Git user name" >&2; exit 1; }
@@ -57,5 +70,9 @@ fi
 grep -Fq 'fixture-user ssh-ed25519' "$HOME/.ssh/allowed_signers" ||
     { echo "bootstrap must derive allowed signers from GitHub signing keys" >&2; exit 1; }
 grep -Fq 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIExisting' "$HOME/.ssh/authorized_keys" ||
-    { echo "bootstrap must not manage authorized keys" >&2; exit 1; }
-echo "dynamic bootstrap fixtures passed"
+    { echo "GitHub refresh must not manage authorized keys" >&2; exit 1; }
+rm -f "$HOME/.config/git/user" "$HOME/.ssh/allowed_signers"
+( GITHUB_USER=fixture-user MISE_GH_AVAILABLE=0 . "$github" )
+[ ! -e "$HOME/.config/git/user" ] && [ ! -e "$HOME/.ssh/allowed_signers" ] ||
+    { echo "GitHub refresh must not write without installed gh" >&2; exit 1; }
+echo "GitHub refresh fixtures passed"
