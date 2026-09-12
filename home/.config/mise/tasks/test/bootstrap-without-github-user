@@ -20,7 +20,7 @@ gh() {
             printf '%s\n' '[user]' '    name = "Fixture User"' \
                 '    email = "7+fixture-user@users.noreply.github.com"'
             ;;
-        users/fixture-user/keys)
+        users/fixture-user/ssh_signing_keys)
             printf '%s\n' 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFixture fixture@example'
             ;;
         *) return 1 ;;
@@ -31,6 +31,7 @@ HOME="$fixture_home"
 export HOME
 fixture_bin="$fixture_home/bin"
 mkdir -p "$fixture_bin" "$HOME/.config/git" "$HOME/.ssh"
+printf '%s\n' 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIExisting existing@example' > "$HOME/.ssh/authorized_keys"
 PATH="$fixture_bin:$PATH"
 export PATH
 
@@ -54,7 +55,7 @@ if grep -Fq 'signingkey' "$HOME/.config/git/user"; then
     exit 1
 fi
 grep -Fq 'fixture-user ssh-ed25519' "$HOME/.ssh/allowed_signers" ||
-    { echo "bootstrap must derive allowed signers from GitHub keys" >&2; exit 1; }
-grep -Fq 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFixture' "$HOME/.ssh/authorized_keys" ||
-    { echo "bootstrap must refresh authorized keys from GitHub" >&2; exit 1; }
+    { echo "bootstrap must derive allowed signers from GitHub signing keys" >&2; exit 1; }
+grep -Fq 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIExisting' "$HOME/.ssh/authorized_keys" ||
+    { echo "bootstrap must not manage authorized keys" >&2; exit 1; }
 echo "dynamic bootstrap fixtures passed"
