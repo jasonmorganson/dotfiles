@@ -2,26 +2,6 @@
 #MISE description="Refresh dynamic GitHub identity and SSH state after mise tools are installed."
 set -eu
 
-git_is_modern() {
-    git_version=$(git version | awk '{ print $3 }')
-    git_major=${git_version%%.*}
-    git_rest=${git_version#*.}
-    git_minor=${git_rest%%.*}
-    [ "$git_major" -gt 2 ] || { [ "$git_major" -eq 2 ] && [ "$git_minor" -ge 54 ]; }
-}
-
-if ! git_is_modern; then
-    if [ "$(uname -s)" = Darwin ] && command -v brew >/dev/null 2>&1; then
-        brew install git
-        hash -r
-    fi
-fi
-if git_is_modern; then
-    hk install --global --mise
-else
-    echo "Git 2.54 or newer is required for global hk hooks; use per-repository hk install --mise" >&2
-fi
-
 if [ -z "${GITHUB_USER:-}" ]; then
     GITHUB_USER=$(gh api user --jq 'select(.type == "User") | .login' 2>/dev/null) || GITHUB_USER=
 fi

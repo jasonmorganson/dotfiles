@@ -7,14 +7,6 @@ bootstrap="$repo_root/home/.config/mise/tasks/bootstrap"
 fixture_home="$(mktemp -d)"
 trap 'rm -rf "$fixture_home"' EXIT
 
-git() {
-    if [ "${1:-}" = version ]; then
-        printf '%s\n' 'git version 2.54.0'
-    else
-        command git "$@"
-    fi
-}
-hk() { :; }
 gh() { :; }
 curl() {
     url=''

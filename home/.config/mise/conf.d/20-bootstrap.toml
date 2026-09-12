@@ -3,6 +3,12 @@
 "~/.local/share/mise/repos/gitalias" = { url = "https://github.com/GitAlias/gitalias.git", ref = "main" }
 "~/.config/nushell/scripts/nu_scripts" = { url = "https://github.com/nushell/nu_scripts.git" }
 
+[bootstrap.packages]
+"brew:git" = "latest"
+
+[bootstrap.hooks.post-tools]
+run = "mise exec -- hk install --global --mise"
+
 [bootstrap.macos.dock]
 autohide = true
 
