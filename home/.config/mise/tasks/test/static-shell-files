@@ -10,7 +10,9 @@ for shell_file in \
     "$repo_root/home/.config/bash/rc" \
     "$repo_root/home/.config/zsh/rc" \
     "$repo_root/home/.config/fish/conf.d/00-mise.fish" \
-    "$repo_root/home/.config/fish/conf.d/local.fish"; do
+    "$repo_root/home/.config/fish/conf.d/local.fish" \
+    "$repo_root/home/.config/nushell/env.nu" \
+    "$repo_root/home/.config/nushell/config.nu"; do
     [ -s "$shell_file" ] || { echo "missing static shell source: $shell_file" >&2; exit 1; }
 done
 
@@ -22,6 +24,10 @@ grep -Fq '"~/.config/fish/conf.d/00-mise.fish" = { mode = "copy" }' "$dotfiles" 
     { echo "fish activation must be dotfiles-managed" >&2; exit 1; }
 grep -Fq '"~/.config/fish/conf.d/local.fish" = { mode = "copy" }' "$dotfiles" ||
     { echo "fish rc must be dotfiles-managed" >&2; exit 1; }
+grep -Fq '"~/.config/nushell/env.nu" = { mode = "copy" }' "$dotfiles" ||
+    { echo "Nushell env must be dotfiles-managed" >&2; exit 1; }
+grep -Fq '"~/.config/nushell/config.nu" = { mode = "copy" }' "$dotfiles" ||
+    { echo "Nushell config must be dotfiles-managed" >&2; exit 1; }
 
 for shell_kind in bash zsh; do
     shell_file="$repo_root/home/.config/$shell_kind/rc"
@@ -80,5 +86,9 @@ grep -Fq '"~/.bash_profile/activate" = { line = '\''eval "$(mise activate bash -
 grep -Fq '"~/.bashrc/activate" = { line = '\''eval "$(mise activate bash)"'\'', position = "prepend" }' "$dotfiles" || exit 1
 grep -Fq '"~/.zprofile/activate" = { line = '\''eval "$(mise activate zsh --shims)"'\'', position = "prepend" }' "$dotfiles" || exit 1
 grep -Fq '"~/.zshrc/activate" = { line = '\''eval "$(mise activate zsh)"'\'', position = "prepend" }' "$dotfiles" || exit 1
+if grep -Eq 'activate nu|starship init nu|fnox activate nu|wt config shell init nu|env\.nu|config\.nu' "$bootstrap"; then
+    echo "bootstrap must not generate Nushell integration" >&2
+    exit 1
+fi
 
 echo "static shell source fixtures passed"

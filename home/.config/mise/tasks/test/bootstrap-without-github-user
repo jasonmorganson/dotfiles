@@ -15,14 +15,10 @@ git() {
     fi
 }
 hk() { :; }
-fnox() { printf '%s\n' '# fixture fnox'; }
-starship() { printf '%s\n' '# fixture starship'; }
-wt() { printf '%s\n' '# fixture wt'; }
 launchctl() { :; }
 gh() { :; }
 mise() {
     case "${1:-} ${2:-}" in
-        'activate nu') printf '%s\n' '# fixture mise activation' ;;
         'env --json') printf '%s\n' '{"PATH":"/fixture/bin"}' ;;
         'env --dotenv') printf '%s\n' 'FIXTURE_ENV=value' ;;
         *) return 1 ;;
@@ -45,7 +41,7 @@ curl() {
 HOME="$fixture_home"
 export HOME
 fixture_bin="$fixture_home/bin"
-mkdir -p "$fixture_bin" "$HOME/.config/git" "$HOME/.config/nushell" "$HOME/.ssh"
+mkdir -p "$fixture_bin" "$HOME/.config/git" "$HOME/.ssh"
 ln -s /usr/bin/true "$fixture_bin/ssh-keyscan"
 PATH="$fixture_bin:$PATH"
 export PATH
@@ -56,10 +52,6 @@ export GITHUB_USER
 
 [ ! -e "$HOME/.config/git/user" ] ||
     { echo "bootstrap must not write Git identity without a GitHub user" >&2; exit 1; }
-[ -s "$HOME/.config/nushell/env.nu" ] ||
-    { echo "bootstrap must generate the Nushell environment module" >&2; exit 1; }
-[ -s "$HOME/.config/nushell/config.nu" ] ||
-    { echo "bootstrap must generate the Nushell config module" >&2; exit 1; }
 
 GITHUB_USER=fixture-user
 export GITHUB_USER
@@ -73,7 +65,4 @@ grep -Fq 'fixture-user ssh-ed25519' "$HOME/.ssh/allowed_signers" ||
     { echo "bootstrap must derive allowed signers from GitHub keys" >&2; exit 1; }
 grep -Fq 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFixture' "$HOME/.ssh/authorized_keys" ||
     { echo "bootstrap must refresh authorized keys from GitHub" >&2; exit 1; }
-grep -Fq '# fixture mise activation' "$HOME/.config/nushell/env.nu" ||
-    { echo "bootstrap must retain generated Nushell mise activation" >&2; exit 1; }
-
 echo "dynamic bootstrap fixtures passed"

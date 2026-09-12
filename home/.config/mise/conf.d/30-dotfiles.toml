@@ -33,6 +33,8 @@
 "~/.config/git" = { mode = "copy", exclude = ["ignore"] }
 "~/.config/git/gitalias" = { source = "~/.local/share/mise/repos/gitalias/gitalias.txt", mode = "copy" }
 "~/.config/git/ignore" = { mode = "template" }
+"~/.config/nushell/env.nu" = { mode = "copy" }
+"~/.config/nushell/config.nu" = { mode = "copy" }
 "~/.config/nushell/autoload/preferences.nu" = { mode = "copy" }
 "~/.config/pitchfork/config.toml" = { mode = "copy" }
 "~/.config/readline/inputrc" = { mode = "copy" }
