@@ -9,7 +9,8 @@ if [ ! -d home/.config/mise ]; then
 fi
 
 curl -fsSL https://mise.run | sh
+PATH="$HOME/.local/bin:$PATH" \
 MISE_CONFIG_DIR="$PWD/home/.config/mise" \
 MISE_DOTFILES_ROOT="$PWD/home" \
 MISE_IGNORED_CONFIG_PATHS="$HOME/.local/share/dotfiles/home/.config/mise/config.toml" \
-"$HOME/.local/bin/mise" bootstrap --yes --force-dotfiles
+mise bootstrap --yes --force-dotfiles

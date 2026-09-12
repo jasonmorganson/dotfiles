@@ -13,8 +13,10 @@ grep -Fq 'exec "$HOME/.local/share/dotfiles/install.sh"' "$installer" ||
     { echo "streamed installer must continue from the checkout" >&2; exit 1; }
 grep -Fq 'curl -fsSL https://mise.run | sh' "$installer" ||
     { echo "installer must use the standard mise installer" >&2; exit 1; }
-grep -Fq '"$HOME/.local/bin/mise" bootstrap --yes --force-dotfiles' "$installer" ||
-    { echo "installer must bootstrap through the user-local mise binary" >&2; exit 1; }
+grep -Fq 'PATH="$HOME/.local/bin:$PATH"' "$installer" ||
+    { echo "installer must put the user-local mise binary on PATH" >&2; exit 1; }
+grep -Fq 'mise bootstrap --yes --force-dotfiles' "$installer" ||
+    { echo "installer must bootstrap through mise on PATH" >&2; exit 1; }
 
 if grep -Eq 'sudo|MISE_INSTALL_PATH|/usr/local/bin/mise' "$installer"; then
     echo "installer must not require a privileged or custom mise installation" >&2
