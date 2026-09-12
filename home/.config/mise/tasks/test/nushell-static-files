@@ -1,5 +1,6 @@
 #!/bin/sh
 #MISE description="Verify tracked Nushell configuration regenerates runtime integrations."
+#MISE tools={nu="latest"}
 set -eu
 
 repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../../../../.." && pwd)"
