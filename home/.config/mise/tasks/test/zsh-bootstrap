@@ -28,8 +28,12 @@ grep -Fq 'hk install --global --mise' "$bootstrap_config" ||
     { echo "mise must install global hk hooks after tools are available" >&2; exit 1; }
 grep -Fq 'mise exec -- hk install --global --mise' "$bootstrap_config" ||
     { echo "hk setup must invoke mise through the controlled environment" >&2; exit 1; }
-if grep -Eq 'MISE_BIN=|git_prefix=|git_root=|PATH=' "$bootstrap_config"; then
-    echo "hk setup must not manage command paths" >&2
+grep -Fq 'Darwin) git_prefix=/opt/homebrew' "$bootstrap_config" ||
+    { echo "hk setup must select the managed macOS Git path" >&2; exit 1; }
+grep -Fq 'Linux) git_prefix=/home/linuxbrew/.linuxbrew' "$bootstrap_config" ||
+    { echo "hk setup must select the managed Linux Git path" >&2; exit 1; }
+if grep -Fq 'MISE_BIN=' "$bootstrap_config"; then
+    echo "hk setup must not encode mise's installation path" >&2
     exit 1
 fi
 if grep -Eq 'git_is_modern|brew install git|hk install --global --mise' "$bootstrap"; then
