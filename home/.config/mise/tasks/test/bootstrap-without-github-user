@@ -18,8 +18,7 @@ gh() {
         user) return 1 ;;
         users/fixture-user)
             printf '%s\n' '[user]' '    name = "Fixture User"' \
-                '    email = "7+fixture-user@users.noreply.github.com"' \
-                '    signingkey = ~/.ssh/id_ed25519.pub'
+                '    email = "7+fixture-user@users.noreply.github.com"'
             ;;
         users/fixture-user/keys)
             printf '%s\n' 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFixture fixture@example'
@@ -50,6 +49,10 @@ grep -Fq 'name = "Fixture User"' "$HOME/.config/git/user" ||
     { echo "bootstrap must derive the Git user name" >&2; exit 1; }
 grep -Fq 'email = "7+fixture-user@users.noreply.github.com"' "$HOME/.config/git/user" ||
     { echo "bootstrap must derive the Git noreply email" >&2; exit 1; }
+if grep -Fq 'signingkey' "$HOME/.config/git/user"; then
+    echo "bootstrap must not write static signing configuration" >&2
+    exit 1
+fi
 grep -Fq 'fixture-user ssh-ed25519' "$HOME/.ssh/allowed_signers" ||
     { echo "bootstrap must derive allowed signers from GitHub keys" >&2; exit 1; }
 grep -Fq 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFixture' "$HOME/.ssh/authorized_keys" ||

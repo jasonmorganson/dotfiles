@@ -9,8 +9,7 @@ if [ -n "$GITHUB_USER" ]; then
     gh api "users/${GITHUB_USER}" --jq '
         "[user]",
         "    name = \((.name // .login) | @json)",
-        "    email = \(((.id | tostring) + "+" + .login + "@users.noreply.github.com") | @json)",
-        "    signingkey = ~/.ssh/id_ed25519.pub"
+        "    email = \(((.id | tostring) + "+" + .login + "@users.noreply.github.com") | @json)"
     ' > ~/.config/git/user
 
     keys=$(gh api --paginate "users/${GITHUB_USER}/keys" --jq '.[].key')
