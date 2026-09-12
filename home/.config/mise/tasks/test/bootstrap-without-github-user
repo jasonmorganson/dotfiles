@@ -4,6 +4,10 @@ set -eu
 
 repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../../../../.." && pwd)"
 github="$repo_root/home/.config/mise/tasks/github"
+if grep -Fq '\\"@users.noreply.github.com\\"' "$github"; then
+    echo "GitHub refresh must pass valid jq quoting to gh" >&2
+    exit 1
+fi
 fixture_home="$(mktemp -d)"
 trap 'rm -rf "$fixture_home"' EXIT
 
