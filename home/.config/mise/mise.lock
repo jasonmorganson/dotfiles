@@ -175,10 +175,10 @@ conda_deps = []
 checksum = "sha256:cf61a1a7afbc00a9f65bc331e90f8ff2d293826a3fcbc1428c09b86967381bf8"
 url = "https://conda.anaconda.org/conda-forge/win-64/eza-0.23.5-h18a1a76_0.conda"
 conda_deps = [
-    "vc-14.5-h1b7c187_39",
-    "vc14_runtime-14.51.36231-h1b9f54f_39",
-    "vcomp14-14.51.36231-h1b9f54f_39",
-    "ucrt-10.0.26100.0-h57928b3_0",
+  "vc-14.5-h1b7c187_39",
+  "vc14_runtime-14.51.36231-h1b9f54f_39",
+  "vcomp14-14.51.36231-h1b9f54f_39",
+  "ucrt-10.0.26100.0-h57928b3_0",
 ]
 
 [[tools.delta]]
@@ -632,40 +632,6 @@ url_api = "https://api.github.com/repos/jdx/hk/releases/assets/525632123"
 checksum = "sha256:4ccf353e484997dd4975361b6433f3b2661f5db614f2b382cddcac7eaa74a604"
 url = "https://github.com/jdx/hk/releases/download/v1.56.1/hk-x86_64-pc-windows-msvc.zip"
 url_api = "https://api.github.com/repos/jdx/hk/releases/assets/525632118"
-
-[[tools.jaq]]
-version = "3.1.1"
-backend = "aqua:01mf02/jaq"
-
-[tools.jaq."platforms.linux-arm64"]
-checksum = "sha256:bdda42d5a8c060a2c7916b287a227e7750d5fccbd4c37aacf0ab863010921829"
-url = "https://github.com/01mf02/jaq/releases/download/v3.1.1/jaq-aarch64-unknown-linux-gnu"
-url_api = "https://api.github.com/repos/01mf02/jaq/releases/assets/502327954"
-
-[tools.jaq."platforms.linux-x64"]
-checksum = "sha256:b9a07a6f10f0305d96d333ea7db69d60704eb4d4e71c98094157e3cc9fe08110"
-url = "https://github.com/01mf02/jaq/releases/download/v3.1.1/jaq-x86_64-unknown-linux-musl"
-url_api = "https://api.github.com/repos/01mf02/jaq/releases/assets/502327739"
-
-[tools.jaq."platforms.linux-x64-musl"]
-checksum = "sha256:b9a07a6f10f0305d96d333ea7db69d60704eb4d4e71c98094157e3cc9fe08110"
-url = "https://github.com/01mf02/jaq/releases/download/v3.1.1/jaq-x86_64-unknown-linux-musl"
-url_api = "https://api.github.com/repos/01mf02/jaq/releases/assets/502327739"
-
-[tools.jaq."platforms.macos-arm64"]
-checksum = "sha256:b1a2e63384e156d90bbf61a1142302aa59bfebd8c89e24dfc9b5747618880fcd"
-url = "https://github.com/01mf02/jaq/releases/download/v3.1.1/jaq-aarch64-apple-darwin"
-url_api = "https://api.github.com/repos/01mf02/jaq/releases/assets/502328070"
-
-[tools.jaq."platforms.macos-x64"]
-checksum = "sha256:34b1a9495dbd28df09ad83c832a2ae4be60657d8c24e72f28565cd19b98ed0af"
-url = "https://github.com/01mf02/jaq/releases/download/v3.1.1/jaq-x86_64-apple-darwin"
-url_api = "https://api.github.com/repos/01mf02/jaq/releases/assets/502327833"
-
-[tools.jaq."platforms.windows-x64"]
-checksum = "sha256:7b2f5153d11118c3ccff01859743e09842cabc42ba08f8876489c1be30d1d08d"
-url = "https://github.com/01mf02/jaq/releases/download/v3.1.1/jaq-x86_64-pc-windows-msvc.exe"
-url_api = "https://api.github.com/repos/01mf02/jaq/releases/assets/502328777"
 
 [[tools.nu]]
 version = "0.115.1"
