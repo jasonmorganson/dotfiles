@@ -7,15 +7,21 @@ bootstrap="$repo_root/home/.config/mise/tasks/bootstrap"
 fixture_home="$(mktemp -d)"
 trap 'rm -rf "$fixture_home"' EXIT
 
-gh() { :; }
-curl() {
-    url=''
-    for arg in "$@"; do url=$arg; done
-    case "$url" in
-        'https://api.github.com/users/fixture-user')
-            printf '%s\n' '{"id":7,"login":"fixture-user","name":"Fixture User"}'
+gh() {
+    endpoint=''
+    for arg in "$@"; do
+        case "$arg" in
+            user|users/*) endpoint=$arg ;;
+        esac
+    done
+    case "$endpoint" in
+        user) return 1 ;;
+        users/fixture-user)
+            printf '%s\n' '[user]' '    name = "Fixture User"' \
+                '    email = "7+fixture-user@users.noreply.github.com"' \
+                '    signingkey = ~/.ssh/id_ed25519.pub'
             ;;
-        'https://github.com/fixture-user.keys')
+        users/fixture-user/keys)
             printf '%s\n' 'ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFixture fixture@example'
             ;;
         *) return 1 ;;
@@ -26,7 +32,6 @@ HOME="$fixture_home"
 export HOME
 fixture_bin="$fixture_home/bin"
 mkdir -p "$fixture_bin" "$HOME/.config/git" "$HOME/.ssh"
-ln -s /usr/bin/true "$fixture_bin/ssh-keyscan"
 PATH="$fixture_bin:$PATH"
 export PATH
 

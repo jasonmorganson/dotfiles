@@ -72,6 +72,18 @@ fi
 
 grep -Fq '"~/.config/git" = { mode = "copy", exclude = ["ignore"] }' "$dotfiles" ||
     { echo "Git configuration must use a directory copy" >&2; exit 1; }
+grep -Fq '"~/.config/ssh/known_hosts" = { mode = "copy" }' "$dotfiles" ||
+    { echo "GitHub SSH host keys must be dotfiles-managed" >&2; exit 1; }
+github_ssh="$repo_root/home/.config/ssh/config/github.conf"
+github_known_hosts="$repo_root/home/.config/ssh/known_hosts"
+grep -Fq 'Include ~/.config/ssh/config/*.conf' "$repo_root/home/.ssh/config" ||
+    { echo "SSH config must include only SSH configuration snippets" >&2; exit 1; }
+grep -Fq 'UserKnownHostsFile ~/.config/ssh/known_hosts ~/.ssh/known_hosts' "$github_ssh" ||
+    { echo "GitHub SSH config must preserve user known hosts" >&2; exit 1; }
+grep -Fq 'github.com ssh-ed25519' "$github_known_hosts" ||
+    { echo "GitHub SSH host keys must include github.com" >&2; exit 1; }
+grep -Fq '[ssh.github.com]:443 ssh-ed25519' "$github_known_hosts" ||
+    { echo "GitHub SSH host keys must include ssh.github.com on port 443" >&2; exit 1; }
 grep -Fq '[bootstrap.directories]' "$repo_root/home/.config/mise/conf.d/20-bootstrap.toml" ||
     { echo "bootstrap directories must be declarative" >&2; exit 1; }
 if grep -Fq '[bootstrap.hooks.pre-dotfiles]' "$repo_root/home/.config/mise/conf.d/20-bootstrap.toml"; then
@@ -88,6 +100,10 @@ grep -Fq '"~/.zprofile/activate" = { line = '\''eval "$(mise activate zsh --shim
 grep -Fq '"~/.zshrc/activate" = { line = '\''eval "$(mise activate zsh)"'\'', position = "prepend" }' "$dotfiles" || exit 1
 if grep -Eq 'activate nu|starship init nu|fnox activate nu|wt config shell init nu|env\.nu|config\.nu' "$bootstrap"; then
     echo "bootstrap must not generate Nushell integration" >&2
+    exit 1
+fi
+if grep -Eq '\b(curl|jaq|ssh-keyscan)\b' "$bootstrap"; then
+    echo "bootstrap must use gh and tracked SSH host keys" >&2
     exit 1
 fi
 
