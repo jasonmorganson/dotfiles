@@ -15,6 +15,9 @@ esac
 PATH="$brew_prefix/bin:$PATH" mise exec -- hk install --global --mise
 '''
 
+[bootstrap.hooks.post-dotfiles]
+run = "mise run github"
+
 [bootstrap.macos.dock]
 autohide = true
 

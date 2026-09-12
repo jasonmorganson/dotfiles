@@ -4,7 +4,7 @@ set -eu
 
 repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../../../../.." && pwd)"
 dotfiles="$repo_root/home/.config/mise/conf.d/30-dotfiles.toml"
-bootstrap="$repo_root/home/.config/mise/tasks/bootstrap"
+github="$repo_root/home/.config/mise/tasks/github"
 
 for shell_file in \
     "$repo_root/home/.config/bash/rc" \
@@ -28,6 +28,8 @@ grep -Fq '"~/.config/nushell/env.nu" = { mode = "copy" }' "$dotfiles" ||
     { echo "Nushell env must be dotfiles-managed" >&2; exit 1; }
 grep -Fq '"~/.config/nushell/config.nu" = { mode = "copy" }' "$dotfiles" ||
     { echo "Nushell config must be dotfiles-managed" >&2; exit 1; }
+grep -Fq '"~/.config/mise/tasks/github" = { mode = "symlink" }' "$dotfiles" ||
+    { echo "GitHub refresh task must be dotfiles-managed" >&2; exit 1; }
 
 for shell_kind in bash zsh; do
     shell_file="$repo_root/home/.config/$shell_kind/rc"
@@ -75,8 +77,8 @@ grep -Fq '"~/.config/git" = { mode = "copy", exclude = ["ignore"] }' "$dotfiles"
 git_gpg="$repo_root/home/.config/git/gpg"
 grep -Fq 'signingKey = ~/.ssh/id_ed25519.pub' "$git_gpg" ||
     { echo "SSH signing key must be static Git configuration" >&2; exit 1; }
-if grep -Fq 'signingkey = ~/.ssh/id_ed25519.pub' "$bootstrap"; then
-    echo "bootstrap must not generate the static SSH signing key" >&2
+if grep -Fq 'signingkey = ~/.ssh/id_ed25519.pub' "$github"; then
+    echo "GitHub refresh must not generate the static SSH signing key" >&2
     exit 1
 fi
 grep -Fq '"~/.config/ssh/known_hosts" = { mode = "copy" }' "$dotfiles" ||
@@ -97,6 +99,10 @@ if grep -Fq '[bootstrap.hooks.pre-dotfiles]' "$repo_root/home/.config/mise/conf.
     echo "pre-dotfiles mkdir hook must be removed" >&2
     exit 1
 fi
+grep -Fq '[bootstrap.hooks.post-dotfiles]' "$repo_root/home/.config/mise/conf.d/20-bootstrap.toml" ||
+    { echo "GitHub refresh must run after dotfiles apply" >&2; exit 1; }
+grep -Fq 'run = "mise run github"' "$repo_root/home/.config/mise/conf.d/20-bootstrap.toml" ||
+    { echo "post-dotfiles hook must run the GitHub refresh task" >&2; exit 1; }
 if grep -Fq '[bootstrap.mise_shell_activate]' "$repo_root/home/.config/mise/conf.d/20-bootstrap.toml"; then
     echo "shell activation must be explicitly ordered through dotfiles" >&2
     exit 1
@@ -105,12 +111,12 @@ grep -Fq '"~/.bash_profile/activate" = { line = '\''eval "$(mise activate bash -
 grep -Fq '"~/.bashrc/activate" = { line = '\''eval "$(mise activate bash)"'\'', position = "prepend" }' "$dotfiles" || exit 1
 grep -Fq '"~/.zprofile/activate" = { line = '\''eval "$(mise activate zsh --shims)"'\'', position = "prepend" }' "$dotfiles" || exit 1
 grep -Fq '"~/.zshrc/activate" = { line = '\''eval "$(mise activate zsh)"'\'', position = "prepend" }' "$dotfiles" || exit 1
-if grep -Eq 'activate nu|starship init nu|fnox activate nu|wt config shell init nu|env\.nu|config\.nu' "$bootstrap"; then
-    echo "bootstrap must not generate Nushell integration" >&2
+if grep -Eq 'activate nu|starship init nu|fnox activate nu|wt config shell init nu|env\.nu|config\.nu' "$github"; then
+    echo "GitHub refresh must not generate Nushell integration" >&2
     exit 1
 fi
-if grep -Eq '\b(curl|jaq|ssh-keyscan|authorized_keys)\b' "$bootstrap"; then
-    echo "bootstrap must use gh and tracked SSH host keys" >&2
+if grep -Eq '\b(curl|jaq|ssh-keyscan|authorized_keys)\b' "$github"; then
+    echo "GitHub refresh must use gh and tracked SSH host keys" >&2
     exit 1
 fi
 

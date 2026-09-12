@@ -12,7 +12,7 @@
 "~/.config/mise/conf.d/50-aliases.toml" = { mode = "symlink" }
 "~/.config/mise/mise.lock" = { mode = "symlink" }
 "~/.config/mise/miserc.toml" = { mode = "symlink" }
-"~/.config/mise/tasks/bootstrap" = { mode = "symlink" }
+"~/.config/mise/tasks/github" = { mode = "symlink" }
 "~/.config/mise/tasks/test" = { mode = "symlink" }
 "~/.config/bash/rc" = { mode = "copy" }
 "~/.bash_profile/activate" = { line = 'eval "$(mise activate bash --shims)"', position = "prepend" }
