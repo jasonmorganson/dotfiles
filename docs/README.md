@@ -66,7 +66,7 @@ See [reference](https://mise.jdx.dev/).
 
 ### macOS Touch ID for `sudo`
 
-The bootstrap requires mise `v2026.9.5` or newer for declarative directories,
+The bootstrap requires mise `v2026.9.6` or newer for declarative directories,
 directory-backed dotfiles, and privileged system files. On macOS, it
 declaratively maintains `/etc/pam.d/sudo_local` with Touch ID enabled, using
 Apple’s update-persistent sudo override. Inspect the planned change before

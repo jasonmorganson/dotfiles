@@ -7,11 +7,8 @@
 
 [bootstrap.hooks.post-tools]
 run = '''
-case "$(uname -s)" in
-    Darwin) brew_prefix=/opt/homebrew ;;
-    Linux) brew_prefix=/home/linuxbrew/.linuxbrew ;;
-esac
-PATH="$brew_prefix/bin:$PATH" mise exec -- hk install --global --mise
+git_bin="$(mise bootstrap packages where brew:git)/bin"
+PATH="$git_bin:$PATH" mise exec -- hk install --global --mise
 '''
 
 [bootstrap.hooks.post-dotfiles]
