@@ -33,6 +33,17 @@ file-task directory; a bare `tasks/` directory would require a custom
 `[task_config]` include. `home/` contains explicit dotfile source files and is
 not a special mise directory.
 
+## Portability boundary
+
+The adopted mise runtime—root configuration, `conf.d/`, `mise-tasks/`,
+`mise.lock`, and `home/`—is portable and contains no repository-owner or
+personal-identity defaults. Its GitHub task derives Git identity and signing
+keys from the authenticated `gh` user when available.
+
+The installer, hosted installation endpoint, and site documentation are
+distribution assets for this repository and intentionally retain the
+`jasonmorganson/dotfiles` and `morganson.me` references.
+
 ## Usage
 
 Pull the latest dotfiles and reapply the machine configuration:
