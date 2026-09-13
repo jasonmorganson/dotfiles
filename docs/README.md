@@ -55,7 +55,7 @@ dotfiles
 `install.sh` installs `mise` to its standard user-local path, adds it to
 `PATH`, then adopts and fast-forwards the global configuration:
 
-> `mise bootstrap --adopt https://github.com/jasonmorganson/dotfiles.git --update --yes`
+> `mise bootstrap --adopt jasonmorganson/dotfiles --update --yes`
 
 Bootstrap requires Git 2.54 or newer and installs mise-managed hk globally
 with config-based Git hooks. On macOS it installs a current Git through
