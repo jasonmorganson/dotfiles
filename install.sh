@@ -6,4 +6,5 @@ export PATH="$HOME/.local/bin:$PATH"
 mise bootstrap \
     --adopt "${GITHUB_USER:-jasonmorganson}/dotfiles" \
     --update \
-    --yes
+    --yes \
+    --force-dotfiles

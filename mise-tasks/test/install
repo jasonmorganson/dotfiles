@@ -18,6 +18,8 @@ grep -Fq -- '--adopt "${GITHUB_USER:-' "$installer" &&
     { echo "installer must let mise adopt the GitHub user configuration with a safe default" >&2; exit 1; }
 grep -Fq -- '--update' "$installer" ||
     { echo "installer must fast-forward an existing adopted configuration" >&2; exit 1; }
+grep -Fq -- '--force-dotfiles' "$installer" ||
+    { echo "installer must replace conflicting dotfiles during a full machine setup" >&2; exit 1; }
 if grep -Fq 'dotfiles.root' "$config"; then
     echo "global config must use mise's default dotfiles root" >&2
     exit 1
