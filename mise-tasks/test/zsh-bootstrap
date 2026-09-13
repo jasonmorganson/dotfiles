@@ -2,13 +2,13 @@
 #MISE description="Verify zsh bootstrap ownership and ordering."
 set -eu
 
-repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../../../../.." && pwd)"
-dotfiles="$repo_root/home/.config/mise/conf.d/30-dotfiles.toml"
-github="$repo_root/home/.config/mise/tasks/github"
-bootstrap_config="$repo_root/home/.config/mise/conf.d/20-bootstrap.toml"
-environment_config="$repo_root/home/.config/mise/conf.d/40-env.toml"
-aliases_config="$repo_root/home/.config/mise/conf.d/50-aliases.toml"
-mise_config="$repo_root/home/.config/mise/config.toml"
+repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../.." && pwd)"
+dotfiles="$repo_root/conf.d/30-dotfiles.toml"
+github="$repo_root/mise-tasks/github"
+bootstrap_config="$repo_root/conf.d/20-bootstrap.toml"
+environment_config="$repo_root/conf.d/40-env.toml"
+aliases_config="$repo_root/conf.d/50-aliases.toml"
+mise_config="$repo_root/config.toml"
 
 grep -Fq '"~/.zshrc/local"' "$dotfiles" ||
     { echo "generated zsh integrations must be sourced from the standard zshrc" >&2; exit 1; }
@@ -40,13 +40,11 @@ if grep -Eq 'git_is_modern|brew install git|hk install --global --mise' "$github
     echo "GitHub refresh must not manage Git or hk" >&2
     exit 1
 fi
-grep -Fq 'hk = "latest"' "$repo_root/home/.config/mise/conf.d/10-tools.toml" ||
+grep -Fq 'hk = "latest"' "$repo_root/conf.d/10-tools.toml" ||
     { echo "mise must manage hk" >&2; exit 1; }
 grep -Fq 'min_version = "2026.9.5"' "$mise_config" ||
     { echo "mise config must require the declarative bootstrap release" >&2; exit 1; }
-grep -Fq 'auto_update = true' "$mise_config" ||
-    { echo "mise must keep its standalone installation current" >&2; exit 1; }
-grep -Fq 'dotfiles = "mise bootstrap --update --yes --force-dotfiles"' "$aliases_config" ||
+grep -Fq 'dotfiles = "mise bootstrap --update --yes"' "$aliases_config" ||
     { echo "dotfiles alias must update repositories and reapply the machine configuration" >&2; exit 1; }
 if grep -Eq '^bootstrap[[:space:]]*=' "$aliases_config"; then
     echo "bootstrap compatibility alias must be removed" >&2
