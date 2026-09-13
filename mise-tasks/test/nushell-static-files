@@ -3,7 +3,7 @@
 #MISE tools={nu="latest"}
 set -eu
 
-repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../../../../.." && pwd)"
+repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../.." && pwd)"
 fixture_root="$(mktemp -d)"
 trap 'rm -rf "$fixture_root"' EXIT
 
@@ -14,7 +14,7 @@ mkdir -p "$fixture_config" "$fixture_bin"
 cp "$repo_root/home/.config/nushell/env.nu" "$fixture_config/env.nu"
 cp "$repo_root/home/.config/nushell/config.nu" "$fixture_config/config.nu"
 for tool in mise starship fnox wt; do
-    ln -s "$repo_root/home/.config/mise/tasks/test/fixtures/nushell-tool" "$fixture_bin/$tool"
+    ln -s "$repo_root/mise-tasks/test/fixtures/nushell-tool" "$fixture_bin/$tool"
 done
 
 run_nu() {
