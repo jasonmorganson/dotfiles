@@ -1,0 +1,16 @@
+#!/bin/sh
+#MISE description="Verify the adopted mise runtime contains no branded identity values."
+set -eu
+
+repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../.." && pwd)"
+owner='jason''morganson'
+domain='morganson''\.me'
+repository="github\\.com/$owner/dotfiles"
+
+if git -C "$repo_root" grep -n -i -E "$owner|$domain|$repository" -- \
+    config.toml config.macos.toml miserc.toml mise.lock conf.d mise-tasks home; then
+    echo "the adopted mise runtime must not contain branded identity values" >&2
+    exit 1
+fi
+
+echo "generic mise runtime fixture passed"
