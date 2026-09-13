@@ -1,0 +1,32 @@
+#!/bin/sh
+#MISE description="Verify the no-argument user-local installation entrypoint."
+set -eu
+
+repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../.." && pwd)"
+installer="$repo_root/install.sh"
+config="$repo_root/config.toml"
+dotfiles_config="$repo_root/conf.d/30-dotfiles.toml"
+
+grep -Fq 'curl https://mise.run | sh' "$installer" ||
+    { echo "installer must use the standard mise installer" >&2; exit 1; }
+grep -Fq 'export PATH="$HOME/.local/bin:$PATH"' "$installer" ||
+    { echo "installer must put the user-local mise binary on PATH" >&2; exit 1; }
+grep -Fq 'mise bootstrap' "$installer" ||
+    { echo "installer must bootstrap through mise on PATH" >&2; exit 1; }
+grep -Fq -- '--adopt "https://github.com/${GITHUB_USER:-jasonmorganson}/dotfiles.git"' "$installer" ||
+    { echo "installer must let mise adopt the GitHub user configuration with a safe default" >&2; exit 1; }
+grep -Fq -- '--update' "$installer" ||
+    { echo "installer must fast-forward an existing adopted configuration" >&2; exit 1; }
+if grep -Fq 'dotfiles.root' "$config"; then
+    echo "global config must use mise's default dotfiles root" >&2
+    exit 1
+fi
+grep -Fq 'source = "../home/.config/git"' "$dotfiles_config" ||
+    { echo "dotfile sources must be explicit and relative to the global configuration" >&2; exit 1; }
+
+if grep -Eq 'sudo|MISE_INSTALL_PATH|/usr/local/bin/mise' "$installer"; then
+    echo "installer must not require a privileged or custom mise installation" >&2
+    exit 1
+fi
+
+echo "mise install entrypoint fixtures passed"
