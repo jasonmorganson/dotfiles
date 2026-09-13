@@ -16,4 +16,13 @@ jobs:
     steps:
     - uses: actions/checkout@v7
     - name: Run install script
-      run: ./install.sh
+      run: |
+        fixture_home="$RUNNER_TEMP/dotfiles-home"
+        mkdir -p "$fixture_home"
+        env \
+          HOME="$fixture_home" \
+          XDG_CACHE_HOME="$fixture_home/.cache" \
+          XDG_CONFIG_HOME="$fixture_home/.config" \
+          XDG_DATA_HOME="$fixture_home/.local/share" \
+          XDG_STATE_HOME="$fixture_home/.local/state" \
+          ./install.sh
