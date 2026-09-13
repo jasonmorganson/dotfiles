@@ -2,8 +2,8 @@
 #MISE description="Verify isolated dynamic bootstrap behavior with and without a GitHub user."
 set -eu
 
-repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../../../../.." && pwd)"
-github="$repo_root/home/.config/mise/tasks/github"
+repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../.." && pwd)"
+github="$repo_root/mise-tasks/github"
 if grep -Fq '\\"@users.noreply.github.com\\"' "$github"; then
     echo "GitHub refresh must pass valid jq quoting to gh" >&2
     exit 1

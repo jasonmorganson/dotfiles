@@ -2,9 +2,9 @@
 #MISE description="Verify POSIX shell integrations are tracked static sources."
 set -eu
 
-repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../../../../.." && pwd)"
-dotfiles="$repo_root/home/.config/mise/conf.d/30-dotfiles.toml"
-github="$repo_root/home/.config/mise/tasks/github"
+repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../.." && pwd)"
+dotfiles="$repo_root/conf.d/30-dotfiles.toml"
+github="$repo_root/mise-tasks/github"
 
 for shell_file in \
     "$repo_root/home/.config/bash/rc" \
@@ -16,20 +16,20 @@ for shell_file in \
     [ -s "$shell_file" ] || { echo "missing static shell source: $shell_file" >&2; exit 1; }
 done
 
-grep -Fq '"~/.config/bash/rc" = { mode = "copy" }' "$dotfiles" ||
+grep -Fq '"~/.config/bash/rc" = { source = "../home/.config/bash/rc", mode = "copy" }' "$dotfiles" ||
     { echo "bash rc must be dotfiles-managed" >&2; exit 1; }
-grep -Fq '"~/.config/zsh/rc" = { mode = "copy" }' "$dotfiles" ||
+grep -Fq '"~/.config/zsh/rc" = { source = "../home/.config/zsh/rc", mode = "copy" }' "$dotfiles" ||
     { echo "zsh rc must be dotfiles-managed" >&2; exit 1; }
-grep -Fq '"~/.config/fish/conf.d/00-mise.fish" = { mode = "copy" }' "$dotfiles" ||
+grep -Fq '"~/.config/fish/conf.d/00-mise.fish" = { source = "../home/.config/fish/conf.d/00-mise.fish", mode = "copy" }' "$dotfiles" ||
     { echo "fish activation must be dotfiles-managed" >&2; exit 1; }
-grep -Fq '"~/.config/fish/conf.d/local.fish" = { mode = "copy" }' "$dotfiles" ||
+grep -Fq '"~/.config/fish/conf.d/local.fish" = { source = "../home/.config/fish/conf.d/local.fish", mode = "copy" }' "$dotfiles" ||
     { echo "fish rc must be dotfiles-managed" >&2; exit 1; }
-grep -Fq '"~/.config/nushell/env.nu" = { mode = "copy" }' "$dotfiles" ||
+grep -Fq '"~/.config/nushell/env.nu" = { source = "../home/.config/nushell/env.nu", mode = "copy" }' "$dotfiles" ||
     { echo "Nushell env must be dotfiles-managed" >&2; exit 1; }
-grep -Fq '"~/.config/nushell/config.nu" = { mode = "copy" }' "$dotfiles" ||
+grep -Fq '"~/.config/nushell/config.nu" = { source = "../home/.config/nushell/config.nu", mode = "copy" }' "$dotfiles" ||
     { echo "Nushell config must be dotfiles-managed" >&2; exit 1; }
-grep -Fq '"~/.config/mise/tasks/github" = { mode = "symlink" }' "$dotfiles" ||
-    { echo "GitHub refresh task must be dotfiles-managed" >&2; exit 1; }
+[ -x "$github" ] ||
+    { echo "GitHub refresh task must be present in the standard mise task directory" >&2; exit 1; }
 
 for shell_kind in bash zsh; do
     shell_file="$repo_root/home/.config/$shell_kind/rc"
@@ -72,7 +72,7 @@ if grep -Fq 'mise exec --' "$fish_file"; then
     exit 1
 fi
 
-grep -Fq '"~/.config/git" = { mode = "copy", exclude = ["ignore"] }' "$dotfiles" ||
+grep -Fq '"~/.config/git" = { source = "../home/.config/git", mode = "copy", exclude = ["ignore"] }' "$dotfiles" ||
     { echo "Git configuration must use a directory copy" >&2; exit 1; }
 git_gpg="$repo_root/home/.config/git/gpg"
 grep -Fq 'signingKey = ~/.ssh/id_ed25519.pub' "$git_gpg" ||
@@ -87,7 +87,7 @@ grep -Fq 'autocorrect = prompt' "$repo_root/home/.config/git/help" ||
     { echo "Git typo correction must require confirmation" >&2; exit 1; }
 grep -Fq 'default = simple' "$repo_root/home/.config/git/push" ||
     { echo "Git push must use the safer simple default" >&2; exit 1; }
-grep -Fq '"~/.config/ssh/known_hosts" = { mode = "copy" }' "$dotfiles" ||
+grep -Fq '"~/.config/ssh/known_hosts" = { source = "../home/.config/ssh/known_hosts", mode = "copy" }' "$dotfiles" ||
     { echo "GitHub SSH host keys must be dotfiles-managed" >&2; exit 1; }
 github_ssh="$repo_root/home/.config/ssh/github.conf"
 github_known_hosts="$repo_root/home/.config/ssh/known_hosts"
@@ -99,17 +99,17 @@ grep -Fq 'github.com ssh-ed25519' "$github_known_hosts" ||
     { echo "GitHub SSH host keys must include github.com" >&2; exit 1; }
 grep -Fq '[ssh.github.com]:443 ssh-ed25519' "$github_known_hosts" ||
     { echo "GitHub SSH host keys must include ssh.github.com on port 443" >&2; exit 1; }
-grep -Fq '[bootstrap.directories]' "$repo_root/home/.config/mise/conf.d/20-bootstrap.toml" ||
+grep -Fq '[bootstrap.directories]' "$repo_root/conf.d/20-bootstrap.toml" ||
     { echo "bootstrap directories must be declarative" >&2; exit 1; }
-if grep -Fq '[bootstrap.hooks.pre-dotfiles]' "$repo_root/home/.config/mise/conf.d/20-bootstrap.toml"; then
+if grep -Fq '[bootstrap.hooks.pre-dotfiles]' "$repo_root/conf.d/20-bootstrap.toml"; then
     echo "pre-dotfiles mkdir hook must be removed" >&2
     exit 1
 fi
-grep -Fq '[bootstrap.hooks.post-dotfiles]' "$repo_root/home/.config/mise/conf.d/20-bootstrap.toml" ||
+grep -Fq '[bootstrap.hooks.post-dotfiles]' "$repo_root/conf.d/20-bootstrap.toml" ||
     { echo "GitHub refresh must run after dotfiles apply" >&2; exit 1; }
-grep -Fq 'run = "mise run github"' "$repo_root/home/.config/mise/conf.d/20-bootstrap.toml" ||
+grep -Fq 'run = "mise run github"' "$repo_root/conf.d/20-bootstrap.toml" ||
     { echo "post-dotfiles hook must run the GitHub refresh task" >&2; exit 1; }
-if grep -Fq '[bootstrap.mise_shell_activate]' "$repo_root/home/.config/mise/conf.d/20-bootstrap.toml"; then
+if grep -Fq '[bootstrap.mise_shell_activate]' "$repo_root/conf.d/20-bootstrap.toml"; then
     echo "shell activation must be explicitly ordered through dotfiles" >&2
     exit 1
 fi
