@@ -28,10 +28,12 @@ grep -Fq 'hk install --global --mise' "$bootstrap_config" ||
     { echo "mise must install global hk hooks after tools are available" >&2; exit 1; }
 grep -Fq 'mise exec -- hk install --global --mise' "$bootstrap_config" ||
     { echo "hk setup must invoke mise through the controlled environment" >&2; exit 1; }
-grep -Fq 'Darwin) brew_prefix=/opt/homebrew' "$bootstrap_config" ||
-    { echo "hk setup must select the managed macOS Git path" >&2; exit 1; }
-grep -Fq 'Linux) brew_prefix=/home/linuxbrew/.linuxbrew' "$bootstrap_config" ||
-    { echo "hk setup must select the managed Linux Git path" >&2; exit 1; }
+grep -Fq 'mise bootstrap packages where brew:git' "$bootstrap_config" ||
+    { echo "hk setup must discover the managed Git location through mise" >&2; exit 1; }
+if grep -Eq 'brew_prefix=|/opt/homebrew|/home/linuxbrew' "$bootstrap_config"; then
+    echo "hk setup must not hard-code a Homebrew prefix" >&2
+    exit 1
+fi
 if grep -Fq 'MISE_BIN=' "$bootstrap_config"; then
     echo "hk setup must not encode mise's installation path" >&2
     exit 1
@@ -42,7 +44,7 @@ if grep -Eq 'git_is_modern|brew install git|hk install --global --mise' "$github
 fi
 grep -Fq 'hk = "latest"' "$repo_root/conf.d/10-tools.toml" ||
     { echo "mise must manage hk" >&2; exit 1; }
-grep -Fq 'min_version = "2026.9.5"' "$mise_config" ||
+grep -Fq 'min_version = "2026.9.6"' "$mise_config" ||
     { echo "mise config must require the declarative bootstrap release" >&2; exit 1; }
 grep -Fq 'dotfiles = "mise bootstrap --update --yes --force-dotfiles"' "$aliases_config" ||
     { echo "dotfiles alias must update repositories and reapply the machine configuration" >&2; exit 1; }
