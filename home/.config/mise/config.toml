@@ -1,9 +1,0 @@
-min_version = "2026.9.5"
-
-[settings]
-auto_update = true
-locked = true
-dotfiles.root = "~/.local/share/dotfiles/home"
-
-[task_config]
-includes = ["{{ env.MISE_CONFIG_DIR | default(value=env.XDG_CONFIG_HOME ~ '/mise') }}/tasks"]

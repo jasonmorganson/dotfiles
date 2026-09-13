@@ -18,8 +18,20 @@ curl -fsSL https://install.morganson.me |
   GITHUB_USER="your_github_user" sh
 ```
 
-The value is not stored in the mise config. Otherwise, bootstrap detects the
-authenticated GitHub CLI user when possible.
+The value is used only for this installation. Without it, the installer adopts
+the `jasonmorganson/dotfiles` repository.
+
+## Layout
+
+This is a global mise configuration repository. `mise bootstrap --adopt` clones
+the repository root into `${XDG_CONFIG_HOME:-$HOME/.config}/mise`; with the
+default XDG configuration, that is `~/.config/mise`.
+
+`config.toml`, `conf.d/`, `mise-tasks/`, `mise.lock`, and `miserc.toml` are
+therefore kept at this repository's root. `mise-tasks/` is mise's standard
+file-task directory; a bare `tasks/` directory would require a custom
+`[task_config]` include. `home/` contains explicit dotfile source files and is
+not a special mise directory.
 
 ## Usage
 
@@ -29,12 +41,10 @@ Pull the latest dotfiles and reapply the machine configuration:
 dotfiles
 ```
 
-`install.sh` downloads the complete repository when streamed, or acts as the
-no-argument setup entrypoint used by Codespaces and similar environments when
-run from a checkout. It installs `mise` to its standard user-local path before
-bootstrapping:
+`install.sh` installs `mise` to its standard user-local path, adds it to
+`PATH`, then adopts and fast-forwards the global configuration:
 
-> `mise bootstrap --yes --force-dotfiles`
+> `mise bootstrap --adopt https://github.com/jasonmorganson/dotfiles.git --update --yes --force-dotfiles`
 
 Bootstrap requires Git 2.54 or newer and installs mise-managed hk globally
 with config-based Git hooks. On macOS it installs a current Git through

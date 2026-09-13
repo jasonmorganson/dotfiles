@@ -1,5 +1,4 @@
 [bootstrap.repos]
-"~/.local/share/dotfiles" = { url = "https://github.com/jasonmorganson/dotfiles.git", ref = "main" }
 "~/.local/share/mise/repos/gitalias" = { url = "https://github.com/GitAlias/gitalias.git", ref = "main" }
 "~/.config/nushell/scripts/nu_scripts" = { url = "https://github.com/nushell/nu_scripts.git" }
 
