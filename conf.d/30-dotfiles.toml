@@ -2,7 +2,6 @@
 # Relative sources resolve from this global mise configuration directory.
 "~/.bash_sessions" = { source = "~/.local/state/bash/sessions", mode = "symlink" }
 "~/.claude" = { source = "~/.config/claude", mode = "symlink" }
-"~/.config/codex" = { source = "~/.codex", mode = "symlink" }
 "~/.config/bash/rc" = { source = "../home/.config/bash/rc", mode = "copy" }
 "~/.bash_profile/activate" = { line = 'eval "$(mise activate bash --shims)"', position = "prepend" }
 "~/.bash_profile/local" = { block = '[[ -f "$HOME/.bashrc" ]] && . "$HOME/.bashrc"' }
