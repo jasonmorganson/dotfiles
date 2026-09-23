@@ -12,7 +12,10 @@ PATH="$git_bin:$PATH" mise exec -- hk install --global --mise
 '''
 
 [bootstrap.hooks.post-dotfiles]
-run = "mise tasks run github"
+run = '''
+config_dir="${MISE_CONFIG_DIR:-${XDG_CONFIG_HOME:-$HOME/.config}/mise}"
+mise --cd "$config_dir" tasks run github
+'''
 
 [bootstrap.macos.dock]
 autohide = true
