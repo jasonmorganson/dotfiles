@@ -12,7 +12,7 @@ PATH="$git_bin:$PATH" mise exec -- hk install --global --mise
 '''
 
 [bootstrap.hooks.post-dotfiles]
-run = "mise run github"
+run = "mise tasks run github"
 
 [bootstrap.macos.dock]
 autohide = true
