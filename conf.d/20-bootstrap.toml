@@ -8,7 +8,7 @@
 [bootstrap.hooks.post-tools]
 run = '''
 git_bin="$(mise bootstrap packages where brew:git)/bin"
-PATH="$git_bin:$PATH" mise exec -- hk install --global --mise
+PATH="$git_bin:$PATH" mise exec -- hk install --global --mise --quiet
 '''
 
 [bootstrap.hooks.post-dotfiles]

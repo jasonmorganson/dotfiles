@@ -26,7 +26,7 @@ grep -Fq '"brew:git" = "latest"' "$bootstrap_config" ||
     { echo "mise must declaratively manage Git through its Homebrew integration" >&2; exit 1; }
 grep -Fq 'hk install --global --mise' "$bootstrap_config" ||
     { echo "mise must install global hk hooks after tools are available" >&2; exit 1; }
-grep -Fq 'mise exec -- hk install --global --mise' "$bootstrap_config" ||
+grep -Fq 'mise exec -- hk install --global --mise --quiet' "$bootstrap_config" ||
     { echo "hk setup must invoke mise through the controlled environment" >&2; exit 1; }
 grep -Fq 'mise bootstrap packages where brew:git' "$bootstrap_config" ||
     { echo "hk setup must discover the managed Git location through mise" >&2; exit 1; }
