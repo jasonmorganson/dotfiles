@@ -4,7 +4,7 @@ set -eu
 
 repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../.." && pwd)"
 dotfiles="$repo_root/conf.d/30-dotfiles.toml"
-github="$repo_root/mise-tasks/github"
+github="$repo_root/tasks/github"
 
 for shell_file in \
     "$repo_root/home/.config/bash/rc" \

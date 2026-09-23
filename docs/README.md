@@ -27,11 +27,11 @@ This is a global mise configuration repository. `mise bootstrap --adopt` clones
 the repository root into `${XDG_CONFIG_HOME:-$HOME/.config}/mise`; with the
 default XDG configuration, that is `~/.config/mise`.
 
-`config.toml`, `conf.d/`, `mise-tasks/`, `mise.lock`, and `miserc.toml` are
-therefore kept at this repository's root. `mise-tasks/` is mise's standard
-file-task directory; a bare `tasks/` directory would require a custom
-`[task_config]` include. `home/` contains explicit dotfile source files and is
-not a special mise directory.
+`config.toml`, `conf.d/`, `mise-tasks/`, `tasks/`, `mise.lock`, and
+`miserc.toml` are therefore kept at this repository's root. `mise-tasks/` holds
+configuration-scoped tasks; `tasks/` holds tasks that mise exposes globally
+from any working directory. `home/` contains explicit dotfile source files
+and is not a special mise directory.
 
 ## Portability boundary
 
