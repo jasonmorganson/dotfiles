@@ -73,7 +73,7 @@ fi
 grep -Fq '"{{ env.NPM_CONFIG_PREFIX }}/bin"' "$environment_config" ||
     { echo "mise PATH must include npm's configured global bin directory" >&2; exit 1; }
 
-grep -Fq '"{{ env.XDG_DATA_HOME }}/pnpm/bin"' "$environment_config" ||
+grep -Fq '"{{ xdg_data_home }}/pnpm/bin"' "$environment_config" ||
     { echo "mise PATH must include pnpm's global bin directory" >&2; exit 1; }
 
 grep -Fq '"/home/linuxbrew/.linuxbrew/bin"' "$environment_config" ||
