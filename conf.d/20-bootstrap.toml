@@ -28,6 +28,7 @@ autohide = true
 "~/.config/fish/conf.d" = { mode = "0755" }
 "~/.config/nushell" = { mode = "0755" }
 "~/.config/claude" = { mode = "0755" }
+# Codex owns its configuration and state; bootstrap creates this directory only.
 "~/.codex" = { mode = "0755" }
 "~/.config/docker" = { mode = "0755" }
 "~/.config/git" = { mode = "0755" }
