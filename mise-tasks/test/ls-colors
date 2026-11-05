@@ -1,0 +1,22 @@
+#!/bin/sh
+#MISE description="Verify LS_COLORS loads before mise tools are installed."
+set -eu
+
+repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../.." && pwd)"
+mise_bin="$(command -v mise)"
+fixture_root="$(mktemp -d)"
+trap 'rm -rf "$fixture_root"' EXIT
+
+cd "$fixture_root"
+colors="$(env -i \
+    HOME="$fixture_root" \
+    PATH="/usr/bin:/bin" \
+    MISE_CONFIG_DIR="$repo_root" \
+    MISE_DATA_DIR="$fixture_root/mise-data" \
+    MISE_TRUSTED_CONFIG_PATHS="$repo_root" \
+    MISE_AUTO_INSTALL=0 \
+    "$mise_bin" exec -- printenv LS_COLORS)"
+
+test -n "$colors"
+test ! -e "$fixture_root/mise-data/installs/vivid"
+echo "LS_COLORS loads without vivid installed"
