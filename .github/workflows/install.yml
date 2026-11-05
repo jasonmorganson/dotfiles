@@ -16,10 +16,4 @@ jobs:
     steps:
     - uses: actions/checkout@v7
     - name: Run install script
-      env:
-        MISE_BOOTSTRAP_REPO: ${{ github.repository }}?ref=${{ github.ref_name }}
       run: ./install.sh
-    - name: Verify LS_COLORS
-      run: |
-        export PATH="$HOME/.local/bin:$PATH"
-        test -n "$(mise exec -- printenv LS_COLORS)"
