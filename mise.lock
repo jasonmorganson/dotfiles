@@ -469,6 +469,7 @@ version = "2.4.1"
 backend = "github:MitMaro/git-interactive-rebase-tool"
 
 [tools."github:MitMaro/git-interactive-rebase-tool"."platforms.windows-x64"]
+checksum = "sha256:c1ed22c2fe4d6f5d642714ad0c3bdad877805680460f5ada87ecd006d4d73440"
 url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-windows-_x86_64.exe"
 url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176279168"
 
@@ -480,10 +481,12 @@ backend = "github:MitMaro/git-interactive-rebase-tool"
 asset_pattern = "git-interactive-rebase-tool-*-macos-*_arm"
 
 [tools."github:MitMaro/git-interactive-rebase-tool"."platforms.macos-arm64"]
+checksum = "sha256:cd5b1fae4007cfd9cf7efa9e99199de32bcb4b27e5f199f97a6e2beabd0093c4"
 url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-macos-12_arm"
 url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278547"
 
 [tools."github:MitMaro/git-interactive-rebase-tool"."platforms.windows-x64"]
+checksum = "sha256:c1ed22c2fe4d6f5d642714ad0c3bdad877805680460f5ada87ecd006d4d73440"
 url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-windows-_x86_64.exe"
 url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176279168"
 
@@ -495,10 +498,12 @@ backend = "github:MitMaro/git-interactive-rebase-tool"
 asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_amd64.deb"
 
 [tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-x64"]
+checksum = "sha256:aa31ef43dcc030f25cbb3313729d86587314d9e444d4deef3205e18e21448ad3"
 url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_amd64.deb"
 url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278646"
 
 [tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-x64-musl"]
+checksum = "sha256:aa31ef43dcc030f25cbb3313729d86587314d9e444d4deef3205e18e21448ad3"
 url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_amd64.deb"
 url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278646"
 
@@ -510,10 +515,12 @@ backend = "github:MitMaro/git-interactive-rebase-tool"
 asset_pattern = "git-interactive-rebase-tool-*-ubuntu-*_arm64.deb"
 
 [tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-arm64"]
+checksum = "sha256:1c2e996ba6e32d37c7e7e97c0cbce02dacfb687c94403a8ce564d584792be163"
 url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_arm64.deb"
 url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278671"
 
 [tools."github:MitMaro/git-interactive-rebase-tool"."platforms.linux-arm64-musl"]
+checksum = "sha256:1c2e996ba6e32d37c7e7e97c0cbce02dacfb687c94403a8ce564d584792be163"
 url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-ubuntu-20.04_arm64.deb"
 url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278671"
 
@@ -525,6 +532,7 @@ backend = "github:MitMaro/git-interactive-rebase-tool"
 asset_pattern = "git-interactive-rebase-tool-*-macos-*_intel"
 
 [tools."github:MitMaro/git-interactive-rebase-tool"."platforms.macos-x64"]
+checksum = "sha256:539de13aecfe9aefa128ae284f6b684e47d9e3f89dafea657b734213a96e4e42"
 url = "https://github.com/MitMaro/git-interactive-rebase-tool/releases/download/2.4.1/git-interactive-rebase-tool-2.4.1-macos-12_intel"
 url_api = "https://api.github.com/repos/MitMaro/git-interactive-rebase-tool/releases/assets/176278550"
 
