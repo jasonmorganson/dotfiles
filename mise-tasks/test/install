@@ -13,8 +13,7 @@ grep -Fq 'export PATH="$HOME/.local/bin:$PATH"' "$installer" ||
     { echo "installer must put the user-local mise binary on PATH" >&2; exit 1; }
 grep -Fq 'mise bootstrap' "$installer" ||
     { echo "installer must bootstrap through mise on PATH" >&2; exit 1; }
-grep -Fq -- '--adopt "${GITHUB_USER:-' "$installer" &&
-    grep -Fq -- '}/dotfiles"' "$installer" ||
+grep -Fq -- '--adopt "${MISE_BOOTSTRAP_REPO:-${GITHUB_USER:-jasonmorganson}/dotfiles}"' "$installer" ||
     { echo "installer must let mise adopt the GitHub user configuration with a safe default" >&2; exit 1; }
 grep -Fq -- '--update' "$installer" ||
     { echo "installer must fast-forward an existing adopted configuration" >&2; exit 1; }
