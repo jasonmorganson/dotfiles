@@ -1,3 +1,7 @@
+[settings.system_packages]
+# Privilege elevation must work even when mise saved a PATH without system binaries.
+elevate_with = "/usr/bin/sudo"
+
 [bootstrap.files."/usr/local/bin/mise"]
 content = """
 #!/bin/sh
