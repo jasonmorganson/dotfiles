@@ -6,7 +6,7 @@ repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../.." && pwd)"
 expected_tree="$(git -C "$repo_root" rev-parse HEAD^{tree})"
 source_url="$(git -C "$repo_root" remote get-url origin)"
 source_url="${source_url%.git}"
-installer_url="$(cat "$repo_root/tests/fixtures/public-installer-url")"
+installer_url="$(cat "$MISE_TASK_DIR/fixtures/public-installer-url")"
 
 fixture_root="$(mktemp -d)"
 trap 'rm -rf "$fixture_root"' EXIT
