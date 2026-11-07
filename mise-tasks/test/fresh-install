@@ -8,11 +8,14 @@ source_url="$(git -C "$repo_root" remote get-url origin)"
 source_url="${source_url%.git}"
 installer_url="$(cat "$repo_root/tests/fixtures/public-installer-url")"
 
+fixture_root="$(mktemp -d)"
+trap 'rm -rf "$fixture_root"' EXIT
+git -C "$repo_root" bundle create "$fixture_root/source.bundle" HEAD
 docker info >/dev/null
 
 for codex_fixture in absent symlink; do
     docker run --rm -i --user vscode \
-        --mount "type=bind,src=$repo_root,dst=/fixture,readonly" \
+        --mount "type=bind,src=$fixture_root/source.bundle,dst=/fixture.bundle,readonly" \
         --env HOME=/home/vscode \
         --env CODEX_FIXTURE="$codex_fixture" \
         --env EXPECTED_COMMIT="$expected_commit" \
@@ -20,6 +23,7 @@ for codex_fixture in absent symlink; do
         --env INSTALLER_URL="$installer_url" \
         mcr.microsoft.com/devcontainers/base:ubuntu-24.04 /bin/bash -se <<'CONTAINER'
 set -o pipefail
+git clone --quiet /fixture.bundle /tmp/source
 test ! -e "$HOME/.config/mise"
 test ! -e "$HOME/.local/share/mise"
 test ! -e "$HOME/.local/bin/mise"
@@ -35,15 +39,11 @@ fi
 env -i \
     HOME="$HOME" USER=vscode SHELL=/bin/bash TERM=dumb \
     PATH=/usr/bin:/bin:/usr/sbin:/sbin \
-    GIT_CONFIG_COUNT=4 \
-    GIT_CONFIG_KEY_0=url.file:///fixture/.insteadOf \
+    GIT_CONFIG_COUNT=2 \
+    GIT_CONFIG_KEY_0=url.file:///tmp/source/.insteadOf \
     GIT_CONFIG_VALUE_0="$SOURCE_URL.git" \
-    GIT_CONFIG_KEY_1=url.file:///fixture/.insteadOf \
+    GIT_CONFIG_KEY_1=url.file:///tmp/source/.insteadOf \
     GIT_CONFIG_VALUE_1="$SOURCE_URL" \
-    GIT_CONFIG_KEY_2=safe.directory \
-    GIT_CONFIG_VALUE_2=/fixture \
-    GIT_CONFIG_KEY_3=safe.directory \
-    GIT_CONFIG_VALUE_3=/fixture/.git \
     INSTALLER_URL="$INSTALLER_URL" \
     /bin/bash -o pipefail -c 'curl -fsSL "$INSTALLER_URL" | sh' </dev/null
 
