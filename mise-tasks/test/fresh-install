@@ -1,0 +1,56 @@
+#!/bin/sh
+#MISE description="Verify unattended fresh installs with and without a Codex symlink."
+set -eu
+
+repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../.." && pwd)"
+expected_commit="$(git -C "$repo_root" rev-parse HEAD)"
+source_url="$(git -C "$repo_root" remote get-url origin)"
+source_url="${source_url%.git}"
+installer_url="$(cat "$repo_root/tests/fixtures/public-installer-url")"
+
+docker info >/dev/null
+
+for codex_fixture in absent symlink; do
+    docker run --rm -i --user vscode \
+        --mount "type=bind,src=$repo_root,dst=/fixture,readonly" \
+        --env HOME=/home/vscode \
+        --env CODEX_FIXTURE="$codex_fixture" \
+        --env EXPECTED_COMMIT="$expected_commit" \
+        --env SOURCE_URL="$source_url" \
+        --env INSTALLER_URL="$installer_url" \
+        mcr.microsoft.com/devcontainers/base:ubuntu-24.04 /bin/bash -se <<'CONTAINER'
+set -o pipefail
+test ! -e "$HOME/.config/mise"
+test ! -e "$HOME/.local/share/mise"
+test ! -e "$HOME/.local/bin/mise"
+test ! -e "$HOME/.codex"
+
+if [ "$CODEX_FIXTURE" = symlink ]; then
+    mkdir -p "$HOME/.config/codex"
+    ln -s .config/codex "$HOME/.codex"
+    printf 'preserve me\n' > "$HOME/.codex/sentinel"
+fi
+
+# Adopt the tested checkout through the public installer, without credentials.
+env -i \
+    HOME="$HOME" USER=vscode SHELL=/bin/bash TERM=dumb \
+    PATH=/usr/bin:/bin:/usr/sbin:/sbin \
+    GIT_CONFIG_COUNT=3 \
+    GIT_CONFIG_KEY_0=url.file:///fixture/.insteadOf \
+    GIT_CONFIG_VALUE_0="$SOURCE_URL.git" \
+    GIT_CONFIG_KEY_1=url.file:///fixture/.insteadOf \
+    GIT_CONFIG_VALUE_1="$SOURCE_URL" \
+    GIT_CONFIG_KEY_2=safe.directory \
+    GIT_CONFIG_VALUE_2=/fixture \
+    INSTALLER_URL="$INSTALLER_URL" \
+    /bin/bash -o pipefail -c 'curl -fsSL "$INSTALLER_URL" | sh' </dev/null
+
+test "$(git -C "$HOME/.config/mise" rev-parse HEAD)" = "$EXPECTED_COMMIT"
+"$HOME/.local/bin/mise" exec -- sh -ec 'test -n "$LS_COLORS"; vivid --version'
+if [ "$CODEX_FIXTURE" = symlink ]; then
+    test -L "$HOME/.codex"
+    test "$(cat "$HOME/.codex/sentinel")" = 'preserve me'
+fi
+echo "Fresh install passed ($CODEX_FIXTURE)"
+CONTAINER
+done
