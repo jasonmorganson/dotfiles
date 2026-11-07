@@ -1,0 +1,26 @@
+#!/bin/sh
+#MISE description="Verify directory bootstrap preserves an existing Codex symlink."
+set -eu
+
+repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../.." && pwd)"
+mise_bin="$(command -v mise)"
+fixture_root="$(mktemp -d)"
+trap 'rm -rf "$fixture_root"' EXIT
+
+mkdir -p "$fixture_root/home/.config/codex" "$fixture_root/config"
+ln -s .config/codex "$fixture_root/home/.codex"
+printf 'preserve me\n' > "$fixture_root/home/.codex/sentinel"
+sed -n '/^\[bootstrap.directories\]/,$p' "$repo_root/conf.d/20-bootstrap.toml" > "$fixture_root/config/config.toml"
+
+cd "$fixture_root"
+env -i \
+    HOME="$fixture_root/home" \
+    PATH="/usr/bin:/bin:/usr/sbin:/sbin" \
+    MISE_CONFIG_DIR="$fixture_root/config" \
+    MISE_DATA_DIR="$fixture_root/data" \
+    MISE_TRUSTED_CONFIG_PATHS="$fixture_root/config" \
+    "$mise_bin" bootstrap --only files --yes </dev/null
+
+test -L "$fixture_root/home/.codex"
+test "$(cat "$fixture_root/home/.codex/sentinel")" = "preserve me"
+echo "Directory bootstrap preserves the Codex symlink"
