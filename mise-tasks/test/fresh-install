@@ -35,13 +35,15 @@ fi
 env -i \
     HOME="$HOME" USER=vscode SHELL=/bin/bash TERM=dumb \
     PATH=/usr/bin:/bin:/usr/sbin:/sbin \
-    GIT_CONFIG_COUNT=3 \
+    GIT_CONFIG_COUNT=4 \
     GIT_CONFIG_KEY_0=url.file:///fixture/.insteadOf \
     GIT_CONFIG_VALUE_0="$SOURCE_URL.git" \
     GIT_CONFIG_KEY_1=url.file:///fixture/.insteadOf \
     GIT_CONFIG_VALUE_1="$SOURCE_URL" \
     GIT_CONFIG_KEY_2=safe.directory \
     GIT_CONFIG_VALUE_2=/fixture \
+    GIT_CONFIG_KEY_3=safe.directory \
+    GIT_CONFIG_VALUE_3=/fixture/.git \
     INSTALLER_URL="$INSTALLER_URL" \
     /bin/bash -o pipefail -c 'curl -fsSL "$INSTALLER_URL" | sh' </dev/null
 
