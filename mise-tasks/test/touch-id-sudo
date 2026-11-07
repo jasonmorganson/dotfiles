@@ -25,4 +25,7 @@ grep -Fxq 'group = "wheel"' "$platform_config" ||
     { echo "Touch ID sudo override must use macOS wheel group" >&2; exit 1; }
 grep -Fxq 'mode = "0444"' "$platform_config" ||
     { echo "Touch ID sudo override must preserve Apple template permissions" >&2; exit 1; }
+grep -Fq '[settings.system_packages]' "$platform_config" &&
+    grep -Fxq 'elevate_with = "/usr/bin/sudo"' "$platform_config" ||
+    { echo "macOS elevation must find sudo independently of the saved PATH" >&2; exit 1; }
 echo "Touch ID sudo bootstrap fixtures passed"
