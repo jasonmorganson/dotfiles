@@ -14,12 +14,6 @@ PATH="$git_bin:$PATH" mise exec -- hk install --global --mise --quiet
 [bootstrap.hooks.post-dotfiles]
 run = "mise run github"
 
-[bootstrap.macos.dock]
-autohide = true
-
-[bootstrap.macos.defaults]
-"com.apple.dock" = { autohide-delay = 1000.0 }
-
 [bootstrap.directories]
 "~/.local/state/bash/sessions" = { mode = "0755" }
 "~/.local/state/python" = { mode = "0755" }
