@@ -1,1 +1,4 @@
 min_version = "2026.9.6"
+
+[settings]
+experimental = true
