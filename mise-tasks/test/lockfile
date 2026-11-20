@@ -1,0 +1,6 @@
+#!/bin/sh
+#MISE description="Verify the global tools are represented in the Linux CI lockfile."
+set -eu
+
+repo_root="$(CDPATH= cd -P -- "$MISE_TASK_DIR/../.." && pwd)"
+MISE_CONFIG_DIR="$repo_root" mise lock --global --check --platform linux-x64
