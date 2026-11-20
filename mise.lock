@@ -650,7 +650,49 @@ url_api = "https://api.github.com/repos/openai/symphony/releases/assets/48852347
 
 [[tools.gitui]]
 version = "0.28.1"
-backend = "asdf:gitui"
+backend = "aqua:gitui-org/gitui"
+
+[tools.gitui."platforms.linux-arm64"]
+checksum = "sha256:2a640da05b73e9152a7bf92bfd7c23acd9d60438f4f2cabb62357014a5fd7c28"
+checksum_source = "mise-versions"
+url = "https://github.com/gitui-org/gitui/releases/download/v0.28.1/gitui-linux-aarch64.tar.gz"
+url_api = "https://api.github.com/repos/gitui-org/gitui/releases/assets/380791456"
+
+[tools.gitui."platforms.linux-arm64-musl"]
+checksum = "sha256:2a640da05b73e9152a7bf92bfd7c23acd9d60438f4f2cabb62357014a5fd7c28"
+checksum_source = "mise-versions"
+url = "https://github.com/gitui-org/gitui/releases/download/v0.28.1/gitui-linux-aarch64.tar.gz"
+url_api = "https://api.github.com/repos/gitui-org/gitui/releases/assets/380791456"
+
+[tools.gitui."platforms.linux-x64"]
+checksum = "sha256:f6149b9ae203397158b0c89c13cfde718e7121d3d3cd2ebc597f93d6628d9b5b"
+checksum_source = "mise-versions"
+url = "https://github.com/gitui-org/gitui/releases/download/v0.28.1/gitui-linux-x86_64.tar.gz"
+url_api = "https://api.github.com/repos/gitui-org/gitui/releases/assets/380787855"
+
+[tools.gitui."platforms.linux-x64-musl"]
+checksum = "sha256:f6149b9ae203397158b0c89c13cfde718e7121d3d3cd2ebc597f93d6628d9b5b"
+checksum_source = "mise-versions"
+url = "https://github.com/gitui-org/gitui/releases/download/v0.28.1/gitui-linux-x86_64.tar.gz"
+url_api = "https://api.github.com/repos/gitui-org/gitui/releases/assets/380787855"
+
+[tools.gitui."platforms.macos-arm64"]
+checksum = "sha256:3b519a593383841289361bacf579d4a222169aa7ebbdeae6cc449d488d8bb967"
+checksum_source = "mise-versions"
+url = "https://github.com/gitui-org/gitui/releases/download/v0.28.1/gitui-mac.tar.gz"
+url_api = "https://api.github.com/repos/gitui-org/gitui/releases/assets/380793603"
+
+[tools.gitui."platforms.macos-x64"]
+checksum = "sha256:3b519a593383841289361bacf579d4a222169aa7ebbdeae6cc449d488d8bb967"
+checksum_source = "mise-versions"
+url = "https://github.com/gitui-org/gitui/releases/download/v0.28.1/gitui-mac.tar.gz"
+url_api = "https://api.github.com/repos/gitui-org/gitui/releases/assets/380793603"
+
+[tools.gitui."platforms.windows-x64"]
+checksum = "sha256:fab116ccdf9ae4e17378db912d76cc26e60aefd2226f44e665120dea166867e4"
+checksum_source = "mise-versions"
+url = "https://github.com/gitui-org/gitui/releases/download/v0.28.1/gitui-win.tar.gz"
+url_api = "https://api.github.com/repos/gitui-org/gitui/releases/assets/380810989"
 
 [[tools.helix]]
 version = "25.07.1"
